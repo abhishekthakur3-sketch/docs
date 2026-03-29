@@ -1,0 +1,361 @@
+---
+title: Alert / Inline Messages
+description: Alerts are contextual messaging components used to communicate system states, warnings, confirmations, or informational updates inline.
+icon: "triangle-exclamation"
+---
+
+## Overview
+
+Alerts are contextual messaging components that appear inline within the interface to communicate system states, warnings, confirmations, or informational updates. Unlike modal dialogs or toast notifications, alerts remain embedded within the layout and provide persistent feedback until the issue is resolved or dismissed.
+
+<CardGroup cols={3}>
+  <Card title="7 Types" icon="palette">
+    White, Black, Coal, Success, Error, Info Blue, Warning
+  </Card>
+  <Card title="2 Styles" icon="layer-group">
+    Single Text and Dual Text
+  </Card>
+  <Card title="2 Sizes" icon="expand">
+    Large (Web) and Small (Mobile)
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with alert component preview from Figma (page: Alert / Inline Messages ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Alert Component Preview — Replace with /assets/components/alert/alert-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+Explore alert types, styles, and real-world patterns with rendered examples.
+
+<Tabs>
+  <Tab title="Types">
+    <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{background:'#1BA86E', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>✓</span><span style={{color:'#FFF', fontSize:'13px'}}>Action completed successfully.</span></div>
+      <div style={{background:'#DC143C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>✕</span><span style={{color:'#FFF', fontSize:'13px'}}>Something went wrong. Please try again.</span></div>
+      <div style={{background:'#CF9F02', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>⚠</span><span style={{color:'#FFF', fontSize:'13px'}}>This action may have unintended consequences.</span></div>
+      <div style={{background:'#2396FB', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Your session will expire in 5 minutes.</span></div>
+      <div style={{background:'#3D445C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>System maintenance scheduled for tonight.</span></div>
+      <div style={{background:'#000', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px', color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Dark variant for high-contrast surfaces.</span></div>
+      <div style={{background:'#FFF', border:'1px solid #E0E0E0', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>ℹ</span><span style={{color:'#000', fontSize:'13px'}}>Light variant for standard surfaces.</span></div>
+    </div>
+  </Tab>
+  <Tab title="With Actions">
+    <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{background:'#DC143C', borderRadius:'8px', padding:'16px', width:'100%'}}>
+        <div style={{display:'flex', alignItems:'flex-start', gap:'10px'}}>
+          <span style={{fontSize:'16px', color:'#FFF'}}>✕</span>
+          <div style={{flex:1}}>
+            <div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Payment failed</div>
+            <div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>Your card was declined. Please update your payment method.</div>
+            <div style={{display:'flex', gap:'8px', marginTop:'12px'}}>
+              <div style={{background:'rgba(255,255,255,0.2)', color:'#FFF', fontSize:'12px', padding:'6px 14px', borderRadius:'6px', cursor:'pointer'}}>Retry</div>
+              <div style={{background:'#FFF', color:'#DC143C', fontSize:'12px', padding:'6px 14px', borderRadius:'6px', cursor:'pointer'}}>Update Card</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style={{background:'#CF9F02', borderRadius:'8px', padding:'16px', width:'100%'}}>
+        <div style={{display:'flex', alignItems:'flex-start', gap:'10px'}}>
+          <span style={{fontSize:'16px', color:'#FFF'}}>⚠</span>
+          <div style={{flex:1}}>
+            <div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Unsaved changes</div>
+            <div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>You have unsaved changes that will be lost.</div>
+            <div style={{display:'flex', gap:'8px', marginTop:'12px'}}>
+              <div style={{background:'rgba(255,255,255,0.2)', color:'#FFF', fontSize:'12px', padding:'6px 14px', borderRadius:'6px'}}>Discard</div>
+              <div style={{background:'#FFF', color:'#CF9F02', fontSize:'12px', padding:'6px 14px', borderRadius:'6px'}}>Save Now</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Sizes">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Large (Web)</div>
+        <div style={{background:'#2396FB', borderRadius:'8px', padding:'16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px', color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'14px'}}>Your account has been verified successfully.</span></div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Small (Mobile)</div>
+        <div style={{background:'#2396FB', borderRadius:'6px', padding:'10px 12px', display:'flex', alignItems:'center', gap:'8px', maxWidth:'340px'}}><span style={{fontSize:'14px', color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'12px'}}>Your account has been verified successfully.</span></div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Dismissible">
+    <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{background:'#1BA86E', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}>
+        <span style={{fontSize:'16px', color:'#FFF'}}>✓</span>
+        <span style={{color:'#FFF', fontSize:'13px', flex:1}}>Changes saved successfully.</span>
+        <span style={{color:'rgba(255,255,255,0.7)', fontSize:'16px', cursor:'pointer'}}>✕</span>
+      </div>
+      <div style={{background:'#2396FB', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}>
+        <span style={{fontSize:'16px', color:'#FFF'}}>ℹ</span>
+        <span style={{color:'#FFF', fontSize:'13px', flex:1}}>New features are available. Check the changelog.</span>
+        <span style={{color:'rgba(255,255,255,0.7)', fontSize:'16px', cursor:'pointer'}}>✕</span>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Alerts remain inline and persistent until resolved or dismissed. For temporary notifications, use Toast instead.</Info>
+
+
+---
+
+## Alert Matrix
+
+Complete reference: every Type × Style × Size combination.
+
+<Tabs>
+  <Tab title="Single Text">
+    | Type | Large (Web) | Small (Mobile) |
+    |------|------------|----------------|
+    | White | 🔲 *alert* | 🔲 *alert* |
+    | Black | 🔲 *alert* | 🔲 *alert* |
+    | Coal | 🔲 *alert* | 🔲 *alert* |
+    | Success | 🔲 *alert* | 🔲 *alert* |
+    | Error | 🔲 *alert* | 🔲 *alert* |
+    | Info Blue | 🔲 *alert* | 🔲 *alert* |
+    | Warning | 🔲 *alert* | 🔲 *alert* |
+  </Tab>
+  <Tab title="Dual Text">
+    | Type | Large (Web) | Small (Mobile) |
+    |------|------------|----------------|
+    | White | 🔲 *alert* | 🔲 *alert* |
+    | Black | 🔲 *alert* | 🔲 *alert* |
+    | Coal | 🔲 *alert* | 🔲 *alert* |
+    | Success | 🔲 *alert* | 🔲 *alert* |
+    | Error | 🔲 *alert* | 🔲 *alert* |
+    | Info Blue | 🔲 *alert* | 🔲 *alert* |
+    | Warning | 🔲 *alert* | 🔲 *alert* |
+  </Tab>
+</Tabs>
+
+---
+
+## Anatomy
+
+{/* 🎨 DESIGNER: Replace with alert anatomy diagram from Figma (node: 1823:11483) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Alert Anatomy Diagram — Replace with /assets/components/alert/alert-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Container | Yes | Background surface with color, border, padding |
+| 2 | Leading Icon | No | Reinforces semantic meaning (✓, ✕, ⚠, ℹ) |
+| 3 | Primary Text | Yes | Main message describing the system state |
+| 4 | Badge | No | Status label or contextual tag within the alert |
+| 5 | Badge (secondary) | No | Additional contextual tag |
+| 6 | Trailing Icon | No | Dismiss/close action icon |
+| 7 | CTA Button (primary) | No | Primary action to resolve the alert |
+| 8 | CTA Button (secondary) | No | Secondary/alternative action |
+
+---
+
+## Types
+
+| Type | Color | Usage |
+|------|-------|-------|
+| White | `#FFFFFF` | Neutral alert on standard surfaces |
+| Black | `#000000` | High-contrast alert on dark environments |
+| Coal | `#3D445C` | Neutral system messaging, informational |
+| Success | `#1BA86E` | Successful completion of an action |
+| Error | `#DC143C` | Critical issues or failures requiring attention |
+| Info Blue | `#2396FB` | Informational guidance or system updates |
+| Warning | `#CF9F02` | Caution or potential issues requiring awareness |
+
+---
+
+## Styles
+
+| Style | Content | Use When |
+|-------|---------|----------|
+| Single Text | Primary message only | Short, concise alerts — one-line feedback |
+| Dual Text | Primary message + supporting text | Additional explanation or guidance needed |
+
+---
+
+## Sizes
+
+| Size | Target | Padding | Usage |
+|------|--------|---------|-------|
+| Large (Web) | Desktop, full-width sections | 16px | Comfortable spacing, longer messages |
+| Small (Mobile) | Compact screens, tight layouts | 10px 12px | Readable while minimizing vertical space |
+
+---
+
+## Optional Elements
+
+| Element | Preview | Use Case |
+|---------|---------|----------|
+| Badge | 🔲 *alert* | Status label or category tag inside alert |
+| CTA Buttons | 🔲 *alert* | Resolve, retry, or navigate from the alert |
+| Leading Icon | 🔲 *alert* | Visual reinforcement of semantic meaning |
+| Trailing Icon | 🔲 *alert* | Dismiss/close action |
+
+{/* 🎨 DESIGNER: Export each optional element composition from Figma */}
+
+---
+
+## Alert vs Toast vs Modal
+
+| Aspect | Alert (Inline) | Toast | Modal |
+|--------|---------------|-------|-------|
+| Position | Inline within layout | Floating overlay (corner) | Center overlay with backdrop |
+| Persistence | Persistent until resolved/dismissed | Auto-dismisses (3–5s) | Blocks until user action |
+| Interaction | Optional CTAs, dismissible | Minimal (dismiss only) | Required user response |
+| Use when | Contextual feedback near content | Temporary confirmations | Critical decisions, blocking actions |
+| Interruption | Low — embedded in flow | Low — non-blocking | High — blocks workflow |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Place alerts near the content they relate to
+    - Use semantic types consistently (success, error, warning, info)
+    - Keep primary text concise and actionable
+    - Provide CTAs when users can resolve the issue
+    - Use dismissible alerts for non-critical information
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use alerts for temporary notifications (use Toast)
+    - Don't use alerts for blocking actions (use Modal)
+    - Don't stack multiple alerts of the same type
+    - Don't use long paragraphs in alert messages
+    - Don't rely solely on color — include icon + text
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="alert"` for urgent messages, `role="status"` for informational |
+| Live region | Add `aria-live="assertive"` for errors, `aria-live="polite"` for info |
+| Contrast | Text ≥ 4.5:1 against alert background |
+| Dismiss | Close button needs `aria-label="Dismiss alert"` |
+| Keyboard | Tab to focus CTAs, Escape to dismiss |
+| Screen reader | Icon meaning conveyed via `aria-hidden="true"` + text label |
+| Focus | Move focus to alert on dynamic insertion for errors |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    | Token | Value |
+    |-------|-------|
+    | `alert-padding-lg` | 16px |
+    | `alert-padding-sm` | 10px 12px |
+    | `alert-border-radius` | 8px |
+    | `alert-icon-size` | 24px |
+    | `alert-gap` | 10px |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Value |
+    |-------|-------|
+    | `alert-white-bg` | #FFFFFF |
+    | `alert-black-bg` | #000000 |
+    | `alert-coal-bg` | #3D445C |
+    | `alert-success-bg` | #1BA86E |
+    | `alert-error-bg` | #DC143C |
+    | `alert-info-bg` | #2396FB |
+    | `alert-warning-bg` | #CF9F02 |
+  </Tab>
+  <Tab title="Typography">
+    | Token | Value |
+    |-------|-------|
+    | `alert-primary-size` | 14px |
+    | `alert-primary-weight` | 600 |
+    | `alert-supporting-size` | 12px |
+    | `alert-supporting-weight` | 400 |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface AlertProps {
+  type?: 'white' | 'black' | 'coal' | 'success' | 'error' | 'info' | 'warning';
+  style?: 'single' | 'dual';
+  size?: 'lg' | 'sm';
+  icon?: ReactNode;
+  title?: string;
+  description?: string;
+  badge?: ReactNode;
+  dismissible?: boolean;
+  onDismiss?: () => void;
+  actions?: AlertAction[];
+  children?: ReactNode;
+}
+
+interface AlertAction {
+  label: string;
+  onClick: () => void;
+  variant?: 'primary' | 'secondary';
+}
+```
+
+```tsx Usage
+// Success alert
+<Alert type="success" icon={<CheckIcon />}>
+  Action completed successfully.
+</Alert>
+
+// Error with dual text
+<Alert type="error" title="Payment failed" description="Your card was declined. Please update your payment method." />
+
+// Warning with actions
+<Alert
+  type="warning"
+  title="Unsaved changes"
+  description="You have unsaved changes that will be lost."
+  actions={[
+    { label: 'Discard', onClick: handleDiscard, variant: 'secondary' },
+    { label: 'Save Now', onClick: handleSave, variant: 'primary' }
+  ]}
+/>
+
+// Dismissible info
+<Alert type="info" dismissible onDismiss={() => setVisible(false)}>
+  New features are available. Check the changelog.
+</Alert>
+
+// With badge
+<Alert type="warning" badge={<Badge variant="warning">Review</Badge>}>
+  Something needs your review.
+</Alert>
+
+// Small (mobile)
+<Alert type="success" size="sm">Saved.</Alert>
+```
+
+```tsx ARIA
+// Error alert with live region
+<div role="alert" aria-live="assertive">
+  <Alert type="error" title="Validation failed">
+    Please fix the highlighted fields.
+  </Alert>
+</div>
+
+// Info alert (polite)
+<div role="status" aria-live="polite">
+  <Alert type="info">Session expires in 5 minutes.</Alert>
+</div>
+```
+</CodeGroup>

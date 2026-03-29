@@ -63,6 +63,7 @@
                   "components/badge",
                   "components/tags",
                   "components/pills",
+                  "components/alert",
                   "components/tooltip"
                 ]
               },
