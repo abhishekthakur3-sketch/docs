@@ -65,6 +65,7 @@
                   "components/dropdown",
                   "components/search",
                   "components/shimmer",
+                  "components/scroll",
                   "components/badge",
                   "components/tags",
                   "components/pills",
