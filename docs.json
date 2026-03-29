@@ -67,6 +67,7 @@
                   "components/alert",
                   "components/progress-bar",
                   "components/snackbar",
+                  "components/accordion",
                   "components/tooltip"
                 ]
               },
