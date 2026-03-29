@@ -26,32 +26,43 @@ A grid system is the invisible structural framework that organizes layout, spaci
 
 Every TARMAC grid is composed of three core elements that work together to create structured, balanced layouts.
 
-<div className="showcase-box" style={{overflow:'hidden'}}>
-  <div style={{display:'flex',gap:'40px'}}>
-    <div style={{flex:'1'}}>
-      <div style={{display:'flex',flexDirection:'column',gap:'24px'}}>
-        <div>
-          <div style={{fontSize:'16px',color:'#ED1B36',fontWeight:400,marginBottom:'8px'}}>Columns</div>
-          <div className="showcase-box-text-body" style={{fontSize:'14px',lineHeight:'1.7',fontWeight:300}}>
-            Divide the page into equal vertical sections. Desktop uses 12 columns; mobile uses 4. Content blocks span one or more columns to create layout structure.
-          </div>
-        </div>
-        <div>
-          <div style={{fontSize:'16px',color:'#ED1B36',fontWeight:400,marginBottom:'8px'}}>Gutters</div>
-          <div className="showcase-box-text-body" style={{fontSize:'14px',lineHeight:'1.7',fontWeight:300}}>
-            The gaps between columns. Gutters provide breathing room between content blocks, preventing elements from crowding each other. TARMAC uses 16px or 24px gutters depending on breakpoint.
-          </div>
-        </div>
-        <div>
-          <div style={{fontSize:'16px',color:'#ED1B36',fontWeight:400,marginBottom:'8px'}}>Margins</div>
-          <div className="showcase-box-text-body" style={{fontSize:'14px',lineHeight:'1.7',fontWeight:300}}>
-            The outer edges of the grid — the space between the grid and the viewport boundary. Margins ensure content doesn't touch the screen edges and maintains visual balance.
-          </div>
-        </div>
-      </div>
+<div style={{background:'#F5F5F5',borderRadius:'12px',padding:'24px',marginBottom:'16px'}}>
+  <div style={{display:'flex',alignItems:'stretch',height:'100px',border:'2px dashed #ED1B36',borderRadius:'8px',position:'relative'}}>
+    <div style={{width:'24px',background:'rgba(237,27,54,0.08)',display:'flex',alignItems:'center',justifyContent:'center'}}>
+      <div style={{fontSize:'9px',color:'#ED1B36',writingMode:'vertical-rl',transform:'rotate(180deg)'}}>MARGIN</div>
+    </div>
+    <div style={{flex:1,display:'flex',gap:'8px',padding:'8px 0'}}>
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.15)',borderRadius:'4px'}} />
+    </div>
+    <div style={{width:'24px',background:'rgba(237,27,54,0.08)',display:'flex',alignItems:'center',justifyContent:'center'}}>
+      <div style={{fontSize:'9px',color:'#ED1B36',writingMode:'vertical-rl',transform:'rotate(180deg)'}}>MARGIN</div>
     </div>
   </div>
+  <div style={{display:'flex',justifyContent:'center',gap:'32px',marginTop:'12px',fontSize:'12px'}}>
+    <div style={{display:'flex',alignItems:'center',gap:'6px'}}><div style={{width:'12px',height:'12px',background:'rgba(237,27,54,0.15)',borderRadius:'2px'}} /> Columns</div>
+    <div style={{display:'flex',alignItems:'center',gap:'6px'}}><div style={{width:'12px',height:'12px',background:'#F5F5F5',border:'1px solid #ccc',borderRadius:'2px'}} /> Gutters</div>
+    <div style={{display:'flex',alignItems:'center',gap:'6px'}}><div style={{width:'12px',height:'12px',background:'rgba(237,27,54,0.08)',borderRadius:'2px'}} /> Margins</div>
+  </div>
 </div>
+
+<CardGroup cols={3}>
+  <Card title="Columns" icon="table-columns">
+    Divide the page into equal vertical sections. Desktop uses 12 columns; mobile uses 4.
+  </Card>
+  <Card title="Gutters" icon="grip-lines-vertical">
+    Gaps between columns. TARMAC uses 16px or 24px gutters depending on breakpoint.
+  </Card>
+  <Card title="Margins" icon="arrows-left-right">
+    Outer edges of the grid preventing content from touching screen edges.
+  </Card>
+</CardGroup>
 
 ---
 
@@ -92,6 +103,38 @@ Every TARMAC grid is composed of three core elements that work together to creat
   <Tab title="Column Span">
     Column span defines how many columns a content block occupies. Spans range from 2 to 12 columns on desktop, allowing flexible layout compositions.
 
+    <div style={{background:'#F5F5F5',borderRadius:'12px',padding:'20px',marginBottom:'16px'}}>
+      <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
+        <div style={{height:'32px',background:'rgba(237,27,54,0.2)',borderRadius:'4px',width:'100%'}} />
+        <div style={{display:'flex',gap:'8px'}}>
+          <div style={{height:'32px',background:'rgba(35,150,251,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(35,150,251,0.2)',borderRadius:'4px',flex:1}} />
+        </div>
+        <div style={{display:'flex',gap:'8px'}}>
+          <div style={{height:'32px',background:'rgba(27,168,110,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(27,168,110,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(27,168,110,0.2)',borderRadius:'4px',flex:1}} />
+        </div>
+        <div style={{display:'flex',gap:'8px'}}>
+          <div style={{height:'32px',background:'rgba(207,159,2,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(207,159,2,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(207,159,2,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(207,159,2,0.2)',borderRadius:'4px',flex:1}} />
+        </div>
+        <div style={{display:'flex',gap:'8px'}}>
+          <div style={{height:'32px',background:'rgba(124,58,237,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(124,58,237,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(124,58,237,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(124,58,237,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(124,58,237,0.2)',borderRadius:'4px',flex:1}} />
+          <div style={{height:'32px',background:'rgba(124,58,237,0.2)',borderRadius:'4px',flex:1}} />
+        </div>
+      </div>
+      <div style={{display:'flex',justifyContent:'space-between',marginTop:'8px',fontSize:'11px',color:'#888'}}>
+        <span>Span 12</span><span>Span 6 + 6</span><span>Span 4 + 4 + 4</span><span>Span 3 × 4</span><span>Span 2 × 6</span>
+      </div>
+    </div>
+
     | Span | Desktop Width (approx.) | Common Use |
     |------|------------------------|------------|
     | 2 cols | ~16% | Sidebar icons, small widgets |
@@ -103,6 +146,38 @@ Every TARMAC grid is composed of three core elements that work together to creat
   </Tab>
   <Tab title="Offset">
     Offset adds empty space by skipping columns before a content block. This creates visual balance and asymmetric layouts without adding empty containers.
+
+    <div style={{background:'#F5F5F5',borderRadius:'12px',padding:'20px',marginBottom:'16px'}}>
+      <div style={{display:'flex',flexDirection:'column',gap:'8px'}}>
+        <div style={{display:'flex',gap:'0'}}>
+          <div style={{flex:2}} />
+          <div style={{height:'32px',background:'rgba(237,27,54,0.2)',borderRadius:'4px',flex:10}} />
+        </div>
+        <div style={{display:'flex',gap:'0'}}>
+          <div style={{flex:4}} />
+          <div style={{height:'32px',background:'rgba(35,150,251,0.2)',borderRadius:'4px',flex:8}} />
+        </div>
+        <div style={{display:'flex',gap:'0'}}>
+          <div style={{flex:6}} />
+          <div style={{height:'32px',background:'rgba(27,168,110,0.2)',borderRadius:'4px',flex:6}} />
+        </div>
+        <div style={{display:'flex',gap:'0'}}>
+          <div style={{flex:8}} />
+          <div style={{height:'32px',background:'rgba(207,159,2,0.2)',borderRadius:'4px',flex:4}} />
+        </div>
+        <div style={{display:'flex',gap:'0'}}>
+          <div style={{flex:10}} />
+          <div style={{height:'32px',background:'rgba(124,58,237,0.2)',borderRadius:'4px',flex:2}} />
+        </div>
+      </div>
+      <div style={{display:'flex',flexDirection:'column',gap:'2px',marginTop:'8px',fontSize:'11px',color:'#888'}}>
+        <span>Span 10, Offset 2</span>
+        <span>Span 8, Offset 4</span>
+        <span>Span 6, Offset 6</span>
+        <span>Span 4, Offset 8</span>
+        <span>Span 2, Offset 10</span>
+      </div>
+    </div>
 
     **Use offsets to:**
     - Center content within the grid
@@ -140,9 +215,72 @@ The base 12-column content grid used across all desktop breakpoints.
 
 <Info>The content grid is always 12 columns and centre-aligned. Column width remains consistent at 92px — only gutters change between Large (24px) and other breakpoints (16px).</Info>
 
+<div style={{background:'#F5F5F5',borderRadius:'12px',padding:'20px',marginBottom:'16px'}}>
+  <div style={{fontSize:'12px',color:'#ED1B36',marginBottom:'8px'}}>12-Column Desktop Grid (1440px)</div>
+  <div style={{display:'flex',gap:'4px',height:'80px'}}>
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+  </div>
+  <div style={{display:'flex',gap:'4px',marginTop:'4px',fontSize:'9px',color:'#999'}}>
+    <div style={{flex:1,textAlign:'center'}}>1</div><div style={{flex:1,textAlign:'center'}}>2</div><div style={{flex:1,textAlign:'center'}}>3</div><div style={{flex:1,textAlign:'center'}}>4</div><div style={{flex:1,textAlign:'center'}}>5</div><div style={{flex:1,textAlign:'center'}}>6</div><div style={{flex:1,textAlign:'center'}}>7</div><div style={{flex:1,textAlign:'center'}}>8</div><div style={{flex:1,textAlign:'center'}}>9</div><div style={{flex:1,textAlign:'center'}}>10</div><div style={{flex:1,textAlign:'center'}}>11</div><div style={{flex:1,textAlign:'center'}}>12</div>
+  </div>
+</div>
+
 ### Layout Contexts
 
 Desktop layouts adapt the grid based on navigation context. Each context adjusts column widths and offsets to accommodate navigation elements while preserving alignment.
+
+<div style={{display:'flex',gap:'16px',marginBottom:'16px',flexWrap:'wrap'}}>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Content Only</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+    </div>
+  </div>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Side Nav Expanded</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{width:'28px',background:'rgba(35,150,251,0.15)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+    </div>
+  </div>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Side Nav Collapsed</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{width:'12px',background:'rgba(35,150,251,0.15)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+    </div>
+  </div>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Side Drawer</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{flex:3,background:'rgba(237,27,54,0.06)',borderRadius:'3px'}} />
+      <div style={{flex:2,background:'rgba(124,58,237,0.15)',borderRadius:'3px'}} />
+    </div>
+  </div>
+</div>
 
 <AccordionGroup>
   <Accordion title="Side Navigation — Expanded" icon="sidebar">
@@ -239,6 +377,42 @@ The mobile content grid uses 4 columns across all breakpoints, providing a simpl
 | Small | 320 × 568 | 4 | 16px | 16px |
 
 <Info>Mobile gutters and margins remain fixed at 16px across all breakpoints. The columns themselves are fluid and resize to fill the available width.</Info>
+
+<div style={{display:'flex',gap:'24px',marginBottom:'16px'}}>
+  <div style={{width:'160px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Large (390px)</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'8px',height:'200px'}}>
+      <div style={{display:'flex',gap:'4px',height:'100%'}}>
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+      </div>
+    </div>
+  </div>
+  <div style={{width:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Default (360px)</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'8px',height:'180px'}}>
+      <div style={{display:'flex',gap:'4px',height:'100%'}}>
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+      </div>
+    </div>
+  </div>
+  <div style={{width:'120px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Small (320px)</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'8px',height:'150px'}}>
+      <div style={{display:'flex',gap:'4px',height:'100%'}}>
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+      </div>
+    </div>
+  </div>
+</div>
 
 ### Navigation Grids
 
