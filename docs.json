@@ -46,7 +46,14 @@
             "pages": [
               "foundations/colors",
               "foundations/spacing",
-              "foundations/grid-system",
+              {
+                "group": "Grid System",
+                "pages": [
+                  "foundations/grid-system",
+                  "foundations/grid-advanced",
+                  "foundations/grid-implementation"
+                ]
+              },
               "foundations/typography",
               "foundations/tokens",
               "foundations/elevation",
