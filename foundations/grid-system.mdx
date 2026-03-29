@@ -20,6 +20,33 @@ A grid system is the invisible structural framework that organizes layout, spaci
   </Card>
 </CardGroup>
 
+## Grid Usage Guidelines
+
+Choosing the right grid configuration depends on the content type, density, and user task. Use this decision framework to select the appropriate layout.
+
+<Tabs>
+  <Tab title="When to Use Fluid vs Fixed">
+    | Scenario | Grid Type | Reason |
+    |----------|-----------|--------|
+    | Dashboards & analytics | Fluid | Maximize data visibility across screen widths |
+    | Forms & data entry | Fixed (narrow) | Constrain width for comfortable reading and input |
+    | Marketing / landing pages | Fixed (wide) | Control line length and visual composition |
+    | Data tables & lists | Fluid | Tables need horizontal space to avoid truncation |
+    | Settings / configuration | Fixed (narrow) | Focused, single-task workflows benefit from constraints |
+    | Multi-panel workflows | Fluid | Side panels + content need proportional scaling |
+  </Tab>
+  <Tab title="Column Strategy by Context">
+    | Context | Desktop Columns | Mobile Columns | Notes |
+    |---------|----------------|----------------|-------|
+    | Full-width dashboard | 12 | 4 | Cards span 3-4 cols each on desktop |
+    | Form with sidebar | 8 (form) + 4 (sidebar) | 4 (stacked) | Sidebar collapses below form on mobile |
+    | Data table | 12 | 4 (horizontal scroll) | Tables maintain structure, scroll horizontally |
+    | Article / documentation | 8 (content) + 4 (TOC) | 4 (TOC hidden) | Table of contents hides on mobile |
+    | Modal / dialog | 6-8 (centered) | 4 (full width) | Modals use a subset of the grid |
+    | Login / auth screens | 4-6 (centered) | 4 | Narrow, focused layout |
+  </Tab>
+</Tabs>
+
 ---
 
 ## Grid Anatomy
@@ -95,9 +122,41 @@ Every TARMAC grid is composed of three core elements that work together to creat
   </Tab>
 </Tabs>
 
----
+## Responsive Behavior Rules
 
-## Column Span & Offset
+How layouts adapt across breakpoints. These rules govern what scales, what stays fixed, and how content reflows.
+
+<AccordionGroup>
+  <Accordion title="Column Collapse Behavior" icon="arrows-down-to-line">
+    As viewport width decreases, columns collapse and content stacks vertically:
+    - **Desktop → Tablet**: 12 columns maintained, column width reduces, gutters shrink from 24px to 16px
+    - **Tablet → Mobile**: 12 columns collapse to 4 columns, multi-column layouts stack vertically
+    - **Side panels**: Collapse into full-width sections or slide-in drawers on mobile
+    - **Navigation**: Side nav becomes a hamburger menu overlay on mobile
+  </Accordion>
+  <Accordion title="What Scales vs What Stays Fixed" icon="ruler-combined">
+    | Element | Behavior | Notes |
+    |---------|----------|-------|
+    | Column width | Scales (fluid) | Proportional to viewport |
+    | Gutter width | Fixed per breakpoint | 24px (large) or 16px (default/small) |
+    | Margins | Fixed per breakpoint | 16px on mobile, 80px+ on desktop |
+    | Content max-width | Fixed at 1280px | Prevents overly wide layouts on 1920+ |
+    | Font sizes | Fixed per breakpoint | Controlled by typography tokens, not grid |
+    | Touch targets | Fixed minimum 44px | Never scale below minimum |
+  </Accordion>
+  <Accordion title="Content Stacking Logic" icon="layer-group">
+    When columns collapse on smaller viewports, content stacks in reading order (top to bottom):
+
+    1. **Primary content** stacks first (main body, forms, data)
+    2. **Secondary content** stacks below (sidebars, filters, metadata)
+    3. **Navigation** moves to overlay or bottom bar
+    4. **Actions** (buttons, CTAs) remain visible — never hidden by stacking
+
+    <Warning>Never hide critical actions or primary content when stacking. If content doesn't fit, simplify the layout — don't just stack everything.</Warning>
+  </Accordion>
+</AccordionGroup>
+
+---
 
 <Tabs>
   <Tab title="Column Span">
@@ -354,9 +413,49 @@ Desktop grid decisions directly impact readability and accessibility. The TARMAC
   </Step>
 </Steps>
 
----
+### Component Mapping
 
-## Mobile Grid System
+How the grid applies to common UI components across desktop and mobile.
+
+| Component | Desktop Grid Usage | Mobile Grid Usage |
+|-----------|-------------------|-------------------|
+| Card | Span 3-4 cols, multiple per row | Span 4 cols (full width), stacked |
+| Data Table | Span 12 cols, horizontal scroll if needed | Span 4 cols, horizontal scroll |
+| Form | Span 6-8 cols (centered or with sidebar) | Span 4 cols, full width |
+| Modal / Dialog | Span 6-8 cols (centered overlay) | Span 4 cols (full width sheet) |
+| Side Navigation | Fixed width (collapsed: 72-88px, expanded: 240-280px) | Overlay drawer, 3-column grid |
+| Top Navigation | Span 12 cols (full width, single row) | Span 2 cols (logo + actions) |
+| Filters Panel | Span 3-4 cols (sidebar) or full-width bar | Full width, collapsible accordion |
+| Hero / Banner | Span 12 cols (full bleed) | Span 4 cols (full width) |
+| Footer | Span 12 cols, multi-column content | Span 4 cols, stacked sections |
+| Tabs | Span 12 cols (tab bar), content follows grid | Span 4 cols, scrollable tab bar |
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#1BA86E">
+    - Always align content to the column grid — no eyeballing
+    - Use predefined gutter widths (16px or 24px) — never arbitrary gaps
+    - Maintain consistent margins across all pages at the same breakpoint
+    - Follow the column structure for all layout decisions
+    - Use column span to control content width, not padding hacks
+    - Test layouts at all defined breakpoints (1920, 1440, 1366, 1280, 390, 360, 320)
+    - Let content stack naturally when columns collapse on mobile
+    - Use offset to create intentional whitespace, not empty divs
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC143C">
+    - Don't place elements off-grid or between column boundaries
+    - Don't use arbitrary spacing values (e.g., 13px, 7px, 22px)
+    - Don't break grid alignment for "visual fit" — fix the content, not the grid
+    - Don't overcrowd columns — if content doesn't fit, use more columns or simplify
+    - Don't mix grid systems (e.g., 12-col in one section, 10-col in another)
+    - Don't hardcode pixel widths — use column spans and grid tokens
+    - Don't hide content on mobile just because it doesn't fit — restructure instead
+    - Don't use negative margins to "fix" alignment issues
+  </Card>
+</CardGroup>
+
+---
 
 ### Supported Viewports
 
@@ -525,6 +624,209 @@ The 4-column content grid, 2-column navigation grid, and 3-column side navigatio
 </CardGroup>
 
 <Warning>Never break the grid to "make something fit." If content doesn't align to the grid, revisit the content structure or component sizing — not the grid itself.</Warning>
+
+## Real Usage Examples
+
+<AccordionGroup>
+  <Accordion title="Dashboard Layout" icon="chart-line">
+    - **Desktop**: 12-column grid. KPI cards span 3 cols each (4 per row). Charts span 6 cols (2 per row). Activity feed spans 4 cols as a sidebar.
+    - **Tablet**: KPI cards span 6 cols (2 per row). Charts stack to 12 cols. Sidebar collapses to full-width section below.
+    - **Mobile**: All cards span 4 cols (full width), stacked vertically. Charts use full width with horizontal scroll for dense data.
+    - **Gutters**: 16px between cards. 24px between major sections.
+  </Accordion>
+  <Accordion title="Form Layout" icon="rectangle-list">
+    - **Desktop**: Form spans 8 cols (centered) or 8 cols with 4-col help sidebar. Input fields span 4 cols each (2 per row) or 8 cols (full width for text areas).
+    - **Mobile**: All fields span 4 cols (full width). Labels stack above inputs. Submit button spans full width.
+    - **Spacing**: 16px between form fields. 24px between form sections. 32px before submit actions.
+  </Accordion>
+  <Accordion title="Data Table Layout" icon="table">
+    - **Desktop**: Table spans 12 cols. Columns align to grid columns where possible. Filters in a 3-col sidebar or full-width bar above.
+    - **Mobile**: Table spans 4 cols with horizontal scroll. Key columns (name, status) visible; secondary columns accessible via scroll. Filters collapse into a modal or accordion.
+    - **Alignment**: Table headers align to grid. Cell padding uses spacing tokens (12px horizontal, 8px vertical).
+  </Accordion>
+  <Accordion title="Navigation Layout" icon="bars">
+    - **Desktop (Side Nav Expanded)**: Nav occupies ~280px (4-col equivalent). Content grid shifts right with 12 columns in remaining space.
+    - **Desktop (Side Nav Collapsed)**: Nav rail at ~72-88px. Content grid expands.
+    - **Mobile**: Side nav becomes a slide-in overlay using 3-column grid. Top bar uses 2-column grid (logo left, actions right). Bottom bar uses 2-column grid for tab navigation.
+  </Accordion>
+</AccordionGroup>
+
+## Token Mapping
+
+Grid values are exposed as design tokens for consistent implementation across design and code.
+
+<Tabs>
+  <Tab title="Grid Tokens">
+    | Token | Value | Description |
+    |-------|-------|-------------|
+    | `grid.columns.desktop` | `12` | Number of columns on desktop |
+    | `grid.columns.mobile` | `4` | Number of columns on mobile |
+    | `grid.columns.mobile.nav` | `2` | Columns for mobile top/bottom nav |
+    | `grid.columns.mobile.sidenav` | `3` | Columns for mobile side nav |
+    | `grid.gutter.large` | `24px` | Gutter width at 1920px breakpoint |
+    | `grid.gutter.default` | `16px` | Gutter width at 1440px and below |
+    | `grid.margin.desktop` | `80px` | Outer margin on desktop |
+    | `grid.margin.mobile` | `16px` | Outer margin on mobile |
+    | `grid.max-width` | `1280px` | Maximum content width on 1920+ screens |
+    | `grid.column-width.desktop` | `92px` | Base column width on desktop |
+  </Tab>
+  <Tab title="Breakpoint Tokens">
+    | Token | Value | Description |
+    |-------|-------|-------------|
+    | `breakpoint.desktop.large` | `1920px` | Large desktop / external monitors |
+    | `breakpoint.desktop.default` | `1440px` | Primary design frame |
+    | `breakpoint.desktop.medium` | `1366px` | Enterprise laptop resolution |
+    | `breakpoint.desktop.small` | `1280px` | Compact laptop |
+    | `breakpoint.mobile.large` | `390px` | Default mobile reference |
+    | `breakpoint.mobile.default` | `360px` | Secondary modern devices |
+    | `breakpoint.mobile.small` | `320px` | POS & constrained environments |
+  </Tab>
+  <Tab title="Spacing Integration">
+    Grid tokens connect directly to the TARMAC spacing scale:
+
+    | Grid Element | Spacing Token | Value |
+    |-------------|--------------|-------|
+    | Gutter (default) | `spacing-4` | 16px |
+    | Gutter (large) | `spacing-6` | 24px |
+    | Mobile margin | `spacing-4` | 16px |
+    | Section gap | `spacing-8` to `spacing-12` | 32-48px |
+    | Card gap | `spacing-4` to `spacing-6` | 16-24px |
+    | Form field gap | `spacing-4` | 16px |
+
+    <Info>Always reference spacing tokens for gutters and margins — never hardcode pixel values. This ensures grid spacing stays synchronized with the broader spacing system.</Info>
+  </Tab>
+</Tabs>
+
+## Edge Cases & Anti-patterns
+
+| Scenario | Problem | Solution |
+|----------|---------|----------|
+| Overlapping elements | Components extend beyond their column boundaries | Ensure all components respect column span. Use `overflow: hidden` on grid containers. |
+| Misaligned components | Elements don't align with adjacent grid items | Check that all items use the same grid context. Avoid mixing grid systems. |
+| Breaking grid for "visual fit" | Designer moves element off-grid to "look better" | Revisit content hierarchy or component sizing. The grid is the source of truth. |
+| Inconsistent spacing | Different gutters or margins on the same page | Always use grid tokens. Audit pages for hardcoded spacing values. |
+| Content overflow on mobile | Desktop layout crammed into 4 columns | Redesign for mobile — simplify, stack, or use progressive disclosure. Don't just shrink. |
+| Drawer + side nav conflict | Side drawer opens while side nav is expanded | Define clear z-index and overlay rules. Drawer should overlay content, not push nav. |
+| Ultra-wide monitors (2560px+) | Content stretches too wide, poor readability | Grid locks to 1280px max-width, centered. Background fills remaining space. |
+| Nested grids | Grid inside a grid creates alignment conflicts | Avoid nesting grids. Use column spans within the parent grid instead. |
+
+## Implementation Guidelines
+
+<Steps>
+  <Step title="Set Up the Grid Container">
+    Define the grid container with 12 columns on desktop, 4 on mobile. Use CSS Grid or Flexbox with the grid tokens.
+
+    ```css
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--grid-gutter-default); /* 16px */
+      max-width: var(--grid-max-width); /* 1280px */
+      margin: 0 auto;
+      padding: 0 var(--grid-margin-desktop); /* 80px */
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 var(--grid-margin-mobile); /* 16px */
+      }
+    }
+    ```
+  </Step>
+  <Step title="Handle Breakpoints">
+    Use breakpoint tokens to define responsive behavior. Content should adapt at each defined breakpoint.
+
+    ```css
+    /* Large desktop */
+    @media (min-width: 1920px) {
+      .grid-container {
+        gap: var(--grid-gutter-large); /* 24px */
+      }
+    }
+
+    /* Medium desktop */
+    @media (max-width: 1366px) {
+      .grid-container {
+        max-width: 100%;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--grid-gutter-default);
+      }
+    }
+    ```
+  </Step>
+  <Step title="Use Column Spans">
+    Apply column spans to child elements using `grid-column`.
+
+    ```css
+    /* Full width */
+    .span-12 { grid-column: span 12; }
+
+    /* Half width */
+    .span-6 { grid-column: span 6; }
+
+    /* Third width */
+    .span-4 { grid-column: span 4; }
+
+    /* Quarter width */
+    .span-3 { grid-column: span 3; }
+
+    /* With offset */
+    .offset-2 { grid-column-start: 3; }
+    .offset-4 { grid-column-start: 5; }
+
+    /* Mobile: everything full width */
+    @media (max-width: 768px) {
+      [class*="span-"] {
+        grid-column: span 4;
+      }
+    }
+    ```
+  </Step>
+  <Step title="Handle Side Navigation">
+    When side navigation is present, wrap the layout in a flex container with the nav and grid as siblings.
+
+    ```css
+    .layout {
+      display: flex;
+    }
+
+    .side-nav {
+      width: 280px; /* expanded */
+      flex-shrink: 0;
+    }
+
+    .side-nav.collapsed {
+      width: 72px;
+    }
+
+    .main-content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--grid-gutter-default);
+    }
+    ```
+  </Step>
+  <Step title="Test at All Breakpoints">
+    Verify layouts at every defined viewport:
+    - 1920 × 1080 (large desktop)
+    - 1440 × 942 (default)
+    - 1366 × 768 (medium)
+    - 1280 × 832 (small desktop)
+    - 390 × 844 (large mobile)
+    - 360 × 800 (default mobile)
+    - 320 × 568 (small mobile)
+
+    <Tip>Use browser DevTools responsive mode to test each breakpoint. Pay special attention to column collapse behavior and content stacking order.</Tip>
+  </Step>
+</Steps>
 
 ---
 
