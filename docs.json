@@ -69,6 +69,7 @@
                   "components/snackbar",
                   "components/accordion",
                   "components/coachmarks",
+                  "components/tabs",
                   "components/tooltip"
                 ]
               },

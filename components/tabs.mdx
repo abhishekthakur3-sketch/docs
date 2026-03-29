@@ -1,0 +1,523 @@
+---
+title: Tabs & Tab Group
+description: Tabs are navigation components that allow users to switch between related content sections within the same page context.
+icon: "table-columns"
+---
+
+## Overview
+
+Tabs are navigation components that organize content into switchable sections. Each tab cell acts as an interactive control, and tab groups arrange these cells horizontally or vertically. The system supports rich optional elements like icons, badges, pills, and subtext for contextual metadata.
+
+<CardGroup cols={3}>
+  <Card title="3 Styles" icon="palette">
+    Black (Default), Blue, DLV Red
+  </Card>
+  <Card title="2 Orientations" icon="arrows-left-right">
+    Horizontal and Vertical
+  </Card>
+  <Card title="2–8 Tabs" icon="layer-group">
+    Configurable tab count per group
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with tabs component preview from Figma (page: Tabs & Tab Group ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Tabs Component Preview — Replace with /assets/components/tabs/tabs-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Horizontal">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', borderBottom:'2px solid #E5E5E5'}}>
+        <div style={{padding:'12px 20px', fontSize:'14px', fontWeight:600, borderBottom:'2px solid #000', marginBottom:'-2px'}}>Dashboard</div>
+        <div style={{padding:'12px 20px', fontSize:'14px', opacity:0.5}}>Analytics</div>
+        <div style={{padding:'12px 20px', fontSize:'14px', opacity:0.5}}>Settings</div>
+        <div style={{padding:'12px 20px', fontSize:'14px', opacity:0.3}}>Reports (disabled)</div>
+      </div>
+      <div style={{padding:'16px 0', fontSize:'13px', opacity:0.6}}>Dashboard content area</div>
+    </div>
+  </Tab>
+  <Tab title="Vertical">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', gap:'16px'}}>
+        <div style={{display:'flex', flexDirection:'column', borderRight:'2px solid #E5E5E5', paddingRight:'16px', minWidth:'140px'}}>
+          <div style={{padding:'10px 16px', fontSize:'14px', fontWeight:600, borderRight:'2px solid #000', marginRight:'-18px'}}>General</div>
+          <div style={{padding:'10px 16px', fontSize:'14px', opacity:0.5}}>Security</div>
+          <div style={{padding:'10px 16px', fontSize:'14px', opacity:0.5}}>Notifications</div>
+          <div style={{padding:'10px 16px', fontSize:'14px', opacity:0.5}}>Billing</div>
+        </div>
+        <div style={{padding:'10px 0', fontSize:'13px', opacity:0.6, flex:1}}>General settings content area</div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Button Style">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', gap:'4px', marginBottom:'16px'}}>
+        <div style={{background:'#000', color:'#FFF', padding:'8px 16px', borderRadius:'6px', fontSize:'13px'}}>All</div>
+        <div style={{background:'#F0F0F0', padding:'8px 16px', borderRadius:'6px', fontSize:'13px'}}>Active</div>
+        <div style={{background:'#F0F0F0', padding:'8px 16px', borderRadius:'6px', fontSize:'13px'}}>Completed</div>
+        <div style={{background:'#F0F0F0', padding:'8px 16px', borderRadius:'6px', fontSize:'13px', opacity:0.4}}>Archived</div>
+      </div>
+      <div style={{fontSize:'13px', opacity:0.6}}>All items content area</div>
+    </div>
+  </Tab>
+  <Tab title="Color Styles">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Black (Default)</div><div style={{display:'flex', borderBottom:'2px solid #E5E5E5'}}><div style={{padding:'10px 16px', fontSize:'13px', fontWeight:600, borderBottom:'2px solid #000', marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'10px 16px', fontSize:'13px', opacity:0.5}}>Tab 2</div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Blue</div><div style={{display:'flex', borderBottom:'2px solid #E5E5E5'}}><div style={{padding:'10px 16px', fontSize:'13px', fontWeight:600, color:'#2396FB', borderBottom:'2px solid #2396FB', marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'10px 16px', fontSize:'13px', opacity:0.5}}>Tab 2</div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>DLV Red</div><div style={{display:'flex', borderBottom:'2px solid #E5E5E5'}}><div style={{padding:'10px 16px', fontSize:'13px', fontWeight:600, color:'#ED1B36', borderBottom:'2px solid #ED1B36', marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'10px 16px', fontSize:'13px', opacity:0.5}}>Tab 2</div></div></div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Only one tab can be active at a time. Selecting a tab updates the associated content panel.</Info>
+
+
+---
+
+## Tab Matrix
+
+Complete reference: every Style × Orientation × State combination. Each tab group supports 2–8 tabs.
+
+<Tabs>
+  <Tab title="Black (Default)">
+    | State | Horizontal | Vertical | Button Style |
+    |-------|-----------|----------|-------------|
+    | Default | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,borderBottom:'2px solid #000',marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 2</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 3</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,borderLeft:'2px solid #000',marginLeft:'-2px'}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.5}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#000',color:'#FFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#F0F0F0',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 2</div></div> |
+    | Hover | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,borderBottom:'2px solid #666',marginBottom:'-2px',background:'#F5F5F5'}}>Tab 2</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 3</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,background:'#F5F5F5',borderLeft:'2px solid #666',marginLeft:'-2px'}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#F0F0F0',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#E0E0E0',padding:'6px 12px',borderRadius:'6px',fontSize:'12px',fontWeight:600}}>Tab 2</div></div> |
+    | Pressed | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,borderBottom:'2px solid #000',marginBottom:'-2px',background:'#EBEBEB'}}>Tab 2</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 3</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,background:'#EBEBEB',borderLeft:'2px solid #000',marginLeft:'-2px'}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#F0F0F0',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#000',color:'#FFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 2</div></div> |
+    | Disabled | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,borderBottom:'2px solid #000',marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,borderLeft:'2px solid #000',marginLeft:'-2px'}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#000',color:'#FFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#F0F0F0',padding:'6px 12px',borderRadius:'6px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> |
+    | Ghost | <div style={{display:'flex',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.4}}>Tab 2</div></div> | <div style={{display:'flex',flexDirection:'column'}}><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.4}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'transparent',border:'1px solid #000',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{padding:'6px 12px',borderRadius:'6px',fontSize:'12px',opacity:0.4}}>Tab 2</div></div> |
+  </Tab>
+  <Tab title="Blue">
+    | State | Horizontal | Vertical | Button Style |
+    |-------|-----------|----------|-------------|
+    | Default | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,color:'#2396FB',borderBottom:'2px solid #2396FB',marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 2</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 3</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,color:'#2396FB',borderLeft:'2px solid #2396FB',marginLeft:'-2px'}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.5}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#2396FB',color:'#FFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#EBF5FF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 2</div></div> |
+    | Hover | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,color:'#2396FB',borderBottom:'2px solid #2396FB',marginBottom:'-2px',background:'#EBF5FF'}}>Tab 2</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,color:'#2396FB',background:'#EBF5FF',borderLeft:'2px solid #2396FB',marginLeft:'-2px'}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#EBF5FF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#D6ECFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px',fontWeight:600,color:'#2396FB'}}>Tab 2</div></div> |
+    | Disabled | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,color:'#2396FB',borderBottom:'2px solid #2396FB',marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,color:'#2396FB',borderLeft:'2px solid #2396FB',marginLeft:'-2px'}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#2396FB',color:'#FFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#EBF5FF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> |
+  </Tab>
+  <Tab title="DLV Red">
+    | State | Horizontal | Vertical | Button Style |
+    |-------|-----------|----------|-------------|
+    | Default | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,color:'#ED1B36',borderBottom:'2px solid #ED1B36',marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 2</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 3</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,color:'#ED1B36',borderLeft:'2px solid #ED1B36',marginLeft:'-2px'}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.5}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#ED1B36',color:'#FFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#FDEAED',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 2</div></div> |
+    | Hover | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,color:'#ED1B36',borderBottom:'2px solid #ED1B36',marginBottom:'-2px',background:'#FDEAED'}}>Tab 2</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.5}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,color:'#ED1B36',background:'#FDEAED',borderLeft:'2px solid #ED1B36',marginLeft:'-2px'}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#FDEAED',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#FBD5DA',padding:'6px 12px',borderRadius:'6px',fontSize:'12px',fontWeight:600,color:'#ED1B36'}}>Tab 2</div></div> |
+    | Disabled | <div style={{display:'flex',borderBottom:'2px solid #E5E5E5',width:'100%'}}><div style={{padding:'8px 14px',fontSize:'12px',fontWeight:600,color:'#ED1B36',borderBottom:'2px solid #ED1B36',marginBottom:'-2px'}}>Tab 1</div><div style={{padding:'8px 14px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> | <div style={{display:'flex',flexDirection:'column',borderLeft:'2px solid #E5E5E5'}}><div style={{padding:'6px 14px',fontSize:'12px',fontWeight:600,color:'#ED1B36',borderLeft:'2px solid #ED1B36',marginLeft:'-2px'}}>Tab 1</div><div style={{padding:'6px 14px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> | <div style={{display:'flex',gap:'4px'}}><div style={{background:'#ED1B36',color:'#FFF',padding:'6px 12px',borderRadius:'6px',fontSize:'12px'}}>Tab 1</div><div style={{background:'#FDEAED',padding:'6px 12px',borderRadius:'6px',fontSize:'12px',opacity:0.3}}>Tab 2</div></div> |
+  </Tab>
+</Tabs>
+
+---
+
+## Types
+
+| Type | Description | Use Case |
+|------|-------------|----------|
+| Regular | Underline indicator on active tab, content below/beside | Primary navigation within a page section |
+| Button Style | Pill/chip-shaped tabs with filled active state | Filters, toggles, compact navigation |
+
+---
+
+## Anatomy
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'240px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Tab Cell Anatomy — Replace with /assets/components/tabs/tab-anatomy.png</div>
+</div>
+
+A single tab cell can contain up to 9 optional elements:
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Checkbox | No | Selection control for multi-select tab patterns |
+| 2 | Status Indicator | No | Dot or icon showing status (active, error, new) |
+| 3 | Leading Icon | No | Icon before the title for visual context |
+| 4 | Title | Yes | Primary label text — the only required element |
+| 5 | Subtext | No | Secondary description below the title |
+| 6 | Badge | No | Status badge attached to the tab |
+| 7 | Notification Count | No | Numeric count indicator |
+| 8 | Pill | No | Pill label for metadata or category |
+| 9 | Trailing Icon | No | Icon after the title (dropdown arrow, close, etc.) |
+
+<Warning>Only the Title is required. All other elements are optional and should be used sparingly to avoid visual clutter.</Warning>
+
+
+---
+
+## Orientations
+
+<Tabs>
+  <Tab title="Horizontal">
+    <div style={{padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', borderBottom:'2px solid #E5E5E5', width:'100%'}}>
+        <div style={{padding:'10px 20px', fontSize:'13px', fontWeight:600, borderBottom:'2px solid #000', marginBottom:'-2px'}}>Overview</div>
+        <div style={{padding:'10px 20px', fontSize:'13px', opacity:0.5}}>Details</div>
+        <div style={{padding:'10px 20px', fontSize:'13px', opacity:0.5}}>History</div>
+        <div style={{padding:'10px 20px', fontSize:'13px', opacity:0.5}}>Settings</div>
+      </div>
+      <div style={{padding:'16px 0', fontSize:'12px', opacity:0.5}}>Tabs flow left-to-right. Active indicator appears as a bottom border. Best for top-level page sections.</div>
+    </div>
+  </Tab>
+  <Tab title="Vertical">
+    <div style={{padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', gap:'16px'}}>
+        <div style={{display:'flex', flexDirection:'column', borderRight:'2px solid #E5E5E5', paddingRight:'16px', minWidth:'140px'}}>
+          <div style={{padding:'8px 14px', fontSize:'13px', fontWeight:600, borderRight:'2px solid #000', marginRight:'-18px'}}>Profile</div>
+          <div style={{padding:'8px 14px', fontSize:'13px', opacity:0.5}}>Security</div>
+          <div style={{padding:'8px 14px', fontSize:'13px', opacity:0.5}}>Preferences</div>
+          <div style={{padding:'8px 14px', fontSize:'13px', opacity:0.5}}>Integrations</div>
+        </div>
+        <div style={{padding:'8px 0', fontSize:'12px', opacity:0.5, flex:1}}>Tabs stack top-to-bottom. Active indicator appears as a right border. Best for settings, sidebars, and secondary navigation.</div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+| Orientation | Indicator Position | Best For |
+|-------------|-------------------|----------|
+| Horizontal | Bottom border | Page sections, primary content switching |
+| Vertical | Right border | Settings panels, sidebar navigation, filters |
+
+---
+
+## Styles
+
+| Style | Active Indicator | Text Color | Use Case |
+|-------|-----------------|------------|----------|
+| Black (Default) | `#000000` border | `#000000` | Standard navigation, neutral contexts |
+| Blue | `#2396FB` border | `#2396FB` | Interactive/informational contexts |
+| DLV Red | `#ED1B36` border | `#ED1B36` | Brand-specific or high-emphasis contexts |
+
+<Tip>Use Black (Default) for most cases. Reserve Blue and DLV Red for contexts where color reinforces meaning or brand identity.</Tip>
+
+---
+
+## Sizes
+
+| Size | Tab Height | Font Size | Padding | Use Case |
+|------|-----------|-----------|---------|----------|
+| Large | 48px | 14px | 12px 20px | Desktop, primary navigation |
+| Small | 36px | 12px | 8px 14px | Mobile, compact layouts, secondary navigation |
+
+<div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+  <div>
+    <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Large (48px)</div>
+    <div style={{display:'flex', borderBottom:'2px solid #E5E5E5'}}>
+      <div style={{padding:'12px 20px', fontSize:'14px', fontWeight:600, borderBottom:'2px solid #000', marginBottom:'-2px'}}>Tab 1</div>
+      <div style={{padding:'12px 20px', fontSize:'14px', opacity:0.5}}>Tab 2</div>
+      <div style={{padding:'12px 20px', fontSize:'14px', opacity:0.5}}>Tab 3</div>
+    </div>
+  </div>
+  <div>
+    <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Small (36px)</div>
+    <div style={{display:'flex', borderBottom:'2px solid #E5E5E5'}}>
+      <div style={{padding:'8px 14px', fontSize:'12px', fontWeight:600, borderBottom:'2px solid #000', marginBottom:'-2px'}}>Tab 1</div>
+      <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5}}>Tab 2</div>
+      <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5}}>Tab 3</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## States
+
+| State | Visual Treatment | Interaction |
+|-------|-----------------|-------------|
+| Default | Normal opacity, no indicator (inactive) or active indicator | Clickable |
+| Hover | Subtle background tint, indicator preview | Pointer cursor |
+| Pressed | Darker background tint, full indicator | Active click |
+| Disabled | 30% opacity, no indicator | Not interactive, `cursor: not-allowed` |
+| Ghost | No border/divider line, minimal chrome | Clickable, ultra-minimal style |
+
+<div style={{display:'flex', gap:'8px', flexWrap:'wrap', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+  <div style={{padding:'10px 18px', fontSize:'13px', fontWeight:600, borderBottom:'2px solid #000'}}>Default (Active)</div>
+  <div style={{padding:'10px 18px', fontSize:'13px', opacity:0.5}}>Default (Inactive)</div>
+  <div style={{padding:'10px 18px', fontSize:'13px', fontWeight:600, background:'#F0F0F0', borderBottom:'2px solid #666'}}>Hover</div>
+  <div style={{padding:'10px 18px', fontSize:'13px', fontWeight:600, background:'#E5E5E5', borderBottom:'2px solid #000'}}>Pressed</div>
+  <div style={{padding:'10px 18px', fontSize:'13px', opacity:0.3}}>Disabled</div>
+  <div style={{padding:'10px 18px', fontSize:'13px', fontWeight:600}}>Ghost</div>
+</div>
+
+
+---
+
+## Tab Count
+
+Tab groups support 2 to 8 tabs. The system adapts layout based on count:
+
+| Count | Layout Behavior |
+|-------|----------------|
+| 2–4 | Tabs distribute evenly or align left |
+| 5–6 | Tabs may require scrolling on mobile |
+| 7–8 | Horizontal scroll recommended; consider vertical orientation |
+
+<div style={{padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+  <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>8-tab example (scroll behavior)</div>
+  <div style={{display:'flex', borderBottom:'2px solid #E5E5E5', overflowX:'auto', width:'100%'}}>
+    <div style={{padding:'8px 14px', fontSize:'12px', fontWeight:600, borderBottom:'2px solid #000', marginBottom:'-2px', whiteSpace:'nowrap'}}>Tab 1</div>
+    <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5, whiteSpace:'nowrap'}}>Tab 2</div>
+    <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5, whiteSpace:'nowrap'}}>Tab 3</div>
+    <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5, whiteSpace:'nowrap'}}>Tab 4</div>
+    <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5, whiteSpace:'nowrap'}}>Tab 5</div>
+    <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5, whiteSpace:'nowrap'}}>Tab 6</div>
+    <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.5, whiteSpace:'nowrap'}}>Tab 7</div>
+    <div style={{padding:'8px 14px', fontSize:'12px', opacity:0.3, whiteSpace:'nowrap'}}>Tab 8</div>
+  </div>
+</div>
+
+<Warning>Avoid exceeding 8 tabs. If you need more, consider restructuring content into nested navigation or a different pattern.</Warning>
+
+---
+
+## Behavior
+
+### Selection
+
+- Only one tab can be active at a time within a group
+- Selecting a tab immediately switches the visible content panel
+- The previously active tab returns to its default (inactive) state
+- A tab group must always have exactly one active tab — empty states are not allowed
+
+### Scrolling
+
+- When tabs overflow the container width, horizontal scrolling is enabled
+- Scroll indicators (fade or arrow) should appear at the edges
+- The active tab should always be scrolled into view automatically
+
+### Content Transition
+
+- Content panels switch instantly (no animation by default)
+- Optional: fade or slide transitions can be applied for smoother UX
+- Content height should adjust dynamically — avoid fixed-height panels
+
+### Responsive Behavior
+
+| Breakpoint | Behavior |
+|-----------|----------|
+| Desktop (≥1024px) | Full tab bar, all tabs visible |
+| Tablet (768–1023px) | Scrollable if >5 tabs |
+| Mobile (<768px) | Scrollable, consider Button Style or vertical orientation |
+
+---
+
+## Tabs vs Accordion vs Pills
+
+| Feature | Tabs | Accordion | Pills |
+|---------|------|-----------|-------|
+| Content switching | One panel visible at a time | Multiple panels can be open | Selection-based filtering |
+| Orientation | Horizontal or Vertical | Vertical only | Horizontal |
+| Best for | Related content sections | FAQ, expandable details | Filters, categories |
+| Tab count | 2–8 | Unlimited sections | Unlimited |
+| Nesting | Not recommended | Supported | Not applicable |
+| Mobile behavior | Scrollable | Stacked | Wrapping |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use tabs to organize related content within the same context
+    - Keep tab labels short (1–2 words)
+    - Always have one tab selected by default
+    - Use consistent tab styles within a page
+    - Provide clear, distinct labels for each tab
+    - Use icons sparingly and only when they add clarity
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use tabs for sequential steps (use Stepper instead)
+    - Don't mix Regular and Button Style in the same group
+    - Don't exceed 8 tabs in a single group
+    - Don't use tabs for primary navigation (use nav bar)
+    - Don't nest tab groups inside tab panels
+    - Don't use long labels that cause wrapping
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Implementation |
+|-------------|---------------|
+| Role | `role="tablist"` on container, `role="tab"` on each tab, `role="tabpanel"` on content |
+| Active state | `aria-selected="true"` on active tab, `"false"` on others |
+| Keyboard — Horizontal | `←` `→` arrow keys to move between tabs |
+| Keyboard — Vertical | `↑` `↓` arrow keys to move between tabs |
+| Home / End | `Home` moves to first tab, `End` moves to last tab |
+| Activation | `Enter` or `Space` activates the focused tab |
+| Focus management | Focus moves to tab, not to panel — panel is linked via `aria-controls` |
+| Disabled tabs | `aria-disabled="true"`, skip in keyboard navigation |
+| Labels | Each tab must have a visible text label or `aria-label` |
+
+<Info>Arrow key navigation should wrap — pressing `→` on the last tab moves focus to the first tab, and vice versa.</Info>
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Spacing">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--tab-padding-x-lg` | `20px` | Horizontal padding, large |
+    | `--tab-padding-x-sm` | `14px` | Horizontal padding, small |
+    | `--tab-padding-y-lg` | `12px` | Vertical padding, large |
+    | `--tab-padding-y-sm` | `8px` | Vertical padding, small |
+    | `--tab-gap` | `0px` | Gap between tabs (Regular) |
+    | `--tab-button-gap` | `4px` | Gap between tabs (Button Style) |
+    | `--tab-group-gap` | `0px` | Gap between tab bar and content |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--tab-active-black` | `#000000` | Active indicator, Black style |
+    | `--tab-active-blue` | `#2396FB` | Active indicator, Blue style |
+    | `--tab-active-red` | `#ED1B36` | Active indicator, DLV Red style |
+    | `--tab-text-active` | `inherit` | Active tab text color |
+    | `--tab-text-inactive` | `rgba(0,0,0,0.5)` | Inactive tab text |
+    | `--tab-text-disabled` | `rgba(0,0,0,0.3)` | Disabled tab text |
+    | `--tab-hover-bg` | `#F5F5F5` | Hover background tint |
+    | `--tab-pressed-bg` | `#EBEBEB` | Pressed background tint |
+    | `--tab-divider` | `#E5E5E5` | Tab bar divider line |
+  </Tab>
+  <Tab title="Typography">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--tab-font-size-lg` | `14px` | Font size, large |
+    | `--tab-font-size-sm` | `12px` | Font size, small |
+    | `--tab-font-weight-active` | `600` | Active tab weight |
+    | `--tab-font-weight-inactive` | `400` | Inactive tab weight |
+    | `--tab-font-family` | `Noto Sans` | Tab label typeface |
+  </Tab>
+  <Tab title="Dimensions">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--tab-height-lg` | `48px` | Tab height, large |
+    | `--tab-height-sm` | `36px` | Tab height, small |
+    | `--tab-indicator-width` | `2px` | Active indicator thickness |
+    | `--tab-button-radius` | `6px` | Border radius, Button Style |
+    | `--tab-min-width` | `auto` | Minimum tab width |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+import { Tabs, TabGroup, Tab, TabPanel } from '@tarmac/design-system';
+
+interface TabGroupProps {
+  orientation?: 'horizontal' | 'vertical';  // Default: 'horizontal'
+  style?: 'black' | 'blue' | 'red';         // Default: 'black'
+  type?: 'regular' | 'button';              // Default: 'regular'
+  size?: 'large' | 'small';                 // Default: 'large'
+  defaultActiveKey?: string;                 // Key of initially active tab
+  onChange?: (key: string) => void;          // Callback on tab change
+  children: React.ReactNode;
+}
+
+interface TabProps {
+  tabKey: string;                            // Unique identifier
+  label: string;                             // Tab title (required)
+  icon?: React.ReactNode;                    // Leading icon
+  trailingIcon?: React.ReactNode;            // Trailing icon
+  badge?: React.ReactNode;                   // Badge element
+  pill?: React.ReactNode;                    // Pill element
+  count?: number;                            // Notification count
+  subtext?: string;                          // Secondary text
+  disabled?: boolean;                        // Disable tab
+  children: React.ReactNode;                 // Panel content
+}
+```
+
+```tsx Usage
+// Horizontal tabs — Black style, Large size
+<TabGroup
+  orientation="horizontal"
+  style="black"
+  size="large"
+  defaultActiveKey="dashboard"
+  onChange={(key) => console.log('Active:', key)}
+>
+  <Tab tabKey="dashboard" label="Dashboard" icon={<DashboardIcon />}>
+    <DashboardPanel />
+  </Tab>
+  <Tab tabKey="analytics" label="Analytics" count={5}>
+    <AnalyticsPanel />
+  </Tab>
+  <Tab tabKey="settings" label="Settings">
+    <SettingsPanel />
+  </Tab>
+  <Tab tabKey="reports" label="Reports" disabled>
+    <ReportsPanel />
+  </Tab>
+</TabGroup>
+
+// Button Style — Blue, Small
+<TabGroup type="button" style="blue" size="small">
+  <Tab tabKey="all" label="All" />
+  <Tab tabKey="active" label="Active" pill={<Pill>12</Pill>} />
+  <Tab tabKey="completed" label="Completed" />
+</TabGroup>
+
+// Vertical orientation
+<TabGroup orientation="vertical" style="black" size="large">
+  <Tab tabKey="profile" label="Profile" icon={<UserIcon />}>
+    <ProfileSettings />
+  </Tab>
+  <Tab tabKey="security" label="Security" icon={<LockIcon />}>
+    <SecuritySettings />
+  </Tab>
+</TabGroup>
+```
+
+```tsx ARIA
+// Rendered HTML structure
+<div role="tablist" aria-orientation="horizontal">
+  <button
+    role="tab"
+    id="tab-dashboard"
+    aria-selected="true"
+    aria-controls="panel-dashboard"
+    tabIndex={0}
+  >
+    Dashboard
+  </button>
+  <button
+    role="tab"
+    id="tab-analytics"
+    aria-selected="false"
+    aria-controls="panel-analytics"
+    tabIndex={-1}
+  >
+    Analytics
+  </button>
+  <button
+    role="tab"
+    id="tab-reports"
+    aria-selected="false"
+    aria-controls="panel-reports"
+    aria-disabled="true"
+    tabIndex={-1}
+  >
+    Reports
+  </button>
+</div>
+
+<div
+  role="tabpanel"
+  id="panel-dashboard"
+  aria-labelledby="tab-dashboard"
+  tabIndex={0}
+>
+  {/* Dashboard content */}
+</div>
+```
+</CodeGroup>
