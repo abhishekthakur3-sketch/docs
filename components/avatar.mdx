@@ -4,677 +4,208 @@ description: Visual representation of users, entities, or ownership within the i
 icon: "user-circle"
 ---
 
-# Avatar
-
 ## Overview
 
-Avatars represent people, entities, or ownership within the interface. They provide quick visual identification, support recognition in collaborative contexts, and help humanize data-heavy experiences. Avatar Groups extend this by showing multiple participants together, communicating presence, scale, or participation at a glance while conserving space.
+Avatars represent people, entities, or ownership within the interface. They provide quick visual identification, support recognition in collaborative contexts, and help humanize data-heavy experiences.
 
-<CardGroup cols={2}>
-  <Card title="Multiple Variants" icon="images">
-    Image, initials, icon, and numeric display
+<CardGroup cols={3}>
+  <Card title="4 Variants" icon="images">
+    Image, Initials, Icon, and Numeric
   </Card>
-  <Card title="Flexible Sizing" icon="expand">
-    5 sizes from S to XXL
+  <Card title="5 Sizes" icon="expand">
+    S (24px) to XXL (48px)
   </Card>
-  <Card title="Status Indicators" icon="circle-dot">
-    7 status colors with multiple states
-  </Card>
-  <Card title="Accessible" icon="universal-access">
-    Proper alt text and ARIA support
+  <Card title="7 Status Colors" icon="circle-dot">
+    Active, Inactive, Idle, Orange, Cyan, Purple, Pink
   </Card>
 </CardGroup>
 
-## Figma Component Preview
+---
 
-<img
-  src="/assets/components/avatar/avatar-preview.png"
-  alt="Avatar component variants showing image, initials, icon, and numeric types across multiple sizes and states"
-  style={{
-    width: '100%',
-    borderRadius: '8px',
-    marginTop: '16px',
-    border: '1px solid #e5e7eb',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-    background: '#fff'
-  }}
-/>
+## Component Preview
 
-
-<Info>
-This preview shows the complete Avatar system including:
-- **Types:** Image, Initials, Icon, Numeric
-- **Shapes:** Circle and Rounded Square
-- **Sizes:** S, M, L, XL, XXL
-- **States:** Default, Hover, Focused, Disabled
-</Info>
+{/* 🎨 DESIGNER: Replace with avatar preview from Figma */}
+<img src="/assets/components/avatar/avatar-preview.png" alt="Avatar component variants" style={{width:'100%', borderRadius:'8px', border:'1px solid #e5e7eb', background:'#fff'}} />
 
 ---
 
 ## Anatomy
 
-<img
-  src="/assets/components/avatar/avatar-anatomy.png"
-  alt="Avatar component anatomy showing container, content, initials text, and status indicator"
-  style={{
-    width: '100%',
-    borderRadius: '8px',
-    marginTop: '16px',
-    border: '1px solid #e5e7eb',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-    background: '#fff'
-  }}
-/>
-
-The Avatar component is composed of four core elements that together create the visual representation of a user or entity.
-
-### Anatomy Elements
+<img src="/assets/components/avatar/avatar-anatomy.png" alt="Avatar anatomy" style={{width:'100%', borderRadius:'8px', border:'1px solid #e5e7eb', background:'#fff'}} />
 
 | Element | Description |
-|-------|-------------|
-| **Container** | Circular or square wrapper that defines the avatar boundary |
-| **Background** | Visual background used when image is not available |
-| **Content** | Image, initials, icon, or numeric indicator |
-| **Status Indicator** | Optional presence indicator (online, idle, offline) |
+|---------|-------------|
+| Container | Circular or square wrapper defining the avatar boundary |
+| Background | Visual fill when image is not available |
+| Content | Image, initials, icon, or numeric indicator |
+| Status Indicator | Optional presence dot (online, idle, offline) |
 
-<Info>
-The container shape adapts based on context:  
-• **Circle** → Used for people or user identities  
-• **Rounded Square** → Used for structured layouts or grids
-</Info>
+---
+
+## Variants
+
+| Variant | Content | When to Use |
+|---------|---------|-------------|
+| Image | User photo | Preferred when image is available |
+| Initials | 1–2 characters | Fallback when no image exists |
+| Icon | Generic icon | System accounts or placeholders |
+| Numeric | Count (e.g. +2) | Overflow in Avatar Groups |
+
+## Shapes
+
+| Shape | Usage |
+|-------|-------|
+| Circle | Default for people and user identities |
+| Rounded Square | Structured layouts, grids, container alignment |
+
+---
+
+## Sizes
+
+| Size | Dimensions | Usage |
+|------|------------|-------|
+| S | 24px | Compact lists, inline mentions, dense tables |
+| M | 28px | Standard lists, compact navigation |
+| L | 36px | Default size, user profiles |
+| XL | 40px | Prominent displays, headers |
+| XXL | 48px | Profile pages, hero sections |
+
+---
+
+## States
+
+| State | Behavior |
+|-------|----------|
+| Default | Standard representation, no interaction |
+| Hover | Subtle background change, pointer cursor, 150ms transition |
+| Focused | Visible 2px focus ring for keyboard navigation |
+| Disabled | 40–50% opacity, no hover effects, not-allowed cursor |
+| Ghost | Ultra-light variant with minimal visual weight |
+| Loading | Skeleton shimmer, maintains dimensions, prevents layout shift |
+
+---
+
+## Status Indicators
+
+| Status | Color | Usage |
+|--------|-------|-------|
+| Active | Green | User is online and active |
+| Inactive | Gray | User is offline |
+| Idle | Yellow | User is away |
+| Orange | Orange | Busy, in meeting |
+| Cyan | Cyan | Available, focus mode |
+| Purple | Purple | Do not disturb |
+| Pink | Pink | Custom state |
+
+Status indicator sizes: 12px (L/XL/XXL avatars), 10px (M), 8px (S).
 
 ---
 
 ## Avatar Group
 
-<img 
-  src="/assets/components/avatar/avatar-group-preview.png"
-  alt="Avatar group showing multiple users with overflow count"
-  style={{
-    width: '100%',
-    borderRadius: '8px',
-    marginTop: '16px',
-    border: '1px solid #e5e7eb',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-    background: '#fff'
-  }}
-/>
+<img src="/assets/components/avatar/avatar-group-preview.png" alt="Avatar group" style={{width:'100%', borderRadius:'8px', border:'1px solid #e5e7eb', background:'#fff'}} />
 
-Avatar Groups display multiple participants together while conserving space.  
-When the number of avatars exceeds the visible limit, a numeric indicator appears (e.g., **+2**).
+Avatar Groups display multiple participants together. When avatars exceed the visible limit, a numeric indicator appears (e.g. +5). Supports all sizes and both shapes.
 
-<Info>The container shape adapts based on context - circular for people and user-related entities, rounded square for alignment with containers or grids.</Info>
-
-## Variants
-
-Avatars support multiple content types to adapt to context and data availability:
-
-### Image Avatar
-User or entity photo. This is the preferred variant when images are available.
-
-```jsx
-<Avatar src="/user-photo.jpg" alt="John Doe" />
-```
-
-<Tip>Image avatars always take priority when available.</Tip>
-
-### Initials Avatar
-Fallback using 1-2 characters representing the user's name.
-
-```jsx
-<Avatar initials="JD" />
-```
-
-<Note>Initials are centered and truncated to fit size.</Note>
-
-### Icon Avatar
-Generic or role-based representation for system accounts or placeholders.
-
-```jsx
-<Avatar icon="user" />
-```
-
-<Note>Icon avatars act as neutral placeholders when no user data exists.</Note>
-
-### Numeric Avatar
-Count indicator (e.g., +2) used in grouped or overflow contexts.
-
-```jsx
-<Avatar numeric="+2" />
-```
-
-<Warning>Numeric avatars are used only in grouped or overflow contexts, typically within Avatar Groups.</Warning>
-
-## Shapes
-
-Avatars are available in two shape variants:
-
-### Rounded (Circle)
-Default for people and user-related entities. Provides a friendly, approachable appearance.
-
-```jsx
-<Avatar shape="circle" src="/user.jpg" />
-```
-
-### Rounded Square
-Used where alignment with containers or grids is required. Provides better visual alignment in structured layouts.
-
-```jsx
-<Avatar shape="square" src="/user.jpg" />
-```
-
-## Sizes
-
-Avatars are available in a consistent size scale:
-
-| Size | Dimensions | Usage |
-|------|------------|-------|
-| **S (Small)** | 24px | Compact lists, inline mentions, dense tables |
-| **M (Medium)** | 28px | Standard lists, compact navigation |
-| **L (Large)** | 36px | Default size, user profiles |
-| **XL (Extra Large)** | 40px | Prominent displays, headers |
-| **XXL (2X Large)** | 48px | Profile pages, hero sections, featured content |
-
-## States
-
-All avatar types support the following states:
-
-### Default
-Standard representation with no user interaction.
-
-### Hover
-Interactive feedback where applicable.
-- Subtle background color change
-- Cursor changes to pointer
-- Smooth transition (150ms)
-
-### Focused (Selected)
-Indicates active or chosen state.
-- Visible focus ring for keyboard navigation
-- 2px outline with high contrast
-- Maintains accessibility standards
-
-### Disabled
-Reduced emphasis and non-interactive.
-- Reduced opacity (40-50%)
-- No hover effects
-- Cursor shows not-allowed
-- Not keyboard focusable
-
-### Ghost
-Ultra-light variant with minimal visual weight.
-- Very low opacity background
-- Used for secondary or tertiary contexts
-- Maintains content visibility
-
-## Interaction Behavior
-
-### Non-Interactive (Default)
-- No hover or click effects
-- Static display element
-- Used for identification only
-- No keyboard focus
-
-### Interactive (Clickable)
-- Hover state shows clickability
-- Cursor changes to pointer
-- Focus ring for keyboard navigation
-- Triggers profile view or action on click
-- Smooth transition effects (150ms)
-
-### Loading State
-- Skeleton shimmer animation
-- Maintains avatar dimensions
-- Smooth transition when image loads
-- Prevents layout shift
+---
 
 ## Usage Guidelines
 
-<AccordionGroup>
-  <Accordion title="When to Use" icon="check">
-    - Representing users in lists, tables, or navigation
-    - Displaying comment or message authors
-    - Showing team members or collaborators
-    - Indicating account ownership or attribution
-    - Profile headers and user cards
-  </Accordion>
-  
-  <Accordion title="When Not to Use" icon="xmark">
-    - For decorative images unrelated to user identity
-    - When displaying product images or general content
-    - For icons that represent actions rather than entities
-    - When a full profile card would be more appropriate
-  </Accordion>
-</AccordionGroup>
-
-### Do's and Don'ts
-
 <CardGroup cols={2}>
-  <Card title="✓ Do" icon="check" color="#10b981">
-    **Provide meaningful alt text**
-    - "John Doe's profile picture"
-    - "Sarah Smith"
-    
-    **Use fallback chain**
-    - Image → Initials → Icon
-    
-    **Maintain consistency**
-    - Same size in same context
-    - Consistent spacing (8px)
-    
-    **Handle loading states**
-    - Show skeleton while loading
-    - Graceful error handling
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Provide meaningful alt text ("John Doe", not "avatar")
+    - Use fallback chain: Image → Initials → Icon
+    - Keep same size and shape within a context
+    - Handle loading states with skeleton
   </Card>
-  
-  <Card title="✗ Don't" icon="xmark" color="#ef4444">
-    **Avoid generic alt text**
-    - ~~"Avatar"~~
-    - ~~"Profile picture"~~
-    
-    **Don't mix shapes**
-    - Keep circular or square consistent
-    
-    **Don't use low quality images**
-    - Ensure proper resolution
-    - Optimize file sizes
-    
-    **Don't forget accessibility**
-    - Missing alt text
-    - Poor contrast on initials
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use for decorative images unrelated to identity
+    - Don't mix circle and square shapes in the same list
+    - Don't use low-resolution images
+    - Don't skip alt text or aria-labels
   </Card>
 </CardGroup>
 
-<Tip>Use a consistent fallback chain: try image first, then initials, then generic icon.</Tip>
-
-<Warning>Always provide descriptive alt text for screen readers - avoid generic descriptions like "avatar" or "profile picture".</Warning>
+---
 
 ## Accessibility
 
-<Info>Avatars must be accessible to all users, including those using assistive technologies.</Info>
+| Requirement | Guideline |
+|-------------|-----------|
+| Alt text | Descriptive — include person's name, not "avatar" |
+| ARIA labels | `aria-label="John Doe"` for initials/icon variants |
+| Keyboard | Tab to focus, Enter/Space to activate (if interactive) |
+| Focus ring | 2px visible outline with high contrast |
+| Status | Communicate via `aria-label` — don't rely on color alone |
+| Contrast | Initials text ≥ 4.5:1 ratio against background |
 
-### ARIA Labels and Alt Text
-
-<CodeGroup>
-```jsx Image Avatar
-<Avatar 
-  src="/user.jpg" 
-  alt="John Doe's profile picture"
-  aria-label="John Doe"
-/>
-```
-
-```jsx Initials Avatar
-<Avatar 
-  initials="JD"
-  aria-label="John Doe"
-/>
-```
-
-```jsx Icon Avatar
-<Avatar 
-  icon="user"
-  aria-label="Guest user"
-/>
-```
-
-```jsx Clickable Avatar
-<Avatar 
-  src="/user.jpg"
-  alt="John Doe's profile picture"
-  onClick={viewProfile}
-  role="button"
-  tabIndex={0}
-/>
-```
-</CodeGroup>
-
-### Keyboard Navigation (Interactive Avatars)
-
-<ResponseField name="Tab" type="key">
-  Move focus to avatar
-</ResponseField>
-
-<ResponseField name="Enter / Space" type="key">
-  Activate avatar action (view profile, etc.)
-</ResponseField>
-
-### Accessibility Checklist
-
-<AccordionGroup>
-  <Accordion title="✓ Images & Alt Text" icon="image">
-    - [ ] All images have descriptive alt text
-    - [ ] Alt text includes person's name
-    - [ ] Avoid generic descriptions ("avatar", "profile")
-    - [ ] Decorative avatars use alt=""
-  </Accordion>
-  
-  <Accordion title="✓ Initials & Contrast" icon="text">
-    - [ ] Initials contrast ratio ≥ 4.5:1
-    - [ ] Background provides sufficient contrast
-    - [ ] Font size is readable
-    - [ ] aria-label provides full name
-  </Accordion>
-  
-  <Accordion title="✓ Interactive Avatars" icon="hand-pointer">
-    - [ ] Keyboard accessible (Tab key)
-    - [ ] Visible focus indicator
-    - [ ] role="button" if clickable
-    - [ ] Activatable with Enter/Space
-    - [ ] Clear hover state
-  </Accordion>
-  
-  <Accordion title="✓ Status Indicators" icon="circle-dot">
-    - [ ] Status communicated via aria-label
-    - [ ] Don't rely on color alone
-    - [ ] Include text alternative
-    - [ ] Example: aria-label="John Doe, online"
-  </Accordion>
-</AccordionGroup>
-
-### Screen Reader Announcements
-
-| Avatar Type | Announcement Example |
-|-------------|---------------------|
-| Image | "John Doe's profile picture" |
-| Initials | "John Doe" |
-| Icon | "Guest user" |
-| With Status | "John Doe, online" |
-| Clickable | "John Doe, button" |
-
-### Color Contrast Requirements
-
-- Initials text: ≥ 4.5:1 contrast ratio (WCAG AA)
-- Focus indicators: ≥ 3:1 contrast ratio
-- Status indicators: Don't rely on color alone
-
-## Status Indicators
-
-Avatars can display status indicators to show user availability or state:
-
-| Status | Color | Usage |
-|--------|-------|-------|
-| **Active** | Green | User is online and active |
-| **Inactive** | Gray | User is offline |
-| **Idle** | Yellow | User is away or idle |
-| **Orange** | Orange | Custom status (busy, in meeting) |
-| **Cyan** | Cyan | Custom status (available, focus mode) |
-| **Purple** | Purple | Custom status (do not disturb) |
-| **Pink** | Pink | Custom status (custom state) |
-
-Status indicators are available in two sizes:
-- **Large**: 12px diameter (for XL and XXL avatars)
-- **XLarge**: 16px diameter (for XXL avatars)
-
-```jsx
-<Avatar src="/user.jpg" status="active" />
-<Avatar initials="JD" status="idle" />
-```
+---
 
 ## Design Tokens
 
 <Tabs>
   <Tab title="Sizing">
-    <ParamField path="avatar-size-s" type="dimension" default="24px">
-      Small avatar size
-    </ParamField>
-    <ParamField path="avatar-size-m" type="dimension" default="28px">
-      Medium avatar size
-    </ParamField>
-    <ParamField path="avatar-size-l" type="dimension" default="36px">
-      Large avatar size (default)
-    </ParamField>
-    <ParamField path="avatar-size-xl" type="dimension" default="40px">
-      Extra large avatar size
-    </ParamField>
-    <ParamField path="avatar-size-xxl" type="dimension" default="48px">
-      2X large avatar size
-    </ParamField>
+    | Token | Value |
+    |-------|-------|
+    | `avatar-size-s` | 24px |
+    | `avatar-size-m` | 28px |
+    | `avatar-size-l` | 36px |
+    | `avatar-size-xl` | 40px |
+    | `avatar-size-xxl` | 48px |
   </Tab>
-  
   <Tab title="Colors">
-    <ParamField path="avatar-bg-default" type="color" default="#f5f5f5">
-      Default background color
-    </ParamField>
-    <ParamField path="avatar-text-default" type="color" default="#666666">
-      Default text color (initials)
-    </ParamField>
-    <ParamField path="avatar-border-default" type="color" default="#e0e0e0">
-      Default border color
-    </ParamField>
-    <ParamField path="avatar-border-focus" type="color" default="#000000">
-      Focus ring color
-    </ParamField>
+    | Token | Value |
+    |-------|-------|
+    | `avatar-bg-default` | #F5F5F5 |
+    | `avatar-text-default` | #666666 |
+    | `avatar-border-default` | #E0E0E0 |
+    | `avatar-border-focus` | #000000 |
   </Tab>
-  
   <Tab title="Shape">
-    <ParamField path="avatar-border-radius" type="dimension" default="50%">
-      Border radius for circular avatars
-    </ParamField>
-    <ParamField path="avatar-border-radius-square" type="dimension" default="8px">
-      Border radius for rounded square avatars
-    </ParamField>
-    <ParamField path="avatar-border-width" type="dimension" default="2px">
-      Border width
-    </ParamField>
-  </Tab>
-  
-  <Tab title="Status Indicators">
-    <ParamField path="avatar-status-size-large" type="dimension" default="12px">
-      Status indicator size for large avatars
-    </ParamField>
-    <ParamField path="avatar-status-size-xlarge" type="dimension" default="16px">
-      Status indicator size for xlarge avatars
-    </ParamField>
-    <ParamField path="avatar-status-border" type="dimension" default="2px">
-      Status indicator border width
-    </ParamField>
-    <ParamField path="avatar-status-active" type="color" default="#10b981">
-      Active/online status color (green)
-    </ParamField>
-    <ParamField path="avatar-status-inactive" type="color" default="#9ca3af">
-      Inactive/offline status color (gray)
-    </ParamField>
-    <ParamField path="avatar-status-idle" type="color" default="#f59e0b">
-      Idle/away status color (yellow)
-    </ParamField>
-    <ParamField path="avatar-status-orange" type="color" default="#f97316">
-      Custom orange status
-    </ParamField>
-    <ParamField path="avatar-status-cyan" type="color" default="#06b6d4">
-      Custom cyan status
-    </ParamField>
-    <ParamField path="avatar-status-purple" type="color" default="#a855f7">
-      Custom purple status
-    </ParamField>
-    <ParamField path="avatar-status-pink" type="color" default="#ec4899">
-      Custom pink status
-    </ParamField>
+    | Token | Value |
+    |-------|-------|
+    | `avatar-border-radius` | 50% (circle) |
+    | `avatar-border-radius-square` | 8px |
+    | `avatar-border-width` | 2px |
   </Tab>
 </Tabs>
 
-### Token Usage Example
+---
 
-```css
-.avatar {
-  width: var(--avatar-size-l);
-  height: var(--avatar-size-l);
-  border-radius: var(--avatar-border-radius);
-  background: var(--avatar-bg-default);
-  color: var(--avatar-text-default);
-  border: var(--avatar-border-width) solid var(--avatar-border-default);
-}
+## Developer Handoff
 
-.avatar-circle {
-  border-radius: var(--avatar-border-radius); /* 50% */
-}
-
-.avatar-square {
-  border-radius: var(--avatar-border-radius-square); /* 8px */
-}
-
-.avatar:focus {
-  outline: 2px solid var(--avatar-border-focus);
-  outline-offset: 2px;
-}
-
-.avatar-status {
-  width: var(--avatar-status-size-large);
-  height: var(--avatar-status-size-large);
-  border: var(--avatar-status-border) solid white;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.avatar-status-active {
-  background: var(--avatar-status-active);
-}
-```
-
-## Avatar Group
-
-Avatar Groups show multiple participants together, communicating presence, scale, or participation at a glance while conserving space.
-
-### Avatar Group Specifications
-
-<Tabs>
-  <Tab title="Sizes">
-    Avatar Groups support all avatar sizes:
-    - **S (Small)**: 24px avatars
-    - **M (Medium)**: 28px avatars  
-    - **L (Large)**: 36px avatars
-    - **XL (Extra Large)**: 40px avatars
-    - **XXL (2X Large)**: 48px avatars
-  </Tab>
-  
-  <Tab title="Shapes">
-    - **Rounded (Circle)**: Default for people
-    - **Square**: For grid alignment
-  </Tab>
-  
-  <Tab title="States">
-    - **Default**: Standard representation
-    - **Hover**: Interactive feedback
-    - **Focused**: Active or selected state
-    - **Disabled**: Non-interactive state
-  </Tab>
-</Tabs>
-
-<Info>
-Avatar Groups automatically handle overflow by showing a numeric indicator (e.g., +5) when the number of avatars exceeds the maximum display count.
-</Info>
-
-## Engineering Implementation
-
-### Component API
-
-```typescript
+<CodeGroup>
+```tsx Component API
 interface AvatarProps {
-  // Content variants (mutually exclusive)
-  src?: string;           // Image URL
-  alt?: string;           // Image alt text
-  initials?: string;      // 1-2 characters
-  icon?: string;          // Icon identifier
-  numeric?: string;       // Count (e.g., "+5")
-  
-  // Appearance
+  src?: string;
+  alt?: string;
+  initials?: string;
+  icon?: string;
+  numeric?: string;
   size?: 's' | 'm' | 'l' | 'xl' | 'xxl';
   shape?: 'circle' | 'square';
-  
-  // Status indicator (optional)
   status?: 'active' | 'inactive' | 'idle' | 'orange' | 'cyan' | 'purple' | 'pink';
-  
-  // States
   state?: 'default' | 'hover' | 'focused' | 'disabled' | 'ghost';
-  
-  // Interaction
   onClick?: () => void;
   loading?: boolean;
-  
-  // Styling
-  className?: string;
 }
 
 interface AvatarGroupProps {
   children: ReactNode;
-  max?: number;           // Maximum avatars before overflow
+  max?: number;
   size?: 's' | 'm' | 'l' | 'xl' | 'xxl';
   shape?: 'circle' | 'square';
-  state?: 'default' | 'hover' | 'focused' | 'disabled';
-  className?: string;
 }
 ```
 
-### Implementation Notes
+```tsx Usage
+// Image avatar with status
+<Avatar src="/user.jpg" alt="John Doe" size="l" status="active" />
 
-**Content Priority:**
-1. Image avatars always take priority when available
-2. Initials are centered and truncated to fit size
-3. Numeric avatars are used only in grouped or overflow contexts
-4. Icon avatars act as neutral placeholders when no user data exists
-
-**Technical Requirements:**
-- Use `<img>` with proper error handling for image avatars
-- Implement lazy loading for performance optimization
-- Provide graceful fallback chain: image → initials → icon
-- Use CSS `object-fit: cover` for image scaling
-- Implement skeleton loading state for async content
-- Cache loaded images to prevent flickering
-
-**Status Indicators:**
-- Position absolutely at bottom-right of avatar
-- Use 2px white border for contrast
-- Size: 12px for L/XL/XXL, 10px for M, 8px for S
-
-### Code Examples
-
-<CodeGroup>
-```jsx Basic Usage
-// Image avatar
-<Avatar src="/user.jpg" alt="John Doe" size="l" />
-
-// Initials avatar
+// Initials fallback
 <Avatar initials="JD" size="l" />
 
-// Icon avatar
-<Avatar icon="user" size="l" />
-
-// Numeric avatar (for groups)
-<Avatar numeric="+5" size="l" />
-```
-
-```jsx With Status
-// Active status
-<Avatar src="/user.jpg" status="active" />
-
-// Custom status colors
-<Avatar initials="JD" status="cyan" />
-<Avatar src="/user.jpg" status="purple" />
-```
-
-```jsx Different Shapes
-// Circular (default)
-<Avatar src="/user.jpg" shape="circle" />
-
-// Rounded square
-<Avatar src="/user.jpg" shape="square" />
-```
-
-```jsx States
-// Hover state
-<Avatar src="/user.jpg" state="hover" />
-
-// Disabled state
-<Avatar src="/user.jpg" state="disabled" />
-
-// Ghost variant
-<Avatar initials="AB" state="ghost" />
-```
-
-```jsx Avatar Group
-// Basic group with overflow
+// Avatar Group with overflow
 <AvatarGroup max={4} size="l">
   <Avatar src="/user1.jpg" alt="User 1" />
   <Avatar src="/user2.jpg" alt="User 2" />
@@ -682,28 +213,5 @@ interface AvatarGroupProps {
   <Avatar src="/user4.jpg" alt="User 4" />
   <Avatar src="/user5.jpg" alt="User 5" />
 </AvatarGroup>
-
-// Square shape group
-<AvatarGroup shape="square" max={3}>
-  <Avatar src="/user1.jpg" />
-  <Avatar src="/user2.jpg" />
-  <Avatar src="/user3.jpg" />
-  <Avatar numeric="+5" />
-</AvatarGroup>
-```
-
-```jsx Interactive
-// Clickable avatar
-<Avatar 
-  src="/user.jpg" 
-  alt="John Doe"
-  onClick={() => navigateToProfile()}
-/>
-
-// With loading state
-<Avatar 
-  src="/user.jpg" 
-  loading={isLoading}
-/>
 ```
 </CodeGroup>
