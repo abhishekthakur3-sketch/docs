@@ -1,0 +1,259 @@
+---
+title: Date/Time Picker
+description: Date and Time Pickers enable users to select dates, times, or date ranges through calendar grids, time selectors, and input fields.
+icon: "calendar-days"
+---
+
+## Overview
+
+The Date/Time Picker system provides structured date and time selection across the product. It includes Calendar views, Date Picker inputs, Time Picker inputs, and a combined Bottom Sheet for mobile. The system supports single date selection, multi-date selection, and time input with both small and large size variants.
+
+<CardGroup cols={3}>
+  <Card title="3 Calendar Variants" icon="calendar">
+    Default, Selected, Multi Selected
+  </Card>
+  <Card title="3 Picker States" icon="clock">
+    Input, Active, Expanded
+  </Card>
+  <Card title="7 Cell States" icon="table-cells">
+    Base, Default, Hover, Focused, Pressed, Disabled, Empty
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with date/time picker preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Date/Time Picker Preview — Replace with /assets/components/date-time-picker/picker-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Calendar">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Calendar — Default, Selected, Multi Selected variants<br/>Replace with /assets/components/date-time-picker/calendar-variants.png</div>
+    </div>
+  </Tab>
+  <Tab title="Date Picker">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Date Picker — Input, Active, Expanded states<br/>Replace with /assets/components/date-time-picker/date-picker.png</div>
+    </div>
+  </Tab>
+  <Tab title="Time Picker">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Time Picker — Input, Active, Expanded states<br/>Replace with /assets/components/date-time-picker/time-picker.png</div>
+    </div>
+  </Tab>
+  <Tab title="Bottom Sheet">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Date/Time Bottom Sheet — Default and Variant2 for mobile<br/>Replace with /assets/components/date-time-picker/bottom-sheet.png</div>
+    </div>
+  </Tab>
+  <Tab title="Number Cells">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'160px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Number Cells — Base, Default, Hover, Focused, Pressed, Disabled, Empty in Small and Large<br/>Replace with /assets/components/date-time-picker/number-cells.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Sub-Components
+
+| Component | Description |
+|-----------|-------------|
+| Calendar | Monthly grid view for date selection (320px width) |
+| Date Picker | Input field that expands to show calendar |
+| Time Picker | Input field for time selection with scroll wheels |
+| Bottom Sheet | Mobile combined date/time picker overlay |
+| Number Cells | Individual day cells within the calendar grid |
+| Text Cells | Time value display cells (date and time text) |
+
+---
+
+## Calendar Variants
+
+| Variant | Description | Use When |
+|---------|-------------|----------|
+| Default | No date selected, current month displayed | Initial state |
+| Selected | Single date highlighted | Single date selection |
+| Multi Selected | Date range with start/end highlighted | Date range selection |
+
+---
+
+## Number Cell States
+
+| State | Size Small | Size Large | Description |
+|-------|-----------|-----------|-------------|
+| Base | 36px | 40px | Current day indicator |
+| Default | 36px | 40px | Available, unselected day |
+| Hover | 36px | 40px | Pointer over the cell |
+| Focused | 36px | 40px | Keyboard focus active |
+| Pressed | 36px | 40px | Click/tap in progress |
+| Disabled | 36px | 40px | Unavailable date |
+| Empty | 36px | 40px | No date (padding cell) |
+
+---
+
+## Text Cell States
+
+| State | Description |
+|-------|-------------|
+| Base | Placeholder text |
+| Default | Value entered |
+| Focused | Active editing |
+| Disabled | Non-editable |
+
+---
+
+## Picker States
+
+| State | Description |
+|-------|-------------|
+| Input | Collapsed input field showing selected value |
+| Active | Input focused, ready for interaction |
+| Expanded | Calendar/time selector dropdown visible |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Click date input | Expands calendar dropdown |
+| Click time input | Expands time selector |
+| Click a day cell | Selects the date, updates input |
+| Navigate months | Arrow buttons cycle through months |
+| Select date range | Click start date, then end date |
+| Click outside | Closes expanded picker |
+| Keyboard navigation | Arrow keys move between days |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use Date Picker for date-specific inputs
+    - Use Time Picker for time-specific inputs
+    - Use Bottom Sheet for mobile date/time selection
+    - Disable unavailable dates clearly
+    - Show the current date as a visual anchor
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use a calendar for selecting from a small set of dates
+    - Don't hide the selected date from the input field
+    - Don't allow selection of disabled dates
+    - Don't mix date and time in a single picker without clear separation
+    - Don't use pickers for non-temporal data
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="grid"` for calendar, `role="gridcell"` for day cells |
+| Keyboard | Arrow keys navigate days, Enter selects, Escape closes |
+| Focus | Visible focus ring on active day cell |
+| Screen reader | Announce selected date, month/year context, disabled dates |
+| Label | Associate picker with `aria-label` describing the expected input |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Calendar">
+    | Token | Value |
+    |-------|-------|
+    | `calendar-width` | 320px |
+    | `calendar-cell-size-sm` | 36px |
+    | `calendar-cell-size-lg` | 40px |
+    | `calendar-cell-border-radius` | 50% |
+    | `calendar-selected-bg` | #000000 |
+    | `calendar-selected-text` | #FFFFFF |
+    | `calendar-today-border` | 1px solid #000 |
+    | `calendar-range-bg` | #F0F0F0 |
+    | `calendar-disabled-opacity` | 0.4 |
+  </Tab>
+  <Tab title="Picker">
+    | Token | Value |
+    |-------|-------|
+    | `picker-input-height` | 44px |
+    | `picker-input-border-radius` | 8px |
+    | `picker-dropdown-shadow` | 0 4px 12px rgba(0,0,0,0.12) |
+    | `picker-dropdown-border-radius` | 12px |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface DatePickerProps {
+  value?: Date;
+  onChange?: (date: Date) => void;
+  variant?: 'input' | 'active' | 'expanded';
+  minDate?: Date;
+  maxDate?: Date;
+  disabled?: boolean;
+  placeholder?: string;
+}
+
+interface TimePickerProps {
+  value?: string;
+  onChange?: (time: string) => void;
+  variant?: 'input' | 'active' | 'expanded';
+  format?: '12h' | '24h';
+  disabled?: boolean;
+}
+
+interface CalendarProps {
+  variant?: 'default' | 'selected' | 'multi_selected';
+  selectedDate?: Date;
+  startDate?: Date;
+  endDate?: Date;
+  onSelect?: (date: Date) => void;
+  minDate?: Date;
+  maxDate?: Date;
+  size?: 'sm' | 'lg';
+}
+```
+
+```tsx Usage
+// Date Picker
+<DatePicker
+  placeholder="Select date"
+  onChange={(date) => console.log(date)}
+/>
+
+// Time Picker
+<TimePicker
+  format="12h"
+  onChange={(time) => console.log(time)}
+/>
+
+// Calendar with selection
+<Calendar
+  variant="selected"
+  selectedDate={new Date()}
+  onSelect={handleDateSelect}
+/>
+
+// Date range calendar
+<Calendar
+  variant="multi_selected"
+  startDate={startDate}
+  endDate={endDate}
+  onSelect={handleRangeSelect}
+/>
+```
+</CodeGroup>
