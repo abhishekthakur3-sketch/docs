@@ -1,47 +1,261 @@
 ---
 title: "Iconography"
-description: "Icon system and guidelines for the TARMAC Design System"
+description: "Icon system and guidelines for the TARMAC Design System — powered by Google Material Icons"
+icon: "icons"
 ---
 
-# Iconography
+Icons provide quick visual cues that support understanding and navigation across the interface. They communicate actions, status, and meaning at a glance, reducing cognitive load and helping users move through tasks efficiently. Icons are designed to complement text — not replace it — and are used consistently to reinforce familiarity and clarity.
 
-Icons are visual symbols that communicate meaning and enhance usability across the TARMAC Design System.
+The system uses Google's Material Icon library as its core icon set, ensuring visual consistency, scalability, and cross-platform reliability.
 
-## Icon Library
+<CardGroup cols={3}>
+  <Card title="Material Icons" icon="google">
+    Built on Google's Material Icon library for consistency and familiarity
+  </Card>
+  <Card title="6 Sizes" icon="ruler">
+    From 12px to 32px, covering every use case from inline text to feature highlights
+  </Card>
+  <Card title="2 Styles" icon="palette">
+    Filled and Outlined variants for visual hierarchy and context
+  </Card>
+</CardGroup>
 
-TARMAC uses a curated set of icons optimized for clarity and consistency.
+---
 
-### Sizes
+## Icon Sizes
 
-| Size | Dimensions | Usage |
-|------|------------|-------|
-| **XS** | 12px | Inline with small text |
-| **SM** | 16px | Inline with body text |
-| **MD** | 20px | Buttons, inputs |
-| **LG** | 24px | Standalone icons |
-| **XL** | 32px | Feature highlights |
+TARMAC supports six icon sizes across two types: Default (standard use) and Slots (component integration).
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', marginBottom:'24px'}}>
+  <div style={{display:'flex', alignItems:'flex-end', justifyContent:'center', gap:'40px'}}>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'12px', height:'12px', background:'#ED1B36', borderRadius:'2px', margin:'0 auto 8px'}}></div>
+      <div style={{fontSize:'11px'}}>12px</div>
+    </div>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'16px', height:'16px', background:'#ED1B36', borderRadius:'2px', margin:'0 auto 8px'}}></div>
+      <div style={{fontSize:'11px'}}>16px</div>
+    </div>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'20px', height:'20px', background:'#ED1B36', borderRadius:'3px', margin:'0 auto 8px'}}></div>
+      <div style={{fontSize:'11px'}}>20px</div>
+    </div>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'24px', height:'24px', background:'#ED1B36', borderRadius:'3px', margin:'0 auto 8px'}}></div>
+      <div style={{fontSize:'11px'}}>24px</div>
+    </div>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'28px', height:'28px', background:'#ED1B36', borderRadius:'4px', margin:'0 auto 8px'}}></div>
+      <div style={{fontSize:'11px'}}>28px</div>
+    </div>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'32px', height:'32px', background:'#ED1B36', borderRadius:'4px', margin:'0 auto 8px'}}></div>
+      <div style={{fontSize:'11px'}}>32px</div>
+    </div>
+  </div>
+</div>
+
+| Size | Dimensions | Type | Usage |
+|------|-----------|------|-------|
+| 12px | 12 × 12 | Default / Slots | Inline indicators, micro badges |
+| 16px | 16 × 16 | Default / Slots | Inline with body text, compact UI |
+| 20px | 20 × 20 | Default / Slots | Buttons, inputs, form elements |
+| 24px | 24 × 24 | Default / Slots | Standard icons, navigation, toolbars |
+| 28px | 28 × 28 | Default / Slots | Emphasized actions, section headers |
+| 32px | 32 × 32 | Default / Slots | Feature highlights, empty states |
+
+---
+
+## Icon Styles
+
+Each icon is available in two styles. Choose one style per context and stay consistent.
+
+<Tabs>
+  <Tab title="Filled">
+    Solid, filled icons with strong visual weight. Use for active states, primary actions, and selected items.
+
+    ```
+    ● Filled = Higher visual weight
+    ● Best for: Active nav items, selected states, primary actions
+    ● Conveys: Emphasis, completion, active state
+    ```
+  </Tab>
+  <Tab title="Outlined">
+    Outlined icons with lighter visual weight. Use for default states, secondary actions, and inactive items.
+
+    ```
+    ○ Outlined = Lighter visual weight
+    ○ Best for: Default nav items, inactive states, secondary actions
+    ○ Conveys: Available, neutral, default state
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Icon Categories
+
+TARMAC organizes its icon library into 16 categories from Google Material Icons.
+
+| Category | Description | Example Icons |
+|----------|-------------|---------------|
+| ACTION | Common actions and operations | search, settings, home, delete, visibility |
+| ALERTS | Warning and notification indicators | error, warning, add-alert, notification-important |
+| AV | Audio/video controls and media | play-arrow, pause, volume-up, mic, videocam |
+| COMMUNICATION | Messaging and contact | call, chat, email, forum, message |
+| CONTENT | Content management and editing | add, archive, save, send, filter-list |
+| DEVICE | Device status and connectivity | bluetooth, wifi, battery, gps, signal |
+| EDITOR | Text editing and formatting | format-bold, format-italic, insert-chart, attach-file |
+| FILE | File and folder management | folder, cloud, attachment, cloud-upload |
+| HARDWARE | Hardware and peripherals | keyboard, laptop, phone, computer, tv |
+| IMAGE | Image editing and photography | camera, photo, filter, crop, edit |
+| MAPS | Location and navigation | directions, place, map, navigation, traffic |
+| NAVIGATION | UI navigation controls | arrow-back, menu, close, chevron, expand |
+| NOTIFICATION | System notifications | wifi, sync, sms, power, event-note |
+| OUTDOOR | Places and amenities | hotel, pool, fitness, spa, restaurant |
+| SOCIAL | People and social interactions | person, group, share, notifications, mood |
+| TOGGLE | Selection and toggle controls | checkbox, radio-button, star, toggle-on |
+
+---
+
+## Principles
+
+<AccordionGroup>
+  <Accordion title="Clarity First">
+    Icons must be immediately recognizable and unambiguous. If an icon's meaning is unclear, pair it with text or avoid using it.
+  </Accordion>
+  <Accordion title="Consistency Over Variety">
+    Use icons from the same style and weight to maintain a unified visual language. Avoid mixing icon styles or custom modifications that break consistency.
+  </Accordion>
+  <Accordion title="Support, Don't Replace">
+    Icons support actions and labels but should not carry meaning alone in critical workflows.
+  </Accordion>
+  <Accordion title="Purpose-Driven Use">
+    Every icon should communicate intent — action, status, navigation, or feedback — never decoration.
+  </Accordion>
+  <Accordion title="Balanced Visual Weight">
+    Icons should align optically with text, spacing, and component size to avoid visual dominance or imbalance.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Using Material Icon Library
+
+<Steps>
+  <Step title="Choose a consistent style">
+    Use Material Icons in their intended styles (outlined or filled). Pick one and stay consistent within a context.
+  </Step>
+  <Step title="Maintain proportions">
+    Maintain original proportions and alignment. Never distort, stretch, or recolor icons beyond system rules.
+  </Step>
+  <Step title="Size to context">
+    Size icons according to the component they belong to (12px, 16px, 20px, 24px, 28px, 32px).
+  </Step>
+  <Step title="Follow the token system">
+    Use icon color tokens for consistent theming across light and dark modes.
+  </Step>
+</Steps>
+
+---
 
 ## Usage Guidelines
 
 <CardGroup cols={2}>
   <Card title="✓ Do" icon="check">
-    - Use icons to support text
-    - Maintain consistent sizing
-    - Provide alt text for accessibility
-    - Use semantic icons
+    - Use icons to support and reinforce text labels
+    - Maintain consistent sizing within a context
+    - Provide accessible labels for all interactive icons
+    - Use semantic icons that match the action or content
+    - Stick to one style (filled or outlined) per context
+    - Size icons to match their component context
   </Card>
   <Card title="✗ Don't" icon="xmark">
-    - Don't use icons alone without labels
-    - Don't mix icon styles
-    - Don't use decorative icons
-    - Don't scale icons arbitrarily
+    - Don't use icons as the sole indicator of meaning
+    - Don't mix filled and outlined styles in the same context
+    - Don't scale icons to arbitrary non-standard sizes
+    - Don't use icons purely for decoration
+    - Don't modify or distort Material Icons
+    - Don't rely only on color to convey icon meaning
   </Card>
 </CardGroup>
 
+---
+
 ## Accessibility
 
-Always provide accessible labels for icons:
+Icons play an important role in accessibility when used thoughtfully.
 
-```tsx
-<Icon name="search" aria-label="Search" />
+<Warning>
+  Icons should never be the sole indicator of meaning or status. Always pair critical icons with text labels, tooltips, or aria-labels.
+</Warning>
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Labels | Always pair critical icons with text labels, tooltips, or `aria-label` |
+| Color contrast | Ensure sufficient contrast between icons and backgrounds (WCAG AA) |
+| Color independence | Avoid relying only on color to convey meaning |
+| Focus states | Interactive icons must have clear focus and hover states |
+| Touch targets | Touch targets should meet minimum size guidelines (44 × 44px) |
+| Assistive tech | Icons must include appropriate accessible names and roles |
+
+---
+
+## Implementation
+
+<CodeGroup>
+```tsx React
+import { Icon } from '@tarmac/design-system';
+
+// Basic usage
+<Icon name="search" size={24} />
+
+// With accessible label
+<Icon name="search" size={24} aria-label="Search" />
+
+// Filled style
+<Icon name="home" size={24} variant="filled" />
+
+// Outlined style
+<Icon name="home" size={24} variant="outlined" />
 ```
+
+```tsx Sizes
+// All supported sizes
+<Icon name="star" size={12} />  {/* Micro */}
+<Icon name="star" size={16} />  {/* Compact */}
+<Icon name="star" size={20} />  {/* Button */}
+<Icon name="star" size={24} />  {/* Standard */}
+<Icon name="star" size={28} />  {/* Emphasized */}
+<Icon name="star" size={32} />  {/* Feature */}
+```
+
+```css CSS Tokens
+/* Icon color tokens */
+--icon-default-primary: #1A1A1A;
+--icon-default-secondary: #949494;
+--icon-default-disabled: #C4C4C4;
+--icon-interactive: #ED1B36;
+--icon-success: #2E7D32;
+--icon-warning: #F9A825;
+--icon-error: #D32F2F;
+```
+</CodeGroup>
+
+---
+
+## Component Mapping
+
+| Component | Icon Size | Style | Notes |
+|-----------|----------|-------|-------|
+| Button (small) | 16px | Outlined | Inline with button text |
+| Button (medium) | 20px | Outlined | Standard button icon |
+| Input field | 20px | Outlined | Leading/trailing icons |
+| Navigation bar | 24px | Filled (active) / Outlined (inactive) | Toggle on selection |
+| Toolbar | 24px | Outlined | Action icons |
+| Empty state | 32px | Outlined | Illustration support |
+| Badge / Tag | 12px | Filled | Compact indicators |
+
+<Card title="Next: Design Tokens" icon="arrow-right" href="/foundations/tokens">
+  Learn how icon tokens integrate with the TARMAC token system
+</Card>
