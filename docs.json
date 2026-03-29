@@ -63,6 +63,7 @@
                   "components/input",
                   "components/input-area",
                   "components/dropdown",
+                  "components/search",
                   "components/badge",
                   "components/tags",
                   "components/pills",
