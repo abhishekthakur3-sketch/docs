@@ -1,0 +1,209 @@
+---
+title: Side Drawer
+description: Side Drawers are panel overlays that slide in from the edge of the screen, providing contextual content, forms, or detail views without navigating away.
+icon: "sidebar"
+---
+
+## Overview
+
+Side Drawers are panel overlays that slide in from the right edge of the screen. They provide space for contextual content, detail views, forms, or secondary workflows without full-page navigation. The system supports two width variants (Narrow and Extended) across two viewport aspect ratios, with shared Header, Footer, Content Slot, optional Snackbar, and optional Tab Group sub-components.
+
+<CardGroup cols={3}>
+  <Card title="2 Variants" icon="arrows-left-right">
+    Narrow, Extended
+  </Card>
+  <Card title="2 Aspect Ratios" icon="display">
+    942px (large), 764px (default)
+  </Card>
+  <Card title="Slot-Based Content" icon="puzzle-piece">
+    Flexible content area with header, footer, tabs
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with side drawer preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Side Drawer Preview — Replace with /assets/components/side-drawer/side-drawer-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Narrow">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Narrow Side Drawer — 328px (default) and 416px (large) widths<br/>Replace with /assets/components/side-drawer/side-drawer-narrow.png</div>
+    </div>
+  </Tab>
+  <Tab title="Extended">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Extended Side Drawer — 464px (default) and 596px (large) widths<br/>Replace with /assets/components/side-drawer/side-drawer-extended.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Variants
+
+| Variant | Width (764px aspect) | Width (942px aspect) | Use When |
+|---------|---------------------|---------------------|----------|
+| Narrow | 328px | 416px | Simple detail views, compact forms |
+| Extended | 464px | 596px | Complex forms, data-heavy content, multi-section layouts |
+
+---
+
+## Anatomy
+
+{/* 🎨 DESIGNER: Replace with side drawer anatomy from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Side Drawer Anatomy — Replace with /assets/components/side-drawer/side-drawer-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Header | Yes | Title, subtitle, close button (80px height) |
+| 2 | Snackbar | No | Contextual info bar (36px height) |
+| 3 | Tab Group | No | Tab navigation for sectioned content |
+| 4 | Content Container | Yes | Slot for custom content (scrollable) |
+| 5 | Footer | Yes | Action buttons (60px height) |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Drawer opens | Slides in from right, backdrop appears |
+| Click close button | Slides out, returns to previous view |
+| Click backdrop | Closes drawer (if dismissible) |
+| Press Escape | Closes drawer |
+| Content overflow | Content area scrolls independently |
+| Tab navigation | Switches content sections within drawer |
+| Focus trap | Focus contained within drawer while open |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use for detail views that don't require full navigation
+    - Choose Narrow for simple content, Extended for complex
+    - Include clear header titles and close actions
+    - Use tabs for multi-section content
+    - Allow content to scroll independently
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use drawers for primary navigation
+    - Don't stack multiple drawers
+    - Don't use Extended variant on small viewports
+    - Don't remove the close/dismiss option
+    - Don't use for simple confirmations (use Dialog Box)
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="dialog"` with `aria-modal="true"` |
+| Label | Provide `aria-labelledby` pointing to the header title |
+| Focus trap | Focus must be trapped inside the drawer while open |
+| Keyboard | Escape closes, Tab cycles through elements |
+| Screen reader | Announce drawer title on open |
+| Return focus | Return focus to trigger element on close |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Container">
+    | Token | Value |
+    |-------|-------|
+    | `drawer-narrow-width-default` | 328px |
+    | `drawer-narrow-width-large` | 416px |
+    | `drawer-extended-width-default` | 464px |
+    | `drawer-extended-width-large` | 596px |
+    | `drawer-border-radius` | 0px (flush to edge) |
+    | `drawer-shadow` | -8px 0 32px rgba(0,0,0,0.16) |
+    | `drawer-backdrop-bg` | rgba(0,0,0,0.5) |
+  </Tab>
+  <Tab title="Header/Footer">
+    | Token | Value |
+    |-------|-------|
+    | `drawer-header-height` | 80px |
+    | `drawer-footer-height` | 60px |
+    | `drawer-snackbar-height` | 36px |
+    | `drawer-content-padding` | 16px |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface SideDrawerProps {
+  variant?: 'narrow' | 'extended';
+  open: boolean;
+  onClose: () => void;
+  title: string;
+  subtitle?: string;
+  snackbar?: ReactNode;
+  tabs?: TabProps[];
+  children: ReactNode;
+  primaryAction?: { label: string; onClick: () => void };
+  secondaryAction?: { label: string; onClick: () => void };
+  dismissible?: boolean;
+}
+```
+
+```tsx Usage
+// Narrow drawer for order details
+<SideDrawer
+  variant="narrow"
+  open={showDrawer}
+  onClose={() => setShowDrawer(false)}
+  title="Order Details"
+  subtitle="Order #12345"
+  primaryAction={{ label: 'Update', onClick: handleUpdate }}
+  secondaryAction={{ label: 'Cancel', onClick: () => setShowDrawer(false) }}
+>
+  <OrderDetails orderId="12345" />
+</SideDrawer>
+
+// Extended drawer with tabs
+<SideDrawer
+  variant="extended"
+  open={showExtended}
+  onClose={() => setShowExtended(false)}
+  title="Shipment Tracking"
+  tabs={[
+    { label: 'Timeline', content: <Timeline /> },
+    { label: 'Documents', content: <Documents /> },
+  ]}
+  primaryAction={{ label: 'Close', onClick: () => setShowExtended(false) }}
+>
+  {activeTabContent}
+</SideDrawer>
+
+// With snackbar notification
+<SideDrawer
+  variant="narrow"
+  open={showWithSnackbar}
+  onClose={() => setShowWithSnackbar(false)}
+  title="Edit Profile"
+  snackbar={<Snackbar type="info" message="Changes auto-saved" />}
+  primaryAction={{ label: 'Save', onClick: handleSave }}
+>
+  <ProfileForm />
+</SideDrawer>
+```
+</CodeGroup>

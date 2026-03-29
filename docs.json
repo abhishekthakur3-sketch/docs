@@ -75,6 +75,7 @@
                   "components/dialog-box",
                   "components/list",
                   "components/popups",
+                  "components/side-drawer",
                   "components/badge",
                   "components/tags",
                   "components/pills",
