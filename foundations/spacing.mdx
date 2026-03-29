@@ -1,0 +1,461 @@
+---
+title: Spacing
+description: Spacing scale and layout system for the TARMAC Design System
+icon: "ruler-horizontal"
+---
+
+# Spacing
+
+## Overview
+
+The TARMAC Design System uses a consistent spacing scale based on an 8-point grid system. This creates visual rhythm, improves scanability, and ensures consistent spacing across all components and layouts.
+
+<CardGroup cols={2}>
+  <Card title="8-Point Grid" icon="grid">
+    Based on multiples of 8px
+  </Card>
+  <Card title="Predictable" icon="chart-line">
+    Consistent spacing patterns
+  </Card>
+  <Card title="Scalable" icon="expand">
+    Works across all screen sizes
+  </Card>
+  <Card title="Flexible" icon="sliders">
+    Supports dense and spacious layouts
+  </Card>
+</CardGroup>
+
+## Spacing Scale
+
+### Base Scale
+
+The spacing scale uses a t-shirt sizing system with numeric values for precise control.
+
+<Tabs>
+  <Tab title="Scale Table">
+    | Token | Value | Pixels | Usage |
+    |-------|-------|--------|-------|
+    | `spacing-0` | `0` | 0px | No spacing |
+    | `spacing-1` | `0.25rem` | 4px | Tight spacing, icon gaps |
+    | `spacing-2` | `0.5rem` | 8px | Compact spacing |
+    | `spacing-3` | `0.75rem` | 12px | Small spacing |
+    | `spacing-4` | `1rem` | 16px | Default spacing |
+    | `spacing-5` | `1.25rem` | 20px | Medium spacing |
+    | `spacing-6` | `1.5rem` | 24px | Large spacing |
+    | `spacing-8` | `2rem` | 32px | Extra large spacing |
+    | `spacing-10` | `2.5rem` | 40px | Section spacing |
+    | `spacing-12` | `3rem` | 48px | Large section spacing |
+    | `spacing-16` | `4rem` | 64px | Major section spacing |
+    | `spacing-20` | `5rem` | 80px | Hero spacing |
+    | `spacing-24` | `6rem` | 96px | Extra large section |
+  </Tab>
+  
+  <Tab title="Visual Scale">
+    <div style={{ padding: '20px' }}>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>4px</div>
+        <div style={{ width: '4px', height: '20px', background: '#000' }}></div>
+      </div>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>8px</div>
+        <div style={{ width: '8px', height: '20px', background: '#000' }}></div>
+      </div>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>12px</div>
+        <div style={{ width: '12px', height: '20px', background: '#000' }}></div>
+      </div>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>16px</div>
+        <div style={{ width: '16px', height: '20px', background: '#000' }}></div>
+      </div>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>24px</div>
+        <div style={{ width: '24px', height: '20px', background: '#000' }}></div>
+      </div>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>32px</div>
+        <div style={{ width: '32px', height: '20px', background: '#000' }}></div>
+      </div>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>48px</div>
+        <div style={{ width: '48px', height: '20px', background: '#000' }}></div>
+      </div>
+      <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ width: '80px', fontSize: '12px', color: '#666' }}>64px</div>
+        <div style={{ width: '64px', height: '20px', background: '#000' }}></div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+### Component Spacing
+
+Recommended spacing for common component patterns.
+
+| Component | Internal Padding | Gap Between Items | Margin Bottom |
+|-----------|-----------------|-------------------|---------------|
+| Button | `spacing-3` (12px) | `spacing-2` (8px) | `spacing-4` (16px) |
+| Input | `spacing-3` (12px) | `spacing-2` (8px) | `spacing-4` (16px) |
+| Card | `spacing-6` (24px) | `spacing-4` (16px) | `spacing-6` (24px) |
+| Modal | `spacing-6` (24px) | `spacing-4` (16px) | - |
+| List Item | `spacing-4` (16px) | `spacing-2` (8px) | `spacing-1` (4px) |
+| Section | `spacing-8` (32px) | `spacing-6` (24px) | `spacing-12` (48px) |
+
+## Usage Guidelines
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Use the spacing scale**
+    - Reference spacing tokens
+    - Maintain consistency
+    - Follow 8px grid
+    
+    **Create visual hierarchy**
+    - More space = more importance
+    - Group related items closely
+    - Separate sections clearly
+    
+    **Be consistent**
+    - Same spacing for same patterns
+    - Predictable layouts
+    - Systematic approach
+  </Card>
+  
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Don't use arbitrary values**
+    - ~~`margin: 13px`~~
+    - ~~`padding: 7px`~~
+    - Stick to the scale
+    
+    **Don't over-space**
+    - Too much space breaks relationships
+    - Maintain visual grouping
+    
+    **Don't under-space**
+    - Ensure touch targets (44px min)
+    - Provide breathing room
+    - Avoid cramped layouts
+  </Card>
+</CardGroup>
+
+### Spacing Patterns
+
+<Tabs>
+  <Tab title="Vertical Rhythm">
+    ```css
+    /* Consistent vertical spacing */
+    .section {
+      margin-bottom: var(--spacing-12); /* 48px */
+    }
+    
+    .heading {
+      margin-bottom: var(--spacing-4); /* 16px */
+    }
+    
+    .paragraph {
+      margin-bottom: var(--spacing-4); /* 16px */
+    }
+    
+    .list-item {
+      margin-bottom: var(--spacing-2); /* 8px */
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Component Spacing">
+    ```css
+    /* Button spacing */
+    .button {
+      padding: var(--spacing-3) var(--spacing-4); /* 12px 16px */
+      gap: var(--spacing-2); /* 8px between icon and text */
+    }
+    
+    /* Card spacing */
+    .card {
+      padding: var(--spacing-6); /* 24px */
+      gap: var(--spacing-4); /* 16px between elements */
+    }
+    
+    /* Form spacing */
+    .form-field {
+      margin-bottom: var(--spacing-4); /* 16px */
+    }
+    
+    .form-label {
+      margin-bottom: var(--spacing-2); /* 8px */
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Layout Spacing">
+    ```css
+    /* Container spacing */
+    .container {
+      padding: var(--spacing-4); /* 16px on mobile */
+    }
+    
+    @media (min-width: 768px) {
+      .container {
+        padding: var(--spacing-8); /* 32px on tablet+ */
+      }
+    }
+    
+    /* Grid gaps */
+    .grid {
+      gap: var(--spacing-6); /* 24px */
+    }
+    
+    /* Section spacing */
+    .section {
+      padding: var(--spacing-12) 0; /* 48px top/bottom */
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Layout Principles
+
+### The 8-Point Grid
+
+<Info>All spacing values are multiples of 8px, creating a consistent and predictable layout system.</Info>
+
+**Benefits:**
+- Easier to scale designs
+- Consistent visual rhythm
+- Simplifies developer handoff
+- Works well with common screen sizes
+- Reduces decision fatigue
+
+**How to Apply:**
+1. Use spacing tokens for all margins and padding
+2. Align elements to the 8px grid
+3. Size components in multiples of 8px when possible
+4. Use 4px (spacing-1) only for tight spacing needs
+
+### Visual Hierarchy
+
+Use spacing to create clear visual hierarchy:
+
+<Steps>
+  <Step title="Group related elements">
+    Use smaller spacing (4-8px) between related items
+  </Step>
+  <Step title="Separate sections">
+    Use larger spacing (32-48px) between major sections
+  </Step>
+  <Step title="Create breathing room">
+    Use medium spacing (16-24px) for comfortable reading
+  </Step>
+  <Step title="Emphasize importance">
+    More space around an element = more visual weight
+  </Step>
+</Steps>
+
+### Responsive Spacing
+
+Adjust spacing for different screen sizes:
+
+| Breakpoint | Container Padding | Section Spacing | Component Gap |
+|------------|------------------|-----------------|---------------|
+| Mobile (< 768px) | `spacing-4` (16px) | `spacing-8` (32px) | `spacing-3` (12px) |
+| Tablet (768px+) | `spacing-6` (24px) | `spacing-12` (48px) | `spacing-4` (16px) |
+| Desktop (1024px+) | `spacing-8` (32px) | `spacing-16` (64px) | `spacing-6` (24px) |
+
+## Accessibility Considerations
+
+<AccordionGroup>
+  <Accordion title="✓ Touch Targets" icon="hand-pointer">
+    **Minimum Size: 44x44px**
+    - Ensure interactive elements are at least 44x44px
+    - Provide adequate spacing between touch targets
+    - Use `spacing-2` (8px) minimum between buttons
+    
+    ```css
+    .button {
+      min-height: 44px;
+      min-width: 44px;
+      padding: var(--spacing-3) var(--spacing-4);
+    }
+    
+    .button-group {
+      gap: var(--spacing-2); /* 8px minimum */
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="✓ Reading Comfort" icon="book-open">
+    **Line Height and Spacing**
+    - Adequate line height (1.5-1.6 for body text)
+    - Comfortable paragraph spacing (16px)
+    - Clear section breaks (48px+)
+    
+    ```css
+    .text {
+      line-height: 1.5;
+      margin-bottom: var(--spacing-4); /* 16px */
+    }
+    
+    .section {
+      margin-bottom: var(--spacing-12); /* 48px */
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="✓ Focus Indicators" icon="bullseye">
+    **Visible Focus States**
+    - Provide space for focus rings (2-4px)
+    - Don't let focus indicators overlap content
+    - Use outline-offset for breathing room
+    
+    ```css
+    .interactive:focus {
+      outline: 2px solid var(--color-primary-600);
+      outline-offset: 2px; /* spacing-1 */
+    }
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Code Examples
+
+### CSS Custom Properties
+
+```css
+:root {
+  /* Spacing Scale */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;  /* 4px */
+  --spacing-2: 0.5rem;   /* 8px */
+  --spacing-3: 0.75rem;  /* 12px */
+  --spacing-4: 1rem;     /* 16px */
+  --spacing-5: 1.25rem;  /* 20px */
+  --spacing-6: 1.5rem;   /* 24px */
+  --spacing-8: 2rem;     /* 32px */
+  --spacing-10: 2.5rem;  /* 40px */
+  --spacing-12: 3rem;    /* 48px */
+  --spacing-16: 4rem;    /* 64px */
+  --spacing-20: 5rem;    /* 80px */
+  --spacing-24: 6rem;    /* 96px */
+}
+```
+
+### Component Examples
+
+<CodeGroup>
+```css Card Component
+.card {
+  padding: var(--spacing-6); /* 24px */
+  border-radius: var(--spacing-2); /* 8px */
+  margin-bottom: var(--spacing-6); /* 24px */
+}
+
+.card-header {
+  margin-bottom: var(--spacing-4); /* 16px */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3); /* 12px */
+}
+```
+
+```css Form Layout
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4); /* 16px between fields */
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2); /* 8px between label and input */
+}
+
+.form-actions {
+  margin-top: var(--spacing-6); /* 24px */
+  display: flex;
+  gap: var(--spacing-2); /* 8px between buttons */
+}
+```
+
+```css Grid Layout
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-6); /* 24px */
+  padding: var(--spacing-8); /* 32px */
+}
+
+.grid-item {
+  padding: var(--spacing-4); /* 16px */
+}
+```
+
+```css Navigation
+.nav {
+  display: flex;
+  gap: var(--spacing-4); /* 16px between items */
+  padding: var(--spacing-4) var(--spacing-6); /* 16px 24px */
+}
+
+.nav-item {
+  padding: var(--spacing-2) var(--spacing-3); /* 8px 12px */
+}
+```
+</CodeGroup>
+
+### Utility Classes
+
+```css
+/* Margin utilities */
+.m-0 { margin: var(--spacing-0); }
+.m-1 { margin: var(--spacing-1); }
+.m-2 { margin: var(--spacing-2); }
+.m-4 { margin: var(--spacing-4); }
+.m-6 { margin: var(--spacing-6); }
+
+/* Padding utilities */
+.p-0 { padding: var(--spacing-0); }
+.p-1 { padding: var(--spacing-1); }
+.p-2 { padding: var(--spacing-2); }
+.p-4 { padding: var(--spacing-4); }
+.p-6 { padding: var(--spacing-6); }
+
+/* Gap utilities */
+.gap-2 { gap: var(--spacing-2); }
+.gap-4 { gap: var(--spacing-4); }
+.gap-6 { gap: var(--spacing-6); }
+```
+
+### JavaScript/TypeScript
+
+```typescript
+export const spacing = {
+  0: '0',
+  1: '0.25rem',  // 4px
+  2: '0.5rem',   // 8px
+  3: '0.75rem',  // 12px
+  4: '1rem',     // 16px
+  5: '1.25rem',  // 20px
+  6: '1.5rem',   // 24px
+  8: '2rem',     // 32px
+  10: '2.5rem',  // 40px
+  12: '3rem',    // 48px
+  16: '4rem',    // 64px
+  20: '5rem',    // 80px
+  24: '6rem',    // 96px
+};
+
+// Usage in styled components
+const Card = styled.div`
+  padding: ${spacing[6]};
+  margin-bottom: ${spacing[6]};
+  gap: ${spacing[4]};
+`;
+```
+
+<Tip>When in doubt, use spacing-4 (16px) as your default spacing value.</Tip>

@@ -1,0 +1,414 @@
+---
+title: Colors
+description: Color system and palette for the TARMAC Design System
+icon: "palette"
+---
+
+# Colors
+
+## Overview
+
+The TARMAC Design System uses a carefully crafted color palette designed for clarity, accessibility, and visual harmony. Our color system provides semantic meaning, ensures sufficient contrast ratios, and supports both light and dark themes.
+
+<CardGroup cols={2}>
+  <Card title="Accessible" icon="universal-access">
+    All colors meet WCAG 2.1 AA standards
+  </Card>
+  <Card title="Semantic" icon="lightbulb">
+    Colors convey meaning and purpose
+  </Card>
+  <Card title="Consistent" icon="check-double">
+    Systematic scale from 50 to 900
+  </Card>
+  <Card title="Flexible" icon="wand-magic-sparkles">
+    Supports light and dark themes
+  </Card>
+</CardGroup>
+
+## Color Palette
+
+### Neutral Colors
+
+Neutral colors form the foundation of the design system, used for text, backgrounds, borders, and surfaces.
+
+<Tabs>
+  <Tab title="Scale">
+    | Token | Hex | Usage |
+    |-------|-----|-------|
+    | `neutral-50` | `#fafafa` | Subtle backgrounds |
+    | `neutral-100` | `#f5f5f5` | Hover states, secondary backgrounds |
+    | `neutral-200` | `#e5e5e5` | Borders, dividers |
+    | `neutral-300` | `#d4d4d4` | Disabled states |
+    | `neutral-400` | `#a3a3a3` | Placeholder text |
+    | `neutral-500` | `#737373` | Secondary text |
+    | `neutral-600` | `#525252` | Body text |
+    | `neutral-700` | `#404040` | Headings |
+    | `neutral-800` | `#262626` | High emphasis text |
+    | `neutral-900` | `#171717` | Maximum contrast |
+  </Tab>
+  
+  <Tab title="Preview">
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '8px' }}>
+      <div style={{ background: '#fafafa', height: '60px', borderRadius: '6px', border: '1px solid #e5e5e5' }}></div>
+      <div style={{ background: '#f5f5f5', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#e5e5e5', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#d4d4d4', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#a3a3a3', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#737373', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#525252', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#404040', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#262626', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#171717', height: '60px', borderRadius: '6px' }}></div>
+    </div>
+  </Tab>
+</Tabs>
+
+### Primary Colors
+
+Primary colors represent the brand and are used for primary actions, links, and focus states.
+
+<Tabs>
+  <Tab title="Scale">
+    | Token | Hex | Usage |
+    |-------|-----|-------|
+    | `primary-50` | `#f0f0f0` | Subtle backgrounds |
+    | `primary-100` | `#e0e0e0` | Hover backgrounds |
+    | `primary-200` | `#c6c6c6` | Borders |
+    | `primary-300` | `#a8a8a8` | Disabled primary |
+    | `primary-400` | `#8a8a8a` | Muted primary |
+    | `primary-500` | `#6b6b6b` | Default primary |
+    | `primary-600` | `#000000` | Primary buttons, links |
+    | `primary-700` | `#1a1a1a` | Hover states |
+    | `primary-800` | `#333333` | Active states |
+    | `primary-900` | `#4d4d4d` | High contrast |
+  </Tab>
+  
+  <Tab title="Preview">
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '8px' }}>
+      <div style={{ background: '#f0f0f0', height: '60px', borderRadius: '6px', border: '1px solid #e0e0e0' }}></div>
+      <div style={{ background: '#e0e0e0', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#c6c6c6', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#a8a8a8', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#8a8a8a', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#6b6b6b', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#000000', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#1a1a1a', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#333333', height: '60px', borderRadius: '6px' }}></div>
+      <div style={{ background: '#4d4d4d', height: '60px', borderRadius: '6px' }}></div>
+    </div>
+  </Tab>
+</Tabs>
+
+### Success Colors
+
+Success colors indicate positive actions, successful operations, and confirmations.
+
+| Token | Hex | Contrast (on white) | Usage |
+|-------|-----|---------------------|-------|
+| `success-50` | `#f0fdf4` | - | Subtle backgrounds |
+| `success-100` | `#dcfce7` | - | Success backgrounds |
+| `success-500` | `#22c55e` | 3.4:1 | Icons, borders |
+| `success-600` | `#16a34a` | 4.5:1 ✓ | Success buttons |
+| `success-700` | `#166534` | 7.1:1 ✓ | Success text |
+
+### Warning Colors
+
+Warning colors indicate caution, pending states, and actions requiring attention.
+
+| Token | Hex | Contrast (on white) | Usage |
+|-------|-----|---------------------|-------|
+| `warning-50` | `#fffbeb` | - | Subtle backgrounds |
+| `warning-100` | `#fef3c7` | - | Warning backgrounds |
+| `warning-500` | `#f59e0b` | 2.9:1 | Icons, borders |
+| `warning-600` | `#d97706` | 4.5:1 ✓ | Warning buttons |
+| `warning-700` | `#92400e` | 7.5:1 ✓ | Warning text |
+
+### Error Colors
+
+Error colors indicate errors, destructive actions, and critical states.
+
+| Token | Hex | Contrast (on white) | Usage |
+|-------|-----|---------------------|-------|
+| `error-50` | `#fef2f2` | - | Subtle backgrounds |
+| `error-100` | `#fee2e2` | - | Error backgrounds |
+| `error-500` | `#ef4444` | 3.9:1 | Icons, borders |
+| `error-600` | `#dc2626` | 4.5:1 ✓ | Error buttons |
+| `error-700` | `#991b1b` | 7.7:1 ✓ | Error text |
+
+### Info Colors
+
+Info colors indicate informational content, tips, and neutral notifications.
+
+| Token | Hex | Contrast (on white) | Usage |
+|-------|-----|---------------------|-------|
+| `info-50` | `#eff6ff` | - | Subtle backgrounds |
+| `info-100` | `#dbeafe` | - | Info backgrounds |
+| `info-500` | `#3b82f6` | 4.0:1 | Icons, borders |
+| `info-600` | `#2563eb` | 5.1:1 ✓ | Info buttons |
+| `info-700` | `#1e40af` | 7.3:1 ✓ | Info text |
+
+## Usage Guidelines
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Use semantic colors**
+    - Green for success states
+    - Red for errors and destructive actions
+    - Yellow for warnings
+    - Blue for informational content
+    
+    **Ensure sufficient contrast**
+    - Text: ≥ 4.5:1 ratio
+    - Large text: ≥ 3:1 ratio
+    - UI components: ≥ 3:1 ratio
+    
+    **Use color tokens**
+    - Reference design tokens
+    - Maintain consistency
+    - Enable theme switching
+  </Card>
+  
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Don't use color alone**
+    - Always pair with text or icons
+    - Don't rely on color for meaning
+    
+    **Don't use arbitrary colors**
+    - Avoid hardcoded hex values
+    - Don't create custom colors
+    - Stick to the palette
+    
+    **Don't ignore contrast**
+    - Test with accessibility tools
+    - Verify WCAG compliance
+    - Consider color blindness
+  </Card>
+</CardGroup>
+
+### Color Combinations
+
+<Tabs>
+  <Tab title="Text on Backgrounds">
+    | Background | Text Color | Contrast | Pass |
+    |------------|-----------|----------|------|
+    | `neutral-50` | `neutral-900` | 18.5:1 | ✓ AAA |
+    | `neutral-100` | `neutral-800` | 14.2:1 | ✓ AAA |
+    | `primary-600` | `white` | 21:1 | ✓ AAA |
+    | `success-100` | `success-700` | 10.8:1 | ✓ AAA |
+    | `warning-100` | `warning-700` | 11.2:1 | ✓ AAA |
+    | `error-100` | `error-700` | 12.1:1 | ✓ AAA |
+  </Tab>
+  
+  <Tab title="Interactive Elements">
+    | Element | Default | Hover | Active |
+    |---------|---------|-------|--------|
+    | Primary Button | `primary-600` | `primary-700` | `primary-800` |
+    | Secondary Button | `neutral-100` | `neutral-200` | `neutral-300` |
+    | Link | `primary-600` | `primary-700` | `primary-800` |
+    | Input Border | `neutral-300` | `neutral-400` | `primary-600` |
+  </Tab>
+</Tabs>
+
+## Accessibility Considerations
+
+<AccordionGroup>
+  <Accordion title="✓ WCAG Contrast Requirements" icon="eye">
+    **Level AA (Minimum)**
+    - Normal text (< 18px): 4.5:1 contrast ratio
+    - Large text (≥ 18px or ≥ 14px bold): 3:1 contrast ratio
+    - UI components and graphics: 3:1 contrast ratio
+    
+    **Level AAA (Enhanced)**
+    - Normal text: 7:1 contrast ratio
+    - Large text: 4.5:1 contrast ratio
+    
+    All TARMAC colors are designed to meet AA standards at minimum.
+  </Accordion>
+  
+  <Accordion title="✓ Color Blindness" icon="eye-low-vision">
+    **Considerations**
+    - Don't rely on color alone to convey information
+    - Use patterns, icons, or text labels alongside color
+    - Test designs with color blindness simulators
+    - Ensure sufficient contrast between adjacent colors
+    
+    **Common Types**
+    - Deuteranopia (red-green, most common)
+    - Protanopia (red-green)
+    - Tritanopia (blue-yellow, rare)
+  </Accordion>
+  
+  <Accordion title="✓ Testing Tools" icon="flask">
+    - WebAIM Contrast Checker
+    - Chrome DevTools Accessibility Panel
+    - Stark (Figma/Sketch plugin)
+    - Color Oracle (color blindness simulator)
+    - axe DevTools
+  </Accordion>
+</AccordionGroup>
+
+<Warning>Never use color as the only means of conveying information. Always pair color with text, icons, or patterns.</Warning>
+
+## Code Examples
+
+### CSS Custom Properties
+
+```css
+:root {
+  /* Neutral Colors */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  
+  /* Primary Colors */
+  --color-primary-600: #000000;
+  --color-primary-700: #1a1a1a;
+  --color-primary-800: #333333;
+  
+  /* Semantic Colors */
+  --color-success-100: #dcfce7;
+  --color-success-600: #16a34a;
+  --color-success-700: #166534;
+  
+  --color-warning-100: #fef3c7;
+  --color-warning-600: #d97706;
+  --color-warning-700: #92400e;
+  
+  --color-error-100: #fee2e2;
+  --color-error-600: #dc2626;
+  --color-error-700: #991b1b;
+  
+  --color-info-100: #dbeafe;
+  --color-info-600: #2563eb;
+  --color-info-700: #1e40af;
+}
+```
+
+### Usage in Components
+
+<CodeGroup>
+```css Button
+.button-primary {
+  background-color: var(--color-primary-600);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-700);
+}
+
+.button-primary:active {
+  background-color: var(--color-primary-800);
+}
+```
+
+```css Alert
+.alert-success {
+  background-color: var(--color-success-100);
+  color: var(--color-success-700);
+  border-left: 4px solid var(--color-success-600);
+}
+
+.alert-error {
+  background-color: var(--color-error-100);
+  color: var(--color-error-700);
+  border-left: 4px solid var(--color-error-600);
+}
+```
+
+```css Text
+.text-primary {
+  color: var(--color-neutral-900);
+}
+
+.text-secondary {
+  color: var(--color-neutral-600);
+}
+
+.text-muted {
+  color: var(--color-neutral-500);
+}
+```
+
+```css Borders
+.border-default {
+  border: 1px solid var(--color-neutral-200);
+}
+
+.border-focus {
+  border: 2px solid var(--color-primary-600);
+}
+```
+</CodeGroup>
+
+### JavaScript/TypeScript
+
+```typescript
+// Color tokens object
+export const colors = {
+  neutral: {
+    50: '#fafafa',
+    100: '#f5f5f5',
+    200: '#e5e5e5',
+    300: '#d4d4d4',
+    400: '#a3a3a3',
+    500: '#737373',
+    600: '#525252',
+    700: '#404040',
+    800: '#262626',
+    900: '#171717',
+  },
+  primary: {
+    600: '#000000',
+    700: '#1a1a1a',
+    800: '#333333',
+  },
+  success: {
+    100: '#dcfce7',
+    600: '#16a34a',
+    700: '#166534',
+  },
+  // ... other colors
+};
+
+// Usage
+const buttonStyle = {
+  backgroundColor: colors.primary[600],
+  color: '#ffffff',
+};
+```
+
+## Dark Theme Support
+
+<Info>TARMAC Design System supports dark theme by inverting the neutral scale and adjusting semantic colors.</Info>
+
+```css
+[data-theme="dark"] {
+  /* Invert neutral scale */
+  --color-neutral-50: #171717;
+  --color-neutral-100: #262626;
+  --color-neutral-200: #404040;
+  --color-neutral-300: #525252;
+  --color-neutral-400: #737373;
+  --color-neutral-500: #a3a3a3;
+  --color-neutral-600: #d4d4d4;
+  --color-neutral-700: #e5e5e5;
+  --color-neutral-800: #f5f5f5;
+  --color-neutral-900: #fafafa;
+  
+  /* Adjust semantic colors for dark backgrounds */
+  --color-success-600: #22c55e;
+  --color-warning-600: #f59e0b;
+  --color-error-600: #ef4444;
+  --color-info-600: #3b82f6;
+}
+```

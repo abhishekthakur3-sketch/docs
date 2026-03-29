@@ -1,0 +1,145 @@
+---
+title: "Accessibility Testing"
+description: "How to test your application for accessibility compliance"
+---
+
+# Accessibility Testing
+
+Comprehensive accessibility testing ensures your application works for all users.
+
+## Testing Methods
+
+### 1. Automated Testing
+
+Use automated tools to catch common issues:
+
+**Browser Extensions:**
+- **axe DevTools** - Comprehensive automated testing
+- **WAVE** - Visual accessibility evaluation
+- **Lighthouse** - Built into Chrome DevTools
+
+**Command Line:**
+```bash
+npm install --save-dev @axe-core/cli
+npx axe https://your-site.com
+```
+
+### 2. Manual Testing
+
+#### Keyboard Navigation
+- [ ] Tab through all interactive elements
+- [ ] Verify focus indicators are visible
+- [ ] Test all keyboard shortcuts
+- [ ] Ensure no keyboard traps
+- [ ] Verify logical focus order
+
+#### Screen Reader Testing
+- [ ] Test with NVDA (Windows)
+- [ ] Test with VoiceOver (macOS)
+- [ ] Verify all content is announced
+- [ ] Check form labels and errors
+- [ ] Test dynamic content updates
+
+#### Visual Testing
+- [ ] Verify color contrast (4.5:1 minimum)
+- [ ] Test with color blindness simulators
+- [ ] Check text scaling (200%)
+- [ ] Verify responsive design
+- [ ] Test with high contrast mode
+
+### 3. User Testing
+
+Include users with disabilities in your testing process:
+- Keyboard-only users
+- Screen reader users
+- Users with low vision
+- Users with motor impairments
+
+## Testing Checklist
+
+### Content
+- [ ] All images have alt text
+- [ ] Headings are in logical order
+- [ ] Links have descriptive text
+- [ ] Language is specified
+- [ ] Page titles are descriptive
+
+### Forms
+- [ ] All inputs have labels
+- [ ] Required fields are marked
+- [ ] Error messages are clear
+- [ ] Validation is accessible
+- [ ] Success messages announced
+
+### Navigation
+- [ ] Skip links provided
+- [ ] Landmarks used correctly
+- [ ] Focus order is logical
+- [ ] Breadcrumbs are accessible
+- [ ] Menu navigation works with keyboard
+
+### Interactive Elements
+- [ ] Buttons have accessible names
+- [ ] Links are distinguishable
+- [ ] Modals trap focus
+- [ ] Tooltips are keyboard accessible
+- [ ] Dropdowns work with keyboard
+
+### Color & Contrast
+- [ ] Text contrast ≥ 4.5:1
+- [ ] Large text contrast ≥ 3:1
+- [ ] UI components contrast ≥ 3:1
+- [ ] Focus indicators contrast ≥ 3:1
+- [ ] Color not sole indicator
+
+## Testing Tools
+
+### Browser Extensions
+- **axe DevTools** - https://www.deque.com/axe/devtools/
+- **WAVE** - https://wave.webaim.org/extension/
+- **Lighthouse** - Built into Chrome DevTools
+
+### Screen Readers
+- **NVDA** (Windows, free) - https://www.nvaccess.org/
+- **JAWS** (Windows, paid) - https://www.freedomscientific.com/
+- **VoiceOver** (macOS/iOS, built-in)
+- **TalkBack** (Android, built-in)
+
+### Color Tools
+- **WebAIM Contrast Checker** - https://webaim.org/resources/contrastchecker/
+- **Color Oracle** - https://colororacle.org/
+- **Stark** - https://www.getstark.co/
+
+### Automated Testing
+```bash
+# Install dependencies
+npm install --save-dev @axe-core/react jest-axe
+
+# Test component
+import { axe, toHaveNoViolations } from 'jest-axe';
+
+expect.extend(toHaveNoViolations);
+
+test('should not have accessibility violations', async () => {
+  const { container } = render(<MyComponent />);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+});
+```
+
+## Continuous Testing
+
+Integrate accessibility testing into your CI/CD pipeline:
+
+```yaml
+# .github/workflows/accessibility.yml
+name: Accessibility Tests
+on: [push, pull_request]
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm run test:a11y
+```

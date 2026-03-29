@@ -1,0 +1,81 @@
+---
+title: "Quick Start"
+description: "Build your first interface with TARMAC in minutes"
+---
+
+# Quick Start
+
+Get up and running with TARMAC in just a few minutes.
+
+## Your First Component
+
+After [installation](/introduction/installation), start using TARMAC components:
+
+```tsx
+import { Button } from '@tarmac/design-system';
+
+function MyApp() {
+  return (
+    <Button variant="primary" onClick={() => alert('Hello TARMAC!')}>
+      Click Me
+    </Button>
+  );
+}
+```
+
+## Build a Simple Form
+
+Combine multiple components to create a functional form:
+
+```tsx
+import { Input, Button, Card } from '@tarmac/design-system';
+import { useState } from 'react';
+
+function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Login:', { email, password });
+  };
+
+  return (
+    <Card>
+      <form onSubmit={handleSubmit}>
+        <Input
+          type="email"
+          label="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <Input
+          type="password"
+          label="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <Button type="submit" variant="primary" fullWidth>
+          Sign In
+        </Button>
+      </form>
+    </Card>
+  );
+}
+```
+
+## Next Steps
+
+<CardGroup cols={3}>
+  <Card title="Foundations" icon="layer-group" href="/foundations/colors">
+    Learn about colors, typography, and spacing
+  </Card>
+  <Card title="Components" icon="cube" href="/components/button">
+    Explore all available components
+  </Card>
+  <Card title="Patterns" icon="shapes" href="/patterns/layout">
+    Discover common UI patterns
+  </Card>
+</CardGroup>

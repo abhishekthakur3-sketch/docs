@@ -1,0 +1,180 @@
+---
+title: "Form Patterns"
+description: "Best practices for building accessible, user-friendly forms"
+---
+
+# Form Patterns
+
+Forms are critical touchpoints in user experiences. TARMAC provides patterns for building accessible, efficient forms.
+
+## Basic Form Structure
+
+```tsx
+<form onSubmit={handleSubmit}>
+  <Input
+    label="Email Address"
+    type="email"
+    required
+    helperText="We'll never share your email"
+  />
+  
+  <Input
+    label="Password"
+    type="password"
+    required
+    helperText="Must be at least 8 characters"
+  />
+  
+  <Button type="submit" variant="primary">
+    Sign In
+  </Button>
+</form>
+```
+
+## Form Validation
+
+### Inline Validation
+
+Validate fields on blur for immediate feedback:
+
+```tsx
+const [errors, setErrors] = useState({});
+
+const validateEmail = (email) => {
+  if (!email.includes('@')) {
+    return 'Please enter a valid email address';
+  }
+  return null;
+};
+
+<Input
+  label="Email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  onBlur={() => {
+    const error = validateEmail(email);
+    setErrors({ ...errors, email: error });
+  }}
+  errorMessage={errors.email}
+  aria-invalid={!!errors.email}
+/>
+```
+
+### Form-Level Validation
+
+Validate entire form on submit:
+
+```tsx
+const handleSubmit = (e) => {
+  e.preventDefault();
+  
+  const newErrors = {};
+  if (!email) newErrors.email = 'Email is required';
+  if (!password) newErrors.password = 'Password is required';
+  
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+    return;
+  }
+  
+  // Submit form
+};
+```
+
+## Form Layouts
+
+### Single Column (Recommended)
+
+Best for most forms, especially on mobile:
+
+```tsx
+<form>
+  <Input label="Full Name" />
+  <Input label="Email" type="email" />
+  <Input label="Phone" type="tel" />
+  <Button type="submit">Submit</Button>
+</form>
+```
+
+### Two Column
+
+For related fields on desktop:
+
+```tsx
+<div className="grid grid-cols-2 gap-4">
+  <Input label="First Name" />
+  <Input label="Last Name" />
+</div>
+<Input label="Email" type="email" />
+```
+
+## Required Fields
+
+Mark required fields clearly:
+
+```tsx
+<Input
+  label="Email Address"
+  required
+  helperText="Required field"
+/>
+```
+
+## Error Handling
+
+### Error Summary
+
+Show all errors at the top of the form:
+
+```tsx
+{Object.keys(errors).length > 0 && (
+  <Alert variant="error" role="alert">
+    <strong>Please fix the following errors:</strong>
+    <ul>
+      {Object.entries(errors).map(([field, error]) => (
+        <li key={field}>{error}</li>
+      ))}
+    </ul>
+  </Alert>
+)}
+```
+
+### Field-Level Errors
+
+Show errors below each field:
+
+```tsx
+<Input
+  label="Email"
+  value={email}
+  errorMessage={errors.email}
+  aria-invalid={!!errors.email}
+  aria-describedby={errors.email ? 'email-error' : undefined}
+/>
+```
+
+## Success States
+
+Provide clear feedback on successful submission:
+
+```tsx
+{isSuccess && (
+  <Alert variant="success" role="status">
+    Form submitted successfully!
+  </Alert>
+)}
+```
+
+## Loading States
+
+Disable form during submission:
+
+```tsx
+<Button
+  type="submit"
+  loading={isSubmitting}
+  disabled={isSubmitting}
+>
+  {isSubmitting ? 'Submitting...' : 'Submit'}
+</Button>
+```

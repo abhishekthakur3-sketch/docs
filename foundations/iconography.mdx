@@ -1,0 +1,47 @@
+---
+title: "Iconography"
+description: "Icon system and guidelines for the TARMAC Design System"
+---
+
+# Iconography
+
+Icons are visual symbols that communicate meaning and enhance usability across the TARMAC Design System.
+
+## Icon Library
+
+TARMAC uses a curated set of icons optimized for clarity and consistency.
+
+### Sizes
+
+| Size | Dimensions | Usage |
+|------|------------|-------|
+| **XS** | 12px | Inline with small text |
+| **SM** | 16px | Inline with body text |
+| **MD** | 20px | Buttons, inputs |
+| **LG** | 24px | Standalone icons |
+| **XL** | 32px | Feature highlights |
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check">
+    - Use icons to support text
+    - Maintain consistent sizing
+    - Provide alt text for accessibility
+    - Use semantic icons
+  </Card>
+  <Card title="✗ Don't" icon="xmark">
+    - Don't use icons alone without labels
+    - Don't mix icon styles
+    - Don't use decorative icons
+    - Don't scale icons arbitrarily
+  </Card>
+</CardGroup>
+
+## Accessibility
+
+Always provide accessible labels for icons:
+
+```tsx
+<Icon name="search" aria-label="Search" />
+```

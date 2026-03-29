@@ -1,0 +1,564 @@
+---
+title: Badge
+description: Badges display status, counts, or labels to highlight important information.
+icon: "certificate"
+---
+
+# Badge
+
+## Overview
+
+Badges are compact visual indicators used to display status, counts, categories, or labels. They draw attention to specific information and help users quickly identify important attributes or states. Badges are typically small, non-interactive elements that complement other UI components or standalone content.
+
+<CardGroup cols={2}>
+  <Card title="Status Indicators" icon="circle-check">
+    Show state with semantic colors
+  </Card>
+  <Card title="Notification Counts" icon="bell">
+    Display numeric values and alerts
+  </Card>
+  <Card title="Compact Design" icon="compress">
+    Minimal visual footprint
+  </Card>
+  <Card title="Flexible" icon="shapes">
+    Multiple variants and sizes
+  </Card>
+</CardGroup>
+
+## Component Preview
+
+<Info>
+Badge component specifications from the TARMAC Design System including:
+- **Variants**: Default, Success, Warning, Error, Info, Count, Dot, Outlined
+- **Sizes**: SM (18px), MD (22px), LG (26px)
+- **States**: Default, Hover (if interactive), Focus (if interactive)
+</Info>
+
+## Anatomy
+
+The Badge component consists of the following elements:
+
+- **Container**: Rounded background that contains the badge content
+- **Label**: Text or numeric content
+- **Icon** (optional): Visual indicator supporting the label
+- **Dot** (optional): Simple indicator without text
+
+<Info>Most badges are non-interactive. Only use interactive badges when they trigger actions like filtering or navigation.</Info>
+
+## Variants
+
+### Default
+Standard badge for general labeling and categorization.
+
+```jsx
+<Badge>New</Badge>
+```
+
+### Status
+Indicates state or condition with semantic colors.
+
+```jsx
+<Badge variant="success">Active</Badge>
+<Badge variant="warning">Pending</Badge>
+<Badge variant="error">Failed</Badge>
+<Badge variant="info">Draft</Badge>
+```
+
+### Count
+Displays numeric values, often used for notifications.
+
+```jsx
+<Badge variant="count">5</Badge>
+<Badge variant="count">99+</Badge>
+```
+
+### Dot
+Minimal indicator showing presence or status without text.
+
+```jsx
+<Badge variant="dot" />
+```
+
+### Outlined
+Subtle variant with border and transparent background.
+
+```jsx
+<Badge variant="outlined">Beta</Badge>
+```
+
+## Sizes
+
+Badges are available in three sizes:
+
+| Size | Height | Padding | Font Size | Usage |
+|------|--------|---------|-----------|-------|
+| **SM (Small)** | 18px | 6px horizontal | 11px | Compact spaces, inline text |
+| **MD (Medium)** | 22px | 8px horizontal | 12px | Default size for most use cases |
+| **LG (Large)** | 26px | 10px horizontal | 13px | Prominent displays, headers |
+
+<Tip>Use MD (Medium) as the default size for most badges.</Tip>
+
+## States
+
+### Default
+Standard appearance with no interaction.
+
+### Hover (if interactive)
+Subtle visual feedback for clickable badges.
+- Slight background color change
+- Cursor changes to pointer
+
+### Focus (if interactive)
+Visible focus ring for keyboard navigation.
+- 2px focus outline with appropriate contrast
+
+<Warning>Most badges should be non-interactive. Only make badges clickable when they trigger filtering, navigation, or other actions.</Warning>
+
+## Interaction Behavior
+
+### Non-Interactive (Default)
+- No hover or click effects
+- Static display element
+- Used for status indication
+- No keyboard focus
+
+### Interactive (Optional)
+- Hover state shows clickability
+- Cursor changes to pointer
+- Focus ring for keyboard navigation
+- Triggers action on click
+
+## Usage Guidelines
+
+<AccordionGroup>
+  <Accordion title="When to Use" icon="check">
+    - Displaying status or state (active, pending, completed)
+    - Showing notification counts
+    - Labeling categories or tags
+    - Highlighting new or updated content
+    - Indicating user roles or permissions
+    - Showing availability or capacity
+  </Accordion>
+  
+  <Accordion title="When Not to Use" icon="xmark">
+    - For primary actions (use Button)
+    - For long text content (use Chip or Tag)
+    - When color alone conveys meaning (ensure text/icon support)
+    - For critical alerts (use Alert component)
+  </Accordion>
+</AccordionGroup>
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Keep text concise**
+    - "New"
+    - "Active"
+    - "5"
+    
+    **Use semantic colors**
+    - Green for success/active
+    - Red for error/critical
+    - Yellow for warning
+    
+    **Position logically**
+    - Near related content
+    - Consistent placement
+  </Card>
+  
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Avoid long text**
+    - ~~"This is a new feature"~~
+    - ~~"Currently processing"~~
+    
+    **Don't overuse**
+    - Too many badges lose impact
+    - Maintain visual hierarchy
+    
+    **Don't rely on color alone**
+    - Include text or icons
+    - Ensure accessibility
+  </Card>
+</CardGroup>
+
+<Tip>For counts over 99, use "99+" format to maintain consistent badge sizing.</Tip>
+
+### Color Usage Guide
+
+| Color | Use Case | Examples |
+|-------|----------|----------|
+| Gray/Neutral | Default, informational | "Beta", "Draft" |
+| Blue | Informational, in progress | "Processing", "Info" |
+| Green | Success, active, available | "Active", "Online", "Verified" |
+| Yellow/Orange | Warning, pending | "Pending", "Attention" |
+| Red | Error, critical, unavailable | "Failed", "Offline", "Error" |
+| Purple | Premium, featured | "Pro", "Featured" |
+
+## Accessibility
+
+<Info>Badges must be accessible to all users, including those using screen readers.</Info>
+
+### Color Contrast Requirements
+
+<AccordionGroup>
+  <Accordion title="✓ Text Contrast" icon="eye">
+    - [ ] Text contrast ratio ≥ 4.5:1 (WCAG AA)
+    - [ ] Don't rely solely on color to convey meaning
+    - [ ] Include descriptive text with color indicators
+    - [ ] Test with color blindness simulators
+  </Accordion>
+</AccordionGroup>
+
+### Screen Reader Support
+
+<CodeGroup>
+```jsx Text Badge
+<Badge aria-label="New feature">New</Badge>
+```
+
+```jsx Count Badge
+<Badge variant="count" aria-label="5 unread notifications">
+  5
+</Badge>
+```
+
+```jsx Dot Indicator
+<Badge variant="dot" aria-label="Online status" />
+```
+
+```jsx Status Badge
+<Badge variant="success" aria-label="Account is active">
+  Active
+</Badge>
+```
+</CodeGroup>
+
+### Semantic HTML
+
+<Tabs>
+  <Tab title="Non-Interactive">
+    ```jsx
+    <span className="badge" role="status">
+      Active
+    </span>
+    ```
+  </Tab>
+  
+  <Tab title="Interactive">
+    ```jsx
+    <button className="badge" onClick={handleClick}>
+      Filter: React
+    </button>
+    ```
+  </Tab>
+</Tabs>
+
+### Keyboard Navigation (Interactive Badges)
+
+<ResponseField name="Tab" type="key">
+  Move focus to badge
+</ResponseField>
+
+<ResponseField name="Enter / Space" type="key">
+  Activate badge action
+</ResponseField>
+
+### Accessibility Checklist
+
+- [ ] Descriptive aria-label for icon-only badges
+- [ ] role="status" for status indicators
+- [ ] Sufficient color contrast (4.5:1)
+- [ ] Text accompanies color meaning
+- [ ] Keyboard accessible (if interactive)
+- [ ] Focus indicators visible (if interactive)
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    <ParamField path="badge-height-sm" type="dimension" default="18px">
+      Small badge height
+    </ParamField>
+    <ParamField path="badge-height-md" type="dimension" default="22px">
+      Medium badge height (default)
+    </ParamField>
+    <ParamField path="badge-height-lg" type="dimension" default="26px">
+      Large badge height
+    </ParamField>
+    <ParamField path="badge-padding-x-sm" type="dimension" default="6px">
+      Small horizontal padding
+    </ParamField>
+    <ParamField path="badge-padding-x-md" type="dimension" default="8px">
+      Medium horizontal padding
+    </ParamField>
+    <ParamField path="badge-padding-x-lg" type="dimension" default="10px">
+      Large horizontal padding
+    </ParamField>
+    <ParamField path="badge-border-radius" type="dimension" default="12px">
+      Border radius (pill shape)
+    </ParamField>
+    <ParamField path="badge-dot-size" type="dimension" default="8px">
+      Dot variant size
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors - Default">
+    <ParamField path="badge-default-bg" type="color" default="#f5f5f5">
+      Default background color
+    </ParamField>
+    <ParamField path="badge-default-text" type="color" default="#666666">
+      Default text color
+    </ParamField>
+    <ParamField path="badge-default-border" type="color" default="#e0e0e0">
+      Default border color (outlined variant)
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors - Status">
+    <ParamField path="badge-success-bg" type="color" default="#dcfce7">
+      Success background color
+    </ParamField>
+    <ParamField path="badge-success-text" type="color" default="#166534">
+      Success text color
+    </ParamField>
+    <ParamField path="badge-warning-bg" type="color" default="#fef3c7">
+      Warning background color
+    </ParamField>
+    <ParamField path="badge-warning-text" type="color" default="#92400e">
+      Warning text color
+    </ParamField>
+    <ParamField path="badge-error-bg" type="color" default="#fee2e2">
+      Error background color
+    </ParamField>
+    <ParamField path="badge-error-text" type="color" default="#991b1b">
+      Error text color
+    </ParamField>
+    <ParamField path="badge-info-bg" type="color" default="#dbeafe">
+      Info background color
+    </ParamField>
+    <ParamField path="badge-info-text" type="color" default="#1e40af">
+      Info text color
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Typography">
+    <ParamField path="badge-font-size-sm" type="dimension" default="11px">
+      Small badge font size
+    </ParamField>
+    <ParamField path="badge-font-size-md" type="dimension" default="12px">
+      Medium badge font size
+    </ParamField>
+    <ParamField path="badge-font-size-lg" type="dimension" default="13px">
+      Large badge font size
+    </ParamField>
+    <ParamField path="badge-font-weight" type="number" default="500">
+      Font weight
+    </ParamField>
+    <ParamField path="badge-line-height" type="number" default="1">
+      Line height
+    </ParamField>
+    <ParamField path="badge-letter-spacing" type="dimension" default="0.02em">
+      Letter spacing
+    </ParamField>
+  </Tab>
+</Tabs>
+
+### Token Usage Example
+
+```css
+.badge {
+  height: var(--badge-height-md);
+  padding: 0 var(--badge-padding-x-md);
+  background: var(--badge-default-bg);
+  color: var(--badge-default-text);
+  border-radius: var(--badge-border-radius);
+  font-size: var(--badge-font-size-md);
+  font-weight: var(--badge-font-weight);
+  line-height: var(--badge-line-height);
+  letter-spacing: var(--badge-letter-spacing);
+}
+
+.badge-success {
+  background: var(--badge-success-bg);
+  color: var(--badge-success-text);
+}
+```
+
+## Engineering Implementation
+
+### Component API
+
+```typescript
+interface BadgeProps {
+  // Appearance
+  variant?: 'default' | 'success' | 'warning' | 'error' | 'info' | 'count' | 'dot' | 'outlined';
+  size?: 'sm' | 'md' | 'lg';
+  
+  // Content
+  children?: ReactNode;
+  icon?: ReactNode;
+  max?: number; // Maximum count before showing "+"
+  
+  // Interaction
+  onClick?: () => void;
+  
+  // Styling
+  className?: string;
+  ariaLabel?: string;
+}
+```
+
+### Implementation Notes
+
+**Technical Requirements:**
+- Use `<span>` for non-interactive badges
+- Implement count truncation (e.g., 99+)
+- Support both text and numeric content
+- Handle empty/zero counts appropriately
+- Use semantic color classes
+- Ensure proper text alignment
+- Support RTL layouts
+- Optimize for small sizes with appropriate font rendering
+
+**Count Handling:**
+- Display actual count up to max value
+- Show "max+" when count exceeds max (default: 99)
+- Hide badge when count is 0 (optional behavior)
+
+### Code Examples
+
+<CodeGroup>
+```jsx Basic Usage
+// Default badge
+<Badge>New</Badge>
+
+// Status badges
+<Badge variant="success">Active</Badge>
+<Badge variant="warning">Pending</Badge>
+<Badge variant="error">Failed</Badge>
+
+// Outlined variant
+<Badge variant="outlined">Beta</Badge>
+```
+
+```jsx Count Badges
+// Simple count
+<Badge variant="count">12</Badge>
+
+// With max value
+<Badge variant="count" max={99}>150</Badge> // Shows "99+"
+
+// Zero count (hidden)
+<Badge variant="count">{unreadCount}</Badge>
+```
+
+```jsx With Icons
+// Badge with icon
+<Badge icon={<CheckIcon />}>Verified</Badge>
+
+// Dot indicator
+<Badge variant="dot" aria-label="Online" />
+```
+
+```jsx Different Sizes
+<Badge size="sm">Small</Badge>
+<Badge size="md">Medium</Badge>
+<Badge size="lg">Large</Badge>
+```
+
+```jsx With Components
+// Badge on button
+<Button>
+  Messages
+  <Badge variant="count">5</Badge>
+</Button>
+
+// Badge on avatar
+<div style={{ position: 'relative' }}>
+  <Avatar src="/user.jpg" />
+  <Badge 
+    variant="dot" 
+    style={{ position: 'absolute', top: 0, right: 0 }}
+    aria-label="Online"
+  />
+</div>
+
+// Badge in list
+<ListItem>
+  <span>Feature Requests</span>
+  <Badge variant="count">23</Badge>
+</ListItem>
+```
+
+```jsx Badge Group
+<div style={{ display: 'flex', gap: '8px' }}>
+  <Badge>React</Badge>
+  <Badge>TypeScript</Badge>
+  <Badge>Tailwind</Badge>
+</div>
+```
+</CodeGroup>
+
+### CSS Implementation
+
+```css
+.badge {
+  /* Base styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Sizing */
+  height: var(--badge-height-md);
+  padding: 0 var(--badge-padding-x-md);
+  min-width: var(--badge-height-md);
+  
+  /* Typography */
+  font-size: var(--badge-font-size-md);
+  font-weight: var(--badge-font-weight);
+  line-height: var(--badge-line-height);
+  letter-spacing: var(--badge-letter-spacing);
+  
+  /* Appearance */
+  background: var(--badge-default-bg);
+  color: var(--badge-default-text);
+  border-radius: var(--badge-border-radius);
+  
+  /* Prevent text selection */
+  user-select: none;
+}
+
+.badge-success {
+  background: var(--badge-success-bg);
+  color: var(--badge-success-text);
+}
+
+.badge-dot {
+  width: var(--badge-dot-size);
+  height: var(--badge-dot-size);
+  padding: 0;
+  min-width: 0;
+  border-radius: 50%;
+}
+
+.badge-outlined {
+  background: transparent;
+  border: 1px solid var(--badge-default-border);
+}
+
+/* Interactive badges */
+.badge-interactive {
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out;
+}
+
+.badge-interactive:hover {
+  filter: brightness(0.95);
+}
+
+.badge-interactive:focus-visible {
+  outline: 2px solid var(--badge-default-text);
+  outline-offset: 2px;
+}
+```

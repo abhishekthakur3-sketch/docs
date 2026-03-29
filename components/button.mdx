@@ -1,0 +1,643 @@
+---
+title: Button
+description: Buttons trigger actions and enable user interactions throughout the interface.
+icon: "hand-pointer"
+---
+
+# Button
+
+## Overview
+
+Buttons are interactive elements that trigger actions when clicked or activated. They are one of the most fundamental components in the TARMAC Design System, used to submit forms, navigate between pages, open dialogs, and perform various user-initiated actions. Buttons should clearly communicate their purpose and provide appropriate visual feedback.
+
+<CardGroup cols={2}>
+  <Card title="Primary Actions" icon="star">
+    Use for the most important action on a page
+  </Card>
+  <Card title="Accessible" icon="universal-access">
+    Built with WCAG 2.1 AA compliance
+  </Card>
+  <Card title="Flexible" icon="sliders">
+    Multiple variants, sizes, and states
+  </Card>
+  <Card title="Responsive" icon="mobile">
+    Optimized for touch and desktop
+  </Card>
+</CardGroup>
+
+## Component Preview
+
+<Info>
+Button component specifications from the TARMAC Design System including:
+- **Variants**: Primary, Secondary, Tertiary, Destructive, Ghost, Link
+- **Sizes**: SM (32px), MD (40px), LG (48px)
+- **States**: Default, Hover, Active, Focus, Disabled, Loading
+</Info>
+
+## Anatomy
+
+The Button component consists of the following elements:
+
+- **Container**: The clickable area with background and border
+- **Label**: Text describing the button's action
+- **Icon** (optional): Visual indicator supporting the label (left or right position)
+- **Loading Indicator** (optional): Spinner or animation during async operations
+- **Focus Ring**: Visual indicator for keyboard navigation
+
+<Info>Icons should only be included when they add clarity to the button's purpose.</Info>
+
+## Variants
+
+### Primary
+The main call-to-action button with high visual prominence. Use sparingly for the most important action on a page.
+
+```jsx
+<Button variant="primary">Save Changes</Button>
+```
+
+<Tip>Use only one primary button per section to maintain clear visual hierarchy.</Tip>
+
+### Secondary
+Supporting actions with medium visual weight. Used for secondary actions alongside primary buttons.
+
+```jsx
+<Button variant="secondary">Cancel</Button>
+```
+
+### Tertiary
+Low-emphasis actions that don't require strong visual weight.
+
+```jsx
+<Button variant="tertiary">Learn More</Button>
+```
+
+### Destructive
+Actions that delete, remove, or perform irreversible operations. Uses red/warning colors.
+
+```jsx
+<Button variant="destructive">Delete Account</Button>
+```
+
+<Warning>Always pair destructive actions with confirmation dialogs.</Warning>
+
+### Ghost
+Minimal styling for subtle actions, often used in toolbars or dense interfaces.
+
+```jsx
+<Button variant="ghost">Edit</Button>
+```
+
+### Link
+Styled as a hyperlink but with button semantics and behavior.
+
+```jsx
+<Button variant="link">View Details</Button>
+```
+
+## Sizes
+
+Buttons are available in three sizes to accommodate different UI contexts:
+
+| Size | Height | Padding | Font Size | Usage |
+|------|--------|---------|-----------|-------|
+| **SM (Small)** | 32px | 12px horizontal | 14px | Compact spaces, toolbars, tables |
+| **MD (Medium)** | 40px | 16px horizontal | 16px | Default size for most use cases |
+| **LG (Large)** | 48px | 20px horizontal | 18px | Prominent actions, hero sections |
+
+<Tip>Use MD (Medium) as the default size for most interfaces.</Tip>
+
+## States
+
+### Default
+Standard appearance ready for interaction.
+
+### Hover
+Visual feedback when cursor is over the button.
+- Background color darkens or lightens
+- Subtle scale or shadow effect
+
+### Active/Pressed
+Visual feedback during click or tap.
+- Slightly darker than hover state
+- Reduced elevation or inset appearance
+
+### Focus
+Visible outline for keyboard navigation.
+- 2px focus ring with high contrast
+- Maintains accessibility standards
+
+### Disabled
+Non-interactive state indicating unavailable action.
+- Reduced opacity (40%)
+- No hover effects
+- Cursor shows not-allowed
+- Not keyboard focusable
+
+### Loading
+Indicates async operation in progress.
+- Loading spinner replaces or accompanies label
+- Button remains disabled during loading
+- Maintains button dimensions
+
+## Interaction Behavior
+
+### Click/Tap
+- Provides immediate visual feedback (active state)
+- Triggers associated action or navigation
+- Shows loading state for async operations
+- Prevents double-submission during processing
+
+### Hover (Desktop)
+- Background color darkens slightly
+- Cursor changes to pointer
+- Smooth transition (150ms)
+- No layout shift
+
+### Focus (Keyboard)
+- Visible focus ring appears (2px outline)
+- Accessible via Tab key navigation
+- Activated with Enter or Space key
+- Focus ring uses high-contrast color
+
+### Touch (Mobile)
+- Minimum 44x44px touch target
+- Active state on touch down
+- Action triggers on touch up
+- Haptic feedback (when supported)
+
+## Usage Guidelines
+
+<AccordionGroup>
+  <Accordion title="When to Use" icon="check">
+    - Submitting forms or saving data
+    - Navigating to different pages or sections
+    - Opening modals, dialogs, or menus
+    - Confirming or canceling actions
+    - Triggering any user-initiated action
+  </Accordion>
+  
+  <Accordion title="When Not to Use" icon="xmark">
+    - For navigation that should be a link (use anchor tags)
+    - When a checkbox or toggle is more appropriate
+    - For non-interactive labels or status indicators
+    - When the action is not immediately available
+  </Accordion>
+</AccordionGroup>
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Use action verbs**
+    - "Save Changes"
+    - "Delete Account"
+    - "Add to Cart"
+    
+    **Keep labels concise**
+    - 1-3 words ideal
+    - Clear and specific
+    
+    **Provide feedback**
+    - Loading states
+    - Success confirmation
+    - Error handling
+  </Card>
+  
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Avoid vague labels**
+    - ~~"Click Here"~~
+    - ~~"Submit"~~
+    - ~~"OK"~~
+    
+    **Don't overuse primary**
+    - Only one per section
+    - Maintain hierarchy
+    
+    **Avoid disabled without context**
+    - Explain why disabled
+    - Show requirements
+  </Card>
+</CardGroup>
+
+### Best Practices
+
+<Steps>
+  <Step title="Use clear, action-oriented labels">
+    Start with verbs: "Save", "Delete", "Create", "Cancel"
+  </Step>
+  <Step title="Maintain visual hierarchy">
+    One primary button per section, secondary for supporting actions
+  </Step>
+  <Step title="Provide loading states">
+    Show spinners or disable during async operations
+  </Step>
+  <Step title="Ensure adequate spacing">
+    Minimum 8px between buttons, 16px for button groups
+  </Step>
+  <Step title="Consider mobile touch targets">
+    Minimum 44x44px for touch-friendly interactions
+  </Step>
+</Steps>
+
+## Accessibility
+
+<Info>All button components are built to meet WCAG 2.1 Level AA standards.</Info>
+
+### Semantic HTML
+Always use the native `<button>` element for proper semantics and keyboard support.
+
+```jsx
+<button type="button">Click Me</button>
+<button type="submit">Submit Form</button>
+<button type="reset">Reset Form</button>
+```
+
+### ARIA Labels and States
+
+<CodeGroup>
+```jsx Icon-Only Button
+<Button aria-label="Close dialog">
+  <CloseIcon />
+</Button>
+```
+
+```jsx Loading State
+<Button aria-busy="true" disabled>
+  <Spinner /> Loading...
+</Button>
+```
+
+```jsx Pressed State (Toggle)
+<Button aria-pressed={isActive}>
+  {isActive ? 'Active' : 'Inactive'}
+</Button>
+```
+
+```jsx Expanded State (Dropdown)
+<Button aria-expanded={isOpen} aria-haspopup="menu">
+  Menu <ChevronIcon />
+</Button>
+```
+</CodeGroup>
+
+### Keyboard Navigation
+
+<ResponseField name="Tab" type="key">
+  Move focus to the button
+</ResponseField>
+
+<ResponseField name="Enter / Space" type="key">
+  Activate the button action
+</ResponseField>
+
+<ResponseField name="Escape" type="key">
+  Close associated popover/dialog (if applicable)
+</ResponseField>
+
+### Accessibility Checklist
+
+<AccordionGroup>
+  <Accordion title="✓ Visual Requirements" icon="eye">
+    - [ ] Text contrast ratio ≥ 4.5:1 (WCAG AA)
+    - [ ] Focus indicator contrast ratio ≥ 3:1
+    - [ ] Focus ring visible on all interactive states
+    - [ ] Minimum 44x44px touch target size
+    - [ ] No color-only information
+  </Accordion>
+  
+  <Accordion title="✓ Keyboard Requirements" icon="keyboard">
+    - [ ] Focusable via Tab key
+    - [ ] Activatable with Enter and Space
+    - [ ] Disabled buttons not in tab order
+    - [ ] Focus order follows visual order
+    - [ ] No keyboard traps
+  </Accordion>
+  
+  <Accordion title="✓ Screen Reader Requirements" icon="audio-description">
+    - [ ] Descriptive, action-oriented labels
+    - [ ] Icon-only buttons have aria-label
+    - [ ] Loading states announced with aria-busy
+    - [ ] Disabled state communicated
+    - [ ] Button role implicit or explicit
+  </Accordion>
+</AccordionGroup>
+
+### Screen Reader Announcements
+
+| State | Announcement |
+|-------|-------------|
+| Default | "Save Changes, button" |
+| Disabled | "Save Changes, button, dimmed" or "unavailable" |
+| Loading | "Save Changes, button, busy" |
+| Pressed | "Filter, toggle button, pressed" |
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    <ParamField path="button-height-sm" type="dimension" default="32px">
+      Small button height
+    </ParamField>
+    <ParamField path="button-height-md" type="dimension" default="40px">
+      Medium button height (default)
+    </ParamField>
+    <ParamField path="button-height-lg" type="dimension" default="48px">
+      Large button height
+    </ParamField>
+    <ParamField path="button-padding-x-sm" type="dimension" default="12px">
+      Small horizontal padding
+    </ParamField>
+    <ParamField path="button-padding-x-md" type="dimension" default="16px">
+      Medium horizontal padding
+    </ParamField>
+    <ParamField path="button-padding-x-lg" type="dimension" default="20px">
+      Large horizontal padding
+    </ParamField>
+    <ParamField path="button-border-radius" type="dimension" default="6px">
+      Border radius for all sizes
+    </ParamField>
+    <ParamField path="button-gap" type="dimension" default="8px">
+      Gap between icon and label
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors - Primary">
+    <ParamField path="button-primary-bg" type="color" default="#000000">
+      Primary background color
+    </ParamField>
+    <ParamField path="button-primary-bg-hover" type="color" default="#1a1a1a">
+      Primary hover background
+    </ParamField>
+    <ParamField path="button-primary-bg-active" type="color" default="#333333">
+      Primary active/pressed background
+    </ParamField>
+    <ParamField path="button-primary-text" type="color" default="#ffffff">
+      Primary text color
+    </ParamField>
+    <ParamField path="button-primary-border" type="color" default="transparent">
+      Primary border color
+    </ParamField>
+    <ParamField path="button-primary-focus-ring" type="color" default="#000000">
+      Primary focus ring color
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors - Secondary">
+    <ParamField path="button-secondary-bg" type="color" default="#f5f5f5">
+      Secondary background color
+    </ParamField>
+    <ParamField path="button-secondary-bg-hover" type="color" default="#e5e5e5">
+      Secondary hover background
+    </ParamField>
+    <ParamField path="button-secondary-text" type="color" default="#000000">
+      Secondary text color
+    </ParamField>
+    <ParamField path="button-secondary-border" type="color" default="#e0e0e0">
+      Secondary border color
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors - Destructive">
+    <ParamField path="button-destructive-bg" type="color" default="#dc2626">
+      Destructive background color
+    </ParamField>
+    <ParamField path="button-destructive-bg-hover" type="color" default="#b91c1c">
+      Destructive hover background
+    </ParamField>
+    <ParamField path="button-destructive-text" type="color" default="#ffffff">
+      Destructive text color
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Typography">
+    <ParamField path="button-font-size-sm" type="dimension" default="14px">
+      Small button font size
+    </ParamField>
+    <ParamField path="button-font-size-md" type="dimension" default="16px">
+      Medium button font size
+    </ParamField>
+    <ParamField path="button-font-size-lg" type="dimension" default="18px">
+      Large button font size
+    </ParamField>
+    <ParamField path="button-font-weight" type="number" default="500">
+      Button text font weight
+    </ParamField>
+    <ParamField path="button-line-height" type="number" default="1.5">
+      Button text line height
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Animation">
+    <ParamField path="button-transition-duration" type="duration" default="150ms">
+      Transition duration for state changes
+    </ParamField>
+    <ParamField path="button-transition-timing" type="string" default="ease-in-out">
+      Transition timing function
+    </ParamField>
+  </Tab>
+</Tabs>
+
+### Token Usage Example
+
+```css
+.button-primary {
+  height: var(--button-height-md);
+  padding: 0 var(--button-padding-x-md);
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-radius: var(--button-border-radius);
+  font-size: var(--button-font-size-md);
+  font-weight: var(--button-font-weight);
+  transition: background var(--button-transition-duration) var(--button-transition-timing);
+}
+
+.button-primary:hover {
+  background: var(--button-primary-bg-hover);
+}
+```
+
+## Engineering Implementation
+
+### Component API
+
+```typescript
+interface ButtonProps {
+  // Appearance
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'destructive' | 'ghost' | 'link';
+  size?: 'sm' | 'md' | 'lg';
+  
+  // States
+  disabled?: boolean;
+  loading?: boolean;
+  
+  // Layout
+  fullWidth?: boolean;
+  
+  // Icon support
+  icon?: ReactNode;
+  iconPosition?: 'left' | 'right';
+  
+  // Behavior
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: (event: MouseEvent) => void;
+  
+  // Content
+  children: ReactNode;
+  
+  // Styling
+  className?: string;
+  ariaLabel?: string;
+}
+```
+
+### Implementation Notes
+
+**Technical Requirements:**
+- Use native `<button>` element for proper semantics
+- Prevent default form submission when type="button"
+- Disable pointer events when loading or disabled
+- Use CSS transitions for smooth state changes (150ms)
+- Ensure minimum touch target size (44x44px on mobile)
+- Handle loading state without layout shift
+
+**Button Hierarchy:**
+- Use only one primary button per section
+- Secondary buttons support the primary action
+- Tertiary/ghost buttons for less important actions
+- Destructive buttons should be visually distinct
+
+### Code Examples
+
+<CodeGroup>
+```jsx Basic Usage
+// Primary button
+<Button variant="primary" size="md">
+  Save Changes
+</Button>
+
+// Secondary button
+<Button variant="secondary">
+  Cancel
+</Button>
+
+// Destructive action
+<Button variant="destructive">
+  Delete Account
+</Button>
+```
+
+```jsx With Icons
+// Icon on left
+<Button 
+  variant="primary" 
+  icon={<PlusIcon />} 
+  iconPosition="left"
+>
+  Add Item
+</Button>
+
+// Icon on right
+<Button 
+  variant="secondary" 
+  icon={<ArrowRightIcon />} 
+  iconPosition="right"
+>
+  Continue
+</Button>
+
+// Icon-only button
+<Button 
+  variant="ghost" 
+  icon={<CloseIcon />}
+  ariaLabel="Close dialog"
+/>
+```
+
+```jsx States
+// Loading state
+<Button variant="primary" loading disabled>
+  Saving...
+</Button>
+
+// Disabled state
+<Button variant="primary" disabled>
+  Submit
+</Button>
+
+// Full width
+<Button variant="primary" fullWidth>
+  Continue
+</Button>
+```
+
+```jsx Form Integration
+<form onSubmit={handleSubmit}>
+  <Button type="submit" variant="primary">
+    Submit Form
+  </Button>
+  <Button type="reset" variant="secondary">
+    Reset
+  </Button>
+</form>
+```
+
+```jsx Button Group
+<div style={{ display: 'flex', gap: '8px' }}>
+  <Button variant="secondary">Cancel</Button>
+  <Button variant="primary">Save</Button>
+</div>
+```
+</CodeGroup>
+
+### CSS Implementation
+
+```css
+.button {
+  /* Base styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  
+  /* Sizing */
+  height: var(--button-height-md);
+  padding: 0 var(--button-padding-x-md);
+  
+  /* Typography */
+  font-size: var(--button-font-size-md);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  
+  /* Appearance */
+  border-radius: var(--button-border-radius);
+  border: none;
+  cursor: pointer;
+  
+  /* Transitions */
+  transition: all var(--button-transition-duration) var(--button-transition-timing);
+}
+
+.button-primary {
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.button-primary:hover {
+  background: var(--button-primary-bg-hover);
+}
+
+.button-primary:active {
+  background: var(--button-primary-bg-active);
+}
+
+.button-primary:focus-visible {
+  outline: 2px solid var(--button-primary-focus-ring);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+```

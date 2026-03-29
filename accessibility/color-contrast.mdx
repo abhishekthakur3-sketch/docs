@@ -1,0 +1,128 @@
+---
+title: "Color Contrast"
+description: "Ensuring sufficient color contrast for accessibility"
+---
+
+# Color Contrast
+
+Proper color contrast ensures text and UI elements are readable for all users, including those with visual impairments.
+
+## WCAG Requirements
+
+### Level AA (Minimum)
+
+| Content Type | Contrast Ratio |
+|--------------|----------------|
+| Normal text (< 18px) | 4.5:1 |
+| Large text (≥ 18px or ≥ 14px bold) | 3:1 |
+| UI components | 3:1 |
+| Graphics | 3:1 |
+
+### Level AAA (Enhanced)
+
+| Content Type | Contrast Ratio |
+|--------------|----------------|
+| Normal text | 7:1 |
+| Large text | 4.5:1 |
+
+## TARMAC Color Combinations
+
+All TARMAC color combinations meet AA standards minimum:
+
+### Text on Backgrounds
+
+| Foreground | Background | Ratio | Level |
+|------------|------------|-------|-------|
+| `neutral-900` | `white` | 21:1 | AAA |
+| `neutral-700` | `white` | 10.4:1 | AAA |
+| `neutral-600` | `white` | 7.0:1 | AAA |
+| `success-700` | `success-100` | 10.8:1 | AAA |
+| `error-700` | `error-100` | 12.1:1 | AAA |
+
+### Interactive Elements
+
+| Element | Default | Hover | Ratio |
+|---------|---------|-------|-------|
+| Primary Button | `#000000` on white | `#1a1a1a` | 21:1 |
+| Link | `#000000` | `#1a1a1a` | 21:1 |
+| Focus Ring | `#000000` | - | 3:1 |
+
+## Testing Tools
+
+### Browser Extensions
+
+- **axe DevTools** - Automated contrast checking
+- **WAVE** - Visual contrast analysis
+- **Stark** - Figma/browser plugin
+
+### Online Tools
+
+- **WebAIM Contrast Checker** - Manual testing
+- **Contrast Ratio** - Quick calculations
+- **Color Oracle** - Color blindness simulator
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check">
+    - Test all text/background combinations
+    - Verify UI component contrast
+    - Check focus indicators
+    - Test with color blindness simulators
+    - Use TARMAC color tokens
+  </Card>
+  <Card title="✗ Don't" icon="xmark">
+    - Don't rely on color alone
+    - Don't use low-contrast text
+    - Don't forget disabled states
+    - Don't skip testing
+    - Don't use arbitrary colors
+  </Card>
+</CardGroup>
+
+## Color Blindness
+
+### Types of Color Blindness
+
+- **Deuteranopia** (red-green, most common)
+- **Protanopia** (red-green)
+- **Tritanopia** (blue-yellow, rare)
+- **Achromatopsia** (complete color blindness, very rare)
+
+### Guidelines
+
+1. Never use color as the only means of conveying information
+2. Pair color with text, icons, or patterns
+3. Test designs with color blindness simulators
+4. Ensure sufficient contrast between adjacent colors
+
+## Code Examples
+
+### CSS with Sufficient Contrast
+
+```css
+/* Good - High contrast */
+.text-primary {
+  color: var(--color-neutral-900); /* 21:1 on white */
+}
+
+.text-secondary {
+  color: var(--color-neutral-600); /* 7:1 on white */
+}
+
+/* Bad - Low contrast */
+.text-low-contrast {
+  color: #999999; /* Only 2.8:1 on white */
+}
+```
+
+### Testing in Code
+
+```tsx
+// Use design tokens that guarantee contrast
+<Text color="neutral-900">High contrast text</Text>
+<Text color="neutral-600">Medium contrast text</Text>
+
+// Avoid arbitrary colors
+<Text style={{ color: '#aaa' }}>Low contrast - avoid!</Text>
+```

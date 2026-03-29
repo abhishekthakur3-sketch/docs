@@ -1,0 +1,619 @@
+---
+title: Tooltip
+description: Tooltips provide contextual information when users hover over or focus on an element.
+icon: "comment"
+---
+
+# Tooltip
+
+## Overview
+
+Tooltips are small contextual overlays that appear when users hover over, focus on, or tap an element. They provide helpful information, clarification, or additional context without cluttering the interface. Tooltips are essential for improving usability by explaining icons, abbreviations, or providing supplementary details about UI elements.
+
+<CardGroup cols={2}>
+  <Card title="Contextual Help" icon="circle-info">
+    Provide information without cluttering UI
+  </Card>
+  <Card title="Accessible" icon="universal-access">
+    Keyboard and screen reader support
+  </Card>
+  <Card title="Smart Positioning" icon="arrows-up-down-left-right">
+    Auto-adjusts to viewport boundaries
+  </Card>
+  <Card title="Touch Friendly" icon="hand-pointer">
+    Works on mobile and desktop
+  </Card>
+</CardGroup>
+
+## Component Preview
+
+<Info>
+Tooltip component specifications from the TARMAC Design System including:
+- **Variants**: Default (Dark), Light
+- **Placements**: Top, Right, Bottom, Left, Auto
+- **States**: Hidden, Visible, Transitioning
+</Info>
+
+## Anatomy
+
+The Tooltip component consists of the following elements:
+
+- **Trigger**: The element that activates the tooltip (button, icon, text, etc.)
+- **Container**: The floating overlay that contains the tooltip content
+- **Content**: Text or simple content displayed in the tooltip
+- **Arrow** (optional): Visual pointer connecting tooltip to trigger
+- **Backdrop** (optional): Subtle overlay for mobile touch interactions
+
+<Info>Tooltips should contain concise, helpful information - keep content to 1-2 short sentences maximum.</Info>
+
+## Variants
+
+### Default (Dark)
+Standard tooltip with dark background and light text.
+
+```jsx
+<Tooltip content="Save your changes">
+  <Button>Save</Button>
+</Tooltip>
+```
+
+### Light
+Light background variant for use on dark surfaces.
+
+```jsx
+<Tooltip content="Delete item" variant="light">
+  <IconButton><DeleteIcon /></IconButton>
+</Tooltip>
+```
+
+### Rich Content
+Supports formatted content with multiple lines or elements.
+
+```jsx
+<Tooltip content={
+  <div>
+    <strong>Keyboard Shortcut</strong>
+    <p>Cmd + S</p>
+  </div>
+}>
+  <Button>Save</Button>
+</Tooltip>
+```
+
+## Sizes
+
+Tooltips adapt their size based on content, with a maximum width constraint:
+
+| Size | Max Width | Usage |
+|------|-----------|-------|
+| **Default** | 240px | Standard tooltips with 1-2 lines |
+| **Large** | 320px | Longer descriptions or rich content |
+
+<Tip>Keep tooltip content concise to avoid large, intrusive overlays.</Tip>
+
+## States
+
+### Hidden
+Default state when tooltip is not visible.
+
+### Visible
+Tooltip appears after hover/focus delay.
+- Smooth fade-in animation (150ms)
+- Positioned relative to trigger
+- Remains visible during interaction
+
+### Transitioning
+Animation state during show/hide.
+- 150-200ms fade transition
+- Slight vertical movement (optional)
+
+## Interaction Behavior
+
+### Hover (Desktop)
+- Tooltip appears after 300ms delay
+- Remains visible while hovering trigger or tooltip
+- Dismisses when cursor moves away
+- Smooth fade-in animation (150ms)
+
+### Focus (Keyboard)
+- Tooltip appears immediately on focus
+- Remains visible while element has focus
+- Dismisses when focus moves away
+- Dismisses on Escape key press
+
+### Touch (Mobile)
+- First tap shows tooltip
+- Second tap activates trigger action
+- Tap outside dismisses tooltip
+- Scroll dismisses tooltip
+
+### Positioning
+- Default placement: top
+- Auto-adjusts if insufficient space
+- Maintains 8px offset from trigger
+- Arrow points to trigger center
+
+<Warning>Tooltips automatically reposition to stay within viewport boundaries.</Warning>
+
+## Usage Guidelines
+
+<AccordionGroup>
+  <Accordion title="When to Use" icon="check">
+    - Explaining icon-only buttons
+    - Providing additional context for truncated text
+    - Clarifying abbreviations or technical terms
+    - Showing keyboard shortcuts
+    - Displaying full values for charts or data visualizations
+    - Offering help text for form fields
+  </Accordion>
+  
+  <Accordion title="When Not to Use" icon="xmark">
+    - For critical information users must see
+    - For complex interactive content (use Popover)
+    - For mobile-primary experiences (consider alternatives)
+    - When the information should always be visible
+    - For form validation errors (use inline error messages)
+  </Accordion>
+</AccordionGroup>
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Be concise**
+    - "Save changes"
+    - "Delete item"
+    - "⌘ + S"
+    
+    **Add value**
+    - Explain icon meaning
+    - Show keyboard shortcuts
+    - Clarify abbreviations
+    
+    **Support keyboard**
+    - Show on focus
+    - Dismiss with Escape
+  </Card>
+  
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Avoid long text**
+    - ~~"Click this button to save all your changes to the database"~~
+    
+    **Don't repeat visible text**
+    - ~~Button: "Save" Tooltip: "Save"~~
+    
+    **Don't use for critical info**
+    - Error messages
+    - Required instructions
+    - Essential context
+  </Card>
+</CardGroup>
+
+<Tip>Keep tooltip content to 1-2 short sentences maximum for best readability.</Tip>
+
+<Warning>Never put interactive elements inside tooltips - use a Popover instead.</Warning>
+
+### Content Guidelines
+
+<Steps>
+  <Step title="Be concise and specific">
+    Use clear, direct language. Avoid unnecessary words.
+  </Step>
+  <Step title="Use sentence case">
+    "Save your changes" not "Save Your Changes"
+  </Step>
+  <Step title="Don't repeat visible text">
+    Add new information, don't duplicate what's already shown
+  </Step>
+  <Step title="Include units or formats">
+    "Last updated: 2 hours ago" or "Size: 2.4 MB"
+  </Step>
+</Steps>
+
+## Accessibility
+
+<Info>Tooltips must be accessible via keyboard and screen readers to meet WCAG 2.1 AA standards.</Info>
+
+### Keyboard Navigation
+
+<ResponseField name="Tab" type="key">
+  Focus trigger element to show tooltip
+</ResponseField>
+
+<ResponseField name="Escape" type="key">
+  Dismiss tooltip and return focus
+</ResponseField>
+
+<ResponseField name="Shift + Tab" type="key">
+  Move to previous element (dismisses tooltip)
+</ResponseField>
+
+### ARIA Implementation
+
+<CodeGroup>
+```jsx Basic Tooltip
+<button
+  aria-describedby="tooltip-save"
+  onMouseEnter={showTooltip}
+  onFocus={showTooltip}
+>
+  <SaveIcon />
+</button>
+<div role="tooltip" id="tooltip-save">
+  Save your changes
+</div>
+```
+
+```jsx Icon Button with Tooltip
+<Tooltip content="Delete item">
+  <IconButton aria-label="Delete item">
+    <DeleteIcon />
+  </IconButton>
+</Tooltip>
+```
+
+```jsx Keyboard Shortcut
+<Tooltip content="Save (⌘ + S)">
+  <Button>Save</Button>
+</Tooltip>
+```
+</CodeGroup>
+
+### ARIA Attributes Reference
+
+<ResponseField name="role" type="string" default="tooltip">
+  Identifies the element as a tooltip
+</ResponseField>
+
+<ResponseField name="aria-describedby" type="string">
+  Links trigger to tooltip content (use tooltip ID)
+</ResponseField>
+
+<ResponseField name="aria-label" type="string">
+  Provides accessible name for icon-only triggers
+</ResponseField>
+
+### Accessibility Checklist
+
+<AccordionGroup>
+  <Accordion title="✓ Keyboard Support" icon="keyboard">
+    - [ ] Tooltip appears on focus
+    - [ ] Tooltip dismisses on blur
+    - [ ] Escape key dismisses tooltip
+    - [ ] No keyboard traps
+    - [ ] Focus order is logical
+  </Accordion>
+  
+  <Accordion title="✓ Screen Reader Support" icon="audio-description">
+    - [ ] role="tooltip" on tooltip container
+    - [ ] aria-describedby links trigger to tooltip
+    - [ ] Icon-only triggers have aria-label
+    - [ ] Tooltip content is announced
+    - [ ] No redundant announcements
+  </Accordion>
+  
+  <Accordion title="✓ Visual Requirements" icon="eye">
+    - [ ] Sufficient color contrast (4.5:1)
+    - [ ] Visible against all backgrounds
+    - [ ] Doesn't obscure important content
+    - [ ] Readable font size (14px minimum)
+  </Accordion>
+  
+  <Accordion title="✓ Touch Device Support" icon="mobile">
+    - [ ] Tap to show tooltip
+    - [ ] Tap outside to dismiss
+    - [ ] Alternative access method provided
+    - [ ] No hover-only tooltips
+  </Accordion>
+</AccordionGroup>
+
+### Touch Device Considerations
+
+<Warning>Hover-only tooltips don't work on touch devices. Always provide alternative access methods.</Warning>
+
+**Recommended approaches:**
+- Show tooltip on first tap, activate on second tap
+- Provide info icon for explicit tooltip access
+- Display information inline on mobile
+- Use expandable sections instead of tooltips
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    <ParamField path="tooltip-max-width" type="dimension" default="240px">
+      Maximum tooltip width
+    </ParamField>
+    <ParamField path="tooltip-padding-x" type="dimension" default="12px">
+      Horizontal padding
+    </ParamField>
+    <ParamField path="tooltip-padding-y" type="dimension" default="8px">
+      Vertical padding
+    </ParamField>
+    <ParamField path="tooltip-border-radius" type="dimension" default="6px">
+      Border radius
+    </ParamField>
+    <ParamField path="tooltip-arrow-size" type="dimension" default="6px">
+      Arrow/pointer size
+    </ParamField>
+    <ParamField path="tooltip-offset" type="dimension" default="8px">
+      Distance from trigger element
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors - Default (Dark)">
+    <ParamField path="tooltip-bg" type="color" default="#1a1a1a">
+      Background color
+    </ParamField>
+    <ParamField path="tooltip-text" type="color" default="#ffffff">
+      Text color
+    </ParamField>
+    <ParamField path="tooltip-shadow" type="shadow" default="0 4px 12px rgba(0,0,0,0.15)">
+      Box shadow
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors - Light">
+    <ParamField path="tooltip-light-bg" type="color" default="#ffffff">
+      Light variant background
+    </ParamField>
+    <ParamField path="tooltip-light-text" type="color" default="#000000">
+      Light variant text color
+    </ParamField>
+    <ParamField path="tooltip-light-border" type="color" default="#e0e0e0">
+      Light variant border color
+    </ParamField>
+    <ParamField path="tooltip-light-shadow" type="shadow" default="0 4px 12px rgba(0,0,0,0.1)">
+      Light variant shadow
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Typography">
+    <ParamField path="tooltip-font-size" type="dimension" default="14px">
+      Font size
+    </ParamField>
+    <ParamField path="tooltip-line-height" type="number" default="1.4">
+      Line height
+    </ParamField>
+    <ParamField path="tooltip-font-weight" type="number" default="400">
+      Font weight
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Animation">
+    <ParamField path="tooltip-delay-show" type="duration" default="300ms">
+      Delay before showing tooltip
+    </ParamField>
+    <ParamField path="tooltip-delay-hide" type="duration" default="0ms">
+      Delay before hiding tooltip
+    </ParamField>
+    <ParamField path="tooltip-transition-duration" type="duration" default="150ms">
+      Fade in/out animation duration
+    </ParamField>
+    <ParamField path="tooltip-z-index" type="number" default="1000">
+      Z-index layer
+    </ParamField>
+  </Tab>
+</Tabs>
+
+### Token Usage Example
+
+```css
+.tooltip {
+  max-width: var(--tooltip-max-width);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  background: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  border-radius: var(--tooltip-border-radius);
+  box-shadow: var(--tooltip-shadow);
+  font-size: var(--tooltip-font-size);
+  line-height: var(--tooltip-line-height);
+  z-index: var(--tooltip-z-index);
+  
+  /* Animation */
+  opacity: 0;
+  transition: opacity var(--tooltip-transition-duration) ease-in-out;
+  transition-delay: var(--tooltip-delay-show);
+}
+
+.tooltip.visible {
+  opacity: 1;
+}
+
+.tooltip-light {
+  background: var(--tooltip-light-bg);
+  color: var(--tooltip-light-text);
+  border: 1px solid var(--tooltip-light-border);
+  box-shadow: var(--tooltip-light-shadow);
+}
+```
+
+## Engineering Implementation
+
+### Component API
+
+```typescript
+interface TooltipProps {
+  // Content
+  content: ReactNode;
+  children: ReactElement;
+  
+  // Appearance
+  placement?: 'top' | 'right' | 'bottom' | 'left' | 'auto';
+  variant?: 'default' | 'light';
+  arrow?: boolean;
+  
+  // Behavior
+  delay?: number;
+  disabled?: boolean;
+  offset?: number;
+  
+  // Styling
+  className?: string;
+}
+```
+
+### Implementation Notes
+
+**Technical Requirements:**
+- Use portal rendering to avoid z-index issues
+- Implement collision detection for viewport boundaries
+- Calculate optimal positioning dynamically
+- Handle scroll and resize events
+- Clean up event listeners on unmount
+- Support both controlled and uncontrolled modes
+- Debounce show/hide for better UX
+- Use pointer-events: none to prevent tooltip interference
+- Implement proper focus management
+- Support touch devices with tap interactions
+
+**Positioning Logic:**
+- Default to top placement
+- Auto-adjust if insufficient space
+- Maintain consistent offset from trigger
+- Center align with trigger when possible
+- Keep arrow pointing to trigger center
+
+### Code Examples
+
+<CodeGroup>
+```jsx Basic Usage
+// Basic tooltip
+<Tooltip content="Save your changes">
+  <Button>Save</Button>
+</Tooltip>
+
+// Icon with tooltip
+<Tooltip content="Delete item">
+  <IconButton>
+    <DeleteIcon />
+  </IconButton>
+</Tooltip>
+```
+
+```jsx Placement
+// Custom placement
+<Tooltip content="User settings" placement="right">
+  <Avatar src="/user.jpg" />
+</Tooltip>
+
+// Auto placement
+<Tooltip content="Help" placement="auto">
+  <HelpIcon />
+</Tooltip>
+```
+
+```jsx Variants
+// Light variant
+<Tooltip content="Help documentation" variant="light">
+  <HelpIcon />
+</Tooltip>
+
+// Without arrow
+<Tooltip content="Notification" arrow={false}>
+  <BellIcon />
+</Tooltip>
+```
+
+```jsx Rich Content
+// Multi-line content
+<Tooltip 
+  content={
+    <div>
+      <strong>Keyboard Shortcut</strong>
+      <p>⌘ + S (Mac)</p>
+      <p>Ctrl + S (Windows)</p>
+    </div>
+  }
+>
+  <Button>Save</Button>
+</Tooltip>
+```
+
+```jsx Advanced
+// Custom delay
+<Tooltip content="Quick action" delay={100}>
+  <Button>Click</Button>
+</Tooltip>
+
+// Disabled tooltip
+<Tooltip content="Coming soon" disabled={!showTooltips}>
+  <Button>Feature</Button>
+</Tooltip>
+
+// Controlled tooltip
+const [open, setOpen] = useState(false);
+
+<Tooltip 
+  content="Controlled tooltip"
+  open={open}
+  onOpenChange={setOpen}
+>
+  <Button>Hover me</Button>
+</Tooltip>
+```
+</CodeGroup>
+
+### CSS Implementation
+
+```css
+.tooltip {
+  /* Base styles */
+  position: absolute;
+  max-width: var(--tooltip-max-width);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  
+  /* Typography */
+  font-size: var(--tooltip-font-size);
+  line-height: var(--tooltip-line-height);
+  font-weight: var(--tooltip-font-weight);
+  
+  /* Appearance */
+  background: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  border-radius: var(--tooltip-border-radius);
+  box-shadow: var(--tooltip-shadow);
+  
+  /* Layering */
+  z-index: var(--tooltip-z-index);
+  pointer-events: none;
+  
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: 
+    opacity var(--tooltip-transition-duration) ease-in-out,
+    transform var(--tooltip-transition-duration) ease-in-out;
+  transition-delay: var(--tooltip-delay-show);
+}
+
+.tooltip[data-state="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: var(--tooltip-arrow-size);
+  height: var(--tooltip-arrow-size);
+  background: var(--tooltip-bg);
+  transform: rotate(45deg);
+}
+
+/* Placement variants */
+.tooltip[data-placement^="top"] {
+  transform-origin: bottom center;
+}
+
+.tooltip[data-placement^="bottom"] {
+  transform-origin: top center;
+}
+
+.tooltip[data-placement^="left"] {
+  transform-origin: right center;
+}
+
+.tooltip[data-placement^="right"] {
+  transform-origin: left center;
+}
+```

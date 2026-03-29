@@ -1,0 +1,561 @@
+---
+title: Typography
+description: Type scale, fonts, and text styles for the TARMAC Design System
+icon: "font"
+---
+
+# Typography
+
+## Overview
+
+Typography is a critical component of the TARMAC Design System. Our type system provides clear hierarchy, excellent readability, and consistent text styling across all platforms and devices.
+
+<CardGroup cols={2}>
+  <Card title="Readable" icon="book-open">
+    Optimized for clarity and comprehension
+  </Card>
+  <Card title="Accessible" icon="universal-access">
+    WCAG 2.1 AA compliant contrast and sizing
+  </Card>
+  <Card title="Scalable" icon="text-height">
+    Responsive type scale
+  </Card>
+  <Card title="Systematic" icon="layer-group">
+    Consistent hierarchy and spacing
+  </Card>
+</CardGroup>
+
+## Font Families
+
+### Primary Font Stack
+
+The TARMAC Design System uses system fonts for optimal performance and native feel.
+
+```css
+--font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+                     Roboto, "Helvetica Neue", Arial, sans-serif;
+```
+
+**Benefits:**
+- Zero load time (already installed)
+- Native OS appearance
+- Excellent readability
+- Consistent across platforms
+
+### Monospace Font Stack
+
+Used for code snippets, technical content, and data display.
+
+```css
+--font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono",
+                     Consolas, "Courier New", monospace;
+```
+
+## Type Scale
+
+### Desktop Scale
+
+<Tabs>
+  <Tab title="Scale Table">
+    | Token | Size | Line Height | Weight | Usage |
+    |-------|------|-------------|--------|-------|
+    | `text-xs` | 12px | 16px (1.33) | 400 | Captions, labels |
+    | `text-sm` | 14px | 20px (1.43) | 400 | Small text, helper text |
+    | `text-base` | 16px | 24px (1.5) | 400 | Body text, default |
+    | `text-lg` | 18px | 28px (1.56) | 400 | Large body text |
+    | `text-xl` | 20px | 28px (1.4) | 500 | Small headings |
+    | `text-2xl` | 24px | 32px (1.33) | 600 | H4 headings |
+    | `text-3xl` | 30px | 36px (1.2) | 600 | H3 headings |
+    | `text-4xl` | 36px | 40px (1.11) | 700 | H2 headings |
+    | `text-5xl` | 48px | 48px (1) | 700 | H1 headings |
+    | `text-6xl` | 60px | 60px (1) | 700 | Display text |
+  </Tab>
+  
+  <Tab title="Visual Preview">
+    <div style={{ padding: '20px' }}>
+      <div style={{ fontSize: '12px', lineHeight: '16px', marginBottom: '16px' }}>
+        12px - Caption text and labels
+      </div>
+      <div style={{ fontSize: '14px', lineHeight: '20px', marginBottom: '16px' }}>
+        14px - Small text and helper text
+      </div>
+      <div style={{ fontSize: '16px', lineHeight: '24px', marginBottom: '16px' }}>
+        16px - Body text and default size
+      </div>
+      <div style={{ fontSize: '18px', lineHeight: '28px', marginBottom: '16px' }}>
+        18px - Large body text
+      </div>
+      <div style={{ fontSize: '20px', lineHeight: '28px', fontWeight: '500', marginBottom: '16px' }}>
+        20px - Small headings
+      </div>
+      <div style={{ fontSize: '24px', lineHeight: '32px', fontWeight: '600', marginBottom: '16px' }}>
+        24px - H4 headings
+      </div>
+      <div style={{ fontSize: '30px', lineHeight: '36px', fontWeight: '600', marginBottom: '16px' }}>
+        30px - H3 headings
+      </div>
+      <div style={{ fontSize: '36px', lineHeight: '40px', fontWeight: '700', marginBottom: '16px' }}>
+        36px - H2 headings
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+### Mobile Scale
+
+Slightly reduced sizes for mobile devices to optimize readability on smaller screens.
+
+| Token | Desktop | Mobile | Usage |
+|-------|---------|--------|-------|
+| `text-xs` | 12px | 12px | Captions |
+| `text-sm` | 14px | 14px | Small text |
+| `text-base` | 16px | 16px | Body text |
+| `text-lg` | 18px | 17px | Large body |
+| `text-xl` | 20px | 18px | Small headings |
+| `text-2xl` | 24px | 20px | H4 |
+| `text-3xl` | 30px | 24px | H3 |
+| `text-4xl` | 36px | 28px | H2 |
+| `text-5xl` | 48px | 32px | H1 |
+| `text-6xl` | 60px | 40px | Display |
+
+## Font Weights
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `font-weight-normal` | 400 | Body text, default |
+| `font-weight-medium` | 500 | Emphasis, labels |
+| `font-weight-semibold` | 600 | Subheadings, buttons |
+| `font-weight-bold` | 700 | Headings, strong emphasis |
+
+<Warning>Avoid using font weights below 400 or above 700 for better cross-platform consistency.</Warning>
+
+## Text Styles
+
+### Headings
+
+<Tabs>
+  <Tab title="Styles">
+    ```css
+    .heading-1 {
+      font-size: var(--text-5xl);      /* 48px */
+      line-height: 1;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-6);
+    }
+    
+    .heading-2 {
+      font-size: var(--text-4xl);      /* 36px */
+      line-height: 1.11;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--spacing-5);
+    }
+    
+    .heading-3 {
+      font-size: var(--text-3xl);      /* 30px */
+      line-height: 1.2;
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-4);
+    }
+    
+    .heading-4 {
+      font-size: var(--text-2xl);      /* 24px */
+      line-height: 1.33;
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-4);
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Usage">
+    - **H1**: Page titles, hero headings (one per page)
+    - **H2**: Major section headings
+    - **H3**: Subsection headings
+    - **H4**: Component headings, card titles
+    - **H5/H6**: Rarely used, consider using bold body text
+  </Tab>
+</Tabs>
+
+### Body Text
+
+```css
+.body-large {
+  font-size: var(--text-lg);        /* 18px */
+  line-height: 1.56;
+  font-weight: var(--font-weight-normal);
+}
+
+.body {
+  font-size: var(--text-base);      /* 16px */
+  line-height: 1.5;
+  font-weight: var(--font-weight-normal);
+}
+
+.body-small {
+  font-size: var(--text-sm);        /* 14px */
+  line-height: 1.43;
+  font-weight: var(--font-weight-normal);
+}
+```
+
+### Supporting Text
+
+```css
+.caption {
+  font-size: var(--text-xs);        /* 12px */
+  line-height: 1.33;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-neutral-600);
+}
+
+.label {
+  font-size: var(--text-sm);        /* 14px */
+  line-height: 1.43;
+  font-weight: var(--font-weight-medium);
+}
+
+.overline {
+  font-size: var(--text-xs);        /* 12px */
+  line-height: 1.33;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+```
+
+## Usage Guidelines
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Maintain hierarchy**
+    - Use one H1 per page
+    - Follow heading order (H1 → H2 → H3)
+    - Create clear visual distinction
+    
+    **Optimize readability**
+    - 45-75 characters per line
+    - Adequate line height (1.5+)
+    - Sufficient contrast (4.5:1)
+    
+    **Use semantic HTML**
+    - `<h1>` through `<h6>` for headings
+    - `<p>` for paragraphs
+    - `<strong>` for emphasis
+  </Card>
+  
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Don't skip heading levels**
+    - ~~H1 → H3~~ (skip H2)
+    - Maintain logical structure
+    
+    **Don't use tiny text**
+    - Minimum 12px for UI
+    - Minimum 14px for body text
+    - Consider accessibility
+    
+    **Don't use too many weights**
+    - Stick to 3-4 weights max
+    - Maintain consistency
+    - Avoid font weight overload
+  </Card>
+</CardGroup>
+
+### Line Length
+
+Optimal line length for readability:
+
+| Context | Characters | Pixels (approx) |
+|---------|-----------|-----------------|
+| Body text | 45-75 | 600-800px |
+| Wide layouts | 75-90 | 800-1000px |
+| Narrow columns | 40-50 | 400-600px |
+
+```css
+.content {
+  max-width: 65ch; /* ~65 characters */
+}
+```
+
+### Text Alignment
+
+| Alignment | Usage |
+|-----------|-------|
+| Left | Default for body text, headings (LTR languages) |
+| Center | Short headings, hero text, marketing content |
+| Right | Rarely used, numeric data, RTL languages |
+| Justify | Avoid - creates uneven spacing |
+
+<Tip>Use left alignment for most text content. Center alignment works well for short headings and hero sections.</Tip>
+
+## Accessibility Considerations
+
+<AccordionGroup>
+  <Accordion title="✓ Contrast Requirements" icon="eye">
+    **WCAG 2.1 Level AA**
+    - Normal text (< 18px): 4.5:1 contrast ratio
+    - Large text (≥ 18px or ≥ 14px bold): 3:1 contrast ratio
+    
+    **Recommended Combinations**
+    ```css
+    /* High contrast (AAA) */
+    color: var(--color-neutral-900);  /* on white */
+    color: var(--color-neutral-50);   /* on black */
+    
+    /* Medium contrast (AA) */
+    color: var(--color-neutral-700);  /* on white */
+    color: var(--color-neutral-300);  /* on black */
+    ```
+  </Accordion>
+  
+  <Accordion title="✓ Font Size" icon="text-height">
+    **Minimum Sizes**
+    - Body text: 16px (1rem) minimum
+    - Small text: 14px minimum
+    - UI elements: 12px minimum (use sparingly)
+    
+    **Relative Units**
+    - Use `rem` for font sizes (scales with user preferences)
+    - Use `em` for spacing relative to font size
+    - Avoid fixed `px` values when possible
+    
+    ```css
+    body {
+      font-size: 1rem; /* 16px, but respects user settings */
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="✓ Line Height" icon="arrows-up-down">
+    **Recommended Values**
+    - Body text: 1.5 (150%)
+    - Headings: 1.1-1.3
+    - Small text: 1.4-1.5
+    
+    **Benefits**
+    - Improves readability
+    - Helps users with dyslexia
+    - Easier to track lines
+    
+    ```css
+    p {
+      line-height: 1.5;
+    }
+    ```
+  </Accordion>
+  
+  <Accordion title="✓ Semantic HTML" icon="code">
+    **Use Proper Elements**
+    ```html
+    <!-- Good -->
+    <h1>Page Title</h1>
+    <h2>Section Heading</h2>
+    <p>Body paragraph</p>
+    <strong>Important text</strong>
+    <em>Emphasized text</em>
+    
+    <!-- Bad -->
+    <div class="heading-1">Page Title</div>
+    <span class="bold">Important text</span>
+    ```
+    
+    **Benefits**
+    - Screen reader navigation
+    - SEO improvements
+    - Logical document structure
+  </Accordion>
+</AccordionGroup>
+
+## Code Examples
+
+### CSS Custom Properties
+
+```css
+:root {
+  /* Font Families */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+                       Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono",
+                       Consolas, "Courier New", monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+}
+```
+
+### Component Examples
+
+<CodeGroup>
+```css Headings
+h1, .h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-none);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-6);
+}
+
+h2, .h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.11;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--spacing-5);
+}
+
+h3, .h3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-4);
+}
+```
+
+```css Body Text
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-neutral-900);
+}
+
+p {
+  margin-bottom: var(--spacing-4);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-neutral-700);
+}
+```
+
+```css Links
+a {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--color-primary-700);
+}
+
+a:focus {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+```
+
+```css Code
+code {
+  font-family: var(--font-family-mono);
+  font-size: 0.875em;
+  background: var(--color-neutral-100);
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-2);
+  overflow-x: auto;
+}
+```
+</CodeGroup>
+
+### Responsive Typography
+
+```css
+/* Mobile-first approach */
+h1 {
+  font-size: var(--text-4xl); /* 32px on mobile */
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--text-5xl); /* 48px on tablet+ */
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: var(--text-6xl); /* 60px on desktop */
+  }
+}
+
+/* Fluid typography (advanced) */
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+```
+
+### JavaScript/TypeScript
+
+```typescript
+export const typography = {
+  fontFamily: {
+    sans: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    mono: '"SF Mono", Monaco, "Cascadia Code", monospace',
+  },
+  fontSize: {
+    xs: '0.75rem',    // 12px
+    sm: '0.875rem',   // 14px
+    base: '1rem',     // 16px
+    lg: '1.125rem',   // 18px
+    xl: '1.25rem',    // 20px
+    '2xl': '1.5rem',  // 24px
+    '3xl': '1.875rem',// 30px
+    '4xl': '2.25rem', // 36px
+    '5xl': '3rem',    // 48px
+    '6xl': '3.75rem', // 60px
+  },
+  fontWeight: {
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+  },
+  lineHeight: {
+    none: 1,
+    tight: 1.25,
+    snug: 1.375,
+    normal: 1.5,
+    relaxed: 1.625,
+    loose: 2,
+  },
+};
+```
+
+<Info>Always test typography with real content and across different devices to ensure optimal readability.</Info>

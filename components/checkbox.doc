@@ -1,0 +1,726 @@
+# Checkbox Component Documentation
+
+---
+
+## 1. Component Overview
+
+The Checkbox is an interactive selection control that allows users to choose one or more options independently from a set. It is a fundamental form element in the TARMAC Design System, providing clear visual feedback for selected, unselected, and partially selected states.
+
+### What It Is
+
+A checkbox is a small square (or rounded) control that toggles between checked and unchecked states when activated. It can also display an indeterminate (partial) state when used in hierarchical selection patterns.
+
+### Purpose in the System
+
+Checkboxes serve as the primary multi-selection control in TARMAC. They enable users to make independent binary choices across one or more options without affecting other selections in the same group.
+
+### Common Usage Contexts
+
+- **Forms**: Accepting terms, selecting preferences, enabling optional fields
+- **Settings panels**: Toggling feature flags, notification preferences, privacy options
+- **Filters**: Selecting multiple filter criteria in search or data views
+- **Multi-selection lists**: Bulk actions in tables, selecting items for batch operations
+- **Permission management**: Granting or revoking granular access rights
+
+---
+
+## 2. Usage Guidelines
+
+### When to Use
+
+Use checkboxes when:
+
+- Users can select **multiple options simultaneously** from a group
+- Each option is **independent** of the others
+- Users need to **enable or disable** a preference or setting
+- A **binary choice** (yes/no, on/off) needs to be made within a form context
+- A **"select all"** pattern is needed for a group of items
+- Users must explicitly **opt in** to something (e.g., terms and conditions)
+
+### When Not to Use
+
+Do not use checkboxes when:
+
+- **Only one option** should be selected from a group → use **Radio Button**
+- The interaction represents an **instant toggle** with immediate effect → use **Toggle Switch**
+- The selection is from a **long list of options** → use **Multi-select Dropdown** or **Select**
+- The action is **destructive or primary** → use **Button** with confirmation
+- You need to represent a **range or scale** → use **Slider**
+
+### Checkbox vs Radio Button vs Toggle Switch
+
+| Criteria              | Checkbox              | Radio Button           | Toggle Switch          |
+|-----------------------|-----------------------|------------------------|------------------------|
+| Selection type        | Multiple              | Single                 | Binary                 |
+| Options independent?  | Yes                   | No (mutually exclusive)| N/A                    |
+| Requires submission?  | Typically yes         | Typically yes          | No (immediate effect)  |
+| Indeterminate state?  | Yes                   | No                     | No                     |
+| Common context        | Forms, filters        | Forms, surveys         | Settings, preferences  |
+
+---
+
+## 3. Component Anatomy
+
+The Checkbox component is composed of the following structural elements:
+
+### 3.1 Checkbox Container
+
+The outer boundary of the checkbox control. Defines the clickable hit area and visual boundary. Available in two styles:
+
+- **Box**: Square container with slightly rounded corners (border-radius: 4px)
+- **Rounded**: Fully rounded container (border-radius: 50%)
+
+### 3.2 Checkbox Indicator
+
+The visual element that appears inside the container when the checkbox is in a selected state:
+
+- **Checked**: Displays a checkmark icon
+- **Indeterminate/Partial**: Displays a horizontal dash/minus icon
+
+The indicator is hidden when the checkbox is unchecked.
+
+### 3.3 Label
+
+The text element positioned to the right of the checkbox control. It describes the option being selected. The label is interactive — clicking it toggles the checkbox state.
+
+**Requirements:**
+- Every checkbox must have an associated label (visible or via `aria-label`)
+- Labels should be clear, concise, and action-oriented
+- Labels align to the vertical center of the checkbox for single-line text
+- Multi-line labels align to the top of the checkbox
+
+### 3.4 Supporting Text / Helper Text (Optional)
+
+Additional descriptive text displayed below the label. Used to provide context, clarification, or instructions about the option.
+
+- Displayed in a smaller, muted font
+- Should not exceed two lines
+- Not interactive
+
+### 3.5 Error Message (Optional)
+
+Validation feedback displayed when the checkbox is in an error state (e.g., required but unchecked). Typically displayed below the checkbox or checkbox group in an error color (red).
+
+### 3.6 Checkbox Group Label (Optional)
+
+A heading or label for a group of related checkboxes. Implemented using `<fieldset>` and `<legend>` for accessibility. Provides context for the group as a whole.
+
+---
+
+## 4. Variants
+
+### 4.1 Default Checkbox
+
+A standalone checkbox without a label. Used only in constrained layouts (e.g., table row selection). Must include `aria-label` for accessibility.
+
+```jsx
+<Checkbox aria-label="Select row" />
+```
+
+### 4.2 Checkbox with Label
+
+The standard usage. A checkbox paired with a descriptive text label.
+
+```jsx
+<Checkbox label="Enable email notifications" />
+```
+
+### 4.3 Checkbox with Description
+
+A checkbox with both a label and supporting helper text for additional context.
+
+```jsx
+<Checkbox
+  label="Marketing emails"
+  helperText="Receive updates about new features and promotions"
+/>
+```
+
+### 4.4 Checkbox Group
+
+Multiple related checkboxes grouped together under a shared heading. Used for multi-select scenarios.
+
+```jsx
+<CheckboxGroup label="Notification preferences">
+  <Checkbox label="Email" value="email" />
+  <Checkbox label="SMS" value="sms" />
+  <Checkbox label="Push notifications" value="push" />
+</CheckboxGroup>
+```
+
+### 4.5 Checkbox with Helper Text
+
+A checkbox group or individual checkbox with instructional text to guide the user.
+
+```jsx
+<CheckboxGroup
+  label="Permissions"
+  helperText="Select the permissions to grant this user"
+>
+  <Checkbox label="Read" value="read" />
+  <Checkbox label="Write" value="write" />
+  <Checkbox label="Admin" value="admin" />
+</CheckboxGroup>
+```
+
+### 4.6 Checkbox with Error
+
+A checkbox displaying a validation error, typically when a required selection has not been made.
+
+```jsx
+<Checkbox
+  label="I accept the terms and conditions"
+  error="You must accept the terms to continue"
+  required
+/>
+```
+
+### 4.7 Indeterminate Checkbox
+
+A checkbox in the partial/indeterminate state. Used as a parent control when only some child checkboxes in a group are selected.
+
+```jsx
+<Checkbox
+  label="Select all"
+  indeterminate={someSelected && !allSelected}
+  checked={allSelected}
+/>
+```
+
+### Color Variants
+
+The TARMAC Design System supports four color variants that define the fill color when checked:
+
+| Variant            | Color   | Usage                                                    |
+|--------------------|---------|----------------------------------------------------------|
+| **Standard (Black)** | #000000 | Default for most interfaces                              |
+| **Blue**           | #2563eb | Interfaces with a blue primary action theme              |
+| **Green**          | #16a34a | Positive selections or confirmations                     |
+| **DLV Red**        | #dc2626 | Brand-related interfaces or strong visual emphasis        |
+
+Use variants consistently across the product. Do not mix variants within the same form or group.
+
+---
+
+## 5. States
+
+### 5.1 Default (Unchecked)
+
+- **Visual**: Empty container with a visible border
+- **Border color**: neutral-300 (#d4d4d4)
+- **Background**: Transparent
+- **Interaction**: Ready for user input
+- **Accessibility**: Announced as "not checked"
+
+### 5.2 Hover
+
+- **Visual**: Border color darkens; subtle background tint may appear
+- **Border color**: neutral-400 (#a3a3a3)
+- **Cursor**: Pointer
+- **Transition**: 150ms ease-in-out
+- **Accessibility**: No change in announced state
+
+### 5.3 Focus
+
+- **Visual**: 2px focus ring appears around the checkbox
+- **Focus ring color**: Matches variant color (e.g., #000000 for Standard)
+- **Outline offset**: 2px
+- **Trigger**: Keyboard navigation only (`:focus-visible`)
+- **Accessibility**: Focus must be clearly visible; meets 3:1 contrast ratio
+
+### 5.4 Checked
+
+- **Visual**: Container fills with variant color; white checkmark icon appears
+- **Background**: Variant color (e.g., #000000 for Standard)
+- **Border**: Matches background color
+- **Indicator**: White checkmark
+- **Accessibility**: Announced as "checked"
+
+### 5.5 Unchecked
+
+- **Visual**: Same as Default state
+- **Accessibility**: Announced as "not checked"
+
+### 5.6 Indeterminate (Partial)
+
+- **Visual**: Container fills with variant color; horizontal dash icon appears
+- **Background**: Variant color
+- **Indicator**: White horizontal line (minus icon)
+- **Usage**: Parent checkbox when some but not all children are selected
+- **Accessibility**: Announced as "partially checked" via `aria-checked="mixed"`
+
+### 5.7 Disabled
+
+- **Visual**: Reduced opacity (40%); muted colors
+- **Background**: neutral-50 (#f5f5f5) or transparent
+- **Border**: neutral-200 (#e5e5e5)
+- **Cursor**: not-allowed
+- **Interaction**: No hover, focus, or click response
+- **Tab order**: Removed from keyboard navigation
+- **Accessibility**: Announced as "dimmed" or "unavailable"
+- **Note**: Can appear in both checked and unchecked states
+
+### 5.8 Error
+
+- **Visual**: Border color changes to error-600 (#dc2626); error message appears below
+- **Error text**: error-700 (#991b1b)
+- **Interaction**: Fully interactive; error clears on valid input
+- **Accessibility**: Error message linked via `aria-describedby`
+
+### 5.9 Active / Pressed
+
+- **Visual**: Slightly darker than hover state; brief depression effect
+- **Duration**: Momentary (during click/tap)
+- **Transition**: 100ms
+- **Accessibility**: No change in announced state
+
+---
+
+## 6. Sizes
+
+The TARMAC Design System supports three checkbox sizes:
+
+### 6.1 Small
+
+| Property           | Value    |
+|--------------------|----------|
+| Checkbox dimension | 16 × 16px |
+| Icon size          | 10px     |
+| Label font size    | 14px     |
+| Label line height  | 20px     |
+| Control-to-label gap | 8px   |
+| Min touch target   | 44 × 44px |
+
+**Usage**: Dense environments such as data tables, compact lists, and toolbars.
+
+### 6.2 Medium (Default)
+
+| Property           | Value    |
+|--------------------|----------|
+| Checkbox dimension | 20 × 20px |
+| Icon size          | 12px     |
+| Label font size    | 16px     |
+| Label line height  | 24px     |
+| Control-to-label gap | 8px   |
+| Min touch target   | 44 × 44px |
+
+**Usage**: Standard forms, settings panels, and most interface contexts.
+
+### 6.3 Large
+
+| Property           | Value    |
+|--------------------|----------|
+| Checkbox dimension | 24 × 24px |
+| Icon size          | 14px     |
+| Label font size    | 18px     |
+| Label line height  | 28px     |
+| Control-to-label gap | 8px   |
+| Min touch target   | 44 × 44px |
+
+**Usage**: Spacious layouts, onboarding flows, and high-emphasis forms.
+
+**Important**: Regardless of visual size, the interactive touch target must remain at least 44 × 44px to meet accessibility requirements.
+
+---
+
+## 7. Interaction Behavior
+
+### 7.1 Toggle Behavior
+
+- Clicking the checkbox control toggles between checked and unchecked states
+- Clicking the label text also toggles the checkbox
+- Each click cycles: unchecked → checked → unchecked
+- Indeterminate state is only set programmatically, never by user click
+
+### 7.2 Multi-Select Behavior
+
+- Multiple checkboxes in a group can be selected independently
+- Selecting one checkbox does not affect the state of others in the group
+- No minimum or maximum selection is enforced by default (configurable via validation)
+
+### 7.3 Indeterminate / Partial Behavior
+
+- Used in parent-child checkbox hierarchies
+- When **all children** are checked → parent shows **checked**
+- When **some children** are checked → parent shows **indeterminate**
+- When **no children** are checked → parent shows **unchecked**
+- Clicking an indeterminate parent checkbox **checks all children**
+- Clicking a checked parent checkbox **unchecks all children**
+
+### 7.4 Validation Behavior
+
+- Validation runs on form submission by default
+- Can be configured to validate on blur or on change
+- Required checkboxes show error state when unchecked on submission
+- Error message appears below the checkbox or group
+- Error state clears when the user checks the required checkbox
+
+### 7.5 Group Behavior
+
+- Checkbox groups should be wrapped in a `<fieldset>` with a `<legend>`
+- Group-level validation can enforce minimum/maximum selections
+- "Select all" checkbox at the top of a group controls all children
+- Group state updates propagate to the parent "select all" checkbox
+
+### 7.6 Disabled Behavior
+
+- Disabled checkboxes cannot be toggled by click, tap, or keyboard
+- Disabled checkboxes are removed from the tab order
+- Disabled state can apply to individual checkboxes or an entire group
+- Visual opacity is reduced to 40%
+
+---
+
+## 8. Accessibility
+
+### 8.1 Keyboard Interactions
+
+| Key             | Action                                      |
+|-----------------|---------------------------------------------|
+| `Tab`           | Move focus to the next focusable checkbox    |
+| `Shift + Tab`   | Move focus to the previous focusable checkbox|
+| `Space`         | Toggle the focused checkbox (check/uncheck)  |
+
+- Disabled checkboxes are skipped in the tab order
+- Focus order follows the visual DOM order
+- No keyboard traps
+
+### 8.2 Screen Reader Behavior
+
+- Each checkbox must be associated with a visible label or `aria-label`
+- Screen readers announce: role ("checkbox"), label text, and current state
+- State announcements:
+  - Unchecked: "not checked"
+  - Checked: "checked"
+  - Indeterminate: "partially checked" or "mixed"
+  - Disabled: "dimmed" or "unavailable"
+- Checkbox groups should use `<fieldset>` and `<legend>` so screen readers announce the group context
+
+### 8.3 ARIA Attributes
+
+| Attribute           | Usage                                                        |
+|---------------------|--------------------------------------------------------------|
+| `role="checkbox"`   | Implicit when using `<input type="checkbox">`. Required for custom implementations. |
+| `aria-checked`      | `"true"`, `"false"`, or `"mixed"` (for indeterminate)        |
+| `aria-disabled`     | `"true"` when the checkbox is disabled                       |
+| `aria-labelledby`   | References the ID of the label element                       |
+| `aria-describedby`  | References the ID of helper text or error message            |
+| `aria-required`     | `"true"` when the checkbox is required                       |
+| `aria-invalid`      | `"true"` when the checkbox is in an error state              |
+
+### 8.4 Focus Visibility
+
+- Focus ring must be visible on keyboard navigation
+- Focus ring uses `:focus-visible` (not `:focus`) to avoid showing on mouse click
+- Focus ring: 2px solid outline with 2px offset
+- Focus ring contrast ratio: ≥ 3:1 against surrounding background
+- Focus ring color matches the active variant color
+
+### 8.5 Color and Contrast
+
+- Checkbox border contrast against background: ≥ 3:1
+- Checkmark indicator contrast against filled background: ≥ 4.5:1
+- Label text contrast: ≥ 4.5:1 (normal text) or ≥ 3:1 (large text)
+- Do not rely on color alone to convey state — the checkmark icon provides a shape cue
+
+---
+
+## 9. Layout and Spacing
+
+### 9.1 Spacing Tokens
+
+| Spacing Rule                        | Value   | Token                          |
+|-------------------------------------|---------|--------------------------------|
+| Checkbox to label                   | 8px     | `--checkbox-label-gap`         |
+| Vertical spacing between checkboxes | 8px     | `--checkbox-item-spacing`      |
+| Checkbox group spacing (between groups) | 16px | `--checkbox-group-spacing`     |
+| Group label to first checkbox       | 8px     | `--checkbox-group-label-gap`   |
+| Helper text to checkbox             | 4px     | `--checkbox-helper-gap`        |
+| Error message to checkbox           | 4px     | `--checkbox-error-gap`         |
+
+### 9.2 Alignment Rules
+
+- Checkbox control aligns to the **top** of the first line of label text for multi-line labels
+- Checkbox control aligns to the **vertical center** of single-line labels
+- Labels are always positioned to the **right** of the checkbox (in LTR layouts)
+- In RTL layouts, labels appear to the **left** of the checkbox
+- Checkbox groups align to the left edge of their container
+- Indentation for nested/child checkboxes: 24px from parent
+
+### 9.3 Responsive Behavior
+
+- Checkboxes maintain their size across breakpoints
+- Label text may wrap to multiple lines on narrow viewports
+- Touch targets remain 44 × 44px minimum on all devices
+- Checkbox groups stack vertically on mobile; may use columns on wider viewports
+
+---
+
+## 10. Visual Design Specifications
+
+### 10.1 Design Tokens
+
+| Property                  | Token                                  | Value (Default)  |
+|---------------------------|----------------------------------------|------------------|
+| Checkbox size (SM)        | `--checkbox-size-sm`                   | 16px             |
+| Checkbox size (MD)        | `--checkbox-size-md`                   | 20px             |
+| Checkbox size (LG)        | `--checkbox-size-lg`                   | 24px             |
+| Border radius (Box)       | `--checkbox-border-radius-box`         | 4px              |
+| Border radius (Rounded)   | `--checkbox-border-radius-rounded`     | 50%              |
+| Border width              | `--checkbox-border-width`              | 2px              |
+| Border color (default)    | `--checkbox-border-color`              | #d4d4d4          |
+| Border color (hover)      | `--checkbox-border-color-hover`        | #a3a3a3          |
+| Background (unchecked)    | `--checkbox-bg`                        | transparent      |
+| Background (checked, Standard) | `--checkbox-standard-checked-bg`  | #000000          |
+| Background (checked, Blue)     | `--checkbox-blue-checked-bg`      | #2563eb          |
+| Background (checked, Green)    | `--checkbox-green-checked-bg`     | #16a34a          |
+| Background (checked, DLV Red)  | `--checkbox-dlvred-checked-bg`    | #dc2626          |
+| Indicator color           | `--checkbox-indicator-color`           | #ffffff          |
+| Disabled opacity          | `--checkbox-disabled-opacity`          | 0.4              |
+| Focus ring width          | `--checkbox-focus-ring-width`          | 2px              |
+| Focus ring offset         | `--checkbox-focus-ring-offset`         | 2px              |
+| Transition duration       | `--checkbox-transition-duration`       | 150ms            |
+| Transition timing         | `--checkbox-transition-timing`         | ease-in-out      |
+
+### 10.2 Typography
+
+| Element        | Font Size | Font Weight | Line Height | Color        |
+|----------------|-----------|-------------|-------------|--------------|
+| Label (SM)     | 14px      | 400         | 20px        | neutral-900  |
+| Label (MD)     | 16px      | 400         | 24px        | neutral-900  |
+| Label (LG)     | 18px      | 400         | 28px        | neutral-900  |
+| Helper text    | 14px      | 400         | 20px        | neutral-500  |
+| Error text     | 14px      | 400         | 20px        | error-700    |
+| Group label    | 16px      | 500         | 24px        | neutral-800  |
+
+---
+
+## 11. Component API (Developer Reference)
+
+### Checkbox Props
+
+| Property        | Type                                          | Default      | Description                                           |
+|-----------------|-----------------------------------------------|--------------|-------------------------------------------------------|
+| `checked`       | `boolean`                                     | `false`      | Determines if the checkbox is selected (controlled)   |
+| `defaultChecked`| `boolean`                                     | `false`      | Initial checked state (uncontrolled)                  |
+| `indeterminate` | `boolean`                                     | `false`      | Displays the partial/indeterminate indicator           |
+| `disabled`      | `boolean`                                     | `false`      | Prevents interaction                                  |
+| `required`      | `boolean`                                     | `false`      | Marks the checkbox as required for form validation    |
+| `variant`       | `'standard' \| 'blue' \| 'green' \| 'dlv-red'` | `'standard'` | Color variant when checked                            |
+| `size`          | `'sm' \| 'md' \| 'lg'`                        | `'md'`       | Checkbox size                                         |
+| `style`         | `'box' \| 'rounded'`                          | `'box'`      | Shape style of the checkbox container                 |
+| `label`         | `string`                                      | —            | Label text displayed next to the checkbox             |
+| `helperText`    | `string`                                      | —            | Supporting description below the label                |
+| `error`         | `string`                                      | —            | Error message displayed in error state                |
+| `name`          | `string`                                      | —            | Form field name                                       |
+| `value`         | `string`                                      | —            | Form field value                                      |
+| `onChange`      | `(event: ChangeEvent) => void`                | —            | Callback fired when the checkbox state changes        |
+| `className`     | `string`                                      | —            | Additional CSS class names                            |
+| `aria-label`    | `string`                                      | —            | Accessible label (when no visible label is provided)  |
+| `aria-describedby` | `string`                                  | —            | ID of element describing the checkbox                 |
+
+### CheckboxGroup Props
+
+| Property        | Type                                          | Default      | Description                                           |
+|-----------------|-----------------------------------------------|--------------|-------------------------------------------------------|
+| `label`         | `string`                                      | —            | Group heading text (rendered as `<legend>`)           |
+| `helperText`    | `string`                                      | —            | Supporting text for the group                         |
+| `error`         | `string`                                      | —            | Group-level error message                             |
+| `disabled`      | `boolean`                                     | `false`      | Disables all checkboxes in the group                  |
+| `required`      | `boolean`                                     | `false`      | At least one checkbox must be selected                |
+| `children`      | `ReactNode`                                   | —            | Checkbox components within the group                  |
+
+---
+
+## 12. Implementation Guidelines
+
+### 12.1 Semantic HTML
+
+Always use native `<input type="checkbox">` for proper semantics, keyboard support, and screen reader compatibility. Custom implementations must replicate all native behaviors and ARIA attributes.
+
+```html
+<label>
+  <input type="checkbox" name="terms" required />
+  I accept the terms and conditions
+</label>
+```
+
+### 12.2 Controlled vs Uncontrolled
+
+**Controlled**: State managed by parent component via `checked` and `onChange` props.
+
+```jsx
+const [checked, setChecked] = useState(false);
+<Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)} />
+```
+
+**Uncontrolled**: State managed internally via `defaultChecked`. Access value via ref or form submission.
+
+```jsx
+<Checkbox defaultChecked={true} name="newsletter" />
+```
+
+### 12.3 Indeterminate State
+
+The indeterminate state cannot be set via HTML attributes. It must be set programmatically via a ref:
+
+```jsx
+const ref = useRef(null);
+useEffect(() => {
+  if (ref.current) {
+    ref.current.indeterminate = isIndeterminate;
+  }
+}, [isIndeterminate]);
+```
+
+### 12.4 Form Validation
+
+- Use the `required` prop to enforce selection
+- Validate on form submission by default
+- Display error messages via the `error` prop
+- Clear error state when the user checks the required checkbox
+- For group validation, enforce minimum/maximum selections at the group level
+
+### 12.5 Edge Cases
+
+- **Rapid toggling**: Debounce `onChange` if it triggers expensive operations
+- **Dynamic options**: When checkbox options are loaded asynchronously, preserve existing selections
+- **Form reset**: Ensure checkboxes return to their `defaultChecked` state on form reset
+- **SSR**: Indeterminate state must be set client-side (not available in server-rendered HTML)
+- **Long labels**: Labels should wrap gracefully; checkbox aligns to the top of the first line
+
+---
+
+## 13. Usage Examples
+
+### 13.1 Form Input Selection
+
+```jsx
+<form onSubmit={handleSubmit}>
+  <Checkbox label="I accept the terms and conditions" required />
+  <Button type="submit" variant="primary">Continue</Button>
+</form>
+```
+
+### 13.2 Preference Settings
+
+```jsx
+<CheckboxGroup label="Email preferences">
+  <Checkbox label="Product updates" defaultChecked />
+  <Checkbox label="Marketing emails" />
+  <Checkbox label="Security alerts" defaultChecked disabled />
+</CheckboxGroup>
+```
+
+### 13.3 Multi-Select Filters
+
+```jsx
+<CheckboxGroup label="Category">
+  <Checkbox label="Electronics" value="electronics" />
+  <Checkbox label="Clothing" value="clothing" />
+  <Checkbox label="Books" value="books" />
+  <Checkbox label="Home & Garden" value="home" />
+</CheckboxGroup>
+```
+
+### 13.4 Permission Selection
+
+```jsx
+<CheckboxGroup label="User permissions" helperText="Select the access levels for this role">
+  <Checkbox label="View dashboard" value="view" />
+  <Checkbox label="Edit content" value="edit" />
+  <Checkbox label="Manage users" value="manage" />
+  <Checkbox label="Admin access" value="admin" />
+</CheckboxGroup>
+```
+
+### 13.5 Bulk Selection in Tables
+
+```jsx
+<table>
+  <thead>
+    <tr>
+      <th>
+        <Checkbox
+          aria-label="Select all rows"
+          checked={allSelected}
+          indeterminate={someSelected && !allSelected}
+          onChange={handleSelectAll}
+        />
+      </th>
+      <th>Name</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {rows.map((row) => (
+      <tr key={row.id}>
+        <td>
+          <Checkbox
+            aria-label={`Select ${row.name}`}
+            checked={selectedIds.includes(row.id)}
+            onChange={() => handleToggleRow(row.id)}
+          />
+        </td>
+        <td>{row.name}</td>
+        <td>{row.status}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+```
+
+---
+
+## 14. Do's and Don'ts
+
+### Do
+
+- ✓ Use clear, descriptive labels that explain the option
+- ✓ Group related checkboxes together under a shared heading
+- ✓ Maintain consistent spacing between checkboxes (8px vertical)
+- ✓ Use the indeterminate state for parent-child hierarchies
+- ✓ Provide visible feedback when a checkbox is selected
+- ✓ Associate every checkbox with a label (visible or `aria-label`)
+- ✓ Use `<fieldset>` and `<legend>` for checkbox groups
+- ✓ Ensure touch targets are at least 44 × 44px
+
+### Don't
+
+- ✗ Use checkboxes for single-choice selections (use radio buttons)
+- ✗ Use vague or ambiguous labels (e.g., "Click here", "Option 1")
+- ✗ Overcrowd checkbox lists without grouping or hierarchy
+- ✗ Use checkboxes without labels (unless `aria-label` is provided)
+- ✗ Mix color variants within the same form or group
+- ✗ Hide important options inside long scrollable checkbox lists
+- ✗ Use checkboxes for actions that take immediate effect (use toggle switch)
+- ✗ Disable checkboxes without explaining why they are unavailable
+
+---
+
+## 15. Related Components
+
+| Component              | Relationship                                                      |
+|------------------------|-------------------------------------------------------------------|
+| **Radio Button**       | Use when only one option can be selected from a group             |
+| **Toggle Switch**      | Use for binary settings that take immediate effect                |
+| **Form Field**         | Wrapper component for form inputs including checkboxes            |
+| **Select**             | Use for single selection from a long list of options              |
+| **Multi-select Dropdown** | Use for multi-selection from a long list of options            |
+| **Button**             | Use for triggering actions, not for selection                     |
+
+---
+
+## 16. Documentation Metadata
+
+| Field                    | Value                                                                                                  |
+|--------------------------|--------------------------------------------------------------------------------------------------------|
+| Component Name           | Checkbox                                                                                               |
+| Component Owner          | TARMAC Design System Team                                                                              |
+| Design Source (Figma)    | [TDS_Components — Checkbox](https://www.figma.com/design/P2bgvQOCT3iqJh75vtpEME/TDS_Components?node-id=2-8) |
+| Documentation Location   | `components/checkbox.doc`                                                                              |
+| MDX Documentation        | `components/checkbox.mdx`                                                                              |
+| Package                  | `@tarmac/design-system`                                                                                |
+| Status                   | Active                                                                                                 |
+| WCAG Compliance          | 2.1 Level AA                                                                                           |
+| Last Updated             | March 2026                                                                                             |

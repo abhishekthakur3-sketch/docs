@@ -1,0 +1,854 @@
+---
+title: Tags & Chips
+description: Tags and chips are compact, interactive elements used to label, categorize, filter, or represent selections in a concise visual format.
+icon: "tags"
+---
+
+# Tags & Chips
+
+## Overview
+
+Tags and chips are compact UI elements that represent discrete pieces of information such as categories, attributes, filters, or user selections. They help users quickly scan, organize, and interact with content. Tags are typically read-only labels, while chips are interactive and can be selected, removed, or toggled.
+
+<CardGroup cols={2}>
+  <Card title="Categorize" icon="layer-group">
+    Label and organize content with visual markers
+  </Card>
+  <Card title="Filter" icon="filter">
+    Enable quick filtering and selection of options
+  </Card>
+  <Card title="Accessible" icon="universal-access">
+    Built with WCAG 2.1 AA compliance
+  </Card>
+  <Card title="Flexible" icon="sliders">
+    Multiple variants, sizes, and interaction modes
+  </Card>
+</CardGroup>
+
+## When to Use
+
+<AccordionGroup>
+  <Accordion title="When to Use" icon="check">
+    - Displaying categories or labels on content items
+    - Showing selected filters in a filter bar
+    - Representing user input as tokens (e.g., email recipients)
+    - Displaying status indicators (active, pending, archived)
+    - Showing metadata like tags on articles or products
+    - Enabling multi-select in compact spaces
+  </Accordion>
+
+  <Accordion title="When Not to Use" icon="xmark">
+    - For primary actions (use buttons instead)
+    - For navigation links (use links or tabs)
+    - For toggling binary states (use toggle switches)
+    - When content requires detailed descriptions (use cards)
+    - For single-select from a long list (use a dropdown)
+  </Accordion>
+</AccordionGroup>
+
+### Tags vs Chips vs Badges
+
+| Element | Purpose | Interaction | Use Case |
+|---------|---------|-------------|----------|
+| **Tag** | Label or categorize | Read-only or removable | Content categories, metadata |
+| **Chip** | Represent a selection | Selectable, removable, toggleable | Filters, input tokens |
+| **Badge** | Show count or status | Non-interactive | Notification counts, status dots |
+
+## Anatomy
+
+The Tags & Chips component consists of the following elements:
+
+- **Container**: The outer wrapper that defines the shape, background, and border of the tag or chip
+- **Label**: The text content describing the tag or chip value
+- **Leading Icon** (optional): An icon placed before the label for additional context
+- **Trailing Icon / Remove Button** (optional): An icon or close button placed after the label, typically used for dismissing or removing the element
+- **Avatar** (optional): A small avatar image used in user-related chips (e.g., assignee chips)
+
+<Info>Tags and chips should maintain a compact footprint. Keep label text short and descriptive — ideally 1-3 words.</Info>
+
+## Variants
+
+<Tabs>
+  <Tab title="Filled">
+    Solid background with contrasting text. Used for high-emphasis tags that need to stand out.
+
+    ```jsx
+    <Tag variant="filled" label="Category" />
+    <Tag variant="filled" color="blue" label="Active" />
+    <Tag variant="filled" color="green" label="Completed" />
+    <Tag variant="filled" color="red" label="Urgent" />
+    ```
+  </Tab>
+
+  <Tab title="Outlined">
+    Transparent background with a visible border. Used for medium-emphasis tags that blend with the layout.
+
+    ```jsx
+    <Tag variant="outlined" label="Category" />
+    <Tag variant="outlined" color="blue" label="In Progress" />
+    ```
+  </Tab>
+
+  <Tab title="Subtle">
+    Light tinted background without a border. Used for low-emphasis tags in dense layouts.
+
+    ```jsx
+    <Tag variant="subtle" label="Draft" />
+    <Tag variant="subtle" color="green" label="Published" />
+    ```
+  </Tab>
+
+  <Tab title="Removable">
+    Includes a close/remove button. Used when users need to dismiss or remove the tag.
+
+    ```jsx
+    <Tag
+      label="JavaScript"
+      removable
+      onRemove={() => handleRemove('javascript')}
+    />
+    ```
+  </Tab>
+
+  <Tab title="Selectable (Chip)">
+    Toggleable selection state. Used for filter chips or choice chips.
+
+    ```jsx
+    <Chip
+      label="Electronics"
+      selected={isSelected}
+      onClick={() => toggleSelection('electronics')}
+    />
+    ```
+  </Tab>
+
+  <Tab title="With Icon">
+    Includes a leading icon for additional visual context.
+
+    ```jsx
+    <Tag icon={<StarIcon />} label="Featured" />
+    <Tag icon={<ClockIcon />} label="Pending" />
+    ```
+  </Tab>
+</Tabs>
+
+<Warning>Use variants consistently within the same context. Avoid mixing filled and outlined tags in the same group.</Warning>
+
+## Colors
+
+Tags support semantic color options to convey meaning:
+
+| Color | Token | Usage |
+|-------|-------|-------|
+| **Default (Neutral)** | `tag-color-default` | General-purpose labels |
+| **Blue** | `tag-color-blue` | Informational, in-progress states |
+| **Green** | `tag-color-green` | Success, completed, active states |
+| **Red** | `tag-color-red` | Error, urgent, critical states |
+| **Yellow** | `tag-color-yellow` | Warning, pending, attention states |
+| **Purple** | `tag-color-purple` | Special categories, premium features |
+| **Gray** | `tag-color-gray` | Disabled, archived, inactive states |
+
+<Tip>Use color meaningfully and consistently. Don't rely on color alone to convey information — always pair with descriptive label text.</Tip>
+
+## Sizes
+
+Tags adapt to different interface densities:
+
+| Size | Height | Font Size | Padding | Usage |
+|------|--------|-----------|---------|-------|
+| **Small** | 24px | 12px | 4px 8px | Dense layouts, tables, compact lists |
+| **Medium** | 32px | 14px | 6px 12px | Default size for most interfaces |
+| **Large** | 40px | 16px | 8px 16px | Prominent placements, touch-friendly contexts |
+
+<Tip>Use Medium (32px) as the default. Ensure touch targets meet the 44×44px minimum on mobile regardless of visual size.</Tip>
+
+## States
+
+### Default
+Tag is in its resting state with standard styling applied.
+
+### Hover
+Subtle background or border change indicates the element is interactive. Cursor changes to pointer for interactive tags/chips.
+
+### Focus
+Visible focus ring appears around the tag for keyboard navigation. Focus ring meets 3:1 contrast ratio.
+
+### Selected (Chips)
+Chip displays a selected visual treatment — typically a filled background or checkmark icon — indicating it is actively chosen.
+
+### Disabled
+Tag appears with reduced opacity and cannot be interacted with. Cursor shows not-allowed.
+
+### Removing
+Brief exit animation plays when a removable tag is dismissed (150ms fade-out).
+
+<Info>Non-interactive tags (read-only labels) do not display hover, focus, or selected states.</Info>
+
+## Interaction Behavior
+
+### Click/Tap
+- Selectable chips toggle between selected and unselected states
+- Removable tags dismiss on close button click
+- Clicking the tag body (not close button) can trigger a navigation or detail action if configured
+
+### Remove
+- Close button click removes the tag from the group
+- Removal triggers an `onRemove` callback
+- Optionally animate out with a 150ms fade
+- Focus moves to the next tag or the container after removal
+
+### Keyboard
+- Tags are focusable via Tab
+- Enter or Space toggles selection on chips
+- Backspace or Delete removes a focused removable tag
+- Arrow keys navigate between tags in a group
+
+### Overflow
+- When tags exceed container width, wrap to the next line
+- Alternatively, show a "+N more" overflow indicator
+- Overflow count is interactive and reveals hidden tags
+
+<Warning>Always provide a way to see all tags when using overflow truncation.</Warning>
+
+## Usage Guidelines
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Use concise labels**
+    - "JavaScript"
+    - "In Progress"
+    - "High Priority"
+
+    **Group related tags**
+    - Organize by category
+    - Maintain consistent spacing
+
+    **Use semantic colors**
+    - Green for success/active
+    - Red for error/urgent
+    - Blue for informational
+
+    **Provide remove affordance**
+    - Clear close button on removable tags
+    - Keyboard support for removal
+  </Card>
+
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Don't use long labels**
+    - ~~"This is a very long tag label that wraps"~~
+    - Keep to 1-3 words
+
+    **Don't overload with tags**
+    - Limit visible tags to 5-8
+    - Use overflow for larger sets
+
+    **Don't rely on color alone**
+    - Always include text labels
+    - Color supplements meaning, doesn't replace it
+
+    **Don't mix interaction models**
+    - Don't combine selectable and removable in one tag
+    - Keep behavior predictable
+  </Card>
+</CardGroup>
+
+### Best Practices
+
+<Steps>
+  <Step title="Keep labels short and scannable">
+    Tags should be glanceable. Use 1-3 words that clearly describe the category or value.
+  </Step>
+  <Step title="Use consistent sizing within a group">
+    All tags in the same group should use the same size variant for visual harmony.
+  </Step>
+  <Step title="Provide clear removal feedback">
+    When a tag is removed, animate it out and shift remaining tags smoothly.
+  </Step>
+  <Step title="Handle overflow gracefully">
+    Use a "+N more" pattern or wrap to a new line when tags exceed the container width.
+  </Step>
+  <Step title="Pair with accessible labels">
+    Ensure each tag has a clear text label. For icon-only tags, provide an `aria-label`.
+  </Step>
+</Steps>
+
+## Accessibility
+
+<Info>All tag and chip components are built to meet WCAG 2.1 Level AA standards.</Info>
+
+### Keyboard Navigation
+
+<ResponseField name="Tab" type="key">
+  Move focus to the tag group, then to individual tags
+</ResponseField>
+
+<ResponseField name="Arrow Keys" type="key">
+  Navigate between tags within a group
+</ResponseField>
+
+<ResponseField name="Enter / Space" type="key">
+  Toggle selection on selectable chips
+</ResponseField>
+
+<ResponseField name="Backspace / Delete" type="key">
+  Remove a focused removable tag
+</ResponseField>
+
+<ResponseField name="Escape" type="key">
+  Clear focus from the tag group
+</ResponseField>
+
+### ARIA Implementation
+
+<CodeGroup>
+```jsx Read-Only Tag
+<span role="status" aria-label="Category: JavaScript">
+  JavaScript
+</span>
+```
+
+```jsx Removable Tag
+<div role="group" aria-label="Selected filters">
+  <span role="listitem">
+    JavaScript
+    <button
+      aria-label="Remove JavaScript"
+      onClick={() => onRemove('javascript')}
+    >
+      <CloseIcon />
+    </button>
+  </span>
+</div>
+```
+
+```jsx Selectable Chip
+<button
+  role="option"
+  aria-selected={isSelected}
+  aria-pressed={isSelected}
+  onClick={toggleSelection}
+>
+  Electronics
+</button>
+```
+
+```jsx Chip Group
+<div role="listbox" aria-label="Filter by category" aria-multiselectable="true">
+  <Chip label="Electronics" selected />
+  <Chip label="Clothing" />
+  <Chip label="Books" selected />
+</div>
+```
+</CodeGroup>
+
+### Accessibility Checklist
+
+<AccordionGroup>
+  <Accordion title="✓ Visual Requirements" icon="eye">
+    - [ ] Tag text contrast ratio ≥ 4.5:1 against background
+    - [ ] Focus ring visible on all interactive tags
+    - [ ] Focus ring contrast ratio ≥ 3:1
+    - [ ] Minimum 44×44px touch target on mobile
+    - [ ] Color is not the sole indicator of meaning
+    - [ ] Remove button has sufficient click target (minimum 24×24px)
+  </Accordion>
+
+  <Accordion title="✓ Keyboard Requirements" icon="keyboard">
+    - [ ] All interactive tags are focusable via Tab
+    - [ ] Arrow keys navigate within tag groups
+    - [ ] Enter/Space toggles chip selection
+    - [ ] Backspace/Delete removes focused removable tag
+    - [ ] Focus moves logically after tag removal
+    - [ ] No keyboard traps
+  </Accordion>
+
+  <Accordion title="✓ Screen Reader Requirements" icon="audio-description">
+    - [ ] Each tag has a descriptive accessible name
+    - [ ] Selected state announced for chips (`aria-selected`)
+    - [ ] Remove buttons have descriptive `aria-label` (e.g., "Remove JavaScript")
+    - [ ] Tag groups use `role="group"` or `role="listbox"` with label
+    - [ ] Overflow count is announced ("3 more tags")
+    - [ ] Removal action is confirmed to screen readers
+  </Accordion>
+</AccordionGroup>
+
+### Screen Reader Announcements
+
+| Action | Announcement |
+|--------|-------------|
+| Focus tag | "JavaScript, tag" |
+| Select chip | "Electronics, selected" |
+| Deselect chip | "Electronics, not selected" |
+| Remove tag | "JavaScript removed" |
+| Overflow | "3 more tags, button" |
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    <ParamField path="tag-height-sm" type="dimension" default="24px">
+      Small tag height
+    </ParamField>
+    <ParamField path="tag-height-md" type="dimension" default="32px">
+      Medium tag height (default)
+    </ParamField>
+    <ParamField path="tag-height-lg" type="dimension" default="40px">
+      Large tag height
+    </ParamField>
+    <ParamField path="tag-border-radius" type="dimension" default="16px">
+      Border radius (pill shape)
+    </ParamField>
+    <ParamField path="tag-padding-x-sm" type="dimension" default="8px">
+      Horizontal padding (small)
+    </ParamField>
+    <ParamField path="tag-padding-x-md" type="dimension" default="12px">
+      Horizontal padding (medium)
+    </ParamField>
+    <ParamField path="tag-padding-x-lg" type="dimension" default="16px">
+      Horizontal padding (large)
+    </ParamField>
+    <ParamField path="tag-icon-gap" type="dimension" default="4px">
+      Gap between icon and label
+    </ParamField>
+    <ParamField path="tag-group-gap" type="dimension" default="8px">
+      Gap between tags in a group
+    </ParamField>
+  </Tab>
+
+  <Tab title="Colors - Filled">
+    <ParamField path="tag-filled-default-bg" type="color" default="#1a1a1a">
+      Default filled background
+    </ParamField>
+    <ParamField path="tag-filled-default-text" type="color" default="#ffffff">
+      Default filled text color
+    </ParamField>
+    <ParamField path="tag-filled-blue-bg" type="color" default="#2563eb">
+      Blue filled background
+    </ParamField>
+    <ParamField path="tag-filled-green-bg" type="color" default="#16a34a">
+      Green filled background
+    </ParamField>
+    <ParamField path="tag-filled-red-bg" type="color" default="#dc2626">
+      Red filled background
+    </ParamField>
+    <ParamField path="tag-filled-yellow-bg" type="color" default="#ca8a04">
+      Yellow filled background
+    </ParamField>
+    <ParamField path="tag-filled-purple-bg" type="color" default="#9333ea">
+      Purple filled background
+    </ParamField>
+  </Tab>
+
+  <Tab title="Colors - Outlined">
+    <ParamField path="tag-outlined-border" type="color" default="#d4d4d4">
+      Outlined border color
+    </ParamField>
+    <ParamField path="tag-outlined-text" type="color" default="#404040">
+      Outlined text color
+    </ParamField>
+    <ParamField path="tag-outlined-hover-bg" type="color" default="#f5f5f5">
+      Outlined hover background
+    </ParamField>
+  </Tab>
+
+  <Tab title="Colors - Subtle">
+    <ParamField path="tag-subtle-default-bg" type="color" default="#f5f5f5">
+      Default subtle background
+    </ParamField>
+    <ParamField path="tag-subtle-default-text" type="color" default="#404040">
+      Default subtle text color
+    </ParamField>
+    <ParamField path="tag-subtle-blue-bg" type="color" default="#eff6ff">
+      Blue subtle background
+    </ParamField>
+    <ParamField path="tag-subtle-green-bg" type="color" default="#f0fdf4">
+      Green subtle background
+    </ParamField>
+    <ParamField path="tag-subtle-red-bg" type="color" default="#fef2f2">
+      Red subtle background
+    </ParamField>
+  </Tab>
+
+  <Tab title="Disabled">
+    <ParamField path="tag-disabled-opacity" type="number" default="0.4">
+      Opacity for disabled state
+    </ParamField>
+  </Tab>
+
+  <Tab title="Typography">
+    <ParamField path="tag-font-size-sm" type="dimension" default="12px">
+      Small tag font size
+    </ParamField>
+    <ParamField path="tag-font-size-md" type="dimension" default="14px">
+      Medium tag font size
+    </ParamField>
+    <ParamField path="tag-font-size-lg" type="dimension" default="16px">
+      Large tag font size
+    </ParamField>
+    <ParamField path="tag-font-weight" type="number" default="500">
+      Tag font weight
+    </ParamField>
+    <ParamField path="tag-line-height" type="number" default="1">
+      Tag line height
+    </ParamField>
+  </Tab>
+
+  <Tab title="Animation">
+    <ParamField path="tag-transition-duration" type="duration" default="150ms">
+      Transition duration for state changes
+    </ParamField>
+    <ParamField path="tag-transition-timing" type="string" default="ease-in-out">
+      Transition timing function
+    </ParamField>
+  </Tab>
+</Tabs>
+
+
+### Token Usage Example
+
+```css
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tag-icon-gap);
+  height: var(--tag-height-md);
+  padding: 0 var(--tag-padding-x-md);
+  border-radius: var(--tag-border-radius);
+  font-size: var(--tag-font-size-md);
+  font-weight: var(--tag-font-weight);
+  line-height: var(--tag-line-height);
+  transition: all var(--tag-transition-duration) var(--tag-transition-timing);
+}
+
+/* Filled variant */
+.tag--filled {
+  background: var(--tag-filled-default-bg);
+  color: var(--tag-filled-default-text);
+}
+
+/* Outlined variant */
+.tag--outlined {
+  background: transparent;
+  border: 1px solid var(--tag-outlined-border);
+  color: var(--tag-outlined-text);
+}
+
+.tag--outlined:hover {
+  background: var(--tag-outlined-hover-bg);
+}
+
+/* Subtle variant */
+.tag--subtle {
+  background: var(--tag-subtle-default-bg);
+  color: var(--tag-subtle-default-text);
+}
+
+/* Disabled */
+.tag:disabled,
+.tag--disabled {
+  opacity: var(--tag-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+```
+
+## Engineering Implementation
+
+### Component API
+
+```typescript
+interface TagProps {
+  // Content
+  label: string;
+  icon?: ReactNode;
+  avatar?: ReactNode;
+
+  // Appearance
+  variant?: 'filled' | 'outlined' | 'subtle';
+  color?: 'default' | 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'gray';
+  size?: 'sm' | 'md' | 'lg';
+
+  // Behavior
+  removable?: boolean;
+  disabled?: boolean;
+  onRemove?: () => void;
+  onClick?: () => void;
+
+  // Styling
+  className?: string;
+  ariaLabel?: string;
+}
+
+interface ChipProps {
+  // Content
+  label: string;
+  icon?: ReactNode;
+
+  // Appearance
+  variant?: 'filled' | 'outlined';
+  color?: 'default' | 'blue' | 'green' | 'red' | 'yellow' | 'purple';
+  size?: 'sm' | 'md' | 'lg';
+
+  // State
+  selected?: boolean;
+  disabled?: boolean;
+
+  // Behavior
+  onClick?: () => void;
+  onChange?: (selected: boolean) => void;
+
+  // Styling
+  className?: string;
+  ariaLabel?: string;
+}
+```
+
+### Implementation Notes
+
+**Technical Requirements:**
+- Use semantic HTML — `<span>` for read-only tags, `<button>` for interactive chips
+- Remove button should be a separate `<button>` element within the tag
+- Support controlled and uncontrolled selection for chips
+- Handle keyboard navigation within tag groups using roving tabindex
+- Animate removal with 150ms fade-out transition
+- Ensure minimum 44×44px touch target on mobile
+- Manage focus after tag removal (move to next sibling or container)
+
+**Overflow Handling:**
+- Wrap tags to new lines by default
+- Support a `maxVisible` prop to truncate with "+N more" indicator
+- Overflow indicator should be interactive and reveal hidden tags
+
+### Code Examples
+
+<CodeGroup>
+```jsx Basic Tags
+// Read-only tag
+<Tag label="JavaScript" />
+
+// Colored tags
+<Tag label="Active" color="green" variant="filled" />
+<Tag label="Pending" color="yellow" variant="subtle" />
+<Tag label="Error" color="red" variant="outlined" />
+```
+
+```jsx Removable Tags
+function FilterBar() {
+  const [filters, setFilters] = useState(['JavaScript', 'React', 'TypeScript']);
+
+  const removeFilter = (filter) => {
+    setFilters(filters.filter(f => f !== filter));
+  };
+
+  return (
+    <div role="group" aria-label="Active filters">
+      {filters.map(filter => (
+        <Tag
+          key={filter}
+          label={filter}
+          removable
+          onRemove={() => removeFilter(filter)}
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+```jsx Selectable Chips
+function CategoryFilter() {
+  const [selected, setSelected] = useState(new Set(['electronics']));
+
+  const toggle = (category) => {
+    const next = new Set(selected);
+    next.has(category) ? next.delete(category) : next.add(category);
+    setSelected(next);
+  };
+
+  return (
+    <div role="listbox" aria-label="Filter by category" aria-multiselectable="true">
+      {['Electronics', 'Clothing', 'Books', 'Home'].map(cat => (
+        <Chip
+          key={cat}
+          label={cat}
+          selected={selected.has(cat.toLowerCase())}
+          onClick={() => toggle(cat.toLowerCase())}
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+```jsx With Icons and Avatars
+// Icon tag
+<Tag icon={<StarIcon />} label="Featured" color="yellow" variant="subtle" />
+
+// Avatar chip (user selection)
+<Tag
+  avatar={<Avatar src="/user.jpg" size="xs" />}
+  label="Jane Doe"
+  removable
+  onRemove={handleRemove}
+/>
+
+// Status tags
+<Tag icon={<CheckCircleIcon />} label="Completed" color="green" variant="filled" />
+<Tag icon={<ClockIcon />} label="In Progress" color="blue" variant="outlined" />
+```
+
+```jsx Overflow Handling
+<TagGroup maxVisible={5} aria-label="Skills">
+  <Tag label="JavaScript" />
+  <Tag label="TypeScript" />
+  <Tag label="React" />
+  <Tag label="Node.js" />
+  <Tag label="GraphQL" />
+  <Tag label="Docker" />
+  <Tag label="AWS" />
+  {/* Renders: JS, TS, React, Node.js, GraphQL, +2 more */}
+</TagGroup>
+```
+</CodeGroup>
+
+### CSS Implementation
+
+```css
+/* Tag base */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tag-icon-gap);
+  height: var(--tag-height-md);
+  padding: 0 var(--tag-padding-x-md);
+  border-radius: var(--tag-border-radius);
+  font-size: var(--tag-font-size-md);
+  font-weight: var(--tag-font-weight);
+  line-height: var(--tag-line-height);
+  white-space: nowrap;
+  user-select: none;
+  transition: all var(--tag-transition-duration) var(--tag-transition-timing);
+}
+
+/* Sizes */
+.tag--sm {
+  height: var(--tag-height-sm);
+  padding: 0 var(--tag-padding-x-sm);
+  font-size: var(--tag-font-size-sm);
+}
+
+.tag--lg {
+  height: var(--tag-height-lg);
+  padding: 0 var(--tag-padding-x-lg);
+  font-size: var(--tag-font-size-lg);
+}
+
+/* Filled variants */
+.tag--filled { background: var(--tag-filled-default-bg); color: var(--tag-filled-default-text); }
+.tag--filled.tag--blue { background: var(--tag-filled-blue-bg); }
+.tag--filled.tag--green { background: var(--tag-filled-green-bg); }
+.tag--filled.tag--red { background: var(--tag-filled-red-bg); }
+.tag--filled.tag--yellow { background: var(--tag-filled-yellow-bg); }
+.tag--filled.tag--purple { background: var(--tag-filled-purple-bg); }
+
+/* Outlined variant */
+.tag--outlined {
+  background: transparent;
+  border: 1px solid var(--tag-outlined-border);
+  color: var(--tag-outlined-text);
+}
+
+.tag--outlined:hover {
+  background: var(--tag-outlined-hover-bg);
+}
+
+/* Subtle variant */
+.tag--subtle { background: var(--tag-subtle-default-bg); color: var(--tag-subtle-default-text); }
+.tag--subtle.tag--blue { background: var(--tag-subtle-blue-bg); }
+.tag--subtle.tag--green { background: var(--tag-subtle-green-bg); }
+.tag--subtle.tag--red { background: var(--tag-subtle-red-bg); }
+
+/* Interactive (chip) */
+.chip {
+  cursor: pointer;
+  border: none;
+}
+
+.chip:hover {
+  filter: brightness(0.95);
+}
+
+.chip[aria-selected="true"] {
+  background: var(--tag-filled-default-bg);
+  color: var(--tag-filled-default-text);
+}
+
+/* Focus */
+.tag:focus-visible,
+.chip:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+/* Remove button */
+.tag__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.tag__remove:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Disabled */
+.tag--disabled {
+  opacity: var(--tag-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Tag group */
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tag-group-gap);
+  align-items: center;
+}
+
+/* Removal animation */
+.tag--removing {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--tag-transition-duration) var(--tag-transition-timing);
+}
+```
+
+## Design References
+
+### Spacing and Alignment
+- 4px gap between icon and label text
+- 8px gap between tags in a group
+- Tags align to baseline of surrounding text when inline
+- Tag groups wrap naturally with consistent gap
+- Remove button positioned 4px after label text
+
+### Interaction Consistency
+- All interactive tags use 150ms ease-in-out transitions
+- Hover state applies subtle background change
+- Focus ring appears on keyboard navigation only (`:focus-visible`)
+- Touch targets maintain 44×44px minimum on mobile
+- Removal animates with fade-out and scale-down (150ms)

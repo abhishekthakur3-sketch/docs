@@ -1,0 +1,52 @@
+---
+title: "Elevation"
+description: "Shadow and depth system for the TARMAC Design System"
+---
+
+# Elevation
+
+Elevation creates depth and hierarchy through shadows, helping users understand spatial relationships between interface elements.
+
+## Shadow Scale
+
+TARMAC uses a systematic shadow scale from subtle to prominent:
+
+| Level | Token | Usage |
+|-------|-------|-------|
+| **0** | `shadow-none` | Flat elements, no elevation |
+| **1** | `shadow-xs` | Subtle lift, hover states |
+| **2** | `shadow-sm` | Cards, tiles |
+| **3** | `shadow-base` | Dropdowns, popovers |
+| **4** | `shadow-md` | Modals, dialogs |
+| **5** | `shadow-lg` | Overlays, drawers |
+| **6** | `shadow-xl` | Maximum elevation |
+
+## Design Tokens
+
+```css
+:root {
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+```
+
+## Usage Examples
+
+```css
+.card {
+  box-shadow: var(--shadow-sm);
+}
+
+.dropdown {
+  box-shadow: var(--shadow-base);
+}
+
+.modal {
+  box-shadow: var(--shadow-lg);
+}
+```

@@ -1,0 +1,120 @@
+---
+title: "Screen Reader Support"
+description: "Guidelines for screen reader compatibility in TARMAC"
+---
+
+# Screen Reader Support
+
+TARMAC components are designed to work seamlessly with screen readers through proper semantic HTML and ARIA attributes.
+
+## Semantic HTML
+
+Always use the correct HTML elements:
+
+```html
+<!-- Good -->
+<button>Click me</button>
+<nav>...</nav>
+<main>...</main>
+
+<!-- Bad -->
+<div onclick="...">Click me</div>
+<div class="nav">...</div>
+<div class="main">...</div>
+```
+
+## ARIA Attributes
+
+### Common ARIA Attributes
+
+| Attribute | Purpose | Example |
+|-----------|---------|---------|
+| `aria-label` | Provides accessible name | `<button aria-label="Close">×</button>` |
+| `aria-labelledby` | References labeling element | `<div aria-labelledby="title">` |
+| `aria-describedby` | References description | `<input aria-describedby="helper">` |
+| `aria-hidden` | Hides from screen readers | `<span aria-hidden="true">→</span>` |
+| `aria-live` | Announces dynamic changes | `<div aria-live="polite">` |
+| `aria-expanded` | Indicates expanded state | `<button aria-expanded="true">` |
+| `aria-pressed` | Indicates pressed state | `<button aria-pressed="false">` |
+
+### ARIA Roles
+
+```html
+<!-- Navigation -->
+<nav role="navigation">...</nav>
+
+<!-- Alert -->
+<div role="alert">Error message</div>
+
+<!-- Dialog -->
+<div role="dialog" aria-modal="true">...</div>
+
+<!-- Tooltip -->
+<div role="tooltip">Helpful text</div>
+```
+
+## Live Regions
+
+Announce dynamic content changes:
+
+```tsx
+// Polite announcements (wait for pause)
+<div aria-live="polite" aria-atomic="true">
+  {statusMessage}
+</div>
+
+// Assertive announcements (immediate)
+<div aria-live="assertive" role="alert">
+  {errorMessage}
+</div>
+```
+
+## Testing with Screen Readers
+
+### Popular Screen Readers
+
+- **NVDA** (Windows, free)
+- **JAWS** (Windows, commercial)
+- **VoiceOver** (macOS/iOS, built-in)
+- **TalkBack** (Android, built-in)
+
+### Testing Checklist
+
+- [ ] All content is announced
+- [ ] Interactive elements have clear labels
+- [ ] Form fields have associated labels
+- [ ] Error messages are announced
+- [ ] Dynamic content changes are announced
+- [ ] Navigation landmarks are present
+- [ ] Heading hierarchy is logical
+
+## Common Patterns
+
+### Form Fields
+
+```html
+<label for="email">Email Address</label>
+<input 
+  id="email" 
+  type="email"
+  aria-describedby="email-helper"
+  aria-invalid="false"
+/>
+<span id="email-helper">We'll never share your email</span>
+```
+
+### Icon Buttons
+
+```html
+<button aria-label="Close dialog">
+  <CloseIcon aria-hidden="true" />
+</button>
+```
+
+### Status Messages
+
+```html
+<div role="status" aria-live="polite">
+  Changes saved successfully
+</div>
+```

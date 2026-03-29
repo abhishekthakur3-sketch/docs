@@ -1,0 +1,112 @@
+---
+title: "Focus Management"
+description: "Managing focus for accessible keyboard navigation"
+---
+
+# Focus Management
+
+Proper focus management ensures keyboard users can navigate your application efficiently and predictably.
+
+## Focus Indicators
+
+All interactive elements must have visible focus indicators:
+
+```css
+:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+```
+
+## Focus Order
+
+Focus order should follow the visual layout and reading order:
+
+1. Header navigation
+2. Main content
+3. Sidebar (if present)
+4. Footer
+
+## Focus Trapping
+
+### When to Use
+
+Trap focus in modal dialogs and overlays to prevent keyboard users from accessing background content.
+
+```tsx
+<Modal open={isOpen} onClose={handleClose}>
+  {/* Focus trapped within modal */}
+  <button onClick={handleClose}>Close</button>
+</Modal>
+```
+
+### Implementation
+
+```tsx
+import { useFocusTrap } from '@tarmac/design-system';
+
+function Dialog() {
+  const trapRef = useFocusTrap();
+  
+  return (
+    <div ref={trapRef} role="dialog">
+      {/* Focus stays within this container */}
+    </div>
+  );
+}
+```
+
+## Restoring Focus
+
+When closing modals or dialogs, return focus to the trigger element:
+
+```tsx
+function MyComponent() {
+  const buttonRef = useRef(null);
+  
+  const handleClose = () => {
+    setIsOpen(false);
+    buttonRef.current?.focus(); // Restore focus
+  };
+  
+  return (
+    <>
+      <button ref={buttonRef} onClick={() => setIsOpen(true)}>
+        Open Dialog
+      </button>
+      <Dialog open={isOpen} onClose={handleClose} />
+    </>
+  );
+}
+```
+
+## Skip Links
+
+Provide skip links to bypass repetitive content:
+
+```tsx
+<a href="#main-content" className="skip-link">
+  Skip to main content
+</a>
+
+<main id="main-content">
+  {/* Main content */}
+</main>
+```
+
+```css
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary-600);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+```

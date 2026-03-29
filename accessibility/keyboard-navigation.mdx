@@ -1,0 +1,108 @@
+---
+title: "Keyboard Navigation"
+description: "Complete keyboard interaction patterns for TARMAC components"
+---
+
+# Keyboard Navigation
+
+All TARMAC components are fully keyboard accessible, following established interaction patterns.
+
+## Standard Keys
+
+### Navigation Keys
+
+| Key | Action |
+|-----|--------|
+| **Tab** | Move focus forward |
+| **Shift + Tab** | Move focus backward |
+| **Enter** | Activate buttons, links, submit forms |
+| **Space** | Activate buttons, toggle checkboxes |
+| **Escape** | Close modals, dismiss overlays |
+| **Arrow Keys** | Navigate within components (menus, tabs, etc.) |
+
+### Text Input Keys
+
+| Key | Action |
+|-----|--------|
+| **Home** | Move to start of line |
+| **End** | Move to end of line |
+| **Ctrl/Cmd + A** | Select all text |
+| **Ctrl/Cmd + C/V/X** | Copy, paste, cut |
+
+## Component Patterns
+
+### Buttons
+
+```
+Tab → Focus button
+Enter/Space → Activate button
+```
+
+### Modals
+
+```
+Tab → Cycle through focusable elements
+Escape → Close modal
+Focus trap → Keep focus within modal
+```
+
+### Dropdowns
+
+```
+Tab → Focus trigger
+Enter/Space → Open dropdown
+Arrow Up/Down → Navigate options
+Enter → Select option
+Escape → Close dropdown
+```
+
+### Tabs
+
+```
+Tab → Focus tab list
+Arrow Left/Right → Navigate tabs
+Enter/Space → Activate tab
+```
+
+## Focus Management
+
+### Visible Focus Indicators
+
+All interactive elements show a clear focus indicator:
+
+```css
+:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+}
+```
+
+### Focus Trapping
+
+Modals and dialogs trap focus to prevent keyboard users from accessing background content:
+
+```tsx
+<Modal open={isOpen}>
+  {/* Focus stays within modal */}
+</Modal>
+```
+
+### Skip Links
+
+Provide skip links for keyboard users to bypass repetitive content:
+
+```tsx
+<a href="#main-content" className="skip-link">
+  Skip to main content
+</a>
+```
+
+## Testing Checklist
+
+- [ ] All interactive elements are keyboard accessible
+- [ ] Focus order is logical and predictable
+- [ ] Focus indicators are clearly visible
+- [ ] No keyboard traps (except intentional like modals)
+- [ ] Escape key closes overlays
+- [ ] Enter/Space activate buttons
+- [ ] Arrow keys work in composite widgets

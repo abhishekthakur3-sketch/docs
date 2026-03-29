@@ -1,0 +1,740 @@
+---
+title: Input
+description: Input fields allow users to enter and edit text data in forms and interfaces.
+icon: "input-text"
+---
+
+# Input
+
+## Overview
+
+Input fields are fundamental form components that enable users to enter, edit, and submit text-based data. The TARMAC Design System provides a flexible and accessible input component that supports various types, states, and configurations to handle different data entry scenarios across applications.
+
+<CardGroup cols={2}>
+  <Card title="Versatile" icon="text">
+    Supports text, email, password, number, and more
+  </Card>
+  <Card title="Accessible" icon="universal-access">
+    WCAG 2.1 AA compliant with proper labeling
+  </Card>
+  <Card title="Validation" icon="check-circle">
+    Built-in error states and messaging
+  </Card>
+  <Card title="Customizable" icon="palette">
+    Prefix, suffix, and icon support
+  </Card>
+</CardGroup>
+
+## Component Preview
+
+<Info>
+Input component specifications from the TARMAC Design System including:
+- **Types**: Text, Email, Password, Number, Search, Textarea
+- **Sizes**: SM (32px), MD (40px), LG (48px)
+- **States**: Default, Hover, Focus, Filled, Disabled, Error, Success, Read-Only
+</Info>
+
+## Anatomy
+
+The Input component consists of the following elements:
+
+- **Container**: Wrapper that defines the input boundary
+- **Input Field**: The interactive text entry area
+- **Label**: Descriptive text identifying the input purpose
+- **Placeholder**: Hint text shown when input is empty
+- **Helper Text**: Additional guidance or instructions
+- **Error Message**: Validation feedback for incorrect input
+- **Prefix/Suffix**: Icons or text before/after the input value
+- **Clear Button** (optional): Quick way to empty the input
+
+<Info>Always provide clear, descriptive labels above inputs for better accessibility and mobile experience.</Info>
+
+## Variants
+
+### Text Input
+Standard single-line text entry for names, emails, and general text.
+
+```jsx
+<Input type="text" label="Full Name" />
+```
+
+### Email Input
+Specialized for email addresses with built-in validation.
+
+```jsx
+<Input type="email" label="Email Address" />
+```
+
+### Password Input
+Masked text entry with optional visibility toggle.
+
+```jsx
+<Input type="password" label="Password" />
+```
+
+### Number Input
+Numeric entry with optional increment/decrement controls.
+
+```jsx
+<Input type="number" label="Quantity" min={1} max={100} />
+```
+
+### Search Input
+Optimized for search functionality with search icon and clear button.
+
+```jsx
+<Input type="search" placeholder="Search..." />
+```
+
+### Textarea
+Multi-line text entry for longer content.
+
+```jsx
+<Textarea label="Description" rows={4} />
+```
+
+## Sizes
+
+Input fields are available in three sizes:
+
+| Size | Height | Padding | Font Size | Usage |
+|------|--------|---------|-----------|-------|
+| **SM (Small)** | 32px | 12px horizontal | 14px | Compact forms, filters, toolbars |
+| **MD (Medium)** | 40px | 12px horizontal | 16px | Default size for most forms |
+| **LG (Large)** | 48px | 12px horizontal | 18px | Prominent forms, landing pages |
+
+<Tip>Use MD (Medium) as the default size for most form inputs.</Tip>
+
+## States
+
+### Default
+Ready for user input with neutral styling.
+
+### Hover
+Subtle visual feedback when cursor is over the input.
+- Border color slightly darkens
+- Maintains clear interactive affordance
+
+### Focus
+Active state when user is typing or input has focus.
+- Prominent border color (primary color)
+- Visible focus ring for accessibility (2px outline)
+- Helper text may appear or change
+
+### Filled
+Input contains user-entered value.
+- Label may move or shrink (floating label pattern)
+- Clear button may appear
+
+### Disabled
+Non-interactive state preventing user input.
+- Reduced opacity (60%)
+- Grayed out appearance
+- No hover or focus effects
+- Not keyboard focusable
+
+### Error
+Invalid input requiring user correction.
+- Red border color
+- Error message displayed below
+- Error icon may appear
+- Maintains focus capability
+
+### Success
+Valid input confirmation (optional).
+- Green border or checkmark icon
+- Success message may appear
+
+### Read-Only
+Displays value but prevents editing.
+- Similar to disabled but maintains normal contrast
+- Focusable and selectable
+- No edit cursor
+
+## Interaction Behavior
+
+### Focus
+- Border color changes to primary color
+- Focus ring appears (2px outline)
+- Label may animate (floating label pattern)
+- Helper text may appear or update
+- Cursor appears in input field
+
+### Typing
+- Characters appear as user types
+- Real-time validation (optional)
+- Character counter updates (if enabled)
+- Autocomplete suggestions may appear
+
+### Blur (Lose Focus)
+- Validation triggers
+- Error messages display if invalid
+- Border returns to default state
+- Value persists in field
+
+### Clear Action
+- Clear button appears when input has value
+- Clicking clear removes all text
+- Focus remains in input field
+- Triggers onChange event
+
+## Usage Guidelines
+
+<AccordionGroup>
+  <Accordion title="When to Use" icon="check">
+    - Collecting user information in forms
+    - Search functionality
+    - Filtering and sorting data
+    - Settings and configuration
+    - Any text-based data entry
+  </Accordion>
+  
+  <Accordion title="When Not to Use" icon="xmark">
+    - For selecting from predefined options (use Select)
+    - For binary choices (use Checkbox or Toggle)
+    - For date selection (use Date Picker)
+    - For large amounts of formatted text (use Rich Text Editor)
+  </Accordion>
+</AccordionGroup>
+
+### Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#10b981">
+    **Clear labels**
+    - "Email Address"
+    - "Phone Number"
+    - "Full Name"
+    
+    **Helpful placeholders**
+    - "you@example.com"
+    - "(555) 123-4567"
+    
+    **Actionable errors**
+    - "Email must include @"
+    - "Password must be 8+ characters"
+  </Card>
+  
+  <Card title="✗ Don't" icon="xmark" color="#ef4444">
+    **Vague labels**
+    - ~~"Input"~~
+    - ~~"Field 1"~~
+    
+    **Instructions as placeholders**
+    - ~~"Enter your email here"~~
+    - ~~"Type password"~~
+    
+    **Vague errors**
+    - ~~"Invalid input"~~
+    - ~~"Error"~~
+  </Card>
+</CardGroup>
+
+<Tip>Always place labels above inputs for better accessibility and mobile experience.</Tip>
+
+<Warning>Never use placeholder text as a replacement for labels - it disappears when users start typing.</Warning>
+
+## Accessibility
+
+<Info>All input components meet WCAG 2.1 Level AA accessibility standards.</Info>
+
+### Semantic HTML and Labels
+
+<CodeGroup>
+```jsx Proper Label Association
+<label htmlFor="email">Email Address</label>
+<input 
+  id="email" 
+  type="email" 
+  name="email"
+  aria-describedby="email-helper"
+/>
+<span id="email-helper">We'll never share your email</span>
+```
+
+```jsx Required Field
+<label htmlFor="username">
+  Username <span aria-label="required">*</span>
+</label>
+<input 
+  id="username"
+  type="text"
+  required
+  aria-required="true"
+/>
+```
+
+```jsx Error State
+<label htmlFor="password">Password</label>
+<input 
+  id="password"
+  type="password"
+  aria-invalid="true"
+  aria-describedby="password-error"
+/>
+<span id="password-error" role="alert">
+  Password must be at least 8 characters
+</span>
+```
+</CodeGroup>
+
+### ARIA Attributes Reference
+
+<ResponseField name="aria-label" type="string">
+  Provides accessible name when visual label isn't present
+</ResponseField>
+
+<ResponseField name="aria-labelledby" type="string">
+  References ID of element that labels the input
+</ResponseField>
+
+<ResponseField name="aria-describedby" type="string">
+  References IDs of helper text or error messages
+</ResponseField>
+
+<ResponseField name="aria-required" type="boolean">
+  Indicates if field is required
+</ResponseField>
+
+<ResponseField name="aria-invalid" type="boolean">
+  Indicates if input value is invalid
+</ResponseField>
+
+### Keyboard Navigation
+
+<ResponseField name="Tab" type="key">
+  Move focus to the input field
+</ResponseField>
+
+<ResponseField name="Shift + Tab" type="key">
+  Move focus to previous field
+</ResponseField>
+
+<ResponseField name="Escape" type="key">
+  Clear input (when clearable)
+</ResponseField>
+
+<ResponseField name="Enter" type="key">
+  Submit form (single-line inputs)
+</ResponseField>
+
+### Accessibility Checklist
+
+<AccordionGroup>
+  <Accordion title="✓ Labels & Instructions" icon="tag">
+    - [ ] Every input has a visible label
+    - [ ] Labels are associated with inputs (htmlFor/id)
+    - [ ] Required fields are clearly marked
+    - [ ] Helper text provides guidance
+    - [ ] Placeholder text is not the only label
+  </Accordion>
+  
+  <Accordion title="✓ Error Handling" icon="triangle-exclamation">
+    - [ ] Error messages are specific and actionable
+    - [ ] Errors announced to screen readers (role="alert")
+    - [ ] aria-invalid set to true on error
+    - [ ] aria-describedby links to error message
+    - [ ] Errors don't rely on color alone
+  </Accordion>
+  
+  <Accordion title="✓ Keyboard & Focus" icon="keyboard">
+    - [ ] All inputs keyboard accessible
+    - [ ] Visible focus indicators
+    - [ ] Logical tab order
+    - [ ] No keyboard traps
+    - [ ] Enter submits form (single-line)
+  </Accordion>
+  
+  <Accordion title="✓ Visual Requirements" icon="eye">
+    - [ ] Text contrast ≥ 4.5:1
+    - [ ] Placeholder contrast ≥ 3:1
+    - [ ] Focus indicator contrast ≥ 3:1
+    - [ ] Error states don't rely on color alone
+    - [ ] Touch targets ≥ 44x44px (mobile)
+  </Accordion>
+</AccordionGroup>
+
+### Autocomplete Attributes
+
+Use appropriate autocomplete values for better accessibility and UX:
+
+```jsx
+<Input type="text" autoComplete="name" />
+<Input type="email" autoComplete="email" />
+<Input type="tel" autoComplete="tel" />
+<Input type="text" autoComplete="address-line1" />
+<Input type="password" autoComplete="current-password" />
+<Input type="password" autoComplete="new-password" />
+```
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    <ParamField path="input-height-sm" type="dimension" default="32px">
+      Small input height
+    </ParamField>
+    <ParamField path="input-height-md" type="dimension" default="40px">
+      Medium input height (default)
+    </ParamField>
+    <ParamField path="input-height-lg" type="dimension" default="48px">
+      Large input height
+    </ParamField>
+    <ParamField path="input-padding-x" type="dimension" default="12px">
+      Horizontal padding
+    </ParamField>
+    <ParamField path="input-padding-y" type="dimension" default="8px">
+      Vertical padding
+    </ParamField>
+    <ParamField path="input-border-width" type="dimension" default="1px">
+      Border width
+    </ParamField>
+    <ParamField path="input-border-radius" type="dimension" default="6px">
+      Border radius
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Colors">
+    <ParamField path="input-bg" type="color" default="#ffffff">
+      Background color
+    </ParamField>
+    <ParamField path="input-bg-disabled" type="color" default="#f5f5f5">
+      Disabled background color
+    </ParamField>
+    <ParamField path="input-border-default" type="color" default="#e0e0e0">
+      Default border color
+    </ParamField>
+    <ParamField path="input-border-hover" type="color" default="#c0c0c0">
+      Hover border color
+    </ParamField>
+    <ParamField path="input-border-focus" type="color" default="#000000">
+      Focus border color
+    </ParamField>
+    <ParamField path="input-border-error" type="color" default="#dc2626">
+      Error border color
+    </ParamField>
+    <ParamField path="input-text" type="color" default="#000000">
+      Text color
+    </ParamField>
+    <ParamField path="input-placeholder" type="color" default="#9ca3af">
+      Placeholder text color
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Typography">
+    <ParamField path="input-font-size-sm" type="dimension" default="14px">
+      Small input font size
+    </ParamField>
+    <ParamField path="input-font-size-md" type="dimension" default="16px">
+      Medium input font size
+    </ParamField>
+    <ParamField path="input-font-size-lg" type="dimension" default="18px">
+      Large input font size
+    </ParamField>
+    <ParamField path="input-line-height" type="number" default="1.5">
+      Line height
+    </ParamField>
+    <ParamField path="input-font-weight" type="number" default="400">
+      Font weight
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Spacing">
+    <ParamField path="input-label-margin-bottom" type="dimension" default="6px">
+      Space between label and input
+    </ParamField>
+    <ParamField path="input-helper-margin-top" type="dimension" default="4px">
+      Space between input and helper text
+    </ParamField>
+    <ParamField path="input-error-margin-top" type="dimension" default="4px">
+      Space between input and error message
+    </ParamField>
+  </Tab>
+</Tabs>
+
+### Token Usage Example
+
+```css
+.input {
+  height: var(--input-height-md);
+  padding: var(--input-padding-y) var(--input-padding-x);
+  background: var(--input-bg);
+  border: var(--input-border-width) solid var(--input-border-default);
+  border-radius: var(--input-border-radius);
+  font-size: var(--input-font-size-md);
+  color: var(--input-text);
+}
+
+.input:focus {
+  border-color: var(--input-border-focus);
+  outline: 2px solid var(--input-border-focus);
+  outline-offset: 2px;
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--input-border-error);
+}
+```
+
+## Engineering Implementation
+
+### Component API
+
+```typescript
+interface InputProps {
+  // Input type
+  type?: 'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url';
+  
+  // Labels and text
+  label?: string;
+  placeholder?: string;
+  helperText?: string;
+  errorMessage?: string;
+  
+  // Appearance
+  size?: 'sm' | 'md' | 'lg';
+  
+  // States
+  disabled?: boolean;
+  readOnly?: boolean;
+  required?: boolean;
+  
+  // Value management
+  value?: string;
+  defaultValue?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
+  onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
+  
+  // Enhancements
+  prefix?: ReactNode;
+  suffix?: ReactNode;
+  clearable?: boolean;
+  
+  // Validation
+  maxLength?: number;
+  pattern?: string;
+  
+  // Accessibility
+  autoComplete?: string;
+  autoFocus?: boolean;
+  ariaLabel?: string;
+  ariaDescribedBy?: string;
+  
+  // Styling
+  className?: string;
+}
+
+interface TextareaProps extends Omit<InputProps, 'type'> {
+  rows?: number;
+  cols?: number;
+  resize?: 'none' | 'vertical' | 'horizontal' | 'both';
+}
+```
+
+### Implementation Notes
+
+**Technical Requirements:**
+- Use native `<input>` element for proper semantics
+- Implement controlled or uncontrolled patterns
+- Handle password visibility toggle securely
+- Debounce validation for better UX
+- Preserve cursor position during controlled updates
+- Support autofill styling
+- Implement character counter for maxLength
+- Handle IME composition events properly
+
+**Form Integration:**
+- Associate labels with inputs using htmlFor/id
+- Use appropriate autocomplete attributes
+- Validate on blur, not on every keystroke
+- Provide clear, actionable error messages
+- Support form submission with Enter key
+
+### Code Examples
+
+<CodeGroup>
+```jsx Basic Usage
+// Text input
+<Input 
+  label="Full Name" 
+  placeholder="Enter your name"
+  required
+/>
+
+// Email input
+<Input 
+  type="email"
+  label="Email Address"
+  placeholder="you@example.com"
+  helperText="We'll never share your email"
+/>
+
+// Password input
+<Input 
+  type="password"
+  label="Password"
+  helperText="Must be at least 8 characters"
+/>
+```
+
+```jsx With Validation
+// Error state
+<Input 
+  type="email"
+  label="Email Address"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  errorMessage={errors.email}
+  aria-invalid={!!errors.email}
+/>
+
+// Success state (optional)
+<Input 
+  label="Username"
+  value={username}
+  state="success"
+  helperText="Username is available"
+/>
+```
+
+```jsx With Prefix/Suffix
+// Search input
+<Input 
+  type="search"
+  placeholder="Search products..."
+  prefix={<SearchIcon />}
+  clearable
+/>
+
+// Price input
+<Input 
+  type="number"
+  label="Price"
+  prefix="$"
+  suffix="USD"
+/>
+
+// URL input
+<Input 
+  type="url"
+  label="Website"
+  prefix="https://"
+/>
+```
+
+```jsx Textarea
+// Multi-line input
+<Textarea 
+  label="Description"
+  rows={4}
+  maxLength={500}
+  helperText={`${value.length}/500 characters`}
+/>
+
+// Auto-resize textarea
+<Textarea 
+  label="Comments"
+  rows={3}
+  resize="vertical"
+/>
+```
+
+```jsx Form Example
+<form onSubmit={handleSubmit}>
+  <Input 
+    label="Email"
+    type="email"
+    required
+    autoComplete="email"
+  />
+  <Input 
+    label="Password"
+    type="password"
+    required
+    autoComplete="current-password"
+  />
+  <Button type="submit">Sign In</Button>
+</form>
+```
+
+```jsx Controlled Input
+const [value, setValue] = useState('');
+
+<Input 
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+  label="Username"
+  maxLength={20}
+  helperText={`${value.length}/20 characters`}
+/>
+```
+</CodeGroup>
+
+### CSS Implementation
+
+```css
+.input {
+  /* Base styles */
+  width: 100%;
+  height: var(--input-height-md);
+  padding: var(--input-padding-y) var(--input-padding-x);
+  
+  /* Typography */
+  font-size: var(--input-font-size-md);
+  font-weight: var(--input-font-weight);
+  line-height: var(--input-line-height);
+  
+  /* Appearance */
+  background: var(--input-bg);
+  border: var(--input-border-width) solid var(--input-border-default);
+  border-radius: var(--input-border-radius);
+  color: var(--input-text);
+  
+  /* Transitions */
+  transition: border-color 150ms ease-in-out;
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.input:hover {
+  border-color: var(--input-border-hover);
+}
+
+.input:focus {
+  border-color: var(--input-border-focus);
+  outline: 2px solid var(--input-border-focus);
+  outline-offset: 2px;
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--input-border-error);
+}
+
+.input:disabled {
+  background: var(--input-bg-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: var(--input-label-margin-bottom);
+  font-size: var(--input-font-size-sm);
+  font-weight: 500;
+}
+
+.input-helper {
+  margin-top: var(--input-helper-margin-top);
+  font-size: var(--input-font-size-sm);
+  color: var(--input-placeholder);
+}
+
+.input-error {
+  margin-top: var(--input-error-margin-top);
+  font-size: var(--input-font-size-sm);
+  color: var(--input-border-error);
+}
+```

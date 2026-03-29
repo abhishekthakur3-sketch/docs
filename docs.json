@@ -1,0 +1,89 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "palm",
+  "name": "TARMAC Design System",
+  "logo": {
+    "light": "/assets/brand/tarmac-logo-light.svg",
+    "dark": "/assets/brand/tarmac-logo-dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#000000",
+    "light": "#FFFFFF",
+    "dark": "#000000"
+  },
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "/getting-started/index"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Design System",
+        "groups": [
+          {
+            "group": "About TARMAC",
+            "pages": [
+              "about/overview",
+              "about/philosophy",
+              "about/logo",
+              "about/brand-language",
+              "about/movement-metaphors"
+            ]
+          },
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/index",
+              "getting-started/installation",
+              "getting-started/quick-start",
+              "getting-started/usage-guidelines",
+              "getting-started/contribution"
+            ]
+          },
+          {
+            "group": "Foundations",
+            "pages": [
+              "foundations/colors",
+              "foundations/spacing",
+              "foundations/typography",
+              "foundations/tokens",
+              "foundations/elevation",
+              "foundations/iconography"
+            ]
+          },
+          {
+            "group": "Components",
+            "pages": [
+              "components/avatar",
+              "components/button",
+              "components/checkbox",
+              "components/input",
+              "components/badge",
+              "components/tags",
+              "components/tooltip"
+            ]
+          },
+          {
+            "group": "Patterns",
+            "pages": [
+              "patterns/layout",
+              "patterns/forms"
+            ]
+          },
+          {
+            "group": "Accessibility",
+            "pages": [
+              "accessibility/overview",
+              "accessibility/keyboard-navigation",
+              "accessibility/screen-readers",
+              "accessibility/color-contrast",
+              "accessibility/focus-management",
+              "accessibility/testing"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

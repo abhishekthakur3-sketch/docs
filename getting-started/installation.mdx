@@ -1,0 +1,74 @@
+---
+title: "Installation"
+description: "Get started with TARMAC Design System in your project"
+---
+
+# Installation
+
+Get TARMAC up and running in your project with npm, yarn, or pnpm.
+
+## Package Installation
+
+<CodeGroup>
+```bash npm
+npm install @tarmac/design-system
+```
+
+```bash yarn
+yarn add @tarmac/design-system
+```
+
+```bash pnpm
+pnpm add @tarmac/design-system
+```
+</CodeGroup>
+
+## Peer Dependencies
+
+TARMAC requires React 18+ and React DOM:
+
+```bash
+npm install react@^18.0.0 react-dom@^18.0.0
+```
+
+## Setup
+
+### Import Styles
+
+Import the TARMAC CSS in your app entry point:
+
+```tsx
+// App.tsx or index.tsx
+import '@tarmac/design-system/styles.css';
+```
+
+### Provider Setup
+
+Wrap your app with the TARMAC provider:
+
+```tsx
+import { TarmacProvider } from '@tarmac/design-system';
+
+function App() {
+  return (
+    <TarmacProvider>
+      {/* Your app content */}
+    </TarmacProvider>
+  );
+}
+```
+
+## TypeScript Support
+
+TARMAC is built with TypeScript and includes type definitions out of the box. No additional setup required.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Quick Start" icon="rocket" href="/introduction/quick-start">
+    Build your first component
+  </Card>
+  <Card title="Components" icon="cube" href="/components/button">
+    Explore the component library
+  </Card>
+</CardGroup>
