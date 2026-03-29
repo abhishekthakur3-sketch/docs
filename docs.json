@@ -69,6 +69,7 @@
                   "foundations/typography-implementation"
                 ]
               },
+              "foundations/radius",
               "foundations/tokens",
               "foundations/elevation",
               "foundations/iconography"
