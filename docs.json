@@ -75,6 +75,7 @@
                   "components/status-indicator",
                   "components/links",
                   "components/slider",
+                  "components/stepper",
                   "components/tooltip"
                 ]
               },
