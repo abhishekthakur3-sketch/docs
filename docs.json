@@ -74,6 +74,7 @@
                   "components/filter",
                   "components/dialog-box",
                   "components/list",
+                  "components/popups",
                   "components/badge",
                   "components/tags",
                   "components/pills",
