@@ -1,0 +1,158 @@
+---
+title: "Image Library"
+description: "Image system, prompt templates, and visual guidelines for the TARMAC Design System"
+icon: "image"
+---
+
+## Overview
+
+The image library supports storytelling, scale, and realism across the product ecosystem. Images are used to ground digital experiences in the real world — reflecting movement, infrastructure, people, and operations.
+
+All images are generated using Google Gemini, enabling consistent style, controlled composition, and scalable creation while staying aligned with brand intent and visual direction. Images should feel authentic, operational, and purposeful — never generic or stock-like.
+
+<CardGroup cols={3}>
+  <Card title="5 Categories" icon="images">
+    Vehicles, People, Warehouse, Riders, Illustrative
+  </Card>
+  <Card title="AI-Generated" icon="wand-magic-sparkles">
+    Created with Google Gemini for consistent style and scalability
+  </Card>
+  <Card title="Prompt-Driven" icon="terminal">
+    Standardized templates ensure brand-aligned output
+  </Card>
+</CardGroup>
+
+---
+
+## Image Categories
+
+### Vehicles
+
+{/* 🎨 DESIGNER: Export vehicle images from Figma (node: 669:2529) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Vehicles — Delivery trucks, fleet imagery, highway scenes<br/>Replace with /assets/images/library/vehicles.png</div>
+</div>
+
+### People
+
+{/* 🎨 DESIGNER: Export people images from Figma (node: 669:2729) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ People — Workers, operations staff, candid moments<br/>Replace with /assets/images/library/people.png</div>
+</div>
+
+### Warehouse
+
+{/* 🎨 DESIGNER: Export warehouse images from Figma (node: 669:2734) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Warehouse — Logistics hubs, sorting facilities, conveyor systems<br/>Replace with /assets/images/library/warehouse.png</div>
+</div>
+
+### Riders
+
+{/* 🎨 DESIGNER: Export rider images from Figma (node: 669:2739) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Riders — Delivery riders, last-mile operations<br/>Replace with /assets/images/library/riders.png</div>
+</div>
+
+### Illustrative
+
+{/* 🎨 DESIGNER: Export illustrative images from Figma (node: 676:603) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Illustrative — Stylized scenes, brand storytelling<br/>Replace with /assets/images/library/illustrative.png</div>
+</div>
+
+---
+
+## Core Prompt Templates
+
+All images are generated using structured prompt templates to ensure consistency.
+
+<AccordionGroup>
+  <Accordion title="Contextual Environment">
+    Used to establish setting and scale.
+
+    Template: *"A realistic [environment] showing [infrastructure or location], with [environmental details such as weather, time of day, or surroundings]. The scene feels grounded, operational, and authentic."*
+
+    Example: *"A realistic highway environment with multiple delivery trucks moving across long stretches of road, subtle motion blur, overcast sky, and industrial surroundings."*
+  </Accordion>
+  <Accordion title="Subject-Focused">
+    Used when the subject must be clearly readable.
+
+    Template: *"A close-up / medium shot of [primary subject], clearly visible, with realistic proportions and detail, placed in a real operational environment."*
+
+    Example: *"A delivery truck parked at a logistics hub, clearly branded, realistic lighting, and sharp detail."*
+  </Accordion>
+  <Accordion title="Action and Motion">
+    Used to convey speed, flow, and progress.
+
+    Template: *"A dynamic scene showing [subject] in motion, with natural movement cues such as motion blur, directional lighting, or perspective depth."*
+
+    Example: *"A delivery vehicle moving at speed on an urban road at dusk, light trails visible, motion blur emphasizing movement and efficiency."*
+  </Accordion>
+  <Accordion title="People and Operations">
+    Used to humanize the system.
+
+    Template: *"A realistic depiction of [person/role] performing [task] in a real operational environment, candid and natural, not posed or staged."*
+
+    Example: *"A warehouse worker sorting parcels on a conveyor belt, wearing safety gear, natural lighting, candid moment."*
+  </Accordion>
+  <Accordion title="Mood and Lighting">
+    Used to control emotional tone.
+
+    Template: *"The scene uses [lighting type] with a [warm/cool/neutral] tone, creating a [calm / focused / energetic] mood."*
+
+    Example: *"Soft industrial lighting with cool tones, creating a focused and efficient atmosphere."*
+  </Accordion>
+  <Accordion title="Composition">
+    Used to ensure layout compatibility.
+
+    Template: *"Composed using a [wide / aerial / centered / asymmetric] layout, with clear foreground and background separation, leaving space for UI overlays."*
+
+    Example: *"Wide-angle composition with the subject centered and negative space on the right for UI content."*
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Constraints and Quality Rules
+
+Always include these constraints in prompts to avoid unwanted results:
+
+- "Photorealistic, not illustrated"
+- "No abstract or futuristic elements"
+- "No exaggerated colors or effects"
+- "Natural proportions and realistic scale"
+- "No text overlays in the image"
+
+---
+
+## Example Full Prompt
+
+<Note>
+  "A realistic logistics warehouse interior with multiple workers sorting parcels on conveyor belts. Natural industrial lighting, neutral color tones, candid action-focused scene. Wide-angle composition with clear depth and negative space. Photorealistic, grounded, and operational. No text or abstract elements."
+</Note>
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Be specific and descriptive in prompts
+    - Anchor scenes in real environments
+    - Define lighting and composition explicitly
+    - Keep subjects clear and readable
+    - Use consistent style across a category
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use vague or generic descriptions
+    - Don't create abstract or conceptual imagery
+    - Don't over-stylize or dramatize scenes
+    - Don't rely on imagery to convey critical information
+    - Don't use text overlays within generated images
+  </Card>
+</CardGroup>
+
+<Tip>
+  To add images: Export from Figma or generate with Gemini using the templates above, save to `/assets/images/library/`, then replace placeholder divs with `![Category](/assets/images/library/filename.png)`.
+</Tip>
