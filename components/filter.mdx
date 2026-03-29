@@ -1,0 +1,271 @@
+---
+title: Filter
+description: Filters enable users to narrow down data sets by selecting criteria from dropdowns, lists, and mobile bottom sheets.
+icon: "filter"
+---
+
+## Overview
+
+The Filter system provides structured data filtering across web and mobile platforms. It includes Filter Inputs (trigger buttons), Filter List Cells (selectable options), Filter Lists (grouped options), Filter Dropdowns (collapsed/expanded selectors), and a Filter Set Bottom Sheet for mobile. Together they enable users to refine data views efficiently.
+
+<CardGroup cols={3}>
+  <Card title="5 Sub-Components" icon="cubes">
+    Input, List Cell, List, Dropdown, Bottom Sheet
+  </Card>
+  <Card title="6 Input States" icon="circle-dot">
+    Default, Hover, Active, Focused, Disabled, Ghost
+  </Card>
+  <Card title="2 Sizes" icon="expand">
+    Large (44px), Small (40px)
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with filter component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Filter Component Preview — Replace with /assets/components/filter/filter-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Filter Input">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Filter Input — 6 states x 2 sizes (Large, Small)<br/>Replace with /assets/components/filter/filter-input.png</div>
+    </div>
+  </Tab>
+  <Tab title="Filter List Cell">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Filter List Cell — Default, Hover, Active, Disabled x 2 sizes<br/>Replace with /assets/components/filter/filter-list-cell.png</div>
+    </div>
+  </Tab>
+  <Tab title="Filter List">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Filter List — 2 to 6 items in Large and Small sizes<br/>Replace with /assets/components/filter/filter-list.png</div>
+    </div>
+  </Tab>
+  <Tab title="Filter Dropdown">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Filter Dropdown — Collapsed, Expanded, Active in Large and Small<br/>Replace with /assets/components/filter/filter-dropdown.png</div>
+    </div>
+  </Tab>
+  <Tab title="Mobile Bottom Sheet">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Filter Set Bottom Sheet and Mobile Filter Sets (5 tab selections)<br/>Replace with /assets/components/filter/filter-mobile.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Sub-Components
+
+| Component | Description |
+|-----------|-------------|
+| Filter Input | Trigger button with leading icon, label, and trailing chevron |
+| Filter List Cell | Individual selectable option within a filter list |
+| Filter List | Grouped list of filter options (2-6 items) |
+| Filter Dropdown | Combined input + list as a collapsible dropdown |
+| Filter Set Bottom Sheet | Mobile full-screen filter panel with tabs |
+| Filter Set Mobile | Tab-based filter categories for mobile |
+
+---
+
+## Filter Input States
+
+| State | Description |
+|-------|-------------|
+| Default | Neutral, ready for interaction |
+| Hover | Pointer over the input |
+| Active | Filter has active selections |
+| Focused | Keyboard focus active |
+| Disabled | Filter unavailable |
+| Ghost | Skeleton/loading state |
+
+---
+
+## Filter List Cell States
+
+| State | Description |
+|-------|-------------|
+| Default | Available, unselected option |
+| Hover | Pointer over the cell |
+| Active | Currently selected option |
+| Disabled | Unavailable option |
+
+---
+
+## Filter Dropdown Variants
+
+| Variant | Description |
+|---------|-------------|
+| Collapsed | Input visible, list hidden |
+| Expanded | Input visible, list open below |
+| Active | Filter has active selections applied |
+
+---
+
+## Filter List Counts
+
+| Count | Items | Description |
+|-------|-------|-------------|
+| 2 List | 2 options | Minimal filter |
+| 3 List | 3 options | Small filter set |
+| 4 List | 4 options | Medium filter set |
+| 5 List | 5 options | Standard filter set |
+| 6 List | 6 options | Extended filter set |
+
+---
+
+## Sizes
+
+| Size | Input Height | Cell Height | Usage |
+|------|-------------|-------------|-------|
+| Large | 44px | 44px | Standard filter bars, prominent filters |
+| Small | 40px | 40px | Compact layouts, dense filter rows |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Click filter input | Expands dropdown list |
+| Select an option | Marks option as active, updates input |
+| Click outside | Closes dropdown |
+| Clear filter | Removes active selection |
+| Mobile: tap filter | Opens bottom sheet with tab categories |
+| Mobile: select tab | Shows filter options for that category |
+| Mobile: apply | Closes bottom sheet, applies filters |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use filters for narrowing large data sets
+    - Keep filter labels short and descriptive
+    - Show active filter count or selection
+    - Use bottom sheet for mobile filter experiences
+    - Allow clearing all filters easily
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't overload with too many filter options
+    - Don't hide critical filters behind secondary menus
+    - Don't use filters for navigation purposes
+    - Don't mix filter and sort controls without clear separation
+    - Don't use filters when the data set is small
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="listbox"` on filter list, `role="option"` on cells |
+| Keyboard | Arrow keys navigate options, Enter selects, Escape closes |
+| Focus | Visible focus ring on input and active option |
+| Screen reader | Announce active filter count and selected options |
+| Label | Associate each filter with descriptive `aria-label` |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Input">
+    | Token | Value |
+    |-------|-------|
+    | `filter-input-height-lg` | 44px |
+    | `filter-input-height-sm` | 40px |
+    | `filter-input-border-radius` | 8px |
+    | `filter-input-border-color` | #D1D5DB |
+    | `filter-input-active-bg` | #000000 |
+    | `filter-input-active-text` | #FFFFFF |
+  </Tab>
+  <Tab title="List">
+    | Token | Value |
+    |-------|-------|
+    | `filter-cell-height-lg` | 44px |
+    | `filter-cell-height-sm` | 40px |
+    | `filter-cell-hover-bg` | #F5F5F5 |
+    | `filter-cell-active-bg` | #000000 |
+    | `filter-cell-active-text` | #FFFFFF |
+    | `filter-list-shadow` | 0 4px 12px rgba(0,0,0,0.12) |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface FilterDropdownProps {
+  variant?: 'collapsed' | 'expanded' | 'active';
+  size?: 'lg' | 'sm';
+  label: string;
+  options: FilterOption[];
+  selectedValues?: string[];
+  onChange?: (values: string[]) => void;
+  disabled?: boolean;
+}
+
+interface FilterOption {
+  value: string;
+  label: string;
+  disabled?: boolean;
+}
+
+interface FilterBottomSheetProps {
+  open: boolean;
+  onClose: () => void;
+  categories: FilterCategory[];
+  onApply: (filters: Record<string, string[]>) => void;
+}
+
+interface FilterCategory {
+  label: string;
+  options: FilterOption[];
+}
+```
+
+```tsx Usage
+// Single filter dropdown
+<FilterDropdown
+  label="Status"
+  options={[
+    { value: 'active', label: 'Active' },
+    { value: 'pending', label: 'Pending' },
+    { value: 'completed', label: 'Completed' },
+  ]}
+  onChange={(vals) => setFilters(vals)}
+/>
+
+// Active filter with selection
+<FilterDropdown
+  variant="active"
+  label="City"
+  selectedValues={['delhi']}
+  options={cityOptions}
+/>
+
+// Mobile bottom sheet
+<FilterBottomSheet
+  open={showFilters}
+  onClose={() => setShowFilters(false)}
+  categories={[
+    { label: 'Status', options: statusOptions },
+    { label: 'City', options: cityOptions },
+    { label: 'Date', options: dateOptions },
+  ]}
+  onApply={handleApplyFilters}
+/>
+```
+</CodeGroup>

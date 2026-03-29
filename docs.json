@@ -71,6 +71,7 @@
                   "components/rating",
                   "components/file-upload",
                   "components/date-time-picker",
+                  "components/filter",
                   "components/badge",
                   "components/tags",
                   "components/pills",
