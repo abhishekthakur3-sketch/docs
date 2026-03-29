@@ -64,6 +64,7 @@
                   "components/input-area",
                   "components/dropdown",
                   "components/search",
+                  "components/shimmer",
                   "components/badge",
                   "components/tags",
                   "components/pills",

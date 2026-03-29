@@ -1,0 +1,248 @@
+---
+title: Shimmer
+description: Skeleton loaders (shimmer) are visual placeholders that mimic the structure of content being loaded, improving perceived performance and reducing the feeling of waiting.
+icon: "bars-staggered"
+---
+
+## Overview
+
+Skeleton loaders, also known as shimmer loaders, are visual placeholders that mimic the structure of the content being loaded. Instead of showing blank space or spinners, skeletons give users a preview of the layout while data is loading. They improve perceived performance by showing the structure of upcoming content.
+
+<CardGroup cols={3}>
+  <Card title="2 Animation Types" icon="wand-magic-sparkles">
+    Animated (Shimmer), Static
+  </Card>
+  <Card title="2 Modes" icon="circle-half-stroke">
+    Light Mode, Dark Mode
+  </Card>
+  <Card title="5 Animation Frames" icon="film">
+    Sequential frames for smooth shimmer sweep
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with shimmer component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Shimmer Component Preview — Replace with /assets/components/shimmer/shimmer-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Animated (Light)">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Animated Shimmer — Light Mode, 5 animation frames<br/>Replace with /assets/components/shimmer/shimmer-animated-light.png</div>
+    </div>
+  </Tab>
+  <Tab title="Animated (Dark)">
+    <div style={{background:'#1A1A1A', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.5, fontSize:'14px', color:'#999'}}>🖼️ Animated Shimmer — Dark Mode, 5 animation frames<br/>Replace with /assets/components/shimmer/shimmer-animated-dark.png</div>
+    </div>
+  </Tab>
+  <Tab title="Static">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Static Skeleton — Light and Dark modes without animation<br/>Replace with /assets/components/shimmer/shimmer-static.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Animated shimmer is the default and most commonly used variant. Static skeletons are used when motion needs to be minimized or performance constraints exist.</Info>
+
+---
+
+## Shimmer Matrix
+
+Complete reference: Animation × Frame × Mode combinations.
+
+<Tabs>
+  <Tab title="Animated">
+    | Frame | Light Mode | Dark Mode |
+    |-------|-----------|-----------|
+    | Frame 1 | 🔲 *shimmer* | 🔲 *shimmer* |
+    | Frame 2 | 🔲 *shimmer* | 🔲 *shimmer* |
+    | Frame 3 | 🔲 *shimmer* | 🔲 *shimmer* |
+    | Frame 4 | 🔲 *shimmer* | 🔲 *shimmer* |
+    | Frame 5 | 🔲 *shimmer* | 🔲 *shimmer* |
+  </Tab>
+  <Tab title="Static">
+    | Frame | Light Mode | Dark Mode |
+    |-------|-----------|-----------|
+    | Frame 1 | 🔲 *skeleton* | 🔲 *skeleton* |
+  </Tab>
+</Tabs>
+
+---
+
+## Animation Types
+
+| Type | Description | Use When |
+|------|-------------|----------|
+| Animated (Shimmer) | Moving shimmer effect sweeps across the placeholder | Default for most loading states — communicates active loading |
+| Static | Skeleton remains without animation | Motion needs to be minimized, performance constraints, or subtle loading states |
+
+---
+
+## Modes
+
+| Mode | Description | Background |
+|------|-------------|------------|
+| Light | Neutral light gray placeholders | Light themed interfaces |
+| Dark | Darker neutral tone placeholders | Dark themed interfaces |
+
+---
+
+## Anatomy
+
+{/* 🎨 DESIGNER: Replace with shimmer anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Shimmer Anatomy Diagram — Replace with /assets/components/shimmer/shimmer-anatomy.png</div>
+</div>
+
+| # | Element | Description |
+|---|---------|-------------|
+| 1 | Skeleton Container | Base placeholder shape (rounded rectangle) |
+| 2 | Shimmer Overlay | Animated gradient sweep layer (animated variant only) |
+| 3 | Mask | Clipping mask defining the visible skeleton shape |
+| 4 | Shimmer Color | Gradient highlight that moves across the skeleton |
+
+---
+
+## Common Patterns
+
+Skeleton loaders should match the structure of the content they represent.
+
+| Pattern | Description | Use Case |
+|---------|-------------|----------|
+| Text Lines | Horizontal bars of varying widths | Loading text content, paragraphs |
+| Avatar Circles | Circular placeholders | User profiles, avatars |
+| Card Blocks | Rectangular placeholders | Loading cards, modules |
+| Table Rows | Repeating row placeholders | Loading tabular data |
+| Image Placeholders | Large rectangular areas | Loading media content |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Content begins loading | Skeleton appears immediately |
+| Skeleton displayed | Matches approximate layout of final content |
+| Content loads | Skeleton disappears, replaced seamlessly |
+| Layout shift | Should be minimal — skeleton matches final dimensions |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Match skeleton shape to the final content layout
+    - Use animated shimmer for most loading states
+    - Show skeletons immediately when loading begins
+    - Keep skeleton dimensions close to actual content
+    - Use appropriate mode (light/dark) for the theme
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use skeletons for very short loading times
+    - Don't show skeletons that differ significantly from final layout
+    - Don't leave skeletons visible indefinitely without feedback
+    - Don't use animated shimmer when motion should be reduced
+    - Don't interpret skeletons as actual content
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Screen readers | Hide skeletons from assistive technologies using `aria-hidden="true"` |
+| Loading announcement | Use `aria-live="polite"` on the container to announce when content loads |
+| Reduced motion | Respect `prefers-reduced-motion` — use static skeleton when enabled |
+| Role | Use `role="status"` on the loading container |
+| No content interpretation | Skeletons must not be read as meaningful content |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Light Mode">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `skeleton-bg-light` | #E5E7EB | Base skeleton background |
+    | `skeleton-shimmer-light` | #F3F4F6 | Shimmer highlight color |
+    | `skeleton-border-radius` | 8px | Default corner radius |
+    | `skeleton-height` | 48px | Default skeleton height |
+  </Tab>
+  <Tab title="Dark Mode">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `skeleton-bg-dark` | #374151 | Base skeleton background |
+    | `skeleton-shimmer-dark` | #4B5563 | Shimmer highlight color |
+    | `skeleton-border-radius` | 8px | Default corner radius |
+    | `skeleton-height` | 48px | Default skeleton height |
+  </Tab>
+  <Tab title="Animation">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `skeleton-animation-duration` | 1.5s | Full shimmer sweep cycle |
+    | `skeleton-animation-timing` | ease-in-out | Easing function |
+    | `skeleton-animation-delay` | 0s | Start delay |
+    | `skeleton-frames` | 5 | Animation keyframe count |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface SkeletonProps {
+  animated?: boolean;
+  mode?: 'light' | 'dark';
+  width?: string | number;
+  height?: string | number;
+  borderRadius?: string | number;
+  className?: string;
+  count?: number;
+  circle?: boolean;
+}
+```
+
+```tsx Usage
+// Basic animated skeleton (default)
+<Skeleton width="100%" height={48} />
+
+// Static skeleton
+<Skeleton animated={false} width="100%" height={48} />
+
+// Dark mode
+<Skeleton mode="dark" width="100%" height={48} />
+
+// Circle (avatar placeholder)
+<Skeleton circle width={40} height={40} />
+
+// Multiple text lines
+<Skeleton count={3} width="100%" height={16} />
+
+// Card skeleton
+<div style={{ display: 'flex', gap: 12 }}>
+  <Skeleton circle width={48} height={48} />
+  <div style={{ flex: 1 }}>
+    <Skeleton width="60%" height={16} />
+    <Skeleton width="80%" height={12} />
+  </div>
+</div>
+
+// Table row skeleton
+{Array.from({ length: 5 }).map((_, i) => (
+  <Skeleton key={i} width="100%" height={44} />
+))}
+```
+</CodeGroup>
