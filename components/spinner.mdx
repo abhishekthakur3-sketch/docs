@@ -165,9 +165,9 @@ The spinner has 4 animation frame variants (01–04) representing different posi
 ### Timing
 
 - Show spinner immediately after action (no delay)
-- For very fast operations (<300ms), consider not showing a spinner at all
-- For operations >3 seconds, pair with a text message (e.g., "Loading...")
-- For operations >10 seconds, provide additional context or a cancel option
+- For very fast operations (under 300ms), consider not showing a spinner at all
+- For operations over 3 seconds, pair with a text message (e.g., "Loading...")
+- For operations over 10 seconds, provide additional context or a cancel option
 
 ---
 
@@ -188,7 +188,7 @@ The spinner has 4 animation frame variants (01–04) representing different posi
 <CardGroup cols={2}>
   <Card title="Do" icon="check" color="#16A34A">
     - Use spinners for indeterminate loading states
-    - Pair with loading text for operations >3 seconds
+    - Pair with loading text for operations over 3 seconds
     - Use appropriate size based on context
     - Show spinner immediately when loading begins
     - Hide spinner as soon as content is ready
@@ -196,7 +196,7 @@ The spinner has 4 animation frame variants (01–04) representing different posi
   </Card>
   <Card title="Don't" icon="xmark" color="#DC2626">
     - Don't use spinners for operations with measurable progress
-    - Don't show spinners for extremely short loading durations (<300ms)
+    - Don't show spinners for extremely short loading durations (under 300ms)
     - Don't leave spinners active indefinitely without feedback
     - Don't rely solely on visual animation — add text for accessibility
     - Don't use oversized spinners for small loading areas

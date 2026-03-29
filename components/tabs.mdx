@@ -357,9 +357,9 @@ Tab groups support 2 to 8 tabs. The system adapts layout based on count:
 
 | Breakpoint | Behavior |
 |-----------|----------|
-| Desktop (≥1024px) | Full tab bar, all tabs visible |
-| Tablet (768–1023px) | Scrollable if >5 tabs |
-| Mobile (<768px) | Scrollable, consider Button Style or vertical orientation |
+| Desktop (1024px+) | Full tab bar, all tabs visible |
+| Tablet (768–1023px) | Scrollable if more than 5 tabs |
+| Mobile (below 768px) | Scrollable, consider Button Style or vertical orientation |
 
 ---
 
@@ -413,7 +413,7 @@ Tab groups support 2 to 8 tabs. The system adapts layout based on count:
 | Disabled tabs | `aria-disabled="true"`, skip in keyboard navigation |
 | Labels | Each tab must have a visible text label or `aria-label` |
 
-<Info>Arrow key navigation should wrap — pressing `→` on the last tab moves focus to the first tab, and vice versa.</Info>
+<Info>Arrow key navigation should wrap. Pressing Right on the last tab moves focus to the first tab, and vice versa.</Info>
 
 ---
 
