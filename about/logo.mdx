@@ -1,66 +1,144 @@
 ---
 title: "Logo"
-description: "TARMAC logo usage guidelines and assets"
+description: "Logo system, types, sizing, and usage guidelines for the TARMAC Design System"
+icon: "flag"
 ---
 
-# TARMAC Logo
+## Overview
 
-The TARMAC logo is a key element of our brand identity. Use it consistently to maintain brand recognition.
+Logos are treated as system components, not static assets. Each product within the portfolio can have its own logo, but all logos follow a shared structure, sizing logic, and usage rules to ensure consistency, recognizability, and scalability across platforms.
 
-## Logo Variations
+<CardGroup cols={3}>
+  <Card title="3 Logo Types" icon="shapes">
+    Wordmark, Logomark, and Pictorial for every context
+  </Card>
+  <Card title="6 Sizes" icon="ruler">
+    From XXSmall (14px) to XLarge (48px)
+  </Card>
+  <Card title="2 Color Modes" icon="circle-half-stroke">
+    White and Black variants for light/dark backgrounds
+  </Card>
+</CardGroup>
 
-### Primary Logo
+---
 
-<img src="/assets/brand/tarmac-logo-light.svg" alt="TARMAC primary logo" style={{ maxWidth: '300px', margin: '24px 0' }} />
+## Logo Types
 
-The primary logo should be used in most contexts.
+### Logo (Wordmark)
 
-### Dark Version
+The full textual representation of the product or brand. Used when space allows and clear identification is required — ideal for headers, dashboards, and brand-forward surfaces.
 
-<img src="/assets/brand/tarmac-logo-dark.svg" alt="TARMAC dark logo" style={{ maxWidth: '300px', margin: '24px 0', background: '#000', padding: '20px' }} />
+### Logomark
 
-Use the dark version on light backgrounds.
+A compact symbolic version derived from the wordmark. Used in constrained spaces such as navigation bars, app launchers, favicons, or dense UI layouts.
+
+### Pictorial
+
+An iconic visual mark representing the brand. Used for app icons, social media avatars, and contexts where the wordmark is too wide.
+
+---
+
+## Delhivery Logo
+
+{/* 🎨 DESIGNER: Export DLV_Logo grid from Figma (node: 687:6872) — White + Black, all 6 sizes */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ DLV Logo (Wordmark) — All sizes, White + Black variants<br/>Replace with /assets/brand/dlv-logo-grid.png</div>
+</div>
+
+{/* 🎨 DESIGNER: Export DLV_Logomark grid from Figma (node: 690:261) — White + Black, all 5 sizes */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ DLV Logomark — All sizes, White + Black variants<br/>Replace with /assets/brand/dlv-logomark-grid.png</div>
+</div>
+
+{/* 🎨 DESIGNER: Export DLV_Pictorial grid from Figma (node: 690:539) — White + Black, all 5 sizes */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ DLV Pictorial — All sizes, White + Black variants<br/>Replace with /assets/brand/dlv-pictorial-grid.png</div>
+</div>
+
+---
+
+## Delhivery One
+
+{/* 🎨 DESIGNER: Export Delhivery One logo + logomark from Figma (node: 690:571) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'160px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Delhivery One — Logo + Logomark variants<br/>Replace with /assets/brand/dlv-one-grid.png</div>
+</div>
+
+---
+
+## Delhivery Direct
+
+{/* 🎨 DESIGNER: Export Delhivery Direct logo + logomark from Figma (node: 700:3397) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'160px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Delhivery Direct — Logo + Logomark variants<br/>Replace with /assets/brand/dlv-direct-grid.png</div>
+</div>
+
+---
+
+## Logo Sizes
+
+| Size | Height | Usage |
+|------|--------|-------|
+| XXSmall | 14px | Micro contexts, dense data UI |
+| XSmall | 16px | Favicons, compact nav, footer |
+| Small | 24px | Navigation bars, sidebar headers |
+| Medium | 28px | Standard headers, toolbars |
+| Large | 34px | Dashboard headers, landing pages |
+| XLarge | 48px | Hero sections, splash screens, marketing |
+
+---
+
+## Color Variants
+
+| Variant | Background | Usage |
+|---------|------------|-------|
+| Black | Light backgrounds | Default for light mode UI |
+| White | Dark backgrounds | Default for dark mode UI, overlays |
+
+---
 
 ## Usage Guidelines
 
-### Clear Space
-Maintain clear space around the logo equal to the height of the "T" in TARMAC.
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use the correct logo type for the context (wordmark for headers, logomark for nav)
+    - Maintain clear space around the logo equal to the height of the mark
+    - Use Black variant on light backgrounds, White on dark
+    - Scale logos only to the defined size tokens
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't rotate, distort, or stretch the logo
+    - Don't change logo colors beyond Black/White variants
+    - Don't add effects like shadows, gradients, or outlines
+    - Don't place logos on busy or low-contrast backgrounds
+    - Don't recreate or modify the logo
+    - Don't use outdated versions of the logo
+  </Card>
+</CardGroup>
 
-### Minimum Size
-- **Digital**: 32px height minimum
-- **Print**: 0.5 inch height minimum
+---
 
-### Color Variations
-
-<Tabs>
-  <Tab title="On Light Backgrounds">
-    Use the dark version on light backgrounds for maximum contrast and readability.
-  </Tab>
-  
-  <Tab title="On Dark Backgrounds">
-    Use the light version on dark backgrounds to ensure visibility.
-  </Tab>
-  
-  <Tab title="Monochrome">
-    When color isn't available, use the black or white monochrome version.
-  </Tab>
-</Tabs>
-
-## Don'ts
+## Clear Space and Minimum Size
 
 <Warning>
-  Do not:
-  - Rotate or distort the logo
-  - Change the logo colors
-  - Add effects like shadows or gradients
-  - Place the logo on busy backgrounds
-  - Recreate or modify the logo
-  - Use old versions of the logo
+  Maintain clear space around the logo equal to the height of the logomark. Never crowd the logo with other elements.
 </Warning>
+
+| Context | Minimum Height |
+|---------|---------------|
+| Digital (web/app) | 14px (XXSmall) |
+| Print | 0.5 inch |
+| Favicon | 16px × 16px |
+
+---
 
 ## Download Assets
 
-<CardGroup cols={2}>
+<Tip>
+  To add logo assets: Export each variant from Figma as SVG/PNG, save to `/assets/brand/`, then replace the placeholder divs above with standard image tags.
+</Tip>
+
+<CardGroup cols={3}>
   <Card title="SVG (Vector)" icon="file-code">
     Best for web and scalable applications
   </Card>
@@ -71,7 +149,3 @@ Maintain clear space around the logo equal to the height of the "T" in TARMAC.
     Complete set of logo files and guidelines
   </Card>
 </CardGroup>
-
-## Questions?
-
-For logo usage questions or custom requests, contact the brand team at brand@tarmac.design
