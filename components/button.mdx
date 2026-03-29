@@ -31,56 +31,56 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 
 ### Variants × Styles
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px', width:'100%'}}>
   <div style={{fontSize:'12px', fontWeight:600, marginBottom:'12px', opacity:0.5}}>PRIMARY (FILLED)</div>
-  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'20px'}}>
-    <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Black</button>
-    <button style={{background:'#fff', color:'#000', border:'1px solid #ddd', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>White</button>
-    <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Blue</button>
-    <button style={{background:'#1BA86E', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Success</button>
-    <button style={{background:'#DC143C', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Error</button>
-    <button style={{background:'#CF9F02', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Warning</button>
+  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'20px', alignItems:'center'}}>
+    <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
+    <button style={{background:'#fff', color:'#000', border:'1px solid #ddd', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>White</button>
+    <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
+    <button style={{background:'#1BA86E', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
+    <button style={{background:'#DC143C', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
+    <button style={{background:'#CF9F02', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
   </div>
   <div style={{fontSize:'12px', fontWeight:600, marginBottom:'12px', opacity:0.5}}>SECONDARY (OUTLINED)</div>
-  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'20px'}}>
-    <button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Black</button>
-    <button style={{background:'transparent', color:'#2396FB', border:'1.5px solid #2396FB', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Blue</button>
-    <button style={{background:'transparent', color:'#1BA86E', border:'1.5px solid #1BA86E', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Success</button>
-    <button style={{background:'transparent', color:'#DC143C', border:'1.5px solid #DC143C', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Error</button>
-    <button style={{background:'transparent', color:'#CF9F02', border:'1.5px solid #CF9F02', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px'}}>Warning</button>
+  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'20px', alignItems:'center'}}>
+    <button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
+    <button style={{background:'transparent', color:'#2396FB', border:'1.5px solid #2396FB', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
+    <button style={{background:'transparent', color:'#1BA86E', border:'1.5px solid #1BA86E', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
+    <button style={{background:'transparent', color:'#DC143C', border:'1.5px solid #DC143C', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
+    <button style={{background:'transparent', color:'#CF9F02', border:'1.5px solid #CF9F02', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
   </div>
   <div style={{fontSize:'12px', fontWeight:600, marginBottom:'12px', opacity:0.5}}>TERTIARY (TEXT)</div>
-  <div style={{display:'flex', gap:'10px', flexWrap:'wrap'}}>
-    <button style={{background:'transparent', color:'#000', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline'}}>Black</button>
-    <button style={{background:'transparent', color:'#2396FB', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline'}}>Blue</button>
-    <button style={{background:'transparent', color:'#1BA86E', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline'}}>Success</button>
-    <button style={{background:'transparent', color:'#DC143C', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline'}}>Error</button>
-    <button style={{background:'transparent', color:'#CF9F02', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline'}}>Warning</button>
+  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', alignItems:'center'}}>
+    <button style={{background:'transparent', color:'#000', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
+    <button style={{background:'transparent', color:'#2396FB', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
+    <button style={{background:'transparent', color:'#1BA86E', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
+    <button style={{background:'transparent', color:'#DC143C', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
+    <button style={{background:'transparent', color:'#CF9F02', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
   </div>
 </div>
 
 ### Sizes
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
-  <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'flex-end'}}>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'14px 24px', fontSize:'16px', fontWeight:500, height:'48px', display:'block', marginBottom:'8px'}}>XLarge</button>
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px', width:'100%'}}>
+  <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end'}}>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'0 24px', fontSize:'16px', fontWeight:500, height:'48px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>XLarge</button>
       <div style={{fontSize:'10px', opacity:0.5}}>48px</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'12px 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'block', marginBottom:'8px'}}>Large</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Large</button>
       <div style={{fontSize:'10px', opacity:0.5}}>44px</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'8px 16px', fontSize:'14px', fontWeight:500, height:'36px', display:'block', marginBottom:'8px'}}>Regular</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Regular</button>
       <div style={{fontSize:'10px', opacity:0.5}}>36px</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'4px 12px', fontSize:'13px', fontWeight:500, height:'28px', display:'block', marginBottom:'8px'}}>Small</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 12px', fontSize:'13px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Small</button>
       <div style={{fontSize:'10px', opacity:0.5}}>28px</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'4px', padding:'2px 10px', fontSize:'12px', fontWeight:500, height:'24px', display:'block', marginBottom:'8px'}}>XSmall</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>XSmall</button>
       <div style={{fontSize:'10px', opacity:0.5}}>24px</div>
     </div>
   </div>
@@ -88,30 +88,30 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 
 ### States
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
-  <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'flex-end'}}>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'block', marginBottom:'8px'}}>Default</button>
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px', width:'100%'}}>
+  <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end'}}>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Default</button>
       <div style={{fontSize:'10px', opacity:0.5}}>Resting</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#333', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'block', marginBottom:'8px'}}>Hover</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#333', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Hover</button>
       <div style={{fontSize:'10px', opacity:0.5}}>Pointer over</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#555', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'block', marginBottom:'8px'}}>Pressed</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#555', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Pressed</button>
       <div style={{fontSize:'10px', opacity:0.5}}>Click/tap</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'block', marginBottom:'8px', outline:'2px solid #2396FB', outlineOffset:'2px'}}>Focused</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px', outline:'2px solid #2396FB', outlineOffset:'2px'}}>Focused</button>
       <div style={{fontSize:'10px', opacity:0.5}}>Keyboard</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'block', marginBottom:'8px', opacity:0.4, cursor:'not-allowed'}}>Disabled</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px', opacity:0.4, cursor:'not-allowed'}}>Disabled</button>
       <div style={{fontSize:'10px', opacity:0.5}}>Inactive</div>
     </div>
-    <div style={{textAlign:'center'}}>
-      <button style={{background:'rgba(0,0,0,0.05)', color:'#000', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'block', marginBottom:'8px'}}>Ghost</button>
+    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
+      <button style={{background:'rgba(0,0,0,0.05)', color:'#000', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Ghost</button>
       <div style={{fontSize:'10px', opacity:0.5}}>Minimal</div>
     </div>
   </div>
@@ -125,11 +125,11 @@ Buttons are interactive elements used to initiate actions such as submitting dat
   <Tab title="Standard Button">
     Single-line button with label. May include leading or trailing icon.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px'}}>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
       <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px'}}>Button</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px'}}>＋ Add Item</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'10px 20px', fontSize:'14px', fontWeight:500, height:'44px'}}>Continue →</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>＋ Add Item</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Continue →</button>
       </div>
     </div>
 
@@ -138,11 +138,11 @@ Buttons are interactive elements used to initiate actions such as submitting dat
   <Tab title="Icon Button">
     Icon only, no label. Used in constrained spaces.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px'}}>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
       <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'48px', height:'48px', fontSize:'20px', display:'flex', alignItems:'center', justifyContent:'center'}}>＋</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'36px', height:'36px', fontSize:'16px', display:'flex', alignItems:'center', justifyContent:'center'}}>✕</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'28px', height:'28px', fontSize:'14px', display:'flex', alignItems:'center', justifyContent:'center'}}>⋮</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'48px', height:'48px', fontSize:'20px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>＋</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'36px', height:'36px', fontSize:'16px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>✕</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'28px', height:'28px', fontSize:'14px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>⋮</button>
       </div>
     </div>
 
@@ -151,13 +151,13 @@ Buttons are interactive elements used to initiate actions such as submitting dat
   <Tab title="Two-Liner Button">
     Two lines of text for additional context.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px'}}>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
       <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'8px 20px', fontSize:'14px', fontWeight:500, height:'60px', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'60px', display:'inline-flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}>
           <span>Confirm Order</span>
           <span style={{fontSize:'11px', opacity:0.7}}>3 items · ₹2,450</span>
         </button>
-        <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'8px', padding:'8px 20px', fontSize:'14px', fontWeight:500, height:'60px', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}>
+        <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'8px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'60px', display:'inline-flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}>
           <span>Schedule Pickup</span>
           <span style={{fontSize:'11px', opacity:0.7}}>Tomorrow, 10:00 AM</span>
         </button>
@@ -169,9 +169,9 @@ Buttons are interactive elements used to initiate actions such as submitting dat
   <Tab title="Slider Button">
     Swipe-to-confirm interaction for high-stakes actions.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px'}}>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
       <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
-        <div style={{background:'#E5E5E5', borderRadius:'30px', padding:'6px', width:'280px', height:'52px', position:'relative', display:'flex', alignItems:'center'}}>
+        <div style={{background:'#E5E5E5', borderRadius:'30px', padding:'6px', width:'100%', maxWidth:'320px', height:'52px', position:'relative', display:'flex', alignItems:'center'}}>
           <div style={{background:'#000', borderRadius:'24px', width:'40px', height:'40px', display:'flex', alignItems:'center', justifyContent:'center', color:'#fff', fontSize:'16px'}}>→</div>
           <span style={{position:'absolute', left:'50%', transform:'translateX(-50%)', fontSize:'13px', opacity:0.5}}>Slide to confirm</span>
         </div>
