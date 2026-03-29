@@ -1,37 +1,42 @@
 ---
-title: Input
-description: Input fields allow users to enter and edit text data in forms and interfaces.
+title: Input Field
+description: Input fields are fundamental form components that collect user data through text entry, supporting labels, validation, icons, and contextual feedback.
 icon: "input-text"
 ---
 
-# Input
-
 ## Overview
 
-Input fields are fundamental form components that enable users to enter, edit, and submit text-based data. The TARMAC Design System provides a flexible and accessible input component that supports various types, states, and configurations to handle different data entry scenarios across applications.
+Input fields are fundamental form components used to collect user input — names, values, search queries, configuration parameters, and system inputs. The component provides contextual information through labels, helper text, status indicators, and validation messages. It supports three structural layers: Title Container, Input Field Container, and Subtext Container.
 
-<CardGroup cols={2}>
-  <Card title="Versatile" icon="text">
-    Supports text, email, password, number, and more
+<CardGroup cols={3}>
+  <Card title="4 Types" icon="palette">
+    Regular, Success, Info Blue, Error
   </Card>
-  <Card title="Accessible" icon="universal-access">
-    WCAG 2.1 AA compliant with proper labeling
+  <Card title="3 Styles" icon="layer-group">
+    Standard, Add-on Left, Add-on Right
   </Card>
-  <Card title="Validation" icon="check-circle">
-    Built-in error states and messaging
-  </Card>
-  <Card title="Customizable" icon="palette">
-    Prefix, suffix, and icon support
+  <Card title="6 States" icon="circle-dot">
+    Default, Hover, Active, Focused, Disabled, Ghost
   </Card>
 </CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with input field component preview from Figma (page: Input Field ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Input Field Component Preview — Replace with /assets/components/input/input-preview.png</div>
+</div>
+
+---
 
 ## Component Preview
 
 <Info>
 Input component specifications from the TARMAC Design System including:
-- **Types**: Text, Email, Password, Number, Search, Textarea
-- **Sizes**: SM (32px), MD (40px), LG (48px)
-- **States**: Default, Hover, Focus, Filled, Disabled, Error, Success, Read-Only
+- **Types**: Regular, Success, Info Blue, Error
+- **Styles**: Standard, Add-on Left, Add-on Right
+- **Sizes**: Large (98px), Default (94px), Small (86px)
+- **States**: Default, Hover, Active, Focused, Disabled, Ghost
 </Info>
 
 ## Anatomy
@@ -200,33 +205,20 @@ Displays value but prevents editing.
 ### Do's and Don'ts
 
 <CardGroup cols={2}>
-  <Card title="✓ Do" icon="check" color="#10b981">
-    **Clear labels**
-    - "Email Address"
-    - "Phone Number"
-    - "Full Name"
-    
-    **Helpful placeholders**
-    - "you@example.com"
-    - "(555) 123-4567"
-    
-    **Actionable errors**
-    - "Email must include @"
-    - "Password must be 8+ characters"
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use clear, descriptive labels for every input
+    - Provide helpful validation messages
+    - Use appropriate placeholder text as hints
+    - Associate labels with inputs using htmlFor/id
+    - Provide actionable error messages
   </Card>
   
-  <Card title="✗ Don't" icon="xmark" color="#ef4444">
-    **Vague labels**
-    - ~~"Input"~~
-    - ~~"Field 1"~~
-    
-    **Instructions as placeholders**
-    - ~~"Enter your email here"~~
-    - ~~"Type password"~~
-    
-    **Vague errors**
-    - ~~"Invalid input"~~
-    - ~~"Error"~~
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't replace labels with placeholders
+    - Don't use vague labels like "Input" or "Field 1"
+    - Don't hide validation messages
+    - Don't use vague errors like "Invalid input"
+    - Don't overload inputs with unnecessary elements
   </Card>
 </CardGroup>
 
