@@ -67,6 +67,7 @@
                   "components/shimmer",
                   "components/scroll",
                   "components/header",
+                  "components/footer",
                   "components/badge",
                   "components/tags",
                   "components/pills",

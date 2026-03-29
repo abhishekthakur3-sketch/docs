@@ -1,0 +1,258 @@
+---
+title: Footer
+description: Footers present critical actions at the bottom of a screen, ensuring users always have access to decisions and workflows without losing context.
+icon: "window-minimize"
+---
+
+## Overview
+
+The Footer system defines how actions are presented at the bottom of a screen. It consists of two components: Action Footer for general workflows and decisions, and Payment Checkout Footer for payment and transaction flows. Together, they standardize how actions, summaries, and decisions are handled across the product.
+
+<CardGroup cols={3}>
+  <Card title="2 Footer Types" icon="layer-group">
+    Action Footer, Payment Checkout Footer
+  </Card>
+  <Card title="2 Sizes" icon="expand">
+    Web, Mobile
+  </Card>
+  <Card title="4 Payment Types" icon="credit-card">
+    Proceed to Pay, Bill Details, Wallet, Wallet + Options
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with footer component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Footer Component Preview — Replace with /assets/components/footer/footer-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Action Footer">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Action Footer — Standard and With Banner variants in Web and Mobile sizes<br/>Replace with /assets/components/footer/footer-action.png</div>
+    </div>
+  </Tab>
+  <Tab title="Payment Checkout">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Payment Checkout Footer — Proceed to Pay, Bill Details, Wallet, Wallet + Options<br/>Replace with /assets/components/footer/footer-payment.png</div>
+    </div>
+  </Tab>
+  <Tab title="Payment Snackbars">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Payment Screen Snackbars — Add Money, Payment Type, Pay Using, Notification<br/>Replace with /assets/components/footer/footer-snackbars.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Action Footer
+
+General-purpose footer for workflows where users need to make decisions or complete tasks.
+
+| Property | Options | Description |
+|----------|---------|-------------|
+| Variant | Standard, With Banner | With or without contextual banner |
+| Size | Web (545px), Mobile (360px) | Platform-specific sizing |
+
+---
+
+## Action Footer Anatomy
+
+{/* 🎨 DESIGNER: Replace with action footer anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Action Footer Anatomy — Replace with /assets/components/footer/footer-action-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Footer Container | Yes | Main wrapper |
+| 2 | Slot 1 | No | Leading custom content area |
+| 3 | Subtext 1 | No | Supporting text above title |
+| 4 | Title | Yes | Primary contextual title |
+| 5 | Subtext 2 | No | Supporting text below title |
+| 6 | Badge | No | Status or category indicator |
+| 7-8 | CTA Buttons (inline) | No | Quick action buttons |
+| 9 | Slot 2 | No | Trailing custom content area |
+| 10 | CTA Container | Yes | Bottom action bar |
+| 11 | Link | No | Tertiary action link |
+| 12-14 | CTA Buttons | Yes | Deny, Cancel, Proceed actions |
+
+---
+
+## Payment Checkout Footer
+
+Footer for transaction and checkout flows, focusing on clarity, trust, and conversion.
+
+| Type | Description | Use When |
+|------|-------------|----------|
+| Proceed to Pay | Simple CTA with total amount | Quick checkout, single-step payment |
+| Bill Details | Amount summary with bill details access | Order review before payment |
+| Bill Details + Wallet | Wallet balance with bill details | Wallet-enabled checkout |
+| Bill Details + Wallet + Options | Full payment options with wallet and offers | Complex checkout with multiple payment methods |
+
+---
+
+## Payment Checkout Anatomy
+
+{/* 🎨 DESIGNER: Replace with payment checkout footer anatomy from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Payment Checkout Footer Anatomy — Replace with /assets/components/footer/footer-payment-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Container | Yes | Payment footer wrapper |
+| 2 | Payment Snackbar | Yes | Payment method and amount info |
+| 3 | CTA Section | Yes | Payment action button area |
+| 4 | Two-Line Button | Yes | Primary payment CTA with amount |
+
+---
+
+## Payment Screen Snackbars
+
+Contextual information bars used within the payment checkout footer.
+
+| Type | Mobile Height | Web Height | Description |
+|------|-------------|-----------|-------------|
+| Add Money | 56px | 64px | Wallet top-up prompt |
+| Payment Type | 44px | 52px | Selected payment method display |
+| Pay Using | 52px | 62px | Payment method with details |
+| Notification | 72px | 84px | Contextual payment notification |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Keep the primary action clear and prominent
+    - Maintain consistent footer placement
+    - Use clear, action-oriented labels
+    - Ensure real-time updates for dynamic data (payments)
+    - Use Action Footer for workflows, Payment Footer for transactions
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't overload footers with too many actions
+    - Don't hide critical information like total amount
+    - Don't use vague CTAs
+    - Don't mix workflow and payment patterns incorrectly
+    - Don't remove the primary action button
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Focus order | Primary CTA should be easily reachable via keyboard |
+| Labels | All buttons must have descriptive accessible labels |
+| Contrast | CTA buttons must meet minimum contrast requirements |
+| Screen reader | Announce total amount and payment method changes |
+| Touch targets | All interactive elements must meet 44x44px minimum |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Action Footer">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `footer-action-web-width` | 545px | Web action footer width |
+    | `footer-action-mobile-width` | 360px | Mobile action footer width |
+    | `footer-action-padding` | 8-12px | Internal padding |
+    | `footer-cta-height` | 52px (web) / 44px (mobile) | CTA container height |
+  </Tab>
+  <Tab title="Payment Footer">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `footer-payment-height-sm` | 72px | Proceed to Pay |
+    | `footer-payment-height-md` | 132px | Bill Details |
+    | `footer-payment-height-lg` | 188px | Bill Details + Wallet |
+    | `footer-payment-height-xl` | 232px | Full options |
+    | `footer-payment-cta-height` | 48px | Two-line button height |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+// Action Footer
+interface ActionFooterProps {
+  variant?: 'standard' | 'with_banner';
+  size?: 'web' | 'mobile';
+  title?: string;
+  subtext1?: string;
+  subtext2?: string;
+  badge?: BadgeProps;
+  slot1?: ReactNode;
+  slot2?: ReactNode;
+  link?: { label: string; href: string };
+  primaryAction: { label: string; onClick: () => void };
+  secondaryAction?: { label: string; onClick: () => void };
+  tertiaryAction?: { label: string; onClick: () => void };
+  banner?: ReactNode;
+}
+
+// Payment Checkout Footer
+interface PaymentCheckoutFooterProps {
+  type?: 'proceed_to_pay' | 'bill_details' | 'bill_details_wallet' | 'bill_details_wallet_options';
+  totalAmount: string;
+  paymentMethod?: string;
+  paymentMethodIcon?: ReactNode;
+  walletBalance?: string;
+  onPay: () => void;
+  onViewBillDetails?: () => void;
+  onChangePaymentMethod?: () => void;
+}
+```
+
+```tsx Usage
+// Action Footer - Standard
+<ActionFooter
+  variant="standard"
+  title="Order #12345"
+  subtext1="Ready for dispatch"
+  primaryAction={{ label: 'Proceed', onClick: handleProceed }}
+  secondaryAction={{ label: 'Cancel', onClick: handleCancel }}
+/>
+
+// Action Footer - With Banner
+<ActionFooter
+  variant="with_banner"
+  title="Approval Required"
+  badge={{ variant: 'warning', children: 'Pending' }}
+  banner={<WarningBanner message="This action requires manager approval" />}
+  primaryAction={{ label: 'Approve', onClick: handleApprove }}
+  tertiaryAction={{ label: 'Deny', onClick: handleDeny }}
+/>
+
+// Payment Checkout - Proceed to Pay
+<PaymentCheckoutFooter
+  type="proceed_to_pay"
+  totalAmount="1,299"
+  onPay={handlePay}
+/>
+
+// Payment Checkout - Full Options
+<PaymentCheckoutFooter
+  type="bill_details_wallet_options"
+  totalAmount="1,299"
+  paymentMethod="Google Pay UPI"
+  walletBalance="500"
+  onPay={handlePay}
+  onViewBillDetails={handleBillDetails}
+/>
+```
+</CodeGroup>
