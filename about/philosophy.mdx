@@ -1,94 +1,79 @@
 ---
 title: "Philosophy"
-description: "The guiding principles behind TARMAC Design System"
+description: "The guiding principles behind the TARMAC Design System"
+icon: "lightbulb"
 ---
 
-# TARMAC Philosophy
+## Overview
 
-TARMAC is built on core principles that guide every design and development decision.
+TARMAC is built on core principles that guide every design and development decision. These principles ensure the system remains consistent, accessible, and scalable as it evolves across products and teams.
+
+{/* 🎨 DESIGNER: Replace with philosophy hero image from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'180px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Philosophy Hero — Replace with /assets/images/philosophy-hero.png</div>
+</div>
+
+---
 
 ## Core Principles
 
-### 1. Accessibility First
+| Principle | What It Means |
+|-----------|---------------|
+| Accessibility First | Every component meets WCAG 2.1 AA. Keyboard nav, screen readers, and contrast are built in — not bolted on. |
+| Consistency Through Constraints | Design tokens and component APIs provide guardrails. Patterns solve common problems in standard ways. |
+| Progressive Enhancement | Components work with sensible defaults. Advanced features are opt-in. Customization never breaks core functionality. |
+| Developer Experience | Clear docs, TypeScript support, intuitive APIs, and helpful error messages. Happy devs build better products. |
+| Design-Development Parity | Figma components map 1:1 with code. Shared tokens, shared terminology, shared workflows. |
 
-Accessibility isn't an afterthought—it's fundamental to everything we build.
-
-- Every component meets WCAG 2.1 AA standards
-- Keyboard navigation is fully supported
-- Screen reader compatibility is tested and verified
-- Color contrast ratios exceed minimum requirements
-
-### 2. Consistency Through Constraints
-
-Creativity thrives within thoughtful constraints.
-
-- Design tokens provide guardrails for consistency
-- Component APIs are predictable and intuitive
-- Patterns solve common problems in standard ways
-- Documentation guides proper usage
-
-### 3. Progressive Enhancement
-
-Start simple, add complexity only when needed.
-
-- Components work with sensible defaults
-- Advanced features are opt-in
-- Customization is possible without breaking core functionality
-- Graceful degradation ensures broad compatibility
-
-### 4. Developer Experience
-
-Happy developers build better products.
-
-- Clear, comprehensive documentation
-- TypeScript support for better tooling
-- Intuitive APIs that feel natural
-- Helpful error messages and warnings
-
-### 5. Design-Development Parity
-
-What you design is what you build.
-
-- Figma components map 1:1 with code components
-- Design tokens sync between design and code
-- Shared terminology across disciplines
-- Collaborative workflows
+---
 
 ## Design Values
 
-### Clarity Over Cleverness
-Simple, clear interfaces that users understand immediately.
+<AccordionGroup>
+  <Accordion title="Clarity Over Cleverness">
+    Simple, clear interfaces that users understand immediately. If it needs explanation, it needs redesign.
+  </Accordion>
+  <Accordion title="Function Over Form">
+    Beauty emerges from solving problems well, not from decoration. Every visual choice serves a purpose.
+  </Accordion>
+  <Accordion title="Inclusive By Default">
+    Design for the widest possible audience from the start. Accessibility is a feature, not a checklist.
+  </Accordion>
+  <Accordion title="Flexible Yet Opinionated">
+    Provide clear guidance while allowing customization when needed. Defaults should cover 80% of use cases.
+  </Accordion>
+</AccordionGroup>
 
-### Function Over Form
-Beauty emerges from solving problems well, not decoration.
-
-### Inclusive By Default
-Design for the widest possible audience from the start.
-
-### Flexible Yet Opinionated
-Provide clear guidance while allowing customization when needed.
+---
 
 ## Development Values
 
-### Quality Over Speed
-Take time to build it right the first time.
+<AccordionGroup>
+  <Accordion title="Quality Over Speed">
+    Take time to build it right the first time. Technical debt compounds faster than feature velocity.
+  </Accordion>
+  <Accordion title="Maintainability Matters">
+    Code that's easy to understand and modify. If only one person can maintain it, it's a liability.
+  </Accordion>
+  <Accordion title="Performance Is a Feature">
+    Fast, efficient components that respect user resources. Every millisecond matters at scale.
+  </Accordion>
+  <Accordion title="Test Everything">
+    Comprehensive testing ensures reliability. Unit, integration, visual regression, and accessibility tests.
+  </Accordion>
+</AccordionGroup>
 
-### Maintainability Matters
-Code that's easy to understand and modify.
+---
 
-### Performance Is a Feature
-Fast, efficient components that respect user resources.
+## How TARMAC Evolves
 
-### Test Everything
-Comprehensive testing ensures reliability.
+TARMAC is a living system. It evolves through:
 
-## Evolution
+| Input | How It Shapes the System |
+|-------|--------------------------|
+| User feedback and research | Validates patterns, surfaces pain points |
+| Accessibility standards | Ensures compliance with WCAG updates |
+| Emerging technologies | Adopts new patterns when they solve real problems |
+| Team needs | Responds to product requirements and developer workflows |
 
-TARMAC is a living system that evolves with:
-
-- User feedback and research
-- New accessibility standards
-- Emerging technologies and patterns
-- Team needs and product requirements
-
-We balance stability with innovation, ensuring the system remains relevant while maintaining reliability.
+We balance stability with innovation — ensuring the system remains relevant while maintaining reliability.

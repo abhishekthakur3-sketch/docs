@@ -1,13 +1,21 @@
 ---
 title: "Installation"
-description: "Get started with TARMAC Design System in your project"
+description: "Get TARMAC Design System up and running in your project"
+icon: "download"
 ---
 
-# Installation
+## Overview
 
-Get TARMAC up and running in your project with npm, yarn, or pnpm.
+Get TARMAC installed and configured in your project in under 5 minutes. The system supports npm, yarn, and pnpm.
 
-## Package Installation
+{/* 🎨 DESIGNER: Replace with installation/setup hero image from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'140px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Installation Hero — Replace with /assets/images/installation-hero.png</div>
+</div>
+
+---
+
+## Step 1: Install the Package
 
 <CodeGroup>
 ```bash npm
@@ -23,28 +31,26 @@ pnpm add @tarmac/design-system
 ```
 </CodeGroup>
 
-## Peer Dependencies
+## Step 2: Install Peer Dependencies
 
-TARMAC requires React 18+ and React DOM:
+TARMAC requires React 18+:
 
 ```bash
 npm install react@^18.0.0 react-dom@^18.0.0
 ```
 
-## Setup
+## Step 3: Import Styles
 
-### Import Styles
-
-Import the TARMAC CSS in your app entry point:
+Add the TARMAC stylesheet to your app entry point:
 
 ```tsx
 // App.tsx or index.tsx
 import '@tarmac/design-system/styles.css';
 ```
 
-### Provider Setup
+## Step 4: Wrap with Provider
 
-Wrap your app with the TARMAC provider:
+Wrap your app with the TARMAC provider for theming and context:
 
 ```tsx
 import { TarmacProvider } from '@tarmac/design-system';
@@ -58,17 +64,30 @@ function App() {
 }
 ```
 
-## TypeScript Support
+---
 
-TARMAC is built with TypeScript and includes type definitions out of the box. No additional setup required.
+## Requirements
+
+| Requirement | Version |
+|-------------|---------|
+| React | 18.0+ |
+| React DOM | 18.0+ |
+| Node.js | 16.0+ |
+| TypeScript | 4.7+ (optional) |
+
+<Info>
+  TARMAC is built with TypeScript and includes type definitions out of the box. No additional `@types` packages needed.
+</Info>
+
+---
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Quick Start" icon="rocket" href="/introduction/quick-start">
-    Build your first component
+  <Card title="Quick Start" icon="rocket" href="/getting-started/quick-start">
+    Build your first component with TARMAC
   </Card>
   <Card title="Components" icon="cube" href="/components/button">
-    Explore the component library
+    Explore the full component library
   </Card>
 </CardGroup>

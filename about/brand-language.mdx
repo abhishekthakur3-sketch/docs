@@ -1,87 +1,72 @@
 ---
 title: "Brand Language"
 description: "Voice, tone, and messaging guidelines for TARMAC"
+icon: "message"
 ---
 
-# Brand Language
+## Overview
 
-How we communicate is as important as what we communicate. TARMAC's brand language reflects our values and connects with our audience.
+How we communicate is as important as what we communicate. TARMAC's brand language reflects our values and connects with our audience — across documentation, UI copy, error messages, and marketing.
+
+{/* 🎨 DESIGNER: Replace with brand language hero image from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'180px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Brand Language Hero — Replace with /assets/images/brand-language-hero.png</div>
+</div>
+
+---
 
 ## Voice
 
-Our voice is consistent across all communications:
+Our voice is consistent across all communications.
 
-### Professional Yet Approachable
-We're experts, but we don't talk down to people. We explain complex concepts clearly without oversimplifying.
+| Trait | Description |
+|-------|-------------|
+| Professional Yet Approachable | We're experts, but we don't talk down. We explain complex concepts clearly without oversimplifying. |
+| Confident But Humble | We're proud of what we've built, but we acknowledge there's always room to improve. |
+| Clear and Direct | We value clarity over cleverness. We say what we mean without jargon or fluff. |
+| Helpful and Supportive | We're here to help teams succeed. Our tone is encouraging and solution-oriented. |
 
-### Confident But Humble
-We're proud of what we've built, but we acknowledge there's always room to improve.
+---
 
-### Clear and Direct
-We value clarity over cleverness. We say what we mean without jargon or fluff.
-
-### Helpful and Supportive
-We're here to help teams succeed. Our tone is encouraging and solution-oriented.
-
-## Tone
-
-Our tone adapts to context:
+## Tone by Context
 
 <Tabs>
   <Tab title="Documentation">
-    **Clear and instructional**
-    - Step-by-step guidance
-    - Technical but accessible
-    - Example: "Use the `variant` prop to change the button style."
+    Clear and instructional. Step-by-step guidance, technical but accessible.
+
+    *Example: "Use the `variant` prop to change the button style."*
   </Tab>
-  
   <Tab title="Marketing">
-    **Inspiring and aspirational**
-    - Benefit-focused
-    - Energetic but not hyperbolic
-    - Example: "Build better products, faster."
+    Inspiring and aspirational. Benefit-focused, energetic but not hyperbolic.
+
+    *Example: "Build better products, faster."*
   </Tab>
-  
   <Tab title="Error Messages">
-    **Helpful and actionable**
-    - Never blaming
-    - Solution-oriented
-    - Example: "The `size` prop expects 'small', 'medium', or 'large'. You provided 'tiny'."
+    Helpful and actionable. Never blaming, always solution-oriented.
+
+    *Example: "The `size` prop expects 'small', 'medium', or 'large'. You provided 'tiny'."*
   </Tab>
-  
   <Tab title="Release Notes">
-    **Informative and concise**
-    - Highlight impact
-    - Technical when needed
-    - Example: "Added dark mode support to all components."
+    Informative and concise. Highlight impact, technical when needed.
+
+    *Example: "Added dark mode support to all components."*
   </Tab>
 </Tabs>
 
+---
+
 ## Writing Guidelines
 
-### Be Concise
-- Use short sentences and paragraphs
-- Remove unnecessary words
-- Get to the point quickly
+| Guideline | What It Means |
+|-----------|---------------|
+| Be Concise | Short sentences and paragraphs. Remove unnecessary words. Get to the point. |
+| Be Specific | Use concrete examples, exact values, and measurements. Show, don't just tell. |
+| Be Consistent | Same terms for same concepts. Follow established patterns. Consistent formatting. |
+| Be Inclusive | Gender-neutral language. Avoid idioms that don't translate. Consider global audiences. |
 
-### Be Specific
-- Use concrete examples
-- Provide exact values and measurements
-- Show, don't just tell
-
-### Be Consistent
-- Use the same terms for the same concepts
-- Follow established patterns
-- Maintain consistent formatting
-
-### Be Inclusive
-- Use gender-neutral language
-- Avoid idioms that don't translate
-- Consider global audiences
+---
 
 ## Terminology
-
-### Preferred Terms
 
 | Use This | Not This |
 |----------|----------|
@@ -91,29 +76,36 @@ Our tone adapts to context:
 | Variant | Type, style |
 | Prop | Property, attribute |
 
-### Capitalization
+### Capitalization Rules
 
-- **TARMAC**: Always uppercase
-- **Component names**: PascalCase (Button, TextField)
-- **Prop names**: camelCase (variant, isDisabled)
-- **Token names**: kebab-case (color-primary, spacing-md)
+| Context | Format | Example |
+|---------|--------|---------|
+| Brand name | UPPERCASE | TARMAC |
+| Component names | PascalCase | Button, TextField |
+| Prop names | camelCase | variant, isDisabled |
+| Token names | kebab-case | color-primary, spacing-md |
+
+---
 
 ## Examples
 
-### Good
+<CardGroup cols={2}>
+  <Card title="✓ Good" icon="check" color="#16A34A">
+    "The Button component supports three sizes: small, medium, and large. Use the `size` prop to specify which size you need."
+  </Card>
+  <Card title="✗ Avoid" icon="xmark" color="#DC2626">
+    "Our amazing Button widget comes with a bunch of different size options that you can leverage to create the perfect button for your use case!"
+  </Card>
+</CardGroup>
 
-> "The Button component supports three sizes: small, medium, and large. Use the `size` prop to specify which size you need."
-
-### Avoid
-
-> "Our amazing Button widget comes with a bunch of different size options that you can leverage to create the perfect button for your use case!"
+---
 
 ## Voice Checklist
 
-Before publishing, ask:
+Before publishing any content, verify:
 
-- [ ] Is it clear and easy to understand?
-- [ ] Is it helpful and actionable?
-- [ ] Is it consistent with our voice?
-- [ ] Is it free of jargon and buzzwords?
-- [ ] Is it inclusive and accessible?
+- Is it clear and easy to understand?
+- Is it helpful and actionable?
+- Is it consistent with our voice?
+- Is it free of jargon and buzzwords?
+- Is it inclusive and accessible?

@@ -1,151 +1,79 @@
 ---
-title: "Movement Metaphors"
-description: "Motion and animation principles in TARMAC"
+title: "Motion"
+description: "Motion and animation principles in the TARMAC Design System"
+icon: "play"
 ---
 
-# Movement Metaphors
+## Overview
 
-Motion in TARMAC isn't just decoration—it's a functional tool that guides users, provides feedback, and creates a sense of quality.
+Motion in TARMAC is a functional tool that guides users, provides feedback, and creates a sense of quality. Every animation serves a purpose — it's never decorative.
+
+{/* 🎨 DESIGNER: Replace with motion/animation hero image from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'180px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Motion Hero — Replace with /assets/images/motion-hero.png</div>
+</div>
+
+---
 
 ## Motion Philosophy
 
-### Purpose-Driven
-Every animation serves a purpose:
-- **Guide attention** to important changes
-- **Provide feedback** for user actions
-- **Show relationships** between elements
-- **Maintain context** during transitions
+| Principle | Description |
+|-----------|-------------|
+| Purpose-Driven | Every animation guides attention, provides feedback, shows relationships, or maintains context. |
+| Natural and Physical | Motion follows real-world physics — objects have weight, momentum, gravity, and friction. |
+| Fast and Efficient | Animations are quick (150–300ms). Users can interrupt them. Motion can be reduced or disabled. |
 
-### Natural and Physical
-Motion should feel natural, following real-world physics:
-- Objects have weight and momentum
-- Movement respects gravity and friction
-- Transitions are smooth, not robotic
+---
 
-### Fast and Efficient
-Motion should enhance, not slow down:
-- Animations are quick (150-300ms typically)
-- Users can interrupt animations
-- Motion can be reduced or disabled
+## Core Motion Patterns
 
-## Core Metaphors
+<AccordionGroup>
+  <Accordion title="The Runway — Smooth Acceleration">
+    Like aircraft on a runway, elements accelerate and decelerate smoothly.
 
-### The Runway
+    Easing: `cubic-bezier(0.4, 0.0, 0.2, 1)`
 
-Like aircraft on a runway, elements accelerate and decelerate smoothly.
+    Use for: Page transitions, modal appearances, large element movements.
+  </Accordion>
+  <Accordion title="The Bounce — Subtle Spring">
+    Subtle spring-like motion that adds personality without distraction.
 
-**Easing**: `cubic-bezier(0.4, 0.0, 0.2, 1)`
+    Easing: `cubic-bezier(0.68, -0.55, 0.265, 1.55)`
 
-**Use for**:
-- Page transitions
-- Modal appearances
-- Large element movements
+    Use for: Button presses, toggle switches, success confirmations.
+  </Accordion>
+  <Accordion title="The Fade — Gentle Opacity">
+    Gentle opacity changes that don't draw unnecessary attention.
 
-```css
-transition: transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
-```
+    Easing: `ease-in-out`
 
-### The Bounce
+    Use for: Tooltips, hover states, loading states.
+  </Accordion>
+  <Accordion title="The Slide — Directional Movement">
+    Directional movement that shows spatial relationships.
 
-Subtle spring-like motion that adds personality without distraction.
+    Easing: `cubic-bezier(0.4, 0.0, 0.2, 1)`
 
-**Easing**: `cubic-bezier(0.68, -0.55, 0.265, 1.55)`
+    Use for: Drawers, panels, dropdown menus, carousel navigation.
+  </Accordion>
+</AccordionGroup>
 
-**Use for**:
-- Button presses
-- Toggle switches
-- Success confirmations
-
-```css
-transition: transform 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-```
-
-### The Fade
-
-Gentle opacity changes that don't draw unnecessary attention.
-
-**Easing**: `ease-in-out`
-
-**Use for**:
-- Tooltips
-- Hover states
-- Loading states
-
-```css
-transition: opacity 150ms ease-in-out;
-```
-
-### The Slide
-
-Directional movement that shows spatial relationships.
-
-**Easing**: `cubic-bezier(0.4, 0.0, 0.2, 1)`
-
-**Use for**:
-- Drawers and panels
-- Dropdown menus
-- Carousel navigation
-
-```css
-transition: transform 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
-```
+---
 
 ## Duration Guidelines
 
-<Tabs>
-  <Tab title="Micro-interactions">
-    **100-150ms**
-    - Hover states
-    - Focus indicators
-    - Button presses
-  </Tab>
-  
-  <Tab title="Standard Transitions">
-    **200-300ms**
-    - Modal dialogs
-    - Dropdown menus
-    - Tab switches
-  </Tab>
-  
-  <Tab title="Complex Animations">
-    **300-500ms**
-    - Page transitions
-    - Multi-step sequences
-    - Large element movements
-  </Tab>
-</Tabs>
+| Category | Duration | Examples |
+|----------|----------|----------|
+| Micro-interactions | 100–150ms | Hover states, focus indicators, button presses |
+| Standard transitions | 200–300ms | Modal dialogs, dropdown menus, tab switches |
+| Complex animations | 300–500ms | Page transitions, multi-step sequences, large movements |
 
-## Accessibility Considerations
+---
 
-### Respect User Preferences
+## Motion Tokens
 
-Always respect the `prefers-reduced-motion` setting:
-
-```css
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-```
-
-### Avoid Triggers
-
-<Warning>
-  - No flashing or strobing effects
-  - No parallax scrolling
-  - No auto-playing animations
-  - Provide pause controls for long animations
-</Warning>
-
-## Implementation
-
-### Design Tokens
-
-Use motion tokens for consistency:
-
-```typescript
+<CodeGroup>
+```tsx TypeScript
 const motion = {
   duration: {
     fast: '150ms',
@@ -161,29 +89,40 @@ const motion = {
 };
 ```
 
-### React Components
-
-Use Framer Motion for complex animations:
-
-```tsx
-import { motion } from 'framer-motion';
-
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
->
-  Content
-</motion.div>
+```css CSS
+--motion-duration-fast: 150ms;
+--motion-duration-normal: 250ms;
+--motion-duration-slow: 350ms;
+--motion-easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+--motion-easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+--motion-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 ```
+</CodeGroup>
+
+---
+
+## Accessibility
+
+<Warning>
+  Always respect the `prefers-reduced-motion` setting. Never use flashing, strobing, parallax scrolling, or auto-playing animations.
+</Warning>
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+---
 
 ## Testing Motion
 
-- Test with reduced motion enabled
-- Verify animations on slower devices
-- Check that animations don't block interaction
-- Ensure animations work across browsers
-
-## Examples
-
-See motion in action in our [Components](/components/button) and [Patterns](/patterns/layout) sections.
+| Check | How |
+|-------|-----|
+| Reduced motion | Enable `prefers-reduced-motion` in OS settings |
+| Slower devices | Test on low-end hardware or throttle CPU |
+| Interaction blocking | Verify animations don't block user input |
+| Cross-browser | Test in Chrome, Firefox, Safari, Edge |
