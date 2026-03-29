@@ -1,0 +1,330 @@
+---
+title: Header
+description: Headers anchor navigation and contextual information across mobile and web interfaces, helping users understand location, navigate screens, and access actions.
+icon: "window-maximize"
+---
+
+## Overview
+
+The Header system defines the structural hierarchy of interfaces across mobile and web platforms. It helps users understand where they are, what the page represents, and how content is organized. The system includes Mobile App Headers, Section Headers (Mobile), Web Page Headers, and Section Headers (Web).
+
+<CardGroup cols={3}>
+  <Card title="2 Platforms" icon="display">
+    Mobile App, Web
+  </Card>
+  <Card title="7 Mobile Styles" icon="mobile">
+    Brand, Standard 1/2/3, Search, Breadcrumbs, Tabs
+  </Card>
+  <Card title="5 Web Sizes" icon="desktop">
+    XLarge, Large, Medium, Small, XSmall
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with header component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Header Component Preview — Replace with /assets/components/header/header-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Mobile App Header">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Mobile App Header — Brand, Standard, Search, Breadcrumbs, Tabs, Slots styles<br/>Replace with /assets/components/header/header-mobile-app.png</div>
+    </div>
+  </Tab>
+  <Tab title="Section Header Mobile">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Section Header Mobile — Standard type in Large, Medium, Small, XSmall sizes<br/>Replace with /assets/components/header/header-section-mobile.png</div>
+    </div>
+  </Tab>
+  <Tab title="Web Page Header">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Web Page Header — XLarge, Large, Medium, Small, XSmall sizes<br/>Replace with /assets/components/header/header-web-page.png</div>
+    </div>
+  </Tab>
+  <Tab title="Section Header Web">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Section Header Web — Standard and Tabs variants in Large, Medium, Small sizes<br/>Replace with /assets/components/header/header-section-web.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Mobile App Header
+
+The mobile header anchors navigation at the top of the screen. It remains fixed while content scrolls beneath.
+
+| Property | Options | Description |
+|----------|---------|-------------|
+| Style | Brand, Title + Subtext, Subtext + Title, Slots, Title + Dropdown | Center section content |
+| Type | Avatar Right, Avatar Left | Avatar placement |
+
+---
+
+## Mobile App Header Styles
+
+| Style | Description | Use When |
+|-------|-------------|----------|
+| Brand | App logo with global navigation and utility icons | Home screen, dashboard, landing pages |
+| Title + Subtext | Primary title with supporting subtitle below | Main screens, contextual navigation |
+| Subtext + Title | Subtitle above primary title | Contextual hierarchy emphasis |
+| Slots | Flexible slot for custom center content | Custom layouts requiring non-standard content |
+| Title + Dropdown | Title with dropdown selector | Location or context switching |
+
+---
+
+## Section Header Mobile
+
+Organizes content sections within mobile screens.
+
+| Property | Options | Description |
+|----------|---------|-------------|
+| Type | Standard | Section layout type |
+| Size | Large (68px), Medium (60px), Small (48px), XSmall (40px) | Dimensional scale |
+
+---
+
+## Web Page Header
+
+Introduces the entire page and provides high-level context. Appears once at the top of a page.
+
+| Size | Description |
+|------|-------------|
+| XLarge | Maximum emphasis for primary landing pages |
+| Large | High emphasis for dashboards and product pages |
+| Medium | Standard page headers |
+| Small | Compact page headers |
+| XSmall | Minimal page headers for dense layouts |
+
+---
+
+## Section Header Web
+
+Organizes content groups within a web page. Appears multiple times to separate content areas.
+
+| Property | Options | Description |
+|----------|---------|-------------|
+| Variant | Standard, Tabs | With or without tab navigation |
+| Size | Large (84px), Medium (76px), Small (68px) | Dimensional scale |
+
+---
+
+## Anatomy - Mobile App Header
+
+{/* 🎨 DESIGNER: Replace with mobile app header anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Mobile App Header Anatomy — Replace with /assets/components/header/header-mobile-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Container | Yes | Fixed header wrapper (60px height) |
+| 2 | Leading Button | No | Menu icon or back navigation |
+| 3 | Center Content | Yes | Logo, title, search, breadcrumbs, or tabs |
+| 4 | Action Button 1 | No | Primary contextual action |
+| 5 | Action Button 2 | No | Secondary contextual action |
+| 6 | Action Button 3 | No | Tertiary contextual action |
+| 7 | Avatar | No | User profile indicator |
+
+---
+
+## Anatomy - Section Header Web
+
+{/* 🎨 DESIGNER: Replace with section header web anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Section Header Web Anatomy — Replace with /assets/components/header/header-web-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Container | Yes | Section header wrapper |
+| 2 | Title Leading Icon | No | Icon before title text |
+| 3 | Title Text | Yes | Section heading |
+| 4 | Title Trailing Icon | No | Icon after title text |
+| 5 | Subtext Leading Icon | No | Icon before subtitle |
+| 6 | Subtext | No | Supporting description |
+| 7 | Subtext Trailing Icon | No | Icon after subtitle |
+| 8-9 | Buttons | No | Primary and secondary actions |
+| 10-11 | Badges | No | Status or category indicators |
+| 12 | Link | No | Navigation link |
+| 13 | Slot | No | Custom content area |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Tap menu icon (mobile) | Opens navigation drawer |
+| Tap action icons | Triggers contextual actions |
+| Tap breadcrumbs | Navigates to previous hierarchy level |
+| Tap tabs | Switches between screen sections |
+| Tap search | Activates search interface |
+| Scroll content | Header remains fixed at top |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Keep navigation icons consistent across screens
+    - Use descriptive screen titles
+    - Maintain consistent spacing and alignment
+    - Limit the number of actions displayed
+    - Use the appropriate header style for the screen hierarchy
+    - Use Web Page Header once per page
+    - Use Section Headers to organize large pages
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't overcrowd the header with too many icons
+    - Don't replace navigation hierarchy with unclear titles
+    - Don't use inconsistent header styles between related screens
+    - Don't hide important navigation controls
+    - Don't use multiple page headers on a single page
+    - Don't overload headers with too many actions
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Semantic hierarchy | Web Page Header uses H1, Section Header uses H2/H3 |
+| Touch targets | Interactive elements must meet minimum 44x44px touch target |
+| Labels | Icons must include descriptive accessibility labels |
+| Keyboard | Buttons, links, and tabs must be keyboard accessible |
+| Screen reader | Navigation hierarchy should be clearly announced |
+| Contrast | Sufficient contrast for text and interactive elements |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Mobile">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `header-mobile-height` | 60px | Mobile app header height |
+    | `header-section-mobile-lg` | 68px | Section header large |
+    | `header-section-mobile-md` | 60px | Section header medium |
+    | `header-section-mobile-sm` | 48px | Section header small |
+    | `header-section-mobile-xs` | 40px | Section header xsmall |
+    | `header-mobile-padding-x` | 12px | Horizontal padding |
+    | `header-mobile-padding-y` | 12px | Vertical padding |
+  </Tab>
+  <Tab title="Web">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `header-web-section-lg` | 84px | Section header large |
+    | `header-web-section-md` | 76px | Section header medium |
+    | `header-web-section-sm` | 68px | Section header small |
+    | `header-web-padding-x` | 12px | Horizontal padding |
+    | `header-web-padding-y` | 12px | Vertical padding |
+    | `header-web-gap` | 8px | Item spacing |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+// Mobile App Header
+interface MobileAppHeaderProps {
+  style?: 'brand' | 'title_subtext' | 'subtext_title' | 'slots' | 'title_dropdown';
+  type?: 'avatar_right' | 'avatar_left';
+  title?: string;
+  subtitle?: string;
+  leadingIcon?: ReactNode;
+  actions?: ReactNode[];
+  avatar?: AvatarProps;
+  onMenuPress?: () => void;
+}
+
+// Section Header Mobile
+interface SectionHeaderMobileProps {
+  type?: 'standard';
+  size?: 'lg' | 'md' | 'sm' | 'xs';
+  title: string;
+  subtitle?: string;
+  leadingIcon?: ReactNode;
+  trailingIcon?: ReactNode;
+  link?: { label: string; href: string };
+  badge?: BadgeProps;
+}
+
+// Web Page Header
+interface WebPageHeaderProps {
+  type?: 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall';
+  title: string;
+  description?: string;
+  actions?: ReactNode;
+  badges?: BadgeProps[];
+  pills?: PillProps[];
+}
+
+// Section Header Web
+interface SectionHeaderWebProps {
+  variant?: 'standard' | 'tabs';
+  size?: 'lg' | 'md' | 'sm';
+  title: string;
+  subtitle?: string;
+  titleIcon?: ReactNode;
+  subtitleIcon?: ReactNode;
+  actions?: ReactNode;
+  badges?: BadgeProps[];
+  link?: { label: string; href: string };
+  tabs?: TabProps[];
+  slot?: ReactNode;
+}
+```
+
+```tsx Usage
+// Mobile Brand Header
+<MobileAppHeader
+  style="brand"
+  type="avatar_right"
+  leadingIcon={<MenuIcon />}
+  actions={[<NotificationIcon />, <CameraIcon />, <SettingsIcon />]}
+  avatar={{ src: '/avatar.png', size: 'sm' }}
+/>
+
+// Mobile Title + Subtext
+<MobileAppHeader
+  style="title_subtext"
+  title="Orders"
+  subtitle="415, 8th main road, AECS Layout"
+/>
+
+// Web Page Header
+<WebPageHeader
+  type="large"
+  title="Dashboard"
+  description="Overview of your shipment activity"
+  actions={<Button>Create Order</Button>}
+/>
+
+// Section Header Web with Tabs
+<SectionHeaderWeb
+  variant="tabs"
+  size="lg"
+  title="Analytics"
+  subtitle="Performance metrics"
+  tabs={[
+    { label: 'Overview', active: true },
+    { label: 'Revenue' },
+    { label: 'Users' },
+  ]}
+/>
+```
+</CodeGroup>
