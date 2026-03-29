@@ -74,6 +74,7 @@
                   "components/toggle",
                   "components/status-indicator",
                   "components/links",
+                  "components/slider",
                   "components/tooltip"
                 ]
               },
