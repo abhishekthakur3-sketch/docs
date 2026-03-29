@@ -1,0 +1,181 @@
+---
+title: "Dividers"
+description: "Visual separation system for the TARMAC Design System — defining grouping, hierarchy, and flow"
+icon: "minus"
+---
+
+## Overview
+
+Dividers provide visual separation between related content, helping users understand grouping, hierarchy, and flow without relying on heavy borders or excessive spacing. They create rhythm across dense layouts and support scannability — especially in data-heavy or structured interfaces.
+
+Dividers are intentionally lightweight and unobtrusive. Their purpose is to guide the eye, not dominate the interface.
+
+<CardGroup cols={3}>
+  <Card title="2 Stroke Sizes" icon="ruler">
+    0.5px for subtle separation, 1px for structural breaks
+  </Card>
+  <Card title="2 Styles" icon="grip-lines">
+    Solid line and dashed line variants
+  </Card>
+  <Card title="Theme-Aware" icon="circle-half-stroke">
+    Tone adjusts between light and dark modes
+  </Card>
+</CardGroup>
+
+---
+
+## Divider Scale
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', marginBottom:'24px'}}>
+  <div style={{display:'flex', flexDirection:'column', gap:'24px', maxWidth:'500px', margin:'0 auto'}}>
+    <div>
+      <div style={{fontSize:'11px', fontWeight:'600', marginBottom:'8px'}}>0.5px — Solid</div>
+      <div style={{width:'100%', height:'0', borderTop:'0.5px solid #1A1A1A'}}></div>
+    </div>
+    <div>
+      <div style={{fontSize:'11px', fontWeight:'600', marginBottom:'8px'}}>0.5px — Dashed</div>
+      <div style={{width:'100%', height:'0', borderTop:'0.5px dashed #1A1A1A'}}></div>
+    </div>
+    <div>
+      <div style={{fontSize:'11px', fontWeight:'600', marginBottom:'8px'}}>1px — Solid</div>
+      <div style={{width:'100%', height:'0', borderTop:'1px solid #1A1A1A'}}></div>
+    </div>
+    <div>
+      <div style={{fontSize:'11px', fontWeight:'600', marginBottom:'8px'}}>1px — Dashed</div>
+      <div style={{width:'100%', height:'0', borderTop:'1px dashed #1A1A1A'}}></div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Divider Styles and Usage
+
+| Size | Typical Placement | Purpose |
+|------|-------------------|---------|
+| 0.5px | Lists, tables, menus, cards, inline content groups | Provides light structure without visual weight |
+| 1px | Section breaks, toolbars, navigation regions, page-level grouping | Defines stronger separation between content zones |
+
+## Divider Types
+
+| Type | Style | Use Case |
+|------|-------|----------|
+| Solid Line | Continuous stroke | Default divider — lists, cards, sections |
+| Dashed Line | Dashed stroke | Secondary separation, drop zones, placeholder boundaries |
+
+---
+
+## Usage by Context
+
+| Context | Examples | Size | Type |
+|---------|----------|------|------|
+| List items | Menu items, settings rows, data rows | 0.5px | Solid |
+| Table grids | Data tables, spreadsheet-style layouts | 0.5px | Solid |
+| Card content | Separating header/body/footer within cards | 0.5px | Solid |
+| Section breaks | Between page sections, toolbar boundaries | 1px | Solid |
+| Navigation regions | Between nav groups, sidebar sections | 1px | Solid |
+| Drop zones | Drag-and-drop targets, upload areas | 0.5px | Dashed |
+| Placeholder boundaries | Empty state containers, pending content | 0.5px | Dashed |
+
+---
+
+## Component Mapping
+
+| Component | Size | Type | Orientation |
+|-----------|------|------|-------------|
+| List / Menu | 0.5px | Solid | Horizontal |
+| Table row | 0.5px | Solid | Horizontal |
+| Card section | 0.5px | Solid | Horizontal |
+| Sidebar group | 1px | Solid | Horizontal |
+| Toolbar | 1px | Solid | Horizontal |
+| Column separator | 0.5px | Solid | Vertical |
+| Page section | 1px | Solid | Horizontal |
+| Drop zone | 0.5px | Dashed | Both |
+
+---
+
+## Principles
+
+<AccordionGroup>
+  <Accordion title="Separation, Not Decoration">
+    Dividers exist only when spacing alone cannot define structure. If hierarchy reads clearly without a line, prefer removing it.
+  </Accordion>
+  <Accordion title="Subtle by Default">
+    Dividers use thin, low-contrast strokes so content remains the primary visual element.
+  </Accordion>
+  <Accordion title="Hierarchy-Aware">
+    Dividers support levels of grouping — sections, subsections, and inline content — without adding unnecessary complexity.
+  </Accordion>
+  <Accordion title="Theme-Consistent">
+    Divider tone adjusts between light and dark themes while maintaining clear visibility.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Accessibility
+
+- Dividers should maintain sufficient contrast with the background
+- Allow optical breathing room — avoid placing dividers too close to text
+- Do not rely on dividers as the only grouping signal — pair with spacing, headings, or layout
+- Ensure dividers remain visible at zoom levels above 125%
+- Dividers support accessibility by reinforcing structure, not signaling interaction
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use 0.5px for inline content separation (lists, tables)
+    - Use 1px for structural section breaks
+    - Pair dividers with spacing for clear visual rhythm
+    - Use dashed style only for secondary or placeholder contexts
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use dividers where spacing alone provides clarity
+    - Don't use thick dividers (2px+) — use borders instead
+    - Don't place dividers between every element in a list
+    - Don't use solid dividers for drop zones or placeholders
+  </Card>
+</CardGroup>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```css CSS
+/* Divider tokens */
+--divider-thin: 0.5px solid var(--border-neutral-primary);
+--divider-default: 1px solid var(--border-neutral-primary);
+--divider-thin-dashed: 0.5px dashed var(--border-neutral-secondary);
+--divider-default-dashed: 1px dashed var(--border-neutral-secondary);
+```
+
+```tsx TypeScript
+export const divider = {
+  thin: '0.5px solid',
+  default: '1px solid',
+  thinDashed: '0.5px dashed',
+  defaultDashed: '1px dashed',
+} as const;
+```
+
+```tsx Usage
+// List divider
+<hr style={{ border: 'none', borderTop: 'var(--divider-thin)' }} />
+
+// Section break
+<hr style={{ border: 'none', borderTop: 'var(--divider-default)' }} />
+
+// Drop zone boundary
+<div style={{ border: 'var(--divider-thin-dashed)' }}>
+  Drop files here
+</div>
+```
+</CodeGroup>
+
+<Card title="Next: Borders" icon="arrow-right" href="/foundations/borders">
+  Learn how border stroke tokens work in TARMAC
+</Card>
