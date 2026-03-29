@@ -54,6 +54,7 @@
               "foundations/typography",
               "foundations/typography-styles",
               "foundations/typography-implementation",
+              "foundations/borders",
               "foundations/radius",
               "foundations/tokens",
               "foundations/elevation",
