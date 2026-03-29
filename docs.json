@@ -69,6 +69,7 @@
                   "components/header",
                   "components/footer",
                   "components/rating",
+                  "components/file-upload",
                   "components/badge",
                   "components/tags",
                   "components/pills",
