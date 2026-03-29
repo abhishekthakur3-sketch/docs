@@ -27,30 +27,30 @@ The system uses Google's Material Icon library as its core icon set, ensuring vi
 TARMAC supports six icon sizes across two types: Default (standard use) and Slots (component integration).
 
 <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', marginBottom:'24px'}}>
-  <div style={{display:'flex', alignItems:'flex-end', justifyContent:'center', gap:'40px'}}>
+  <div style={{display:'flex', alignItems:'flex-end', justifyContent:'center', gap:'48px'}}>
     <div style={{textAlign:'center'}}>
-      <div style={{width:'12px', height:'12px', background:'#ED1B36', borderRadius:'2px', margin:'0 auto 8px'}}></div>
-      <div style={{fontSize:'11px'}}>12px</div>
+      <span className="material-icons" style={{fontSize:'12px'}}>star</span>
+      <div style={{fontSize:'11px', marginTop:'8px'}}>12px</div>
     </div>
     <div style={{textAlign:'center'}}>
-      <div style={{width:'16px', height:'16px', background:'#ED1B36', borderRadius:'2px', margin:'0 auto 8px'}}></div>
-      <div style={{fontSize:'11px'}}>16px</div>
+      <span className="material-icons" style={{fontSize:'16px'}}>star</span>
+      <div style={{fontSize:'11px', marginTop:'8px'}}>16px</div>
     </div>
     <div style={{textAlign:'center'}}>
-      <div style={{width:'20px', height:'20px', background:'#ED1B36', borderRadius:'3px', margin:'0 auto 8px'}}></div>
-      <div style={{fontSize:'11px'}}>20px</div>
+      <span className="material-icons" style={{fontSize:'20px'}}>star</span>
+      <div style={{fontSize:'11px', marginTop:'8px'}}>20px</div>
     </div>
     <div style={{textAlign:'center'}}>
-      <div style={{width:'24px', height:'24px', background:'#ED1B36', borderRadius:'3px', margin:'0 auto 8px'}}></div>
-      <div style={{fontSize:'11px'}}>24px</div>
+      <span className="material-icons" style={{fontSize:'24px'}}>star</span>
+      <div style={{fontSize:'11px', marginTop:'8px'}}>24px</div>
     </div>
     <div style={{textAlign:'center'}}>
-      <div style={{width:'28px', height:'28px', background:'#ED1B36', borderRadius:'4px', margin:'0 auto 8px'}}></div>
-      <div style={{fontSize:'11px'}}>28px</div>
+      <span className="material-icons" style={{fontSize:'28px'}}>star</span>
+      <div style={{fontSize:'11px', marginTop:'8px'}}>28px</div>
     </div>
     <div style={{textAlign:'center'}}>
-      <div style={{width:'32px', height:'32px', background:'#ED1B36', borderRadius:'4px', margin:'0 auto 8px'}}></div>
-      <div style={{fontSize:'11px'}}>32px</div>
+      <span className="material-icons" style={{fontSize:'32px'}}>star</span>
+      <div style={{fontSize:'11px', marginTop:'8px'}}>32px</div>
     </div>
   </div>
 </div>
@@ -70,51 +70,386 @@ TARMAC supports six icon sizes across two types: Default (standard use) and Slot
 
 Each icon is available in two styles. Choose one style per context and stay consistent.
 
-<Tabs>
-  <Tab title="Filled">
-    Solid, filled icons with strong visual weight. Use for active states, primary actions, and selected items.
-
-    ```
-    ● Filled = Higher visual weight
-    ● Best for: Active nav items, selected states, primary actions
-    ● Conveys: Emphasis, completion, active state
-    ```
-  </Tab>
-  <Tab title="Outlined">
-    Outlined icons with lighter visual weight. Use for default states, secondary actions, and inactive items.
-
-    ```
-    ○ Outlined = Lighter visual weight
-    ○ Best for: Default nav items, inactive states, secondary actions
-    ○ Conveys: Available, neutral, default state
-    ```
-  </Tab>
-</Tabs>
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', marginBottom:'24px'}}>
+  <div style={{display:'flex', gap:'48px', justifyContent:'center'}}>
+    <div style={{textAlign:'center'}}>
+      <div style={{fontSize:'13px', fontWeight:'600', marginBottom:'16px', color:'#ED1B36'}}>Filled</div>
+      <div style={{display:'flex', gap:'16px'}}>
+        <span className="material-icons" style={{fontSize:'24px'}}>home</span>
+        <span className="material-icons" style={{fontSize:'24px'}}>search</span>
+        <span className="material-icons" style={{fontSize:'24px'}}>settings</span>
+        <span className="material-icons" style={{fontSize:'24px'}}>favorite</span>
+        <span className="material-icons" style={{fontSize:'24px'}}>delete</span>
+        <span className="material-icons" style={{fontSize:'24px'}}>visibility</span>
+        <span className="material-icons" style={{fontSize:'24px'}}>star</span>
+        <span className="material-icons" style={{fontSize:'24px'}}>check_circle</span>
+      </div>
+    </div>
+    <div style={{width:'1px', background:'#DDD'}}></div>
+    <div style={{textAlign:'center'}}>
+      <div style={{fontSize:'13px', fontWeight:'600', marginBottom:'16px', color:'#ED1B36'}}>Outlined</div>
+      <div style={{display:'flex', gap:'16px'}}>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>home</span>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>search</span>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>settings</span>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>favorite</span>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>delete</span>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>visibility</span>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>star</span>
+        <span className="material-icons-outlined" style={{fontSize:'24px'}}>check_circle</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
-## Icon Categories
+## Icon Library by Category
 
-TARMAC organizes its icon library into 16 categories from Google Material Icons.
+All 16 categories from the TARMAC icon set, showing both filled and outlined styles.
 
-| Category | Description | Example Icons |
-|----------|-------------|---------------|
-| ACTION | Common actions and operations | search, settings, home, delete, visibility |
-| ALERTS | Warning and notification indicators | error, warning, add-alert, notification-important |
-| AV | Audio/video controls and media | play-arrow, pause, volume-up, mic, videocam |
-| COMMUNICATION | Messaging and contact | call, chat, email, forum, message |
-| CONTENT | Content management and editing | add, archive, save, send, filter-list |
-| DEVICE | Device status and connectivity | bluetooth, wifi, battery, gps, signal |
-| EDITOR | Text editing and formatting | format-bold, format-italic, insert-chart, attach-file |
-| FILE | File and folder management | folder, cloud, attachment, cloud-upload |
-| HARDWARE | Hardware and peripherals | keyboard, laptop, phone, computer, tv |
-| IMAGE | Image editing and photography | camera, photo, filter, crop, edit |
-| MAPS | Location and navigation | directions, place, map, navigation, traffic |
-| NAVIGATION | UI navigation controls | arrow-back, menu, close, chevron, expand |
-| NOTIFICATION | System notifications | wifi, sync, sms, power, event-note |
-| OUTDOOR | Places and amenities | hotel, pool, fitness, spa, restaurant |
-| SOCIAL | People and social interactions | person, group, share, notifications, mood |
-| TOGGLE | Selection and toggle controls | checkbox, radio-button, star, toggle-on |
+
+### ACTION
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>search</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>search</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>settings</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>settings</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>home</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>home</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>delete</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>delete</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>visibility</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>visibility</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>favorite</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>favorite</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>lock</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>lock</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>event</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>event</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>info</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>info</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>help</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>help</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>account_circle</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>account</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>dashboard</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>dashboard</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>build</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>build</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>shopping_cart</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>cart</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>thumb_up</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>thumb_up</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>code</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>code</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>alarm</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>alarm</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>receipt</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>receipt</div>
+    </div>
+  </div>
+</div>
+
+### ALERTS
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>add_alert</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>add_alert</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>error_outline</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>error</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>error</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>error_fill</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>notification_important</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>important</div>
+    </div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}>
+      <span className="material-icons" style={{fontSize:'24px'}}>warning</span>
+      <div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>warning</div>
+    </div>
+  </div>
+</div>
+
+### AV
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>play_arrow</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>play</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>pause</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>pause</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>stop</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>stop</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>skip_next</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>skip_next</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>skip_previous</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>skip_prev</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>volume_up</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>volume</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>mic</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>mic</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>videocam</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>videocam</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>movie</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>movie</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>album</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>album</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>equalizer</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>equalizer</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>hearing</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>hearing</div></div>
+  </div>
+</div>
+
+### COMMUNICATION
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>call</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>call</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>chat</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>chat</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>email</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>email</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>forum</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>forum</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>message</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>message</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>contacts</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>contacts</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>vpn_key</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>vpn_key</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>dialpad</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>dialpad</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>comment</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>comment</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>rss_feed</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>rss</div></div>
+  </div>
+</div>
+
+### CONTENT
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>add</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>add</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>archive</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>archive</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>save</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>save</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>send</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>send</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>filter_list</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>filter</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>flag</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>flag</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>link</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>link</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>mail</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>mail</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>reply</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>reply</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>sort</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>sort</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>block</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>block</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>report</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>report</div></div>
+  </div>
+</div>
+
+### DEVICE
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>bluetooth</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>bluetooth</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>wifi</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>wifi</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>battery_full</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>battery</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>gps_fixed</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>gps</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>brightness_auto</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>brightness</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>nfc</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>nfc</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>usb</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>usb</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>storage</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>storage</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>signal_cellular_4_bar</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>signal</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>screen_rotation</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>rotate</div></div>
+  </div>
+</div>
+
+### EDITOR
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>format_bold</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>bold</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>format_italic</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>italic</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>format_underlined</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>underline</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>format_list_bulleted</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>list</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>insert_chart</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>chart</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>attach_file</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>attach</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>format_align_left</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>align_left</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>format_quote</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>quote</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>functions</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>functions</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>pie_chart</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>pie_chart</div></div>
+  </div>
+</div>
+
+### FILE
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>folder</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>folder</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>folder_open</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>open</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>cloud</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>cloud</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>cloud_upload</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>upload</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>cloud_download</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>download</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>attachment</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>attach</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>create_new_folder</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>new_folder</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>cloud_off</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>cloud_off</div></div>
+  </div>
+</div>
+
+### HARDWARE
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>keyboard</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>keyboard</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>laptop</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>laptop</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>computer</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>computer</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>smartphone</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>phone</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>tv</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>tv</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>mouse</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>mouse</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>headset</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>headset</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>watch</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>watch</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>router</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>router</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>security</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>security</div></div>
+  </div>
+</div>
+
+### IMAGE
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>camera_alt</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>camera</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>photo</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>photo</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>filter</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>filter</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>crop</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>crop</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>edit</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>edit</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>image</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>image</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>palette</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>palette</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>brush</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>brush</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>tune</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>tune</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>slideshow</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>slideshow</div></div>
+  </div>
+</div>
+
+### MAPS
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>directions</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>directions</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>place</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>place</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>map</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>map</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>navigation</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>navigate</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>traffic</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>traffic</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>local_shipping</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>truck</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>flight</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>flight</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>train</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>train</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>hotel</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>hotel</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>restaurant</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>restaurant</div></div>
+  </div>
+</div>
+
+### NAVIGATION
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>arrow_back</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>back</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>arrow_forward</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>forward</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>menu</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>menu</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>close</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>close</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>chevron_left</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>chev_left</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>chevron_right</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>chev_right</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>expand_more</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>expand</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>expand_less</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>collapse</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>more_vert</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>more</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>refresh</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>refresh</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>check</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>check</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>fullscreen</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>fullscreen</div></div>
+  </div>
+</div>
+
+### NOTIFICATION
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>sync</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>sync</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>sms</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>sms</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>power</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>power</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>event_note</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>event</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>vpn_lock</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>vpn</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>wifi</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>wifi</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>account_tree</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>tree</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>sd_card</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>sd_card</div></div>
+  </div>
+</div>
+
+### OUTDOOR
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>ac_unit</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>ac_unit</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>beach_access</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>beach</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>pool</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>pool</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>fitness_center</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>fitness</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>spa</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>spa</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>kitchen</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>kitchen</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>house</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>house</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>storefront</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>store</div></div>
+  </div>
+</div>
+
+### SOCIAL
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>person</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>person</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>group</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>group</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>share</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>share</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>notifications</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>notifs</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>mood</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>mood</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>public</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>public</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>school</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>school</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>cake</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>cake</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>whatshot</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>trending</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>thumb_up_alt</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>like</div></div>
+  </div>
+</div>
+
+### TOGGLE
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px'}}>
+  <div style={{display:'flex', flexWrap:'wrap', gap:'8px'}}>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>check_box</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>checkbox</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>check_box_outline_blank</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>unchecked</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>radio_button_checked</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>radio_on</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>radio_button_unchecked</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>radio_off</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>star</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>star</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>star_border</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>star_off</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>toggle_on</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>toggle_on</div></div>
+    <div style={{width:'56px', textAlign:'center', padding:'8px 0'}}><span className="material-icons" style={{fontSize:'24px'}}>toggle_off</span><div style={{fontSize:'9px', marginTop:'4px', opacity:0.6}}>toggle_off</div></div>
+  </div>
+</div>
 
 ---
 
@@ -168,7 +503,6 @@ TARMAC organizes its icon library into 16 categories from Google Material Icons.
     - Provide accessible labels for all interactive icons
     - Use semantic icons that match the action or content
     - Stick to one style (filled or outlined) per context
-    - Size icons to match their component context
   </Card>
   <Card title="✗ Don't" icon="xmark">
     - Don't use icons as the sole indicator of meaning
@@ -176,15 +510,12 @@ TARMAC organizes its icon library into 16 categories from Google Material Icons.
     - Don't scale icons to arbitrary non-standard sizes
     - Don't use icons purely for decoration
     - Don't modify or distort Material Icons
-    - Don't rely only on color to convey icon meaning
   </Card>
 </CardGroup>
 
 ---
 
 ## Accessibility
-
-Icons play an important role in accessibility when used thoughtfully.
 
 <Warning>
   Icons should never be the sole indicator of meaning or status. Always pair critical icons with text labels, tooltips, or aria-labels.
@@ -218,16 +549,6 @@ import { Icon } from '@tarmac/design-system';
 
 // Outlined style
 <Icon name="home" size={24} variant="outlined" />
-```
-
-```tsx Sizes
-// All supported sizes
-<Icon name="star" size={12} />  {/* Micro */}
-<Icon name="star" size={16} />  {/* Compact */}
-<Icon name="star" size={20} />  {/* Button */}
-<Icon name="star" size={24} />  {/* Standard */}
-<Icon name="star" size={28} />  {/* Emphasized */}
-<Icon name="star" size={32} />  {/* Feature */}
 ```
 
 ```css CSS Tokens

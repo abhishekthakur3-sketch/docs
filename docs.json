@@ -12,6 +12,9 @@
     "light": "#FFFFFF",
     "dark": "#000000"
   },
+  "head": [
+    "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined\" rel=\"stylesheet\" />"
+  ],
   "topbarCtaButton": {
     "name": "Get Started",
     "url": "/getting-started/index"
