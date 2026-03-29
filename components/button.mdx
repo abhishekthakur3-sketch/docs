@@ -21,7 +21,7 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 </CardGroup>
 
 {/* 🎨 DESIGNER: Replace with full button playground screenshot from Figma */}
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
   <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Button Component Preview — Replace with /assets/components/button/button-preview.png</div>
 </div>
 
@@ -29,92 +29,112 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 
 ## Playground
 
-### Variants × Styles
+Explore all button combinations by switching between tabs.
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px', width:'100%'}}>
-  <div style={{fontSize:'12px', fontWeight:600, marginBottom:'12px', opacity:0.5}}>PRIMARY (FILLED)</div>
-  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'20px', alignItems:'center'}}>
-    <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
-    <button style={{background:'#fff', color:'#000', border:'1px solid #ddd', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>White</button>
-    <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
-    <button style={{background:'#1BA86E', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
-    <button style={{background:'#DC143C', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
-    <button style={{background:'#CF9F02', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
-  </div>
-  <div style={{fontSize:'12px', fontWeight:600, marginBottom:'12px', opacity:0.5}}>SECONDARY (OUTLINED)</div>
-  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'20px', alignItems:'center'}}>
-    <button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
-    <button style={{background:'transparent', color:'#2396FB', border:'1.5px solid #2396FB', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
-    <button style={{background:'transparent', color:'#1BA86E', border:'1.5px solid #1BA86E', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
-    <button style={{background:'transparent', color:'#DC143C', border:'1.5px solid #DC143C', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
-    <button style={{background:'transparent', color:'#CF9F02', border:'1.5px solid #CF9F02', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
-  </div>
-  <div style={{fontSize:'12px', fontWeight:600, marginBottom:'12px', opacity:0.5}}>TERTIARY (TEXT)</div>
-  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', alignItems:'center'}}>
-    <button style={{background:'transparent', color:'#000', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
-    <button style={{background:'transparent', color:'#2396FB', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
-    <button style={{background:'transparent', color:'#1BA86E', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
-    <button style={{background:'transparent', color:'#DC143C', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
-    <button style={{background:'transparent', color:'#CF9F02', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, cursor:'pointer', height:'44px', textDecoration:'underline', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
-  </div>
-</div>
+<Tabs>
+  <Tab title="By Variant">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%'}}>
+      <div style={{fontSize:'11px', fontWeight:600, marginBottom:'10px', opacity:0.4, letterSpacing:'0.5px'}}>PRIMARY</div>
+      <div style={{display:'flex', gap:'10px', flexWrap:'wrap', alignItems:'center', marginBottom:'20px'}}>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
+        <button style={{background:'#fff', color:'#000', border:'1px solid #ddd', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>White</button>
+        <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
+        <button style={{background:'#1BA86E', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
+        <button style={{background:'#DC143C', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
+        <button style={{background:'#CF9F02', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
+      </div>
+      <div style={{fontSize:'11px', fontWeight:600, marginBottom:'10px', opacity:0.4, letterSpacing:'0.5px'}}>SECONDARY</div>
+      <div style={{display:'flex', gap:'10px', flexWrap:'wrap', alignItems:'center', marginBottom:'20px'}}>
+        <button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Black</button>
+        <button style={{background:'transparent', color:'#2396FB', border:'1.5px solid #2396FB', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Blue</button>
+        <button style={{background:'transparent', color:'#1BA86E', border:'1.5px solid #1BA86E', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Success</button>
+        <button style={{background:'transparent', color:'#DC143C', border:'1.5px solid #DC143C', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Error</button>
+        <button style={{background:'transparent', color:'#CF9F02', border:'1.5px solid #CF9F02', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Warning</button>
+      </div>
+      <div style={{fontSize:'11px', fontWeight:600, marginBottom:'10px', opacity:0.4, letterSpacing:'0.5px'}}>TERTIARY</div>
+      <div style={{display:'flex', gap:'10px', flexWrap:'wrap', alignItems:'center'}}>
+        <button style={{background:'transparent', color:'#000', border:'none', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Black</button>
+        <button style={{background:'transparent', color:'#2396FB', border:'none', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Blue</button>
+        <button style={{background:'transparent', color:'#1BA86E', border:'none', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Success</button>
+        <button style={{background:'transparent', color:'#DC143C', border:'none', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Error</button>
+        <button style={{background:'transparent', color:'#CF9F02', border:'none', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Warning</button>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="By Size">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%'}}>
+      <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end', width:'100%'}}>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'0 24px', fontSize:'16px', fontWeight:500, height:'48px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>XLarge</button><div style={{fontSize:'10px', opacity:0.5}}>48px</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Large</button><div style={{fontSize:'10px', opacity:0.5}}>44px</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Regular</button><div style={{fontSize:'10px', opacity:0.5}}>36px</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 12px', fontSize:'13px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Small</button><div style={{fontSize:'10px', opacity:0.5}}>28px</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>XSmall</button><div style={{fontSize:'10px', opacity:0.5}}>24px</div></div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="By State">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%'}}>
+      <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end', width:'100%'}}>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Default</button><div style={{fontSize:'10px', opacity:0.5}}>Resting</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#333', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Hover</button><div style={{fontSize:'10px', opacity:0.5}}>Pointer</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#555', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Pressed</button><div style={{fontSize:'10px', opacity:0.5}}>Active</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px', outline:'2px solid #2396FB', outlineOffset:'2px'}}>Focused</button><div style={{fontSize:'10px', opacity:0.5}}>Keyboard</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px', opacity:0.4}}>Disabled</button><div style={{fontSize:'10px', opacity:0.5}}>Inactive</div></div>
+        <div style={{textAlign:'center', flex:1, minWidth:'70px'}}><button style={{background:'rgba(0,0,0,0.05)', color:'#000', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Ghost</button><div style={{fontSize:'10px', opacity:0.5}}>Minimal</div></div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
 
-### Sizes
+---
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px', width:'100%'}}>
-  <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end'}}>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'0 24px', fontSize:'16px', fontWeight:500, height:'48px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>XLarge</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>48px</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Large</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>44px</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 16px', fontSize:'14px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Regular</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>36px</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 12px', fontSize:'13px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Small</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>28px</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>XSmall</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>24px</div>
-    </div>
-  </div>
-</div>
+## State Matrix — Black Variant
 
-### States
+Full visual grid: Style × State for the Black variant.
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'16px', width:'100%'}}>
-  <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end'}}>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Default</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>Resting</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#333', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Hover</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>Pointer over</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#555', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Pressed</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>Click/tap</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px', outline:'2px solid #2396FB', outlineOffset:'2px'}}>Focused</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>Keyboard</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px', opacity:0.4, cursor:'not-allowed'}}>Disabled</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>Inactive</div>
-    </div>
-    <div style={{textAlign:'center', flex:1, minWidth:'80px'}}>
-      <button style={{background:'rgba(0,0,0,0.05)', color:'#000', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', marginBottom:'8px'}}>Ghost</button>
-      <div style={{fontSize:'10px', opacity:0.5}}>Minimal</div>
-    </div>
-  </div>
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%', overflowX:'auto'}}>
+  <table style={{width:'100%', borderCollapse:'collapse', fontSize:'12px'}}>
+    <thead>
+      <tr>
+        <th style={{textAlign:'left', padding:'8px', borderBottom:'1px solid #ddd', width:'100px'}}></th>
+        <th style={{textAlign:'center', padding:'8px', borderBottom:'1px solid #ddd'}}>Default</th>
+        <th style={{textAlign:'center', padding:'8px', borderBottom:'1px solid #ddd'}}>Hover</th>
+        <th style={{textAlign:'center', padding:'8px', borderBottom:'1px solid #ddd'}}>Pressed</th>
+        <th style={{textAlign:'center', padding:'8px', borderBottom:'1px solid #ddd'}}>Focused</th>
+        <th style={{textAlign:'center', padding:'8px', borderBottom:'1px solid #ddd'}}>Disabled</th>
+        <th style={{textAlign:'center', padding:'8px', borderBottom:'1px solid #ddd'}}>Ghost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style={{padding:'12px 8px', fontWeight:600}}>Primary</td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'#333', color:'#fff', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'#555', color:'#fff', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', outline:'2px solid #2396FB', outlineOffset:'2px'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', opacity:0.4}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'rgba(0,0,0,0.06)', color:'#000', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+      </tr>
+      <tr>
+        <td style={{padding:'12px 8px', fontWeight:600}}>Secondary</td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'rgba(0,0,0,0.04)', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'rgba(0,0,0,0.08)', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', outline:'2px solid #2396FB', outlineOffset:'2px'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', opacity:0.4}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'transparent', color:'#000', border:'1px solid rgba(0,0,0,0.15)', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button></td>
+      </tr>
+      <tr>
+        <td style={{padding:'12px 8px', fontWeight:600}}>Tertiary</td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'transparent', color:'#000', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'rgba(0,0,0,0.04)', color:'#000', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'rgba(0,0,0,0.08)', color:'#000', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'transparent', color:'#000', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline', outline:'2px solid #2396FB', outlineOffset:'2px'}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><button style={{background:'transparent', color:'#000', border:'none', borderRadius:'6px', padding:'0 14px', fontSize:'12px', fontWeight:500, height:'36px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline', opacity:0.4}}>Button</button></td>
+        <td style={{textAlign:'center', padding:'12px 4px'}}><span style={{fontSize:'11px', opacity:0.3}}>—</span></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ---
@@ -122,78 +142,96 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 ## Button Types
 
 <Tabs>
-  <Tab title="Standard Button">
+  <Tab title="Standard">
     Single-line button with label. May include leading or trailing icon.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%', marginTop:'12px', marginBottom:'12px'}}>
       <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
         <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Button</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>＋ Add Item</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>Continue →</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', gap:'6px'}}>＋ Add Item</button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', gap:'6px'}}>Continue →</button>
       </div>
     </div>
 
-    Use for: Primary actions, form submissions, workflow triggers.
+    | Use Case | Example |
+    |----------|---------|
+    | Primary actions | "Save Changes", "Submit" |
+    | Form submissions | "Create Account", "Sign In" |
+    | Workflow triggers | "Start Process", "Approve" |
   </Tab>
   <Tab title="Icon Button">
-    Icon only, no label. Used in constrained spaces.
+    Icon only — no label. Used in constrained spaces where the action is universally recognized.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
-      <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'48px', height:'48px', fontSize:'20px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>＋</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'36px', height:'36px', fontSize:'16px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>✕</button>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'28px', height:'28px', fontSize:'14px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>⋮</button>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%', marginTop:'12px', marginBottom:'12px'}}>
+      <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'center'}}>
+        <div style={{textAlign:'center'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'48px', height:'48px', fontSize:'20px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>＋</button><div style={{fontSize:'10px', opacity:0.5, marginTop:'4px'}}>48px</div></div>
+        <div style={{textAlign:'center'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'36px', height:'36px', fontSize:'16px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>✕</button><div style={{fontSize:'10px', opacity:0.5, marginTop:'4px'}}>36px</div></div>
+        <div style={{textAlign:'center'}}><button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', width:'28px', height:'28px', fontSize:'14px', display:'inline-flex', alignItems:'center', justifyContent:'center'}}>⋮</button><div style={{fontSize:'10px', opacity:0.5, marginTop:'4px'}}>28px</div></div>
       </div>
     </div>
 
-    Use for: Toolbars, dense interfaces, utility actions. Always add `aria-label`.
+    <Warning>Icon-only buttons must always have `aria-label` for screen readers.</Warning>
+
+    | Use Case | Example Icon |
+    |----------|-------------|
+    | Toolbars | Close, Edit, Delete |
+    | Dense interfaces | Menu, More options |
+    | Utility actions | Copy, Share, Download |
   </Tab>
-  <Tab title="Two-Liner Button">
-    Two lines of text for additional context.
+  <Tab title="Two-Liner">
+    Two lines of text — primary label + supporting context.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%', marginTop:'12px', marginBottom:'12px'}}>
       <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
-        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'60px', display:'inline-flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}>
-          <span>Confirm Order</span>
-          <span style={{fontSize:'11px', opacity:0.7}}>3 items · ₹2,450</span>
-        </button>
-        <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'8px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'60px', display:'inline-flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}>
-          <span>Schedule Pickup</span>
-          <span style={{fontSize:'11px', opacity:0.7}}>Tomorrow, 10:00 AM</span>
-        </button>
+        <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'8px', padding:'0 24px', fontSize:'14px', fontWeight:500, height:'60px', display:'inline-flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}><span>Confirm Order</span><span style={{fontSize:'11px', opacity:0.7}}>3 items · ₹2,450</span></button>
+        <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'8px', padding:'0 24px', fontSize:'14px', fontWeight:500, height:'60px', display:'inline-flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}><span>Schedule Pickup</span><span style={{fontSize:'11px', opacity:0.7}}>Tomorrow, 10 AM</span></button>
+        <button style={{background:'#1BA86E', color:'#fff', border:'none', borderRadius:'8px', padding:'0 24px', fontSize:'14px', fontWeight:500, height:'60px', display:'inline-flex', flexDirection:'column', alignItems:'center', justifyContent:'center', lineHeight:'1.3'}}><span>Mark Delivered</span><span style={{fontSize:'11px', opacity:0.7}}>AWB #12345678</span></button>
       </div>
     </div>
 
-    Use for: Actions requiring more explanation or context.
+    | Use Case | Context Line |
+    |----------|-------------|
+    | Order confirmation | Item count + total |
+    | Scheduling | Date + time |
+    | Status updates | Reference number |
   </Tab>
   <Tab title="Slider Button">
-    Swipe-to-confirm interaction for high-stakes actions.
+    Swipe-to-confirm for high-stakes, irreversible actions.
 
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', marginBottom:'12px', width:'100%'}}>
-      <div style={{display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center'}}>
-        <div style={{background:'#E5E5E5', borderRadius:'30px', padding:'6px', width:'100%', maxWidth:'320px', height:'52px', position:'relative', display:'flex', alignItems:'center'}}>
-          <div style={{background:'#000', borderRadius:'24px', width:'40px', height:'40px', display:'flex', alignItems:'center', justifyContent:'center', color:'#fff', fontSize:'16px'}}>→</div>
-          <span style={{position:'absolute', left:'50%', transform:'translateX(-50%)', fontSize:'13px', opacity:0.5}}>Slide to confirm</span>
-        </div>
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%', marginTop:'12px', marginBottom:'12px'}}>
+      <div style={{display:'flex', flexDirection:'column', gap:'12px'}}>
+        <div style={{background:'#E5E5E5', borderRadius:'30px', padding:'6px', width:'100%', maxWidth:'320px', height:'52px', position:'relative', display:'flex', alignItems:'center'}}><div style={{background:'#000', borderRadius:'24px', width:'40px', height:'40px', display:'inline-flex', alignItems:'center', justifyContent:'center', color:'#fff', fontSize:'16px'}}>→</div><span style={{position:'absolute', left:'50%', transform:'translateX(-50%)', fontSize:'13px', opacity:0.5}}>Slide to confirm</span></div>
+        <div style={{background:'#000', borderRadius:'30px', padding:'6px', width:'100%', maxWidth:'320px', height:'52px', position:'relative', display:'flex', alignItems:'center'}}><div style={{background:'#fff', borderRadius:'24px', width:'40px', height:'40px', display:'inline-flex', alignItems:'center', justifyContent:'center', color:'#000', fontSize:'16px'}}>→</div><span style={{position:'absolute', left:'50%', transform:'translateX(-50%)', fontSize:'13px', color:'#fff', opacity:0.5}}>Slide to check</span></div>
       </div>
     </div>
 
-    Use for: Irreversible actions, delivery confirmations, payment approvals.
+    | Use Case | Action |
+    |----------|--------|
+    | Delivery confirmation | "Slide to deliver" |
+    | Payment approval | "Slide to pay" |
+    | Irreversible actions | "Slide to delete" |
   </Tab>
 </Tabs>
 
 ---
 
-## Variant Matrix
+## Usage Decision Guide
 
-| Variant | Primary | Secondary | Tertiary |
-|---------|---------|-----------|----------|
-| Black | Filled black bg, white text | Black border, transparent bg | Underlined black text |
-| White | Filled white bg, dark text | White border, transparent bg | Underlined white text |
-| Blue | Filled `#2396FB` bg | Blue border | Underlined blue text |
-| Success | Filled `#1BA86E` bg | Green border | Underlined green text |
-| Error | Filled `#DC143C` bg | Red border | Underlined red text |
-| Warning | Filled `#CF9F02` bg | Yellow border | Underlined yellow text |
+When to use which variant and style.
+
+| Scenario | Variant | Style | Example |
+|----------|---------|-------|---------|
+| Main page action | Black | Primary | "Save Changes" |
+| Supporting action | Black | Secondary | "Cancel" |
+| Subtle/tertiary action | Black | Tertiary | "Learn More" |
+| Positive confirmation | Success | Primary | "Approve", "Confirm" |
+| Destructive action | Error | Primary | "Delete", "Remove" |
+| Caution-required action | Warning | Primary | "Override", "Force Submit" |
+| Default system action | Blue | Primary | "Submit", "Continue" |
+| Dark background | White | Primary | "Get Started" |
+| Dense toolbar | Black | Icon Button | Close, Edit, Menu |
+| Order/delivery flow | Blue/Success | Two-Liner | "Confirm Order" |
+| High-stakes confirmation | Black | Slider | "Slide to deliver" |
 
 ---
 
@@ -203,36 +241,10 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 |---|---------|-------------|
 | 1 | Container | Clickable area — background, border, shape (border-radius: 6px) |
 | 2 | Loading Left | Optional spinner before label |
-| 3 | Leading Icon | Optional icon before label (add, upload, download) |
+| 3 | Leading Icon | Optional icon before label |
 | 4 | Label | Action text — concise, verb-first |
-| 5 | Trailing Icon | Optional icon after label (arrow, expand) |
+| 5 | Trailing Icon | Optional icon after label |
 | 6 | Loading Right | Optional spinner after label |
-
----
-
-## Sizes Reference
-
-| Size | Height | Padding | Font | Usage |
-|------|--------|---------|------|-------|
-| XLarge | 48px | 12px | 16px | High prominence CTAs |
-| Large | 44px | 12px | 16px | Primary actions, touch-friendly |
-| Regular | 36px | 8px | 14px | Default for most interfaces |
-| Small | 28px | 4px | 13px | Dense layouts, toolbars |
-| XSmall | 24px | 2px | 12px | Tables, utility controls |
-
----
-
-## States Reference
-
-| State | Visual Change | Interaction |
-|-------|--------------|-------------|
-| Default | Standard appearance | Ready for interaction |
-| Hover | Background darkens | Pointer cursor, 150ms transition |
-| Pressed | Darker than hover | Active click/tap feedback |
-| Focused | 2px focus ring | Keyboard navigation (Tab) |
-| Disabled | 40% opacity | Not-allowed cursor, not focusable |
-| Ghost | Minimal bg (5% opacity) | Subtle secondary contexts |
-| Loading | Spinner + disabled | Async operation in progress |
 
 ---
 
@@ -245,7 +257,6 @@ Buttons are interactive elements used to initiate actions such as submitting dat
     - Provide loading states for async operations
     - Ensure 44px minimum touch target on mobile
     - Use icons only when they improve clarity
-    - Keep labels to 1–3 words
   </Card>
   <Card title="✗ Don't" icon="xmark" color="#DC2626">
     - Don't use vague labels ("Click Here", "Submit", "OK")
@@ -253,7 +264,6 @@ Buttons are interactive elements used to initiate actions such as submitting dat
     - Don't write long sentences inside button labels
     - Don't hide critical actions in low-emphasis styles
     - Don't disable without explaining why
-    - Don't use disabled buttons without communicating the reason
   </Card>
 </CardGroup>
 
@@ -270,7 +280,6 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 | Touch target | Minimum 44×44px on mobile |
 | Icon-only | Must have `aria-label` |
 | Loading | Use `aria-busy="true"` |
-| Disabled | Not in tab order |
 
 ---
 
@@ -298,14 +307,6 @@ Buttons are interactive elements used to initiate actions such as submitting dat
     | `button-warning-bg` | #CF9F02 |
     | `button-white-bg` | #FFFFFF |
   </Tab>
-  <Tab title="Typography">
-    | Token | Value |
-    |-------|-------|
-    | `button-font-family` | Noto Sans Medium |
-    | `button-font-weight` | 500 |
-    | `button-line-height` | 24px |
-    | `button-transition` | 150ms ease-in-out |
-  </Tab>
 </Tabs>
 
 ---
@@ -313,81 +314,25 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 ## Developer Handoff
 
 <CodeGroup>
-```tsx Component API
+```tsx API
 interface ButtonProps {
   variant?: 'black' | 'white' | 'blue' | 'success' | 'error' | 'warning';
   style?: 'primary' | 'secondary' | 'tertiary';
   size?: 'xl' | 'lg' | 'md' | 'sm' | 'xs';
-  type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   loading?: boolean;
   loadingPosition?: 'left' | 'right';
   icon?: ReactNode;
   iconPosition?: 'left' | 'right';
   fullWidth?: boolean;
-  onClick?: (event: MouseEvent) => void;
   children: ReactNode;
 }
 ```
 
-```tsx Usage Examples
-// Primary black
-<Button variant="black" style="primary" size="lg">Save Changes</Button>
-
-// Secondary outlined blue
-<Button variant="blue" style="secondary">Cancel</Button>
-
-// Error destructive
-<Button variant="error" style="primary">Delete Account</Button>
-
-// With loading
-<Button variant="blue" loading loadingPosition="left">Saving...</Button>
-
-// Icon button
-<Button variant="black" style="primary" icon={<PlusIcon />} aria-label="Add item" />
-
-// Two-liner (custom)
-<Button variant="black" size="xl">
-  <span>Confirm Order</span>
-  <span className="text-xs opacity-70">3 items · ₹2,450</span>
-</Button>
-
-// Full width
-<Button variant="black" style="primary" fullWidth>Continue</Button>
-```
-
-```css CSS Implementation
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--button-gap);
-  height: var(--button-height-lg);
-  padding: 0 20px;
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  border-radius: var(--button-border-radius);
-  border: none;
-  cursor: pointer;
-  transition: all 150ms ease-in-out;
-}
-
-.button-primary-black {
-  background: #000;
-  color: #fff;
-}
-
-.button-primary-black:hover { background: #333; }
-.button-primary-black:active { background: #555; }
-.button-primary-black:focus-visible {
-  outline: 2px solid #2396FB;
-  outline-offset: 2px;
-}
-.button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
-}
+```tsx Usage
+<Button variant="black" style="primary" size="lg">Save</Button>
+<Button variant="error" style="primary">Delete</Button>
+<Button variant="blue" loading>Saving...</Button>
+<Button variant="black" icon={<PlusIcon />} aria-label="Add" />
 ```
 </CodeGroup>
