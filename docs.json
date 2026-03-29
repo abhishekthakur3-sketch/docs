@@ -14,7 +14,7 @@
   },
   "topbarCtaButton": {
     "name": "Get Started",
-    "url": "/getting-started/index"
+    "url": "/getting-started/installation"
   },
   "navigation": {
     "tabs": [
@@ -22,22 +22,14 @@
         "tab": "Design System",
         "groups": [
           {
-            "group": "About TARMAC",
+            "group": "Introduction",
             "pages": [
               "about/overview",
               "about/philosophy",
               "about/brand-language",
-              "about/movement-metaphors"
-            ]
-          },
-          {
-            "group": "Getting Started",
-            "pages": [
-              "getting-started/index",
+              "about/movement-metaphors",
               "getting-started/installation",
-              "getting-started/quick-start",
-              "getting-started/usage-guidelines",
-              "getting-started/contribution"
+              "getting-started/quick-start"
             ]
           },
           {
