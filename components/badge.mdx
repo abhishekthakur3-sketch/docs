@@ -12,15 +12,15 @@ Badges are lightweight components used to communicate contextual information —
   <Card title="9 Variants" icon="palette">
     Black, White, Coal, DLV Red, Info, Success, Warning, Error, Cardbox
   </Card>
-  <Card title="6 Types" icon="layer-group">
-    Solid, Subtle, Base, Outlined, Disabled, Ghost
+  <Card title="5 Types" icon="layer-group">
+    Solid, Subtle, Outlined, Disabled, Ghost
   </Card>
   <Card title="3 Sizes" icon="expand">
     Large (28px), Medium (24px), Small (20px)
   </Card>
 </CardGroup>
 
-{/* 🎨 DESIGNER: Replace with badge playground screenshot from Figma (node: 1821:8881) */}
+{/* 🎨 DESIGNER: Replace with badge playground screenshot from Figma */}
 <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
   <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Badge Component Preview — Replace with /assets/components/badge/badge-preview.png</div>
 </div>
@@ -29,45 +29,144 @@ Badges are lightweight components used to communicate contextual information —
 
 ## Playground
 
-### Variants × Types
+Quick exploration of badge combinations. For full coverage, see the Badge Matrix below.
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%'}}>
-  <div style={{fontSize:'11px', fontWeight:600, marginBottom:'10px', opacity:0.4, letterSpacing:'0.5px'}}>SOLID</div>
-  <div style={{display:'flex', gap:'8px', flexWrap:'wrap', alignItems:'center', marginBottom:'16px'}}>
-    <span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Black</span>
-    <span style={{background:'#fff', color:'#000', border:'1px solid #ddd', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>White</span>
-    <span style={{background:'#3D445C', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Coal</span>
-    <span style={{background:'#ED1B36', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>DLV Red</span>
-    <span style={{background:'#2396FB', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Info</span>
-    <span style={{background:'#1BA86E', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Success</span>
-    <span style={{background:'#CF9F02', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Warning</span>
-    <span style={{background:'#DC143C', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Error</span>
-    <span style={{background:'#B88B5C', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Cardbox</span>
-  </div>
-  <div style={{fontSize:'11px', fontWeight:600, marginBottom:'10px', opacity:0.4, letterSpacing:'0.5px'}}>SUBTLE</div>
-  <div style={{display:'flex', gap:'8px', flexWrap:'wrap', alignItems:'center', marginBottom:'16px'}}>
-    <span style={{background:'rgba(0,0,0,0.08)', color:'#000', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Black</span>
-    <span style={{background:'rgba(35,150,251,0.12)', color:'#2396FB', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Info</span>
-    <span style={{background:'rgba(27,168,110,0.12)', color:'#1BA86E', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Success</span>
-    <span style={{background:'rgba(207,159,2,0.12)', color:'#CF9F02', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Warning</span>
-    <span style={{background:'rgba(220,20,60,0.12)', color:'#DC143C', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Error</span>
-  </div>
-  <div style={{fontSize:'11px', fontWeight:600, marginBottom:'10px', opacity:0.4, letterSpacing:'0.5px'}}>OUTLINED</div>
-  <div style={{display:'flex', gap:'8px', flexWrap:'wrap', alignItems:'center'}}>
-    <span style={{background:'transparent', color:'#000', border:'1px solid #000', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Black</span>
-    <span style={{background:'transparent', color:'#2396FB', border:'1px solid #2396FB', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Info</span>
-    <span style={{background:'transparent', color:'#1BA86E', border:'1px solid #1BA86E', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Success</span>
-    <span style={{background:'transparent', color:'#DC143C', border:'1px solid #DC143C', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center'}}>Error</span>
-  </div>
-</div>
+<Tabs>
+  <Tab title="By Type">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'20px', width:'100%'}}>
+      <div style={{fontSize:'10px', fontWeight:600, marginBottom:'8px', opacity:0.4}}>SOLID</div>
+      <div style={{display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'14px'}}>
+        <span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Black</span>
+        <span style={{background:'#2396FB', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Info</span>
+        <span style={{background:'#1BA86E', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Success</span>
+        <span style={{background:'#CF9F02', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Warning</span>
+        <span style={{background:'#DC143C', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Error</span>
+        <span style={{background:'#ED1B36', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>DLV Red</span>
+        <span style={{background:'#B88B5C', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Cardbox</span>
+      </div>
+      <div style={{fontSize:'10px', fontWeight:600, marginBottom:'8px', opacity:0.4}}>SUBTLE</div>
+      <div style={{display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'14px'}}>
+        <span style={{background:'rgba(0,0,0,0.08)', color:'#000', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Black</span>
+        <span style={{background:'rgba(35,150,251,0.12)', color:'#2396FB', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Info</span>
+        <span style={{background:'rgba(27,168,110,0.12)', color:'#1BA86E', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Success</span>
+        <span style={{background:'rgba(220,20,60,0.12)', color:'#DC143C', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Error</span>
+      </div>
+      <div style={{fontSize:'10px', fontWeight:600, marginBottom:'8px', opacity:0.4}}>OUTLINED</div>
+      <div style={{display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'14px'}}>
+        <span style={{background:'transparent', color:'#000', border:'1px solid #000', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Black</span>
+        <span style={{background:'transparent', color:'#2396FB', border:'1px solid #2396FB', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Info</span>
+        <span style={{background:'transparent', color:'#1BA86E', border:'1px solid #1BA86E', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Success</span>
+      </div>
+      <div style={{fontSize:'10px', fontWeight:600, marginBottom:'8px', opacity:0.4}}>DISABLED + GHOST</div>
+      <div style={{display:'flex', gap:'6px', flexWrap:'wrap'}}>
+        <span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', opacity:0.4}}>Disabled</span>
+        <span style={{background:'transparent', color:'#000', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center'}}>Ghost</span>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="By Size">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'20px', width:'100%'}}>
+      <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end'}}>
+        <div style={{textAlign:'center'}}><span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center', marginBottom:'6px'}}>Large</span><div style={{fontSize:'9px', opacity:0.4}}>28px</div></div>
+        <div style={{textAlign:'center'}}><span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 8px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', marginBottom:'6px'}}>Medium</span><div style={{fontSize:'9px', opacity:0.4}}>24px</div></div>
+        <div style={{textAlign:'center'}}><span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 6px', fontSize:'10px', fontWeight:500, height:'20px', display:'inline-flex', alignItems:'center', marginBottom:'6px'}}>Small</span><div style={{fontSize:'9px', opacity:0.4}}>20px</div></div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
 
-### Sizes
+<Info>All badge variants support all types and sizes unless specified otherwise. The Playground is for quick exploration — the Badge Matrix below is the complete reference.</Info>
 
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'24px', width:'100%'}}>
-  <div style={{display:'flex', gap:'16px', flexWrap:'wrap', alignItems:'flex-end'}}>
-    <div style={{textAlign:'center'}}><span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'12px', fontWeight:500, height:'28px', display:'inline-flex', alignItems:'center', marginBottom:'8px'}}>Large</span><div style={{fontSize:'10px', opacity:0.5}}>28px</div></div>
-    <div style={{textAlign:'center'}}><span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 8px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', marginBottom:'8px'}}>Medium</span><div style={{fontSize:'10px', opacity:0.5}}>24px</div></div>
-    <div style={{textAlign:'center'}}><span style={{background:'#000', color:'#fff', borderRadius:'4px', padding:'0 6px', fontSize:'10px', fontWeight:500, height:'20px', display:'inline-flex', alignItems:'center', marginBottom:'8px'}}>Small</span><div style={{fontSize:'10px', opacity:0.5}}>20px</div></div>
+---
+
+## Badge Matrix
+
+Complete reference: every Variant × Type combination. Each variant supports Large (28px), Medium (24px), and Small (20px) sizes.
+
+<Tabs>
+  <Tab title="Solid">
+    | Variant | Large (28px) | Medium (24px) | Small (20px) | Color |
+    |---------|-------------|---------------|-------------|-------|
+    | Black | ● Badge | ● Badge | ● Badge | `#000000` |
+    | White | ● Badge | ● Badge | ● Badge | `#FFFFFF` |
+    | Coal | ● Badge | ● Badge | ● Badge | `#3D445C` |
+    | DLV Red | ● Badge | ● Badge | ● Badge | `#ED1B36` |
+    | Info | ● Badge | ● Badge | ● Badge | `#2396FB` |
+    | Success | ● Badge | ● Badge | ● Badge | `#1BA86E` |
+    | Warning | ● Badge | ● Badge | ● Badge | `#CF9F02` |
+    | Error | ● Badge | ● Badge | ● Badge | `#DC143C` |
+    | Cardbox | ● Badge | ● Badge | ● Badge | `#B88B5C` |
+  </Tab>
+  <Tab title="Subtle">
+    | Variant | Large (28px) | Medium (24px) | Small (20px) | Treatment |
+    |---------|-------------|---------------|-------------|-----------|
+    | Black | ○ Badge | ○ Badge | ○ Badge | 8% opacity bg |
+    | White | ○ Badge | ○ Badge | ○ Badge | 8% opacity bg |
+    | Coal | ○ Badge | ○ Badge | ○ Badge | 8% opacity bg |
+    | DLV Red | ○ Badge | ○ Badge | ○ Badge | 12% opacity bg |
+    | Info | ○ Badge | ○ Badge | ○ Badge | 12% opacity bg |
+    | Success | ○ Badge | ○ Badge | ○ Badge | 12% opacity bg |
+    | Warning | ○ Badge | ○ Badge | ○ Badge | 12% opacity bg |
+    | Error | ○ Badge | ○ Badge | ○ Badge | 12% opacity bg |
+    | Cardbox | ○ Badge | ○ Badge | ○ Badge | 12% opacity bg |
+  </Tab>
+  <Tab title="Outlined">
+    | Variant | Large (28px) | Medium (24px) | Small (20px) | Treatment |
+    |---------|-------------|---------------|-------------|-----------|
+    | Black | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | White | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | Coal | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | DLV Red | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | Info | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | Success | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | Warning | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | Error | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+    | Cardbox | ◻ Badge | ◻ Badge | ◻ Badge | 1px border, transparent bg |
+  </Tab>
+  <Tab title="Disabled">
+    | Variant | Large (28px) | Medium (24px) | Small (20px) | Treatment |
+    |---------|-------------|---------------|-------------|-----------|
+    | All variants | ◌ Badge | ◌ Badge | ◌ Badge | 40% opacity, non-interactive |
+  </Tab>
+  <Tab title="Ghost">
+    | Variant | Large (28px) | Medium (24px) | Small (20px) | Treatment |
+    |---------|-------------|---------------|-------------|-----------|
+    | All variants | ◌ Badge | ◌ Badge | ◌ Badge | No background, text only |
+  </Tab>
+</Tabs>
+
+---
+
+## Types
+
+| Type | Emphasis | Visual Treatment | Use When |
+|------|----------|-----------------|----------|
+| Solid | Highest | Filled background, white text | Important status, primary classification |
+| Subtle | Low | Light tinted background, colored text | Secondary context, supporting metadata |
+| Outlined | Low | Border only, transparent background | Minimal visual weight needed |
+| Disabled | None | 40% opacity, non-interactive | Status is unavailable or inactive |
+| Ghost | Minimal | No background, text only | Badge should blend into interface |
+
+---
+
+## Icon Support
+
+Badges support multiple composition patterns with icons and status indicators.
+
+| Pattern | Composition | Use Case |
+|---------|-------------|----------|
+| Text only | `[Label]` | Default — status labels, categories |
+| Prefix icon + text | `[●] [Label]` | Status indication with visual reinforcement |
+| Text + suffix icon | `[Label] [×]` | Dismissible badges, action hints |
+| Dot indicator + text | `[•] [Label]` | Live status, notification presence |
+| Icon only | `[●]` | Compact dot indicator (no text) |
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'20px', width:'100%'}}>
+  <div style={{display:'flex', gap:'10px', flexWrap:'wrap', alignItems:'center'}}>
+    <span style={{background:'#1BA86E', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', gap:'4px'}}>Active</span>
+    <span style={{background:'#1BA86E', color:'#fff', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', gap:'4px'}}>● Active</span>
+    <span style={{background:'rgba(0,0,0,0.08)', color:'#000', borderRadius:'4px', padding:'0 10px', fontSize:'11px', fontWeight:500, height:'24px', display:'inline-flex', alignItems:'center', gap:'4px'}}>React ×</span>
+    <span style={{background:'#1BA86E', borderRadius:'50%', width:'8px', height:'8px', display:'inline-block'}}></span>
   </div>
 </div>
 
@@ -80,52 +179,39 @@ Badges are lightweight components used to communicate contextual information —
   <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Badge Anatomy Diagram — Replace with /assets/components/badge/badge-anatomy.png</div>
 </div>
 
-| # | Element | Description |
-|---|---------|-------------|
-| 1 | Container | Rounded background with padding (border-radius: 4px) |
-| 2 | Status Indicator | Optional dot showing presence/status |
-| 3 | Leading Icon | Optional icon before label |
-| 4 | Label | Text content — short, scannable |
-| 5 | Trailing Icon | Optional icon after label |
-
----
-
-## Variants
-
-| Variant | Usage | Color |
-|---------|-------|-------|
-| Black | Strong emphasis, neutral system indicators | `#000000` |
-| White | Dark backgrounds, inverted themes | `#FFFFFF` |
-| Coal | System metadata, generic classifications | `#3D445C` |
-| DLV Red | Delhivery brand-specific states | `#ED1B36` |
-| Info | Informational status, contextual guidance | `#2396FB` |
-| Success | Positive/successful system state | `#1BA86E` |
-| Warning | Caution or attention-required states | `#CF9F02` |
-| Error | Critical issues or failure states | `#DC143C` |
-| Cardbox | Packaging/logistics-related contexts | `#B88B5C` |
-
----
-
-## Types
-
-| Type | Emphasis | Description |
-|------|----------|-------------|
-| Solid | Highest | Filled background — important status |
-| Base | Medium | Balanced background + text |
-| Subtle | Low | Lighter background — secondary context |
-| Outlined | Low | Border only, transparent background |
-| Disabled | None | Inactive/unavailable state |
-| Ghost | Minimal | Blends into interface |
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Container | Yes | Rounded background with padding (border-radius: 4px) |
+| 2 | Status Indicator | No | Dot showing presence/status (left position) |
+| 3 | Leading Icon | No | Icon before label for visual reinforcement |
+| 4 | Label | Yes | Text content — short, scannable (1–2 words) |
+| 5 | Trailing Icon | No | Icon after label (dismiss, action hint) |
 
 ---
 
 ## Sizes
 
-| Size | Height | Font | Usage |
-|------|--------|------|-------|
-| Large | 28px | 12px | Cards, banners, prominent labels |
-| Medium | 24px | 11px | Default — lists, tables, headers |
-| Small | 20px | 10px | Dense layouts, metadata rows |
+| Size | Height | Font Size | Padding | Usage |
+|------|--------|-----------|---------|-------|
+| Large | 28px | 12px | 0 10px | Cards, banners, prominent labels |
+| Medium | 24px | 11px | 0 8px | Default — lists, tables, headers |
+| Small | 20px | 10px | 0 6px | Dense layouts, metadata rows, tables |
+
+---
+
+## Variants
+
+| Variant | Color | Usage |
+|---------|-------|-------|
+| Black | `#000000` | Strong emphasis, neutral system indicators |
+| White | `#FFFFFF` | Dark backgrounds, inverted themes |
+| Coal | `#3D445C` | System metadata, generic classifications |
+| DLV Red | `#ED1B36` | Delhivery brand-specific states |
+| Info | `#2396FB` | Informational status, contextual guidance |
+| Success | `#1BA86E` | Positive/successful system state |
+| Warning | `#CF9F02` | Caution or attention-required states |
+| Error | `#DC143C` | Critical issues or failure states |
+| Cardbox | `#B88B5C` | Packaging/logistics-related contexts |
 
 ---
 
@@ -137,12 +223,14 @@ Badges are lightweight components used to communicate contextual information —
     - Use semantic variants consistently
     - Place badges near related content
     - Use subtle styles for secondary metadata
+    - Pair color with text — don't rely on color alone
   </Card>
   <Card title="✗ Don't" icon="xmark" color="#DC2626">
     - Don't use badges for long phrases
     - Don't overuse — too many lose impact
     - Don't use multiple high-emphasis badges together
     - Don't rely solely on color for meaning
+    - Don't use badges for primary actions (use Button)
   </Card>
 </CardGroup>
 
@@ -170,6 +258,7 @@ Badges are lightweight components used to communicate contextual information —
     | `badge-height-md` | 24px |
     | `badge-height-sm` | 20px |
     | `badge-border-radius` | 4px |
+    | `badge-dot-size` | 8px |
   </Tab>
   <Tab title="Colors">
     | Token | Value |
@@ -193,9 +282,11 @@ Badges are lightweight components used to communicate contextual information —
 ```tsx API
 interface BadgeProps {
   variant?: 'black' | 'white' | 'coal' | 'dlv_red' | 'info' | 'success' | 'warning' | 'error' | 'cardbox';
-  type?: 'solid' | 'base' | 'subtle' | 'outlined' | 'disabled' | 'ghost';
+  type?: 'solid' | 'subtle' | 'outlined' | 'disabled' | 'ghost';
   size?: 'lg' | 'md' | 'sm';
   icon?: ReactNode;
+  iconPosition?: 'left' | 'right';
+  dot?: boolean;
   children?: ReactNode;
 }
 ```
@@ -204,12 +295,23 @@ interface BadgeProps {
 // Solid status badges
 <Badge variant="success" type="solid">Active</Badge>
 <Badge variant="error" type="solid">Failed</Badge>
+
+// Subtle
 <Badge variant="warning" type="subtle">Pending</Badge>
 
 // Outlined
 <Badge variant="info" type="outlined">Draft</Badge>
 
-// Different sizes
+// With prefix icon
+<Badge variant="success" icon={<CheckIcon />}>Verified</Badge>
+
+// With suffix icon (dismissible)
+<Badge variant="black" icon={<CloseIcon />} iconPosition="right">React</Badge>
+
+// Dot indicator
+<Badge variant="success" dot>Online</Badge>
+
+// Sizes
 <Badge variant="black" size="lg">Large</Badge>
 <Badge variant="black" size="sm">Small</Badge>
 ```
