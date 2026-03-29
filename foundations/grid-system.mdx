@@ -1,0 +1,309 @@
+---
+title: Grid System
+description: Layout grid framework, breakpoints, and responsive structure for the TARMAC Design System
+icon: "grid"
+---
+
+## Overview
+
+A grid system is the invisible structural framework that organizes layout, spacing, and alignment across your product. It ensures consistency, predictability, and rhythm — making interfaces feel balanced, intuitive, and easy to scan. A strong grid acts like a "traffic system" for UI elements: guiding where components should sit, how they scale, and how they respond across breakpoints.
+
+<CardGroup cols={3}>
+  <Card title="For Designers" icon="pen-ruler">
+    Use Figma grid styles mapped to these specs. Align all elements to the defined column structure — never eyeball placement.
+  </Card>
+  <Card title="For Developers" icon="code">
+    Reference grid tokens and breakpoint values. Build layouts using the 12-column (desktop) or 4-column (mobile) system with consistent gutters and margins.
+  </Card>
+  <Card title="For Product" icon="users">
+    Ensures predictable, scannable layouts across all viewports — from compact POS terminals to wide enterprise dashboards.
+  </Card>
+</CardGroup>
+
+---
+
+## Grid Anatomy
+
+Every TARMAC grid is composed of three core elements that work together to create structured, balanced layouts.
+
+<div className="showcase-box" style={{overflow:'hidden'}}>
+  <div style={{display:'flex',gap:'40px'}}>
+    <div style={{flex:'1'}}>
+      <div style={{display:'flex',flexDirection:'column',gap:'24px'}}>
+        <div>
+          <div style={{fontSize:'16px',color:'#ED1B36',fontWeight:400,marginBottom:'8px'}}>Columns</div>
+          <div className="showcase-box-text-body" style={{fontSize:'14px',lineHeight:'1.7',fontWeight:300}}>
+            Divide the page into equal vertical sections. Desktop uses 12 columns; mobile uses 4. Content blocks span one or more columns to create layout structure.
+          </div>
+        </div>
+        <div>
+          <div style={{fontSize:'16px',color:'#ED1B36',fontWeight:400,marginBottom:'8px'}}>Gutters</div>
+          <div className="showcase-box-text-body" style={{fontSize:'14px',lineHeight:'1.7',fontWeight:300}}>
+            The gaps between columns. Gutters provide breathing room between content blocks, preventing elements from crowding each other. TARMAC uses 16px or 24px gutters depending on breakpoint.
+          </div>
+        </div>
+        <div>
+          <div style={{fontSize:'16px',color:'#ED1B36',fontWeight:400,marginBottom:'8px'}}>Margins</div>
+          <div className="showcase-box-text-body" style={{fontSize:'14px',lineHeight:'1.7',fontWeight:300}}>
+            The outer edges of the grid — the space between the grid and the viewport boundary. Margins ensure content doesn't touch the screen edges and maintains visual balance.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Types of Grid
+
+<Tabs>
+  <Tab title="Fluid Grid">
+    A fluid grid stretches across the screen to fill all available space. Columns and content scale and resize proportionally with the viewport.
+
+    **When to use:**
+    - Responsive layouts that need to adapt to any screen width
+    - Content-heavy pages where maximizing reading area matters
+    - Dashboards and data-dense interfaces
+
+    <Info>Fluid grids are the default for most TARMAC layouts. They ensure content fills the available space while maintaining column proportions.</Info>
+  </Tab>
+  <Tab title="Fixed Grid">
+    A fixed grid applies an ideal maximum width to page containers. Content is centered within the viewport, and the grid does not stretch beyond its defined max-width.
+
+    **Variants:**
+    - **Fixed Narrow** — For focused reading experiences and forms
+    - **Fixed Wide** — For content-rich layouts with sidebars
+
+    **When to use:**
+    - Marketing and landing pages where line length control matters
+    - Form-heavy workflows that benefit from constrained width
+    - Screens where content readability is more important than space utilization
+
+    <Tip>On viewports wider than 1440px, the TARMAC grid locks to a 1280px centered container to prevent eye-strain from overly long line lengths.</Tip>
+  </Tab>
+</Tabs>
+
+---
+
+## Column Span & Offset
+
+<Tabs>
+  <Tab title="Column Span">
+    Column span defines how many columns a content block occupies. Spans range from 2 to 12 columns on desktop, allowing flexible layout compositions.
+
+    | Span | Desktop Width (approx.) | Common Use |
+    |------|------------------------|------------|
+    | 2 cols | ~16% | Sidebar icons, small widgets |
+    | 3 cols | ~25% | Side panels, navigation |
+    | 4 cols | ~33% | Cards, form sections |
+    | 6 cols | ~50% | Split layouts, two-column content |
+    | 8 cols | ~66% | Main content with sidebar |
+    | 12 cols | 100% | Full-width sections, heroes |
+  </Tab>
+  <Tab title="Offset">
+    Offset adds empty space by skipping columns before a content block. This creates visual balance and asymmetric layouts without adding empty containers.
+
+    **Use offsets to:**
+    - Center content within the grid
+    - Create visual breathing room
+    - Align content blocks with other sections on the page
+    - Build asymmetric but intentional layouts
+
+    <Warning>Avoid excessive offsets that push content too far from the viewport edge. Users should not have to scan across large empty areas to find content.</Warning>
+  </Tab>
+</Tabs>
+
+---
+
+## Desktop Grid System
+
+### Supported Viewports
+
+| Screen Size | Usage |
+|-------------|-------|
+| 1440 × 942px | Primary design frame and baseline grid |
+| 1366 × 942 | Widespread enterprise resolution |
+| 1280 × 832 | Compact laptop and workspace views |
+| 1920+ | Grid locked to 1280px, centered |
+
+### Content Grid
+
+The base 12-column content grid used across all desktop breakpoints.
+
+| Breakpoint | Viewport | Columns | Gutter | Column Width | Type |
+|------------|----------|---------|--------|--------------|------|
+| Large | 1920 × 1080 | 12 | 24px | 92px | Centre |
+| Default | 1440 × 942 | 12 | 16px | 92px | Centre |
+| Medium | 1366 × 768 | 12 | 16px | 92px | Centre |
+| Small | 1280 × 832 | 12 | 16px | 92px | Centre |
+
+<Info>The content grid is always 12 columns and centre-aligned. Column width remains consistent at 92px — only gutters change between Large (24px) and other breakpoints (16px).</Info>
+
+### Layout Contexts
+
+Desktop layouts adapt the grid based on navigation context. Each context adjusts column widths and offsets to accommodate navigation elements while preserving alignment.
+
+<AccordionGroup>
+  <Accordion title="Side Navigation — Expanded" icon="sidebar">
+    When the side navigation is expanded, the content grid reduces proportionally. The side nav occupies a 4-column equivalent area.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Offset | Type |
+    |------------|----------|---------|--------|--------------|--------|------|
+    | Large | 1920 × 1080 | 12 | 24px | 76px | 24px | Centre |
+    | Default | 1440 × 942 | 12 | 16px | 76px | 24px | Right |
+    | Medium | 1366 × 768 | 12 | 16px | 72px | 38px | Right |
+    | Small | 1280 × 832 | 12 | 16px | 68px | 24px | Right |
+  </Accordion>
+  <Accordion title="Side Navigation — Collapsed" icon="sidebar-flip">
+    When the side navigation is collapsed, the content grid expands while maintaining alignment with the collapsed nav rail.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Offset | Type |
+    |------------|----------|---------|--------|--------------|--------|------|
+    | Large | 1920 × 1080 | 12 | 24px | 94px | 24px | Centre |
+    | Default | 1440 × 942 | 12 | 16px | 94px | 24px | Right |
+    | Medium | 1366 × 768 | 12 | 16px | 88px | 38px | Right |
+    | Small | 1280 × 832 | 12 | 16px | 82px | 24px | Right |
+  </Accordion>
+  <Accordion title="Top & Bottom Navigation" icon="bars">
+    Grid anchors below the header and above the footer. The full viewport width is available for the content grid.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Type |
+    |------------|----------|---------|--------|--------------|------|
+    | Large | 1920 × 1080 | 1 | 16px | 80px | Top |
+    | Default | 1440 × 942 | 1 | 16px | 80px | Top |
+    | Medium | 1366 × 768 | 1 | 16px | 72px | Top |
+    | Small | 1280 × 832 | 1 | 16px | 68px | Top |
+  </Accordion>
+  <Accordion title="Side Drawer" icon="window-restore">
+    Drawers overlay or compress the content area. TARMAC supports 4-column (standard) and 6-column (extended) drawer widths.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Offset | Type |
+    |------------|----------|---------|--------|--------------|--------|------|
+    | SD_L (1440) | 1440 × 942 | 4 | 16px | 86px | 24px | Right |
+    | SD_XL (1440) | 1440 × 942 | 6 | 16px | 82px | 24px | Right |
+    | SD_L (1366) | 1366 × 768 | 4 | 16px | 64px | 24px | Right |
+    | SD_XL (1366) | 1366 × 768 | 6 | 16px | 60px | 24px | Right |
+    | SD_L (1280) | 1280 × 832 | 4 | 16px | 60px | 24px | Right |
+    | SD_XL (1280) | 1280 × 832 | 6 | 16px | 56px | 24px | Right |
+
+    <Tip>Use the 4-column drawer (SD_L) for simple forms and detail panels. Reserve the 6-column drawer (SD_XL) for complex workflows that need more horizontal space.</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Accessibility & Readability
+
+Desktop grid decisions directly impact readability and accessibility. The TARMAC grid is designed to:
+
+<Steps>
+  <Step title="Maintain consistent reading widths">
+    Content stays within a 1440px grid frame to prevent eye-strain on ultra-wide monitors.
+  </Step>
+  <Step title="Prevent excessive line lengths">
+    On screens wider than 1920px, the grid locks to a centered 1280px container.
+  </Step>
+  <Step title="Support predictable scan patterns">
+    Consistent column alignment creates reliable visual anchors for high-density UIs.
+  </Step>
+  <Step title="Preserve typographic hierarchy">
+    Grid structure reinforces heading and body text relationships through consistent alignment.
+  </Step>
+  <Step title="Ensure comfortable interaction spacing">
+    Gutters and margins provide adequate spacing for motor interactions and touch targets.
+  </Step>
+  <Step title="Balance contrast and whitespace">
+    The grid prevents content from becoming too dense or too sparse at any breakpoint.
+  </Step>
+</Steps>
+
+---
+
+## Mobile Grid System
+
+### Supported Viewports
+
+| Screen Size | Usage |
+|-------------|-------|
+| 390 × 844 | Default reference size |
+| 360 × 800 | Secondary modern devices |
+| 320 × 568 | POS and constrained environments |
+
+### Main Content Grid
+
+The mobile content grid uses 4 columns across all breakpoints, providing a simple and consistent layout framework.
+
+| Breakpoint | Viewport | Columns | Gutter | Margin |
+|------------|----------|---------|--------|--------|
+| Large | 390 × 844 | 4 | 16px | 16px |
+| Default | 360 × 800 | 4 | 16px | 16px |
+| Small | 320 × 568 | 4 | 16px | 16px |
+
+<Info>Mobile gutters and margins remain fixed at 16px across all breakpoints. The columns themselves are fluid and resize to fill the available width.</Info>
+
+### Navigation Grids
+
+<Tabs>
+  <Tab title="Top & Bottom Nav (2 Columns)">
+    The navigation bar uses a simplified 2-column grid for balanced placement of navigation elements.
+
+    | Breakpoint | Viewport | Columns | Gutter | Offset |
+    |------------|----------|---------|--------|--------|
+    | Large | 390 × 844 | 2 | 16px | 24 & 16px |
+    | Default | 360 × 800 | 2 | 16px | 24 & 16px |
+    | Small | 320 × 568 | 2 | 16px | 16 & 12px |
+  </Tab>
+  <Tab title="Side Nav (3 Columns)">
+    The mobile side navigation overlay uses a 3-column grid for menu items and navigation structure.
+
+    | Breakpoint | Viewport | Columns | Gutter | Offset |
+    |------------|----------|---------|--------|--------|
+    | Large | 390 × 844 | 3 | 16px | 16px |
+    | Default | 360 × 800 | 3 | 16px | 16px |
+    | Small | 320 × 568 | 3 | 16px | 16px |
+  </Tab>
+</Tabs>
+
+The 4-column content grid, 2-column navigation grid, and 3-column side navigation grid form a flexible yet disciplined framework that adapts across Large, Default, and Small breakpoints.
+
+---
+
+## General Principles
+
+<CardGroup cols={2}>
+  <Card title="Consistency over complexity" icon="equals">
+    Apply the same visual logic across all surfaces. A predictable grid reduces cognitive load for both users and builders.
+  </Card>
+  <Card title="Content-first alignment" icon="align-left">
+    Grids support meaning — they don't compete with it. Layout decisions should serve the content hierarchy, not override it.
+  </Card>
+  <Card title="Predictable navigation zones" icon="compass">
+    Users should always know where to look. Consistent placement of navigation, content, and actions builds spatial memory.
+  </Card>
+  <Card title="Scalable spacing system" icon="ruler-combined">
+    Built from TARMAC spacing tokens. Grid gutters, margins, and offsets reference the same scale used across all components.
+  </Card>
+  <Card title="Clarity at operational scale" icon="binoculars">
+    Interfaces must remain readable in real-world environments — from compact POS terminals to wide enterprise dashboards.
+  </Card>
+  <Card title="Grid stability" icon="lock">
+    Layouts should not jump, shift, or realign unexpectedly. Transitions between breakpoints and navigation states must feel smooth and intentional.
+  </Card>
+</CardGroup>
+
+<Warning>Never break the grid to "make something fit." If content doesn't align to the grid, revisit the content structure or component sizing — not the grid itself.</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={3}>
+  <Card title="Spacing" icon="ruler-horizontal" href="/foundations/spacing">
+    Spacing scale and layout tokens that power grid gutters and margins.
+  </Card>
+  <Card title="Typography" icon="font" href="/foundations/typography">
+    Type scale and reading width guidelines that work with the grid.
+  </Card>
+  <Card title="Layout Patterns" icon="table-columns" href="/patterns/layout">
+    Common layout patterns built on the TARMAC grid system.
+  </Card>
+</CardGroup>

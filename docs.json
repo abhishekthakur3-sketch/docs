@@ -46,6 +46,7 @@
             "pages": [
               "foundations/colors",
               "foundations/spacing",
+              "foundations/grid-system",
               "foundations/typography",
               "foundations/tokens",
               "foundations/elevation",
