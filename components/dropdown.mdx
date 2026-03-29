@@ -1,0 +1,395 @@
+---
+title: Dropdown
+description: Dropdowns provide a compact way to present multiple selectable options while preserving screen space. Users expand a list and select a value from available items.
+icon: "caret-down"
+---
+
+## Overview
+
+Dropdowns combine an input field and an options list to create a complete selection interface. Users interact by expanding the list and selecting an option — the dropdown then collapses and displays the chosen value. The system is built from three foundational elements: Dropdown Input Field, Dropdown List Cells, and Dropdown Lists.
+
+<CardGroup cols={3}>
+  <Card title="3 Sub-Components" icon="cubes">
+    Input Field, List Cells, Lists
+  </Card>
+  <Card title="6 States" icon="circle-dot">
+    Default, Hover, Active, Focused, Disabled, Ghost
+  </Card>
+  <Card title="3 Sizes" icon="expand">
+    Large, Default, Small
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with dropdown component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dropdown Component Preview — Replace with /assets/components/dropdown/dropdown-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+Explore dropdown combinations across sub-components.
+
+<Tabs>
+  <Tab title="Collapsed vs Expanded">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dropdown Variants — Collapsed and Expanded states across Large, Default, Small sizes<br/>Replace with /assets/components/dropdown/dropdown-variants.png</div>
+    </div>
+  </Tab>
+  <Tab title="Input Field Types">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dropdown Input Field Types — Default, Add-on Left, Add-on Right<br/>Replace with /assets/components/dropdown/dropdown-input-types.png</div>
+    </div>
+  </Tab>
+  <Tab title="List Cell Styles">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dropdown List Cells — Regular and Info Blue styles across states<br/>Replace with /assets/components/dropdown/dropdown-cell-styles.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>The Dropdown system is composed of three sub-components that work together. See each section below for detailed specs.</Info>
+
+---
+
+## Dropdown Input Field Matrix
+
+Complete reference: Style × Type × State combinations across all three sizes.
+
+<Tabs>
+  <Tab title="Regular Style">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px'}}>
+      <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+        <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Regular Style — Default, Add-on Left, Add-on Right types × 6 states × 3 sizes<br/>Replace with /assets/components/dropdown/dropdown-input-regular-matrix.png</div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Blue Style">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px'}}>
+      <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+        <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Blue Style — Default, Add-on Left, Add-on Right types × 6 states × 3 sizes<br/>Replace with /assets/components/dropdown/dropdown-input-blue-matrix.png</div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Dropdown List Cell Matrix
+
+<Tabs>
+  <Tab title="Regular">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Regular List Cells — Default, Hover, Pressed, Disabled × 3 sizes<br/>Replace with /assets/components/dropdown/dropdown-cells-regular.png</div>
+    </div>
+  </Tab>
+  <Tab title="Info Blue">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Info Blue List Cells — Default, Hover, Pressed, Disabled × 3 sizes<br/>Replace with /assets/components/dropdown/dropdown-cells-info-blue.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Sub-Component: Dropdown Input Field
+
+The visible control that triggers the dropdown list. Displays the currently selected option and allows users to open the list.
+
+| Property | Options | Description |
+|----------|---------|-------------|
+| Style | Regular, Blue | Visual theme alignment |
+| Type | Default, Add-on Left, Add-on Right | Layout configuration |
+| State | Default, Hover, Active, Focused, Disabled, Ghost | Interaction feedback |
+| Size | Large, Default, Small | Dimensional scale |
+
+---
+
+## Sub-Component: Dropdown List Cells
+
+Individual selectable options within the dropdown list. Each cell acts as a selectable item with optional visual elements.
+
+| Property | Options | Description |
+|----------|---------|-------------|
+| Style | Regular, Info Blue | Visual differentiation |
+| State | Default, Hover, Pressed, Disabled | Selection feedback |
+| Size | Large, Default, Small | Matches input field size |
+
+---
+
+## Sub-Component: Dropdown Lists
+
+Container holding a group of dropdown list cells. Appears when the input field is expanded.
+
+| Property | Options | Description |
+|----------|---------|-------------|
+| List Count | 2–8 Cells | Number of visible options |
+| Variant | List Set 1, List Set 2 | Cell composition pattern |
+| Size | Large, Default, Small | Matches input field size |
+
+---
+
+## Input Field Types
+
+| Type | Description | Use When |
+|------|-------------|----------|
+| Default | Standard dropdown with trailing indicator | General selection fields |
+| Add-on Left | Container on left for icons or context | Category-prefixed selections |
+| Add-on Right | Container on right for controls or actions | Selections with secondary actions |
+
+---
+
+## Anatomy — Input Field
+
+{/* 🎨 DESIGNER: Replace with dropdown input field anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dropdown Input Field Anatomy — Replace with /assets/components/dropdown/dropdown-input-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Container | Yes | Input field wrapper |
+| 2 | Title Bar | No | Label above the input field |
+| 3 | Title Icon | No | Icon next to the title |
+| 4 | Helper Text | No | Contextual guidance below title |
+| 5 | Input Container | Yes | Main interactive area |
+| 6 | Leading Icon | No | Icon before placeholder text |
+| 7 | Placeholder / Value | Yes | Selected value or hint text |
+| 8 | Trailing Icon | Yes | Dropdown chevron indicator |
+
+---
+
+## Anatomy — List Cell
+
+{/* 🎨 DESIGNER: Replace with dropdown list cell anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dropdown List Cell Anatomy — Replace with /assets/components/dropdown/dropdown-cell-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Cell Container | Yes | Row wrapper |
+| 2 | Avatar | No | User image for people lists |
+| 3 | Checkbox | No | Multi-select indicator |
+| 4 | Leading Icon | No | Contextual icon before text |
+| 5 | Primary Text | Yes | Option label |
+| 6 | Subtext | No | Secondary description |
+| 7 | Trailing Icon | No | Status or action indicator |
+
+---
+
+## Anatomy — Dropdown List
+
+{/* 🎨 DESIGNER: Replace with dropdown list anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dropdown List Anatomy — Replace with /assets/components/dropdown/dropdown-list-anatomy.png</div>
+</div>
+
+| # | Element | Description |
+|---|---------|-------------|
+| 1 | List Container | Scrollable wrapper with border-radius and shadow |
+| 2–16 | Cells + Dividers | Alternating list cells and divider lines |
+
+---
+
+## Sizes
+
+| Size | Input Height | Cell Height | Usage |
+|------|-------------|-------------|-------|
+| Large | 48px | 48px | Prominent forms, touch-friendly interfaces |
+| Default | 44px | 44px | Standard form fields |
+| Small | 36px | 36px | Dense layouts, compact filters |
+
+---
+
+## States
+
+| State | Visual Treatment | Behavior |
+|-------|-----------------|----------|
+| Default | Neutral border, placeholder text | Ready for interaction |
+| Hover | Subtle border/background change | Cursor over the field |
+| Active | Expanded list visible | User clicked to open |
+| Focused | Focus ring visible | Keyboard navigation active |
+| Disabled | 40% opacity, non-interactive | Selection unavailable |
+| Ghost | Skeleton/loading appearance | Data is loading |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Click input field | Expands dropdown list |
+| Select an option | Updates field value, collapses list |
+| Click outside | Collapses list without selection |
+| Arrow keys (when focused) | Navigate between options |
+| Enter / Space | Select highlighted option |
+| Escape | Close dropdown list |
+| Disabled state | Cannot be opened |
+
+---
+
+## List Count
+
+Dropdown lists support 2–8 visible cells. Keep lists concise for readability.
+
+| Count | Cells | Recommended Use |
+|-------|-------|-----------------|
+| 2 | 2 options | Binary-plus selections |
+| 3 | 3 options | Small option sets |
+| 4 | 4 options | Medium option sets |
+| 5 | 5 options | Default recommendation |
+| 6 | 6 options | Extended option sets |
+| 7 | 7 options | Large option sets |
+| 8 | 8 options | Maximum before scrolling |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use for selecting from predefined option sets
+    - Keep option labels short and scannable
+    - Match dropdown size to surrounding form elements
+    - Use Info Blue cells to highlight recommended options
+    - Provide a clear placeholder or default selection
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use for binary choices (use Toggle or Checkbox)
+    - Don't use for large datasets (use searchable autocomplete)
+    - Don't exceed 8 visible options without scrolling
+    - Don't nest dropdowns inside other dropdowns
+    - Don't use for frequently used quick actions
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="listbox"` on the options container |
+| Keyboard | Arrow keys navigate options, Enter/Space selects, Escape closes |
+| Focus | Visible focus ring on input field and active option |
+| Screen reader | Announce selected value, expanded/collapsed state, option count |
+| Disabled | Communicate disabled state via `aria-disabled="true"` |
+| Label | Associate with `<label>` or `aria-label` for context |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Input Field">
+    | Token | Value |
+    |-------|-------|
+    | `dropdown-input-height-lg` | 48px |
+    | `dropdown-input-height-md` | 44px |
+    | `dropdown-input-height-sm` | 36px |
+    | `dropdown-input-border-radius` | 8px |
+    | `dropdown-input-border-color` | #D1D5DB |
+    | `dropdown-input-focus-ring` | #2396FB |
+    | `dropdown-input-disabled-opacity` | 0.4 |
+  </Tab>
+  <Tab title="List Cell">
+    | Token | Value |
+    |-------|-------|
+    | `dropdown-cell-height-lg` | 48px |
+    | `dropdown-cell-height-md` | 44px |
+    | `dropdown-cell-height-sm` | 36px |
+    | `dropdown-cell-hover-bg` | #F5F5F5 |
+    | `dropdown-cell-pressed-bg` | #EBEBEB |
+    | `dropdown-cell-info-blue` | #2396FB |
+  </Tab>
+  <Tab title="List Container">
+    | Token | Value |
+    |-------|-------|
+    | `dropdown-list-border-radius` | 8px |
+    | `dropdown-list-shadow` | 0 4px 12px rgba(0,0,0,0.12) |
+    | `dropdown-list-border-color` | #E5E7EB |
+    | `dropdown-list-max-height` | auto (based on cell count) |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface DropdownProps {
+  style?: 'regular' | 'blue';
+  type?: 'default' | 'addon_left' | 'addon_right';
+  size?: 'lg' | 'md' | 'sm';
+  state?: 'default' | 'hover' | 'active' | 'focused' | 'disabled' | 'ghost';
+  placeholder?: string;
+  value?: string;
+  options: DropdownOption[];
+  onChange?: (value: string) => void;
+  disabled?: boolean;
+  label?: string;
+  helperText?: string;
+  leadingIcon?: ReactNode;
+  trailingIcon?: ReactNode;
+}
+
+interface DropdownOption {
+  value: string;
+  label: string;
+  subtext?: string;
+  avatar?: string;
+  leadingIcon?: ReactNode;
+  trailingIcon?: ReactNode;
+  disabled?: boolean;
+  cellStyle?: 'regular' | 'info_blue';
+}
+```
+
+```tsx Usage
+// Basic dropdown
+<Dropdown
+  label="Select country"
+  placeholder="Choose an option"
+  options={[
+    { value: 'in', label: 'India' },
+    { value: 'us', label: 'United States' },
+    { value: 'uk', label: 'United Kingdom' },
+  ]}
+  onChange={(val) => console.log(val)}
+/>
+
+// With add-on left
+<Dropdown
+  type="addon_left"
+  size="lg"
+  label="Category"
+  options={categoryOptions}
+/>
+
+// With avatars and subtext
+<Dropdown
+  placeholder="Assign to"
+  options={[
+    { value: '1', label: 'John Doe', subtext: 'Engineering', avatar: '/avatars/john.png' },
+    { value: '2', label: 'Jane Smith', subtext: 'Design', avatar: '/avatars/jane.png' },
+  ]}
+/>
+
+// Info Blue highlighted option
+<Dropdown
+  options={[
+    { value: 'rec', label: 'Recommended', cellStyle: 'info_blue' },
+    { value: 'std', label: 'Standard' },
+    { value: 'eco', label: 'Economy' },
+  ]}
+/>
+
+// Disabled
+<Dropdown disabled placeholder="Not available" options={[]} />
+```
+</CodeGroup>

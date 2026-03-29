@@ -62,6 +62,7 @@
                   "components/radio",
                   "components/input",
                   "components/input-area",
+                  "components/dropdown",
                   "components/badge",
                   "components/tags",
                   "components/pills",
