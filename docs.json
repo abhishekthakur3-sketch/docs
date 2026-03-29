@@ -15,7 +15,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Introduction",
+        "tab": "Design System",
         "groups": [
           {
             "group": "Introduction",
@@ -27,12 +27,7 @@
               "getting-started/installation",
               "getting-started/quick-start"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Foundations",
-        "groups": [
+          },
           {
             "group": "Foundations",
             "pages": [
@@ -55,12 +50,7 @@
               "foundations/image-library",
               "about/logo"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Components",
-        "groups": [
+          },
           {
             "group": "Components",
             "pages": [
@@ -72,24 +62,14 @@
               "components/tags",
               "components/tooltip"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Patterns",
-        "groups": [
+          },
           {
             "group": "Patterns",
             "pages": [
               "patterns/layout",
               "patterns/forms"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Accessibility",
-        "groups": [
+          },
           {
             "group": "Accessibility",
             "pages": [
