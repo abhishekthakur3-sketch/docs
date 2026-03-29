@@ -59,510 +59,643 @@ The system is built in three layers:
 
 The Tarmac core palette is grounded in real-world materials and environments that shape the brand experience.
 
-| Color | Hex | Role | Inspiration |
-|-------|-----|------|-------------|
-| Tar Black | `#000000` | Primary | Road tar — reliability, infrastructure |
-| Optic White | `#FFFFFF` | Primary | Clarity, space, and contrast |
-| Velocity Red | `#ED1B36` | Accent | Speed, urgency, forward motion |
-| Atlantic Blue | `#2396FB` | Secondary | Ocean trade routes — trust, global connectivity |
-| Kinetic Green | `#1BA86E` | Secondary | Progress and efficiency — continuous movement |
-| Cardbox | `#B88B5C` | Secondary | Shipping cartons — physical reality of parcels |
-| Cargo Grey | `#666666` | Neutral | Structure, UI elements, supporting hierarchy |
-| Ash Grey | `#D0CFCF` | Neutral | Surfaces and dividers — depth and contrast |
-
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '24px' }}>
+  <div style={{ background: '#000000', borderRadius: '8px', padding: '16px', color: '#fff' }}>
+    <div style={{ fontWeight: 600 }}>Tar Black</div>
+    <div style={{ fontSize: '12px', opacity: 0.8 }}>#000000 · Primary</div>
+  </div>
+  <div style={{ background: '#FFFFFF', borderRadius: '8px', padding: '16px', color: '#000', border: '1px solid #e0e0e0' }}>
+    <div style={{ fontWeight: 600 }}>Optic White</div>
+    <div style={{ fontSize: '12px', opacity: 0.6 }}>#FFFFFF · Primary</div>
+  </div>
+  <div style={{ background: '#ED1B36', borderRadius: '8px', padding: '16px', color: '#fff' }}>
+    <div style={{ fontWeight: 600 }}>Velocity Red</div>
+    <div style={{ fontSize: '12px', opacity: 0.8 }}>#ED1B36 · Accent</div>
+  </div>
+  <div style={{ background: '#2396FB', borderRadius: '8px', padding: '16px', color: '#fff' }}>
+    <div style={{ fontWeight: 600 }}>Atlantic Blue</div>
+    <div style={{ fontSize: '12px', opacity: 0.8 }}>#2396FB · Secondary</div>
+  </div>
+  <div style={{ background: '#1BA86E', borderRadius: '8px', padding: '16px', color: '#fff' }}>
+    <div style={{ fontWeight: 600 }}>Kinetic Green</div>
+    <div style={{ fontSize: '12px', opacity: 0.8 }}>#1BA86E · Secondary</div>
+  </div>
+  <div style={{ background: '#B88B5C', borderRadius: '8px', padding: '16px', color: '#fff' }}>
+    <div style={{ fontWeight: 600 }}>Cardbox</div>
+    <div style={{ fontSize: '12px', opacity: 0.8 }}>#B88B5C · Secondary</div>
+  </div>
+  <div style={{ background: '#666666', borderRadius: '8px', padding: '16px', color: '#fff' }}>
+    <div style={{ fontWeight: 600 }}>Cargo Grey</div>
+    <div style={{ fontSize: '12px', opacity: 0.8 }}>#666666 · Neutral</div>
+  </div>
+  <div style={{ background: '#D0CFCF', borderRadius: '8px', padding: '16px', color: '#333' }}>
+    <div style={{ fontWeight: 600 }}>Ash Grey</div>
+    <div style={{ fontSize: '12px', opacity: 0.6 }}>#D0CFCF · Neutral</div>
+  </div>
+</div>
 
 ## Core Colors
 
-### Brand / Accent Colors
+### Red (Velocity Red)
 
-<Tabs>
-  <Tab title="Red (Velocity Red)">
-    | Token | Hex |
-    |-------|-----|
-    | `red-15` | `#FEF1F3` |
-    | `red-25` | `#FDE8EB` |
-    | `red-50` | `#FBD1D7` |
-    | `red-100` | `#F9B3BC` |
-    | `red-200` | `#F68D9A` |
-    | `red-300` | `#F36779` |
-    | `red-400` | `#F04158` |
-    | `red-500` | `#ED1B36` |
-    | `red-600` | `#C5172D` |
-    | `red-700` | `#9E1224` |
-    | `red-800` | `#770E1B` |
-    | `red-900` | `#4F0912` |
-    | `red-950` | `#2F050B` |
-  </Tab>
-  <Tab title="Blue (Atlantic Blue)">
-    | Token | Hex |
-    |-------|-----|
-    | `blue-15` | `#F0F8FF` |
-    | `blue-25` | `#E6F3FE` |
-    | `blue-50` | `#D3EAFE` |
-    | `blue-100` | `#B6DCFE` |
-    | `blue-200` | `#91CAFD` |
-    | `blue-300` | `#6CB9FC` |
-    | `blue-400` | `#48A7FC` |
-    | `blue-500` | `#2396FB` |
-    | `blue-600` | `#1D7DD1` |
-    | `blue-700` | `#1764A7` |
-    | `blue-800` | `#124B7E` |
-    | `blue-900` | `#0C3254` |
-    | `blue-950` | `#071E32` |
-  </Tab>
-  <Tab title="Green (Kinetic Green)">
-    | Token | Hex |
-    |-------|-----|
-    | `green-15` | `#F4FBF8` |
-    | `green-25` | `#ECF8F3` |
-    | `green-50` | `#D1EEE2` |
-    | `green-100` | `#B3E2CF` |
-    | `green-200` | `#8DD3B6` |
-    | `green-300` | `#67C59E` |
-    | `green-400` | `#41B686` |
-    | `green-500` | `#1BA86E` |
-    | `green-600` | `#178C5C` |
-    | `green-700` | `#127049` |
-    | `green-800` | `#0E5437` |
-    | `green-900` | `#093825` |
-    | `green-950` | `#052216` |
-  </Tab>
-  <Tab title="Cyan">
-    | Token | Hex |
-    |-------|-----|
-    | `cyan-15` | `#F3FAFC` |
-    | `cyan-25` | `#EBF7FA` |
-    | `cyan-50` | `#CCECF2` |
-    | `cyan-100` | `#AAE0E9` |
-    | `cyan-200` | `#80D0DE` |
-    | `cyan-300` | `#55C1D3` |
-    | `cyan-400` | `#2BB1C8` |
-    | `cyan-500` | `#00A2BD` |
-    | `cyan-600` | `#00879D` |
-    | `cyan-700` | `#006C7E` |
-    | `cyan-800` | `#00515F` |
-    | `cyan-900` | `#00363F` |
-    | `cyan-950` | `#002026` |
-  </Tab>
-  <Tab title="Yellow">
-    | Token | Hex |
-    |-------|-----|
-    | `yellow-15` | `#FCFAF2` |
-    | `yellow-25` | `#FBF7EA` |
-    | `yellow-50` | `#F5ECCC` |
-    | `yellow-100` | `#EFDFAB` |
-    | `yellow-200` | `#E7CF80` |
-    | `yellow-300` | `#DFBF56` |
-    | `yellow-400` | `#D7AF2C` |
-    | `yellow-500` | `#CF9F02` |
-    | `yellow-600` | `#AC8402` |
-    | `yellow-700` | `#8A6A01` |
-    | `yellow-800` | `#685001` |
-    | `yellow-900` | `#453501` |
-    | `yellow-950` | `#292000` |
-  </Tab>
-  <Tab title="Crimson">
-    | Token | Hex |
-    |-------|-----|
-    | `crimson-15` | `#FDF2F4` |
-    | `crimson-25` | `#FCE9ED` |
-    | `crimson-50` | `#F8D0D8` |
-    | `crimson-100` | `#F3B1BE` |
-    | `crimson-200` | `#ED899D` |
-    | `crimson-300` | `#E8627D` |
-    | `crimson-400` | `#E23B5D` |
-    | `crimson-500` | `#DC143C` |
-    | `crimson-600` | `#B71132` |
-    | `crimson-700` | `#930D28` |
-    | `crimson-800` | `#6E0A1E` |
-    | `crimson-900` | `#490714` |
-    | `crimson-950` | `#2C040C` |
-  </Tab>
-  <Tab title="Cardbox">
-    | Token | Hex |
-    |-------|-----|
-    | `cardbox-15` | `#FAF8F4` |
-    | `cardbox-25` | `#F7F3ED` |
-    | `cardbox-50` | `#F1E8DE` |
-    | `cardbox-100` | `#E7D8C9` |
-    | `cardbox-200` | `#DBC5AD` |
-    | `cardbox-300` | `#D0B292` |
-    | `cardbox-400` | `#C49E77` |
-    | `cardbox-500` | `#B88B5C` |
-    | `cardbox-600` | `#99744D` |
-    | `cardbox-700` | `#7B5D3D` |
-    | `cardbox-800` | `#5C462E` |
-    | `cardbox-900` | `#3D2E1F` |
-    | `cardbox-950` | `#292000` |
-  </Tab>
-  <Tab title="Orange">
-    | Token | Hex |
-    |-------|-----|
-    | `orange-15` | `#FDF5F1` |
-    | `orange-25` | `#FCEFE8` |
-    | `orange-50` | `#FAE3D7` |
-    | `orange-100` | `#F7D0BC` |
-    | `orange-200` | `#F3B99B` |
-    | `orange-300` | `#EFA27A` |
-    | `orange-400` | `#EB8A58` |
-    | `orange-500` | `#E77337` |
-    | `orange-600` | `#C0602E` |
-    | `orange-700` | `#9A4D25` |
-    | `orange-800` | `#743A1C` |
-    | `orange-900` | `#4D2612` |
-    | `orange-950` | `#2E170B` |
-  </Tab>
-  <Tab title="Purple">
-    | Token | Hex |
-    |-------|-----|
-    | `purple-15` | `#F6F1FE` |
-    | `purple-25` | `#F0E8FD` |
-    | `purple-50` | `#E5D8FB` |
-    | `purple-100` | `#D3BDF9` |
-    | `purple-200` | `#BD9CF6` |
-    | `purple-300` | `#A87CF3` |
-    | `purple-400` | `#925BF0` |
-    | `purple-500` | `#7C3AED` |
-    | `purple-600` | `#6730C5` |
-    | `purple-700` | `#53279E` |
-    | `purple-800` | `#3E1D77` |
-    | `purple-900` | `#29134F` |
-    | `purple-950` | `#190C2F` |
-  </Tab>
-  <Tab title="Pink">
-    | Token | Hex |
-    |-------|-----|
-    | `pink-15` | `#FDF2F7` |
-    | `pink-25` | `#F9DCE9` |
-    | `pink-50` | `#F9DCE9` |
-    | `pink-100` | `#F5C5DB` |
-    | `pink-200` | `#F0A8C8` |
-    | `pink-300` | `#EC8CB6` |
-    | `pink-400` | `#E76FA4` |
-    | `pink-500` | `#E25292` |
-    | `pink-600` | `#BC447A` |
-    | `pink-700` | `#973761` |
-    | `pink-800` | `#712949` |
-    | `pink-900` | `#4B1B31` |
-    | `pink-950` | `#2D101D` |
-  </Tab>
-</Tabs>
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#FEF1F3', borderRadius: '4px', border: '1px solid #eee' }} title="Red 15" />
+  <div style={{ width: '60px', height: '40px', background: '#FDE8EB', borderRadius: '4px' }} title="Red 25" />
+  <div style={{ width: '60px', height: '40px', background: '#FBD1D7', borderRadius: '4px' }} title="Red 50" />
+  <div style={{ width: '60px', height: '40px', background: '#F9B3BC', borderRadius: '4px' }} title="Red 100" />
+  <div style={{ width: '60px', height: '40px', background: '#F68D9A', borderRadius: '4px' }} title="Red 200" />
+  <div style={{ width: '60px', height: '40px', background: '#F36779', borderRadius: '4px' }} title="Red 300" />
+  <div style={{ width: '60px', height: '40px', background: '#F04158', borderRadius: '4px' }} title="Red 400" />
+  <div style={{ width: '60px', height: '40px', background: '#ED1B36', borderRadius: '4px' }} title="Red 500" />
+  <div style={{ width: '60px', height: '40px', background: '#C5172D', borderRadius: '4px' }} title="Red 600" />
+  <div style={{ width: '60px', height: '40px', background: '#9E1224', borderRadius: '4px' }} title="Red 700" />
+  <div style={{ width: '60px', height: '40px', background: '#770E1B', borderRadius: '4px' }} title="Red 800" />
+  <div style={{ width: '60px', height: '40px', background: '#4F0912', borderRadius: '4px' }} title="Red 900" />
+  <div style={{ width: '60px', height: '40px', background: '#2F050B', borderRadius: '4px' }} title="Red 950" />
+</div>
 
-### Neutral Colors
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#FEF1F3` | `#FDE8EB` | `#FBD1D7` | `#F9B3BC` | `#F68D9A` | `#F36779` | `#F04158` | `#ED1B36` | `#C5172D` | `#9E1224` | `#770E1B` | `#4F0912` | `#2F050B` |
 
-<Tabs>
-  <Tab title="Black (Tar Black)">
-    | Token | Hex |
-    |-------|-----|
-    | `black-25` | `#454545` |
-    | `black-50` | `#404040` |
-    | `black-100` | `#3B3B3B` |
-    | `black-150` | `#333333` |
-    | `black-200` | `#2B2B2B` |
-    | `black-250` | `#262626` |
-    | `black-300` | `#212121` |
-    | `black-350` | `#1A1A1A` |
-    | `black-400` | `#121212` |
-    | `black-450` | `#0D0D0D` |
-    | `black-500` | `#000000` |
-  </Tab>
-  <Tab title="White (Optic White)">
-    | Token | Hex |
-    |-------|-----|
-    | `white-25` | `#BFBFBF` |
-    | `white-50` | `#C4C4C4` |
-    | `white-100` | `#CCCCCC` |
-    | `white-150` | `#D4D4D4` |
-    | `white-200` | `#D9D9D9` |
-    | `white-250` | `#DEDEDE` |
-    | `white-300` | `#E6E6E6` |
-    | `white-350` | `#EDEDED` |
-    | `white-400` | `#F2F2F2` |
-    | `white-450` | `#F7F7F7` |
-    | `white-500` | `#FFFFFF` |
-  </Tab>
-  <Tab title="Grey (Cargo Grey)">
-    | Token | Hex |
-    |-------|-----|
-    | `grey-25` | `#E6E5E5` |
-    | `grey-50` | `#D9D8D8` |
-    | `grey-100` | `#CDCBCB` |
-    | `grey-150` | `#C0BFBF` |
-    | `grey-200` | `#B3B2B2` |
-    | `grey-250` | `#A6A5A5` |
-    | `grey-300` | `#999999` |
-    | `grey-350` | `#8C8C8C` |
-    | `grey-400` | `#808080` |
-    | `grey-450` | `#737373` |
-    | `grey-500` | `#666666` |
-  </Tab>
-  <Tab title="Charcoal (Coal)">
-    | Token | Hex |
-    |-------|-----|
-    | `coal-25` | `#C2C6D6` |
-    | `coal-50` | `#B2B8CC` |
-    | `coal-100` | `#A3AAC2` |
-    | `coal-150` | `#949CB8` |
-    | `coal-200` | `#848EAE` |
-    | `coal-250` | `#7580A3` |
-    | `coal-300` | `#667199` |
-    | `coal-350` | `#5C668A` |
-    | `coal-400` | `#515B7B` |
-    | `coal-450` | `#474F6B` |
-    | `coal-500` | `#3D445C` |
-  </Tab>
-</Tabs>
+### Blue (Atlantic Blue)
 
-### Alpha Colors
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#F0F8FF', borderRadius: '4px', border: '1px solid #eee' }} title="Blue 15" />
+  <div style={{ width: '60px', height: '40px', background: '#E6F3FE', borderRadius: '4px' }} title="Blue 25" />
+  <div style={{ width: '60px', height: '40px', background: '#D3EAFE', borderRadius: '4px' }} title="Blue 50" />
+  <div style={{ width: '60px', height: '40px', background: '#B6DCFE', borderRadius: '4px' }} title="Blue 100" />
+  <div style={{ width: '60px', height: '40px', background: '#91CAFD', borderRadius: '4px' }} title="Blue 200" />
+  <div style={{ width: '60px', height: '40px', background: '#6CB9FC', borderRadius: '4px' }} title="Blue 300" />
+  <div style={{ width: '60px', height: '40px', background: '#48A7FC', borderRadius: '4px' }} title="Blue 400" />
+  <div style={{ width: '60px', height: '40px', background: '#2396FB', borderRadius: '4px' }} title="Blue 500" />
+  <div style={{ width: '60px', height: '40px', background: '#1D7DD1', borderRadius: '4px' }} title="Blue 600" />
+  <div style={{ width: '60px', height: '40px', background: '#1764A7', borderRadius: '4px' }} title="Blue 700" />
+  <div style={{ width: '60px', height: '40px', background: '#124B7E', borderRadius: '4px' }} title="Blue 800" />
+  <div style={{ width: '60px', height: '40px', background: '#0C3254', borderRadius: '4px' }} title="Blue 900" />
+  <div style={{ width: '60px', height: '40px', background: '#071E32', borderRadius: '4px' }} title="Blue 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#F0F8FF` | `#E6F3FE` | `#D3EAFE` | `#B6DCFE` | `#91CAFD` | `#6CB9FC` | `#48A7FC` | `#2396FB` | `#1D7DD1` | `#1764A7` | `#124B7E` | `#0C3254` | `#071E32` |
+
+### Green (Kinetic Green)
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#F4FBF8', borderRadius: '4px', border: '1px solid #eee' }} title="Green 15" />
+  <div style={{ width: '60px', height: '40px', background: '#ECF8F3', borderRadius: '4px' }} title="Green 25" />
+  <div style={{ width: '60px', height: '40px', background: '#D1EEE2', borderRadius: '4px' }} title="Green 50" />
+  <div style={{ width: '60px', height: '40px', background: '#B3E2CF', borderRadius: '4px' }} title="Green 100" />
+  <div style={{ width: '60px', height: '40px', background: '#8DD3B6', borderRadius: '4px' }} title="Green 200" />
+  <div style={{ width: '60px', height: '40px', background: '#67C59E', borderRadius: '4px' }} title="Green 300" />
+  <div style={{ width: '60px', height: '40px', background: '#41B686', borderRadius: '4px' }} title="Green 400" />
+  <div style={{ width: '60px', height: '40px', background: '#1BA86E', borderRadius: '4px' }} title="Green 500" />
+  <div style={{ width: '60px', height: '40px', background: '#178C5C', borderRadius: '4px' }} title="Green 600" />
+  <div style={{ width: '60px', height: '40px', background: '#127049', borderRadius: '4px' }} title="Green 700" />
+  <div style={{ width: '60px', height: '40px', background: '#0E5437', borderRadius: '4px' }} title="Green 800" />
+  <div style={{ width: '60px', height: '40px', background: '#093825', borderRadius: '4px' }} title="Green 900" />
+  <div style={{ width: '60px', height: '40px', background: '#052216', borderRadius: '4px' }} title="Green 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#F4FBF8` | `#ECF8F3` | `#D1EEE2` | `#B3E2CF` | `#8DD3B6` | `#67C59E` | `#41B686` | `#1BA86E` | `#178C5C` | `#127049` | `#0E5437` | `#093825` | `#052216` |
+
+### Cyan
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#F3FAFC', borderRadius: '4px', border: '1px solid #eee' }} title="Cyan 15" />
+  <div style={{ width: '60px', height: '40px', background: '#EBF7FA', borderRadius: '4px' }} title="Cyan 25" />
+  <div style={{ width: '60px', height: '40px', background: '#CCECF2', borderRadius: '4px' }} title="Cyan 50" />
+  <div style={{ width: '60px', height: '40px', background: '#AAE0E9', borderRadius: '4px' }} title="Cyan 100" />
+  <div style={{ width: '60px', height: '40px', background: '#80D0DE', borderRadius: '4px' }} title="Cyan 200" />
+  <div style={{ width: '60px', height: '40px', background: '#55C1D3', borderRadius: '4px' }} title="Cyan 300" />
+  <div style={{ width: '60px', height: '40px', background: '#2BB1C8', borderRadius: '4px' }} title="Cyan 400" />
+  <div style={{ width: '60px', height: '40px', background: '#00A2BD', borderRadius: '4px' }} title="Cyan 500" />
+  <div style={{ width: '60px', height: '40px', background: '#00879D', borderRadius: '4px' }} title="Cyan 600" />
+  <div style={{ width: '60px', height: '40px', background: '#006C7E', borderRadius: '4px' }} title="Cyan 700" />
+  <div style={{ width: '60px', height: '40px', background: '#00515F', borderRadius: '4px' }} title="Cyan 800" />
+  <div style={{ width: '60px', height: '40px', background: '#00363F', borderRadius: '4px' }} title="Cyan 900" />
+  <div style={{ width: '60px', height: '40px', background: '#002026', borderRadius: '4px' }} title="Cyan 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#F3FAFC` | `#EBF7FA` | `#CCECF2` | `#AAE0E9` | `#80D0DE` | `#55C1D3` | `#2BB1C8` | `#00A2BD` | `#00879D` | `#006C7E` | `#00515F` | `#00363F` | `#002026` |
+
+### Yellow
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#FCFAF2', borderRadius: '4px', border: '1px solid #eee' }} title="Yellow 15" />
+  <div style={{ width: '60px', height: '40px', background: '#FBF7EA', borderRadius: '4px' }} title="Yellow 25" />
+  <div style={{ width: '60px', height: '40px', background: '#F5ECCC', borderRadius: '4px' }} title="Yellow 50" />
+  <div style={{ width: '60px', height: '40px', background: '#EFDFAB', borderRadius: '4px' }} title="Yellow 100" />
+  <div style={{ width: '60px', height: '40px', background: '#E7CF80', borderRadius: '4px' }} title="Yellow 200" />
+  <div style={{ width: '60px', height: '40px', background: '#DFBF56', borderRadius: '4px' }} title="Yellow 300" />
+  <div style={{ width: '60px', height: '40px', background: '#D7AF2C', borderRadius: '4px' }} title="Yellow 400" />
+  <div style={{ width: '60px', height: '40px', background: '#CF9F02', borderRadius: '4px' }} title="Yellow 500" />
+  <div style={{ width: '60px', height: '40px', background: '#AC8402', borderRadius: '4px' }} title="Yellow 600" />
+  <div style={{ width: '60px', height: '40px', background: '#8A6A01', borderRadius: '4px' }} title="Yellow 700" />
+  <div style={{ width: '60px', height: '40px', background: '#685001', borderRadius: '4px' }} title="Yellow 800" />
+  <div style={{ width: '60px', height: '40px', background: '#453501', borderRadius: '4px' }} title="Yellow 900" />
+  <div style={{ width: '60px', height: '40px', background: '#292000', borderRadius: '4px' }} title="Yellow 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#FCFAF2` | `#FBF7EA` | `#F5ECCC` | `#EFDFAB` | `#E7CF80` | `#DFBF56` | `#D7AF2C` | `#CF9F02` | `#AC8402` | `#8A6A01` | `#685001` | `#453501` | `#292000` |
+
+### Crimson
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#FDF2F4', borderRadius: '4px', border: '1px solid #eee' }} title="Crimson 15" />
+  <div style={{ width: '60px', height: '40px', background: '#FCE9ED', borderRadius: '4px' }} title="Crimson 25" />
+  <div style={{ width: '60px', height: '40px', background: '#F8D0D8', borderRadius: '4px' }} title="Crimson 50" />
+  <div style={{ width: '60px', height: '40px', background: '#F3B1BE', borderRadius: '4px' }} title="Crimson 100" />
+  <div style={{ width: '60px', height: '40px', background: '#ED899D', borderRadius: '4px' }} title="Crimson 200" />
+  <div style={{ width: '60px', height: '40px', background: '#E8627D', borderRadius: '4px' }} title="Crimson 300" />
+  <div style={{ width: '60px', height: '40px', background: '#E23B5D', borderRadius: '4px' }} title="Crimson 400" />
+  <div style={{ width: '60px', height: '40px', background: '#DC143C', borderRadius: '4px' }} title="Crimson 500" />
+  <div style={{ width: '60px', height: '40px', background: '#B71132', borderRadius: '4px' }} title="Crimson 600" />
+  <div style={{ width: '60px', height: '40px', background: '#930D28', borderRadius: '4px' }} title="Crimson 700" />
+  <div style={{ width: '60px', height: '40px', background: '#6E0A1E', borderRadius: '4px' }} title="Crimson 800" />
+  <div style={{ width: '60px', height: '40px', background: '#490714', borderRadius: '4px' }} title="Crimson 900" />
+  <div style={{ width: '60px', height: '40px', background: '#2C040C', borderRadius: '4px' }} title="Crimson 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#FDF2F4` | `#FCE9ED` | `#F8D0D8` | `#F3B1BE` | `#ED899D` | `#E8627D` | `#E23B5D` | `#DC143C` | `#B71132` | `#930D28` | `#6E0A1E` | `#490714` | `#2C040C` |
+
+### Cardbox
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#FAF8F4', borderRadius: '4px', border: '1px solid #eee' }} title="Cardbox 15" />
+  <div style={{ width: '60px', height: '40px', background: '#F7F3ED', borderRadius: '4px' }} title="Cardbox 25" />
+  <div style={{ width: '60px', height: '40px', background: '#F1E8DE', borderRadius: '4px' }} title="Cardbox 50" />
+  <div style={{ width: '60px', height: '40px', background: '#E7D8C9', borderRadius: '4px' }} title="Cardbox 100" />
+  <div style={{ width: '60px', height: '40px', background: '#DBC5AD', borderRadius: '4px' }} title="Cardbox 200" />
+  <div style={{ width: '60px', height: '40px', background: '#D0B292', borderRadius: '4px' }} title="Cardbox 300" />
+  <div style={{ width: '60px', height: '40px', background: '#C49E77', borderRadius: '4px' }} title="Cardbox 400" />
+  <div style={{ width: '60px', height: '40px', background: '#B88B5C', borderRadius: '4px' }} title="Cardbox 500" />
+  <div style={{ width: '60px', height: '40px', background: '#99744D', borderRadius: '4px' }} title="Cardbox 600" />
+  <div style={{ width: '60px', height: '40px', background: '#7B5D3D', borderRadius: '4px' }} title="Cardbox 700" />
+  <div style={{ width: '60px', height: '40px', background: '#5C462E', borderRadius: '4px' }} title="Cardbox 800" />
+  <div style={{ width: '60px', height: '40px', background: '#3D2E1F', borderRadius: '4px' }} title="Cardbox 900" />
+  <div style={{ width: '60px', height: '40px', background: '#292000', borderRadius: '4px' }} title="Cardbox 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#FAF8F4` | `#F7F3ED` | `#F1E8DE` | `#E7D8C9` | `#DBC5AD` | `#D0B292` | `#C49E77` | `#B88B5C` | `#99744D` | `#7B5D3D` | `#5C462E` | `#3D2E1F` | `#292000` |
+
+### Orange
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#FDF5F1', borderRadius: '4px', border: '1px solid #eee' }} title="Orange 15" />
+  <div style={{ width: '60px', height: '40px', background: '#FCEFE8', borderRadius: '4px' }} title="Orange 25" />
+  <div style={{ width: '60px', height: '40px', background: '#FAE3D7', borderRadius: '4px' }} title="Orange 50" />
+  <div style={{ width: '60px', height: '40px', background: '#F7D0BC', borderRadius: '4px' }} title="Orange 100" />
+  <div style={{ width: '60px', height: '40px', background: '#F3B99B', borderRadius: '4px' }} title="Orange 200" />
+  <div style={{ width: '60px', height: '40px', background: '#EFA27A', borderRadius: '4px' }} title="Orange 300" />
+  <div style={{ width: '60px', height: '40px', background: '#EB8A58', borderRadius: '4px' }} title="Orange 400" />
+  <div style={{ width: '60px', height: '40px', background: '#E77337', borderRadius: '4px' }} title="Orange 500" />
+  <div style={{ width: '60px', height: '40px', background: '#C0602E', borderRadius: '4px' }} title="Orange 600" />
+  <div style={{ width: '60px', height: '40px', background: '#9A4D25', borderRadius: '4px' }} title="Orange 700" />
+  <div style={{ width: '60px', height: '40px', background: '#743A1C', borderRadius: '4px' }} title="Orange 800" />
+  <div style={{ width: '60px', height: '40px', background: '#4D2612', borderRadius: '4px' }} title="Orange 900" />
+  <div style={{ width: '60px', height: '40px', background: '#2E170B', borderRadius: '4px' }} title="Orange 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#FDF5F1` | `#FCEFE8` | `#FAE3D7` | `#F7D0BC` | `#F3B99B` | `#EFA27A` | `#EB8A58` | `#E77337` | `#C0602E` | `#9A4D25` | `#743A1C` | `#4D2612` | `#2E170B` |
+
+### Purple
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#F6F1FE', borderRadius: '4px', border: '1px solid #eee' }} title="Purple 15" />
+  <div style={{ width: '60px', height: '40px', background: '#F0E8FD', borderRadius: '4px' }} title="Purple 25" />
+  <div style={{ width: '60px', height: '40px', background: '#E5D8FB', borderRadius: '4px' }} title="Purple 50" />
+  <div style={{ width: '60px', height: '40px', background: '#D3BDF9', borderRadius: '4px' }} title="Purple 100" />
+  <div style={{ width: '60px', height: '40px', background: '#BD9CF6', borderRadius: '4px' }} title="Purple 200" />
+  <div style={{ width: '60px', height: '40px', background: '#A87CF3', borderRadius: '4px' }} title="Purple 300" />
+  <div style={{ width: '60px', height: '40px', background: '#925BF0', borderRadius: '4px' }} title="Purple 400" />
+  <div style={{ width: '60px', height: '40px', background: '#7C3AED', borderRadius: '4px' }} title="Purple 500" />
+  <div style={{ width: '60px', height: '40px', background: '#6730C5', borderRadius: '4px' }} title="Purple 600" />
+  <div style={{ width: '60px', height: '40px', background: '#53279E', borderRadius: '4px' }} title="Purple 700" />
+  <div style={{ width: '60px', height: '40px', background: '#3E1D77', borderRadius: '4px' }} title="Purple 800" />
+  <div style={{ width: '60px', height: '40px', background: '#29134F', borderRadius: '4px' }} title="Purple 900" />
+  <div style={{ width: '60px', height: '40px', background: '#190C2F', borderRadius: '4px' }} title="Purple 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#F6F1FE` | `#F0E8FD` | `#E5D8FB` | `#D3BDF9` | `#BD9CF6` | `#A87CF3` | `#925BF0` | `#7C3AED` | `#6730C5` | `#53279E` | `#3E1D77` | `#29134F` | `#190C2F` |
+
+### Pink
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#FDF2F7', borderRadius: '4px', border: '1px solid #eee' }} title="Pink 15" />
+  <div style={{ width: '60px', height: '40px', background: '#F9DCE9', borderRadius: '4px' }} title="Pink 25" />
+  <div style={{ width: '60px', height: '40px', background: '#F9DCE9', borderRadius: '4px' }} title="Pink 50" />
+  <div style={{ width: '60px', height: '40px', background: '#F5C5DB', borderRadius: '4px' }} title="Pink 100" />
+  <div style={{ width: '60px', height: '40px', background: '#F0A8C8', borderRadius: '4px' }} title="Pink 200" />
+  <div style={{ width: '60px', height: '40px', background: '#EC8CB6', borderRadius: '4px' }} title="Pink 300" />
+  <div style={{ width: '60px', height: '40px', background: '#E76FA4', borderRadius: '4px' }} title="Pink 400" />
+  <div style={{ width: '60px', height: '40px', background: '#E25292', borderRadius: '4px' }} title="Pink 500" />
+  <div style={{ width: '60px', height: '40px', background: '#BC447A', borderRadius: '4px' }} title="Pink 600" />
+  <div style={{ width: '60px', height: '40px', background: '#973761', borderRadius: '4px' }} title="Pink 700" />
+  <div style={{ width: '60px', height: '40px', background: '#712949', borderRadius: '4px' }} title="Pink 800" />
+  <div style={{ width: '60px', height: '40px', background: '#4B1B31', borderRadius: '4px' }} title="Pink 900" />
+  <div style={{ width: '60px', height: '40px', background: '#2D101D', borderRadius: '4px' }} title="Pink 950" />
+</div>
+
+| 15 | 25 | 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `#FDF2F7` | `#F9DCE9` | `#F9DCE9` | `#F5C5DB` | `#F0A8C8` | `#EC8CB6` | `#E76FA4` | `#E25292` | `#BC447A` | `#973761` | `#712949` | `#4B1B31` | `#2D101D` |
+
+## Neutral Colors
+
+### Black (Tar Black)
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#454545', borderRadius: '4px' }} title="Black 25" />
+  <div style={{ width: '60px', height: '40px', background: '#404040', borderRadius: '4px' }} title="Black 50" />
+  <div style={{ width: '60px', height: '40px', background: '#3B3B3B', borderRadius: '4px' }} title="Black 100" />
+  <div style={{ width: '60px', height: '40px', background: '#333333', borderRadius: '4px' }} title="Black 150" />
+  <div style={{ width: '60px', height: '40px', background: '#2B2B2B', borderRadius: '4px' }} title="Black 200" />
+  <div style={{ width: '60px', height: '40px', background: '#262626', borderRadius: '4px' }} title="Black 250" />
+  <div style={{ width: '60px', height: '40px', background: '#212121', borderRadius: '4px' }} title="Black 300" />
+  <div style={{ width: '60px', height: '40px', background: '#1A1A1A', borderRadius: '4px' }} title="Black 350" />
+  <div style={{ width: '60px', height: '40px', background: '#121212', borderRadius: '4px' }} title="Black 400" />
+  <div style={{ width: '60px', height: '40px', background: '#0D0D0D', borderRadius: '4px' }} title="Black 450" />
+  <div style={{ width: '60px', height: '40px', background: '#000000', borderRadius: '4px' }} title="Black 500" />
+</div>
+
+| 25 | 50 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `#454545` | `#404040` | `#3B3B3B` | `#333333` | `#2B2B2B` | `#262626` | `#212121` | `#1A1A1A` | `#121212` | `#0D0D0D` | `#000000` |
+
+### White (Optic White)
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#BFBFBF', borderRadius: '4px' }} title="White 25" />
+  <div style={{ width: '60px', height: '40px', background: '#C4C4C4', borderRadius: '4px' }} title="White 50" />
+  <div style={{ width: '60px', height: '40px', background: '#CCCCCC', borderRadius: '4px' }} title="White 100" />
+  <div style={{ width: '60px', height: '40px', background: '#D4D4D4', borderRadius: '4px' }} title="White 150" />
+  <div style={{ width: '60px', height: '40px', background: '#D9D9D9', borderRadius: '4px' }} title="White 200" />
+  <div style={{ width: '60px', height: '40px', background: '#DEDEDE', borderRadius: '4px' }} title="White 250" />
+  <div style={{ width: '60px', height: '40px', background: '#E6E6E6', borderRadius: '4px' }} title="White 300" />
+  <div style={{ width: '60px', height: '40px', background: '#EDEDED', borderRadius: '4px' }} title="White 350" />
+  <div style={{ width: '60px', height: '40px', background: '#F2F2F2', borderRadius: '4px' }} title="White 400" />
+  <div style={{ width: '60px', height: '40px', background: '#F7F7F7', borderRadius: '4px', border: '1px solid #eee' }} title="White 450" />
+  <div style={{ width: '60px', height: '40px', background: '#FFFFFF', borderRadius: '4px', border: '1px solid #eee' }} title="White 500" />
+</div>
+
+| 25 | 50 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `#BFBFBF` | `#C4C4C4` | `#CCCCCC` | `#D4D4D4` | `#D9D9D9` | `#DEDEDE` | `#E6E6E6` | `#EDEDED` | `#F2F2F2` | `#F7F7F7` | `#FFFFFF` |
+
+### Grey (Cargo Grey)
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#E6E5E5', borderRadius: '4px', border: '1px solid #ddd' }} title="Grey 25" />
+  <div style={{ width: '60px', height: '40px', background: '#D9D8D8', borderRadius: '4px' }} title="Grey 50" />
+  <div style={{ width: '60px', height: '40px', background: '#CDCBCB', borderRadius: '4px' }} title="Grey 100" />
+  <div style={{ width: '60px', height: '40px', background: '#C0BFBF', borderRadius: '4px' }} title="Grey 150" />
+  <div style={{ width: '60px', height: '40px', background: '#B3B2B2', borderRadius: '4px' }} title="Grey 200" />
+  <div style={{ width: '60px', height: '40px', background: '#A6A5A5', borderRadius: '4px' }} title="Grey 250" />
+  <div style={{ width: '60px', height: '40px', background: '#999999', borderRadius: '4px' }} title="Grey 300" />
+  <div style={{ width: '60px', height: '40px', background: '#8C8C8C', borderRadius: '4px' }} title="Grey 350" />
+  <div style={{ width: '60px', height: '40px', background: '#808080', borderRadius: '4px' }} title="Grey 400" />
+  <div style={{ width: '60px', height: '40px', background: '#737373', borderRadius: '4px' }} title="Grey 450" />
+  <div style={{ width: '60px', height: '40px', background: '#666666', borderRadius: '4px' }} title="Grey 500" />
+</div>
+
+| 25 | 50 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `#E6E5E5` | `#D9D8D8` | `#CDCBCB` | `#C0BFBF` | `#B3B2B2` | `#A6A5A5` | `#999999` | `#8C8C8C` | `#808080` | `#737373` | `#666666` |
+
+### Charcoal (Coal)
+
+<div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', marginBottom: '8px' }}>
+  <div style={{ width: '60px', height: '40px', background: '#C2C6D6', borderRadius: '4px' }} title="Coal 25" />
+  <div style={{ width: '60px', height: '40px', background: '#B2B8CC', borderRadius: '4px' }} title="Coal 50" />
+  <div style={{ width: '60px', height: '40px', background: '#A3AAC2', borderRadius: '4px' }} title="Coal 100" />
+  <div style={{ width: '60px', height: '40px', background: '#949CB8', borderRadius: '4px' }} title="Coal 150" />
+  <div style={{ width: '60px', height: '40px', background: '#848EAE', borderRadius: '4px' }} title="Coal 200" />
+  <div style={{ width: '60px', height: '40px', background: '#7580A3', borderRadius: '4px' }} title="Coal 250" />
+  <div style={{ width: '60px', height: '40px', background: '#667199', borderRadius: '4px' }} title="Coal 300" />
+  <div style={{ width: '60px', height: '40px', background: '#5C668A', borderRadius: '4px' }} title="Coal 350" />
+  <div style={{ width: '60px', height: '40px', background: '#515B7B', borderRadius: '4px' }} title="Coal 400" />
+  <div style={{ width: '60px', height: '40px', background: '#474F6B', borderRadius: '4px' }} title="Coal 450" />
+  <div style={{ width: '60px', height: '40px', background: '#3D445C', borderRadius: '4px' }} title="Coal 500" />
+</div>
+
+| 25 | 50 | 100 | 150 | 200 | 250 | 300 | 350 | 400 | 450 | 500 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `#C2C6D6` | `#B2B8CC` | `#A3AAC2` | `#949CB8` | `#848EAE` | `#7580A3` | `#667199` | `#5C668A` | `#515B7B` | `#474F6B` | `#3D445C` |
+
+## Alpha Colors
 
 Alpha colors are opacity variants derived from core colors, used for overlays, states, elevation, and subtle emphasis.
 
-| Color | Base Hex | Opacities |
-|-------|----------|-----------|
-| Alpha Black | `#000000` | 5%, 10%, 20%, 40%, 60%, 80% |
-| Alpha White | `#FFFFFF` | 5%, 10%, 20%, 40%, 60%, 80% |
-| Alpha Red | `#ED1B36` | 5%, 10%, 20%, 40%, 60%, 80% |
-| Alpha Green | `#1BA86E` | 5%, 10%, 20%, 40%, 60%, 80% |
-| Alpha Blue | `#2396FB` | 5%, 10%, 20%, 40%, 60%, 80% |
-| Alpha Yellow | `#CF9F02` | 5%, 10%, 20%, 40%, 60%, 80% |
-
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '24px' }}>
+  <div>
+    <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Alpha Black (#000000)</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(0,0,0,0.05)', borderRadius: '4px', border: '1px solid #eee', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>5%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(0,0,0,0.10)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>10%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(0,0,0,0.20)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: '#fff' }}>20%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(0,0,0,0.40)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: '#fff' }}>40%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(0,0,0,0.60)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: '#fff' }}>60%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(0,0,0,0.80)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: '#fff' }}>80%</div>
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Alpha White (#FFFFFF)</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', border: '1px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>5%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(255,255,255,0.10)', borderRadius: '4px', border: '1px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>10%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(255,255,255,0.20)', borderRadius: '4px', border: '1px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>20%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(255,255,255,0.40)', borderRadius: '4px', border: '1px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>40%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(255,255,255,0.60)', borderRadius: '4px', border: '1px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>60%</div>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(255,255,255,0.80)', borderRadius: '4px', border: '1px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>80%</div>
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Alpha Red (#ED1B36)</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(237,27,54,0.05)', borderRadius: '4px', border: '1px solid #eee' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(237,27,54,0.10)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(237,27,54,0.20)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(237,27,54,0.40)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(237,27,54,0.60)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(237,27,54,0.80)', borderRadius: '4px' }} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Alpha Green (#1BA86E)</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(27,168,110,0.05)', borderRadius: '4px', border: '1px solid #eee' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(27,168,110,0.10)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(27,168,110,0.20)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(27,168,110,0.40)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(27,168,110,0.60)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(27,168,110,0.80)', borderRadius: '4px' }} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Alpha Blue (#2396FB)</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(35,150,251,0.05)', borderRadius: '4px', border: '1px solid #eee' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(35,150,251,0.10)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(35,150,251,0.20)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(35,150,251,0.40)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(35,150,251,0.60)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(35,150,251,0.80)', borderRadius: '4px' }} />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '8px' }}>Alpha Yellow (#CF9F02)</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: 'rgba(207,159,2,0.05)', borderRadius: '4px', border: '1px solid #eee' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(207,159,2,0.10)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(207,159,2,0.20)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(207,159,2,0.40)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(207,159,2,0.60)', borderRadius: '4px' }} />
+      <div style={{ width: '50px', height: '36px', background: 'rgba(207,159,2,0.80)', borderRadius: '4px' }} />
+    </div>
+  </div>
+</div>
 
 ## Semantic Colors
 
-Semantic tokens are mapped to the Tarmac core palette but referenced by purpose, not hue. If a color needs to change in the future, the meaning and naming remain stable.
+Semantic tokens are mapped to the Tarmac core palette but referenced by purpose, not hue. Common semantic roles include: Success, Warning, Error, Info, and Accent.
 
 ### Surface Colors
 
-Surface tokens control backgrounds across the system. Each semantic surface has both light and dark theme variants with an 11-step intensity scale: Default, Strongest, Stronger, Strong, Solid, Base, Medium, Subtle, Weak, Weaker, Weakest.
+Surface tokens control backgrounds. Each has light and dark variants with an intensity scale.
 
 <Tabs>
   <Tab title="Background">
-    | Intensity | Light (maps to) | Dark (maps to) |
-    |-----------|-----------------|-----------------|
-    | Default | White.500 | Black.500 |
-    | Strongest | White.450 | Black.450 |
-    | Stronger | White.400 | Black.400 |
-    | Strong | White.350 | Black.350 |
-    | Solid | White.300 | Black.300 |
-    | Base | White.250 | Black.250 |
-    | Medium | White.200 | Black.200 |
-    | Subtle | White.150 | Black.150 |
-    | Weak | White.100 | Black.100 |
-    | Weaker | White.50 | Black.50 |
-    | Weakest | White.25 | Black.25 |
-  </Tab>
-  <Tab title="Neutral">
-    | Intensity | Light (maps to) | Dark (maps to) |
-    |-----------|-----------------|-----------------|
-    | Default | Grey.500 | Coal.500 |
-    | Strongest | Grey.450 | Coal.450 |
-    | Stronger | Grey.400 | Coal.400 |
-    | Strong | Grey.350 | Coal.350 |
-    | Solid | Grey.300 | Coal.300 |
-    | Base | Grey.250 | Coal.250 |
-    | Medium | Grey.200 | Coal.200 |
-    | Subtle | Grey.150 | Coal.150 |
-    | Weak | Grey.100 | Coal.100 |
-    | Weaker | Grey.50 | Coal.50 |
-    | Weakest | Grey.25 | Coal.25 |
+    <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+      <div style={{ flex: 1, height: '32px', background: '#FFFFFF', borderRadius: '4px', border: '1px solid #eee' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F7F7F7', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F2F2F2', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#EDEDED', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#E6E6E6', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#DEDEDE', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#D9D9D9', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#D4D4D4', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#CCCCCC', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#C4C4C4', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#BFBFBF', borderRadius: '4px' }} />
+    </div>
+    <div style={{ fontSize: '11px', color: '#666', marginBottom: '12px' }}>Light: White.500 → White.25</div>
+    <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+      <div style={{ flex: 1, height: '32px', background: '#000000', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#0D0D0D', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#121212', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#1A1A1A', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#212121', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#262626', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#2B2B2B', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#333333', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#3B3B3B', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#404040', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#454545', borderRadius: '4px' }} />
+    </div>
+    <div style={{ fontSize: '11px', color: '#666' }}>Dark: Black.500 → Black.25</div>
   </Tab>
   <Tab title="Accent">
-    | Intensity | Light (maps to) | Dark (maps to) |
-    |-----------|-----------------|-----------------|
-    | Default | Red.500 | Red.600 |
-    | Strongest | Red.600 | Red.500 |
-    | Stronger | Red.700 | Red.400 |
-    | Base | Red.300 | Red.300 |
-    | Medium | Red.200 | Red.600 |
-    | Subtle | Red.100 | Red.700 |
-    | Weak | Red.50 | Red.800 |
-    | Weaker | Red.25 | Red.900 |
-    | Weakest | Red.15 | Red.950 |
+    <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+      <div style={{ flex: 1, height: '32px', background: '#ED1B36', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#C5172D', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#9E1224', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F36779', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F68D9A', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F9B3BC', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#FBD1D7', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#FDE8EB', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#FEF1F3', borderRadius: '4px', border: '1px solid #eee' }} />
+    </div>
+    <div style={{ fontSize: '11px', color: '#666' }}>Light: Red.500 → Red.15</div>
   </Tab>
   <Tab title="Info">
-    | Intensity | Light (maps to) | Dark (maps to) |
-    |-----------|-----------------|-----------------|
-    | Default | Blue.500 | Blue.600 |
-    | Strongest | Blue.600 | Blue.500 |
-    | Stronger | Blue.700 | Blue.400 |
-    | Base | Blue.300 | Blue.300 |
-    | Medium | Blue.200 | Blue.600 |
-    | Subtle | Blue.100 | Blue.700 |
-    | Weak | Blue.50 | Blue.800 |
-    | Weaker | Blue.25 | Blue.900 |
-    | Weakest | Blue.15 | Blue.950 |
+    <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+      <div style={{ flex: 1, height: '32px', background: '#2396FB', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#1D7DD1', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#1764A7', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#6CB9FC', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#91CAFD', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#B6DCFE', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#D3EAFE', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#E6F3FE', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F0F8FF', borderRadius: '4px', border: '1px solid #eee' }} />
+    </div>
+    <div style={{ fontSize: '11px', color: '#666' }}>Light: Blue.500 → Blue.15</div>
   </Tab>
   <Tab title="Success">
-    | Intensity | Light (maps to) | Dark (maps to) |
-    |-----------|-----------------|-----------------|
-    | Default | Green.500 | Green.600 |
-    | Strongest | Green.600 | Green.500 |
-    | Stronger | Green.700 | Green.400 |
-    | Base | Green.300 | Green.300 |
-    | Medium | Green.200 | Green.600 |
-    | Subtle | Green.100 | Green.700 |
-    | Weak | Green.50 | Green.800 |
-    | Weaker | Green.25 | Green.900 |
-    | Weakest | Green.15 | Green.950 |
+    <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+      <div style={{ flex: 1, height: '32px', background: '#1BA86E', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#178C5C', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#127049', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#67C59E', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#8DD3B6', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#B3E2CF', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#D1EEE2', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#ECF8F3', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F4FBF8', borderRadius: '4px', border: '1px solid #eee' }} />
+    </div>
+    <div style={{ fontSize: '11px', color: '#666' }}>Light: Green.500 → Green.15</div>
   </Tab>
   <Tab title="Error">
-    | Intensity | Light (maps to) | Dark (maps to) |
-    |-----------|-----------------|-----------------|
-    | Default | Crimson.500 | Crimson.600 |
-    | Strongest | Crimson.600 | Crimson.500 |
-    | Stronger | Crimson.700 | Crimson.400 |
-    | Base | Crimson.300 | Crimson.300 |
-    | Medium | Crimson.200 | Crimson.600 |
-    | Subtle | Crimson.100 | Crimson.700 |
-    | Weak | Crimson.50 | Crimson.800 |
-    | Weaker | Crimson.25 | Crimson.900 |
-    | Weakest | Crimson.15 | Crimson.950 |
+    <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+      <div style={{ flex: 1, height: '32px', background: '#DC143C', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#B71132', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#930D28', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#E8627D', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#ED899D', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F3B1BE', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F8D0D8', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#FCE9ED', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#FDF2F4', borderRadius: '4px', border: '1px solid #eee' }} />
+    </div>
+    <div style={{ fontSize: '11px', color: '#666' }}>Light: Crimson.500 → Crimson.15</div>
   </Tab>
   <Tab title="Warning">
-    | Intensity | Light (maps to) | Dark (maps to) |
-    |-----------|-----------------|-----------------|
-    | Default | Yellow.500 | Yellow.600 |
-    | Strongest | Yellow.600 | Yellow.500 |
-    | Stronger | Yellow.700 | Yellow.400 |
-    | Base | Yellow.300 | Yellow.300 |
-    | Medium | Yellow.200 | Yellow.600 |
-    | Subtle | Yellow.100 | Yellow.700 |
-    | Weak | Yellow.50 | Yellow.800 |
-    | Weaker | Yellow.25 | Yellow.900 |
-    | Weakest | Yellow.15 | Yellow.950 |
+    <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+      <div style={{ flex: 1, height: '32px', background: '#CF9F02', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#AC8402', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#8A6A01', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#DFBF56', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#E7CF80', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#EFDFAB', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#F5ECCC', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#FBF7EA', borderRadius: '4px' }} />
+      <div style={{ flex: 1, height: '32px', background: '#FCFAF2', borderRadius: '4px', border: '1px solid #eee' }} />
+    </div>
+    <div style={{ fontSize: '11px', color: '#666' }}>Light: Yellow.500 → Yellow.15</div>
   </Tab>
 </Tabs>
 
-Additional surface semantic categories follow the same pattern for: Orange, Cyan, Cardbox, Purple, and Pink.
+### Text & Icon Colors
 
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '24px' }}>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.heading.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: '#CDCBCB', borderRadius: '4px' }} title="Disabled: Grey.100" />
+      <div style={{ width: '50px', height: '36px', background: '#2B2B2B', borderRadius: '4px' }} title="Primary: Black.200" />
+      <div style={{ width: '50px', height: '36px', background: '#3B3B3B', borderRadius: '4px' }} title="Secondary: Black.100" />
+      <div style={{ width: '50px', height: '36px', background: '#666666', borderRadius: '4px' }} title="Tertiary: Grey.500" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '18px', marginTop: '4px' }}><span>Disabled</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.heading.dark</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: '#3B3B3B', borderRadius: '4px' }} title="Disabled: Black.100" />
+      <div style={{ width: '50px', height: '36px', background: '#F7F7F7', borderRadius: '4px', border: '1px solid #eee' }} title="Primary: White.450" />
+      <div style={{ width: '50px', height: '36px', background: '#CCCCCC', borderRadius: '4px' }} title="Secondary: White.100" />
+      <div style={{ width: '50px', height: '36px', background: '#BFBFBF', borderRadius: '4px' }} title="Tertiary: White.25" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '18px', marginTop: '4px' }}><span>Disabled</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.body.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: '#CDCBCB', borderRadius: '4px' }} title="Disabled: Grey.100" />
+      <div style={{ width: '50px', height: '36px', background: '#454545', borderRadius: '4px' }} title="Primary: Black.25" />
+      <div style={{ width: '50px', height: '36px', background: '#8C8C8C', borderRadius: '4px' }} title="Secondary: Grey.350" />
+      <div style={{ width: '50px', height: '36px', background: '#A6A5A5', borderRadius: '4px' }} title="Tertiary: Grey.250" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '18px', marginTop: '4px' }}><span>Disabled</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.info.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '40px', height: '36px', background: '#91CAFD', borderRadius: '4px' }} title="Disabled: Blue.200" />
+      <div style={{ width: '40px', height: '36px', background: '#6CB9FC', borderRadius: '4px' }} title="Base: Blue.300" />
+      <div style={{ width: '40px', height: '36px', background: '#2396FB', borderRadius: '4px' }} title="Primary: Blue.500" />
+      <div style={{ width: '40px', height: '36px', background: '#1D7DD1', borderRadius: '4px' }} title="Secondary: Blue.600" />
+      <div style={{ width: '40px', height: '36px', background: '#1764A7', borderRadius: '4px' }} title="Tertiary: Blue.700" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '10px', marginTop: '4px' }}><span>Disabled</span><span>Base</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.error.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '40px', height: '36px', background: '#ED899D', borderRadius: '4px' }} title="Disabled: Crimson.200" />
+      <div style={{ width: '40px', height: '36px', background: '#E8627D', borderRadius: '4px' }} title="Base: Crimson.300" />
+      <div style={{ width: '40px', height: '36px', background: '#DC143C', borderRadius: '4px' }} title="Primary: Crimson.500" />
+      <div style={{ width: '40px', height: '36px', background: '#B71132', borderRadius: '4px' }} title="Secondary: Crimson.600" />
+      <div style={{ width: '40px', height: '36px', background: '#930D28', borderRadius: '4px' }} title="Tertiary: Crimson.700" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '10px', marginTop: '4px' }}><span>Disabled</span><span>Base</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.success.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '40px', height: '36px', background: '#8DD3B6', borderRadius: '4px' }} title="Disabled: Green.200" />
+      <div style={{ width: '40px', height: '36px', background: '#67C59E', borderRadius: '4px' }} title="Base: Green.300" />
+      <div style={{ width: '40px', height: '36px', background: '#1BA86E', borderRadius: '4px' }} title="Primary: Green.500" />
+      <div style={{ width: '40px', height: '36px', background: '#178C5C', borderRadius: '4px' }} title="Secondary: Green.600" />
+      <div style={{ width: '40px', height: '36px', background: '#127049', borderRadius: '4px' }} title="Tertiary: Green.700" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '10px', marginTop: '4px' }}><span>Disabled</span><span>Base</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.warning.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '40px', height: '36px', background: '#E7CF80', borderRadius: '4px' }} title="Disabled: Yellow.200" />
+      <div style={{ width: '40px', height: '36px', background: '#DFBF56', borderRadius: '4px' }} title="Base: Yellow.300" />
+      <div style={{ width: '40px', height: '36px', background: '#CF9F02', borderRadius: '4px' }} title="Primary: Yellow.500" />
+      <div style={{ width: '40px', height: '36px', background: '#AC8402', borderRadius: '4px' }} title="Secondary: Yellow.600" />
+      <div style={{ width: '40px', height: '36px', background: '#8A6A01', borderRadius: '4px' }} title="Tertiary: Yellow.700" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '10px', marginTop: '4px' }}><span>Disabled</span><span>Base</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>text.accent.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '40px', height: '36px', background: '#F68D9A', borderRadius: '4px' }} title="Disabled: Red.200" />
+      <div style={{ width: '40px', height: '36px', background: '#F36779', borderRadius: '4px' }} title="Base: Red.300" />
+      <div style={{ width: '40px', height: '36px', background: '#ED1B36', borderRadius: '4px' }} title="Primary: Red.500" />
+      <div style={{ width: '40px', height: '36px', background: '#C5172D', borderRadius: '4px' }} title="Secondary: Red.600" />
+      <div style={{ width: '40px', height: '36px', background: '#9E1224', borderRadius: '4px' }} title="Tertiary: Red.700" />
+    </div>
+    <div style={{ fontSize: '10px', color: '#999', display: 'flex', gap: '10px', marginTop: '4px' }}><span>Disabled</span><span>Base</span><span>Primary</span><span>Secondary</span><span>Tertiary</span></div>
+  </div>
+</div>
 
-### Text Colors
-
-<Tabs>
-  <Tab title="Heading">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Grey.100 | Black.100 |
-    | Primary | Black.200 | White.450 |
-    | Secondary | Black.100 | White.100 |
-    | Tertiary | Grey.500 | White.25 |
-  </Tab>
-  <Tab title="Body">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Grey.100 | Black.100 |
-    | Primary | Black.25 | White.400 |
-    | Secondary | Grey.350 | White.50 |
-    | Tertiary | Grey.250 | Grey.25 |
-  </Tab>
-  <Tab title="Caption">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Grey.100 | Black.100 |
-    | Primary | Grey.450 | White.350 |
-    | Secondary | Grey.300 | Grey.200 |
-    | Tertiary | Grey.200 | Grey.250 |
-  </Tab>
-  <Tab title="Info">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Blue.200 | Blue.700 |
-    | Base | Blue.300 | Blue.600 |
-    | Primary | Blue.500 | Blue.500 |
-    | Secondary | Blue.600 | Blue.400 |
-    | Tertiary | Blue.700 | Blue.300 |
-  </Tab>
-  <Tab title="Error">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Crimson.200 | Crimson.700 |
-    | Base | Crimson.300 | Crimson.600 |
-    | Primary | Crimson.500 | Crimson.500 |
-    | Secondary | Crimson.600 | Crimson.400 |
-    | Tertiary | Crimson.700 | Crimson.300 |
-  </Tab>
-  <Tab title="Success">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Green.200 | Green.700 |
-    | Base | Green.300 | Green.600 |
-    | Primary | Green.500 | Green.500 |
-    | Secondary | Green.600 | Green.400 |
-    | Tertiary | Green.700 | Green.300 |
-  </Tab>
-  <Tab title="Warning">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Yellow.200 | Yellow.700 |
-    | Base | Yellow.300 | Yellow.600 |
-    | Primary | Yellow.500 | Yellow.500 |
-    | Secondary | Yellow.600 | Yellow.400 |
-    | Tertiary | Yellow.700 | Yellow.300 |
-  </Tab>
-  <Tab title="Accent">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Red.200 | Red.200 |
-    | Base | Red.300 | Red.300 |
-    | Primary | Red.500 | Red.500 |
-    | Secondary | Red.600 | Red.600 |
-    | Tertiary | Red.700 | Red.700 |
-  </Tab>
-</Tabs>
-
-### Icon Colors
-
-Icon colors follow the same token structure as text colors, ensuring visual consistency between text and iconography across heading, body, caption, info, error, success, warning, and accent roles.
+<Info>Icon colors follow the same token structure as text colors, ensuring visual consistency between text and iconography.</Info>
 
 ### Border Colors
 
-<Tabs>
-  <Tab title="Neutral">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | White.450 | Black.300 |
-    | Primary | White.300 | Black.200 |
-    | Secondary | White.200 | Black.100 |
-    | Tertiary | White.100 | Black.25 |
-  </Tab>
-  <Tab title="Info">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Blue.15 | Blue.950 |
-    | Base | Blue.200 | Blue.500 |
-    | Primary | Blue.400 | Blue.400 |
-    | Secondary | Blue.500 | Blue.300 |
-    | Tertiary | Blue.700 | Blue.200 |
-  </Tab>
-  <Tab title="Success">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Green.15 | Green.950 |
-    | Base | Green.200 | Green.500 |
-    | Primary | Green.400 | Green.400 |
-    | Secondary | Green.500 | Green.300 |
-    | Tertiary | Green.700 | Green.200 |
-  </Tab>
-  <Tab title="Error">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Red.15 | Red.950 |
-    | Base | Red.200 | Red.500 |
-    | Primary | Red.400 | Red.400 |
-    | Secondary | Red.500 | Red.300 |
-    | Tertiary | Red.700 | Red.200 |
-  </Tab>
-  <Tab title="Warning">
-    | State | Light (maps to) | Dark (maps to) |
-    |-------|-----------------|-----------------|
-    | Disabled | Yellow.15 | Yellow.950 |
-    | Base | Yellow.200 | Yellow.500 |
-    | Primary | Yellow.400 | Yellow.400 |
-    | Secondary | Yellow.500 | Yellow.300 |
-    | Tertiary | Yellow.700 | Yellow.200 |
-  </Tab>
-</Tabs>
-
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '24px' }}>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>border.neutral.light</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: '#F7F7F7', borderRadius: '4px', border: '1px solid #eee' }} title="Disabled: White.450" />
+      <div style={{ width: '50px', height: '36px', background: '#E6E6E6', borderRadius: '4px' }} title="Primary: White.300" />
+      <div style={{ width: '50px', height: '36px', background: '#D9D9D9', borderRadius: '4px' }} title="Secondary: White.200" />
+      <div style={{ width: '50px', height: '36px', background: '#CCCCCC', borderRadius: '4px' }} title="Tertiary: White.100" />
+    </div>
+  </div>
+  <div>
+    <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '8px' }}>border.neutral.dark</div>
+    <div style={{ display: 'flex', gap: '4px' }}>
+      <div style={{ width: '50px', height: '36px', background: '#212121', borderRadius: '4px' }} title="Disabled: Black.300" />
+      <div style={{ width: '50px', height: '36px', background: '#2B2B2B', borderRadius: '4px' }} title="Primary: Black.200" />
+      <div style={{ width: '50px', height: '36px', background: '#3B3B3B', borderRadius: '4px' }} title="Secondary: Black.100" />
+      <div style={{ width: '50px', height: '36px', background: '#454545', borderRadius: '4px' }} title="Tertiary: Black.25" />
+    </div>
+  </div>
+</div>
 
 ## Accessibility Guidelines
 
@@ -570,21 +703,14 @@ Accessibility is enforced at the semantic layer, not manually per screen.
 
 <AccordionGroup>
   <Accordion title="Contrast Requirements" icon="eye">
-    **Text contrast**
-    - Body text: WCAG AA (4.5:1) minimum
-    - Large text: 3:1 minimum
-
-    **Icon & UI elements**
-    - Minimum 3:1 against background
+    **Text contrast:** Body text WCAG AA (4.5:1) minimum, large text 3:1 minimum.
+    **Icon & UI elements:** Minimum 3:1 against background.
   </Accordion>
   <Accordion title="Color Usage Rules" icon="palette">
-    - Never rely on color alone to convey meaning
-    - Pair color with icons, text, or shape
-    - Avoid low-contrast alpha overlays for critical content
+    Never rely on color alone to convey meaning. Pair color with icons, text, or shape. Avoid low-contrast alpha overlays for critical content.
   </Accordion>
   <Accordion title="State Accessibility" icon="hand-pointer">
-    - Hover, focus, and active states must remain distinguishable
-    - Error and success colors should not rely solely on red/green differentiation
+    Hover, focus, and active states must remain distinguishable. Error and success colors should not rely solely on red/green differentiation.
   </Accordion>
 </AccordionGroup>
 
@@ -594,29 +720,18 @@ Accessibility is enforced at the semantic layer, not manually per screen.
 
 <CardGroup cols={2}>
   <Card title="✓ Do" icon="check" color="#1BA86E">
-    - Use semantic tokens, never raw core colors in UI
-    - Ensure sufficient contrast ratios
-    - Use neutral colors as the foundation
-    - Let accent and status colors emphasize sparingly
-    - Reference design tokens for theme switching
+    Use semantic tokens, never raw core colors in UI. Ensure sufficient contrast ratios. Use neutral colors as the foundation. Let accent and status colors emphasize sparingly.
   </Card>
   <Card title="✗ Don't" icon="xmark" color="#DC143C">
-    - Don't reference core colors directly in components
-    - Don't use color alone to convey meaning
-    - Don't stack multiple semantic meanings on one element
-    - Don't create custom colors outside the palette
-    - Don't ignore contrast requirements
+    Don't reference core colors directly in components. Don't use color alone to convey meaning. Don't stack multiple semantic meanings on one element. Don't create custom colors outside the palette.
   </Card>
 </CardGroup>
 
 ## Code Examples
 
-### CSS Custom Properties
-
 <CodeGroup>
 ```css Core Colors
 :root {
-  /* Brand Colors */
   --color-red-500: #ED1B36;
   --color-blue-500: #2396FB;
   --color-green-500: #1BA86E;
@@ -627,8 +742,6 @@ Accessibility is enforced at the semantic layer, not manually per screen.
   --color-orange-500: #E77337;
   --color-purple-500: #7C3AED;
   --color-pink-500: #E25292;
-
-  /* Neutrals */
   --color-black-500: #000000;
   --color-white-500: #FFFFFF;
   --color-grey-500: #666666;
@@ -636,59 +749,42 @@ Accessibility is enforced at the semantic layer, not manually per screen.
 }
 ```
 
-```css Semantic Tokens
+```css Semantic Tokens (Light)
 :root {
-  /* Surface - Light */
   --surface-background-default: var(--color-white-500);
-  --surface-neutral-default: var(--color-grey-500);
   --surface-accent-default: var(--color-red-500);
   --surface-info-default: var(--color-blue-500);
   --surface-success-default: var(--color-green-500);
   --surface-error-default: var(--color-crimson-500);
   --surface-warning-default: var(--color-yellow-500);
-
-  /* Text - Light */
   --text-heading-primary: var(--color-black-200);
   --text-body-primary: var(--color-black-25);
-  --text-caption-primary: var(--color-grey-450);
 }
 ```
 
 ```css Dark Theme
 [data-theme="dark"] {
   --surface-background-default: var(--color-black-500);
-  --surface-neutral-default: var(--color-coal-500);
   --surface-accent-default: var(--color-red-600);
   --surface-info-default: var(--color-blue-600);
   --surface-success-default: var(--color-green-600);
   --surface-error-default: var(--color-crimson-600);
   --surface-warning-default: var(--color-yellow-600);
-
   --text-heading-primary: var(--color-white-450);
   --text-body-primary: var(--color-white-400);
-  --text-caption-primary: var(--color-white-350);
 }
 ```
-</CodeGroup>
 
-### TypeScript
-
-```typescript
+```typescript TypeScript
 import { colors } from '@tarmac/design-system';
 
-// Core colors
 colors.red[500]     // #ED1B36
 colors.blue[500]    // #2396FB
 colors.green[500]   // #1BA86E
 colors.black[500]   // #000000
 colors.white[500]   // #FFFFFF
-
-// Semantic usage
-colors.surface.background.light.default  // White.500
-colors.surface.info.light.default        // Blue.500
-colors.text.heading.light.primary        // Black.200
-colors.border.neutral.light.primary      // White.300
 ```
+</CodeGroup>
 
 <CardGroup cols={2}>
   <Card title="Design Tokens" icon="coins" href="/foundations/tokens">
