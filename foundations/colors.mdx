@@ -8,407 +8,693 @@ icon: "palette"
 
 ## Overview
 
-The TARMAC Design System uses a carefully crafted color palette designed for clarity, accessibility, and visual harmony. Our color system provides semantic meaning, ensures sufficient contrast ratios, and supports both light and dark themes.
+Color in the Tarmac Design System expresses brand, hierarchy, and usability. The palette is built around a small set of core colors, extended into semantic, background, text, icon, border, and alpha tokens to create consistency across all products. Use color purposefully: reinforce meaning, support accessibility, and maintain visual clarity.
 
 <CardGroup cols={2}>
   <Card title="Accessible" icon="universal-access">
-    All colors meet WCAG 2.1 AA standards
+    All colors meet WCAG 2.1 AA standards with enforced contrast ratios
   </Card>
   <Card title="Semantic" icon="lightbulb">
-    Colors convey meaning and purpose
+    Colors convey state and intent, not decoration
   </Card>
-  <Card title="Consistent" icon="check-double">
-    Systematic scale from 50 to 900
+  <Card title="Three-Layer Architecture" icon="layer-group">
+    Core → Semantic → Usage layers for scalable theming
   </Card>
-  <Card title="Flexible" icon="wand-magic-sparkles">
-    Supports light and dark themes
+  <Card title="Theme Agnostic" icon="circle-half-stroke">
+    All colors work in light and dark modes without remapping UI logic
   </Card>
 </CardGroup>
 
-## Color Palette
+## Color Architecture
+
+The system is built in three layers:
+
+1. Core (Raw) Colors — Foundational color values
+2. Semantic Colors — Meaning-driven mapping
+3. Usage Layers — Background, text, icon, border
+
+<Warning>Raw colors should never be used directly in UI. All product usage must go through semantic tokens.</Warning>
+
+## Color Principles
+
+<AccordionGroup>
+  <Accordion title="Meaning over Decoration" icon="paintbrush">
+    Color communicates state and intent, not decoration. Avoid using color purely for visual flair.
+  </Accordion>
+  <Accordion title="Neutral First" icon="circle">
+    Neutrals form the foundation. Accent and status colors are used sparingly for emphasis.
+  </Accordion>
+  <Accordion title="One Role, One Color" icon="bullseye">
+    Each UI element should serve one semantic role at a time. Avoid stacking multiple semantic meanings.
+  </Accordion>
+  <Accordion title="Theme Agnostic" icon="circle-half-stroke">
+    All colors must work in light and dark modes without remapping UI logic.
+  </Accordion>
+  <Accordion title="Scalable by Design" icon="arrows-up-down-left-right">
+    Adding a new brand or theme should only require changes at the core or semantic layer, not UI components.
+  </Accordion>
+</AccordionGroup>
+
+## Brand Palette Anatomy
+
+The Tarmac core palette is grounded in real-world materials and environments that shape the brand experience.
+
+| Color | Hex | Role | Inspiration |
+|-------|-----|------|-------------|
+| Tar Black | `#000000` | Primary | Road tar — reliability, infrastructure |
+| Optic White | `#FFFFFF` | Primary | Clarity, space, and contrast |
+| Velocity Red | `#ED1B36` | Accent | Speed, urgency, forward motion |
+| Atlantic Blue | `#2396FB` | Secondary | Ocean trade routes — trust, global connectivity |
+| Kinetic Green | `#1BA86E` | Secondary | Progress and efficiency — continuous movement |
+| Cardbox | `#B88B5C` | Secondary | Shipping cartons — physical reality of parcels |
+| Cargo Grey | `#666666` | Neutral | Structure, UI elements, supporting hierarchy |
+| Ash Grey | `#D0CFCF` | Neutral | Surfaces and dividers — depth and contrast |
+
+
+## Core Colors
+
+### Brand / Accent Colors
+
+<Tabs>
+  <Tab title="Red (Velocity Red)">
+    | Token | Hex |
+    |-------|-----|
+    | `red-15` | `#FEF1F3` |
+    | `red-25` | `#FDE8EB` |
+    | `red-50` | `#FBD1D7` |
+    | `red-100` | `#F9B3BC` |
+    | `red-200` | `#F68D9A` |
+    | `red-300` | `#F36779` |
+    | `red-400` | `#F04158` |
+    | `red-500` | `#ED1B36` |
+    | `red-600` | `#C5172D` |
+    | `red-700` | `#9E1224` |
+    | `red-800` | `#770E1B` |
+    | `red-900` | `#4F0912` |
+    | `red-950` | `#2F050B` |
+  </Tab>
+  <Tab title="Blue (Atlantic Blue)">
+    | Token | Hex |
+    |-------|-----|
+    | `blue-15` | `#F0F8FF` |
+    | `blue-25` | `#E6F3FE` |
+    | `blue-50` | `#D3EAFE` |
+    | `blue-100` | `#B6DCFE` |
+    | `blue-200` | `#91CAFD` |
+    | `blue-300` | `#6CB9FC` |
+    | `blue-400` | `#48A7FC` |
+    | `blue-500` | `#2396FB` |
+    | `blue-600` | `#1D7DD1` |
+    | `blue-700` | `#1764A7` |
+    | `blue-800` | `#124B7E` |
+    | `blue-900` | `#0C3254` |
+    | `blue-950` | `#071E32` |
+  </Tab>
+  <Tab title="Green (Kinetic Green)">
+    | Token | Hex |
+    |-------|-----|
+    | `green-15` | `#F4FBF8` |
+    | `green-25` | `#ECF8F3` |
+    | `green-50` | `#D1EEE2` |
+    | `green-100` | `#B3E2CF` |
+    | `green-200` | `#8DD3B6` |
+    | `green-300` | `#67C59E` |
+    | `green-400` | `#41B686` |
+    | `green-500` | `#1BA86E` |
+    | `green-600` | `#178C5C` |
+    | `green-700` | `#127049` |
+    | `green-800` | `#0E5437` |
+    | `green-900` | `#093825` |
+    | `green-950` | `#052216` |
+  </Tab>
+  <Tab title="Cyan">
+    | Token | Hex |
+    |-------|-----|
+    | `cyan-15` | `#F3FAFC` |
+    | `cyan-25` | `#EBF7FA` |
+    | `cyan-50` | `#CCECF2` |
+    | `cyan-100` | `#AAE0E9` |
+    | `cyan-200` | `#80D0DE` |
+    | `cyan-300` | `#55C1D3` |
+    | `cyan-400` | `#2BB1C8` |
+    | `cyan-500` | `#00A2BD` |
+    | `cyan-600` | `#00879D` |
+    | `cyan-700` | `#006C7E` |
+    | `cyan-800` | `#00515F` |
+    | `cyan-900` | `#00363F` |
+    | `cyan-950` | `#002026` |
+  </Tab>
+  <Tab title="Yellow">
+    | Token | Hex |
+    |-------|-----|
+    | `yellow-15` | `#FCFAF2` |
+    | `yellow-25` | `#FBF7EA` |
+    | `yellow-50` | `#F5ECCC` |
+    | `yellow-100` | `#EFDFAB` |
+    | `yellow-200` | `#E7CF80` |
+    | `yellow-300` | `#DFBF56` |
+    | `yellow-400` | `#D7AF2C` |
+    | `yellow-500` | `#CF9F02` |
+    | `yellow-600` | `#AC8402` |
+    | `yellow-700` | `#8A6A01` |
+    | `yellow-800` | `#685001` |
+    | `yellow-900` | `#453501` |
+    | `yellow-950` | `#292000` |
+  </Tab>
+  <Tab title="Crimson">
+    | Token | Hex |
+    |-------|-----|
+    | `crimson-15` | `#FDF2F4` |
+    | `crimson-25` | `#FCE9ED` |
+    | `crimson-50` | `#F8D0D8` |
+    | `crimson-100` | `#F3B1BE` |
+    | `crimson-200` | `#ED899D` |
+    | `crimson-300` | `#E8627D` |
+    | `crimson-400` | `#E23B5D` |
+    | `crimson-500` | `#DC143C` |
+    | `crimson-600` | `#B71132` |
+    | `crimson-700` | `#930D28` |
+    | `crimson-800` | `#6E0A1E` |
+    | `crimson-900` | `#490714` |
+    | `crimson-950` | `#2C040C` |
+  </Tab>
+  <Tab title="Cardbox">
+    | Token | Hex |
+    |-------|-----|
+    | `cardbox-15` | `#FAF8F4` |
+    | `cardbox-25` | `#F7F3ED` |
+    | `cardbox-50` | `#F1E8DE` |
+    | `cardbox-100` | `#E7D8C9` |
+    | `cardbox-200` | `#DBC5AD` |
+    | `cardbox-300` | `#D0B292` |
+    | `cardbox-400` | `#C49E77` |
+    | `cardbox-500` | `#B88B5C` |
+    | `cardbox-600` | `#99744D` |
+    | `cardbox-700` | `#7B5D3D` |
+    | `cardbox-800` | `#5C462E` |
+    | `cardbox-900` | `#3D2E1F` |
+    | `cardbox-950` | `#292000` |
+  </Tab>
+  <Tab title="Orange">
+    | Token | Hex |
+    |-------|-----|
+    | `orange-15` | `#FDF5F1` |
+    | `orange-25` | `#FCEFE8` |
+    | `orange-50` | `#FAE3D7` |
+    | `orange-100` | `#F7D0BC` |
+    | `orange-200` | `#F3B99B` |
+    | `orange-300` | `#EFA27A` |
+    | `orange-400` | `#EB8A58` |
+    | `orange-500` | `#E77337` |
+    | `orange-600` | `#C0602E` |
+    | `orange-700` | `#9A4D25` |
+    | `orange-800` | `#743A1C` |
+    | `orange-900` | `#4D2612` |
+    | `orange-950` | `#2E170B` |
+  </Tab>
+  <Tab title="Purple">
+    | Token | Hex |
+    |-------|-----|
+    | `purple-15` | `#F6F1FE` |
+    | `purple-25` | `#F0E8FD` |
+    | `purple-50` | `#E5D8FB` |
+    | `purple-100` | `#D3BDF9` |
+    | `purple-200` | `#BD9CF6` |
+    | `purple-300` | `#A87CF3` |
+    | `purple-400` | `#925BF0` |
+    | `purple-500` | `#7C3AED` |
+    | `purple-600` | `#6730C5` |
+    | `purple-700` | `#53279E` |
+    | `purple-800` | `#3E1D77` |
+    | `purple-900` | `#29134F` |
+    | `purple-950` | `#190C2F` |
+  </Tab>
+  <Tab title="Pink">
+    | Token | Hex |
+    |-------|-----|
+    | `pink-15` | `#FDF2F7` |
+    | `pink-25` | `#F9DCE9` |
+    | `pink-50` | `#F9DCE9` |
+    | `pink-100` | `#F5C5DB` |
+    | `pink-200` | `#F0A8C8` |
+    | `pink-300` | `#EC8CB6` |
+    | `pink-400` | `#E76FA4` |
+    | `pink-500` | `#E25292` |
+    | `pink-600` | `#BC447A` |
+    | `pink-700` | `#973761` |
+    | `pink-800` | `#712949` |
+    | `pink-900` | `#4B1B31` |
+    | `pink-950` | `#2D101D` |
+  </Tab>
+</Tabs>
 
 ### Neutral Colors
 
-Neutral colors form the foundation of the design system, used for text, backgrounds, borders, and surfaces.
-
 <Tabs>
-  <Tab title="Scale">
-    | Token | Hex | Usage |
-    |-------|-----|-------|
-    | `neutral-50` | `#fafafa` | Subtle backgrounds |
-    | `neutral-100` | `#f5f5f5` | Hover states, secondary backgrounds |
-    | `neutral-200` | `#e5e5e5` | Borders, dividers |
-    | `neutral-300` | `#d4d4d4` | Disabled states |
-    | `neutral-400` | `#a3a3a3` | Placeholder text |
-    | `neutral-500` | `#737373` | Secondary text |
-    | `neutral-600` | `#525252` | Body text |
-    | `neutral-700` | `#404040` | Headings |
-    | `neutral-800` | `#262626` | High emphasis text |
-    | `neutral-900` | `#171717` | Maximum contrast |
+  <Tab title="Black (Tar Black)">
+    | Token | Hex |
+    |-------|-----|
+    | `black-25` | `#454545` |
+    | `black-50` | `#404040` |
+    | `black-100` | `#3B3B3B` |
+    | `black-150` | `#333333` |
+    | `black-200` | `#2B2B2B` |
+    | `black-250` | `#262626` |
+    | `black-300` | `#212121` |
+    | `black-350` | `#1A1A1A` |
+    | `black-400` | `#121212` |
+    | `black-450` | `#0D0D0D` |
+    | `black-500` | `#000000` |
   </Tab>
-  
-  <Tab title="Preview">
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '8px' }}>
-      <div style={{ background: '#fafafa', height: '60px', borderRadius: '6px', border: '1px solid #e5e5e5' }}></div>
-      <div style={{ background: '#f5f5f5', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#e5e5e5', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#d4d4d4', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#a3a3a3', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#737373', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#525252', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#404040', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#262626', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#171717', height: '60px', borderRadius: '6px' }}></div>
-    </div>
+  <Tab title="White (Optic White)">
+    | Token | Hex |
+    |-------|-----|
+    | `white-25` | `#BFBFBF` |
+    | `white-50` | `#C4C4C4` |
+    | `white-100` | `#CCCCCC` |
+    | `white-150` | `#D4D4D4` |
+    | `white-200` | `#D9D9D9` |
+    | `white-250` | `#DEDEDE` |
+    | `white-300` | `#E6E6E6` |
+    | `white-350` | `#EDEDED` |
+    | `white-400` | `#F2F2F2` |
+    | `white-450` | `#F7F7F7` |
+    | `white-500` | `#FFFFFF` |
+  </Tab>
+  <Tab title="Grey (Cargo Grey)">
+    | Token | Hex |
+    |-------|-----|
+    | `grey-25` | `#E6E5E5` |
+    | `grey-50` | `#D9D8D8` |
+    | `grey-100` | `#CDCBCB` |
+    | `grey-150` | `#C0BFBF` |
+    | `grey-200` | `#B3B2B2` |
+    | `grey-250` | `#A6A5A5` |
+    | `grey-300` | `#999999` |
+    | `grey-350` | `#8C8C8C` |
+    | `grey-400` | `#808080` |
+    | `grey-450` | `#737373` |
+    | `grey-500` | `#666666` |
+  </Tab>
+  <Tab title="Charcoal (Coal)">
+    | Token | Hex |
+    |-------|-----|
+    | `coal-25` | `#C2C6D6` |
+    | `coal-50` | `#B2B8CC` |
+    | `coal-100` | `#A3AAC2` |
+    | `coal-150` | `#949CB8` |
+    | `coal-200` | `#848EAE` |
+    | `coal-250` | `#7580A3` |
+    | `coal-300` | `#667199` |
+    | `coal-350` | `#5C668A` |
+    | `coal-400` | `#515B7B` |
+    | `coal-450` | `#474F6B` |
+    | `coal-500` | `#3D445C` |
   </Tab>
 </Tabs>
 
-### Primary Colors
+### Alpha Colors
 
-Primary colors represent the brand and are used for primary actions, links, and focus states.
+Alpha colors are opacity variants derived from core colors, used for overlays, states, elevation, and subtle emphasis.
+
+| Color | Base Hex | Opacities |
+|-------|----------|-----------|
+| Alpha Black | `#000000` | 5%, 10%, 20%, 40%, 60%, 80% |
+| Alpha White | `#FFFFFF` | 5%, 10%, 20%, 40%, 60%, 80% |
+| Alpha Red | `#ED1B36` | 5%, 10%, 20%, 40%, 60%, 80% |
+| Alpha Green | `#1BA86E` | 5%, 10%, 20%, 40%, 60%, 80% |
+| Alpha Blue | `#2396FB` | 5%, 10%, 20%, 40%, 60%, 80% |
+| Alpha Yellow | `#CF9F02` | 5%, 10%, 20%, 40%, 60%, 80% |
+
+
+## Semantic Colors
+
+Semantic tokens are mapped to the Tarmac core palette but referenced by purpose, not hue. If a color needs to change in the future, the meaning and naming remain stable.
+
+### Surface Colors
+
+Surface tokens control backgrounds across the system. Each semantic surface has both light and dark theme variants with an 11-step intensity scale: Default, Strongest, Stronger, Strong, Solid, Base, Medium, Subtle, Weak, Weaker, Weakest.
 
 <Tabs>
-  <Tab title="Scale">
-    | Token | Hex | Usage |
-    |-------|-----|-------|
-    | `primary-50` | `#f0f0f0` | Subtle backgrounds |
-    | `primary-100` | `#e0e0e0` | Hover backgrounds |
-    | `primary-200` | `#c6c6c6` | Borders |
-    | `primary-300` | `#a8a8a8` | Disabled primary |
-    | `primary-400` | `#8a8a8a` | Muted primary |
-    | `primary-500` | `#6b6b6b` | Default primary |
-    | `primary-600` | `#000000` | Primary buttons, links |
-    | `primary-700` | `#1a1a1a` | Hover states |
-    | `primary-800` | `#333333` | Active states |
-    | `primary-900` | `#4d4d4d` | High contrast |
+  <Tab title="Background">
+    | Intensity | Light (maps to) | Dark (maps to) |
+    |-----------|-----------------|-----------------|
+    | Default | White.500 | Black.500 |
+    | Strongest | White.450 | Black.450 |
+    | Stronger | White.400 | Black.400 |
+    | Strong | White.350 | Black.350 |
+    | Solid | White.300 | Black.300 |
+    | Base | White.250 | Black.250 |
+    | Medium | White.200 | Black.200 |
+    | Subtle | White.150 | Black.150 |
+    | Weak | White.100 | Black.100 |
+    | Weaker | White.50 | Black.50 |
+    | Weakest | White.25 | Black.25 |
   </Tab>
-  
-  <Tab title="Preview">
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '8px' }}>
-      <div style={{ background: '#f0f0f0', height: '60px', borderRadius: '6px', border: '1px solid #e0e0e0' }}></div>
-      <div style={{ background: '#e0e0e0', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#c6c6c6', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#a8a8a8', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#8a8a8a', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#6b6b6b', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#000000', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#1a1a1a', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#333333', height: '60px', borderRadius: '6px' }}></div>
-      <div style={{ background: '#4d4d4d', height: '60px', borderRadius: '6px' }}></div>
-    </div>
+  <Tab title="Neutral">
+    | Intensity | Light (maps to) | Dark (maps to) |
+    |-----------|-----------------|-----------------|
+    | Default | Grey.500 | Coal.500 |
+    | Strongest | Grey.450 | Coal.450 |
+    | Stronger | Grey.400 | Coal.400 |
+    | Strong | Grey.350 | Coal.350 |
+    | Solid | Grey.300 | Coal.300 |
+    | Base | Grey.250 | Coal.250 |
+    | Medium | Grey.200 | Coal.200 |
+    | Subtle | Grey.150 | Coal.150 |
+    | Weak | Grey.100 | Coal.100 |
+    | Weaker | Grey.50 | Coal.50 |
+    | Weakest | Grey.25 | Coal.25 |
+  </Tab>
+  <Tab title="Accent">
+    | Intensity | Light (maps to) | Dark (maps to) |
+    |-----------|-----------------|-----------------|
+    | Default | Red.500 | Red.600 |
+    | Strongest | Red.600 | Red.500 |
+    | Stronger | Red.700 | Red.400 |
+    | Base | Red.300 | Red.300 |
+    | Medium | Red.200 | Red.600 |
+    | Subtle | Red.100 | Red.700 |
+    | Weak | Red.50 | Red.800 |
+    | Weaker | Red.25 | Red.900 |
+    | Weakest | Red.15 | Red.950 |
+  </Tab>
+  <Tab title="Info">
+    | Intensity | Light (maps to) | Dark (maps to) |
+    |-----------|-----------------|-----------------|
+    | Default | Blue.500 | Blue.600 |
+    | Strongest | Blue.600 | Blue.500 |
+    | Stronger | Blue.700 | Blue.400 |
+    | Base | Blue.300 | Blue.300 |
+    | Medium | Blue.200 | Blue.600 |
+    | Subtle | Blue.100 | Blue.700 |
+    | Weak | Blue.50 | Blue.800 |
+    | Weaker | Blue.25 | Blue.900 |
+    | Weakest | Blue.15 | Blue.950 |
+  </Tab>
+  <Tab title="Success">
+    | Intensity | Light (maps to) | Dark (maps to) |
+    |-----------|-----------------|-----------------|
+    | Default | Green.500 | Green.600 |
+    | Strongest | Green.600 | Green.500 |
+    | Stronger | Green.700 | Green.400 |
+    | Base | Green.300 | Green.300 |
+    | Medium | Green.200 | Green.600 |
+    | Subtle | Green.100 | Green.700 |
+    | Weak | Green.50 | Green.800 |
+    | Weaker | Green.25 | Green.900 |
+    | Weakest | Green.15 | Green.950 |
+  </Tab>
+  <Tab title="Error">
+    | Intensity | Light (maps to) | Dark (maps to) |
+    |-----------|-----------------|-----------------|
+    | Default | Crimson.500 | Crimson.600 |
+    | Strongest | Crimson.600 | Crimson.500 |
+    | Stronger | Crimson.700 | Crimson.400 |
+    | Base | Crimson.300 | Crimson.300 |
+    | Medium | Crimson.200 | Crimson.600 |
+    | Subtle | Crimson.100 | Crimson.700 |
+    | Weak | Crimson.50 | Crimson.800 |
+    | Weaker | Crimson.25 | Crimson.900 |
+    | Weakest | Crimson.15 | Crimson.950 |
+  </Tab>
+  <Tab title="Warning">
+    | Intensity | Light (maps to) | Dark (maps to) |
+    |-----------|-----------------|-----------------|
+    | Default | Yellow.500 | Yellow.600 |
+    | Strongest | Yellow.600 | Yellow.500 |
+    | Stronger | Yellow.700 | Yellow.400 |
+    | Base | Yellow.300 | Yellow.300 |
+    | Medium | Yellow.200 | Yellow.600 |
+    | Subtle | Yellow.100 | Yellow.700 |
+    | Weak | Yellow.50 | Yellow.800 |
+    | Weaker | Yellow.25 | Yellow.900 |
+    | Weakest | Yellow.15 | Yellow.950 |
   </Tab>
 </Tabs>
 
-### Success Colors
+Additional surface semantic categories follow the same pattern for: Orange, Cyan, Cardbox, Purple, and Pink.
 
-Success colors indicate positive actions, successful operations, and confirmations.
 
-| Token | Hex | Contrast (on white) | Usage |
-|-------|-----|---------------------|-------|
-| `success-50` | `#f0fdf4` | - | Subtle backgrounds |
-| `success-100` | `#dcfce7` | - | Success backgrounds |
-| `success-500` | `#22c55e` | 3.4:1 | Icons, borders |
-| `success-600` | `#16a34a` | 4.5:1 ✓ | Success buttons |
-| `success-700` | `#166534` | 7.1:1 ✓ | Success text |
-
-### Warning Colors
-
-Warning colors indicate caution, pending states, and actions requiring attention.
-
-| Token | Hex | Contrast (on white) | Usage |
-|-------|-----|---------------------|-------|
-| `warning-50` | `#fffbeb` | - | Subtle backgrounds |
-| `warning-100` | `#fef3c7` | - | Warning backgrounds |
-| `warning-500` | `#f59e0b` | 2.9:1 | Icons, borders |
-| `warning-600` | `#d97706` | 4.5:1 ✓ | Warning buttons |
-| `warning-700` | `#92400e` | 7.5:1 ✓ | Warning text |
-
-### Error Colors
-
-Error colors indicate errors, destructive actions, and critical states.
-
-| Token | Hex | Contrast (on white) | Usage |
-|-------|-----|---------------------|-------|
-| `error-50` | `#fef2f2` | - | Subtle backgrounds |
-| `error-100` | `#fee2e2` | - | Error backgrounds |
-| `error-500` | `#ef4444` | 3.9:1 | Icons, borders |
-| `error-600` | `#dc2626` | 4.5:1 ✓ | Error buttons |
-| `error-700` | `#991b1b` | 7.7:1 ✓ | Error text |
-
-### Info Colors
-
-Info colors indicate informational content, tips, and neutral notifications.
-
-| Token | Hex | Contrast (on white) | Usage |
-|-------|-----|---------------------|-------|
-| `info-50` | `#eff6ff` | - | Subtle backgrounds |
-| `info-100` | `#dbeafe` | - | Info backgrounds |
-| `info-500` | `#3b82f6` | 4.0:1 | Icons, borders |
-| `info-600` | `#2563eb` | 5.1:1 ✓ | Info buttons |
-| `info-700` | `#1e40af` | 7.3:1 ✓ | Info text |
-
-## Usage Guidelines
-
-### Do's and Don'ts
-
-<CardGroup cols={2}>
-  <Card title="✓ Do" icon="check" color="#10b981">
-    **Use semantic colors**
-    - Green for success states
-    - Red for errors and destructive actions
-    - Yellow for warnings
-    - Blue for informational content
-    
-    **Ensure sufficient contrast**
-    - Text: ≥ 4.5:1 ratio
-    - Large text: ≥ 3:1 ratio
-    - UI components: ≥ 3:1 ratio
-    
-    **Use color tokens**
-    - Reference design tokens
-    - Maintain consistency
-    - Enable theme switching
-  </Card>
-  
-  <Card title="✗ Don't" icon="xmark" color="#ef4444">
-    **Don't use color alone**
-    - Always pair with text or icons
-    - Don't rely on color for meaning
-    
-    **Don't use arbitrary colors**
-    - Avoid hardcoded hex values
-    - Don't create custom colors
-    - Stick to the palette
-    
-    **Don't ignore contrast**
-    - Test with accessibility tools
-    - Verify WCAG compliance
-    - Consider color blindness
-  </Card>
-</CardGroup>
-
-### Color Combinations
+### Text Colors
 
 <Tabs>
-  <Tab title="Text on Backgrounds">
-    | Background | Text Color | Contrast | Pass |
-    |------------|-----------|----------|------|
-    | `neutral-50` | `neutral-900` | 18.5:1 | ✓ AAA |
-    | `neutral-100` | `neutral-800` | 14.2:1 | ✓ AAA |
-    | `primary-600` | `white` | 21:1 | ✓ AAA |
-    | `success-100` | `success-700` | 10.8:1 | ✓ AAA |
-    | `warning-100` | `warning-700` | 11.2:1 | ✓ AAA |
-    | `error-100` | `error-700` | 12.1:1 | ✓ AAA |
+  <Tab title="Heading">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Grey.100 | Black.100 |
+    | Primary | Black.200 | White.450 |
+    | Secondary | Black.100 | White.100 |
+    | Tertiary | Grey.500 | White.25 |
   </Tab>
-  
-  <Tab title="Interactive Elements">
-    | Element | Default | Hover | Active |
-    |---------|---------|-------|--------|
-    | Primary Button | `primary-600` | `primary-700` | `primary-800` |
-    | Secondary Button | `neutral-100` | `neutral-200` | `neutral-300` |
-    | Link | `primary-600` | `primary-700` | `primary-800` |
-    | Input Border | `neutral-300` | `neutral-400` | `primary-600` |
+  <Tab title="Body">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Grey.100 | Black.100 |
+    | Primary | Black.25 | White.400 |
+    | Secondary | Grey.350 | White.50 |
+    | Tertiary | Grey.250 | Grey.25 |
+  </Tab>
+  <Tab title="Caption">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Grey.100 | Black.100 |
+    | Primary | Grey.450 | White.350 |
+    | Secondary | Grey.300 | Grey.200 |
+    | Tertiary | Grey.200 | Grey.250 |
+  </Tab>
+  <Tab title="Info">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Blue.200 | Blue.700 |
+    | Base | Blue.300 | Blue.600 |
+    | Primary | Blue.500 | Blue.500 |
+    | Secondary | Blue.600 | Blue.400 |
+    | Tertiary | Blue.700 | Blue.300 |
+  </Tab>
+  <Tab title="Error">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Crimson.200 | Crimson.700 |
+    | Base | Crimson.300 | Crimson.600 |
+    | Primary | Crimson.500 | Crimson.500 |
+    | Secondary | Crimson.600 | Crimson.400 |
+    | Tertiary | Crimson.700 | Crimson.300 |
+  </Tab>
+  <Tab title="Success">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Green.200 | Green.700 |
+    | Base | Green.300 | Green.600 |
+    | Primary | Green.500 | Green.500 |
+    | Secondary | Green.600 | Green.400 |
+    | Tertiary | Green.700 | Green.300 |
+  </Tab>
+  <Tab title="Warning">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Yellow.200 | Yellow.700 |
+    | Base | Yellow.300 | Yellow.600 |
+    | Primary | Yellow.500 | Yellow.500 |
+    | Secondary | Yellow.600 | Yellow.400 |
+    | Tertiary | Yellow.700 | Yellow.300 |
+  </Tab>
+  <Tab title="Accent">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Red.200 | Red.200 |
+    | Base | Red.300 | Red.300 |
+    | Primary | Red.500 | Red.500 |
+    | Secondary | Red.600 | Red.600 |
+    | Tertiary | Red.700 | Red.700 |
   </Tab>
 </Tabs>
 
-## Accessibility Considerations
+### Icon Colors
+
+Icon colors follow the same token structure as text colors, ensuring visual consistency between text and iconography across heading, body, caption, info, error, success, warning, and accent roles.
+
+### Border Colors
+
+<Tabs>
+  <Tab title="Neutral">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | White.450 | Black.300 |
+    | Primary | White.300 | Black.200 |
+    | Secondary | White.200 | Black.100 |
+    | Tertiary | White.100 | Black.25 |
+  </Tab>
+  <Tab title="Info">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Blue.15 | Blue.950 |
+    | Base | Blue.200 | Blue.500 |
+    | Primary | Blue.400 | Blue.400 |
+    | Secondary | Blue.500 | Blue.300 |
+    | Tertiary | Blue.700 | Blue.200 |
+  </Tab>
+  <Tab title="Success">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Green.15 | Green.950 |
+    | Base | Green.200 | Green.500 |
+    | Primary | Green.400 | Green.400 |
+    | Secondary | Green.500 | Green.300 |
+    | Tertiary | Green.700 | Green.200 |
+  </Tab>
+  <Tab title="Error">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Red.15 | Red.950 |
+    | Base | Red.200 | Red.500 |
+    | Primary | Red.400 | Red.400 |
+    | Secondary | Red.500 | Red.300 |
+    | Tertiary | Red.700 | Red.200 |
+  </Tab>
+  <Tab title="Warning">
+    | State | Light (maps to) | Dark (maps to) |
+    |-------|-----------------|-----------------|
+    | Disabled | Yellow.15 | Yellow.950 |
+    | Base | Yellow.200 | Yellow.500 |
+    | Primary | Yellow.400 | Yellow.400 |
+    | Secondary | Yellow.500 | Yellow.300 |
+    | Tertiary | Yellow.700 | Yellow.200 |
+  </Tab>
+</Tabs>
+
+
+## Accessibility Guidelines
+
+Accessibility is enforced at the semantic layer, not manually per screen.
 
 <AccordionGroup>
-  <Accordion title="✓ WCAG Contrast Requirements" icon="eye">
-    **Level AA (Minimum)**
-    - Normal text (< 18px): 4.5:1 contrast ratio
-    - Large text (≥ 18px or ≥ 14px bold): 3:1 contrast ratio
-    - UI components and graphics: 3:1 contrast ratio
-    
-    **Level AAA (Enhanced)**
-    - Normal text: 7:1 contrast ratio
-    - Large text: 4.5:1 contrast ratio
-    
-    All TARMAC colors are designed to meet AA standards at minimum.
+  <Accordion title="Contrast Requirements" icon="eye">
+    **Text contrast**
+    - Body text: WCAG AA (4.5:1) minimum
+    - Large text: 3:1 minimum
+
+    **Icon & UI elements**
+    - Minimum 3:1 against background
   </Accordion>
-  
-  <Accordion title="✓ Color Blindness" icon="eye-low-vision">
-    **Considerations**
-    - Don't rely on color alone to convey information
-    - Use patterns, icons, or text labels alongside color
-    - Test designs with color blindness simulators
-    - Ensure sufficient contrast between adjacent colors
-    
-    **Common Types**
-    - Deuteranopia (red-green, most common)
-    - Protanopia (red-green)
-    - Tritanopia (blue-yellow, rare)
+  <Accordion title="Color Usage Rules" icon="palette">
+    - Never rely on color alone to convey meaning
+    - Pair color with icons, text, or shape
+    - Avoid low-contrast alpha overlays for critical content
   </Accordion>
-  
-  <Accordion title="✓ Testing Tools" icon="flask">
-    - WebAIM Contrast Checker
-    - Chrome DevTools Accessibility Panel
-    - Stark (Figma/Sketch plugin)
-    - Color Oracle (color blindness simulator)
-    - axe DevTools
+  <Accordion title="State Accessibility" icon="hand-pointer">
+    - Hover, focus, and active states must remain distinguishable
+    - Error and success colors should not rely solely on red/green differentiation
   </Accordion>
 </AccordionGroup>
 
 <Warning>Never use color as the only means of conveying information. Always pair color with text, icons, or patterns.</Warning>
 
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#1BA86E">
+    - Use semantic tokens, never raw core colors in UI
+    - Ensure sufficient contrast ratios
+    - Use neutral colors as the foundation
+    - Let accent and status colors emphasize sparingly
+    - Reference design tokens for theme switching
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC143C">
+    - Don't reference core colors directly in components
+    - Don't use color alone to convey meaning
+    - Don't stack multiple semantic meanings on one element
+    - Don't create custom colors outside the palette
+    - Don't ignore contrast requirements
+  </Card>
+</CardGroup>
+
 ## Code Examples
 
 ### CSS Custom Properties
 
-```css
-:root {
-  /* Neutral Colors */
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  
-  /* Primary Colors */
-  --color-primary-600: #000000;
-  --color-primary-700: #1a1a1a;
-  --color-primary-800: #333333;
-  
-  /* Semantic Colors */
-  --color-success-100: #dcfce7;
-  --color-success-600: #16a34a;
-  --color-success-700: #166534;
-  
-  --color-warning-100: #fef3c7;
-  --color-warning-600: #d97706;
-  --color-warning-700: #92400e;
-  
-  --color-error-100: #fee2e2;
-  --color-error-600: #dc2626;
-  --color-error-700: #991b1b;
-  
-  --color-info-100: #dbeafe;
-  --color-info-600: #2563eb;
-  --color-info-700: #1e40af;
-}
-```
-
-### Usage in Components
-
 <CodeGroup>
-```css Button
-.button-primary {
-  background-color: var(--color-primary-600);
-  color: white;
-}
+```css Core Colors
+:root {
+  /* Brand Colors */
+  --color-red-500: #ED1B36;
+  --color-blue-500: #2396FB;
+  --color-green-500: #1BA86E;
+  --color-cyan-500: #00A2BD;
+  --color-yellow-500: #CF9F02;
+  --color-crimson-500: #DC143C;
+  --color-cardbox-500: #B88B5C;
+  --color-orange-500: #E77337;
+  --color-purple-500: #7C3AED;
+  --color-pink-500: #E25292;
 
-.button-primary:hover {
-  background-color: var(--color-primary-700);
-}
-
-.button-primary:active {
-  background-color: var(--color-primary-800);
-}
-```
-
-```css Alert
-.alert-success {
-  background-color: var(--color-success-100);
-  color: var(--color-success-700);
-  border-left: 4px solid var(--color-success-600);
-}
-
-.alert-error {
-  background-color: var(--color-error-100);
-  color: var(--color-error-700);
-  border-left: 4px solid var(--color-error-600);
+  /* Neutrals */
+  --color-black-500: #000000;
+  --color-white-500: #FFFFFF;
+  --color-grey-500: #666666;
+  --color-coal-500: #3D445C;
 }
 ```
 
-```css Text
-.text-primary {
-  color: var(--color-neutral-900);
-}
+```css Semantic Tokens
+:root {
+  /* Surface - Light */
+  --surface-background-default: var(--color-white-500);
+  --surface-neutral-default: var(--color-grey-500);
+  --surface-accent-default: var(--color-red-500);
+  --surface-info-default: var(--color-blue-500);
+  --surface-success-default: var(--color-green-500);
+  --surface-error-default: var(--color-crimson-500);
+  --surface-warning-default: var(--color-yellow-500);
 
-.text-secondary {
-  color: var(--color-neutral-600);
-}
-
-.text-muted {
-  color: var(--color-neutral-500);
+  /* Text - Light */
+  --text-heading-primary: var(--color-black-200);
+  --text-body-primary: var(--color-black-25);
+  --text-caption-primary: var(--color-grey-450);
 }
 ```
 
-```css Borders
-.border-default {
-  border: 1px solid var(--color-neutral-200);
-}
+```css Dark Theme
+[data-theme="dark"] {
+  --surface-background-default: var(--color-black-500);
+  --surface-neutral-default: var(--color-coal-500);
+  --surface-accent-default: var(--color-red-600);
+  --surface-info-default: var(--color-blue-600);
+  --surface-success-default: var(--color-green-600);
+  --surface-error-default: var(--color-crimson-600);
+  --surface-warning-default: var(--color-yellow-600);
 
-.border-focus {
-  border: 2px solid var(--color-primary-600);
+  --text-heading-primary: var(--color-white-450);
+  --text-body-primary: var(--color-white-400);
+  --text-caption-primary: var(--color-white-350);
 }
 ```
 </CodeGroup>
 
-### JavaScript/TypeScript
+### TypeScript
 
 ```typescript
-// Color tokens object
-export const colors = {
-  neutral: {
-    50: '#fafafa',
-    100: '#f5f5f5',
-    200: '#e5e5e5',
-    300: '#d4d4d4',
-    400: '#a3a3a3',
-    500: '#737373',
-    600: '#525252',
-    700: '#404040',
-    800: '#262626',
-    900: '#171717',
-  },
-  primary: {
-    600: '#000000',
-    700: '#1a1a1a',
-    800: '#333333',
-  },
-  success: {
-    100: '#dcfce7',
-    600: '#16a34a',
-    700: '#166534',
-  },
-  // ... other colors
-};
+import { colors } from '@tarmac/design-system';
 
-// Usage
-const buttonStyle = {
-  backgroundColor: colors.primary[600],
-  color: '#ffffff',
-};
+// Core colors
+colors.red[500]     // #ED1B36
+colors.blue[500]    // #2396FB
+colors.green[500]   // #1BA86E
+colors.black[500]   // #000000
+colors.white[500]   // #FFFFFF
+
+// Semantic usage
+colors.surface.background.light.default  // White.500
+colors.surface.info.light.default        // Blue.500
+colors.text.heading.light.primary        // Black.200
+colors.border.neutral.light.primary      // White.300
 ```
 
-## Dark Theme Support
-
-<Info>TARMAC Design System supports dark theme by inverting the neutral scale and adjusting semantic colors.</Info>
-
-```css
-[data-theme="dark"] {
-  /* Invert neutral scale */
-  --color-neutral-50: #171717;
-  --color-neutral-100: #262626;
-  --color-neutral-200: #404040;
-  --color-neutral-300: #525252;
-  --color-neutral-400: #737373;
-  --color-neutral-500: #a3a3a3;
-  --color-neutral-600: #d4d4d4;
-  --color-neutral-700: #e5e5e5;
-  --color-neutral-800: #f5f5f5;
-  --color-neutral-900: #fafafa;
-  
-  /* Adjust semantic colors for dark backgrounds */
-  --color-success-600: #22c55e;
-  --color-warning-600: #f59e0b;
-  --color-error-600: #ef4444;
-  --color-info-600: #3b82f6;
-}
-```
+<CardGroup cols={2}>
+  <Card title="Design Tokens" icon="coins" href="/foundations/tokens">
+    Learn about the full token system
+  </Card>
+  <Card title="Accessibility" icon="universal-access" href="/accessibility/color-contrast">
+    Color contrast guidelines
+  </Card>
+</CardGroup>
