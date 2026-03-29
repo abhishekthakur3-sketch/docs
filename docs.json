@@ -65,6 +65,7 @@
                   "components/tags",
                   "components/pills",
                   "components/alert",
+                  "components/progress-bar",
                   "components/tooltip"
                 ]
               },

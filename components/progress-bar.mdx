@@ -1,0 +1,313 @@
+---
+title: Progress Bar
+description: Progress bars are visual indicators used to represent the progress of ongoing tasks, processes, or workflows.
+icon: "bars-progress"
+---
+
+## Overview
+
+Progress bars are visual indicators used to represent the progress of ongoing tasks, processes, or workflows. They help users understand how much of an operation has been completed and how much remains. By providing visual feedback, progress bars reduce uncertainty during uploads, downloads, data processing, and system operations.
+
+<CardGroup cols={3}>
+  <Card title="5 Variants" icon="palette">
+    Black, Coal, Blue, Green, DLV Red
+  </Card>
+  <Card title="2 Types" icon="layer-group">
+    Filled (thick) and Line (thin)
+  </Card>
+  <Card title="2 Sizes" icon="expand">
+    Large (8px) and Small (4px)
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with progress bar component preview from Figma (page: Progress Bar ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Progress Bar Component Preview — Replace with /assets/components/progress-bar/progress-bar-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Progress Steps">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>0%</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'0%'}}></div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>25%</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'25%'}}></div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>50%</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'50%'}}></div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>75%</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'75%'}}></div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>100%</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'100%'}}></div></div></div>
+    </div>
+  </Tab>
+  <Tab title="Variants">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Black</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#000', borderRadius:'4px', height:'8px', width:'60%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Coal</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#3D445C', borderRadius:'4px', height:'8px', width:'60%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Blue</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'60%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Green</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'4px', height:'8px', width:'60%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>DLV Red</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#ED1B36', borderRadius:'4px', height:'8px', width:'60%'}}></div></div></div>
+    </div>
+  </Tab>
+  <Tab title="Types">
+    <div style={{display:'flex', flexDirection:'column', gap:'24px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Filled (8px height — strong visual emphasis)</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'65%'}}></div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Line (4px height — subtle, compact)</div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'2px', height:'4px', width:'65%'}}></div></div></div>
+    </div>
+  </Tab>
+  <Tab title="Sizes">
+    <div style={{display:'flex', flexDirection:'column', gap:'24px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Large (8px)</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#000', borderRadius:'4px', height:'8px', width:'50%'}}></div></div></div>
+      <div><div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Small (4px)</div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', width:'100%'}}><div style={{background:'#000', borderRadius:'2px', height:'4px', width:'50%'}}></div></div></div>
+    </div>
+  </Tab>
+  <Tab title="With Label">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div>
+        <div style={{display:'flex', justifyContent:'space-between', marginBottom:'6px'}}><span style={{fontSize:'13px'}}>Uploading file...</span><span style={{fontSize:'13px', opacity:0.6}}>65%</span></div>
+        <div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'65%'}}></div></div>
+      </div>
+      <div>
+        <div style={{display:'flex', justifyContent:'space-between', marginBottom:'6px'}}><span style={{fontSize:'13px'}}>Processing data...</span><span style={{fontSize:'13px', opacity:0.6}}>100%</span></div>
+        <div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', width:'100%'}}><div style={{background:'#1BA86E', borderRadius:'4px', height:'8px', width:'100%'}}></div></div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Progress bars should update smoothly to reflect real-time system progress. Use transitions for visual continuity.</Info>
+
+
+---
+
+## Progress Bar Matrix
+
+Complete reference: every Variant × Type × Progress combination.
+
+<Tabs>
+  <Tab title="Filled — Large">
+    <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Black</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#000', borderRadius:'4px', height:'8px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#000', borderRadius:'4px', height:'8px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#000', borderRadius:'4px', height:'8px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#000', borderRadius:'4px', height:'8px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#000', borderRadius:'4px', height:'8px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Coal</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#3D445C', borderRadius:'4px', height:'8px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#3D445C', borderRadius:'4px', height:'8px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#3D445C', borderRadius:'4px', height:'8px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#3D445C', borderRadius:'4px', height:'8px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#3D445C', borderRadius:'4px', height:'8px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Blue</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#2396FB', borderRadius:'4px', height:'8px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Green</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'4px', height:'8px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'4px', height:'8px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'4px', height:'8px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'4px', height:'8px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'4px', height:'8px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>DLV Red</div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#ED1B36', borderRadius:'4px', height:'8px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#ED1B36', borderRadius:'4px', height:'8px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#ED1B36', borderRadius:'4px', height:'8px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#ED1B36', borderRadius:'4px', height:'8px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'4px', height:'8px', flex:1}}><div style={{background:'#ED1B36', borderRadius:'4px', height:'8px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', gap:'12px', marginLeft:'72px'}}><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>0%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>25%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>50%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>75%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>100%</div></div>
+    </div>
+  </Tab>
+  <Tab title="Line — Small">
+    <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Black</div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#000', borderRadius:'2px', height:'4px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#000', borderRadius:'2px', height:'4px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#000', borderRadius:'2px', height:'4px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#000', borderRadius:'2px', height:'4px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#000', borderRadius:'2px', height:'4px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Blue</div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#2396FB', borderRadius:'2px', height:'4px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#2396FB', borderRadius:'2px', height:'4px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#2396FB', borderRadius:'2px', height:'4px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#2396FB', borderRadius:'2px', height:'4px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#2396FB', borderRadius:'2px', height:'4px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}><div style={{width:'60px', fontSize:'11px', opacity:0.5}}>Green</div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'2px', height:'4px', width:'0%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'2px', height:'4px', width:'25%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'2px', height:'4px', width:'50%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'2px', height:'4px', width:'75%'}}></div></div><div style={{background:'#E5E5E5', borderRadius:'2px', height:'4px', flex:1}}><div style={{background:'#1BA86E', borderRadius:'2px', height:'4px', width:'100%'}}></div></div></div>
+      <div style={{display:'flex', gap:'12px', marginLeft:'72px'}}><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>0%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>25%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>50%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>75%</div><div style={{flex:1, fontSize:'10px', opacity:0.3, textAlign:'center'}}>100%</div></div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Anatomy
+
+{/* 🎨 DESIGNER: Replace with progress bar anatomy diagram from Figma (node: 1823:31715) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Progress Bar Anatomy Diagram — Replace with /assets/components/progress-bar/progress-bar-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Track | Yes | Background bar representing total capacity (`#E5E5E5`) |
+| 2 | Progress Indicator | Yes | Filled portion showing current progress value |
+| 3 | Progress Label | No | Numeric percentage or descriptive text above the bar |
+
+---
+
+## Types
+
+| Type | Height | Visual | Use When |
+|------|--------|--------|----------|
+| Filled | 8px (Large), 4px (Small) | Thicker bar, stronger emphasis | Page loading, major task indicators |
+| Line | 8px (Large), 4px (Small) | Thinner indicator on track | Compact interfaces, subtle progress |
+
+---
+
+## Variants
+
+| Variant | Color | Usage |
+|---------|-------|-------|
+| Black | `#000000` | Neutral progress, most interfaces |
+| Coal | `#3D445C` | Soft neutral, subtle system feedback |
+| Blue | `#2396FB` | Informational, primary progress states |
+| Green | `#1BA86E` | Positive, successful completion |
+| DLV Red | `#ED1B36` | Brand-specific, strong visual emphasis |
+
+---
+
+## Sizes
+
+| Size | Track Height | Border Radius | Usage |
+|------|-------------|---------------|-------|
+| Large | 8px | 4px | Prominent areas — page loading, major tasks |
+| Small | 4px | 2px | Compact — cards, list items, dense layouts |
+
+---
+
+## Progress States
+
+| Value | Description | Visual |
+|-------|-------------|--------|
+| 0% | Task started, no visible progress | Empty track |
+| 25% | Early stage | Quarter filled |
+| 50% | Halfway completed | Half filled |
+| 75% | Nearing completion | Three-quarters filled |
+| 100% | Process completed | Fully filled |
+
+---
+
+## Behavior
+
+| Behavior | Description |
+|----------|-------------|
+| Direction | Progress expands left to right (LTR); right to left in RTL |
+| Animation | Smooth width transition (300ms ease-out) on value change |
+| Completion | Bar reaches full width at 100%; may transition to success state |
+| Indeterminate | For unknown duration, use a shimmer/pulse animation instead |
+| Update frequency | Update at meaningful intervals; avoid rapid micro-updates |
+
+---
+
+## Progress Bar vs Spinner vs Skeleton
+
+| Component | Use When | Progress Known | Duration |
+|-----------|----------|---------------|----------|
+| Progress Bar | Measurable task progress | Yes | Medium–long |
+| Spinner | Unknown duration, brief wait | No | Short |
+| Skeleton | Content loading, layout preview | No | Short–medium |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use for measurable processes with known progress
+    - Update smoothly as the task progresses
+    - Place near the associated content
+    - Provide clear contrast between track and indicator
+    - Add percentage label for long operations
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use when progress cannot be estimated
+    - Don't display misleading progress values
+    - Don't use for very short operations (under 1 second)
+    - Don't overuse across the interface
+    - Don't rely solely on color — provide text alternative
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="progressbar"` |
+| Value | Set `aria-valuenow`, `aria-valuemin="0"`, `aria-valuemax="100"` |
+| Label | Add `aria-label="Upload progress"` or `aria-labelledby` |
+| Contrast | Indicator ≥ 3:1 contrast against track |
+| Screen reader | Announce progress at meaningful intervals (25% increments) |
+| Indeterminate | Omit `aria-valuenow` for indeterminate state |
+| Color independence | Don't rely on color alone — provide text percentage |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    | Token | Value |
+    |-------|-------|
+    | `progress-height-lg` | 8px |
+    | `progress-height-sm` | 4px |
+    | `progress-radius-lg` | 4px |
+    | `progress-radius-sm` | 2px |
+    | `progress-label-gap` | 6px |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Value |
+    |-------|-------|
+    | `progress-track-bg` | #E5E5E5 |
+    | `progress-black-bg` | #000000 |
+    | `progress-coal-bg` | #3D445C |
+    | `progress-blue-bg` | #2396FB |
+    | `progress-green-bg` | #1BA86E |
+    | `progress-dlvred-bg` | #ED1B36 |
+  </Tab>
+  <Tab title="Animation">
+    | Token | Value |
+    |-------|-------|
+    | `progress-transition` | 300ms ease-out |
+    | `progress-label-size` | 14px |
+    | `progress-label-weight` | 500 |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface ProgressBarProps {
+  value: number; // 0–100
+  variant?: 'black' | 'coal' | 'blue' | 'green' | 'dlv-red';
+  type?: 'filled' | 'line';
+  size?: 'lg' | 'sm';
+  label?: string;
+  showPercentage?: boolean;
+  indeterminate?: boolean;
+}
+```
+
+```tsx Usage
+// Basic progress bar
+<ProgressBar value={65} variant="blue" />
+
+// With label and percentage
+<ProgressBar value={65} variant="blue" label="Uploading file..." showPercentage />
+
+// Green completion
+<ProgressBar value={100} variant="green" label="Processing complete" />
+
+// Small line type
+<ProgressBar value={40} type="line" size="sm" variant="coal" />
+
+// Indeterminate (unknown duration)
+<ProgressBar indeterminate variant="blue" />
+
+// DLV Red brand variant
+<ProgressBar value={75} variant="dlv-red" size="lg" />
+```
+
+```tsx ARIA
+// Proper ARIA implementation
+<div
+  role="progressbar"
+  aria-valuenow={65}
+  aria-valuemin={0}
+  aria-valuemax={100}
+  aria-label="Upload progress"
+>
+  <div style={{ width: '65%' }} />
+</div>
+
+// Indeterminate
+<div
+  role="progressbar"
+  aria-label="Loading..."
+>
+  <div className="indeterminate-animation" />
+</div>
+```
+</CodeGroup>
