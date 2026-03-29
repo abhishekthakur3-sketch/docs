@@ -76,6 +76,7 @@
                   "components/links",
                   "components/slider",
                   "components/stepper",
+                  "components/spinner",
                   "components/tooltip"
                 ]
               },
