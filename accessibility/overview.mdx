@@ -1,21 +1,18 @@
 ---
-title: "Accessibility Overview"
-description: "TARMAC's commitment to building inclusive, accessible experiences"
+title: Accessibility Overview
+description: TARMAC's commitment to building inclusive, accessible experiences for all users.
+icon: "universal-access"
 ---
-
-# Accessibility Overview
-
-TARMAC is built with accessibility at its core, ensuring all users can interact with your applications regardless of ability.
 
 ## Our Commitment
 
-Every TARMAC component meets WCAG 2.1 Level AA standards minimum, with many exceeding AAA requirements.
+Accessibility is a core value of TARMAC, not an afterthought. Every component is designed and tested to meet WCAG 2.1 Level AA standards, ensuring all users can interact with your applications regardless of ability, device, or context.
 
-<CardGroup cols={2}>
-  <Card title="WCAG 2.1 AA" icon="check-circle">
+<CardGroup cols={4}>
+  <Card title="WCAG 2.1 AA" icon="shield-check">
     All components meet minimum standards
   </Card>
-  <Card title="Keyboard Navigation" icon="keyboard">
+  <Card title="Keyboard First" icon="keyboard">
     Full keyboard support throughout
   </Card>
   <Card title="Screen Readers" icon="audio-description">
@@ -26,63 +23,107 @@ Every TARMAC component meets WCAG 2.1 Level AA standards minimum, with many exce
   </Card>
 </CardGroup>
 
-## Key Principles
+---
 
-### 1. Perceivable
-Information and UI components must be presentable to users in ways they can perceive.
+## The Four Principles
 
-- Sufficient color contrast
-- Text alternatives for images
-- Captions for audio/video
-- Content adaptable to different presentations
+TARMAC follows the four WCAG principles that form the foundation of web accessibility:
 
-### 2. Operable
-UI components and navigation must be operable by all users.
+<Tabs>
+  <Tab title="Perceivable">
+    Information and UI components must be presentable in ways users can perceive.
 
-- Keyboard accessible
-- Sufficient time to interact
-- No seizure-inducing content
-- Clear navigation and focus
+    | Guideline | TARMAC Implementation |
+    |-----------|----------------------|
+    | Text alternatives | All icons include `aria-label`; image placeholders require alt text |
+    | Color contrast | Design tokens guarantee 4.5:1 minimum for text, 3:1 for UI elements |
+    | Adaptable content | Components respond to text scaling up to 200% |
+    | Distinguishable | Color is never the sole means of conveying information |
+  </Tab>
+  <Tab title="Operable">
+    UI components and navigation must be operable by all users.
 
-### 3. Understandable
-Information and UI operation must be understandable.
+    | Guideline | TARMAC Implementation |
+    |-----------|----------------------|
+    | Keyboard accessible | Every interactive component works without a mouse |
+    | Sufficient time | No time-limited interactions without user control |
+    | No seizures | No content flashes more than 3 times per second |
+    | Navigable | Skip links, landmarks, and logical focus order |
+  </Tab>
+  <Tab title="Understandable">
+    Information and UI operation must be understandable.
 
-- Readable text
-- Predictable behavior
-- Input assistance and error prevention
-- Clear instructions
+    | Guideline | TARMAC Implementation |
+    |-----------|----------------------|
+    | Readable | Clear typography hierarchy with legible font sizes |
+    | Predictable | Consistent component behavior across the system |
+    | Input assistance | Inline validation, clear error messages, helper text |
+    | Error prevention | Confirmation dialogs for destructive actions |
+  </Tab>
+  <Tab title="Robust">
+    Content must work reliably with assistive technologies.
 
-### 4. Robust
-Content must be robust enough to work with assistive technologies.
+    | Guideline | TARMAC Implementation |
+    |-----------|----------------------|
+    | Valid markup | Semantic HTML with proper ARIA attributes |
+    | Name, Role, Value | All components expose correct states to assistive tech |
+    | Status messages | Dynamic updates use `aria-live` regions |
+    | Compatibility | Tested with NVDA, VoiceOver, JAWS, and TalkBack |
+  </Tab>
+</Tabs>
 
-- Valid HTML
-- Proper ARIA usage
-- Compatible with assistive technologies
-- Future-proof markup
+---
 
-## Testing Tools
+## What TARMAC Provides
 
-We recommend these tools for accessibility testing:
+Every TARMAC component ships with these accessibility features built in:
 
-- **axe DevTools** - Browser extension for automated testing
-- **WAVE** - Web accessibility evaluation tool
-- **NVDA/JAWS** - Screen reader testing
-- **Keyboard navigation** - Manual testing
-- **Color contrast analyzers** - Verify contrast ratios
+| Feature | Details |
+|---------|---------|
+| Semantic HTML | Correct elements and roles for every component |
+| Keyboard navigation | Tab, arrow keys, Enter, Space, Escape support |
+| Focus management | Visible focus indicators, focus trapping in modals |
+| ARIA attributes | Labels, descriptions, states, and live regions |
+| Color contrast | All color combinations meet AA standards |
+| Responsive text | Components support text scaling and zoom |
+| Reduced motion | Animations respect `prefers-reduced-motion` |
 
-## Learn More
+---
+
+## Your Responsibility
+
+While TARMAC handles component-level accessibility, you are responsible for:
+
+| Area | What You Need To Do |
+|------|---------------------|
+| Content | Write descriptive alt text, link text, and headings |
+| Page structure | Use landmarks, heading hierarchy, and skip links |
+| Forms | Associate labels with inputs, provide error messages |
+| Dynamic content | Announce changes with live regions |
+| Testing | Test with keyboard, screen readers, and automated tools |
+| Custom code | Follow ARIA patterns for any custom widgets |
+
+---
+
+## Explore Accessibility
 
 <CardGroup cols={2}>
-  <Card title="Keyboard Navigation" href="/accessibility/keyboard-navigation">
-    Complete keyboard interaction guide
+  <Card title="Keyboard Navigation" icon="keyboard" href="/accessibility/keyboard-navigation">
+    Complete keyboard interaction patterns for all TARMAC components.
   </Card>
-  <Card title="Screen Readers" href="/accessibility/screen-readers">
-    Screen reader support and testing
+  <Card title="Screen Readers" icon="audio-description" href="/accessibility/screen-readers">
+    Guidelines for screen reader compatibility and ARIA usage.
   </Card>
-  <Card title="Color Contrast" href="/accessibility/color-contrast">
-    Contrast requirements and guidelines
+  <Card title="Color Contrast" icon="eye" href="/accessibility/color-contrast">
+    Contrast requirements, testing tools, and color blindness support.
   </Card>
-  <Card title="Testing" href="/accessibility/testing">
-    How to test for accessibility
+  <Card title="Focus Management" icon="bullseye" href="/accessibility/focus-management">
+    Focus indicators, trapping, restoration, and skip links.
+  </Card>
+  <Card title="Guidelines" icon="list-check" href="/accessibility/guidelines">
+    Practical rules for designers and developers.
+  </Card>
+  <Card title="Testing" icon="flask-vial" href="/accessibility/testing">
+    How to test your application for accessibility compliance.
   </Card>
 </CardGroup>

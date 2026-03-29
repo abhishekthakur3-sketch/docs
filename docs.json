@@ -110,11 +110,18 @@
                 "group": "Accessibility",
                 "pages": [
                   "accessibility/overview",
+                  "accessibility/guidelines",
                   "accessibility/keyboard-navigation",
                   "accessibility/screen-readers",
                   "accessibility/color-contrast",
                   "accessibility/focus-management",
                   "accessibility/testing"
+                ]
+              },
+              {
+                "group": "Support",
+                "pages": [
+                  "contact/contact-us"
                 ]
               }
             ]

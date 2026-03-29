@@ -1,0 +1,167 @@
+---
+title: Layout Patterns
+description: Consistent layout patterns for building structured, responsive interfaces with TARMAC.
+icon: "table-columns"
+---
+
+## Overview
+
+Layout patterns define how content is organized and structured across screens. TARMAC provides flexible layout primitives that adapt to different screen sizes while maintaining visual consistency.
+
+<CardGroup cols={3}>
+  <Card title="Responsive Grid" icon="grip">
+    12-column grid system with breakpoint-aware layouts
+  </Card>
+  <Card title="Content Regions" icon="table-columns">
+    Header, sidebar, main, footer patterns
+  </Card>
+  <Card title="Spacing System" icon="arrows-left-right">
+    Consistent spacing tokens for predictable layouts
+  </Card>
+</CardGroup>
+
+---
+
+## Page Structure
+
+Every page follows a consistent structure with defined content regions:
+
+| Region | Purpose | Behavior |
+|--------|---------|----------|
+| Header | App-level navigation, branding, global actions | Fixed or sticky at top |
+| Sidebar | Section navigation, filters, secondary actions | Collapsible on mobile |
+| Main Content | Primary page content | Scrollable, responsive |
+| Footer | Actions, legal info, secondary navigation | Fixed or inline |
+
+---
+
+## Common Layouts
+
+<Tabs>
+  <Tab title="Single Column">
+    Best for focused content like forms, articles, and detail views. Content is centered with a max-width constraint.
+
+    ```tsx
+    <div style={{ maxWidth: '720px', margin: '0 auto', padding: '24px' }}>
+      <Header />
+      <main>
+        {/* Primary content */}
+      </main>
+      <Footer />
+    </div>
+    ```
+
+    Use when:
+    - Forms and wizards
+    - Article or documentation pages
+    - Mobile-first layouts
+    - Onboarding flows
+  </Tab>
+  <Tab title="Sidebar + Content">
+    Standard layout for dashboards and admin interfaces. Sidebar provides navigation while main area shows content.
+
+    ```tsx
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <aside style={{ width: '260px', flexShrink: 0 }}>
+        <SideNav sections={navItems} />
+      </aside>
+      <main style={{ flex: 1, padding: '24px' }}>
+        {/* Main content */}
+      </main>
+    </div>
+    ```
+
+    Use when:
+    - Dashboards and admin panels
+    - Settings pages
+    - Multi-section applications
+  </Tab>
+  <Tab title="Split View">
+    Two equal or weighted columns for comparison or master-detail patterns.
+
+    ```tsx
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+      <div>{/* Left panel */}</div>
+      <div>{/* Right panel */}</div>
+    </div>
+    ```
+
+    Use when:
+    - Comparison views
+    - Master-detail interfaces
+    - Side-by-side editing
+  </Tab>
+</Tabs>
+
+---
+
+## Responsive Breakpoints
+
+| Breakpoint | Width | Columns | Gutter | Margin |
+|------------|-------|---------|--------|--------|
+| Mobile | 0 - 599px | 4 | 16px | 16px |
+| Tablet | 600 - 1023px | 8 | 24px | 24px |
+| Desktop | 1024 - 1439px | 12 | 24px | 32px |
+| Wide | 1440px+ | 12 | 32px | auto |
+
+---
+
+## Spacing Guidelines
+
+Use TARMAC spacing tokens to maintain consistent rhythm:
+
+| Token | Value | Use For |
+|-------|-------|---------|
+| `spacing-4` | 4px | Tight inline spacing |
+| `spacing-8` | 8px | Related element gaps |
+| `spacing-12` | 12px | Compact component padding |
+| `spacing-16` | 16px | Standard component padding |
+| `spacing-24` | 24px | Section gaps |
+| `spacing-32` | 32px | Major section separation |
+| `spacing-48` | 48px | Page-level separation |
+
+---
+
+## Content Width
+
+| Context | Max Width | Use For |
+|---------|-----------|---------|
+| Narrow | 480px | Modals, forms, dialogs |
+| Medium | 720px | Articles, documentation |
+| Wide | 1080px | Dashboards, data tables |
+| Full | 100% | Maps, media viewers |
+
+---
+
+## Stacking Order (Z-Index)
+
+| Layer | Z-Index | Elements |
+|-------|---------|----------|
+| Base | 0 | Page content |
+| Sticky | 100 | Sticky headers, floating buttons |
+| Dropdown | 200 | Dropdowns, popovers |
+| Overlay | 300 | Backdrop overlays |
+| Modal | 400 | Modals, dialogs |
+| Toast | 500 | Snackbars, notifications |
+| Tooltip | 600 | Tooltips |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use the grid system for consistent alignment
+    - Apply spacing tokens instead of arbitrary values
+    - Design mobile-first, then enhance for larger screens
+    - Use semantic HTML landmarks (header, main, aside, footer)
+    - Test layouts at all breakpoints
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use fixed pixel widths for responsive layouts
+    - Don't nest more than 2 levels of layout containers
+    - Don't mix spacing values arbitrarily
+    - Don't rely on horizontal scrolling for primary content
+    - Don't hide critical content behind breakpoints
+  </Card>
+</CardGroup>

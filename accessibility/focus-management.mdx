@@ -1,78 +1,100 @@
 ---
-title: "Focus Management"
-description: "Managing focus for accessible keyboard navigation"
+title: Focus Management
+description: Managing focus for accessible keyboard navigation in TARMAC applications.
+icon: "bullseye"
 ---
 
-# Focus Management
+## Overview
 
-Proper focus management ensures keyboard users can navigate your application efficiently and predictably.
+Proper focus management ensures keyboard users can navigate your application efficiently and predictably. TARMAC components handle focus internally, but you need to manage focus at the page and flow level.
+
+---
 
 ## Focus Indicators
 
-All interactive elements must have visible focus indicators:
+All TARMAC interactive elements display a visible focus ring:
 
-```css
-:focus-visible {
-  outline: 2px solid var(--color-primary-600);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-```
+| Property | Value |
+|----------|-------|
+| Style | Box shadow (not outline, for rounded elements) |
+| Color | rgba(35, 150, 251, 0.4) — info blue |
+| Spread | 2px |
+| Offset | 0px (flush with element) |
+
+<Warning>
+  Never remove focus indicators with `outline: none` or `box-shadow: none`. If you customize them, ensure the replacement meets 3:1 contrast against adjacent colors.
+</Warning>
+
+---
 
 ## Focus Order
 
-Focus order should follow the visual layout and reading order:
+Focus order must follow the visual reading order:
 
-1. Header navigation
-2. Main content
-3. Sidebar (if present)
-4. Footer
+| Priority | Region | Notes |
+|----------|--------|-------|
+| 1 | Skip link | Hidden until focused |
+| 2 | Header / navigation | App-level controls |
+| 3 | Main content | Top to bottom, left to right |
+| 4 | Sidebar | Secondary navigation |
+| 5 | Footer | Tertiary actions |
+
+<Tip>
+  Avoid using positive tabindex values (tabindex="1", "2", etc.). They override natural DOM order and create confusing navigation. Use tabindex="0" to make elements focusable in DOM order, or tabindex="-1" for programmatic focus only.
+</Tip>
+
+---
 
 ## Focus Trapping
 
-### When to Use
-
-Trap focus in modal dialogs and overlays to prevent keyboard users from accessing background content.
-
-```tsx
-<Modal open={isOpen} onClose={handleClose}>
-  {/* Focus trapped within modal */}
-  <button onClick={handleClose}>Close</button>
-</Modal>
-```
-
-### Implementation
+Trap focus inside modal dialogs and overlays to prevent keyboard users from accessing background content:
 
 ```tsx
 import { useFocusTrap } from '@tarmac/design-system';
 
-function Dialog() {
+function Dialog({ open, onClose, children }) {
   const trapRef = useFocusTrap();
-  
+
+  if (!open) return null;
+
   return (
-    <div ref={trapRef} role="dialog">
-      {/* Focus stays within this container */}
+    <div ref={trapRef} role="dialog" aria-modal="true">
+      {children}
+      <button onClick={onClose}>Close</button>
     </div>
   );
 }
 ```
 
-## Restoring Focus
+### When to Trap Focus
 
-When closing modals or dialogs, return focus to the trigger element:
+| Component | Trap Focus | Reason |
+|-----------|-----------|--------|
+| Modal / Dialog | Yes | Prevents interaction with background |
+| Side Drawer | Yes | Overlay blocks background |
+| Bottom Sheet | Yes | Overlay blocks background |
+| Dropdown Menu | No | User should be able to Tab away |
+| Tooltip | No | Informational only |
+| Popover | Depends | Trap if it contains interactive elements |
+
+---
+
+## Focus Restoration
+
+When closing a modal or overlay, return focus to the element that triggered it:
 
 ```tsx
 function MyComponent() {
-  const buttonRef = useRef(null);
-  
+  const triggerRef = useRef(null);
+
   const handleClose = () => {
     setIsOpen(false);
-    buttonRef.current?.focus(); // Restore focus
+    triggerRef.current?.focus(); // Restore focus
   };
-  
+
   return (
     <>
-      <button ref={buttonRef} onClick={() => setIsOpen(true)}>
+      <button ref={triggerRef} onClick={() => setIsOpen(true)}>
         Open Dialog
       </button>
       <Dialog open={isOpen} onClose={handleClose} />
@@ -81,32 +103,59 @@ function MyComponent() {
 }
 ```
 
+---
+
+## Programmatic Focus
+
+Move focus programmatically for route changes and dynamic content:
+
+| Scenario | Focus Target |
+|----------|-------------|
+| Page navigation | Main content heading or skip link target |
+| Form submission error | First invalid field |
+| Toast/snackbar | Don't move focus (use aria-live instead) |
+| New content loaded | First element of new content |
+| Item deleted from list | Next item in list, or previous if last |
+
+---
+
 ## Skip Links
 
-Provide skip links to bypass repetitive content:
+Provide a skip link as the first focusable element on every page:
 
 ```tsx
-<a href="#main-content" className="skip-link">
+<a
+  href="#main-content"
+  style={{
+    position: 'absolute',
+    top: '-40px',
+    left: '0',
+    background: '#0D0D0D',
+    color: 'white',
+    padding: '8px 16px',
+    zIndex: 100,
+  }}
+  onFocus={(e) => { e.target.style.top = '0'; }}
+  onBlur={(e) => { e.target.style.top = '-40px'; }}
+>
   Skip to main content
 </a>
 
-<main id="main-content">
-  {/* Main content */}
+<main id="main-content" tabIndex={-1}>
+  {/* Page content */}
 </main>
 ```
 
-```css
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-primary-600);
-  color: white;
-  padding: 8px;
-  z-index: 100;
-}
+---
 
-.skip-link:focus {
-  top: 0;
-}
-```
+## Testing Checklist
+
+| Check | Pass Criteria |
+|-------|---------------|
+| Focus indicators visible | Every focused element shows a clear ring |
+| Focus order logical | Matches visual layout, no unexpected jumps |
+| Focus trapped in modals | Tab cycles within modal, not behind it |
+| Focus restored on close | Focus returns to trigger element |
+| Skip link works | Appears on focus, jumps to main content |
+| No keyboard traps | User can always navigate away (except modals) |
+| Programmatic focus correct | Route changes and errors move focus appropriately |

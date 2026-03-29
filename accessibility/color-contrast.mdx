@@ -1,128 +1,117 @@
 ---
-title: "Color Contrast"
-description: "Ensuring sufficient color contrast for accessibility"
+title: Color Contrast
+description: Ensuring sufficient color contrast for accessibility in TARMAC.
+icon: "eye"
 ---
 
-# Color Contrast
+## Overview
 
-Proper color contrast ensures text and UI elements are readable for all users, including those with visual impairments.
+Proper color contrast ensures text and UI elements are readable for all users, including those with low vision or color blindness. All TARMAC color token combinations meet WCAG 2.1 Level AA standards.
+
+---
 
 ## WCAG Requirements
 
-### Level AA (Minimum)
+<Tabs>
+  <Tab title="Level AA (Minimum)">
+    | Content Type | Contrast Ratio |
+    |--------------|----------------|
+    | Normal text (below 18px) | 4.5:1 |
+    | Large text (18px+ or 14px bold) | 3:1 |
+    | UI components and graphics | 3:1 |
+  </Tab>
+  <Tab title="Level AAA (Enhanced)">
+    | Content Type | Contrast Ratio |
+    |--------------|----------------|
+    | Normal text | 7:1 |
+    | Large text | 4.5:1 |
+  </Tab>
+</Tabs>
 
-| Content Type | Contrast Ratio |
-|--------------|----------------|
-| Normal text (< 18px) | 4.5:1 |
-| Large text (≥ 18px or ≥ 14px bold) | 3:1 |
-| UI components | 3:1 |
-| Graphics | 3:1 |
-
-### Level AAA (Enhanced)
-
-| Content Type | Contrast Ratio |
-|--------------|----------------|
-| Normal text | 7:1 |
-| Large text | 4.5:1 |
+---
 
 ## TARMAC Color Combinations
 
-All TARMAC color combinations meet AA standards minimum:
+All TARMAC design token combinations are pre-validated for contrast:
 
 ### Text on Backgrounds
 
 | Foreground | Background | Ratio | Level |
 |------------|------------|-------|-------|
-| `neutral-900` | `white` | 21:1 | AAA |
-| `neutral-700` | `white` | 10.4:1 | AAA |
-| `neutral-600` | `white` | 7.0:1 | AAA |
-| `success-700` | `success-100` | 10.8:1 | AAA |
-| `error-700` | `error-100` | 12.1:1 | AAA |
+| neutral-900 (#0D0D0D) | white | 19.4:1 | AAA |
+| neutral-700 (#454545) | white | 9.7:1 | AAA |
+| neutral-600 (#808080) | white | 3.9:1 | AA Large |
+| body/primary (#2B2B2B) | white | 14.7:1 | AAA |
+| caption/primary (#454545) | white | 9.7:1 | AAA |
+| body/disabled (#CDCBCB) | white | 1.5:1 | Fail |
+
+<Warning>
+  Disabled text intentionally has low contrast to indicate non-interactive state. Never use disabled color tokens for active content.
+</Warning>
 
 ### Interactive Elements
 
-| Element | Default | Hover | Ratio |
-|---------|---------|-------|-------|
-| Primary Button | `#000000` on white | `#1a1a1a` | 21:1 |
-| Link | `#000000` | `#1a1a1a` | 21:1 |
-| Focus Ring | `#000000` | - | 3:1 |
+| Element | Colors | Ratio |
+|---------|--------|-------|
+| Primary Button | #0D0D0D on white | 19.4:1 |
+| Focus Ring | rgba(35, 150, 251, 0.4) | 3:1 against white |
+| Error State | #DC2626 on white | 4.6:1 |
+| Success State | #16A34A on white | 3.4:1 |
+
+---
+
+## Color Blindness
+
+### Types
+
+| Type | Prevalence | Affected Colors |
+|------|-----------|-----------------|
+| Deuteranopia | ~6% of males | Red-green confusion |
+| Protanopia | ~2% of males | Red-green confusion |
+| Tritanopia | ~0.01% | Blue-yellow confusion |
+| Achromatopsia | ~0.003% | Complete color blindness |
+
+### Guidelines
+
+| Rule | Details |
+|------|---------|
+| Never use color alone | Pair color with text, icons, or patterns |
+| Error indicators | Use icon + red color + error text |
+| Success indicators | Use icon + green color + success text |
+| Status badges | Include text label, not just color |
+| Charts and graphs | Use patterns or labels in addition to color |
+
+---
 
 ## Testing Tools
 
-### Browser Extensions
+| Tool | Type | Use For |
+|------|------|---------|
+| axe DevTools | Browser extension | Automated contrast checking |
+| WAVE | Browser extension | Visual contrast analysis |
+| WebAIM Contrast Checker | Online tool | Manual ratio calculation |
+| Color Oracle | Desktop app | Color blindness simulation |
+| Stark | Figma plugin | Design-time contrast checking |
 
-- **axe DevTools** - Automated contrast checking
-- **WAVE** - Visual contrast analysis
-- **Stark** - Figma/browser plugin
-
-### Online Tools
-
-- **WebAIM Contrast Checker** - Manual testing
-- **Contrast Ratio** - Quick calculations
-- **Color Oracle** - Color blindness simulator
+---
 
 ## Best Practices
 
 <CardGroup cols={2}>
-  <Card title="✓ Do" icon="check">
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use TARMAC design tokens for all colors
     - Test all text/background combinations
-    - Verify UI component contrast
-    - Check focus indicators
+    - Verify UI component contrast (borders, icons)
+    - Check focus indicator visibility
     - Test with color blindness simulators
-    - Use TARMAC color tokens
+    - Pair color with secondary indicators
   </Card>
-  <Card title="✗ Don't" icon="xmark">
-    - Don't rely on color alone
-    - Don't use low-contrast text
-    - Don't forget disabled states
-    - Don't skip testing
-    - Don't use arbitrary colors
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use arbitrary hex colors
+    - Don't rely on color as the only indicator
+    - Don't use low-contrast placeholder text as labels
+    - Don't forget to test disabled states
+    - Don't assume all users see color the same way
+    - Don't skip contrast checks on dark backgrounds
   </Card>
 </CardGroup>
-
-## Color Blindness
-
-### Types of Color Blindness
-
-- **Deuteranopia** (red-green, most common)
-- **Protanopia** (red-green)
-- **Tritanopia** (blue-yellow, rare)
-- **Achromatopsia** (complete color blindness, very rare)
-
-### Guidelines
-
-1. Never use color as the only means of conveying information
-2. Pair color with text, icons, or patterns
-3. Test designs with color blindness simulators
-4. Ensure sufficient contrast between adjacent colors
-
-## Code Examples
-
-### CSS with Sufficient Contrast
-
-```css
-/* Good - High contrast */
-.text-primary {
-  color: var(--color-neutral-900); /* 21:1 on white */
-}
-
-.text-secondary {
-  color: var(--color-neutral-600); /* 7:1 on white */
-}
-
-/* Bad - Low contrast */
-.text-low-contrast {
-  color: #999999; /* Only 2.8:1 on white */
-}
-```
-
-### Testing in Code
-
-```tsx
-// Use design tokens that guarantee contrast
-<Text color="neutral-900">High contrast text</Text>
-<Text color="neutral-600">Medium contrast text</Text>
-
-// Avoid arbitrary colors
-<Text style={{ color: '#aaa' }}>Low contrast - avoid!</Text>
-```

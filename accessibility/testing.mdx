@@ -1,145 +1,175 @@
 ---
-title: "Accessibility Testing"
-description: "How to test your application for accessibility compliance"
+title: Accessibility Testing
+description: How to test your TARMAC application for accessibility compliance.
+icon: "flask-vial"
 ---
 
-# Accessibility Testing
+## Overview
 
-Comprehensive accessibility testing ensures your application works for all users.
+Comprehensive accessibility testing combines automated tools, manual checks, and real user testing. No single method catches everything — use all three for full coverage.
 
-## Testing Methods
+<CardGroup cols={3}>
+  <Card title="Automated" icon="robot">
+    Catches ~30% of issues: missing alt text, contrast, ARIA errors
+  </Card>
+  <Card title="Manual" icon="hand">
+    Catches ~50% of issues: keyboard flow, focus order, screen reader experience
+  </Card>
+  <Card title="User Testing" icon="users">
+    Catches ~20% of issues: real-world usability with assistive tech
+  </Card>
+</CardGroup>
 
-### 1. Automated Testing
+---
 
-Use automated tools to catch common issues:
-
-**Browser Extensions:**
-- **axe DevTools** - Comprehensive automated testing
-- **WAVE** - Visual accessibility evaluation
-- **Lighthouse** - Built into Chrome DevTools
-
-**Command Line:**
-```bash
-npm install --save-dev @axe-core/cli
-npx axe https://your-site.com
-```
-
-### 2. Manual Testing
-
-#### Keyboard Navigation
-- [ ] Tab through all interactive elements
-- [ ] Verify focus indicators are visible
-- [ ] Test all keyboard shortcuts
-- [ ] Ensure no keyboard traps
-- [ ] Verify logical focus order
-
-#### Screen Reader Testing
-- [ ] Test with NVDA (Windows)
-- [ ] Test with VoiceOver (macOS)
-- [ ] Verify all content is announced
-- [ ] Check form labels and errors
-- [ ] Test dynamic content updates
-
-#### Visual Testing
-- [ ] Verify color contrast (4.5:1 minimum)
-- [ ] Test with color blindness simulators
-- [ ] Check text scaling (200%)
-- [ ] Verify responsive design
-- [ ] Test with high contrast mode
-
-### 3. User Testing
-
-Include users with disabilities in your testing process:
-- Keyboard-only users
-- Screen reader users
-- Users with low vision
-- Users with motor impairments
-
-## Testing Checklist
-
-### Content
-- [ ] All images have alt text
-- [ ] Headings are in logical order
-- [ ] Links have descriptive text
-- [ ] Language is specified
-- [ ] Page titles are descriptive
-
-### Forms
-- [ ] All inputs have labels
-- [ ] Required fields are marked
-- [ ] Error messages are clear
-- [ ] Validation is accessible
-- [ ] Success messages announced
-
-### Navigation
-- [ ] Skip links provided
-- [ ] Landmarks used correctly
-- [ ] Focus order is logical
-- [ ] Breadcrumbs are accessible
-- [ ] Menu navigation works with keyboard
-
-### Interactive Elements
-- [ ] Buttons have accessible names
-- [ ] Links are distinguishable
-- [ ] Modals trap focus
-- [ ] Tooltips are keyboard accessible
-- [ ] Dropdowns work with keyboard
-
-### Color & Contrast
-- [ ] Text contrast ≥ 4.5:1
-- [ ] Large text contrast ≥ 3:1
-- [ ] UI components contrast ≥ 3:1
-- [ ] Focus indicators contrast ≥ 3:1
-- [ ] Color not sole indicator
-
-## Testing Tools
+## Automated Testing
 
 ### Browser Extensions
-- **axe DevTools** - https://www.deque.com/axe/devtools/
-- **WAVE** - https://wave.webaim.org/extension/
-- **Lighthouse** - Built into Chrome DevTools
 
-### Screen Readers
-- **NVDA** (Windows, free) - https://www.nvaccess.org/
-- **JAWS** (Windows, paid) - https://www.freedomscientific.com/
-- **VoiceOver** (macOS/iOS, built-in)
-- **TalkBack** (Android, built-in)
+| Tool | What It Catches |
+|------|----------------|
+| axe DevTools | ARIA errors, contrast, missing labels, structure |
+| WAVE | Visual overlay of issues, contrast, landmarks |
+| Lighthouse | Accessibility score with actionable recommendations |
 
-### Color Tools
-- **WebAIM Contrast Checker** - https://webaim.org/resources/contrastchecker/
-- **Color Oracle** - https://colororacle.org/
-- **Stark** - https://www.getstark.co/
+### Code-Level Testing
 
-### Automated Testing
-```bash
-# Install dependencies
-npm install --save-dev @axe-core/react jest-axe
+Add accessibility checks to your test suite:
 
-# Test component
+```tsx
 import { axe, toHaveNoViolations } from 'jest-axe';
 
 expect.extend(toHaveNoViolations);
 
-test('should not have accessibility violations', async () => {
+test('component has no accessibility violations', async () => {
   const { container } = render(<MyComponent />);
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });
 ```
 
-## Continuous Testing
+### CI/CD Integration
 
-Integrate accessibility testing into your CI/CD pipeline:
+Run accessibility tests on every pull request:
 
 ```yaml
-# .github/workflows/accessibility.yml
-name: Accessibility Tests
+# .github/workflows/a11y.yml
+name: Accessibility
 on: [push, pull_request]
 jobs:
-  a11y:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: npm ci
       - run: npm run test:a11y
 ```
+
+---
+
+## Manual Testing
+
+### Keyboard Testing
+
+| Test | How | Pass Criteria |
+|------|-----|---------------|
+| Tab navigation | Press Tab through entire page | All interactive elements reachable |
+| Focus visibility | Tab and observe | Clear focus ring on every element |
+| Focus order | Tab and check sequence | Matches visual layout |
+| Activation | Press Enter/Space on controls | Buttons, links, toggles respond |
+| Escape | Press Escape on overlays | Modals and dropdowns close |
+| Arrow keys | Navigate tabs, menus, radios | Composite widgets respond |
+| Skip link | Tab once from page top | Skip link appears and works |
+
+### Screen Reader Testing
+
+| Test | How | Pass Criteria |
+|------|-----|---------------|
+| Content reading | Navigate with screen reader | All visible text announced |
+| Interactive labels | Focus buttons, links, inputs | Clear accessible names announced |
+| Form fields | Navigate form | Labels, required state, errors announced |
+| Dynamic content | Trigger toasts, status changes | Updates announced via live regions |
+| Landmarks | Use landmark navigation | Header, nav, main, footer present |
+| Headings | Use heading navigation | Logical H1-H6 hierarchy |
+
+### Visual Testing
+
+| Test | How | Pass Criteria |
+|------|-----|---------------|
+| Text contrast | Use contrast checker tool | 4.5:1 for normal text, 3:1 for large |
+| Color blindness | Use Color Oracle or similar | Information not conveyed by color alone |
+| Text scaling | Zoom browser to 200% | Content remains usable, no overflow |
+| High contrast | Enable OS high contrast mode | All content visible and usable |
+| Reduced motion | Enable prefers-reduced-motion | Animations disabled or reduced |
+
+---
+
+## Testing Checklist
+
+<Tabs>
+  <Tab title="Content">
+    | Check | Status |
+    |-------|--------|
+    | All images have descriptive alt text | |
+    | Headings in logical order (H1-H6) | |
+    | Links have descriptive text (not "click here") | |
+    | Language attribute set on html element | |
+    | Page titles are unique and descriptive | |
+  </Tab>
+  <Tab title="Forms">
+    | Check | Status |
+    |-------|--------|
+    | Every input has a visible label | |
+    | Required fields marked with aria-required | |
+    | Error messages linked via aria-describedby | |
+    | Error summary uses role="alert" | |
+    | Focus moves to first error on submit failure | |
+  </Tab>
+  <Tab title="Navigation">
+    | Check | Status |
+    |-------|--------|
+    | Skip link provided and functional | |
+    | Landmarks used (header, nav, main, footer) | |
+    | Focus order matches visual layout | |
+    | Breadcrumbs have aria-label="Breadcrumb" | |
+    | All menus work with keyboard | |
+  </Tab>
+  <Tab title="Interactive">
+    | Check | Status |
+    |-------|--------|
+    | Buttons have accessible names | |
+    | Modals trap focus and restore on close | |
+    | Tooltips accessible via keyboard | |
+    | Dropdowns navigable with arrow keys | |
+    | Toggle states announced to screen readers | |
+  </Tab>
+</Tabs>
+
+---
+
+## Recommended Tools
+
+| Category | Tool | Platform |
+|----------|------|----------|
+| Automated | axe DevTools | Browser extension |
+| Automated | Lighthouse | Chrome DevTools |
+| Automated | jest-axe | Node.js test runner |
+| Screen Reader | NVDA | Windows (free) |
+| Screen Reader | JAWS | Windows (commercial) |
+| Screen Reader | VoiceOver | macOS/iOS (built-in) |
+| Screen Reader | TalkBack | Android (built-in) |
+| Color | WebAIM Contrast Checker | Online |
+| Color | Color Oracle | Desktop app |
+| Color | Stark | Figma plugin |
+
+---
+
+## When to Test
+
+| Phase | What to Test |
+|-------|-------------|
+| Design | Color contrast, touch targets, visual hierarchy |
+| Development | Keyboard navigation, ARIA attributes, semantic HTML |
+| Code Review | Automated axe checks, focus management |
+| QA | Full manual testing with screen readers |
+| Release | Regression testing on key user flows |

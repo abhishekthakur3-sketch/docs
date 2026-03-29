@@ -1,52 +1,102 @@
 ---
-title: "Form Patterns"
-description: "Best practices for building accessible, user-friendly forms"
+title: Form Patterns
+description: Best practices and patterns for building accessible, user-friendly forms with TARMAC components.
+icon: "rectangle-list"
 ---
 
-# Form Patterns
+## Overview
 
-Forms are critical touchpoints in user experiences. TARMAC provides patterns for building accessible, efficient forms.
+Forms are critical touchpoints in user experiences. TARMAC provides patterns for building accessible, efficient forms that guide users through data entry with clear feedback and validation.
 
-## Basic Form Structure
+<CardGroup cols={3}>
+  <Card title="Validation" icon="circle-check">
+    Inline and form-level validation patterns
+  </Card>
+  <Card title="Layouts" icon="table-columns">
+    Single column, multi-column, and stepped forms
+  </Card>
+  <Card title="Accessibility" icon="universal-access">
+    Labels, errors, and screen reader support
+  </Card>
+</CardGroup>
 
-```tsx
-<form onSubmit={handleSubmit}>
-  <Input
-    label="Email Address"
-    type="email"
-    required
-    helperText="We'll never share your email"
-  />
-  
-  <Input
-    label="Password"
-    type="password"
-    required
-    helperText="Must be at least 8 characters"
-  />
-  
-  <Button type="submit" variant="primary">
-    Sign In
-  </Button>
-</form>
-```
+---
 
-## Form Validation
+## Form Structure
+
+Every form should follow this structure:
+
+| Element | Required | Purpose |
+|---------|----------|---------|
+| Form title | Yes | Describes the form's purpose |
+| Field labels | Yes | Identifies each input |
+| Helper text | Optional | Provides additional context |
+| Required indicator | Yes (for required fields) | Marks mandatory fields |
+| Error messages | Conditional | Explains validation failures |
+| Submit action | Yes | Primary form action |
+| Cancel action | Optional | Allows users to abandon the form |
+
+---
+
+## Field Layout
+
+<Tabs>
+  <Tab title="Single Column">
+    Recommended for most forms, especially on mobile. Fields stack vertically for easy scanning.
+
+    ```tsx
+    <form onSubmit={handleSubmit}>
+      <Input label="Full Name" required />
+      <Input label="Email Address" type="email" required />
+      <Input label="Phone Number" type="tel" />
+      <Button type="submit" variant="primary">Submit</Button>
+    </form>
+    ```
+  </Tab>
+  <Tab title="Two Column">
+    Use for related fields on desktop. Always collapse to single column on mobile.
+
+    ```tsx
+    <form onSubmit={handleSubmit}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <Input label="First Name" required />
+        <Input label="Last Name" required />
+      </div>
+      <Input label="Email Address" type="email" required />
+      <Button type="submit" variant="primary">Submit</Button>
+    </form>
+    ```
+  </Tab>
+  <Tab title="Stepped Form">
+    Break long forms into logical steps using the Stepper component.
+
+    ```tsx
+    <Stepper activeStep={currentStep}>
+      <Step title="Personal Info">
+        <Input label="Full Name" required />
+        <Input label="Email" type="email" required />
+      </Step>
+      <Step title="Address">
+        <Input label="Street Address" required />
+        <Input label="City" required />
+      </Step>
+      <Step title="Review">
+        {/* Summary of entered data */}
+      </Step>
+    </Stepper>
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## Validation Patterns
 
 ### Inline Validation
 
 Validate fields on blur for immediate feedback:
 
 ```tsx
-const [errors, setErrors] = useState({});
-
-const validateEmail = (email) => {
-  if (!email.includes('@')) {
-    return 'Please enter a valid email address';
-  }
-  return null;
-};
-
 <Input
   label="Email"
   value={email}
@@ -62,119 +112,103 @@ const validateEmail = (email) => {
 
 ### Form-Level Validation
 
-Validate entire form on submit:
+Validate the entire form on submit and show an error summary:
 
 ```tsx
 const handleSubmit = (e) => {
   e.preventDefault();
-  
   const newErrors = {};
   if (!email) newErrors.email = 'Email is required';
   if (!password) newErrors.password = 'Password is required';
-  
+
   if (Object.keys(newErrors).length > 0) {
     setErrors(newErrors);
+    // Focus the first error field
+    document.getElementById(Object.keys(newErrors)[0])?.focus();
     return;
   }
-  
-  // Submit form
+  submitForm();
 };
 ```
 
-## Form Layouts
-
-### Single Column (Recommended)
-
-Best for most forms, especially on mobile:
-
-```tsx
-<form>
-  <Input label="Full Name" />
-  <Input label="Email" type="email" />
-  <Input label="Phone" type="tel" />
-  <Button type="submit">Submit</Button>
-</form>
-```
-
-### Two Column
-
-For related fields on desktop:
-
-```tsx
-<div className="grid grid-cols-2 gap-4">
-  <Input label="First Name" />
-  <Input label="Last Name" />
-</div>
-<Input label="Email" type="email" />
-```
-
-## Required Fields
-
-Mark required fields clearly:
-
-```tsx
-<Input
-  label="Email Address"
-  required
-  helperText="Required field"
-/>
-```
-
-## Error Handling
-
 ### Error Summary
 
-Show all errors at the top of the form:
+Display all errors at the top of the form for visibility:
 
 ```tsx
 {Object.keys(errors).length > 0 && (
   <Alert variant="error" role="alert">
-    <strong>Please fix the following errors:</strong>
+    Please fix the following errors:
     <ul>
       {Object.entries(errors).map(([field, error]) => (
-        <li key={field}>{error}</li>
+        <li key={field}>
+          <a href={`#${field}`}>{error}</a>
+        </li>
       ))}
     </ul>
   </Alert>
 )}
 ```
 
-### Field-Level Errors
+---
 
-Show errors below each field:
+## States
 
-```tsx
-<Input
-  label="Email"
-  value={email}
-  errorMessage={errors.email}
-  aria-invalid={!!errors.email}
-  aria-describedby={errors.email ? 'email-error' : undefined}
-/>
-```
+| State | Visual Treatment | Behavior |
+|-------|-----------------|----------|
+| Default | Neutral border, placeholder text | Ready for input |
+| Focused | Blue focus ring | Active input |
+| Filled | Value displayed, neutral border | Data entered |
+| Error | Red border, error message below | Validation failed |
+| Success | Green indicator (optional) | Validation passed |
+| Disabled | Muted appearance | No interaction |
+| Loading | Spinner on submit button | Form submitting |
 
-## Success States
+---
 
-Provide clear feedback on successful submission:
+## Required vs Optional Fields
 
-```tsx
-{isSuccess && (
-  <Alert variant="success" role="status">
-    Form submitted successfully!
-  </Alert>
-)}
-```
+<CardGroup cols={2}>
+  <Card title="Mostly Required" icon="asterisk">
+    When most fields are required, mark the optional ones with "(optional)" text.
+  </Card>
+  <Card title="Mostly Optional" icon="circle-info">
+    When most fields are optional, mark required ones with an asterisk (*) and include a legend.
+  </Card>
+</CardGroup>
 
-## Loading States
+---
 
-Disable form during submission:
+## Accessibility Requirements
 
-```tsx
-<Button
-  type="submit"
-  loading={isSubmitting}
-  disabled={isSubmitting}
->
-  {isSubmitting ? 'Submitting...' : 'Submit'}
-</Button>
-```
+| Requirement | Implementation |
+|-------------|---------------|
+| Labels | Every input must have a visible `label` element linked via `htmlFor`/`id` |
+| Error messages | Use `aria-invalid="true"` and `aria-describedby` pointing to the error |
+| Required fields | Use `aria-required="true"` and visual indicator |
+| Error summary | Use `role="alert"` so screen readers announce errors |
+| Focus management | Move focus to first error field on submit failure |
+| Grouping | Use `fieldset` and `legend` for related fields (e.g., radio groups) |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use single-column layout for most forms
+    - Provide clear, specific error messages
+    - Mark required fields consistently
+    - Use inline validation on blur
+    - Show loading state during submission
+    - Return focus to the first error on submit failure
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't validate on every keystroke (use blur instead)
+    - Don't use placeholder text as the only label
+    - Don't disable the submit button before validation
+    - Don't clear the form on validation error
+    - Don't use generic error messages like "Invalid input"
+    - Don't rely on color alone to indicate errors
+  </Card>
+</CardGroup>

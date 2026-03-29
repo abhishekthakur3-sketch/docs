@@ -1,108 +1,122 @@
 ---
-title: "Keyboard Navigation"
-description: "Complete keyboard interaction patterns for TARMAC components"
+title: Keyboard Navigation
+description: Complete keyboard interaction patterns for TARMAC components.
+icon: "keyboard"
 ---
 
-# Keyboard Navigation
+## Overview
 
-All TARMAC components are fully keyboard accessible, following established interaction patterns.
+All TARMAC components are fully keyboard accessible, following established WAI-ARIA interaction patterns. Users should be able to navigate, interact with, and operate every component without a mouse.
+
+---
 
 ## Standard Keys
 
-### Navigation Keys
-
 | Key | Action |
 |-----|--------|
-| **Tab** | Move focus forward |
-| **Shift + Tab** | Move focus backward |
-| **Enter** | Activate buttons, links, submit forms |
-| **Space** | Activate buttons, toggle checkboxes |
-| **Escape** | Close modals, dismiss overlays |
-| **Arrow Keys** | Navigate within components (menus, tabs, etc.) |
+| Tab | Move focus to next interactive element |
+| Shift + Tab | Move focus to previous interactive element |
+| Enter | Activate buttons, links, submit forms |
+| Space | Activate buttons, toggle checkboxes, select options |
+| Escape | Close modals, dismiss overlays, cancel actions |
+| Arrow Keys | Navigate within composite widgets (menus, tabs, radio groups) |
+| Home / End | Jump to first/last item in a list or menu |
 
-### Text Input Keys
+---
 
-| Key | Action |
-|-----|--------|
-| **Home** | Move to start of line |
-| **End** | Move to end of line |
-| **Ctrl/Cmd + A** | Select all text |
-| **Ctrl/Cmd + C/V/X** | Copy, paste, cut |
+## Component Keyboard Patterns
 
-## Component Patterns
+<Tabs>
+  <Tab title="Buttons & Links">
+    | Key | Action |
+    |-----|--------|
+    | Tab | Focus the button/link |
+    | Enter | Activate the button/link |
+    | Space | Activate the button (not links) |
+  </Tab>
+  <Tab title="Inputs & Forms">
+    | Key | Action |
+    |-----|--------|
+    | Tab | Move between form fields |
+    | Enter | Submit form (when focused on submit button) |
+    | Space | Toggle checkbox |
+    | Arrow Up/Down | Change radio selection, adjust slider |
+    | Home/End | Move cursor to start/end of text input |
+  </Tab>
+  <Tab title="Modals & Dialogs">
+    | Key | Action |
+    |-----|--------|
+    | Tab | Cycle through focusable elements (trapped) |
+    | Shift + Tab | Cycle backward (trapped) |
+    | Escape | Close the modal |
+    | Enter | Activate focused button |
+  </Tab>
+  <Tab title="Menus & Dropdowns">
+    | Key | Action |
+    |-----|--------|
+    | Enter / Space | Open dropdown |
+    | Arrow Down | Move to next option |
+    | Arrow Up | Move to previous option |
+    | Home | Jump to first option |
+    | End | Jump to last option |
+    | Enter | Select highlighted option |
+    | Escape | Close dropdown |
+  </Tab>
+  <Tab title="Tabs & Navigation">
+    | Key | Action |
+    |-----|--------|
+    | Tab | Focus the tab list |
+    | Arrow Left/Right | Navigate between tabs |
+    | Enter / Space | Activate the focused tab |
+    | Home | Focus first tab |
+    | End | Focus last tab |
+  </Tab>
+</Tabs>
 
-### Buttons
+---
 
-```
-Tab → Focus button
-Enter/Space → Activate button
-```
+## Focus Indicators
 
-### Modals
+All interactive elements display a visible focus ring when navigated via keyboard:
 
-```
-Tab → Cycle through focusable elements
-Escape → Close modal
-Focus trap → Keep focus within modal
-```
+| Property | Value |
+|----------|-------|
+| Style | 2px solid outline |
+| Color | rgba(35, 150, 251, 0.4) — info blue |
+| Offset | 2px from element edge |
+| Shape | Follows element border-radius |
 
-### Dropdowns
+<Warning>
+  Never remove focus indicators with `outline: none`. If you need to customize them, ensure the replacement meets 3:1 contrast ratio against adjacent colors.
+</Warning>
 
-```
-Tab → Focus trigger
-Enter/Space → Open dropdown
-Arrow Up/Down → Navigate options
-Enter → Select option
-Escape → Close dropdown
-```
+---
 
-### Tabs
+## Focus Order
 
-```
-Tab → Focus tab list
-Arrow Left/Right → Navigate tabs
-Enter/Space → Activate tab
-```
+Focus order must follow the visual reading order of the page:
 
-## Focus Management
+1. Skip link (hidden until focused)
+2. Header / top navigation
+3. Main content area (top to bottom, left to right)
+4. Sidebar (if present)
+5. Footer
 
-### Visible Focus Indicators
+<Tip>
+  Use the Tab key to navigate through your page and verify the order feels logical. If focus jumps unexpectedly, check your DOM order and avoid positive `tabindex` values.
+</Tip>
 
-All interactive elements show a clear focus indicator:
-
-```css
-:focus-visible {
-  outline: 2px solid var(--color-primary-600);
-  outline-offset: 2px;
-}
-```
-
-### Focus Trapping
-
-Modals and dialogs trap focus to prevent keyboard users from accessing background content:
-
-```tsx
-<Modal open={isOpen}>
-  {/* Focus stays within modal */}
-</Modal>
-```
-
-### Skip Links
-
-Provide skip links for keyboard users to bypass repetitive content:
-
-```tsx
-<a href="#main-content" className="skip-link">
-  Skip to main content
-</a>
-```
+---
 
 ## Testing Checklist
 
-- [ ] All interactive elements are keyboard accessible
-- [ ] Focus order is logical and predictable
-- [ ] Focus indicators are clearly visible
-- [ ] No keyboard traps (except intentional like modals)
-- [ ] Escape key closes overlays
-- [ ] Enter/Space activate buttons
-- [ ] Arrow keys work in composite widgets
+| Check | Pass Criteria |
+|-------|---------------|
+| All interactive elements reachable | Tab reaches every button, link, input, and control |
+| Focus order is logical | Matches visual layout, no unexpected jumps |
+| Focus indicators visible | Clear ring on every focused element |
+| No keyboard traps | User can always Tab away (except intentional traps in modals) |
+| Escape closes overlays | Modals, dropdowns, and popovers close on Escape |
+| Enter/Space activate controls | Buttons and toggles respond correctly |
+| Arrow keys work in widgets | Tabs, menus, radio groups, sliders navigate with arrows |
+| Skip link works | "Skip to main content" link appears on focus and works |
