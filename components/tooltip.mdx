@@ -31,35 +31,218 @@ Tooltips are small contextual overlays that appear when users hover over, focus 
 
 ## Playground
 
+Explore tooltip variants, placements, and states with rendered examples.
+
 <Tabs>
-  <Tab title="By Variant">
-    {/* 🎨 DESIGNER: Export tooltip variants from Figma showing Default (Dark) and Light */}
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
-      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Tooltip Variants — Default (Dark), Light<br/>Replace with /assets/components/tooltip/tooltip-variants.png</div>
+  <Tab title="Variants">
+    <div style={{display:'flex', gap:'64px', justifyContent:'center', padding:'48px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap'}}>
+      {/* Dark variant */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'12px'}}>
+        <div style={{position:'relative', display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#1A1A1A', color:'#FFFFFF', fontSize:'13px', padding:'6px 12px', borderRadius:'6px', boxShadow:'0 4px 12px rgba(0,0,0,0.15)', whiteSpace:'nowrap'}}>Save your changes</div>
+          <div style={{width:'0', height:'0', borderLeft:'6px solid transparent', borderRight:'6px solid transparent', borderTop:'6px solid #1A1A1A', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#FFFFFF', border:'1px solid #E0E0E0', borderRadius:'8px', padding:'8px 16px', fontSize:'13px'}}>💾 Save</div>
+        <div style={{fontSize:'11px', opacity:0.5, marginTop:'4px'}}>Default (Dark)</div>
+      </div>
+      {/* Light variant */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'12px'}}>
+        <div style={{position:'relative', display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#FFFFFF', color:'#000000', fontSize:'13px', padding:'6px 12px', borderRadius:'6px', border:'1px solid #E0E0E0', boxShadow:'0 4px 12px rgba(0,0,0,0.1)', whiteSpace:'nowrap'}}>Delete item</div>
+          <div style={{width:'0', height:'0', borderLeft:'6px solid transparent', borderRight:'6px solid transparent', borderTop:'6px solid #E0E0E0', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#FFFFFF', border:'1px solid #E0E0E0', borderRadius:'8px', padding:'8px 16px', fontSize:'13px'}}>🗑️ Delete</div>
+        <div style={{fontSize:'11px', opacity:0.5, marginTop:'4px'}}>Light</div>
+      </div>
     </div>
   </Tab>
-  <Tab title="By Placement">
-    {/* 🎨 DESIGNER: Export tooltip placements from Figma showing Top, Right, Bottom, Left */}
-    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
-      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Tooltip Placements — Top, Right, Bottom, Left<br/>Replace with /assets/components/tooltip/tooltip-placements.png</div>
+  <Tab title="Placements">
+    <div style={{display:'flex', gap:'48px', justifyContent:'center', padding:'64px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap'}}>
+      {/* Top placement */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', whiteSpace:'nowrap'}}>Top</div>
+          <div style={{width:'0', height:'0', borderLeft:'5px solid transparent', borderRight:'5px solid transparent', borderTop:'5px solid #1A1A1A', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'6px 12px', fontSize:'12px'}}>Trigger</div>
+        <div style={{fontSize:'10px', opacity:0.5}}>placement="top"</div>
+      </div>
+      {/* Right placement */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'flex', alignItems:'center', gap:'0px'}}>
+          <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'6px 12px', fontSize:'12px'}}>Trigger</div>
+          <div style={{width:'0', height:'0', borderTop:'5px solid transparent', borderBottom:'5px solid transparent', borderRight:'5px solid #1A1A1A'}}></div>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', whiteSpace:'nowrap'}}>Right</div>
+        </div>
+        <div style={{fontSize:'10px', opacity:0.5}}>placement="right"</div>
+      </div>
+      {/* Bottom placement */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'6px 12px', fontSize:'12px'}}>Trigger</div>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{width:'0', height:'0', borderLeft:'5px solid transparent', borderRight:'5px solid transparent', borderBottom:'5px solid #1A1A1A', marginBottom:'-1px'}}></div>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', whiteSpace:'nowrap'}}>Bottom</div>
+        </div>
+        <div style={{fontSize:'10px', opacity:0.5}}>placement="bottom"</div>
+      </div>
+      {/* Left placement */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'flex', alignItems:'center', gap:'0px'}}>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', whiteSpace:'nowrap'}}>Left</div>
+          <div style={{width:'0', height:'0', borderTop:'5px solid transparent', borderBottom:'5px solid transparent', borderLeft:'5px solid #1A1A1A'}}></div>
+          <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'6px 12px', fontSize:'12px'}}>Trigger</div>
+        </div>
+        <div style={{fontSize:'10px', opacity:0.5}}>placement="left"</div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="States">
+    <div style={{display:'flex', gap:'48px', justifyContent:'center', padding:'48px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap'}}>
+      {/* Hidden */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'12px'}}>
+        <div style={{height:'32px'}}></div>
+        <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'6px 14px', fontSize:'13px'}}>Button</div>
+        <div style={{fontSize:'11px', opacity:0.5}}>Hidden (default)</div>
+      </div>
+      {/* Hover */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'12px'}}>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'13px', padding:'6px 12px', borderRadius:'6px', boxShadow:'0 4px 12px rgba(0,0,0,0.15)'}}>Save changes</div>
+          <div style={{width:'0', height:'0', borderLeft:'6px solid transparent', borderRight:'6px solid transparent', borderTop:'6px solid #1A1A1A', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#E8E8E8', border:'1px solid #CCC', borderRadius:'6px', padding:'6px 14px', fontSize:'13px'}}>Button</div>
+        <div style={{fontSize:'11px', opacity:0.5}}>Visible (hover)</div>
+      </div>
+      {/* Focus */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'12px'}}>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'13px', padding:'6px 12px', borderRadius:'6px', boxShadow:'0 4px 12px rgba(0,0,0,0.15)'}}>Save changes</div>
+          <div style={{width:'0', height:'0', borderLeft:'6px solid transparent', borderRight:'6px solid transparent', borderTop:'6px solid #1A1A1A', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#FFF', border:'2px solid #2396FB', borderRadius:'6px', padding:'5px 13px', fontSize:'13px', outline:'2px solid rgba(35,150,251,0.3)', outlineOffset:'1px'}}>Button</div>
+        <div style={{fontSize:'11px', opacity:0.5}}>Visible (focus)</div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Content Types">
+    <div style={{display:'flex', gap:'48px', justifyContent:'center', padding:'48px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap'}}>
+      {/* Text only */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+        <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'13px', padding:'6px 12px', borderRadius:'6px'}}>Save your changes</div>
+        <div style={{fontSize:'11px', opacity:0.5}}>Text only</div>
+      </div>
+      {/* Keyboard shortcut */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+        <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'13px', padding:'6px 12px', borderRadius:'6px', display:'flex', gap:'6px', alignItems:'center'}}>
+          <span>Save</span>
+          <span style={{background:'rgba(255,255,255,0.15)', padding:'1px 5px', borderRadius:'3px', fontSize:'11px'}}>⌘S</span>
+        </div>
+        <div style={{fontSize:'11px', opacity:0.5}}>With shortcut</div>
+      </div>
+      {/* Rich content */}
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+        <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'8px 12px', borderRadius:'6px', maxWidth:'200px', lineHeight:'1.4'}}>
+          <div style={{fontWeight:'600', marginBottom:'2px'}}>Keyboard Shortcut</div>
+          <div style={{opacity:0.7}}>⌘ + S (Mac) · Ctrl + S (Win)</div>
+        </div>
+        <div style={{fontSize:'11px', opacity:0.5}}>Rich content</div>
+      </div>
     </div>
   </Tab>
 </Tabs>
 
 <Info>Tooltips should contain concise, helpful information — keep content to 1–2 short sentences maximum.</Info>
 
+
 ---
 
 ## Tooltip Matrix
 
-Complete reference: every Variant × Placement combination.
+Complete reference: every Variant × Placement combination with rendered examples.
 
-| Variant | Top | Right | Bottom | Left |
-|---------|-----|-------|--------|------|
-| Default (Dark) | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* |
-| Light | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* |
-| With Arrow | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* |
-| Without Arrow | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* | 🔲 *tooltip* |
+<Tabs>
+  <Tab title="Default (Dark)">
+    <div style={{display:'flex', gap:'32px', justifyContent:'center', padding:'48px 16px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px'}}>Tooltip text</div>
+          <div style={{width:'0', height:'0', borderLeft:'5px solid transparent', borderRight:'5px solid transparent', borderTop:'5px solid #1A1A1A', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'5px 12px', fontSize:'12px'}}>Top</div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'flex', alignItems:'center'}}>
+          <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'5px 12px', fontSize:'12px'}}>Right</div>
+          <div style={{width:'0', height:'0', borderTop:'5px solid transparent', borderBottom:'5px solid transparent', borderRight:'5px solid #1A1A1A'}}></div>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px'}}>Tooltip text</div>
+        </div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'5px 12px', fontSize:'12px'}}>Bottom</div>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{width:'0', height:'0', borderLeft:'5px solid transparent', borderRight:'5px solid transparent', borderBottom:'5px solid #1A1A1A', marginBottom:'-1px'}}></div>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px'}}>Tooltip text</div>
+        </div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'flex', alignItems:'center'}}>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px'}}>Tooltip text</div>
+          <div style={{width:'0', height:'0', borderTop:'5px solid transparent', borderBottom:'5px solid transparent', borderLeft:'5px solid #1A1A1A'}}></div>
+          <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'5px 12px', fontSize:'12px'}}>Left</div>
+        </div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Light">
+    <div style={{display:'flex', gap:'32px', justifyContent:'center', padding:'48px 16px', background:'#2D2D2D', borderRadius:'12px', width:'100%', flexWrap:'wrap'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#FFF', color:'#000', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', border:'1px solid #E0E0E0'}}>Tooltip text</div>
+          <div style={{width:'0', height:'0', borderLeft:'5px solid transparent', borderRight:'5px solid transparent', borderTop:'5px solid #E0E0E0', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#444', border:'1px solid #555', borderRadius:'6px', padding:'5px 12px', fontSize:'12px', color:'#FFF'}}>Top</div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'flex', alignItems:'center'}}>
+          <div style={{background:'#444', border:'1px solid #555', borderRadius:'6px', padding:'5px 12px', fontSize:'12px', color:'#FFF'}}>Right</div>
+          <div style={{width:'0', height:'0', borderTop:'5px solid transparent', borderBottom:'5px solid transparent', borderRight:'5px solid #E0E0E0'}}></div>
+          <div style={{background:'#FFF', color:'#000', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', border:'1px solid #E0E0E0'}}>Tooltip text</div>
+        </div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{background:'#444', border:'1px solid #555', borderRadius:'6px', padding:'5px 12px', fontSize:'12px', color:'#FFF'}}>Bottom</div>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{width:'0', height:'0', borderLeft:'5px solid transparent', borderRight:'5px solid transparent', borderBottom:'5px solid #E0E0E0', marginBottom:'-1px'}}></div>
+          <div style={{background:'#FFF', color:'#000', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', border:'1px solid #E0E0E0'}}>Tooltip text</div>
+        </div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'flex', alignItems:'center'}}>
+          <div style={{background:'#FFF', color:'#000', fontSize:'12px', padding:'5px 10px', borderRadius:'5px', border:'1px solid #E0E0E0'}}>Tooltip text</div>
+          <div style={{width:'0', height:'0', borderTop:'5px solid transparent', borderBottom:'5px solid transparent', borderLeft:'5px solid #E0E0E0'}}></div>
+          <div style={{background:'#444', border:'1px solid #555', borderRadius:'6px', padding:'5px 12px', fontSize:'12px', color:'#FFF'}}>Left</div>
+        </div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Arrow vs No Arrow">
+    <div style={{display:'flex', gap:'64px', justifyContent:'center', padding:'48px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'4px'}}>
+        <div style={{display:'inline-flex', flexDirection:'column', alignItems:'center'}}>
+          <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px'}}>With arrow</div>
+          <div style={{width:'0', height:'0', borderLeft:'5px solid transparent', borderRight:'5px solid transparent', borderTop:'5px solid #1A1A1A', marginTop:'-1px'}}></div>
+        </div>
+        <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'5px 12px', fontSize:'12px'}}>Trigger</div>
+        <div style={{fontSize:'10px', opacity:0.5}}>arrow=true</div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+        <div style={{background:'#1A1A1A', color:'#FFF', fontSize:'12px', padding:'5px 10px', borderRadius:'5px'}}>Without arrow</div>
+        <div style={{background:'#FFF', border:'1px solid #DDD', borderRadius:'6px', padding:'5px 12px', fontSize:'12px'}}>Trigger</div>
+        <div style={{fontSize:'10px', opacity:0.5}}>arrow=false</div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
 
 ---
 
@@ -73,19 +256,18 @@ Complete reference: every Variant × Placement combination.
 | # | Element | Required | Description |
 |---|---------|----------|-------------|
 | 1 | Trigger | Yes | The element that activates the tooltip (button, icon, text) |
-| 2 | Container | Yes | Floating overlay with background and padding |
+| 2 | Container | Yes | Floating overlay with background, padding, border-radius: 6px |
 | 3 | Content | Yes | Text or simple content displayed inside |
-| 4 | Arrow | No | Visual pointer connecting tooltip to trigger |
+| 4 | Arrow | No | 6px triangular pointer connecting tooltip to trigger |
 
 ---
 
 ## Variants
 
-| Variant | Background | Text | Use When |
-|---------|-----------|------|----------|
-| Default (Dark) | `#1A1A1A` | `#FFFFFF` | Standard — most surfaces |
-| Light | `#FFFFFF` | `#000000` | Dark backgrounds, inverted themes |
-
+| Variant | Background | Text | Border | Use When |
+|---------|-----------|------|--------|----------|
+| Default (Dark) | `#1A1A1A` | `#FFFFFF` | None | Standard — most surfaces |
+| Light | `#FFFFFF` | `#000000` | `#E0E0E0` | Dark backgrounds, inverted themes |
 
 ---
 
@@ -130,15 +312,32 @@ Complete reference: every Variant × Placement combination.
 
 ---
 
-## Content Types
+## Edge Cases
 
-| Type | Preview | Use Case |
-|------|---------|----------|
-| Text only | 🔲 *tooltip* | Default — short labels, descriptions |
-| Keyboard shortcut | 🔲 *tooltip* | Show hotkey (⌘ + S) |
-| Rich content | 🔲 *tooltip* | Multi-line with title + description |
+<Warning>These scenarios require special handling in implementation.</Warning>
 
-{/* 🎨 DESIGNER: Export each tooltip content type as individual PNGs from Figma */}
+| Scenario | Expected Behavior | Implementation Note |
+|----------|-------------------|---------------------|
+| Long content overflow | Text wraps within max-width, never truncates | Set `max-width: 240px` (or 320px for large), `word-wrap: break-word` |
+| Viewport boundary | Tooltip repositions to stay fully visible | Use collision detection; flip placement if clipped |
+| Scroll container | Tooltip dismisses on scroll | Attach scroll listener to nearest scrollable ancestor |
+| Nested tooltips | Only one tooltip visible at a time | Dismiss active tooltip before showing new one |
+| Disabled trigger | Tooltip still shows on disabled elements | Wrap disabled element in a `<span>` for event handling |
+| Touch + hover device | Prefer hover behavior, fallback to tap | Detect `pointer: fine` media query for hover support |
+| Portal rendering | Tooltip renders in document body | Avoids z-index and overflow:hidden issues from parent |
+| Rapid hover | Debounce show/hide to prevent flicker | Cancel pending show if cursor leaves before delay |
+
+---
+
+## When to Use (and When Not To)
+
+| Use Tooltip | Use Popover Instead | Use Inline Text Instead |
+|-------------|---------------------|------------------------|
+| Icon-only button labels | Interactive content (links, buttons) | Critical information users must see |
+| Keyboard shortcut hints | Multi-step instructions | Form validation errors |
+| Truncated text full value | Content requiring user action | Required field descriptions |
+| Abbreviation definitions | Rich media (images, videos) | Persistent help text |
+| Chart data point values | Forms or input fields | Status messages |
 
 ---
 
@@ -151,6 +350,7 @@ Complete reference: every Variant × Placement combination.
     - Clarify abbreviations or truncated text
     - Keep content to 1–2 short sentences
     - Support keyboard focus
+    - Use sentence case for tooltip text
   </Card>
   <Card title="✗ Don't" icon="xmark" color="#DC2626">
     - Don't use for critical information users must see
@@ -158,6 +358,7 @@ Complete reference: every Variant × Placement combination.
     - Don't repeat visible text in the tooltip
     - Don't use for form validation errors
     - Don't use for complex content (use Popover)
+    - Don't rely on hover-only for mobile users
   </Card>
 </CardGroup>
 
@@ -174,6 +375,7 @@ Complete reference: every Variant × Placement combination.
 | Touch devices | Provide alternative access (tap to show) |
 | No traps | Tooltip must not trap keyboard focus |
 | Timing | 300ms show delay, no hide delay |
+| Persistence | Tooltip remains while hovering tooltip itself |
 
 ---
 
@@ -266,6 +468,13 @@ interface TooltipProps {
 // Keyboard shortcut
 <Tooltip content="Save (⌘ + S)">
   <Button>Save</Button>
+</Tooltip>
+
+// Disabled element workaround
+<Tooltip content="Feature unavailable">
+  <span>
+    <Button disabled>Submit</Button>
+  </span>
 </Tooltip>
 ```
 
