@@ -1,0 +1,513 @@
+---
+title: Breadcrumbs
+description: Breadcrumbs provide contextual navigation showing the user's location within a hierarchical structure, enabling quick navigation to parent pages.
+icon: "chevron-right"
+---
+
+## Overview
+
+Breadcrumbs display a navigational trail that helps users understand their current location within a product hierarchy. Each breadcrumb represents a navigable level, with the final item representing the current page. The system consists of two components: Breadcrumb Cells (individual items) and Breadcrumb Navigation (the assembled path).
+
+<CardGroup cols={3}>
+  <Card title="3 Styles" icon="palette">
+    Black (Default), Blue, DLV Red
+  </Card>
+  <Card title="2 Divider Styles" icon="divide">
+    Slash (/) and Chevron (›)
+  </Card>
+  <Card title="2–8 Crumbs" icon="layer-group">
+    Configurable hierarchy depth
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with breadcrumbs component preview from Figma (page: Breadcrumbs ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Breadcrumbs Component Preview — Replace with /assets/components/breadcrumbs/breadcrumbs-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Slash Divider">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>Home</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>/</span>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>Orders</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>/</span>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>Shipments</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>/</span>
+        <span style={{fontSize:'14px', opacity:0.5}}>Shipment #48291</span>
+      </div>
+      <div style={{padding:'12px 0 0', fontSize:'12px', opacity:0.4}}>Current page is non-interactive</div>
+    </div>
+  </Tab>
+  <Tab title="Chevron Divider">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>Home</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>Orders</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>Shipments</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+        <span style={{fontSize:'14px', opacity:0.5}}>Shipment #48291</span>
+      </div>
+      <div style={{padding:'12px 0 0', fontSize:'12px', opacity:0.4}}>Chevron separators for modern interfaces</div>
+    </div>
+  </Tab>
+  <Tab title="With Icons">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>🏠 Home</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+        <span style={{fontSize:'14px', color:'#000', cursor:'pointer', textDecoration:'underline'}}>📦 Orders</span>
+        <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+        <span style={{fontSize:'14px', opacity:0.5}}>🚚 Shipment #48291</span>
+      </div>
+      <div style={{padding:'12px 0 0', fontSize:'12px', opacity:0.4}}>Leading icons provide visual context</div>
+    </div>
+  </Tab>
+  <Tab title="Color Styles">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Black (Default)</div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+          <span style={{fontSize:'14px', color:'#000', textDecoration:'underline'}}>Home</span>
+          <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+          <span style={{fontSize:'14px', opacity:0.5}}>Current</span>
+        </div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Blue</div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+          <span style={{fontSize:'14px', color:'#2396FB', textDecoration:'underline'}}>Home</span>
+          <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+          <span style={{fontSize:'14px', opacity:0.5}}>Current</span>
+        </div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>DLV Red</div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+          <span style={{fontSize:'14px', color:'#ED1B36', textDecoration:'underline'}}>Home</span>
+          <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+          <span style={{fontSize:'14px', opacity:0.5}}>Current</span>
+        </div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>The final breadcrumb represents the current page and should not be interactive. All preceding breadcrumbs are clickable navigation links.</Info>
+
+
+---
+
+## Breadcrumb Cell Matrix
+
+Complete reference: every Style × State combination for individual breadcrumb cells.
+
+<Tabs>
+  <Tab title="Black (Default)">
+    | State | Large (44px) | Small (32px) | Visual Treatment |
+    |-------|-------------|-------------|-----------------|
+    | Default | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px'}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px'}}><span>Title here</span></div> | Normal text, clickable |
+    | Hover | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',background:'#F5F5F5',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',background:'#F5F5F5',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | Underline + subtle bg |
+    | Pressed | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',background:'#EBEBEB',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',background:'#EBEBEB',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | Darker bg tint |
+    | Disabled | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',opacity:0.3}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',opacity:0.3}}><span>Title here</span></div> | 30% opacity |
+    | Ghost | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',opacity:0.5}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',opacity:0.5}}><span>Title here</span></div> | Current page, non-interactive |
+  </Tab>
+  <Tab title="Blue">
+    | State | Large (44px) | Small (32px) | Visual Treatment |
+    |-------|-------------|-------------|-----------------|
+    | Default | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#2396FB'}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#2396FB'}}><span>Title here</span></div> | Blue text, clickable |
+    | Hover | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#2396FB',background:'#EBF5FF',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#2396FB',background:'#EBF5FF',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | Blue underline + tint bg |
+    | Pressed | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#2396FB',background:'#D6ECFF',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#2396FB',background:'#D6ECFF',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | Darker blue tint |
+    | Disabled | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#2396FB',opacity:0.3}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#2396FB',opacity:0.3}}><span>Title here</span></div> | 30% opacity |
+    | Ghost | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#2396FB',opacity:0.5}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#2396FB',opacity:0.5}}><span>Title here</span></div> | Current page, non-interactive |
+  </Tab>
+  <Tab title="DLV Red">
+    | State | Large (44px) | Small (32px) | Visual Treatment |
+    |-------|-------------|-------------|-----------------|
+    | Default | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#ED1B36'}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#ED1B36'}}><span>Title here</span></div> | Red text, clickable |
+    | Hover | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#ED1B36',background:'#FDEAED',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#ED1B36',background:'#FDEAED',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | Red underline + tint bg |
+    | Pressed | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#ED1B36',background:'#FBD5DA',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#ED1B36',background:'#FBD5DA',borderRadius:'4px'}}><span style={{textDecoration:'underline'}}>Title here</span></div> | Darker red tint |
+    | Disabled | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#ED1B36',opacity:0.3}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#ED1B36',opacity:0.3}}><span>Title here</span></div> | 30% opacity |
+    | Ghost | <div style={{display:'inline-flex',alignItems:'center',gap:'6px',padding:'10px 12px',fontSize:'14px',color:'#ED1B36',opacity:0.5}}><span>Title here</span></div> | <div style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'6px 8px',fontSize:'12px',color:'#ED1B36',opacity:0.5}}><span>Title here</span></div> | Current page, non-interactive |
+  </Tab>
+</Tabs>
+
+---
+
+## Breadcrumb Navigation Matrix
+
+Full breadcrumb paths across divider styles and sizes.
+
+<Tabs>
+  <Tab title="Slash — Large">
+    | Count | Preview |
+    |-------|---------|
+    | 2 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',opacity:0.5}}>Orders</span></div> |
+    | 3 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',opacity:0.5}}>Details</span></div> |
+    | 4 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Shipments</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',opacity:0.5}}>Details</span></div> |
+    | 5 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Shipments</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Tracking</span><span style={{fontSize:'14px',opacity:0.4}}>/</span><span style={{fontSize:'14px',opacity:0.5}}>Details</span></div> |
+  </Tab>
+  <Tab title="Chevron — Large">
+    | Count | Preview |
+    |-------|---------|
+    | 2 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',opacity:0.5}}>Orders</span></div> |
+    | 3 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',opacity:0.5}}>Details</span></div> |
+    | 4 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Shipments</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',opacity:0.5}}>Details</span></div> |
+    | 5 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'8px'}}><span style={{fontSize:'14px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Shipments</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',textDecoration:'underline'}}>Tracking</span><span style={{fontSize:'14px',opacity:0.4}}>›</span><span style={{fontSize:'14px',opacity:0.5}}>Details</span></div> |
+  </Tab>
+  <Tab title="Slash — Small">
+    | Count | Preview |
+    |-------|---------|
+    | 2 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'6px'}}><span style={{fontSize:'12px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'12px',opacity:0.4}}>/</span><span style={{fontSize:'12px',opacity:0.5}}>Orders</span></div> |
+    | 3 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'6px'}}><span style={{fontSize:'12px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'12px',opacity:0.4}}>/</span><span style={{fontSize:'12px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'12px',opacity:0.4}}>/</span><span style={{fontSize:'12px',opacity:0.5}}>Details</span></div> |
+    | 4 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'6px'}}><span style={{fontSize:'12px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'12px',opacity:0.4}}>/</span><span style={{fontSize:'12px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'12px',opacity:0.4}}>/</span><span style={{fontSize:'12px',textDecoration:'underline'}}>Shipments</span><span style={{fontSize:'12px',opacity:0.4}}>/</span><span style={{fontSize:'12px',opacity:0.5}}>Details</span></div> |
+  </Tab>
+  <Tab title="Chevron — Small">
+    | Count | Preview |
+    |-------|---------|
+    | 2 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'6px'}}><span style={{fontSize:'12px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'12px',opacity:0.4}}>›</span><span style={{fontSize:'12px',opacity:0.5}}>Orders</span></div> |
+    | 3 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'6px'}}><span style={{fontSize:'12px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'12px',opacity:0.4}}>›</span><span style={{fontSize:'12px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'12px',opacity:0.4}}>›</span><span style={{fontSize:'12px',opacity:0.5}}>Details</span></div> |
+    | 4 Crumbs | <div style={{display:'flex',alignItems:'center',gap:'6px'}}><span style={{fontSize:'12px',textDecoration:'underline'}}>Home</span><span style={{fontSize:'12px',opacity:0.4}}>›</span><span style={{fontSize:'12px',textDecoration:'underline'}}>Orders</span><span style={{fontSize:'12px',opacity:0.4}}>›</span><span style={{fontSize:'12px',textDecoration:'underline'}}>Shipments</span><span style={{fontSize:'12px',opacity:0.4}}>›</span><span style={{fontSize:'12px',opacity:0.5}}>Details</span></div> |
+  </Tab>
+</Tabs>
+
+
+---
+
+## Structure
+
+The Breadcrumbs system consists of two components:
+
+| Component | Role | Description |
+|-----------|------|-------------|
+| Breadcrumb Cells (Master) | Individual item | Defines the visual and interactive behavior of each breadcrumb item |
+| Breadcrumb Navigation (Published) | Assembled path | Combines cells with dividers into a navigational structure |
+
+---
+
+## Anatomy
+
+### Breadcrumb Cell
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Breadcrumb Cell Anatomy — Replace with /assets/components/breadcrumbs/cell-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Leading Icon | No | Icon before the label for visual context |
+| 2 | Title | Yes | Primary label text — the only required element |
+| 3 | Trailing Icon | No | Icon after the label (navigation direction, dropdown) |
+| 4 | Pills | No | Contextual metadata or status indicator |
+
+### Breadcrumb Navigation
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Breadcrumb Navigation Anatomy — Replace with /assets/components/breadcrumbs/nav-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Breadcrumbs Container | Yes | Wrapper with horizontal layout |
+| 2 | First Breadcrumb Cell | Yes | Root-level navigation item |
+| 3 | Separator / Divider | Yes | Slash or Chevron between items |
+| 4 | Divider Spacing | Yes | Consistent gap around separators |
+| 5 | Last Breadcrumb Cell | Yes | Current page (non-interactive) |
+
+<Warning>Only the Title is required in each breadcrumb cell. Leading icons, trailing icons, and pills are optional and should be used sparingly.</Warning>
+
+---
+
+## Divider Styles
+
+| Style | Character | Example | Use Case |
+|-------|-----------|---------|----------|
+| Slash | `/` | Home / Orders / Details | Traditional, familiar pattern |
+| Chevron | `›` | Home › Orders › Details | Modern, directional emphasis |
+
+<Tip>Chevron separators are recommended for modern interfaces as they visually indicate navigation direction.</Tip>
+
+---
+
+## Styles
+
+| Style | Link Color | Hover Background | Use Case |
+|-------|-----------|-----------------|----------|
+| Black (Default) | `#000000` | `#F5F5F5` | Standard navigation, neutral contexts |
+| Blue | `#2396FB` | `#EBF5FF` | Interactive/informational contexts |
+| DLV Red | `#ED1B36` | `#FDEAED` | Brand-specific or high-emphasis contexts |
+
+---
+
+## Sizes
+
+| Size | Cell Height | Font Size | Padding | Use Case |
+|------|-----------|-----------|---------|----------|
+| Large | 44px | 14px | 10px 12px | Desktop, primary navigation |
+| Small | 32px | 12px | 6px 8px | Mobile, compact layouts |
+
+<div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+  <div>
+    <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Large (44px)</div>
+    <div style={{display:'flex', alignItems:'center', gap:'8px'}}>
+      <span style={{fontSize:'14px', textDecoration:'underline'}}>Home</span>
+      <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+      <span style={{fontSize:'14px', textDecoration:'underline'}}>Orders</span>
+      <span style={{fontSize:'14px', opacity:0.4}}>›</span>
+      <span style={{fontSize:'14px', opacity:0.5}}>Details</span>
+    </div>
+  </div>
+  <div>
+    <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Small (32px)</div>
+    <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+      <span style={{fontSize:'12px', textDecoration:'underline'}}>Home</span>
+      <span style={{fontSize:'12px', opacity:0.4}}>›</span>
+      <span style={{fontSize:'12px', textDecoration:'underline'}}>Orders</span>
+      <span style={{fontSize:'12px', opacity:0.4}}>›</span>
+      <span style={{fontSize:'12px', opacity:0.5}}>Details</span>
+    </div>
+  </div>
+</div>
+
+---
+
+## States
+
+| State | Visual Treatment | Interaction |
+|-------|-----------------|-------------|
+| Default | Normal text, link styling | Clickable, navigates to page |
+| Hover | Underline + subtle background tint | Pointer cursor |
+| Pressed | Darker background tint | Active click |
+| Disabled | 30% opacity | Not interactive, `cursor: not-allowed` |
+| Ghost | Reduced opacity, no underline | Current page — non-interactive |
+
+---
+
+## Crumb Count
+
+Breadcrumbs support 2 to 8 hierarchy levels:
+
+| Count | Layout Behavior |
+|-------|----------------|
+| 2–4 | Full path displayed inline |
+| 5–6 | Consider truncation on mobile |
+| 7–8 | Collapse middle items with ellipsis (`...`) on small screens |
+
+<Warning>Keep breadcrumb paths short for readability. If you need more than 8 levels, reconsider the information architecture.</Warning>
+
+---
+
+## Behavior
+
+### Navigation
+
+- All breadcrumbs except the last are clickable navigation links
+- The final breadcrumb represents the current page and is non-interactive (Ghost state)
+- Clicking a breadcrumb navigates to that hierarchy level
+- Breadcrumbs must remain consistent with the product's navigation structure
+
+### Truncation
+
+- Long breadcrumb labels should be truncated with ellipsis (`...`)
+- On narrow screens, middle breadcrumbs can collapse to `...` with a dropdown to reveal hidden items
+- The first (root) and last (current) breadcrumbs should always remain visible
+
+### Optional Elements
+
+| Element | Behavior |
+|---------|----------|
+| Leading Icon | Displays before the label for visual context (e.g., home icon on root) |
+| Trailing Icon | Appears after the label, may indicate dropdown or navigation direction |
+| Pills | Shows contextual metadata or status (e.g., count, status label) |
+
+---
+
+## Breadcrumbs vs Tabs vs Back Button
+
+| Feature | Breadcrumbs | Tabs | Back Button |
+|---------|------------|------|-------------|
+| Navigation type | Hierarchical path | Sibling content | Single step back |
+| Shows location | Yes — full path | No | No |
+| Multi-level | Yes (2–8 levels) | No (single level) | No |
+| Best for | Deep hierarchies, dashboards | Related content sections | Simple back navigation |
+| Supplements | Primary navigation | Page content | Browser history |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use breadcrumbs for hierarchical navigation structures
+    - Keep labels short and descriptive (1–3 words)
+    - Always show the current page as the last non-interactive item
+    - Use consistent divider style across the product
+    - Place breadcrumbs at the top of the page, below the header
+    - Start with a root item (e.g., "Home" or "Dashboard")
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use breadcrumbs for flat navigation structures
+    - Don't make the current page breadcrumb clickable
+    - Don't use breadcrumbs as the primary navigation system
+    - Don't mix slash and chevron dividers in the same product
+    - Don't exceed 8 breadcrumb levels
+    - Don't use icons as the sole label — always include text
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Implementation |
+|-------------|---------------|
+| Landmark | Wrap in `<nav aria-label="Breadcrumb">` |
+| List structure | Use `<ol>` with `<li>` for each breadcrumb item |
+| Current page | `aria-current="page"` on the last breadcrumb |
+| Separator | Decorative only — hide from screen readers with `aria-hidden="true"` |
+| Keyboard | All breadcrumb links must be focusable via `Tab` |
+| Labels | Each breadcrumb must have visible text — icons alone are insufficient |
+| Link role | Previous breadcrumbs use `<a>` elements; current page uses `<span>` |
+
+<Info>Screen readers should announce the breadcrumb hierarchy clearly. Use an ordered list so the sequence is conveyed semantically.</Info>
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Spacing">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--breadcrumb-padding-x-lg` | `12px` | Horizontal padding, large cell |
+    | `--breadcrumb-padding-x-sm` | `8px` | Horizontal padding, small cell |
+    | `--breadcrumb-padding-y-lg` | `10px` | Vertical padding, large cell |
+    | `--breadcrumb-padding-y-sm` | `6px` | Vertical padding, small cell |
+    | `--breadcrumb-gap` | `8px` | Gap between cells and dividers |
+    | `--breadcrumb-icon-gap` | `6px` | Gap between icon and label |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--breadcrumb-link-black` | `#000000` | Link color, Black style |
+    | `--breadcrumb-link-blue` | `#2396FB` | Link color, Blue style |
+    | `--breadcrumb-link-red` | `#ED1B36` | Link color, DLV Red style |
+    | `--breadcrumb-current` | `rgba(0,0,0,0.5)` | Current page text |
+    | `--breadcrumb-divider` | `rgba(0,0,0,0.4)` | Separator color |
+    | `--breadcrumb-hover-bg` | `#F5F5F5` | Hover background (Black) |
+    | `--breadcrumb-hover-bg-blue` | `#EBF5FF` | Hover background (Blue) |
+    | `--breadcrumb-hover-bg-red` | `#FDEAED` | Hover background (DLV Red) |
+    | `--breadcrumb-pressed-bg` | `#EBEBEB` | Pressed background (Black) |
+    | `--breadcrumb-disabled` | `rgba(0,0,0,0.3)` | Disabled text |
+  </Tab>
+  <Tab title="Typography">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--breadcrumb-font-size-lg` | `14px` | Font size, large |
+    | `--breadcrumb-font-size-sm` | `12px` | Font size, small |
+    | `--breadcrumb-font-weight` | `400` | Default weight |
+    | `--breadcrumb-font-family` | `Noto Sans` | Typeface |
+  </Tab>
+  <Tab title="Dimensions">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--breadcrumb-height-lg` | `44px` | Cell height, large |
+    | `--breadcrumb-height-sm` | `32px` | Cell height, small |
+    | `--breadcrumb-icon-size-lg` | `20px` | Icon size, large |
+    | `--breadcrumb-icon-size-sm` | `16px` | Icon size, small |
+    | `--breadcrumb-radius` | `4px` | Hover/pressed border radius |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+import { Breadcrumbs, BreadcrumbItem } from '@tarmac/design-system';
+
+interface BreadcrumbsProps {
+  separator?: 'slash' | 'chevron';       // Default: 'slash'
+  style?: 'black' | 'blue' | 'red';     // Default: 'black'
+  size?: 'large' | 'small';             // Default: 'large'
+  children: React.ReactNode;
+}
+
+interface BreadcrumbItemProps {
+  href?: string;                          // Navigation URL (omit for current page)
+  icon?: React.ReactNode;                 // Leading icon
+  trailingIcon?: React.ReactNode;         // Trailing icon
+  pill?: React.ReactNode;                 // Pill element
+  disabled?: boolean;                     // Disable interaction
+  current?: boolean;                      // Current page (auto-detected if last child)
+  children: React.ReactNode;              // Label text
+}
+```
+
+```tsx Usage
+// Slash divider — Black style, Large
+<Breadcrumbs separator="slash" style="black" size="large">
+  <BreadcrumbItem href="/" icon={<HomeIcon />}>
+    Home
+  </BreadcrumbItem>
+  <BreadcrumbItem href="/orders">
+    Orders
+  </BreadcrumbItem>
+  <BreadcrumbItem href="/orders/shipments">
+    Shipments
+  </BreadcrumbItem>
+  <BreadcrumbItem current>
+    Shipment #48291
+  </BreadcrumbItem>
+</Breadcrumbs>
+
+// Chevron divider — Blue style, Small
+<Breadcrumbs separator="chevron" style="blue" size="small">
+  <BreadcrumbItem href="/dashboard">Dashboard</BreadcrumbItem>
+  <BreadcrumbItem href="/dashboard/analytics">Analytics</BreadcrumbItem>
+  <BreadcrumbItem current>Reports</BreadcrumbItem>
+</Breadcrumbs>
+
+// With pills
+<Breadcrumbs separator="chevron">
+  <BreadcrumbItem href="/">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/orders" pill={<Pill>24</Pill>}>
+    Orders
+  </BreadcrumbItem>
+  <BreadcrumbItem current>Details</BreadcrumbItem>
+</Breadcrumbs>
+```
+
+```tsx ARIA
+// Rendered HTML structure
+<nav aria-label="Breadcrumb">
+  <ol style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li aria-hidden="true">/</li>
+    <li>
+      <a href="/orders">Orders</a>
+    </li>
+    <li aria-hidden="true">/</li>
+    <li>
+      <a href="/orders/shipments">Shipments</a>
+    </li>
+    <li aria-hidden="true">/</li>
+    <li>
+      <span aria-current="page">Shipment #48291</span>
+    </li>
+  </ol>
+</nav>
+```
+</CodeGroup>
