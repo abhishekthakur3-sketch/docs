@@ -1,0 +1,429 @@
+---
+title: Radio Button
+description: Radio buttons are selection controls that allow users to choose exactly one option from a mutually exclusive group.
+icon: "circle-dot"
+---
+
+## Overview
+
+Radio buttons are selection controls that allow users to choose exactly one option from a mutually exclusive group. When one radio button is selected, any previously selected option in the same group is automatically deselected. They are commonly used in forms, surveys, settings, and any context where a single choice is required.
+
+<CardGroup cols={3}>
+  <Card title="4 Variants" icon="palette">
+    Standard (Black), Blue, Green, DLV Red
+  </Card>
+  <Card title="3 Sizes" icon="expand">
+    Large (24px), Medium (20px), Small (16px)
+  </Card>
+  <Card title="Mutually Exclusive" icon="circle-dot">
+    Only one option selected per group
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with radio button component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Radio Button Component Preview — Replace with /assets/components/radio/radio-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="States">
+    <div style={{display:'flex', gap:'32px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap', alignItems:'center'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'13px'}}>Unselected</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'13px'}}>Selected</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #A3A3A3', borderRadius:'50%', background:'rgba(0,0,0,0.02)'}}></div><span style={{fontSize:'13px'}}>Hover</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', outline:'2px solid #000', outlineOffset:'2px'}}></div><span style={{fontSize:'13px'}}>Focused</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #E5E5E5', borderRadius:'50%', opacity:0.4}}></div><span style={{fontSize:'13px', opacity:0.4}}>Disabled</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #DC2626', borderRadius:'50%'}}></div><span style={{fontSize:'13px'}}>Error</span></div>
+    </div>
+  </Tab>
+  <Tab title="Variants">
+    <div style={{display:'flex', gap:'32px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap', alignItems:'center'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'13px'}}>Standard</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #2563EB', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#2563EB', borderRadius:'50%'}}></div></div><span style={{fontSize:'13px'}}>Blue</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #16A34A', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#16A34A', borderRadius:'50%'}}></div></div><span style={{fontSize:'13px'}}>Green</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #DC2626', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#DC2626', borderRadius:'50%'}}></div></div><span style={{fontSize:'13px'}}>DLV Red</span></div>
+    </div>
+  </Tab>
+  <Tab title="Sizes">
+    <div style={{display:'flex', gap:'32px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap', alignItems:'flex-end'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}><div style={{width:'24px', height:'24px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'12px', height:'12px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'10px', opacity:0.4}}>Large 24px</span></div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'10px', opacity:0.4}}>Medium 20px</span></div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}><div style={{width:'16px', height:'16px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'8px', height:'8px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'10px', opacity:0.4}}>Small 16px</span></div>
+    </div>
+  </Tab>
+  <Tab title="Radio Group">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{fontSize:'13px', fontWeight:600, marginBottom:'4px'}}>Shipping method</div>
+      <div style={{fontSize:'12px', opacity:0.5, marginBottom:'12px'}}>Select one option</div>
+      <div style={{display:'flex', flexDirection:'column', gap:'10px'}}>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'14px'}}>Standard (3–5 days)</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Express (1–2 days)</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Same day delivery</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #E5E5E5', borderRadius:'50%', opacity:0.4}}></div><span style={{fontSize:'14px', opacity:0.4}}>Pickup (unavailable)</span></div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Horizontal">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{fontSize:'13px', fontWeight:600, marginBottom:'12px'}}>Sort order</div>
+      <div style={{display:'flex', gap:'24px', flexWrap:'wrap'}}>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'14px'}}>Newest</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Oldest</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Popular</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Price</span></div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Error State">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{fontSize:'13px', fontWeight:600, marginBottom:'12px'}}>Payment method</div>
+      <div style={{display:'flex', flexDirection:'column', gap:'10px'}}>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #DC2626', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Credit card</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #DC2626', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Debit card</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #DC2626', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>UPI</span></div>
+      </div>
+      <div style={{color:'#DC2626', fontSize:'12px', marginTop:'8px'}}>Please select a payment method to continue.</div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Radio buttons always appear in groups of 2 or more. A single radio button has no purpose — use a checkbox instead.</Info>
+
+
+---
+
+## Radio Button Matrix
+
+Complete reference: every Variant × Size × State combination.
+
+<Tabs>
+  <Tab title="Selected">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Standard</div><div style={{width:'24px', height:'24px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'12px', height:'12px', background:'#000', borderRadius:'50%'}}></div></div><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><div style={{width:'16px', height:'16px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'8px', height:'8px', background:'#000', borderRadius:'50%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Blue</div><div style={{width:'24px', height:'24px', border:'2px solid #2563EB', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'12px', height:'12px', background:'#2563EB', borderRadius:'50%'}}></div></div><div style={{width:'20px', height:'20px', border:'2px solid #2563EB', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#2563EB', borderRadius:'50%'}}></div></div><div style={{width:'16px', height:'16px', border:'2px solid #2563EB', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'8px', height:'8px', background:'#2563EB', borderRadius:'50%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Green</div><div style={{width:'24px', height:'24px', border:'2px solid #16A34A', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'12px', height:'12px', background:'#16A34A', borderRadius:'50%'}}></div></div><div style={{width:'20px', height:'20px', border:'2px solid #16A34A', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#16A34A', borderRadius:'50%'}}></div></div><div style={{width:'16px', height:'16px', border:'2px solid #16A34A', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'8px', height:'8px', background:'#16A34A', borderRadius:'50%'}}></div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>DLV Red</div><div style={{width:'24px', height:'24px', border:'2px solid #DC2626', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'12px', height:'12px', background:'#DC2626', borderRadius:'50%'}}></div></div><div style={{width:'20px', height:'20px', border:'2px solid #DC2626', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#DC2626', borderRadius:'50%'}}></div></div><div style={{width:'16px', height:'16px', border:'2px solid #DC2626', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'8px', height:'8px', background:'#DC2626', borderRadius:'50%'}}></div></div></div>
+    </div>
+  </Tab>
+  <Tab title="Unselected">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Default</div><div style={{width:'24px', height:'24px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><div style={{width:'16px', height:'16px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Hover</div><div style={{width:'24px', height:'24px', border:'2px solid #A3A3A3', borderRadius:'50%', background:'rgba(0,0,0,0.02)'}}></div><div style={{width:'20px', height:'20px', border:'2px solid #A3A3A3', borderRadius:'50%', background:'rgba(0,0,0,0.02)'}}></div><div style={{width:'16px', height:'16px', border:'2px solid #A3A3A3', borderRadius:'50%', background:'rgba(0,0,0,0.02)'}}></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Focused</div><div style={{width:'24px', height:'24px', border:'2px solid #000', borderRadius:'50%', outline:'2px solid #000', outlineOffset:'2px'}}></div><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', outline:'2px solid #000', outlineOffset:'2px'}}></div><div style={{width:'16px', height:'16px', border:'2px solid #000', borderRadius:'50%', outline:'2px solid #000', outlineOffset:'2px'}}></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Disabled</div><div style={{width:'24px', height:'24px', border:'2px solid #E5E5E5', borderRadius:'50%', opacity:0.4}}></div><div style={{width:'20px', height:'20px', border:'2px solid #E5E5E5', borderRadius:'50%', opacity:0.4}}></div><div style={{width:'16px', height:'16px', border:'2px solid #E5E5E5', borderRadius:'50%', opacity:0.4}}></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Error</div><div style={{width:'24px', height:'24px', border:'2px solid #DC2626', borderRadius:'50%'}}></div><div style={{width:'20px', height:'20px', border:'2px solid #DC2626', borderRadius:'50%'}}></div><div style={{width:'16px', height:'16px', border:'2px solid #DC2626', borderRadius:'50%'}}></div></div>
+    </div>
+  </Tab>
+  <Tab title="Disabled Selected">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Standard</div><div style={{width:'24px', height:'24px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', opacity:0.4}}><div style={{width:'12px', height:'12px', background:'#000', borderRadius:'50%'}}></div></div><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', opacity:0.4}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><div style={{width:'16px', height:'16px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', opacity:0.4}}><div style={{width:'8px', height:'8px', background:'#000', borderRadius:'50%'}}></div></div></div>
+      <div style={{fontSize:'11px', opacity:0.4}}>40% opacity, non-interactive, removed from tab order</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Anatomy
+
+{/* 🎨 DESIGNER: Replace with radio button anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Radio Button Anatomy Diagram — Replace with /assets/components/radio/radio-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Radio Control | Yes | Circular interactive element (16–24px) |
+| 2 | Inner Dot | Selected only | Filled circle indicator inside the control |
+| 3 | Label | Yes | Text describing the option (right of control) |
+| 4 | Supporting Text | No | Additional context below the label |
+| 5 | Error Message | No | Group-level validation feedback |
+
+---
+
+## Variants
+
+| Variant | Selected Color | Usage |
+|---------|---------------|-------|
+| Standard (Black) | `#000000` | Default for most interfaces |
+| Blue | `#2563EB` | Interfaces with blue primary action theme |
+| Green | `#16A34A` | Positive selections, confirmations |
+| DLV Red | `#DC2626` | Brand-related interfaces, strong emphasis |
+
+---
+
+## Sizes
+
+| Size | Dimension | Dot Size | Label Font | Touch Target | Usage |
+|------|-----------|----------|-----------|-------------|-------|
+| Large | 24×24px | 12px | 18px | 44×44px | Spacious layouts, onboarding |
+| Medium | 20×20px | 10px | 16px | 44×44px | Default — forms, settings |
+| Small | 16×16px | 8px | 14px | 44×44px | Dense tables, compact lists |
+
+---
+
+## States
+
+| State | Visual | Behavior |
+|-------|--------|----------|
+| Default (Unselected) | Empty circle, `#D4D4D4` border | Ready for input |
+| Hover | Darker border `#A3A3A3` | Cursor pointer, 150ms transition |
+| Selected | Variant-colored border + inner dot | Active selection |
+| Focused | 2px focus ring, 2px offset | Keyboard navigation (`:focus-visible`) |
+| Disabled | 40% opacity, `#E5E5E5` border | Non-interactive, removed from tab order |
+| Error | `#DC2626` border, error message below group | Validation failed |
+
+---
+
+## Interaction Behavior
+
+| Behavior | Description |
+|----------|-------------|
+| Selection | Click/tap radio or label selects it; deselects others in group |
+| Keyboard — Arrow keys | Up/Left selects previous; Down/Right selects next in group |
+| Keyboard — Tab | Moves focus to/from the radio group (not between radios) |
+| Keyboard — Space | Selects the focused radio if not already selected |
+| No deselect | Once a radio is selected, it cannot be deselected without choosing another |
+| Disabled | Cannot select; removed from arrow key navigation; 40% opacity |
+
+---
+
+## Radio Groups
+
+<Tabs>
+  <Tab title="Vertical">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{fontSize:'13px', fontWeight:600, marginBottom:'4px'}}>Account type</div>
+      <div style={{fontSize:'12px', opacity:0.5, marginBottom:'12px'}}>Choose your account type</div>
+      <div style={{display:'flex', flexDirection:'column', gap:'10px'}}>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'14px'}}>Personal</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Business</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Enterprise</span></div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="With Descriptions">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{fontSize:'13px', fontWeight:600, marginBottom:'12px'}}>Plan selection</div>
+      <div style={{display:'flex', flexDirection:'column', gap:'14px'}}>
+        <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, marginTop:'2px'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><div><span style={{fontSize:'14px'}}>Free</span><div style={{fontSize:'12px', opacity:0.5, marginTop:'2px'}}>Basic features, 1 user, 5GB storage</div></div></div>
+        <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%', flexShrink:0, marginTop:'2px'}}></div><div><span style={{fontSize:'14px'}}>Pro</span><div style={{fontSize:'12px', opacity:0.5, marginTop:'2px'}}>All features, 10 users, 100GB storage</div></div></div>
+        <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%', flexShrink:0, marginTop:'2px'}}></div><div><span style={{fontSize:'14px'}}>Enterprise</span><div style={{fontSize:'12px', opacity:0.5, marginTop:'2px'}}>Custom features, unlimited users, dedicated support</div></div></div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Horizontal">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{fontSize:'13px', fontWeight:600, marginBottom:'12px'}}>Gender</div>
+      <div style={{display:'flex', gap:'24px', flexWrap:'wrap'}}>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><div style={{width:'10px', height:'10px', background:'#000', borderRadius:'50%'}}></div></div><span style={{fontSize:'14px'}}>Male</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Female</span></div>
+        <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'50%'}}></div><span style={{fontSize:'14px'}}>Other</span></div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Form Behavior
+
+| Scenario | Behavior |
+|----------|----------|
+| Required group | Shows error state on submit if no option selected |
+| Default selection | One option can be pre-selected via `defaultValue` |
+| Validation timing | On submit by default; configurable to on-change |
+| Error display | Red border on all radios + error message below group |
+| Error clearing | Error clears when user selects any option |
+| Disabled options | Individual radios can be disabled within an active group |
+| Form reset | Returns to `defaultValue` or no selection |
+
+---
+
+## Radio vs Checkbox vs Toggle vs Dropdown
+
+| Control | Selection | Options | Use Case |
+|---------|-----------|---------|----------|
+| Radio | Single | 2–5 visible | Mutually exclusive, all options visible |
+| Checkbox | Multiple | Any count | Independent multi-select |
+| Toggle | Binary | 1 | Immediate on/off |
+| Dropdown | Single | 5+ | Long list, space-constrained |
+
+---
+
+## Edge Cases
+
+| Scenario | Expected Behavior |
+|----------|-------------------|
+| Long labels | Label wraps; radio aligns to top of first line |
+| Multi-line descriptions | Helper text below label, max 2 lines, muted |
+| No default selection | Group starts empty; user must explicitly choose |
+| Pre-selected + disabled | Shows selected state at 40% opacity; cannot change |
+| Dynamic options | Preserve selection if selected option still exists |
+| RTL layouts | Label appears to the left; layout mirrors |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use for mutually exclusive choices (2–5 options)
+    - Always show all options — don't hide behind interactions
+    - Use clear, descriptive labels
+    - Group with `fieldset` + `legend` for accessibility
+    - Consider a default selection when appropriate
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use a single radio button alone (use checkbox)
+    - Don't use for multi-select (use checkboxes)
+    - Don't use for 6+ options (use dropdown)
+    - Don't mix variants within the same group
+    - Don't allow deselecting all options in a required group
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Semantic HTML | Use native `<input type="radio">` with shared `name` |
+| Keyboard | Arrow keys navigate within group; Tab moves to/from group |
+| Focus ring | 2px solid, 2px offset, ≥ 3:1 contrast |
+| Screen reader | Announces: role, label, state, position (e.g., "1 of 3") |
+| Groups | Use `<fieldset>` + `<legend>` for radio groups |
+| Disabled | `aria-disabled="true"`, skipped in arrow key navigation |
+| Error | Link error message via `aria-describedby` on fieldset |
+| Role | `role="radiogroup"` on container, `role="radio"` on each |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizing">
+    | Token | Value |
+    |-------|-------|
+    | `radio-size-sm` | 16px |
+    | `radio-size-md` | 20px |
+    | `radio-size-lg` | 24px |
+    | `radio-dot-sm` | 8px |
+    | `radio-dot-md` | 10px |
+    | `radio-dot-lg` | 12px |
+    | `radio-label-gap` | 8px |
+    | `radio-item-spacing` | 8px |
+    | `radio-group-spacing` | 16px |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Value |
+    |-------|-------|
+    | `radio-border` | #D4D4D4 |
+    | `radio-border-hover` | #A3A3A3 |
+    | `radio-standard-color` | #000000 |
+    | `radio-blue-color` | #2563EB |
+    | `radio-green-color` | #16A34A |
+    | `radio-dlvred-color` | #DC2626 |
+    | `radio-disabled-opacity` | 0.4 |
+    | `radio-error-border` | #DC2626 |
+  </Tab>
+  <Tab title="Animation">
+    | Token | Value |
+    |-------|-------|
+    | `radio-transition` | 150ms ease-in-out |
+    | `radio-focus-ring-width` | 2px |
+    | `radio-focus-ring-offset` | 2px |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface RadioProps {
+  variant?: 'standard' | 'blue' | 'green' | 'dlv-red';
+  size?: 'sm' | 'md' | 'lg';
+  checked?: boolean;
+  disabled?: boolean;
+  label?: string;
+  helperText?: string;
+  name: string;
+  value: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+interface RadioGroupProps {
+  name: string;
+  value?: string;
+  defaultValue?: string;
+  label?: string;
+  helperText?: string;
+  error?: string;
+  required?: boolean;
+  disabled?: boolean;
+  orientation?: 'vertical' | 'horizontal';
+  onChange?: (value: string) => void;
+  children: ReactNode;
+}
+```
+
+```tsx Usage
+// Basic radio group
+<RadioGroup name="shipping" label="Shipping method" defaultValue="standard">
+  <Radio value="standard" label="Standard (3–5 days)" />
+  <Radio value="express" label="Express (1–2 days)" />
+  <Radio value="same-day" label="Same day delivery" />
+</RadioGroup>
+
+// With descriptions
+<RadioGroup name="plan" label="Plan selection">
+  <Radio value="free" label="Free" helperText="Basic features, 1 user" />
+  <Radio value="pro" label="Pro" helperText="All features, 10 users" />
+  <Radio value="enterprise" label="Enterprise" helperText="Custom, unlimited" />
+</RadioGroup>
+
+// Horizontal
+<RadioGroup name="sort" label="Sort order" orientation="horizontal" defaultValue="newest">
+  <Radio value="newest" label="Newest" />
+  <Radio value="oldest" label="Oldest" />
+  <Radio value="popular" label="Popular" />
+</RadioGroup>
+
+// With disabled option
+<RadioGroup name="method" label="Payment method">
+  <Radio value="credit" label="Credit card" />
+  <Radio value="debit" label="Debit card" />
+  <Radio value="pickup" label="Pickup" disabled />
+</RadioGroup>
+
+// Required with error
+<RadioGroup name="payment" label="Payment" required error="Please select a payment method">
+  <Radio value="credit" label="Credit card" />
+  <Radio value="upi" label="UPI" />
+</RadioGroup>
+```
+
+```tsx ARIA
+// Proper semantic implementation
+<fieldset role="radiogroup" aria-labelledby="shipping-label">
+  <legend id="shipping-label">Shipping method</legend>
+  <label>
+    <input type="radio" name="shipping" value="standard" />
+    Standard (3–5 days)
+  </label>
+  <label>
+    <input type="radio" name="shipping" value="express" />
+    Express (1–2 days)
+  </label>
+</fieldset>
+```
+</CodeGroup>

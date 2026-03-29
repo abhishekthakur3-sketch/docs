@@ -59,6 +59,7 @@
                   "components/avatar",
                   "components/button",
                   "components/checkbox",
+                  "components/radio",
                   "components/input",
                   "components/badge",
                   "components/tags",
