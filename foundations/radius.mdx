@@ -98,10 +98,12 @@ Rounded corners help differentiate interaction layers, signal affordance, and im
 
 ## Usage by Context
 
-- Small detail elements (badges, checkboxes, status dots) → `radius.small` (2px) — tight, precise
-- Interactive components (buttons, inputs, selects, dropdowns) → `radius.medium` (8px) — approachable, tappable
-- Layout containers (cards, panels, modals, dashboards) → `radius.large` (12px) — structural, grouped
-- Circular elements (avatars, pills, reaction icons) → `radius.max` (999px) — fully round
+| Context | Examples | Token | Value | Character |
+|---------|----------|-------|-------|-----------|
+| Small details | Badges, checkboxes, status dots | `radius.small` | 2px | Tight, precise |
+| Interactive components | Buttons, inputs, selects, dropdowns | `radius.medium` | 8px | Approachable, tappable |
+| Layout containers | Cards, panels, modals, dashboards | `radius.large` | 12px | Structural, grouped |
+| Circular elements | Avatars, pills, reaction icons | `radius.max` | 999px | Fully round |
 
 ---
 
@@ -141,13 +143,13 @@ Consistent corner rounding supports accessibility by:
 ## Usage Guidelines
 
 <CardGroup cols={2}>
-  <Card title="✓ Do" icon="check">
+  <Card title="✓ Do" icon="check" color="#16A34A">
     - Use semantic tokens (`radius.medium`) instead of raw values
     - Match radius to component scale — larger elements get larger radii
     - Keep radius consistent within the same component family
     - Use `radius.max` only for intentionally circular elements
   </Card>
-  <Card title="✗ Don't" icon="xmark">
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
     - Don't use arbitrary radius values outside the token scale
     - Don't mix different radii on the same component
     - Don't apply large radii to small elements (looks distorted)
