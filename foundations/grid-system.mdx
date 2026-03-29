@@ -270,13 +270,590 @@ Every TARMAC grid is composed of three core elements that work together to creat
 
 ---
 
-## Continue Reading
 
-<CardGroup cols={2}>
-  <Card title="Advanced Grid Usage" icon="table-columns" href="/foundations/grid-advanced">
-    Layout contexts, responsive behavior, navigation grids, and component mapping.
-  </Card>
-  <Card title="Grid Implementation" icon="code" href="/foundations/grid-implementation">
-    Token mapping, edge cases, CSS implementation, and breakpoint handling.
-  </Card>
-</CardGroup>
+---
+
+<Tabs>
+  <Tab title="Advanced Grid Usage">
+
+
+## Responsive Behavior Rules
+
+How layouts adapt across breakpoints. These rules govern what scales, what stays fixed, and how content reflows.
+
+<AccordionGroup>
+  <Accordion title="Column Collapse Behavior" icon="arrows-down-to-line">
+    As viewport width decreases, columns collapse and content stacks vertically:
+    - **Desktop → Tablet**: 12 columns maintained, column width reduces, gutters shrink from 24px to 16px
+    - **Tablet → Mobile**: 12 columns collapse to 4 columns, multi-column layouts stack vertically
+    - **Side panels**: Collapse into full-width sections or slide-in drawers on mobile
+    - **Navigation**: Side nav becomes a hamburger menu overlay on mobile
+  </Accordion>
+  <Accordion title="What Scales vs What Stays Fixed" icon="ruler-combined">
+    | Element | Behavior | Notes |
+    |---------|----------|-------|
+    | Column width | Scales (fluid) | Proportional to viewport |
+    | Gutter width | Fixed per breakpoint | 24px (large) or 16px (default/small) |
+    | Margins | Fixed per breakpoint | 16px on mobile, 80px+ on desktop |
+    | Content max-width | Fixed at 1280px | Prevents overly wide layouts on 1920+ |
+    | Font sizes | Fixed per breakpoint | Controlled by typography tokens, not grid |
+    | Touch targets | Fixed minimum 44px | Never scale below minimum |
+  </Accordion>
+  <Accordion title="Content Stacking Logic" icon="layer-group">
+    When columns collapse on smaller viewports, content stacks in reading order (top to bottom):
+
+    1. **Primary content** stacks first (main body, forms, data)
+    2. **Secondary content** stacks below (sidebars, filters, metadata)
+    3. **Navigation** moves to overlay or bottom bar
+    4. **Actions** (buttons, CTAs) remain visible — never hidden by stacking
+
+    <Warning>Never hide critical actions or primary content when stacking. If content doesn't fit, simplify the layout — don't just stack everything.</Warning>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Desktop Grid System
+
+### Supported Viewports
+
+| Screen Size | Usage |
+|-------------|-------|
+| 1920+ | Grid locked to 1280px, centered |
+| 1440 × 942px | Primary design frame and baseline grid |
+| 1366 × 942 | Widespread enterprise resolution |
+| 1280 × 832 | Compact laptop and workspace views |
+
+### Content Grid
+
+The base 12-column content grid used across all desktop breakpoints.
+
+| Breakpoint | Viewport | Columns | Gutter | Column Width | Type |
+|------------|----------|---------|--------|--------------|------|
+| Large | 1920 × 1080 | 12 | 24px | 92px | Centre |
+| Default | 1440 × 942 | 12 | 16px | 92px | Centre |
+| Medium | 1366 × 768 | 12 | 16px | 92px | Centre |
+| Small | 1280 × 832 | 12 | 16px | 92px | Centre |
+
+<Info>The content grid is always 12 columns and centre-aligned. Column width remains consistent at 92px — only gutters change between Large (24px) and other breakpoints (16px).</Info>
+
+<div style={{background:'#F5F5F5',borderRadius:'12px',padding:'20px',marginBottom:'16px'}}>
+  <div style={{fontSize:'12px',color:'#ED1B36',marginBottom:'8px'}}>12-Column Desktop Grid (1440px)</div>
+  <div style={{display:'flex',gap:'4px',height:'80px'}}>
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+    <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+  </div>
+  <div style={{display:'flex',gap:'4px',marginTop:'4px',fontSize:'9px',color:'#999'}}>
+    <div style={{flex:1,textAlign:'center'}}>1</div><div style={{flex:1,textAlign:'center'}}>2</div><div style={{flex:1,textAlign:'center'}}>3</div><div style={{flex:1,textAlign:'center'}}>4</div><div style={{flex:1,textAlign:'center'}}>5</div><div style={{flex:1,textAlign:'center'}}>6</div><div style={{flex:1,textAlign:'center'}}>7</div><div style={{flex:1,textAlign:'center'}}>8</div><div style={{flex:1,textAlign:'center'}}>9</div><div style={{flex:1,textAlign:'center'}}>10</div><div style={{flex:1,textAlign:'center'}}>11</div><div style={{flex:1,textAlign:'center'}}>12</div>
+  </div>
+</div>
+
+### Layout Contexts
+
+Desktop layouts adapt the grid based on navigation context. Each context adjusts column widths and offsets to accommodate navigation elements while preserving alignment.
+
+<div style={{display:'flex',gap:'16px',marginBottom:'16px',flexWrap:'wrap'}}>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Content Only</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+    </div>
+  </div>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Side Nav Expanded</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{width:'28px',background:'rgba(35,150,251,0.15)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+    </div>
+  </div>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Side Nav Collapsed</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{width:'12px',background:'rgba(35,150,251,0.15)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+      <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'3px'}} />
+    </div>
+  </div>
+  <div style={{flex:'1',minWidth:'140px'}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Side Drawer</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',height:'80px',display:'flex',gap:'3px',padding:'8px'}}>
+      <div style={{flex:3,background:'rgba(237,27,54,0.06)',borderRadius:'3px'}} />
+      <div style={{flex:2,background:'rgba(124,58,237,0.15)',borderRadius:'3px'}} />
+    </div>
+  </div>
+</div>
+
+<AccordionGroup>
+  <Accordion title="Side Navigation — Expanded" icon="sidebar">
+    When the side navigation is expanded, the content grid reduces proportionally. The side nav occupies a 4-column equivalent area.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Offset | Type |
+    |------------|----------|---------|--------|--------------|--------|------|
+    | Large | 1920 × 1080 | 12 | 24px | 76px | 24px | Centre |
+    | Default | 1440 × 942 | 12 | 16px | 76px | 24px | Right |
+    | Medium | 1366 × 768 | 12 | 16px | 72px | 38px | Right |
+    | Small | 1280 × 832 | 12 | 16px | 68px | 24px | Right |
+  </Accordion>
+  <Accordion title="Side Navigation — Collapsed" icon="sidebar-flip">
+    When the side navigation is collapsed, the content grid expands while maintaining alignment with the collapsed nav rail.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Offset | Type |
+    |------------|----------|---------|--------|--------------|--------|------|
+    | Large | 1920 × 1080 | 12 | 24px | 94px | 24px | Centre |
+    | Default | 1440 × 942 | 12 | 16px | 94px | 24px | Right |
+    | Medium | 1366 × 768 | 12 | 16px | 88px | 38px | Right |
+    | Small | 1280 × 832 | 12 | 16px | 82px | 24px | Right |
+  </Accordion>
+  <Accordion title="Top & Bottom Navigation" icon="bars">
+    Grid anchors below the header and above the footer. The full viewport width is available for the content grid.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Type |
+    |------------|----------|---------|--------|--------------|------|
+    | Large | 1920 × 1080 | 1 | 16px | 80px | Top |
+    | Default | 1440 × 942 | 1 | 16px | 80px | Top |
+    | Medium | 1366 × 768 | 1 | 16px | 72px | Top |
+    | Small | 1280 × 832 | 1 | 16px | 68px | Top |
+  </Accordion>
+  <Accordion title="Side Drawer" icon="window-restore">
+    Drawers overlay or compress the content area. TARMAC supports 4-column (standard) and 6-column (extended) drawer widths.
+
+    | Breakpoint | Viewport | Columns | Gutter | Column Width | Offset | Type |
+    |------------|----------|---------|--------|--------------|--------|------|
+    | SD_L (1440) | 1440 × 942 | 4 | 16px | 86px | 24px | Right |
+    | SD_XL (1440) | 1440 × 942 | 6 | 16px | 82px | 24px | Right |
+    | SD_L (1366) | 1366 × 768 | 4 | 16px | 64px | 24px | Right |
+    | SD_XL (1366) | 1366 × 768 | 6 | 16px | 60px | 24px | Right |
+    | SD_L (1280) | 1280 × 832 | 4 | 16px | 60px | 24px | Right |
+    | SD_XL (1280) | 1280 × 832 | 6 | 16px | 56px | 24px | Right |
+
+    <Tip>Use the 4-column drawer (SD_L) for simple forms and detail panels. Reserve the 6-column drawer (SD_XL) for complex workflows that need more horizontal space.</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Accessibility & Readability
+
+Desktop grid decisions directly impact readability and accessibility. The TARMAC grid is designed to:
+
+<Steps>
+  <Step title="Maintain consistent reading widths">
+    Content stays within a 1440px grid frame to prevent eye-strain on ultra-wide monitors.
+  </Step>
+  <Step title="Prevent excessive line lengths">
+    On screens wider than 1920px, the grid locks to a centered 1280px container.
+  </Step>
+  <Step title="Support predictable scan patterns">
+    Consistent column alignment creates reliable visual anchors for high-density UIs.
+  </Step>
+  <Step title="Preserve typographic hierarchy">
+    Grid structure reinforces heading and body text relationships through consistent alignment.
+  </Step>
+  <Step title="Ensure comfortable interaction spacing">
+    Gutters and margins provide adequate spacing for motor interactions and touch targets.
+  </Step>
+  <Step title="Balance contrast and whitespace">
+    The grid prevents content from becoming too dense or too sparse at any breakpoint.
+  </Step>
+</Steps>
+
+---
+
+## Mobile Grid System
+
+### Supported Viewports
+
+| Screen Size | Usage |
+|-------------|-------|
+| 390 × 844 | Default reference size |
+| 360 × 800 | Secondary modern devices |
+| 320 × 568 | POS and constrained environments |
+
+### Main Content Grid
+
+The mobile content grid uses 4 columns across all breakpoints, providing a simple and consistent layout framework.
+
+| Breakpoint | Viewport | Columns | Gutter | Margin |
+|------------|----------|---------|--------|--------|
+| Large | 390 × 844 | 4 | 16px | 16px |
+| Default | 360 × 800 | 4 | 16px | 16px |
+| Small | 320 × 568 | 4 | 16px | 16px |
+
+<Info>Mobile gutters and margins remain fixed at 16px across all breakpoints. The columns themselves are fluid and resize to fill the available width.</Info>
+
+<div style={{display:'flex',gap:'24px',marginBottom:'16px'}}>
+  <div style={{flex:1}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Large (390px)</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'12px',height:'430px'}}>
+      <div style={{display:'flex',gap:'6px',height:'100%'}}>
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+      </div>
+    </div>
+  </div>
+  <div style={{flex:1}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Default (360px)</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'12px',height:'400px'}}>
+      <div style={{display:'flex',gap:'6px',height:'100%'}}>
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+      </div>
+    </div>
+  </div>
+  <div style={{flex:1}}>
+    <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Small (320px)</div>
+    <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'12px',height:'320px'}}>
+      <div style={{display:'flex',gap:'6px',height:'100%'}}>
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+        <div style={{flex:1,background:'rgba(237,27,54,0.12)',borderRadius:'4px'}} />
+      </div>
+    </div>
+  </div>
+</div>
+
+### Navigation Grids
+
+<Tabs>
+  <Tab title="Top & Bottom Nav (2 Columns)">
+    The navigation bar uses a simplified 2-column grid for balanced placement of navigation elements.
+
+    | Breakpoint | Viewport | Columns | Gutter | Offset |
+    |------------|----------|---------|--------|--------|
+    | Large | 390 × 844 | 2 | 16px | 24 & 16px |
+    | Default | 360 × 800 | 2 | 16px | 24 & 16px |
+    | Small | 320 × 568 | 2 | 16px | 16 & 12px |
+
+    <div style={{display:'flex',gap:'24px',marginTop:'16px'}}>
+      <div style={{flex:1}}>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Large</div>
+        <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'0',height:'430px',display:'flex',flexDirection:'column',overflow:'hidden'}}>
+          <div style={{height:'36px',background:'rgba(237,27,54,0.15)',borderRadius:'8px 8px 0 0'}} />
+          <div style={{flex:1}} />
+          <div style={{height:'36px',background:'rgba(237,27,54,0.15)',borderRadius:'0 0 8px 8px'}} />
+        </div>
+      </div>
+      <div style={{flex:1}}>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Default</div>
+        <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'0',height:'400px',display:'flex',flexDirection:'column',overflow:'hidden'}}>
+          <div style={{height:'34px',background:'rgba(237,27,54,0.15)',borderRadius:'8px 8px 0 0'}} />
+          <div style={{flex:1}} />
+          <div style={{height:'34px',background:'rgba(237,27,54,0.15)',borderRadius:'0 0 8px 8px'}} />
+        </div>
+      </div>
+      <div style={{flex:1}}>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Small</div>
+        <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'0',height:'320px',display:'flex',flexDirection:'column',overflow:'hidden'}}>
+          <div style={{height:'30px',background:'rgba(237,27,54,0.15)',borderRadius:'8px 8px 0 0'}} />
+          <div style={{flex:1}} />
+          <div style={{height:'30px',background:'rgba(237,27,54,0.15)',borderRadius:'0 0 8px 8px'}} />
+        </div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Side Nav (3 Columns)">
+    The mobile side navigation overlay uses a 3-column grid for menu items and navigation structure.
+
+    | Breakpoint | Viewport | Columns | Gutter | Offset |
+    |------------|----------|---------|--------|--------|
+    | Large | 390 × 844 | 3 | 16px | 16px |
+    | Default | 360 × 800 | 3 | 16px | 16px |
+    | Small | 320 × 568 | 3 | 16px | 16px |
+
+    <div style={{display:'flex',gap:'24px',marginTop:'16px'}}>
+      <div style={{flex:1}}>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Large</div>
+        <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'12px',height:'430px'}}>
+          <div style={{display:'flex',gap:'6px',height:'100%'}}>
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+          </div>
+        </div>
+      </div>
+      <div style={{flex:1}}>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Default</div>
+        <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'12px',height:'400px'}}>
+          <div style={{display:'flex',gap:'6px',height:'100%'}}>
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+          </div>
+        </div>
+      </div>
+      <div style={{flex:1}}>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'6px'}}>Small</div>
+        <div style={{background:'#F5F5F5',borderRadius:'8px',padding:'12px',height:'320px'}}>
+          <div style={{display:'flex',gap:'6px',height:'100%'}}>
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+            <div style={{flex:1,background:'rgba(35,150,251,0.12)',borderRadius:'4px'}} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+The 4-column content grid, 2-column navigation grid, and 3-column side navigation grid form a flexible yet disciplined framework that adapts across Large, Default, and Small breakpoints.
+
+---
+
+## Component Mapping
+
+How the grid applies to common UI components across desktop and mobile.
+
+| Component | Desktop Grid Usage | Mobile Grid Usage |
+|-----------|-------------------|-------------------|
+| Card | Span 3-4 cols, multiple per row | Span 4 cols (full width), stacked |
+| Data Table | Span 12 cols, horizontal scroll if needed | Span 4 cols, horizontal scroll |
+| Form | Span 6-8 cols (centered or with sidebar) | Span 4 cols, full width |
+| Modal / Dialog | Span 6-8 cols (centered overlay) | Span 4 cols (full width sheet) |
+| Side Navigation | Fixed width (collapsed: 72-88px, expanded: 240-280px) | Overlay drawer, 3-column grid |
+| Top Navigation | Span 12 cols (full width, single row) | Span 2 cols (logo + actions) |
+| Filters Panel | Span 3-4 cols (sidebar) or full-width bar | Full width, collapsible accordion |
+| Hero / Banner | Span 12 cols (full bleed) | Span 4 cols (full width) |
+| Footer | Span 12 cols, multi-column content | Span 4 cols, stacked sections |
+| Tabs | Span 12 cols (tab bar), content follows grid | Span 4 cols, scrollable tab bar |
+
+---
+
+## Real Usage Examples
+
+<AccordionGroup>
+  <Accordion title="Dashboard Layout" icon="chart-line">
+    - **Desktop**: 12-column grid. KPI cards span 3 cols each (4 per row). Charts span 6 cols (2 per row). Activity feed spans 4 cols as a sidebar.
+    - **Tablet**: KPI cards span 6 cols (2 per row). Charts stack to 12 cols. Sidebar collapses to full-width section below.
+    - **Mobile**: All cards span 4 cols (full width), stacked vertically. Charts use full width with horizontal scroll for dense data.
+    - **Gutters**: 16px between cards. 24px between major sections.
+  </Accordion>
+  <Accordion title="Form Layout" icon="rectangle-list">
+    - **Desktop**: Form spans 8 cols (centered) or 8 cols with 4-col help sidebar. Input fields span 4 cols each (2 per row) or 8 cols (full width for text areas).
+    - **Mobile**: All fields span 4 cols (full width). Labels stack above inputs. Submit button spans full width.
+    - **Spacing**: 16px between form fields. 24px between form sections. 32px before submit actions.
+  </Accordion>
+  <Accordion title="Data Table Layout" icon="table">
+    - **Desktop**: Table spans 12 cols. Columns align to grid columns where possible. Filters in a 3-col sidebar or full-width bar above.
+    - **Mobile**: Table spans 4 cols with horizontal scroll. Key columns (name, status) visible; secondary columns accessible via scroll. Filters collapse into a modal or accordion.
+    - **Alignment**: Table headers align to grid. Cell padding uses spacing tokens (12px horizontal, 8px vertical).
+  </Accordion>
+  <Accordion title="Navigation Layout" icon="bars">
+    - **Desktop (Side Nav Expanded)**: Nav occupies ~280px (4-col equivalent). Content grid shifts right with 12 columns in remaining space.
+    - **Desktop (Side Nav Collapsed)**: Nav rail at ~72-88px. Content grid expands.
+    - **Mobile**: Side nav becomes a slide-in overlay using 3-column grid. Top bar uses 2-column grid (logo left, actions right). Bottom bar uses 2-column grid for tab navigation.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+
+  </Tab>
+  <Tab title="Grid Implementation">
+
+
+## Token Mapping
+
+Grid values are exposed as design tokens for consistent implementation across design and code.
+
+<Tabs>
+  <Tab title="Grid Tokens">
+    | Token | Value | Description |
+    |-------|-------|-------------|
+    | `grid.columns.desktop` | `12` | Number of columns on desktop |
+    | `grid.columns.mobile` | `4` | Number of columns on mobile |
+    | `grid.columns.mobile.nav` | `2` | Columns for mobile top/bottom nav |
+    | `grid.columns.mobile.sidenav` | `3` | Columns for mobile side nav |
+    | `grid.gutter.large` | `24px` | Gutter width at 1920px breakpoint |
+    | `grid.gutter.default` | `16px` | Gutter width at 1440px and below |
+    | `grid.margin.desktop` | `80px` | Outer margin on desktop |
+    | `grid.margin.mobile` | `16px` | Outer margin on mobile |
+    | `grid.max-width` | `1280px` | Maximum content width on 1920+ screens |
+    | `grid.column-width.desktop` | `92px` | Base column width on desktop |
+  </Tab>
+  <Tab title="Breakpoint Tokens">
+    | Token | Value | Description |
+    |-------|-------|-------------|
+    | `breakpoint.desktop.large` | `1920px` | Large desktop / external monitors |
+    | `breakpoint.desktop.default` | `1440px` | Primary design frame |
+    | `breakpoint.desktop.medium` | `1366px` | Enterprise laptop resolution |
+    | `breakpoint.desktop.small` | `1280px` | Compact laptop |
+    | `breakpoint.mobile.large` | `390px` | Default mobile reference |
+    | `breakpoint.mobile.default` | `360px` | Secondary modern devices |
+    | `breakpoint.mobile.small` | `320px` | POS & constrained environments |
+  </Tab>
+  <Tab title="Spacing Integration">
+    Grid tokens connect directly to the TARMAC spacing scale:
+
+    | Grid Element | Spacing Token | Value |
+    |-------------|--------------|-------|
+    | Gutter (default) | `spacing-4` | 16px |
+    | Gutter (large) | `spacing-6` | 24px |
+    | Mobile margin | `spacing-4` | 16px |
+    | Section gap | `spacing-8` to `spacing-12` | 32-48px |
+    | Card gap | `spacing-4` to `spacing-6` | 16-24px |
+    | Form field gap | `spacing-4` | 16px |
+
+    <Info>Always reference spacing tokens for gutters and margins — never hardcode pixel values. This ensures grid spacing stays synchronized with the broader spacing system.</Info>
+  </Tab>
+</Tabs>
+
+## Edge Cases & Anti-patterns
+
+| Scenario | Problem | Solution |
+|----------|---------|----------|
+| Overlapping elements | Components extend beyond their column boundaries | Ensure all components respect column span. Use `overflow: hidden` on grid containers. |
+| Misaligned components | Elements don't align with adjacent grid items | Check that all items use the same grid context. Avoid mixing grid systems. |
+| Breaking grid for "visual fit" | Designer moves element off-grid to "look better" | Revisit content hierarchy or component sizing. The grid is the source of truth. |
+| Inconsistent spacing | Different gutters or margins on the same page | Always use grid tokens. Audit pages for hardcoded spacing values. |
+| Content overflow on mobile | Desktop layout crammed into 4 columns | Redesign for mobile — simplify, stack, or use progressive disclosure. Don't just shrink. |
+| Drawer + side nav conflict | Side drawer opens while side nav is expanded | Define clear z-index and overlay rules. Drawer should overlay content, not push nav. |
+| Ultra-wide monitors (2560px+) | Content stretches too wide, poor readability | Grid locks to 1280px max-width, centered. Background fills remaining space. |
+| Nested grids | Grid inside a grid creates alignment conflicts | Avoid nesting grids. Use column spans within the parent grid instead. |
+
+## Implementation Guidelines
+
+<Steps>
+  <Step title="Set Up the Grid Container">
+    Define the grid container with 12 columns on desktop, 4 on mobile. Use CSS Grid or Flexbox with the grid tokens.
+
+    ```css
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--grid-gutter-default); /* 16px */
+      max-width: var(--grid-max-width); /* 1280px */
+      margin: 0 auto;
+      padding: 0 var(--grid-margin-desktop); /* 80px */
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 var(--grid-margin-mobile); /* 16px */
+      }
+    }
+    ```
+  </Step>
+  <Step title="Handle Breakpoints">
+    Use breakpoint tokens to define responsive behavior. Content should adapt at each defined breakpoint.
+
+    ```css
+    /* Large desktop */
+    @media (min-width: 1920px) {
+      .grid-container {
+        gap: var(--grid-gutter-large); /* 24px */
+      }
+    }
+
+    /* Medium desktop */
+    @media (max-width: 1366px) {
+      .grid-container {
+        max-width: 100%;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--grid-gutter-default);
+      }
+    }
+    ```
+  </Step>
+  <Step title="Use Column Spans">
+    Apply column spans to child elements using `grid-column`.
+
+    ```css
+    /* Full width */
+    .span-12 { grid-column: span 12; }
+
+    /* Half width */
+    .span-6 { grid-column: span 6; }
+
+    /* Third width */
+    .span-4 { grid-column: span 4; }
+
+    /* Quarter width */
+    .span-3 { grid-column: span 3; }
+
+    /* With offset */
+    .offset-2 { grid-column-start: 3; }
+    .offset-4 { grid-column-start: 5; }
+
+    /* Mobile: everything full width */
+    @media (max-width: 768px) {
+      [class*="span-"] {
+        grid-column: span 4;
+      }
+    }
+    ```
+  </Step>
+  <Step title="Handle Side Navigation">
+    When side navigation is present, wrap the layout in a flex container with the nav and grid as siblings.
+
+    ```css
+    .layout {
+      display: flex;
+    }
+
+    .side-nav {
+      width: 280px; /* expanded */
+      flex-shrink: 0;
+    }
+
+    .side-nav.collapsed {
+      width: 72px;
+    }
+
+    .main-content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--grid-gutter-default);
+    }
+    ```
+  </Step>
+  <Step title="Test at All Breakpoints">
+    Verify layouts at every defined viewport:
+    - 1920 × 1080 (large desktop)
+    - 1440 × 942 (default)
+    - 1366 × 768 (medium)
+    - 1280 × 832 (small desktop)
+    - 390 × 844 (large mobile)
+    - 360 × 800 (default mobile)
+    - 320 × 568 (small mobile)
+
+    <Tip>Use browser DevTools responsive mode to test each breakpoint. Pay special attention to column collapse behavior and content stacking order.</Tip>
+  </Step>
+</Steps>
+
+---
+
+
+  </Tab>
+</Tabs>

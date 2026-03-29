@@ -253,13 +253,567 @@ TARMAC uses a **Minor Third (1.2)** ratio with a 16px base size. Each step in th
 
 ---
 
-## Continue Reading
 
-<CardGroup cols={2}>
-  <Card title="Type Styles Reference" icon="text-height" href="/foundations/typography-styles">
-    Display, heading, body, caption styles with specs, line height, letter spacing, and color tokens.
-  </Card>
-  <Card title="Typography Implementation" icon="code" href="/foundations/typography-implementation">
-    Accessibility guidelines, CSS custom properties, component styles, and TypeScript tokens.
-  </Card>
-</CardGroup>
+---
+
+<Tabs>
+  <Tab title="Typography Styles">
+
+
+## Type Styles
+
+### Display
+
+High-impact, hero-level communication. Used for landing pages, feature announcements, and marketing surfaces.
+
+
+<div className="showcase-box">
+  <div style={{fontSize:'48px',lineHeight:'58px',fontWeight:700,letterSpacing:'-0.5px',marginBottom:'16px'}}>Display Bold</div>
+  <div style={{fontSize:'48px',lineHeight:'58px',fontWeight:600,letterSpacing:'-0.5px',marginBottom:'16px'}}>Display Semibold</div>
+  <div style={{fontSize:'48px',lineHeight:'58px',fontWeight:500,letterSpacing:'-0.5px',marginBottom:'16px'}}>Display Medium</div>
+  <div style={{fontSize:'48px',lineHeight:'58px',fontWeight:400,letterSpacing:'-0.5px'}}>Display Regular</div>
+</div>
+
+| Property | Value |
+|----------|-------|
+| Size | 48px (3rem) |
+| Line Height | 58px |
+| Letter Spacing | -0.05em |
+| Paragraph Spacing | 2 (light) / 4 (dark) |
+| Weights | Bold (700), Semi Bold (600), Medium (500), Regular (400) |
+
+### Headings
+
+Headings create the structural backbone of every page. Each level has a distinct size, line height, and letter spacing tuned for its role.
+
+<Tabs>
+  <Tab title="Specs">
+    | Level | Size | Line Height | Letter Spacing | Paragraph Spacing | Purpose |
+    |-------|------|-------------|----------------|-------------------|---------|
+    | H1 | 40px | 52px | -0.5 | 2 | Primary page titles and major section headers |
+    | H2 | 34px | 44px | -0.25 | 2 | Section titles and key content anchors |
+    | H3 | 28px | 36px | -0.15 | 2 | Sub-sections and supporting structure |
+    | H4 | 24px | 32px | 0 | 2 | Component-level titles and feature labels |
+    | H5 | 20px | 26px | 0 | 2 | Minor headings and UI section labels |
+
+    Each heading level supports these weight variants: **Bold** (700), **Semi Bold** (600), **Medium** (500, default), **Regular** (400). H4 and H5 also support **Light** (300).
+  </Tab>
+  <Tab title="Preview">
+    <div className="showcase-box" style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>H1 · 40px / 52px · -0.5</div>
+        <div style={{fontSize:'40px',lineHeight:'52px',fontWeight:700,letterSpacing:'-0.5px'}}>Page Title</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>H2 · 34px / 44px · -0.25</div>
+        <div style={{fontSize:'34px',lineHeight:'44px',fontWeight:700,letterSpacing:'-0.25px'}}>Section Title</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>H3 · 28px / 36px · -0.15</div>
+        <div style={{fontSize:'28px',lineHeight:'36px',fontWeight:600,letterSpacing:'-0.15px'}}>Sub-section</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>H4 · 24px / 32px · 0</div>
+        <div style={{fontSize:'24px',lineHeight:'32px',fontWeight:600}}>Component Title</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>H5 · 20px / 26px · 0</div>
+        <div style={{fontSize:'20px',lineHeight:'26px',fontWeight:500}}>UI Section Label</div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+### Body
+
+The default reading styles for content, forms, and descriptive UI. B1 is the standard body size; B2 is used for dense layouts, tables, and secondary content.
+
+<Tabs>
+  <Tab title="Specs">
+    | Level | Size | Line Height | Letter Spacing | Paragraph Spacing | Purpose |
+    |-------|------|-------------|----------------|-------------------|---------|
+    | B1 | 16px | 24px | +0.3 (bold/semibold), +0.2 (medium/regular/light) | 0 | Default reading size — content, forms, descriptive UI |
+    | B2 | 14px | 20px | +0.3 | 0 | Dense layouts, tables, labels, secondary content |
+
+    Weight variants: **Bold** (700), **Semi Bold** (600), **Medium** (500, default), **Regular** (400), **Light** (300).
+  </Tab>
+  <Tab title="Preview">
+    <div className="showcase-box" style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>B1 · 16px / 24px · +0.2</div>
+        <div style={{fontSize:'16px',lineHeight:'24px',fontWeight:400,letterSpacing:'0.2px'}}>Body text is the default reading size for content, forms, and descriptive UI elements. It should feel comfortable for extended reading.</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>B1 Bold · 16px / 24px · +0.3</div>
+        <div style={{fontSize:'16px',lineHeight:'24px',fontWeight:700,letterSpacing:'0.3px'}}>Bold body text is used for inline emphasis and key information within paragraphs.</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>B2 · 14px / 20px · +0.3</div>
+        <div style={{fontSize:'14px',lineHeight:'20px',fontWeight:400,letterSpacing:'0.3px'}}>Secondary body text for dense layouts, data tables, form labels, and supporting content that doesn't need full-size treatment.</div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+### Caption
+
+Small text for helper hints, timestamps, metadata, and constrained UI. Use sparingly — captions should support, not carry, the content.
+
+
+<Tabs>
+  <Tab title="Specs">
+    | Level | Size | Line Height | Letter Spacing | Paragraph Spacing | Purpose |
+    |-------|------|-------------|----------------|-------------------|---------|
+    | C1 | 12px | 16px | +0.4 | 0 | Helper text, hints, timestamps, secondary metadata |
+    | C2 | 10px | 16px | +0.4 | 0 | Rare use — constrained UI, legal text, technical notations |
+
+    Weight variants: **Bold** (700), **Semi Bold** (600), **Medium** (500), **Regular** (400), **Light** (300).
+  </Tab>
+  <Tab title="Preview">
+    <div className="showcase-box" style={{display:'flex',flexDirection:'column',gap:'16px'}}>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>C1 · 12px / 16px · +0.4</div>
+        <div style={{fontSize:'12px',lineHeight:'16px',fontWeight:400,letterSpacing:'0.4px'}}>Helper text, timestamps, and secondary metadata</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>C1 Bold · 12px / 16px · +0.4</div>
+        <div style={{fontSize:'12px',lineHeight:'16px',fontWeight:700,letterSpacing:'0.4px'}}>Bold caption for emphasized metadata</div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px',color:'#ED1B36',marginBottom:'4px'}}>C2 · 10px / 16px · +0.4</div>
+        <div style={{fontSize:'10px',lineHeight:'16px',fontWeight:400,letterSpacing:'0.4px',color:'#999'}}>Legal text, constrained UI, technical notations — use rarely</div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Warning>C2 (10px) should be used only when space is extremely constrained. For most use cases, C1 (12px) is the smallest recommended size.</Warning>
+
+---
+
+## Line Height
+
+Line height controls vertical rhythm and readability. TARMAC uses tighter line heights for large text and looser values for body content.
+
+| Text Role | Font Size | Line Height | Ratio |
+|-----------|-----------|-------------|-------|
+| Caption (C1–C2) | 10–12px | 16px | 1.2–1.4× |
+| Body (B1–B2) | 14–16px | 20–24px | 1.3–1.5× |
+| Heading (H1–H5) | 20–40px | 26–52px | 1.2–1.4× |
+| Display | 48px | 58px | 1.0–1.2× |
+
+<Info>
+  **Accessibility rules:**
+  - Body text line height must not go below **1.45×** to maintain readability for users with cognitive disabilities.
+  - Display text line height must not exceed **1.2×** to keep hero text visually cohesive.
+</Info>
+
+---
+
+## Letter Spacing
+
+Letter spacing (tracking) is adjusted per text role. Larger text uses negative tracking for visual tightness; smaller text uses positive tracking for legibility.
+
+| Text Role | Font Size | Letter Spacing | Direction |
+|-----------|-----------|----------------|-----------|
+| Caption (C1–C2) | 10–12px | +0.4 to +0.6em | Looser — aids legibility at small sizes |
+| Body (B1–B2) | 14–16px | +0.2 to +0.5em | Slightly open — comfortable reading |
+| Heading (H1–H5) | 20–40px | -0.1 to -0.5em | Tighter — creates visual density |
+| Display | 48px | -0.5 to -1em | Tightest — high-impact, compact feel |
+
+<Warning>
+  **Accessibility rules:**
+  - Never use negative letter spacing on body or caption text — it reduces readability.
+  - Ensure all text remains readable at **200% browser zoom**.
+</Warning>
+
+---
+
+## Typography Colors
+
+Typography color tokens are separated by text role and support both light and dark themes. Always reference semantic tokens — never hardcode hex values.
+
+<Tabs>
+  <Tab title="Display">
+    | State | Light Mode | Dark Mode |
+    |-------|------------|-----------|
+    | Primary | Black.500 `#000000` | White.500 `#FFFFFF` |
+    | Secondary | Black.400 `#1A1A1A` | White.400 `#F2F2F2` |
+    | Disabled | Grey.400 `#808080` | Grey.500 `#666666` |
+
+    <div style={{display:'flex',gap:'12px',marginTop:'12px'}}>
+      <div style={{flex:1,padding:'16px',background:'#FFFFFF',borderRadius:'8px',border:'1px solid #E5E5E5'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Light Mode</div>
+        <div style={{fontSize:'20px',fontWeight:700,color:'#000000',marginBottom:'4px'}}>Primary</div>
+        <div style={{fontSize:'20px',fontWeight:600,color:'#1A1A1A',marginBottom:'4px'}}>Secondary</div>
+        <div style={{fontSize:'20px',fontWeight:500,color:'#808080'}}>Disabled</div>
+      </div>
+      <div style={{flex:1,padding:'16px',background:'#1A1A1A',borderRadius:'8px'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Dark Mode</div>
+        <div style={{fontSize:'20px',fontWeight:700,color:'#FFFFFF',marginBottom:'4px'}}>Primary</div>
+        <div style={{fontSize:'20px',fontWeight:600,color:'#F2F2F2',marginBottom:'4px'}}>Secondary</div>
+        <div style={{fontSize:'20px',fontWeight:500,color:'#666666'}}>Disabled</div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Heading">
+    | State | Light Mode | Dark Mode |
+    |-------|------------|-----------|
+    | Primary | Black.400 `#0D0D0D` | White.400 `#F2F2F2` |
+    | Secondary | Black.300 `#1A1A1A` | White.200 `#D9D9D9` |
+    | Disabled | Grey.300 `#949494` | Grey.500 `#666666` |
+
+    <div style={{display:'flex',gap:'12px',marginTop:'12px'}}>
+      <div style={{flex:1,padding:'16px',background:'#FFFFFF',borderRadius:'8px',border:'1px solid #E5E5E5'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Light Mode</div>
+        <div style={{fontSize:'20px',fontWeight:700,color:'#0D0D0D',marginBottom:'4px'}}>Primary</div>
+        <div style={{fontSize:'20px',fontWeight:600,color:'#1A1A1A',marginBottom:'4px'}}>Secondary</div>
+        <div style={{fontSize:'20px',fontWeight:500,color:'#949494'}}>Disabled</div>
+      </div>
+      <div style={{flex:1,padding:'16px',background:'#1A1A1A',borderRadius:'8px'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Dark Mode</div>
+        <div style={{fontSize:'20px',fontWeight:700,color:'#F2F2F2',marginBottom:'4px'}}>Primary</div>
+        <div style={{fontSize:'20px',fontWeight:600,color:'#D9D9D9',marginBottom:'4px'}}>Secondary</div>
+        <div style={{fontSize:'20px',fontWeight:500,color:'#666666'}}>Disabled</div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Body">
+    | State | Light Mode | Dark Mode |
+    |-------|------------|-----------|
+    | Primary | Black.300 `#1A1A1A` | White.300 `#E6E6E6` |
+    | Secondary | Black.200 `#262626` | White.100 `#CCCCCC` |
+    | Disabled | Grey.200 `#B3B3B3` | Grey.500 `#666666` |
+
+    <div style={{display:'flex',gap:'12px',marginTop:'12px'}}>
+      <div style={{flex:1,padding:'16px',background:'#FFFFFF',borderRadius:'8px',border:'1px solid #E5E5E5'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Light Mode</div>
+        <div style={{fontSize:'16px',fontWeight:400,color:'#1A1A1A',marginBottom:'4px'}}>Primary body text</div>
+        <div style={{fontSize:'16px',fontWeight:400,color:'#262626',marginBottom:'4px'}}>Secondary body text</div>
+        <div style={{fontSize:'16px',fontWeight:400,color:'#B3B3B3'}}>Disabled body text</div>
+      </div>
+      <div style={{flex:1,padding:'16px',background:'#1A1A1A',borderRadius:'8px'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Dark Mode</div>
+        <div style={{fontSize:'16px',fontWeight:400,color:'#E6E6E6',marginBottom:'4px'}}>Primary body text</div>
+        <div style={{fontSize:'16px',fontWeight:400,color:'#CCCCCC',marginBottom:'4px'}}>Secondary body text</div>
+        <div style={{fontSize:'16px',fontWeight:400,color:'#666666'}}>Disabled body text</div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Caption">
+    | State | Light Mode | Dark Mode |
+    |-------|------------|-----------|
+    | Primary | Black.50 `#404040` | White.50 `#BFBFBF` |
+    | Secondary | Black.100 `#333333` | Grey.100 `#BDBCBC` |
+    | Disabled | Grey.100 `#BDBCBC` | Grey.500 `#666666` |
+
+    <div style={{display:'flex',gap:'12px',marginTop:'12px'}}>
+      <div style={{flex:1,padding:'16px',background:'#FFFFFF',borderRadius:'8px',border:'1px solid #E5E5E5'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Light Mode</div>
+        <div style={{fontSize:'12px',fontWeight:400,color:'#404040',marginBottom:'4px'}}>Primary caption text</div>
+        <div style={{fontSize:'12px',fontWeight:400,color:'#333333',marginBottom:'4px'}}>Secondary caption text</div>
+        <div style={{fontSize:'12px',fontWeight:400,color:'#BDBCBC'}}>Disabled caption text</div>
+      </div>
+      <div style={{flex:1,padding:'16px',background:'#1A1A1A',borderRadius:'8px'}}>
+        <div style={{fontSize:'11px',color:'#999',marginBottom:'8px'}}>Dark Mode</div>
+        <div style={{fontSize:'12px',fontWeight:400,color:'#BFBFBF',marginBottom:'4px'}}>Primary caption text</div>
+        <div style={{fontSize:'12px',fontWeight:400,color:'#BDBCBC',marginBottom:'4px'}}>Secondary caption text</div>
+        <div style={{fontSize:'12px',fontWeight:400,color:'#666666'}}>Disabled caption text</div>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+
+
+  </Tab>
+  <Tab title="Typography Implementation">
+
+
+## Accessibility
+
+<AccordionGroup>
+  <Accordion title="Contrast Requirements" icon="eye">
+    **WCAG 2.1 Level AA**
+    - Normal text (&lt; 18px): **4.5:1** contrast ratio minimum
+    - Large text (≥ 18px or ≥ 14px bold): **3:1** contrast ratio minimum
+
+    All typography color tokens in TARMAC are pre-validated against these thresholds for both light and dark modes. Disabled states are intentionally below contrast thresholds to signal non-interactivity.
+  </Accordion>
+  <Accordion title="Minimum Font Sizes" icon="text-height">
+    - **Body text**: 16px (B1) minimum for primary content
+    - **Secondary text**: 14px (B2) minimum for labels and supporting content
+    - **Captions**: 12px (C1) minimum for metadata and helper text
+    - **Constrained UI**: 10px (C2) only when absolutely necessary
+
+    Always use `rem` units so text scales with user browser preferences.
+  </Accordion>
+  <Accordion title="Line Height and Spacing" icon="arrows-up-down">
+    - Body text: line height ≥ **1.45×** (WCAG 1.4.12)
+    - Paragraph spacing: at least **1.5×** the font size between paragraphs
+    - Letter spacing: never negative for body or caption text
+
+    These rules ensure readability for users with dyslexia and low vision.
+  </Accordion>
+  <Accordion title="Semantic HTML" icon="code">
+    Always use proper heading elements (`h1`–`h5`) rather than styled `div` or `span` elements. Screen readers rely on heading structure for navigation.
+
+    ```html
+    <!-- Correct -->
+    <h1>Page Title</h1>
+    <h2>Section Heading</h2>
+    <p>Body paragraph with <strong>emphasis</strong>.</p>
+
+    <!-- Incorrect -->
+    <div class="h1">Page Title</div>
+    <span style="font-size: 34px">Section Heading</span>
+    ```
+  </Accordion>
+  <Accordion title="Zoom and Reflow" icon="magnifying-glass-plus">
+    - All text must remain readable at **200% browser zoom**
+    - Text must reflow within the viewport — no horizontal scrolling
+    - Avoid fixed-width containers that clip text at larger zoom levels
+    - Use relative units (`rem`, `em`) instead of `px` for font sizes
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Code Examples
+
+### CSS Custom Properties
+
+```css
+:root {
+  /* Font Family */
+  --font-family-primary: "Noto Sans", -apple-system, BlinkMacSystemFont,
+                          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Font Sizes */
+  --text-caption-2: 0.625rem;  /* 10px */
+  --text-caption-1: 0.75rem;   /* 12px */
+  --text-body-2: 0.875rem;     /* 14px */
+  --text-body-1: 1rem;         /* 16px */
+  --text-h5: 1.25rem;          /* 20px */
+  --text-h4: 1.5rem;           /* 24px */
+  --text-h3: 1.75rem;          /* 28px */
+  --text-h2: 2.125rem;         /* 34px */
+  --text-h1: 2.5rem;           /* 40px */
+  --text-display: 3rem;        /* 48px */
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --leading-caption: 16px;
+  --leading-body-2: 20px;
+  --leading-body-1: 24px;
+  --leading-h5: 26px;
+  --leading-h4: 32px;
+  --leading-h3: 36px;
+  --leading-h2: 44px;
+  --leading-h1: 52px;
+  --leading-display: 58px;
+
+  /* Letter Spacing */
+  --tracking-display: -0.05em;
+  --tracking-h1: -0.5px;
+  --tracking-h2: -0.25px;
+  --tracking-h3: -0.15px;
+  --tracking-h4: 0;
+  --tracking-h5: 0;
+  --tracking-body-bold: 0.3px;
+  --tracking-body: 0.2px;
+  --tracking-caption: 0.4px;
+}
+```
+
+### Component Styles
+
+<CodeGroup>
+```css Display
+.display-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-display);
+}
+
+.display-semibold {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-display);
+}
+```
+
+```css Headings
+h1, .h1 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-h1);
+}
+
+h2, .h2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-h2);
+}
+
+h3, .h3 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-h3);
+}
+
+h4, .h4 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-h4);
+  line-height: var(--leading-h4);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-h4);
+}
+
+h5, .h5 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-h5);
+  line-height: var(--leading-h5);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-h5);
+}
+```
+
+```css Body
+.body-1 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-body-1);
+  line-height: var(--leading-body-1);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-body);
+}
+
+.body-1-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-body-1);
+  line-height: var(--leading-body-1);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-body-bold);
+}
+
+.body-2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-body-bold);
+}
+```
+
+```css Captions
+.caption-1 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-caption-1);
+  line-height: var(--leading-caption);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-caption);
+}
+
+.caption-2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-caption-2);
+  line-height: var(--leading-caption);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-caption);
+}
+```
+</CodeGroup>
+
+### TypeScript Tokens
+
+```typescript
+export const typography = {
+  fontFamily: {
+    primary: '"Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  },
+  fontSize: {
+    'caption-2': '0.625rem',  // 10px
+    'caption-1': '0.75rem',   // 12px
+    'body-2': '0.875rem',     // 14px
+    'body-1': '1rem',         // 16px
+    h5: '1.25rem',            // 20px
+    h4: '1.5rem',             // 24px
+    h3: '1.75rem',            // 28px
+    h2: '2.125rem',           // 34px
+    h1: '2.5rem',             // 40px
+    display: '3rem',          // 48px
+  },
+  fontWeight: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+  },
+  lineHeight: {
+    caption: '16px',
+    'body-2': '20px',
+    'body-1': '24px',
+    h5: '26px',
+    h4: '32px',
+    h3: '36px',
+    h2: '44px',
+    h1: '52px',
+    display: '58px',
+  },
+  letterSpacing: {
+    display: '-0.05em',
+    h1: '-0.5px',
+    h2: '-0.25px',
+    h3: '-0.15px',
+    h4: '0',
+    h5: '0',
+    bodyBold: '0.3px',
+    body: '0.2px',
+    caption: '0.4px',
+  },
+} as const;
+
+// Typography color tokens
+export const typographyColors = {
+  display: {
+    light: { primary: '#000000', secondary: '#1A1A1A', disabled: '#808080' },
+    dark:  { primary: '#FFFFFF', secondary: '#F2F2F2', disabled: '#666666' },
+  },
+  heading: {
+    light: { primary: '#0D0D0D', secondary: '#1A1A1A', disabled: '#949494' },
+    dark:  { primary: '#F2F2F2', secondary: '#D9D9D9', disabled: '#666666' },
+  },
+  body: {
+    light: { primary: '#1A1A1A', secondary: '#262626', disabled: '#B3B3B3' },
+    dark:  { primary: '#E6E6E6', secondary: '#CCCCCC', disabled: '#666666' },
+  },
+  caption: {
+    light: { primary: '#404040', secondary: '#333333', disabled: '#BDBCBC' },
+    dark:  { primary: '#BFBFBF', secondary: '#BDBCBC', disabled: '#666666' },
+  },
+} as const;
+```
+
+<Info>Always test typography with real content across different devices and languages to ensure optimal readability. Noto Sans supports variable font features — use them for fine-grained weight control when available.</Info>
+
+
+
+  </Tab>
+</Tabs>
