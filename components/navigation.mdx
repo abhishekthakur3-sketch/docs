@@ -1,0 +1,237 @@
+---
+title: Navigation
+description: Navigation components provide mobile bottom tab bars and side navigation drawers for app-level screen switching and menu access.
+icon: "compass"
+---
+
+## Overview
+
+The Navigation system provides mobile navigation patterns including Bottom Nav (tab bar) and Side Nav (drawer menu). Bottom Nav supports 2-5 tabs with two styles and two alignment modes. Side Nav provides single or dual set menu layouts. Together they enable consistent app-level navigation across mobile interfaces.
+
+<CardGroup cols={3}>
+  <Card title="2 Nav Types" icon="bars">
+    Bottom Nav, Side Nav
+  </Card>
+  <Card title="2 Styles" icon="palette">
+    Primary, Secondary (Rounded)
+  </Card>
+  <Card title="2 Alignments" icon="align-center">
+    Vertical, Horizontal
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with navigation preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Navigation Preview — Replace with /assets/components/navigation/navigation-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Bottom Nav Cells">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Bottom Nav Cells — Primary and Rounded styles, Vertical and Horizontal alignments, Default/Pressed/Disabled states<br/>Replace with /assets/components/navigation/nav-cells.png</div>
+    </div>
+  </Tab>
+  <Tab title="Bottom Nav Bar">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'400px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Mobile Bottom Nav — 2-5 tabs, Primary and Secondary styles, Vertical and Horizontal alignments<br/>Replace with /assets/components/navigation/nav-bottom-bar.png</div>
+    </div>
+  </Tab>
+  <Tab title="Side Nav">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'400px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Mobile Side Nav — Single Set and Dual Sets variants<br/>Replace with /assets/components/navigation/nav-side.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Bottom Nav Cell States
+
+| State | Description |
+|-------|-------------|
+| Default | Inactive tab, ready for interaction |
+| Pressed | Active/selected tab |
+| Disabled | Unavailable tab |
+
+---
+
+## Bottom Nav Styles
+
+| Style | Description |
+|-------|-------------|
+| Primary | Standard bottom nav with underline active indicator |
+| Secondary (Rounded) | Rounded pill-style active indicator |
+
+---
+
+## Bottom Nav Alignments
+
+| Alignment | Description | Use When |
+|-----------|-------------|----------|
+| Vertical | Icon above label | Standard mobile tab bars |
+| Horizontal | Icon beside label | Compact tab bars, wider labels |
+
+---
+
+## Bottom Nav Tab Counts
+
+| Count | Tabs | Description |
+|-------|------|-------------|
+| 2 Tabs | 2 items | Minimal navigation |
+| 3 Tabs | 3 items | Standard navigation |
+| 4 Tabs | 4 items | Extended navigation |
+| 5 Tabs | 5 items | Full navigation |
+
+---
+
+## Side Nav Variants
+
+| Variant | Description | Use When |
+|---------|-------------|----------|
+| Single Set | One group of navigation items | Simple app structure |
+| Dual Sets | Two groups of navigation items | Categorized navigation with primary and secondary sections |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Tap bottom nav tab | Switches to corresponding screen |
+| Active tab | Visual indicator (underline or pill) |
+| Tap menu icon | Opens side nav drawer |
+| Tap side nav item | Navigates to screen, closes drawer |
+| Swipe from edge | Opens side nav (gesture) |
+| Tap backdrop | Closes side nav |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use bottom nav for primary app-level navigation
+    - Keep tab count between 3-5 for optimal usability
+    - Use clear, recognizable icons with labels
+    - Use side nav for secondary or extended navigation
+    - Maintain consistent nav structure across screens
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use bottom nav on desktop (use sidebar or top nav)
+    - Don't exceed 5 tabs in bottom nav
+    - Don't use icon-only tabs without labels
+    - Don't mix bottom nav and side nav for the same navigation level
+    - Don't hide primary navigation behind a menu
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="navigation"` on container, `role="tablist"` on bottom nav |
+| Active state | `aria-selected="true"` on active tab |
+| Labels | Each tab must have a visible label and `aria-label` |
+| Keyboard | Arrow keys navigate between tabs |
+| Screen reader | Announce tab name and active state |
+| Side nav | Use `role="navigation"` with `aria-label="Main menu"` |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Bottom Nav">
+    | Token | Value |
+    |-------|-------|
+    | `nav-bottom-height-vertical` | 70px (primary) / 74px (secondary) |
+    | `nav-bottom-height-horizontal` | 48px (primary) / 60px (secondary) |
+    | `nav-bottom-cell-width` | 60px |
+    | `nav-bottom-active-indicator` | 2px underline (primary) / pill bg (secondary) |
+    | `nav-bottom-icon-size` | 24px |
+    | `nav-bottom-label-size` | 10px |
+  </Tab>
+  <Tab title="Side Nav">
+    | Token | Value |
+    |-------|-------|
+    | `nav-side-width-single` | 274px |
+    | `nav-side-width-dual` | 274px / 344px |
+    | `nav-side-item-height` | 48px |
+    | `nav-side-padding` | 16px |
+    | `nav-side-border-radius` | 0px (flush to edge) |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface BottomNavProps {
+  style?: 'primary' | 'secondary';
+  alignment?: 'vertical' | 'horizontal';
+  tabs: BottomNavTab[];
+  activeTab: string;
+  onTabChange: (tabId: string) => void;
+}
+
+interface BottomNavTab {
+  id: string;
+  label: string;
+  icon: ReactNode;
+  disabled?: boolean;
+  badge?: number;
+}
+
+interface SideNavProps {
+  variant?: 'single' | 'dual';
+  open: boolean;
+  onClose: () => void;
+  sections: NavSection[];
+  activeItem?: string;
+  onItemSelect: (itemId: string) => void;
+}
+
+interface NavSection {
+  title?: string;
+  items: NavItem[];
+}
+```
+
+```tsx Usage
+// Bottom nav
+<BottomNav
+  style="primary"
+  alignment="vertical"
+  activeTab="home"
+  tabs={[
+    { id: 'home', label: 'Home', icon: <HomeIcon /> },
+    { id: 'orders', label: 'Orders', icon: <OrderIcon /> },
+    { id: 'track', label: 'Track', icon: <TrackIcon /> },
+    { id: 'profile', label: 'Profile', icon: <ProfileIcon /> },
+  ]}
+  onTabChange={setActiveTab}
+/>
+
+// Side nav
+<SideNav
+  variant="dual"
+  open={showMenu}
+  onClose={() => setShowMenu(false)}
+  sections={[
+    { title: 'Main', items: mainNavItems },
+    { title: 'Settings', items: settingsItems },
+  ]}
+  onItemSelect={handleNavigation}
+/>
+```
+</CodeGroup>

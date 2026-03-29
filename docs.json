@@ -77,6 +77,7 @@
                   "components/popups",
                   "components/side-drawer",
                   "components/bottom-sheet",
+                  "components/navigation",
                   "components/badge",
                   "components/tags",
                   "components/pills",
