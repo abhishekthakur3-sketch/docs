@@ -12,75 +12,82 @@
     "light": "#FFFFFF",
     "dark": "#000000"
   },
-  "navigation": [
-    {
-      "group": "",
-      "pages": [
-        {
-          "group": "Introduction",
-          "pages": [
-            "about/overview",
-            "about/philosophy",
-            "about/brand-language",
-            "about/movement-metaphors",
-            "getting-started/installation",
-            "getting-started/quick-start"
-          ]
-        },
-        {
-          "group": "Foundations",
-          "pages": [
-            "foundations/colors",
-            "foundations/colors-palette",
-            "foundations/colors-implementation",
-            "foundations/spacing",
-            "foundations/grid-system",
-            "foundations/grid-advanced",
-            "foundations/grid-implementation",
-            "foundations/typography",
-            "foundations/typography-styles",
-            "foundations/typography-implementation",
-            "foundations/dividers",
-            "foundations/borders",
-            "foundations/radius",
-            "foundations/tokens",
-            "foundations/shadows",
-            "foundations/iconography",
-            "foundations/image-library",
-            "about/logo"
-          ]
-        },
-        {
-          "group": "Components",
-          "pages": [
-            "components/avatar",
-            "components/button",
-            "components/checkbox",
-            "components/input",
-            "components/badge",
-            "components/tags",
-            "components/tooltip"
-          ]
-        },
-        {
-          "group": "Patterns",
-          "pages": [
-            "patterns/layout",
-            "patterns/forms"
-          ]
-        },
-        {
-          "group": "Accessibility",
-          "pages": [
-            "accessibility/overview",
-            "accessibility/keyboard-navigation",
-            "accessibility/screen-readers",
-            "accessibility/color-contrast",
-            "accessibility/focus-management",
-            "accessibility/testing"
-          ]
-        }
-      ]
-    }
-  ]
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Design System",
+        "groups": [
+          {
+            "group": "Navigation",
+            "pages": [
+              {
+                "group": "Introduction",
+                "pages": [
+                  "about/overview",
+                  "about/philosophy",
+                  "about/brand-language",
+                  "about/movement-metaphors",
+                  "getting-started/installation",
+                  "getting-started/quick-start"
+                ]
+              },
+              {
+                "group": "Foundations",
+                "pages": [
+                  "foundations/colors",
+                  "foundations/colors-palette",
+                  "foundations/colors-implementation",
+                  "foundations/spacing",
+                  "foundations/grid-system",
+                  "foundations/grid-advanced",
+                  "foundations/grid-implementation",
+                  "foundations/typography",
+                  "foundations/typography-styles",
+                  "foundations/typography-implementation",
+                  "foundations/dividers",
+                  "foundations/borders",
+                  "foundations/radius",
+                  "foundations/tokens",
+                  "foundations/shadows",
+                  "foundations/iconography",
+                  "foundations/image-library",
+                  "about/logo"
+                ]
+              },
+              {
+                "group": "Components",
+                "pages": [
+                  "components/avatar",
+                  "components/button",
+                  "components/checkbox",
+                  "components/input",
+                  "components/badge",
+                  "components/tags",
+                  "components/tooltip"
+                ]
+              },
+              {
+                "group": "Patterns",
+                "pages": [
+                  "patterns/layout",
+                  "patterns/forms"
+                ]
+              },
+              {
+                "group": "Accessibility",
+                "pages": [
+                  "accessibility/overview",
+                  "accessibility/keyboard-navigation",
+                  "accessibility/screen-readers",
+                  "accessibility/color-contrast",
+                  "accessibility/focus-management",
+                  "accessibility/testing"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
