@@ -1,0 +1,218 @@
+---
+title: Dialog Box
+description: Dialog boxes are modal overlays that require user attention for confirmations, alerts, or decisions before proceeding with a workflow.
+icon: "message-lines"
+---
+
+## Overview
+
+Dialog boxes are modal overlays that interrupt the user flow to communicate important information or require a decision. They support multiple content types including standard messages, custom slot content, and illustrative feedback. The system provides both mobile and web sizes with two visual styles.
+
+<CardGroup cols={3}>
+  <Card title="3 Types" icon="layer-group">
+    Standard, Slots, Slots x2
+  </Card>
+  <Card title="2 Sizes" icon="expand">
+    Mobile (348px), Web (440px)
+  </Card>
+  <Card title="5 Illustrations" icon="image">
+    Success, Error, Warning, Caution, Download
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with dialog box preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dialog Box Preview — Replace with /assets/components/dialog-box/dialog-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Standard">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Standard Dialog — Type 1 and Type 2 styles in Mobile and Web sizes<br/>Replace with /assets/components/dialog-box/dialog-standard.png</div>
+    </div>
+  </Tab>
+  <Tab title="With Slots">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Slots Dialog — Single slot and double slot variants in both styles and sizes<br/>Replace with /assets/components/dialog-box/dialog-slots.png</div>
+    </div>
+  </Tab>
+  <Tab title="Illustrations">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'120px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dialog Illustrations — Success, Error, Warning, Caution, Download<br/>Replace with /assets/components/dialog-box/dialog-illustrations.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Types
+
+| Type | Description | Use When |
+|------|-------------|----------|
+| Standard | Title, description, illustration, and action buttons | Confirmations, alerts, simple decisions |
+| Slots | Standard content plus one custom slot area | Dialogs needing additional custom content |
+| Slots x2 | Standard content plus two custom slot areas | Complex dialogs with multiple custom sections |
+
+---
+
+## Styles
+
+| Style | Description |
+|-------|-------------|
+| Type 1 | Illustration above title, centered layout |
+| Type 2 | Illustration inline with content, left-aligned layout |
+
+---
+
+## Sizes
+
+| Size | Width | Usage |
+|------|-------|-------|
+| Mobile | 348px | Mobile screens, compact viewports |
+| Web | 440px | Desktop and tablet screens |
+
+---
+
+## Illustrations
+
+| Illustration | Use When |
+|-------------|----------|
+| Success | Action completed successfully |
+| Error | Action failed or critical error |
+| Warning | Potentially destructive action |
+| Caution | Action requires careful consideration |
+| Download | File download confirmation |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Dialog opens | Overlay backdrop appears, focus trapped inside dialog |
+| Click primary action | Executes action, closes dialog |
+| Click secondary action | Cancels or dismisses dialog |
+| Click backdrop | Closes dialog (if dismissible) |
+| Press Escape | Closes dialog |
+| Tab key | Cycles focus between interactive elements |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use dialogs for important decisions that require user attention
+    - Keep dialog content concise and focused
+    - Provide clear primary and secondary actions
+    - Use appropriate illustrations for context
+    - Trap focus inside the dialog while open
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use dialogs for non-critical information (use snackbar instead)
+    - Don't stack multiple dialogs
+    - Don't use dialogs for complex multi-step workflows
+    - Don't remove the dismiss/cancel option
+    - Don't use dialogs for content that can be inline
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="dialog"` with `aria-modal="true"` |
+| Label | Provide `aria-labelledby` pointing to the dialog title |
+| Focus trap | Focus must be trapped inside the dialog while open |
+| Keyboard | Escape closes the dialog, Tab cycles through elements |
+| Screen reader | Announce dialog title and description on open |
+| Return focus | Return focus to the trigger element on close |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Container">
+    | Token | Value |
+    |-------|-------|
+    | `dialog-width-mobile` | 348px |
+    | `dialog-width-web` | 440px |
+    | `dialog-border-radius` | 16px |
+    | `dialog-padding` | 24px |
+    | `dialog-shadow` | 0 8px 32px rgba(0,0,0,0.16) |
+    | `dialog-backdrop-bg` | rgba(0,0,0,0.5) |
+  </Tab>
+  <Tab title="Illustration">
+    | Token | Value |
+    |-------|-------|
+    | `dialog-illustration-width` | 39px |
+    | `dialog-illustration-height` | 45px |
+    | `dialog-illustration-gap` | 16px |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface DialogBoxProps {
+  type?: 'standard' | 'slots' | 'slots_x2';
+  size?: 'mobile' | 'web';
+  style?: 'type1' | 'type2';
+  open: boolean;
+  onClose: () => void;
+  title: string;
+  description?: string;
+  illustration?: 'success' | 'error' | 'warning' | 'caution' | 'download';
+  primaryAction: { label: string; onClick: () => void };
+  secondaryAction?: { label: string; onClick: () => void };
+  slot1?: ReactNode;
+  slot2?: ReactNode;
+  dismissible?: boolean;
+}
+```
+
+```tsx Usage
+// Standard confirmation dialog
+<DialogBox
+  open={showDialog}
+  onClose={() => setShowDialog(false)}
+  title="Confirm Action"
+  description="Are you sure you want to proceed?"
+  illustration="warning"
+  primaryAction={{ label: 'Confirm', onClick: handleConfirm }}
+  secondaryAction={{ label: 'Cancel', onClick: () => setShowDialog(false) }}
+/>
+
+// Success dialog
+<DialogBox
+  open={showSuccess}
+  onClose={() => setShowSuccess(false)}
+  title="Order Placed"
+  description="Your order has been placed successfully."
+  illustration="success"
+  primaryAction={{ label: 'View Order', onClick: handleViewOrder }}
+/>
+
+// Dialog with custom slot
+<DialogBox
+  type="slots"
+  open={showCustom}
+  onClose={() => setShowCustom(false)}
+  title="Select Delivery"
+  slot1={<DeliveryOptions />}
+  primaryAction={{ label: 'Continue', onClick: handleContinue }}
+/>
+```
+</CodeGroup>

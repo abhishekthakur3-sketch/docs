@@ -72,6 +72,7 @@
                   "components/file-upload",
                   "components/date-time-picker",
                   "components/filter",
+                  "components/dialog-box",
                   "components/badge",
                   "components/tags",
                   "components/pills",
