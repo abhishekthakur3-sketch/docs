@@ -78,6 +78,7 @@
                   "components/side-drawer",
                   "components/bottom-sheet",
                   "components/navigation",
+                  "components/cards",
                   "components/badge",
                   "components/tags",
                   "components/pills",
