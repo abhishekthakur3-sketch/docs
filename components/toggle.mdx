@@ -1,0 +1,442 @@
+---
+title: Toggle / Switch
+description: Toggles are interactive controls that instantly switch a setting between two states — on and off — providing immediate visual feedback.
+icon: "toggle-on"
+---
+
+## Overview
+
+Toggles allow users to switch a system setting between two states instantly. Unlike checkboxes, toggles represent a direct action that takes effect immediately. The thumb slides across the track to visually communicate the current state. Toggles are commonly used in settings panels, feature controls, and configuration interfaces.
+
+<CardGroup cols={3}>
+  <Card title="4 Colors" icon="palette">
+    Black, Blue, DLV Red, Green
+  </Card>
+  <Card title="2 Styles" icon="layer-group">
+    Filled and Outlined
+  </Card>
+  <Card title="2 Sizes" icon="expand">
+    Large (40×24px) and Small (36×20px)
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with toggle component preview from Figma (page: Toggle / Switch ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Toggle Component Preview — Replace with /assets/components/toggle/toggle-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Filled">
+    <div style={{display:'flex', flexDirection:'column', gap:'24px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#000', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Dark Mode — On</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#D9D9D9', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', left:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Notifications — Off</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#2396FB', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Auto-sync — On (Blue)</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#1BA86E', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Active Status — On (Green)</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#ED1B36', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Priority Alerts — On (DLV Red)</span>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Outlined">
+    <div style={{display:'flex', flexDirection:'column', gap:'24px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', border:'2px solid #000', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#000', position:'absolute', top:'2px', right:'2px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Dark Mode — On (Outlined)</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', border:'2px solid #D9D9D9', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#D9D9D9', position:'absolute', top:'2px', left:'2px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Notifications — Off (Outlined)</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', border:'2px solid #2396FB', position:'relative', cursor:'pointer'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#2396FB', position:'absolute', top:'2px', right:'2px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Auto-sync — On (Blue Outlined)</span>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Sizes">
+    <div style={{display:'flex', flexDirection:'column', gap:'24px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Large (40×24px)</div>
+        <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+          <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#000', position:'relative'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px'}}></div></div>
+          <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#D9D9D9', position:'relative'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', left:'4px'}}></div></div>
+        </div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Small (36×20px)</div>
+        <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+          <div style={{width:'36px', height:'20px', borderRadius:'10px', background:'#000', position:'relative'}}><div style={{width:'14px', height:'14px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'3px', right:'3px'}}></div></div>
+          <div style={{width:'36px', height:'20px', borderRadius:'10px', background:'#D9D9D9', position:'relative'}}><div style={{width:'14px', height:'14px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'3px', left:'3px'}}></div></div>
+        </div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="States">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#000', position:'relative'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Default (On)</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#D9D9D9', position:'relative'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', left:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Default (Off)</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#333', position:'relative'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px', boxShadow:'0 0 0 2px rgba(0,0,0,0.1)'}}></div></div>
+        <span style={{fontSize:'13px'}}>Hover</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#000', position:'relative', boxShadow:'0 0 0 3px rgba(0,0,0,0.2)'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', right:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Focused</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'#D9D9D9', position:'relative', opacity:0.4}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#FFF', position:'absolute', top:'4px', left:'4px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Disabled</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}>
+        <div style={{width:'40px', height:'24px', borderRadius:'12px', background:'transparent', border:'1px solid #E5E5E5', position:'relative'}}><div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#E5E5E5', position:'absolute', top:'3px', left:'3px'}}></div></div>
+        <span style={{fontSize:'13px'}}>Ghost</span>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Toggles apply changes immediately — no confirmation step required. The thumb position and track color provide instant visual feedback.</Info>
+
+
+---
+
+## Toggle Matrix
+
+Complete reference: every Color × Style × State combination.
+
+<Tabs>
+  <Tab title="Filled">
+    | State | Black | Blue | DLV Red | Green |
+    |-------|-------|------|---------|-------|
+    | Default (On) | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#000',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#2396FB',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#ED1B36',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#1BA86E',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> |
+    | Default (Off) | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',left:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',left:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',left:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',left:'4px'}}></div></div> |
+    | Hover | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#333',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#1A7FD6',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#C8162E',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#158F5C',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> |
+    | Pressed | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#000',position:'relative',display:'inline-block'}}><div style={{width:'18px',height:'16px',borderRadius:'8px',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#2396FB',position:'relative',display:'inline-block'}}><div style={{width:'18px',height:'16px',borderRadius:'8px',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#ED1B36',position:'relative',display:'inline-block'}}><div style={{width:'18px',height:'16px',borderRadius:'8px',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#1BA86E',position:'relative',display:'inline-block'}}><div style={{width:'18px',height:'16px',borderRadius:'8px',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> |
+    | Focused | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#000',position:'relative',display:'inline-block',boxShadow:'0 0 0 3px rgba(0,0,0,0.2)'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#2396FB',position:'relative',display:'inline-block',boxShadow:'0 0 0 3px rgba(35,150,251,0.3)'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#ED1B36',position:'relative',display:'inline-block',boxShadow:'0 0 0 3px rgba(237,27,54,0.3)'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#1BA86E',position:'relative',display:'inline-block',boxShadow:'0 0 0 3px rgba(27,168,110,0.3)'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> |
+    | Disabled | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#000',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#2396FB',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#ED1B36',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',background:'#1BA86E',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#FFF',position:'absolute',top:'4px',right:'4px'}}></div></div> |
+  </Tab>
+  <Tab title="Outlined">
+    | State | Black | Blue | DLV Red | Green |
+    |-------|-------|------|---------|-------|
+    | Default (On) | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #000',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#000',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #2396FB',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#2396FB',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #ED1B36',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#ED1B36',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #1BA86E',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#1BA86E',position:'absolute',top:'2px',right:'2px'}}></div></div> |
+    | Default (Off) | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#D9D9D9',position:'absolute',top:'2px',left:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#D9D9D9',position:'absolute',top:'2px',left:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#D9D9D9',position:'absolute',top:'2px',left:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #D9D9D9',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#D9D9D9',position:'absolute',top:'2px',left:'2px'}}></div></div> |
+    | Hover | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #333',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#333',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #1A7FD6',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#1A7FD6',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #C8162E',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#C8162E',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #158F5C',position:'relative',display:'inline-block'}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#158F5C',position:'absolute',top:'2px',right:'2px'}}></div></div> |
+    | Disabled | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #000',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#000',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #2396FB',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#2396FB',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #ED1B36',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#ED1B36',position:'absolute',top:'2px',right:'2px'}}></div></div> | <div style={{width:'40px',height:'24px',borderRadius:'12px',border:'2px solid #1BA86E',position:'relative',display:'inline-block',opacity:0.3}}><div style={{width:'16px',height:'16px',borderRadius:'50%',background:'#1BA86E',position:'absolute',top:'2px',right:'2px'}}></div></div> |
+  </Tab>
+</Tabs>
+
+
+---
+
+## Anatomy
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Toggle Anatomy — Replace with /assets/components/toggle/toggle-anatomy.png</div>
+</div>
+
+| # | Element | Description |
+|---|---------|-------------|
+| 1 | Track | Background container representing the toggle's state range. Changes color based on on/off state. |
+| 2 | Thumb | Circular control that slides across the track. Left = off, Right = on. |
+
+<Warning>The thumb position is the primary indicator of state. Always ensure sufficient color contrast between on and off track colors.</Warning>
+
+---
+
+## Styles
+
+| Style | Track (On) | Track (Off) | Thumb | Use Case |
+|-------|-----------|------------|-------|----------|
+| Filled | Solid color fill | Gray fill (`#D9D9D9`) | White circle | Most common, strong visual emphasis |
+| Outlined | Color border, transparent fill | Gray border | Color-matched circle | Lighter appearance, minimal interfaces |
+
+---
+
+## Colors
+
+| Color | On Track (Filled) | On Track (Outlined) | Use Case |
+|-------|------------------|--------------------|---------| 
+| Black | `#000000` | `border: #000000` | Default, neutral settings |
+| Blue | `#2396FB` | `border: #2396FB` | Interactive, informational |
+| DLV Red | `#ED1B36` | `border: #ED1B36` | Brand-specific, critical settings |
+| Green | `#1BA86E` | `border: #1BA86E` | Success, active status |
+
+<Tip>Use Black for most settings. Reserve colored toggles for contexts where color reinforces meaning (e.g., Green for "active status").</Tip>
+
+---
+
+## Sizes
+
+| Size | Track | Thumb | Padding | Use Case |
+|------|-------|-------|---------|----------|
+| Large | 40×24px | 16×16px | 4px | Desktop, primary settings |
+| Small | 36×20px | 14×14px | 3px | Mobile, compact panels, dense UI |
+
+---
+
+## States
+
+| State | Visual Treatment | Interaction |
+|-------|-----------------|-------------|
+| Default | Normal appearance, on or off position | Clickable |
+| Hover | Slightly darker track color | Pointer cursor |
+| Pressed | Thumb stretches slightly wider (elongated) | Active click |
+| Focused | Focus ring around track (3px outline) | Keyboard focus visible |
+| Disabled | 30% opacity, no interaction | `cursor: not-allowed` |
+| Ghost | Minimal chrome, transparent track with subtle border | Lightweight contexts |
+
+---
+
+## Behavior
+
+### State Switching
+
+- Clicking the toggle moves the thumb from left (off) to right (on), or vice versa
+- The state change is applied immediately — no confirmation step
+- Visual feedback (track color + thumb position) updates instantly
+- The thumb animates smoothly across the track (150–200ms transition)
+
+### Label Pairing
+
+- Toggles should always be paired with a descriptive label
+- The label should describe the feature being controlled, not the state
+- Place labels to the left or right of the toggle, never above or below
+
+### Form Integration
+
+- Toggles can be used in forms but should not require a submit action
+- For settings that need confirmation, use a checkbox instead
+- Disabled toggles remain visible to communicate the existence of a feature
+
+---
+
+## Toggle vs Checkbox vs Radio
+
+| Feature | Toggle | Checkbox | Radio |
+|---------|--------|----------|-------|
+| State change | Immediate | On submit | On submit |
+| Options | Binary (on/off) | Multiple selections | Single selection |
+| Best for | Settings, preferences | Form fields, multi-select | Mutually exclusive choices |
+| Visual feedback | Thumb slides, track changes color | Checkmark appears | Dot fills |
+| Confirmation | Not needed | May need submit | May need submit |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Pair toggles with clear, descriptive labels
+    - Use toggles for immediate on/off state changes
+    - Provide clear visual distinction between on and off states
+    - Use consistent toggle style within a settings panel
+    - Place the label describing the feature, not the state
+    - Use Green for "active" and contextual success states
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use toggles for actions requiring confirmation
+    - Don't use toggles without clear context or labels
+    - Don't hide the meaning behind icons only
+    - Don't use toggles for multi-option selections
+    - Don't use toggles in place of radio buttons
+    - Don't mix Filled and Outlined styles in the same panel
+  </Card>
+</CardGroup>
+
+
+---
+
+## Accessibility
+
+| Requirement | Implementation |
+|-------------|---------------|
+| Role | `role="switch"` on the toggle element |
+| State | `aria-checked="true"` when on, `"false"` when off |
+| Label | `aria-labelledby` or `aria-label` describing the controlled feature |
+| Keyboard | `Space` or `Enter` to toggle state |
+| Focus | Visible focus ring (3px outline) when focused via keyboard |
+| Disabled | `aria-disabled="true"`, skip in tab order or use `tabindex="-1"` |
+| Announcement | Screen readers should announce: "[Label] switch, on/off" |
+
+<Info>Use `role="switch"` instead of `role="checkbox"` — it provides more accurate semantics for toggle controls and better screen reader announcements.</Info>
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Spacing">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--toggle-padding-lg` | `4px` | Track padding, large |
+    | `--toggle-padding-sm` | `3px` | Track padding, small |
+    | `--toggle-label-gap` | `8px` | Gap between toggle and label |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--toggle-on-black` | `#000000` | On track, Black |
+    | `--toggle-on-blue` | `#2396FB` | On track, Blue |
+    | `--toggle-on-red` | `#ED1B36` | On track, DLV Red |
+    | `--toggle-on-green` | `#1BA86E` | On track, Green |
+    | `--toggle-off` | `#D9D9D9` | Off track (all colors) |
+    | `--toggle-thumb` | `#FFFFFF` | Thumb color (Filled) |
+    | `--toggle-hover-black` | `#333333` | Hover track, Black |
+    | `--toggle-hover-blue` | `#1A7FD6` | Hover track, Blue |
+    | `--toggle-hover-red` | `#C8162E` | Hover track, DLV Red |
+    | `--toggle-hover-green` | `#158F5C` | Hover track, Green |
+    | `--toggle-disabled-opacity` | `0.3` | Disabled state opacity |
+    | `--toggle-focus-ring` | `3px` | Focus ring width |
+  </Tab>
+  <Tab title="Dimensions">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--toggle-width-lg` | `40px` | Track width, large |
+    | `--toggle-height-lg` | `24px` | Track height, large |
+    | `--toggle-width-sm` | `36px` | Track width, small |
+    | `--toggle-height-sm` | `20px` | Track height, small |
+    | `--toggle-thumb-lg` | `16px` | Thumb diameter, large |
+    | `--toggle-thumb-sm` | `14px` | Thumb diameter, small |
+    | `--toggle-radius` | `50%` | Track border radius (pill) |
+    | `--toggle-transition` | `150ms` | Thumb slide duration |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+import { Toggle } from '@tarmac/design-system';
+
+interface ToggleProps {
+  checked?: boolean;                       // Current state
+  defaultChecked?: boolean;                // Initial state (uncontrolled)
+  onChange?: (checked: boolean) => void;   // State change callback
+  style?: 'filled' | 'outlined';          // Default: 'filled'
+  color?: 'black' | 'blue' | 'red' | 'green'; // Default: 'black'
+  size?: 'large' | 'small';               // Default: 'large'
+  disabled?: boolean;                      // Disable interaction
+  label?: string;                          // Accessible label text
+  labelPosition?: 'left' | 'right';       // Default: 'right'
+  id?: string;                             // HTML id for label association
+}
+```
+
+```tsx Usage
+// Basic toggle
+<Toggle
+  label="Dark Mode"
+  checked={isDarkMode}
+  onChange={(checked) => setDarkMode(checked)}
+/>
+
+// Blue filled, small
+<Toggle
+  label="Auto-sync"
+  color="blue"
+  size="small"
+  defaultChecked={true}
+/>
+
+// Outlined style, green
+<Toggle
+  label="Active Status"
+  style="outlined"
+  color="green"
+  checked={isActive}
+  onChange={setIsActive}
+/>
+
+// Disabled toggle
+<Toggle
+  label="Premium Feature"
+  disabled
+  checked={false}
+/>
+
+// Settings panel example
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+  <Toggle label="Email Notifications" defaultChecked />
+  <Toggle label="Push Notifications" defaultChecked />
+  <Toggle label="SMS Alerts" />
+  <Toggle label="Marketing Emails" disabled />
+</div>
+```
+
+```tsx ARIA
+// Rendered HTML structure
+<label
+  htmlFor="toggle-dark-mode"
+  style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
+>
+  <button
+    id="toggle-dark-mode"
+    role="switch"
+    aria-checked="true"
+    aria-label="Dark Mode"
+    tabIndex={0}
+    style={{
+      width: '40px',
+      height: '24px',
+      borderRadius: '12px',
+      background: '#000',
+      border: 'none',
+      cursor: 'pointer',
+      position: 'relative',
+    }}
+  >
+    <span
+      style={{
+        width: '16px',
+        height: '16px',
+        borderRadius: '50%',
+        background: '#fff',
+        position: 'absolute',
+        top: '4px',
+        right: '4px',
+        transition: 'left 150ms ease',
+      }}
+    />
+  </button>
+  <span>Dark Mode</span>
+</label>
+
+{/* Disabled toggle */}
+<button
+  role="switch"
+  aria-checked="false"
+  aria-disabled="true"
+  aria-label="Premium Feature"
+  tabIndex={-1}
+>
+  {/* ... */}
+</button>
+```
+</CodeGroup>

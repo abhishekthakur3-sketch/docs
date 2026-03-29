@@ -71,6 +71,7 @@
                   "components/coachmarks",
                   "components/tabs",
                   "components/breadcrumbs",
+                  "components/toggle",
                   "components/tooltip"
                 ]
               },
