@@ -4,356 +4,469 @@ description: Color system and palette for the TARMAC Design System
 icon: "palette"
 ---
 
-Color in the Tarmac Design System expresses brand, hierarchy, and usability. The palette is built around a small set of core colors, extended into semantic tokens for background, text, icon, and border usage. The system separates raw color values from semantic intent across three layers: Core → Semantic → Usage.
+Color in the Tarmac Design System is built around a small set of core colors, extended into semantic tokens for surfaces, text, icons, and borders. The system separates raw values from semantic intent across three layers: Core → Semantic → Usage.
 
-<CardGroup cols={3}>
-  <Card title="Accessible" icon="universal-access">
-    WCAG 2.1 AA enforced at the semantic layer
-  </Card>
-  <Card title="Three-Layer Architecture" icon="layer-group">
-    Core → Semantic → Usage for scalable theming
-  </Card>
-  <Card title="Theme Agnostic" icon="circle-half-stroke">
-    Light and dark modes without remapping UI logic
-  </Card>
-</CardGroup>
+<Warning>Core colors are palette-only. No component or screen should reference them directly. All UI usage must go through semantic tokens.</Warning>
 
-<Warning>Raw core colors should never be used directly in UI. All product usage must go through semantic tokens.</Warning>
+---
 
-## Brand Palette
+## 1. Brand Colors
 
-<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '24px' }}>
-  <div style={{ background: '#000000', borderRadius: '8px', padding: '16px', color: '#fff' }}>
-    <div style={{ fontWeight: 600 }}>Tar Black</div>
-    <div style={{ fontSize: '12px', opacity: 0.8 }}>#000000 · Primary</div>
-  </div>
-  <div style={{ background: '#FFFFFF', borderRadius: '8px', padding: '16px', color: '#000', border: '1px solid #e0e0e0' }}>
-    <div style={{ fontWeight: 600 }}>Optic White</div>
-    <div style={{ fontSize: '12px', opacity: 0.6 }}>#FFFFFF · Primary</div>
-  </div>
-  <div style={{ background: '#ED1B36', borderRadius: '8px', padding: '16px', color: '#fff' }}>
-    <div style={{ fontWeight: 600 }}>Velocity Red</div>
-    <div style={{ fontSize: '12px', opacity: 0.8 }}>#ED1B36 · Accent</div>
-  </div>
-  <div style={{ background: '#2396FB', borderRadius: '8px', padding: '16px', color: '#fff' }}>
-    <div style={{ fontWeight: 600 }}>Atlantic Blue</div>
-    <div style={{ fontSize: '12px', opacity: 0.8 }}>#2396FB · Secondary</div>
-  </div>
-  <div style={{ background: '#1BA86E', borderRadius: '8px', padding: '16px', color: '#fff' }}>
-    <div style={{ fontWeight: 600 }}>Kinetic Green</div>
-    <div style={{ fontSize: '12px', opacity: 0.8 }}>#1BA86E · Secondary</div>
-  </div>
-  <div style={{ background: '#B88B5C', borderRadius: '8px', padding: '16px', color: '#fff' }}>
-    <div style={{ fontWeight: 600 }}>Cardbox</div>
-    <div style={{ fontSize: '12px', opacity: 0.8 }}>#B88B5C · Secondary</div>
-  </div>
-  <div style={{ background: '#666666', borderRadius: '8px', padding: '16px', color: '#fff' }}>
-    <div style={{ fontWeight: 600 }}>Cargo Grey</div>
-    <div style={{ fontSize: '12px', opacity: 0.8 }}>#666666 · Neutral</div>
-  </div>
-  <div style={{ background: '#D0CFCF', borderRadius: '8px', padding: '16px', color: '#333' }}>
-    <div style={{ fontWeight: 600 }}>Ash Grey</div>
-    <div style={{ fontSize: '12px', opacity: 0.6 }}>#D0CFCF · Neutral</div>
-  </div>
-</div>
+### Core Colors
 
-## Core Color Ramps
+<Tabs>
+  <Tab title="Red">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#FEF1F3',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#FEF1F3` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#FDE8EB',borderRadius:'3px',display:'inline-block'}} /> | `#FDE8EB` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#FBD1D7',borderRadius:'3px',display:'inline-block'}} /> | `#FBD1D7` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#F9B3BC',borderRadius:'3px',display:'inline-block'}} /> | `#F9B3BC` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#F68D9A',borderRadius:'3px',display:'inline-block'}} /> | `#F68D9A` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#F36779',borderRadius:'3px',display:'inline-block'}} /> | `#F36779` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#F04158',borderRadius:'3px',display:'inline-block'}} /> | `#F04158` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#ED1B36',borderRadius:'3px',display:'inline-block'}} /> | `#ED1B36` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#C5172D',borderRadius:'3px',display:'inline-block'}} /> | `#C5172D` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#9E1224',borderRadius:'3px',display:'inline-block'}} /> | `#9E1224` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#770E1B',borderRadius:'3px',display:'inline-block'}} /> | `#770E1B` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#4F0912',borderRadius:'3px',display:'inline-block'}} /> | `#4F0912` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#2F050B',borderRadius:'3px',display:'inline-block'}} /> | `#2F050B` |
+  </Tab>
+  <Tab title="Blue">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#F0F8FF',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#F0F8FF` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#E6F3FE',borderRadius:'3px',display:'inline-block'}} /> | `#E6F3FE` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#D3EAFE',borderRadius:'3px',display:'inline-block'}} /> | `#D3EAFE` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#B6DCFE',borderRadius:'3px',display:'inline-block'}} /> | `#B6DCFE` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#91CAFD',borderRadius:'3px',display:'inline-block'}} /> | `#91CAFD` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#6CB9FC',borderRadius:'3px',display:'inline-block'}} /> | `#6CB9FC` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#48A7FC',borderRadius:'3px',display:'inline-block'}} /> | `#48A7FC` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#2396FB',borderRadius:'3px',display:'inline-block'}} /> | `#2396FB` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#1D7DD1',borderRadius:'3px',display:'inline-block'}} /> | `#1D7DD1` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#1764A7',borderRadius:'3px',display:'inline-block'}} /> | `#1764A7` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#124B7E',borderRadius:'3px',display:'inline-block'}} /> | `#124B7E` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#0C3254',borderRadius:'3px',display:'inline-block'}} /> | `#0C3254` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#071E32',borderRadius:'3px',display:'inline-block'}} /> | `#071E32` |
+  </Tab>
+  <Tab title="Green">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#F4FBF8',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#F4FBF8` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#ECF8F3',borderRadius:'3px',display:'inline-block'}} /> | `#ECF8F3` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#D1EEE2',borderRadius:'3px',display:'inline-block'}} /> | `#D1EEE2` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#B3E2CF',borderRadius:'3px',display:'inline-block'}} /> | `#B3E2CF` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#8DD3B6',borderRadius:'3px',display:'inline-block'}} /> | `#8DD3B6` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#67C59E',borderRadius:'3px',display:'inline-block'}} /> | `#67C59E` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#41B686',borderRadius:'3px',display:'inline-block'}} /> | `#41B686` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#1BA86E',borderRadius:'3px',display:'inline-block'}} /> | `#1BA86E` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#178C5C',borderRadius:'3px',display:'inline-block'}} /> | `#178C5C` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#127049',borderRadius:'3px',display:'inline-block'}} /> | `#127049` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#0E5437',borderRadius:'3px',display:'inline-block'}} /> | `#0E5437` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#093825',borderRadius:'3px',display:'inline-block'}} /> | `#093825` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#052216',borderRadius:'3px',display:'inline-block'}} /> | `#052216` |
+  </Tab>
+  <Tab title="Cyan">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#F3FAFC',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#F3FAFC` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#EBF7FA',borderRadius:'3px',display:'inline-block'}} /> | `#EBF7FA` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#CCECF2',borderRadius:'3px',display:'inline-block'}} /> | `#CCECF2` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#AAE0E9',borderRadius:'3px',display:'inline-block'}} /> | `#AAE0E9` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#80D0DE',borderRadius:'3px',display:'inline-block'}} /> | `#80D0DE` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#55C1D3',borderRadius:'3px',display:'inline-block'}} /> | `#55C1D3` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#2BB1C8',borderRadius:'3px',display:'inline-block'}} /> | `#2BB1C8` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#00A2BD',borderRadius:'3px',display:'inline-block'}} /> | `#00A2BD` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#00879D',borderRadius:'3px',display:'inline-block'}} /> | `#00879D` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#006C7E',borderRadius:'3px',display:'inline-block'}} /> | `#006C7E` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#00515F',borderRadius:'3px',display:'inline-block'}} /> | `#00515F` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#00363F',borderRadius:'3px',display:'inline-block'}} /> | `#00363F` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#002026',borderRadius:'3px',display:'inline-block'}} /> | `#002026` |
+  </Tab>
+  <Tab title="Yellow">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#FCFAF2',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#FCFAF2` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#FBF7EA',borderRadius:'3px',display:'inline-block'}} /> | `#FBF7EA` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#F5ECCC',borderRadius:'3px',display:'inline-block'}} /> | `#F5ECCC` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#EFDFAB',borderRadius:'3px',display:'inline-block'}} /> | `#EFDFAB` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#E7CF80',borderRadius:'3px',display:'inline-block'}} /> | `#E7CF80` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#DFBF56',borderRadius:'3px',display:'inline-block'}} /> | `#DFBF56` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#D7AF2C',borderRadius:'3px',display:'inline-block'}} /> | `#D7AF2C` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#CF9F02',borderRadius:'3px',display:'inline-block'}} /> | `#CF9F02` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#AC8402',borderRadius:'3px',display:'inline-block'}} /> | `#AC8402` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#8A6A01',borderRadius:'3px',display:'inline-block'}} /> | `#8A6A01` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#685001',borderRadius:'3px',display:'inline-block'}} /> | `#685001` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#453501',borderRadius:'3px',display:'inline-block'}} /> | `#453501` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#292000',borderRadius:'3px',display:'inline-block'}} /> | `#292000` |
+  </Tab>
+  <Tab title="Crimson">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#FDF2F4',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#FDF2F4` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#FCE9ED',borderRadius:'3px',display:'inline-block'}} /> | `#FCE9ED` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#F8D0D8',borderRadius:'3px',display:'inline-block'}} /> | `#F8D0D8` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#F3B1BE',borderRadius:'3px',display:'inline-block'}} /> | `#F3B1BE` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#ED899D',borderRadius:'3px',display:'inline-block'}} /> | `#ED899D` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#E8627D',borderRadius:'3px',display:'inline-block'}} /> | `#E8627D` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#E23B5D',borderRadius:'3px',display:'inline-block'}} /> | `#E23B5D` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#DC143C',borderRadius:'3px',display:'inline-block'}} /> | `#DC143C` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#B71132',borderRadius:'3px',display:'inline-block'}} /> | `#B71132` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#930D28',borderRadius:'3px',display:'inline-block'}} /> | `#930D28` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#6E0A1E',borderRadius:'3px',display:'inline-block'}} /> | `#6E0A1E` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#490714',borderRadius:'3px',display:'inline-block'}} /> | `#490714` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#2C040C',borderRadius:'3px',display:'inline-block'}} /> | `#2C040C` |
+  </Tab>
+  <Tab title="Cardbox">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#FAF8F4',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#FAF8F4` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#F7F3ED',borderRadius:'3px',display:'inline-block'}} /> | `#F7F3ED` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#F1E8DE',borderRadius:'3px',display:'inline-block'}} /> | `#F1E8DE` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#E7D8C9',borderRadius:'3px',display:'inline-block'}} /> | `#E7D8C9` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#DBC5AD',borderRadius:'3px',display:'inline-block'}} /> | `#DBC5AD` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#D0B292',borderRadius:'3px',display:'inline-block'}} /> | `#D0B292` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#C49E77',borderRadius:'3px',display:'inline-block'}} /> | `#C49E77` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#B88B5C',borderRadius:'3px',display:'inline-block'}} /> | `#B88B5C` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#99744D',borderRadius:'3px',display:'inline-block'}} /> | `#99744D` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#7B5D3D',borderRadius:'3px',display:'inline-block'}} /> | `#7B5D3D` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#5C462E',borderRadius:'3px',display:'inline-block'}} /> | `#5C462E` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#3D2E1F',borderRadius:'3px',display:'inline-block'}} /> | `#3D2E1F` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#292000',borderRadius:'3px',display:'inline-block'}} /> | `#292000` |
+  </Tab>
+  <Tab title="Orange">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#FDF5F1',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#FDF5F1` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#FCEFE8',borderRadius:'3px',display:'inline-block'}} /> | `#FCEFE8` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#FAE3D7',borderRadius:'3px',display:'inline-block'}} /> | `#FAE3D7` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#F7D0BC',borderRadius:'3px',display:'inline-block'}} /> | `#F7D0BC` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#F3B99B',borderRadius:'3px',display:'inline-block'}} /> | `#F3B99B` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#EFA27A',borderRadius:'3px',display:'inline-block'}} /> | `#EFA27A` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#EB8A58',borderRadius:'3px',display:'inline-block'}} /> | `#EB8A58` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#E77337',borderRadius:'3px',display:'inline-block'}} /> | `#E77337` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#C0602E',borderRadius:'3px',display:'inline-block'}} /> | `#C0602E` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#9A4D25',borderRadius:'3px',display:'inline-block'}} /> | `#9A4D25` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#743A1C',borderRadius:'3px',display:'inline-block'}} /> | `#743A1C` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#4D2612',borderRadius:'3px',display:'inline-block'}} /> | `#4D2612` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#2E170B',borderRadius:'3px',display:'inline-block'}} /> | `#2E170B` |
+  </Tab>
+  <Tab title="Purple">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#F6F1FE',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#F6F1FE` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#F0E8FD',borderRadius:'3px',display:'inline-block'}} /> | `#F0E8FD` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#E5D8FB',borderRadius:'3px',display:'inline-block'}} /> | `#E5D8FB` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#D3BDF9',borderRadius:'3px',display:'inline-block'}} /> | `#D3BDF9` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#BD9CF6',borderRadius:'3px',display:'inline-block'}} /> | `#BD9CF6` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#A87CF3',borderRadius:'3px',display:'inline-block'}} /> | `#A87CF3` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#925BF0',borderRadius:'3px',display:'inline-block'}} /> | `#925BF0` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#7C3AED',borderRadius:'3px',display:'inline-block'}} /> | `#7C3AED` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#6730C5',borderRadius:'3px',display:'inline-block'}} /> | `#6730C5` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#53279E',borderRadius:'3px',display:'inline-block'}} /> | `#53279E` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#3E1D77',borderRadius:'3px',display:'inline-block'}} /> | `#3E1D77` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#29134F',borderRadius:'3px',display:'inline-block'}} /> | `#29134F` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#190C2F',borderRadius:'3px',display:'inline-block'}} /> | `#190C2F` |
+  </Tab>
+  <Tab title="Pink">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 15 | <div style={{width:'32px',height:'16px',background:'#FDF2F7',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#FDF2F7` |
+    | 25 | <div style={{width:'32px',height:'16px',background:'#F9DCE9',borderRadius:'3px',display:'inline-block'}} /> | `#F9DCE9` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#F9DCE9',borderRadius:'3px',display:'inline-block'}} /> | `#F9DCE9` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#F5C5DB',borderRadius:'3px',display:'inline-block'}} /> | `#F5C5DB` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#F0A8C8',borderRadius:'3px',display:'inline-block'}} /> | `#F0A8C8` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#EC8CB6',borderRadius:'3px',display:'inline-block'}} /> | `#EC8CB6` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#E76FA4',borderRadius:'3px',display:'inline-block'}} /> | `#E76FA4` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#E25292',borderRadius:'3px',display:'inline-block'}} /> | `#E25292` |
+    | 600 | <div style={{width:'32px',height:'16px',background:'#BC447A',borderRadius:'3px',display:'inline-block'}} /> | `#BC447A` |
+    | 700 | <div style={{width:'32px',height:'16px',background:'#973761',borderRadius:'3px',display:'inline-block'}} /> | `#973761` |
+    | 800 | <div style={{width:'32px',height:'16px',background:'#712949',borderRadius:'3px',display:'inline-block'}} /> | `#712949` |
+    | 900 | <div style={{width:'32px',height:'16px',background:'#4B1B31',borderRadius:'3px',display:'inline-block'}} /> | `#4B1B31` |
+    | 950 | <div style={{width:'32px',height:'16px',background:'#2D101D',borderRadius:'3px',display:'inline-block'}} /> | `#2D101D` |
+  </Tab>
+</Tabs>
 
-Each core color has a 13-step ramp from 15 (lightest) to 950 (darkest). The 500 value is the base.
+### Neutral Colors
 
-### Red · Blue · Green
+<Tabs>
+  <Tab title="Black">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 25 | <div style={{width:'32px',height:'16px',background:'#454545',borderRadius:'3px',display:'inline-block'}} /> | `#454545` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#404040',borderRadius:'3px',display:'inline-block'}} /> | `#404040` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#3B3B3B',borderRadius:'3px',display:'inline-block'}} /> | `#3B3B3B` |
+    | 150 | <div style={{width:'32px',height:'16px',background:'#333333',borderRadius:'3px',display:'inline-block'}} /> | `#333333` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#2B2B2B',borderRadius:'3px',display:'inline-block'}} /> | `#2B2B2B` |
+    | 250 | <div style={{width:'32px',height:'16px',background:'#262626',borderRadius:'3px',display:'inline-block'}} /> | `#262626` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#212121',borderRadius:'3px',display:'inline-block'}} /> | `#212121` |
+    | 350 | <div style={{width:'32px',height:'16px',background:'#1A1A1A',borderRadius:'3px',display:'inline-block'}} /> | `#1A1A1A` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#121212',borderRadius:'3px',display:'inline-block'}} /> | `#121212` |
+    | 450 | <div style={{width:'32px',height:'16px',background:'#0D0D0D',borderRadius:'3px',display:'inline-block'}} /> | `#0D0D0D` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#000000',borderRadius:'3px',display:'inline-block'}} /> | `#000000` |
+  </Tab>
+  <Tab title="White">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 25 | <div style={{width:'32px',height:'16px',background:'#BFBFBF',borderRadius:'3px',display:'inline-block'}} /> | `#BFBFBF` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#C4C4C4',borderRadius:'3px',display:'inline-block'}} /> | `#C4C4C4` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#CCCCCC',borderRadius:'3px',display:'inline-block'}} /> | `#CCCCCC` |
+    | 150 | <div style={{width:'32px',height:'16px',background:'#D4D4D4',borderRadius:'3px',display:'inline-block'}} /> | `#D4D4D4` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#D9D9D9',borderRadius:'3px',display:'inline-block'}} /> | `#D9D9D9` |
+    | 250 | <div style={{width:'32px',height:'16px',background:'#DEDEDE',borderRadius:'3px',display:'inline-block'}} /> | `#DEDEDE` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#E6E6E6',borderRadius:'3px',display:'inline-block'}} /> | `#E6E6E6` |
+    | 350 | <div style={{width:'32px',height:'16px',background:'#EDEDED',borderRadius:'3px',display:'inline-block'}} /> | `#EDEDED` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#F2F2F2',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#F2F2F2` |
+    | 450 | <div style={{width:'32px',height:'16px',background:'#F7F7F7',borderRadius:'3px',border:'1px solid #eee',display:'inline-block'}} /> | `#F7F7F7` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#FFFFFF',borderRadius:'3px',border:'1px solid #ddd',display:'inline-block'}} /> | `#FFFFFF` |
+  </Tab>
+  <Tab title="Grey">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 25 | <div style={{width:'32px',height:'16px',background:'#E6E5E5',borderRadius:'3px',border:'1px solid #ddd',display:'inline-block'}} /> | `#E6E5E5` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#D9D8D8',borderRadius:'3px',display:'inline-block'}} /> | `#D9D8D8` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#CDCBCB',borderRadius:'3px',display:'inline-block'}} /> | `#CDCBCB` |
+    | 150 | <div style={{width:'32px',height:'16px',background:'#C0BFBF',borderRadius:'3px',display:'inline-block'}} /> | `#C0BFBF` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#B3B2B2',borderRadius:'3px',display:'inline-block'}} /> | `#B3B2B2` |
+    | 250 | <div style={{width:'32px',height:'16px',background:'#A6A5A5',borderRadius:'3px',display:'inline-block'}} /> | `#A6A5A5` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#999999',borderRadius:'3px',display:'inline-block'}} /> | `#999999` |
+    | 350 | <div style={{width:'32px',height:'16px',background:'#8C8C8C',borderRadius:'3px',display:'inline-block'}} /> | `#8C8C8C` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#808080',borderRadius:'3px',display:'inline-block'}} /> | `#808080` |
+    | 450 | <div style={{width:'32px',height:'16px',background:'#737373',borderRadius:'3px',display:'inline-block'}} /> | `#737373` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#666666',borderRadius:'3px',display:'inline-block'}} /> | `#666666` |
+  </Tab>
+  <Tab title="Charcoal">
+    | Step | Swatch | Hex |
+    |------|--------|-----|
+    | 25 | <div style={{width:'32px',height:'16px',background:'#C2C6D6',borderRadius:'3px',display:'inline-block'}} /> | `#C2C6D6` |
+    | 50 | <div style={{width:'32px',height:'16px',background:'#B2B8CC',borderRadius:'3px',display:'inline-block'}} /> | `#B2B8CC` |
+    | 100 | <div style={{width:'32px',height:'16px',background:'#A3AAC2',borderRadius:'3px',display:'inline-block'}} /> | `#A3AAC2` |
+    | 150 | <div style={{width:'32px',height:'16px',background:'#949CB8',borderRadius:'3px',display:'inline-block'}} /> | `#949CB8` |
+    | 200 | <div style={{width:'32px',height:'16px',background:'#848EAE',borderRadius:'3px',display:'inline-block'}} /> | `#848EAE` |
+    | 250 | <div style={{width:'32px',height:'16px',background:'#7580A3',borderRadius:'3px',display:'inline-block'}} /> | `#7580A3` |
+    | 300 | <div style={{width:'32px',height:'16px',background:'#667199',borderRadius:'3px',display:'inline-block'}} /> | `#667199` |
+    | 350 | <div style={{width:'32px',height:'16px',background:'#5C668A',borderRadius:'3px',display:'inline-block'}} /> | `#5C668A` |
+    | 400 | <div style={{width:'32px',height:'16px',background:'#515B7B',borderRadius:'3px',display:'inline-block'}} /> | `#515B7B` |
+    | 450 | <div style={{width:'32px',height:'16px',background:'#474F6B',borderRadius:'3px',display:'inline-block'}} /> | `#474F6B` |
+    | 500 | <div style={{width:'32px',height:'16px',background:'#3D445C',borderRadius:'3px',display:'inline-block'}} /> | `#3D445C` |
+  </Tab>
+</Tabs>
 
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Red (Velocity Red) — #ED1B36</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#FEF1F3', borderRadius: '4px', border: '1px solid #eee' }} />
-    <div style={{ flex: 1, height: '36px', background: '#FDE8EB', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#FBD1D7', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#F9B3BC', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#F68D9A', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#F36779', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#F04158', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#ED1B36', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#C5172D', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#9E1224', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#770E1B', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#4F0912', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#2F050B', borderRadius: '4px' }} />
-  </div>
-  <div style={{ display: 'flex', gap: '3px', fontSize: '9px', color: '#888' }}>
-    <div style={{ flex: 1, textAlign: 'center' }}>15</div><div style={{ flex: 1, textAlign: 'center' }}>25</div><div style={{ flex: 1, textAlign: 'center' }}>50</div><div style={{ flex: 1, textAlign: 'center' }}>100</div><div style={{ flex: 1, textAlign: 'center' }}>200</div><div style={{ flex: 1, textAlign: 'center' }}>300</div><div style={{ flex: 1, textAlign: 'center' }}>400</div><div style={{ flex: 1, textAlign: 'center' }}>500</div><div style={{ flex: 1, textAlign: 'center' }}>600</div><div style={{ flex: 1, textAlign: 'center' }}>700</div><div style={{ flex: 1, textAlign: 'center' }}>800</div><div style={{ flex: 1, textAlign: 'center' }}>900</div><div style={{ flex: 1, textAlign: 'center' }}>950</div>
-  </div>
-</div>
+### Alpha Colors
 
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Blue (Atlantic Blue) — #2396FB</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#F0F8FF', borderRadius: '4px', border: '1px solid #eee' }} />
-    <div style={{ flex: 1, height: '36px', background: '#E6F3FE', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#D3EAFE', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#B6DCFE', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#91CAFD', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#6CB9FC', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#48A7FC', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#2396FB', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#1D7DD1', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#1764A7', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#124B7E', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#0C3254', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#071E32', borderRadius: '4px' }} />
-  </div>
-  <div style={{ display: 'flex', gap: '3px', fontSize: '9px', color: '#888' }}>
-    <div style={{ flex: 1, textAlign: 'center' }}>15</div><div style={{ flex: 1, textAlign: 'center' }}>25</div><div style={{ flex: 1, textAlign: 'center' }}>50</div><div style={{ flex: 1, textAlign: 'center' }}>100</div><div style={{ flex: 1, textAlign: 'center' }}>200</div><div style={{ flex: 1, textAlign: 'center' }}>300</div><div style={{ flex: 1, textAlign: 'center' }}>400</div><div style={{ flex: 1, textAlign: 'center' }}>500</div><div style={{ flex: 1, textAlign: 'center' }}>600</div><div style={{ flex: 1, textAlign: 'center' }}>700</div><div style={{ flex: 1, textAlign: 'center' }}>800</div><div style={{ flex: 1, textAlign: 'center' }}>900</div><div style={{ flex: 1, textAlign: 'center' }}>950</div>
-  </div>
-</div>
+Opacity variants derived from core colors — used for overlays, states, elevation, and subtle emphasis.
 
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Green (Kinetic Green) — #1BA86E</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#F4FBF8', borderRadius: '4px', border: '1px solid #eee' }} />
-    <div style={{ flex: 1, height: '36px', background: '#ECF8F3', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#D1EEE2', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#B3E2CF', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#8DD3B6', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#67C59E', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#41B686', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#1BA86E', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#178C5C', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#127049', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#0E5437', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#093825', borderRadius: '4px' }} />
-    <div style={{ flex: 1, height: '36px', background: '#052216', borderRadius: '4px' }} />
-  </div>
-  <div style={{ display: 'flex', gap: '3px', fontSize: '9px', color: '#888' }}>
-    <div style={{ flex: 1, textAlign: 'center' }}>15</div><div style={{ flex: 1, textAlign: 'center' }}>25</div><div style={{ flex: 1, textAlign: 'center' }}>50</div><div style={{ flex: 1, textAlign: 'center' }}>100</div><div style={{ flex: 1, textAlign: 'center' }}>200</div><div style={{ flex: 1, textAlign: 'center' }}>300</div><div style={{ flex: 1, textAlign: 'center' }}>400</div><div style={{ flex: 1, textAlign: 'center' }}>500</div><div style={{ flex: 1, textAlign: 'center' }}>600</div><div style={{ flex: 1, textAlign: 'center' }}>700</div><div style={{ flex: 1, textAlign: 'center' }}>800</div><div style={{ flex: 1, textAlign: 'center' }}>900</div><div style={{ flex: 1, textAlign: 'center' }}>950</div>
-  </div>
-</div>
+| Color | Base | 5% | 10% | 20% | 40% | 60% | 80% |
+|-------|------|----|-----|-----|-----|-----|-----|
+| Alpha Black | `#000000` | <div style={{width:'24px',height:'14px',background:'rgba(0,0,0,0.05)',borderRadius:'2px',border:'1px solid #ddd',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(0,0,0,0.10)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(0,0,0,0.20)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(0,0,0,0.40)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(0,0,0,0.60)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(0,0,0,0.80)',borderRadius:'2px',display:'inline-block'}} /> |
+| Alpha White | `#FFFFFF` | <div style={{width:'24px',height:'14px',background:'rgba(255,255,255,0.05)',borderRadius:'2px',border:'1px solid #ccc',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(255,255,255,0.10)',borderRadius:'2px',border:'1px solid #ccc',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(255,255,255,0.20)',borderRadius:'2px',border:'1px solid #ccc',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(255,255,255,0.40)',borderRadius:'2px',border:'1px solid #ccc',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(255,255,255,0.60)',borderRadius:'2px',border:'1px solid #ccc',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(255,255,255,0.80)',borderRadius:'2px',border:'1px solid #ccc',display:'inline-block'}} /> |
+| Alpha Red | `#ED1B36` | <div style={{width:'24px',height:'14px',background:'rgba(237,27,54,0.05)',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(237,27,54,0.10)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(237,27,54,0.20)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(237,27,54,0.40)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(237,27,54,0.60)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(237,27,54,0.80)',borderRadius:'2px',display:'inline-block'}} /> |
+| Alpha Green | `#1BA86E` | <div style={{width:'24px',height:'14px',background:'rgba(27,168,110,0.05)',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(27,168,110,0.10)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(27,168,110,0.20)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(27,168,110,0.40)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(27,168,110,0.60)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(27,168,110,0.80)',borderRadius:'2px',display:'inline-block'}} /> |
+| Alpha Blue | `#2396FB` | <div style={{width:'24px',height:'14px',background:'rgba(35,150,251,0.05)',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(35,150,251,0.10)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(35,150,251,0.20)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(35,150,251,0.40)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(35,150,251,0.60)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(35,150,251,0.80)',borderRadius:'2px',display:'inline-block'}} /> |
+| Alpha Yellow | `#CF9F02` | <div style={{width:'24px',height:'14px',background:'rgba(207,159,2,0.05)',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(207,159,2,0.10)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(207,159,2,0.20)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(207,159,2,0.40)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(207,159,2,0.60)',borderRadius:'2px',display:'inline-block'}} /> | <div style={{width:'24px',height:'14px',background:'rgba(207,159,2,0.80)',borderRadius:'2px',display:'inline-block'}} /> |
 
-### Cyan · Yellow · Crimson
+---
 
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Cyan — #00A2BD</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#F3FAFC', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#EBF7FA', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#CCECF2', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#AAE0E9', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#80D0DE', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#55C1D3', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#2BB1C8', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#00A2BD', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#00879D', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#006C7E', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#00515F', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#00363F', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#002026', borderRadius: '4px' }} />
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Yellow — #CF9F02</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#FCFAF2', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#FBF7EA', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F5ECCC', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#EFDFAB', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E7CF80', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#DFBF56', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#D7AF2C', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#CF9F02', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#AC8402', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#8A6A01', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#685001', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#453501', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#292000', borderRadius: '4px' }} />
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Crimson — #DC143C</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#FDF2F4', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#FCE9ED', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F8D0D8', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F3B1BE', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#ED899D', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E8627D', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E23B5D', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#DC143C', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#B71132', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#930D28', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#6E0A1E', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#490714', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#2C040C', borderRadius: '4px' }} />
-  </div>
-</div>
-
-### Cardbox · Orange · Purple · Pink
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Cardbox — #B88B5C</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#FAF8F4', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#F7F3ED', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F1E8DE', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E7D8C9', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#DBC5AD', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#D0B292', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#C49E77', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#B88B5C', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#99744D', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#7B5D3D', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#5C462E', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#3D2E1F', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#292000', borderRadius: '4px' }} />
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Orange — #E77337</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#FDF5F1', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#FCEFE8', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#FAE3D7', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F7D0BC', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F3B99B', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#EFA27A', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#EB8A58', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E77337', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#C0602E', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#9A4D25', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#743A1C', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#4D2612', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#2E170B', borderRadius: '4px' }} />
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Purple — #7C3AED</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#F6F1FE', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#F0E8FD', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E5D8FB', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#D3BDF9', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#BD9CF6', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#A87CF3', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#925BF0', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#7C3AED', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#6730C5', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#53279E', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#3E1D77', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#29134F', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#190C2F', borderRadius: '4px' }} />
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Pink — #E25292</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#FDF2F7', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#F9DCE9', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F9DCE9', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F5C5DB', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F0A8C8', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#EC8CB6', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E76FA4', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E25292', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#BC447A', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#973761', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#712949', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#4B1B31', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#2D101D', borderRadius: '4px' }} />
-  </div>
-</div>
-
-## Neutral Colors
-
-Neutrals use a 25→500 scale with 50-step increments.
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Black (Tar Black) — #000000</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#454545', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#404040', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#3B3B3B', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#333333', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#2B2B2B', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#262626', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#212121', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#1A1A1A', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#121212', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#0D0D0D', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#000000', borderRadius: '4px' }} />
-  </div>
-  <div style={{ display: 'flex', gap: '3px', fontSize: '9px', color: '#888' }}>
-    <div style={{ flex: 1, textAlign: 'center' }}>25</div><div style={{ flex: 1, textAlign: 'center' }}>50</div><div style={{ flex: 1, textAlign: 'center' }}>100</div><div style={{ flex: 1, textAlign: 'center' }}>150</div><div style={{ flex: 1, textAlign: 'center' }}>200</div><div style={{ flex: 1, textAlign: 'center' }}>250</div><div style={{ flex: 1, textAlign: 'center' }}>300</div><div style={{ flex: 1, textAlign: 'center' }}>350</div><div style={{ flex: 1, textAlign: 'center' }}>400</div><div style={{ flex: 1, textAlign: 'center' }}>450</div><div style={{ flex: 1, textAlign: 'center' }}>500</div>
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>White (Optic White) — #FFFFFF</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#BFBFBF', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#C4C4C4', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#CCCCCC', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#D4D4D4', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#D9D9D9', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#DEDEDE', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#E6E6E6', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#EDEDED', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F2F2F2', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#F7F7F7', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '36px', background: '#FFFFFF', borderRadius: '4px', border: '1px solid #eee' }} />
-  </div>
-  <div style={{ display: 'flex', gap: '3px', fontSize: '9px', color: '#888' }}>
-    <div style={{ flex: 1, textAlign: 'center' }}>25</div><div style={{ flex: 1, textAlign: 'center' }}>50</div><div style={{ flex: 1, textAlign: 'center' }}>100</div><div style={{ flex: 1, textAlign: 'center' }}>150</div><div style={{ flex: 1, textAlign: 'center' }}>200</div><div style={{ flex: 1, textAlign: 'center' }}>250</div><div style={{ flex: 1, textAlign: 'center' }}>300</div><div style={{ flex: 1, textAlign: 'center' }}>350</div><div style={{ flex: 1, textAlign: 'center' }}>400</div><div style={{ flex: 1, textAlign: 'center' }}>450</div><div style={{ flex: 1, textAlign: 'center' }}>500</div>
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Grey (Cargo Grey) — #666666</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#E6E5E5', borderRadius: '4px', border: '1px solid #ddd' }} /><div style={{ flex: 1, height: '36px', background: '#D9D8D8', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#CDCBCB', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#C0BFBF', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#B3B2B2', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#A6A5A5', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#999999', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#8C8C8C', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#808080', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#737373', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#666666', borderRadius: '4px' }} />
-  </div>
-</div>
-
-<div style={{ marginBottom: '20px' }}>
-  <div style={{ fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>Charcoal (Coal) — #3D445C</div>
-  <div style={{ display: 'flex', gap: '3px', marginBottom: '4px' }}>
-    <div style={{ flex: 1, height: '36px', background: '#C2C6D6', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#B2B8CC', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#A3AAC2', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#949CB8', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#848EAE', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#7580A3', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#667199', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#5C668A', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#515B7B', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#474F6B', borderRadius: '4px' }} /><div style={{ flex: 1, height: '36px', background: '#3D445C', borderRadius: '4px' }} />
-  </div>
-</div>
-
-## Alpha Colors
-
-Opacity variants of core colors at 5%, 10%, 20%, 40%, 60%, 80% — used for overlays, states, and elevation.
-
-<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
-  <div>
-    <div style={{ fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Alpha Black</div>
-    <div style={{ display: 'flex', gap: '3px' }}>
-      <div style={{ flex: 1, height: '32px', background: 'rgba(0,0,0,0.05)', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(0,0,0,0.10)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(0,0,0,0.20)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(0,0,0,0.40)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(0,0,0,0.60)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(0,0,0,0.80)', borderRadius: '4px' }} />
-    </div>
-  </div>
-  <div>
-    <div style={{ fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Alpha White</div>
-    <div style={{ display: 'flex', gap: '3px' }}>
-      <div style={{ flex: 1, height: '32px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', border: '1px solid #ccc' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(255,255,255,0.10)', borderRadius: '4px', border: '1px solid #ccc' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(255,255,255,0.20)', borderRadius: '4px', border: '1px solid #ccc' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(255,255,255,0.40)', borderRadius: '4px', border: '1px solid #ccc' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(255,255,255,0.60)', borderRadius: '4px', border: '1px solid #ccc' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(255,255,255,0.80)', borderRadius: '4px', border: '1px solid #ccc' }} />
-    </div>
-  </div>
-  <div>
-    <div style={{ fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Alpha Red</div>
-    <div style={{ display: 'flex', gap: '3px' }}>
-      <div style={{ flex: 1, height: '32px', background: 'rgba(237,27,54,0.05)', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(237,27,54,0.10)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(237,27,54,0.20)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(237,27,54,0.40)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(237,27,54,0.60)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(237,27,54,0.80)', borderRadius: '4px' }} />
-    </div>
-  </div>
-  <div>
-    <div style={{ fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Alpha Green</div>
-    <div style={{ display: 'flex', gap: '3px' }}>
-      <div style={{ flex: 1, height: '32px', background: 'rgba(27,168,110,0.05)', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(27,168,110,0.10)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(27,168,110,0.20)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(27,168,110,0.40)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(27,168,110,0.60)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(27,168,110,0.80)', borderRadius: '4px' }} />
-    </div>
-  </div>
-  <div>
-    <div style={{ fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Alpha Blue</div>
-    <div style={{ display: 'flex', gap: '3px' }}>
-      <div style={{ flex: 1, height: '32px', background: 'rgba(35,150,251,0.05)', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(35,150,251,0.10)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(35,150,251,0.20)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(35,150,251,0.40)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(35,150,251,0.60)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(35,150,251,0.80)', borderRadius: '4px' }} />
-    </div>
-  </div>
-  <div>
-    <div style={{ fontSize: '12px', fontWeight: 600, marginBottom: '6px' }}>Alpha Yellow</div>
-    <div style={{ display: 'flex', gap: '3px' }}>
-      <div style={{ flex: 1, height: '32px', background: 'rgba(207,159,2,0.05)', borderRadius: '4px', border: '1px solid #eee' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(207,159,2,0.10)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(207,159,2,0.20)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(207,159,2,0.40)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(207,159,2,0.60)', borderRadius: '4px' }} /><div style={{ flex: 1, height: '32px', background: 'rgba(207,159,2,0.80)', borderRadius: '4px' }} />
-    </div>
-  </div>
-</div>
-
-## Semantic Token Mapping
+## 2. Semantic Colors
 
 Semantic tokens map core colors to purpose-driven roles. Each token has light and dark theme variants.
 
-| Token | Role | Light Theme | Dark Theme |
-|-------|------|-------------|------------|
-| `surface.background` | Page backgrounds | White scale | Black scale |
-| `surface.neutral` | Neutral UI surfaces | Grey scale | Coal scale |
-| `surface.accent` | Brand accent surfaces | Red scale | Red scale (shifted) |
-| `surface.info` | Informational | Blue scale | Blue scale (shifted) |
-| `surface.success` | Positive states | Green scale | Green scale (shifted) |
-| `surface.error` | Error states | Crimson scale | Crimson scale (shifted) |
-| `surface.warning` | Caution states | Yellow scale | Yellow scale (shifted) |
-| `text.heading` | Heading text | Black.200 / Grey.500 | White.450 / White.25 |
-| `text.body` | Body text | Black.25 / Grey.350 | White.400 / White.50 |
-| `text.caption` | Caption text | Grey.450 / Grey.300 | White.350 / Grey.200 |
-| `border.neutral` | Default borders | White.300 / White.200 | Black.200 / Black.100 |
+### Surface Colors
 
-Each semantic category supports intensity levels: Default, Strongest, Stronger, Strong, Solid, Base, Medium, Subtle, Weak, Weaker, Weakest.
+<Tabs>
+  <Tab title="Background">
+    | Intensity | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-----------|-------------|-------------|-------------|------------|
+    | Default | <div style={{width:'28px',height:'14px',background:'#FFFFFF',borderRadius:'2px',border:'1px solid #ddd',display:'inline-block'}} /> | White.500 | <div style={{width:'28px',height:'14px',background:'#000000',borderRadius:'2px',display:'inline-block'}} /> | Black.500 |
+    | Strongest | <div style={{width:'28px',height:'14px',background:'#F7F7F7',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | White.450 | <div style={{width:'28px',height:'14px',background:'#0D0D0D',borderRadius:'2px',display:'inline-block'}} /> | Black.450 |
+    | Stronger | <div style={{width:'28px',height:'14px',background:'#F2F2F2',borderRadius:'2px',display:'inline-block'}} /> | White.400 | <div style={{width:'28px',height:'14px',background:'#121212',borderRadius:'2px',display:'inline-block'}} /> | Black.400 |
+    | Strong | <div style={{width:'28px',height:'14px',background:'#EDEDED',borderRadius:'2px',display:'inline-block'}} /> | White.350 | <div style={{width:'28px',height:'14px',background:'#1A1A1A',borderRadius:'2px',display:'inline-block'}} /> | Black.350 |
+    | Solid | <div style={{width:'28px',height:'14px',background:'#E6E6E6',borderRadius:'2px',display:'inline-block'}} /> | White.300 | <div style={{width:'28px',height:'14px',background:'#212121',borderRadius:'2px',display:'inline-block'}} /> | Black.300 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#DEDEDE',borderRadius:'2px',display:'inline-block'}} /> | White.250 | <div style={{width:'28px',height:'14px',background:'#262626',borderRadius:'2px',display:'inline-block'}} /> | Black.250 |
+    | Medium | <div style={{width:'28px',height:'14px',background:'#D9D9D9',borderRadius:'2px',display:'inline-block'}} /> | White.200 | <div style={{width:'28px',height:'14px',background:'#2B2B2B',borderRadius:'2px',display:'inline-block'}} /> | Black.200 |
+    | Subtle | <div style={{width:'28px',height:'14px',background:'#D4D4D4',borderRadius:'2px',display:'inline-block'}} /> | White.150 | <div style={{width:'28px',height:'14px',background:'#333333',borderRadius:'2px',display:'inline-block'}} /> | Black.150 |
+    | Weak | <div style={{width:'28px',height:'14px',background:'#CCCCCC',borderRadius:'2px',display:'inline-block'}} /> | White.100 | <div style={{width:'28px',height:'14px',background:'#3B3B3B',borderRadius:'2px',display:'inline-block'}} /> | Black.100 |
+    | Weaker | <div style={{width:'28px',height:'14px',background:'#C4C4C4',borderRadius:'2px',display:'inline-block'}} /> | White.50 | <div style={{width:'28px',height:'14px',background:'#404040',borderRadius:'2px',display:'inline-block'}} /> | Black.50 |
+    | Weakest | <div style={{width:'28px',height:'14px',background:'#BFBFBF',borderRadius:'2px',display:'inline-block'}} /> | White.25 | <div style={{width:'28px',height:'14px',background:'#454545',borderRadius:'2px',display:'inline-block'}} /> | Black.25 |
+  </Tab>
+  <Tab title="Neutral">
+    | Intensity | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-----------|-------------|-------------|-------------|------------|
+    | Default | <div style={{width:'28px',height:'14px',background:'#666666',borderRadius:'2px',display:'inline-block'}} /> | Grey.500 | <div style={{width:'28px',height:'14px',background:'#3D445C',borderRadius:'2px',display:'inline-block'}} /> | Coal.500 |
+    | Strongest | <div style={{width:'28px',height:'14px',background:'#737373',borderRadius:'2px',display:'inline-block'}} /> | Grey.450 | <div style={{width:'28px',height:'14px',background:'#474F6B',borderRadius:'2px',display:'inline-block'}} /> | Coal.450 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#A6A5A5',borderRadius:'2px',display:'inline-block'}} /> | Grey.250 | <div style={{width:'28px',height:'14px',background:'#7580A3',borderRadius:'2px',display:'inline-block'}} /> | Coal.250 |
+    | Weakest | <div style={{width:'28px',height:'14px',background:'#E6E5E5',borderRadius:'2px',display:'inline-block'}} /> | Grey.25 | <div style={{width:'28px',height:'14px',background:'#C2C6D6',borderRadius:'2px',display:'inline-block'}} /> | Coal.25 |
+  </Tab>
+  <Tab title="Accent">
+    | Intensity | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-----------|-------------|-------------|-------------|------------|
+    | Default | <div style={{width:'28px',height:'14px',background:'#ED1B36',borderRadius:'2px',display:'inline-block'}} /> | Red.500 | <div style={{width:'28px',height:'14px',background:'#C5172D',borderRadius:'2px',display:'inline-block'}} /> | Red.600 |
+    | Strongest | <div style={{width:'28px',height:'14px',background:'#C5172D',borderRadius:'2px',display:'inline-block'}} /> | Red.600 | <div style={{width:'28px',height:'14px',background:'#ED1B36',borderRadius:'2px',display:'inline-block'}} /> | Red.500 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#F36779',borderRadius:'2px',display:'inline-block'}} /> | Red.300 | <div style={{width:'28px',height:'14px',background:'#F36779',borderRadius:'2px',display:'inline-block'}} /> | Red.300 |
+    | Weakest | <div style={{width:'28px',height:'14px',background:'#FEF1F3',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Red.15 | <div style={{width:'28px',height:'14px',background:'#2F050B',borderRadius:'2px',display:'inline-block'}} /> | Red.950 |
+  </Tab>
+  <Tab title="Info">
+    | Intensity | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-----------|-------------|-------------|-------------|------------|
+    | Default | <div style={{width:'28px',height:'14px',background:'#2396FB',borderRadius:'2px',display:'inline-block'}} /> | Blue.500 | <div style={{width:'28px',height:'14px',background:'#1D7DD1',borderRadius:'2px',display:'inline-block'}} /> | Blue.600 |
+    | Strongest | <div style={{width:'28px',height:'14px',background:'#1D7DD1',borderRadius:'2px',display:'inline-block'}} /> | Blue.600 | <div style={{width:'28px',height:'14px',background:'#2396FB',borderRadius:'2px',display:'inline-block'}} /> | Blue.500 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#6CB9FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.300 | <div style={{width:'28px',height:'14px',background:'#6CB9FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.300 |
+    | Weakest | <div style={{width:'28px',height:'14px',background:'#F0F8FF',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Blue.15 | <div style={{width:'28px',height:'14px',background:'#071E32',borderRadius:'2px',display:'inline-block'}} /> | Blue.950 |
+  </Tab>
+  <Tab title="Success">
+    | Intensity | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-----------|-------------|-------------|-------------|------------|
+    | Default | <div style={{width:'28px',height:'14px',background:'#1BA86E',borderRadius:'2px',display:'inline-block'}} /> | Green.500 | <div style={{width:'28px',height:'14px',background:'#178C5C',borderRadius:'2px',display:'inline-block'}} /> | Green.600 |
+    | Strongest | <div style={{width:'28px',height:'14px',background:'#178C5C',borderRadius:'2px',display:'inline-block'}} /> | Green.600 | <div style={{width:'28px',height:'14px',background:'#1BA86E',borderRadius:'2px',display:'inline-block'}} /> | Green.500 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#67C59E',borderRadius:'2px',display:'inline-block'}} /> | Green.300 | <div style={{width:'28px',height:'14px',background:'#67C59E',borderRadius:'2px',display:'inline-block'}} /> | Green.300 |
+    | Weakest | <div style={{width:'28px',height:'14px',background:'#F4FBF8',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Green.15 | <div style={{width:'28px',height:'14px',background:'#052216',borderRadius:'2px',display:'inline-block'}} /> | Green.950 |
+  </Tab>
+  <Tab title="Error">
+    | Intensity | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-----------|-------------|-------------|-------------|------------|
+    | Default | <div style={{width:'28px',height:'14px',background:'#DC143C',borderRadius:'2px',display:'inline-block'}} /> | Crimson.500 | <div style={{width:'28px',height:'14px',background:'#B71132',borderRadius:'2px',display:'inline-block'}} /> | Crimson.600 |
+    | Strongest | <div style={{width:'28px',height:'14px',background:'#B71132',borderRadius:'2px',display:'inline-block'}} /> | Crimson.600 | <div style={{width:'28px',height:'14px',background:'#DC143C',borderRadius:'2px',display:'inline-block'}} /> | Crimson.500 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#E8627D',borderRadius:'2px',display:'inline-block'}} /> | Crimson.300 | <div style={{width:'28px',height:'14px',background:'#E8627D',borderRadius:'2px',display:'inline-block'}} /> | Crimson.300 |
+    | Weakest | <div style={{width:'28px',height:'14px',background:'#FDF2F4',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Crimson.15 | <div style={{width:'28px',height:'14px',background:'#2C040C',borderRadius:'2px',display:'inline-block'}} /> | Crimson.950 |
+  </Tab>
+  <Tab title="Warning">
+    | Intensity | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-----------|-------------|-------------|-------------|------------|
+    | Default | <div style={{width:'28px',height:'14px',background:'#CF9F02',borderRadius:'2px',display:'inline-block'}} /> | Yellow.500 | <div style={{width:'28px',height:'14px',background:'#AC8402',borderRadius:'2px',display:'inline-block'}} /> | Yellow.600 |
+    | Strongest | <div style={{width:'28px',height:'14px',background:'#AC8402',borderRadius:'2px',display:'inline-block'}} /> | Yellow.600 | <div style={{width:'28px',height:'14px',background:'#CF9F02',borderRadius:'2px',display:'inline-block'}} /> | Yellow.500 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#DFBF56',borderRadius:'2px',display:'inline-block'}} /> | Yellow.300 | <div style={{width:'28px',height:'14px',background:'#DFBF56',borderRadius:'2px',display:'inline-block'}} /> | Yellow.300 |
+    | Weakest | <div style={{width:'28px',height:'14px',background:'#FCFAF2',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Yellow.15 | <div style={{width:'28px',height:'14px',background:'#292000',borderRadius:'2px',display:'inline-block'}} /> | Yellow.950 |
+  </Tab>
+</Tabs>
 
-<Tip>In dark mode, semantic tokens automatically shift to darker core values. No UI logic changes needed.</Tip>
+Additional surface categories (Orange, Cyan, Cardbox, Purple, Pink) follow the same Default → Weakest pattern mapped to their respective core ramps.
 
-## Accessibility
+### Text Colors
 
-<AccordionGroup>
-  <Accordion title="Contrast Requirements" icon="eye">
-    Body text: WCAG AA (4.5:1) minimum. Large text: 3:1 minimum. Icon and UI elements: 3:1 against background.
-  </Accordion>
-  <Accordion title="Color Usage Rules" icon="palette">
-    Never rely on color alone to convey meaning. Pair with icons, text, or shape. Avoid low-contrast alpha overlays for critical content.
-  </Accordion>
-  <Accordion title="State Accessibility" icon="hand-pointer">
-    Hover, focus, and active states must remain distinguishable. Error and success must not rely solely on red/green.
-  </Accordion>
-</AccordionGroup>
+<Tabs>
+  <Tab title="Heading">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#CDCBCB',borderRadius:'2px',display:'inline-block'}} /> | Grey.100 | <div style={{width:'28px',height:'14px',background:'#3B3B3B',borderRadius:'2px',display:'inline-block'}} /> | Black.100 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#2B2B2B',borderRadius:'2px',display:'inline-block'}} /> | Black.200 | <div style={{width:'28px',height:'14px',background:'#F7F7F7',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | White.450 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#3B3B3B',borderRadius:'2px',display:'inline-block'}} /> | Black.100 | <div style={{width:'28px',height:'14px',background:'#CCCCCC',borderRadius:'2px',display:'inline-block'}} /> | White.100 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#666666',borderRadius:'2px',display:'inline-block'}} /> | Grey.500 | <div style={{width:'28px',height:'14px',background:'#BFBFBF',borderRadius:'2px',display:'inline-block'}} /> | White.25 |
+  </Tab>
+  <Tab title="Body">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#CDCBCB',borderRadius:'2px',display:'inline-block'}} /> | Grey.100 | <div style={{width:'28px',height:'14px',background:'#3B3B3B',borderRadius:'2px',display:'inline-block'}} /> | Black.100 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#454545',borderRadius:'2px',display:'inline-block'}} /> | Black.25 | <div style={{width:'28px',height:'14px',background:'#F2F2F2',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | White.400 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#8C8C8C',borderRadius:'2px',display:'inline-block'}} /> | Grey.350 | <div style={{width:'28px',height:'14px',background:'#C4C4C4',borderRadius:'2px',display:'inline-block'}} /> | White.50 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#A6A5A5',borderRadius:'2px',display:'inline-block'}} /> | Grey.250 | <div style={{width:'28px',height:'14px',background:'#E6E5E5',borderRadius:'2px',display:'inline-block'}} /> | Grey.25 |
+  </Tab>
+  <Tab title="Caption">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#CDCBCB',borderRadius:'2px',display:'inline-block'}} /> | Grey.100 | <div style={{width:'28px',height:'14px',background:'#3B3B3B',borderRadius:'2px',display:'inline-block'}} /> | Black.100 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#737373',borderRadius:'2px',display:'inline-block'}} /> | Grey.450 | <div style={{width:'28px',height:'14px',background:'#EDEDED',borderRadius:'2px',display:'inline-block'}} /> | White.350 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#999999',borderRadius:'2px',display:'inline-block'}} /> | Grey.300 | <div style={{width:'28px',height:'14px',background:'#B3B2B2',borderRadius:'2px',display:'inline-block'}} /> | Grey.200 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#B3B2B2',borderRadius:'2px',display:'inline-block'}} /> | Grey.200 | <div style={{width:'28px',height:'14px',background:'#A6A5A5',borderRadius:'2px',display:'inline-block'}} /> | Grey.250 |
+  </Tab>
+  <Tab title="Info">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#91CAFD',borderRadius:'2px',display:'inline-block'}} /> | Blue.200 | <div style={{width:'28px',height:'14px',background:'#1764A7',borderRadius:'2px',display:'inline-block'}} /> | Blue.700 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#6CB9FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.300 | <div style={{width:'28px',height:'14px',background:'#1D7DD1',borderRadius:'2px',display:'inline-block'}} /> | Blue.600 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#2396FB',borderRadius:'2px',display:'inline-block'}} /> | Blue.500 | <div style={{width:'28px',height:'14px',background:'#2396FB',borderRadius:'2px',display:'inline-block'}} /> | Blue.500 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#1D7DD1',borderRadius:'2px',display:'inline-block'}} /> | Blue.600 | <div style={{width:'28px',height:'14px',background:'#48A7FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.400 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#1764A7',borderRadius:'2px',display:'inline-block'}} /> | Blue.700 | <div style={{width:'28px',height:'14px',background:'#6CB9FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.300 |
+  </Tab>
+  <Tab title="Error">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#ED899D',borderRadius:'2px',display:'inline-block'}} /> | Crimson.200 | <div style={{width:'28px',height:'14px',background:'#930D28',borderRadius:'2px',display:'inline-block'}} /> | Crimson.700 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#E8627D',borderRadius:'2px',display:'inline-block'}} /> | Crimson.300 | <div style={{width:'28px',height:'14px',background:'#B71132',borderRadius:'2px',display:'inline-block'}} /> | Crimson.600 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#DC143C',borderRadius:'2px',display:'inline-block'}} /> | Crimson.500 | <div style={{width:'28px',height:'14px',background:'#DC143C',borderRadius:'2px',display:'inline-block'}} /> | Crimson.500 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#B71132',borderRadius:'2px',display:'inline-block'}} /> | Crimson.600 | <div style={{width:'28px',height:'14px',background:'#E23B5D',borderRadius:'2px',display:'inline-block'}} /> | Crimson.400 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#930D28',borderRadius:'2px',display:'inline-block'}} /> | Crimson.700 | <div style={{width:'28px',height:'14px',background:'#E8627D',borderRadius:'2px',display:'inline-block'}} /> | Crimson.300 |
+  </Tab>
+  <Tab title="Success">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#8DD3B6',borderRadius:'2px',display:'inline-block'}} /> | Green.200 | <div style={{width:'28px',height:'14px',background:'#127049',borderRadius:'2px',display:'inline-block'}} /> | Green.700 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#67C59E',borderRadius:'2px',display:'inline-block'}} /> | Green.300 | <div style={{width:'28px',height:'14px',background:'#178C5C',borderRadius:'2px',display:'inline-block'}} /> | Green.600 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#1BA86E',borderRadius:'2px',display:'inline-block'}} /> | Green.500 | <div style={{width:'28px',height:'14px',background:'#1BA86E',borderRadius:'2px',display:'inline-block'}} /> | Green.500 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#178C5C',borderRadius:'2px',display:'inline-block'}} /> | Green.600 | <div style={{width:'28px',height:'14px',background:'#41B686',borderRadius:'2px',display:'inline-block'}} /> | Green.400 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#127049',borderRadius:'2px',display:'inline-block'}} /> | Green.700 | <div style={{width:'28px',height:'14px',background:'#67C59E',borderRadius:'2px',display:'inline-block'}} /> | Green.300 |
+  </Tab>
+  <Tab title="Warning">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#E7CF80',borderRadius:'2px',display:'inline-block'}} /> | Yellow.200 | <div style={{width:'28px',height:'14px',background:'#8A6A01',borderRadius:'2px',display:'inline-block'}} /> | Yellow.700 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#DFBF56',borderRadius:'2px',display:'inline-block'}} /> | Yellow.300 | <div style={{width:'28px',height:'14px',background:'#AC8402',borderRadius:'2px',display:'inline-block'}} /> | Yellow.600 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#CF9F02',borderRadius:'2px',display:'inline-block'}} /> | Yellow.500 | <div style={{width:'28px',height:'14px',background:'#CF9F02',borderRadius:'2px',display:'inline-block'}} /> | Yellow.500 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#AC8402',borderRadius:'2px',display:'inline-block'}} /> | Yellow.600 | <div style={{width:'28px',height:'14px',background:'#D7AF2C',borderRadius:'2px',display:'inline-block'}} /> | Yellow.400 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#8A6A01',borderRadius:'2px',display:'inline-block'}} /> | Yellow.700 | <div style={{width:'28px',height:'14px',background:'#DFBF56',borderRadius:'2px',display:'inline-block'}} /> | Yellow.300 |
+  </Tab>
+  <Tab title="Accent">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#F68D9A',borderRadius:'2px',display:'inline-block'}} /> | Red.200 | <div style={{width:'28px',height:'14px',background:'#F68D9A',borderRadius:'2px',display:'inline-block'}} /> | Red.200 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#F36779',borderRadius:'2px',display:'inline-block'}} /> | Red.300 | <div style={{width:'28px',height:'14px',background:'#F36779',borderRadius:'2px',display:'inline-block'}} /> | Red.300 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#ED1B36',borderRadius:'2px',display:'inline-block'}} /> | Red.500 | <div style={{width:'28px',height:'14px',background:'#ED1B36',borderRadius:'2px',display:'inline-block'}} /> | Red.500 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#C5172D',borderRadius:'2px',display:'inline-block'}} /> | Red.600 | <div style={{width:'28px',height:'14px',background:'#C5172D',borderRadius:'2px',display:'inline-block'}} /> | Red.600 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#9E1224',borderRadius:'2px',display:'inline-block'}} /> | Red.700 | <div style={{width:'28px',height:'14px',background:'#9E1224',borderRadius:'2px',display:'inline-block'}} /> | Red.700 |
+  </Tab>
+</Tabs>
 
-## Usage Guidelines
+<Info>Icon colors follow the exact same token structure as text colors, ensuring visual consistency between text and iconography across all roles.</Info>
 
-<CardGroup cols={2}>
-  <Card title="✓ Do" icon="check" color="#1BA86E">
-    Use semantic tokens, never raw core colors in UI. Ensure sufficient contrast ratios. Use neutrals as the foundation. Let accent and status colors emphasize sparingly.
-  </Card>
-  <Card title="✗ Don't" icon="xmark" color="#DC143C">
-    Don't reference core colors directly in components. Don't use color alone to convey meaning. Don't stack multiple semantic meanings on one element.
-  </Card>
-</CardGroup>
+### Border Colors
 
-## Code Examples
+<Tabs>
+  <Tab title="Neutral">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#F7F7F7',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | White.450 | <div style={{width:'28px',height:'14px',background:'#212121',borderRadius:'2px',display:'inline-block'}} /> | Black.300 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#E6E6E6',borderRadius:'2px',display:'inline-block'}} /> | White.300 | <div style={{width:'28px',height:'14px',background:'#2B2B2B',borderRadius:'2px',display:'inline-block'}} /> | Black.200 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#D9D9D9',borderRadius:'2px',display:'inline-block'}} /> | White.200 | <div style={{width:'28px',height:'14px',background:'#3B3B3B',borderRadius:'2px',display:'inline-block'}} /> | Black.100 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#CCCCCC',borderRadius:'2px',display:'inline-block'}} /> | White.100 | <div style={{width:'28px',height:'14px',background:'#454545',borderRadius:'2px',display:'inline-block'}} /> | Black.25 |
+  </Tab>
+  <Tab title="Info">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#F0F8FF',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Blue.15 | <div style={{width:'28px',height:'14px',background:'#071E32',borderRadius:'2px',display:'inline-block'}} /> | Blue.950 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#91CAFD',borderRadius:'2px',display:'inline-block'}} /> | Blue.200 | <div style={{width:'28px',height:'14px',background:'#2396FB',borderRadius:'2px',display:'inline-block'}} /> | Blue.500 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#48A7FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.400 | <div style={{width:'28px',height:'14px',background:'#48A7FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.400 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#2396FB',borderRadius:'2px',display:'inline-block'}} /> | Blue.500 | <div style={{width:'28px',height:'14px',background:'#6CB9FC',borderRadius:'2px',display:'inline-block'}} /> | Blue.300 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#1764A7',borderRadius:'2px',display:'inline-block'}} /> | Blue.700 | <div style={{width:'28px',height:'14px',background:'#91CAFD',borderRadius:'2px',display:'inline-block'}} /> | Blue.200 |
+  </Tab>
+  <Tab title="Success">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#F4FBF8',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Green.15 | <div style={{width:'28px',height:'14px',background:'#052216',borderRadius:'2px',display:'inline-block'}} /> | Green.950 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#8DD3B6',borderRadius:'2px',display:'inline-block'}} /> | Green.200 | <div style={{width:'28px',height:'14px',background:'#1BA86E',borderRadius:'2px',display:'inline-block'}} /> | Green.500 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#41B686',borderRadius:'2px',display:'inline-block'}} /> | Green.400 | <div style={{width:'28px',height:'14px',background:'#41B686',borderRadius:'2px',display:'inline-block'}} /> | Green.400 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#1BA86E',borderRadius:'2px',display:'inline-block'}} /> | Green.500 | <div style={{width:'28px',height:'14px',background:'#67C59E',borderRadius:'2px',display:'inline-block'}} /> | Green.300 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#127049',borderRadius:'2px',display:'inline-block'}} /> | Green.700 | <div style={{width:'28px',height:'14px',background:'#8DD3B6',borderRadius:'2px',display:'inline-block'}} /> | Green.200 |
+  </Tab>
+  <Tab title="Error">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#FEF1F3',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Red.15 | <div style={{width:'28px',height:'14px',background:'#2F050B',borderRadius:'2px',display:'inline-block'}} /> | Red.950 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#F68D9A',borderRadius:'2px',display:'inline-block'}} /> | Red.200 | <div style={{width:'28px',height:'14px',background:'#ED1B36',borderRadius:'2px',display:'inline-block'}} /> | Red.500 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#F04158',borderRadius:'2px',display:'inline-block'}} /> | Red.400 | <div style={{width:'28px',height:'14px',background:'#F04158',borderRadius:'2px',display:'inline-block'}} /> | Red.400 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#ED1B36',borderRadius:'2px',display:'inline-block'}} /> | Red.500 | <div style={{width:'28px',height:'14px',background:'#F36779',borderRadius:'2px',display:'inline-block'}} /> | Red.300 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#9E1224',borderRadius:'2px',display:'inline-block'}} /> | Red.700 | <div style={{width:'28px',height:'14px',background:'#F68D9A',borderRadius:'2px',display:'inline-block'}} /> | Red.200 |
+  </Tab>
+  <Tab title="Warning">
+    | State | Light Swatch | Light Token | Dark Swatch | Dark Token |
+    |-------|-------------|-------------|-------------|------------|
+    | Disabled | <div style={{width:'28px',height:'14px',background:'#FCFAF2',borderRadius:'2px',border:'1px solid #eee',display:'inline-block'}} /> | Yellow.15 | <div style={{width:'28px',height:'14px',background:'#292000',borderRadius:'2px',display:'inline-block'}} /> | Yellow.950 |
+    | Base | <div style={{width:'28px',height:'14px',background:'#E7CF80',borderRadius:'2px',display:'inline-block'}} /> | Yellow.200 | <div style={{width:'28px',height:'14px',background:'#CF9F02',borderRadius:'2px',display:'inline-block'}} /> | Yellow.500 |
+    | Primary | <div style={{width:'28px',height:'14px',background:'#D7AF2C',borderRadius:'2px',display:'inline-block'}} /> | Yellow.400 | <div style={{width:'28px',height:'14px',background:'#D7AF2C',borderRadius:'2px',display:'inline-block'}} /> | Yellow.400 |
+    | Secondary | <div style={{width:'28px',height:'14px',background:'#CF9F02',borderRadius:'2px',display:'inline-block'}} /> | Yellow.500 | <div style={{width:'28px',height:'14px',background:'#DFBF56',borderRadius:'2px',display:'inline-block'}} /> | Yellow.300 |
+    | Tertiary | <div style={{width:'28px',height:'14px',background:'#8A6A01',borderRadius:'2px',display:'inline-block'}} /> | Yellow.700 | <div style={{width:'28px',height:'14px',background:'#E7CF80',borderRadius:'2px',display:'inline-block'}} /> | Yellow.200 |
+  </Tab>
+</Tabs>
 
-<CodeGroup>
-```css Core Variables
-:root {
-  --color-red-500: #ED1B36;
-  --color-blue-500: #2396FB;
-  --color-green-500: #1BA86E;
-  --color-crimson-500: #DC143C;
-  --color-yellow-500: #CF9F02;
-  --color-black-500: #000000;
-  --color-white-500: #FFFFFF;
-  --color-grey-500: #666666;
-}
-```
-
-```css Semantic Tokens
-:root {
-  --surface-background: var(--color-white-500);
-  --surface-accent: var(--color-red-500);
-  --surface-info: var(--color-blue-500);
-  --surface-success: var(--color-green-500);
-  --surface-error: var(--color-crimson-500);
-  --text-heading-primary: var(--color-black-200);
-  --text-body-primary: var(--color-black-25);
-}
-
-[data-theme="dark"] {
-  --surface-background: var(--color-black-500);
-  --surface-accent: var(--color-red-600);
-  --text-heading-primary: var(--color-white-450);
-  --text-body-primary: var(--color-white-400);
-}
-```
-
-```typescript TypeScript
-import { colors } from '@tarmac/design-system';
-
-colors.red[500]     // #ED1B36
-colors.blue[500]    // #2396FB
-colors.green[500]   // #1BA86E
-colors.black[500]   // #000000
-```
-</CodeGroup>
+---
 
 <CardGroup cols={2}>
   <Card title="Design Tokens" icon="coins" href="/foundations/tokens">
