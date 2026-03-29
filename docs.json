@@ -68,6 +68,7 @@
                   "components/scroll",
                   "components/header",
                   "components/footer",
+                  "components/rating",
                   "components/badge",
                   "components/tags",
                   "components/pills",
