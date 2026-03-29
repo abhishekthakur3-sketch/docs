@@ -34,35 +34,55 @@ Alerts are contextual messaging components that appear inline within the interfa
 Explore alert types, styles, and real-world patterns with rendered examples.
 
 <Tabs>
-  <Tab title="Types">
-    <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
-      <div style={{background:'#1BA86E', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>✓</span><span style={{color:'#FFF', fontSize:'13px'}}>Action completed successfully.</span></div>
-      <div style={{background:'#DC143C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>✕</span><span style={{color:'#FFF', fontSize:'13px'}}>Something went wrong. Please try again.</span></div>
-      <div style={{background:'#CF9F02', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>⚠</span><span style={{color:'#FFF', fontSize:'13px'}}>This action may have unintended consequences.</span></div>
-      <div style={{background:'#2396FB', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Your session will expire in 5 minutes.</span></div>
-      <div style={{background:'#3D445C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>System maintenance scheduled for tonight.</span></div>
-      <div style={{background:'#000', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px', color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Dark variant for high-contrast surfaces.</span></div>
-      <div style={{background:'#FFF', border:'1px solid #E0E0E0', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px'}}>ℹ</span><span style={{color:'#000', fontSize:'13px'}}>Light variant for standard surfaces.</span></div>
+  <Tab title="By Type">
+    <div style={{display:'flex', flexDirection:'column', gap:'10px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{background:'#1BA86E', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{color:'#FFF'}}>✓</span><span style={{color:'#FFF', fontSize:'13px'}}>Action completed successfully.</span></div>
+      <div style={{background:'#DC143C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{color:'#FFF'}}>✕</span><span style={{color:'#FFF', fontSize:'13px'}}>Something went wrong. Please try again.</span></div>
+      <div style={{background:'#CF9F02', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{color:'#FFF'}}>⚠</span><span style={{color:'#FFF', fontSize:'13px'}}>This action may have unintended consequences.</span></div>
+      <div style={{background:'#2396FB', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Your session will expire in 5 minutes.</span></div>
+      <div style={{background:'#3D445C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>System maintenance scheduled for tonight.</span></div>
+      <div style={{background:'#000', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Dark variant for high-contrast surfaces.</span></div>
+      <div style={{background:'#FFF', border:'1px solid #E0E0E0', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span>ℹ</span><span style={{color:'#000', fontSize:'13px'}}>Light variant for standard surfaces.</span></div>
     </div>
   </Tab>
-  <Tab title="With Actions">
+  <Tab title="By Style">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Single Text</div>
+        <div style={{background:'#2396FB', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Your account has been verified successfully.</span></div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Dual Text</div>
+        <div style={{background:'#2396FB', borderRadius:'8px', padding:'16px', width:'100%'}}>
+          <div style={{display:'flex', alignItems:'flex-start', gap:'10px'}}>
+            <span style={{color:'#FFF'}}>ℹ</span>
+            <div>
+              <div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Account verified</div>
+              <div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>Your identity has been confirmed. You now have full access to all features.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="With CTA">
     <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
       <div style={{background:'#DC143C', borderRadius:'8px', padding:'16px', width:'100%'}}>
         <div style={{display:'flex', alignItems:'flex-start', gap:'10px'}}>
-          <span style={{fontSize:'16px', color:'#FFF'}}>✕</span>
+          <span style={{color:'#FFF'}}>✕</span>
           <div style={{flex:1}}>
             <div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Payment failed</div>
             <div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>Your card was declined. Please update your payment method.</div>
             <div style={{display:'flex', gap:'8px', marginTop:'12px'}}>
-              <div style={{background:'rgba(255,255,255,0.2)', color:'#FFF', fontSize:'12px', padding:'6px 14px', borderRadius:'6px', cursor:'pointer'}}>Retry</div>
-              <div style={{background:'#FFF', color:'#DC143C', fontSize:'12px', padding:'6px 14px', borderRadius:'6px', cursor:'pointer'}}>Update Card</div>
+              <div style={{background:'rgba(255,255,255,0.2)', color:'#FFF', fontSize:'12px', padding:'6px 14px', borderRadius:'6px'}}>Retry</div>
+              <div style={{background:'#FFF', color:'#DC143C', fontSize:'12px', padding:'6px 14px', borderRadius:'6px'}}>Update Card</div>
             </div>
           </div>
         </div>
       </div>
       <div style={{background:'#CF9F02', borderRadius:'8px', padding:'16px', width:'100%'}}>
         <div style={{display:'flex', alignItems:'flex-start', gap:'10px'}}>
-          <span style={{fontSize:'16px', color:'#FFF'}}>⚠</span>
+          <span style={{color:'#FFF'}}>⚠</span>
           <div style={{flex:1}}>
             <div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Unsaved changes</div>
             <div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>You have unsaved changes that will be lost.</div>
@@ -75,30 +95,19 @@ Explore alert types, styles, and real-world patterns with rendered examples.
       </div>
     </div>
   </Tab>
-  <Tab title="Sizes">
-    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
-      <div>
-        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Large (Web)</div>
-        <div style={{background:'#2396FB', borderRadius:'8px', padding:'16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}><span style={{fontSize:'16px', color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'14px'}}>Your account has been verified successfully.</span></div>
-      </div>
-      <div>
-        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'6px'}}>Small (Mobile)</div>
-        <div style={{background:'#2396FB', borderRadius:'6px', padding:'10px 12px', display:'flex', alignItems:'center', gap:'8px', maxWidth:'340px'}}><span style={{fontSize:'14px', color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'12px'}}>Your account has been verified successfully.</span></div>
-      </div>
-    </div>
-  </Tab>
   <Tab title="Dismissible">
     <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
       <div style={{background:'#1BA86E', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}>
-        <span style={{fontSize:'16px', color:'#FFF'}}>✓</span>
+        <span style={{color:'#FFF'}}>✓</span>
         <span style={{color:'#FFF', fontSize:'13px', flex:1}}>Changes saved successfully.</span>
         <span style={{color:'rgba(255,255,255,0.7)', fontSize:'16px', cursor:'pointer'}}>✕</span>
       </div>
       <div style={{background:'#2396FB', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', width:'100%'}}>
-        <span style={{fontSize:'16px', color:'#FFF'}}>ℹ</span>
+        <span style={{color:'#FFF'}}>ℹ</span>
         <span style={{color:'#FFF', fontSize:'13px', flex:1}}>New features are available. Check the changelog.</span>
         <span style={{color:'rgba(255,255,255,0.7)', fontSize:'16px', cursor:'pointer'}}>✕</span>
       </div>
+      <div style={{fontSize:'11px', opacity:0.4, marginTop:'4px'}}>↑ Trailing ✕ icon dismisses the alert. Success/info alerts are typically dismissible.</div>
     </div>
   </Tab>
 </Tabs>
@@ -108,34 +117,97 @@ Explore alert types, styles, and real-world patterns with rendered examples.
 
 ---
 
-## Alert Matrix
+## Alert Matrix (Visual)
 
-Complete reference: every Type × Style × Size combination.
+Complete visual reference: every Type × Style × Size combination with rendered UI.
 
 <Tabs>
-  <Tab title="Single Text">
-    | Type | Large (Web) | Small (Mobile) |
-    |------|------------|----------------|
-    | White | 🔲 *alert* | 🔲 *alert* |
-    | Black | 🔲 *alert* | 🔲 *alert* |
-    | Coal | 🔲 *alert* | 🔲 *alert* |
-    | Success | 🔲 *alert* | 🔲 *alert* |
-    | Error | 🔲 *alert* | 🔲 *alert* |
-    | Info Blue | 🔲 *alert* | 🔲 *alert* |
-    | Warning | 🔲 *alert* | 🔲 *alert* |
+  <Tab title="Single Text — Large">
+    <div style={{display:'flex', flexDirection:'column', gap:'10px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Success</div><div style={{background:'#1BA86E', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', flex:1}}><span style={{color:'#FFF'}}>✓</span><span style={{color:'#FFF', fontSize:'13px'}}>Action completed successfully.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Error</div><div style={{background:'#DC143C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', flex:1}}><span style={{color:'#FFF'}}>✕</span><span style={{color:'#FFF', fontSize:'13px'}}>Something went wrong. Please try again.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Warning</div><div style={{background:'#CF9F02', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', flex:1}}><span style={{color:'#FFF'}}>⚠</span><span style={{color:'#FFF', fontSize:'13px'}}>This action may have consequences.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Info</div><div style={{background:'#2396FB', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', flex:1}}><span style={{color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Your session will expire in 5 minutes.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Coal</div><div style={{background:'#3D445C', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', flex:1}}><span style={{color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>System maintenance tonight at 2 AM.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Black</div><div style={{background:'#000', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', flex:1}}><span style={{color:'#FFF'}}>ℹ</span><span style={{color:'#FFF', fontSize:'13px'}}>Dark variant for high-contrast surfaces.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>White</div><div style={{background:'#FFF', border:'1px solid #E0E0E0', borderRadius:'8px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', flex:1}}><span>ℹ</span><span style={{fontSize:'13px'}}>Light variant for standard surfaces.</span></div></div>
+    </div>
   </Tab>
-  <Tab title="Dual Text">
-    | Type | Large (Web) | Small (Mobile) |
-    |------|------------|----------------|
-    | White | 🔲 *alert* | 🔲 *alert* |
-    | Black | 🔲 *alert* | 🔲 *alert* |
-    | Coal | 🔲 *alert* | 🔲 *alert* |
-    | Success | 🔲 *alert* | 🔲 *alert* |
-    | Error | 🔲 *alert* | 🔲 *alert* |
-    | Info Blue | 🔲 *alert* | 🔲 *alert* |
-    | Warning | 🔲 *alert* | 🔲 *alert* |
+  <Tab title="Single Text — Small">
+    <div style={{display:'flex', flexDirection:'column', gap:'10px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Success</div><div style={{background:'#1BA86E', borderRadius:'6px', padding:'10px 12px', display:'flex', alignItems:'center', gap:'8px', maxWidth:'340px'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span><span style={{color:'#FFF', fontSize:'12px'}}>Action completed.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Error</div><div style={{background:'#DC143C', borderRadius:'6px', padding:'10px 12px', display:'flex', alignItems:'center', gap:'8px', maxWidth:'340px'}}><span style={{color:'#FFF', fontSize:'14px'}}>✕</span><span style={{color:'#FFF', fontSize:'12px'}}>Something went wrong.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Warning</div><div style={{background:'#CF9F02', borderRadius:'6px', padding:'10px 12px', display:'flex', alignItems:'center', gap:'8px', maxWidth:'340px'}}><span style={{color:'#FFF', fontSize:'14px'}}>⚠</span><span style={{color:'#FFF', fontSize:'12px'}}>Proceed with caution.</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Info</div><div style={{background:'#2396FB', borderRadius:'6px', padding:'10px 12px', display:'flex', alignItems:'center', gap:'8px', maxWidth:'340px'}}><span style={{color:'#FFF', fontSize:'14px'}}>ℹ</span><span style={{color:'#FFF', fontSize:'12px'}}>Session expires soon.</span></div></div>
+    </div>
+  </Tab>
+  <Tab title="Dual Text — Large">
+    <div style={{display:'flex', flexDirection:'column', gap:'10px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5, paddingTop:'14px'}}>Success</div><div style={{background:'#1BA86E', borderRadius:'8px', padding:'16px', flex:1}}><div style={{display:'flex', gap:'10px'}}><span style={{color:'#FFF'}}>✓</span><div><div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Changes saved</div><div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>All your changes have been saved successfully.</div></div></div></div></div>
+      <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5, paddingTop:'14px'}}>Error</div><div style={{background:'#DC143C', borderRadius:'8px', padding:'16px', flex:1}}><div style={{display:'flex', gap:'10px'}}><span style={{color:'#FFF'}}>✕</span><div><div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Upload failed</div><div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>The file exceeds the maximum size limit of 10MB.</div></div></div></div></div>
+      <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5, paddingTop:'14px'}}>Warning</div><div style={{background:'#CF9F02', borderRadius:'8px', padding:'16px', flex:1}}><div style={{display:'flex', gap:'10px'}}><span style={{color:'#FFF'}}>⚠</span><div><div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>Low storage</div><div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>You have less than 5% storage remaining.</div></div></div></div></div>
+      <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5, paddingTop:'14px'}}>Info</div><div style={{background:'#2396FB', borderRadius:'8px', padding:'16px', flex:1}}><div style={{display:'flex', gap:'10px'}}><span style={{color:'#FFF'}}>ℹ</span><div><div style={{color:'#FFF', fontSize:'13px', fontWeight:600}}>New update available</div><div style={{color:'rgba(255,255,255,0.8)', fontSize:'12px', marginTop:'4px'}}>Version 2.4 includes performance improvements.</div></div></div></div></div>
+    </div>
+  </Tab>
+  <Tab title="Dual Text — Small">
+    <div style={{display:'flex', flexDirection:'column', gap:'10px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5, paddingTop:'10px'}}>Error</div><div style={{background:'#DC143C', borderRadius:'6px', padding:'10px 12px', maxWidth:'340px'}}><div style={{display:'flex', gap:'8px'}}><span style={{color:'#FFF', fontSize:'14px'}}>✕</span><div><div style={{color:'#FFF', fontSize:'12px', fontWeight:600}}>Upload failed</div><div style={{color:'rgba(255,255,255,0.8)', fontSize:'11px', marginTop:'2px'}}>File exceeds 10MB limit.</div></div></div></div></div>
+      <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5, paddingTop:'10px'}}>Warning</div><div style={{background:'#CF9F02', borderRadius:'6px', padding:'10px 12px', maxWidth:'340px'}}><div style={{display:'flex', gap:'8px'}}><span style={{color:'#FFF', fontSize:'14px'}}>⚠</span><div><div style={{color:'#FFF', fontSize:'12px', fontWeight:600}}>Low storage</div><div style={{color:'rgba(255,255,255,0.8)', fontSize:'11px', marginTop:'2px'}}>Less than 5% remaining.</div></div></div></div></div>
+    </div>
   </Tab>
 </Tabs>
+
+---
+
+## Lifecycle / Behavior
+
+| Phase | Behavior | Notes |
+|-------|----------|-------|
+| Trigger | Alert appears when a system event occurs | Form validation, API response, state change |
+| Display | Alert renders inline near related content | No animation by default; fade-in optional |
+| Persistence | Remains visible until resolved or dismissed | Error alerts persist until issue is fixed |
+| Interaction | User reads message, clicks CTA, or dismisses | CTAs resolve the issue; dismiss hides the alert |
+| Removal | Alert is removed from DOM after dismiss/resolve | Success alerts may auto-dismiss after 5–10s |
+
+<Warning>Error and warning alerts should never auto-dismiss. They must persist until the user resolves the issue or explicitly dismisses them.</Warning>
+
+| Alert Type | Auto-dismiss | Dismissible | Requires Action |
+|------------|-------------|-------------|-----------------|
+| Success | Optional (5–10s) | Yes | No |
+| Error | Never | Optional | Often (CTA) |
+| Warning | Never | Optional | Sometimes |
+| Info | Optional (10s) | Yes | No |
+| Coal/Black/White | Depends on context | Yes | No |
+
+---
+
+## Content Structure
+
+| Element | Guidelines | Example |
+|---------|-----------|---------|
+| Title (primary text) | Short, specific, action-oriented. Max 8 words. | "Payment failed" not "There was a problem" |
+| Description (supporting) | Explain what happened and what to do. Max 2 sentences. | "Your card was declined. Update your payment method." |
+| CTA labels | Verb-first, specific. Max 2 words. | "Retry", "Update Card", "Save Now" |
+| Tone — Error | Direct, clear, non-blaming | "Upload failed" not "You uploaded a bad file" |
+| Tone — Success | Confirming, brief | "Changes saved" not "Your changes have been saved successfully to the database" |
+| Tone — Warning | Cautious, informative | "Unsaved changes" not "WARNING: DATA LOSS" |
+| Tone — Info | Neutral, helpful | "Session expires in 5 min" |
+
+<Tip>Single Text style: use only the title (primary text). Dual Text style: use title + description. Never use description without a title.</Tip>
+
+---
+
+## Interaction Rules
+
+| Rule | Guideline |
+|------|-----------|
+| Dismissible vs Persistent | Success/info = dismissible. Error/warning = persistent until resolved. |
+| CTA priority | Max 2 CTAs. Primary (solid) on right, secondary (ghost) on left. |
+| Stacking | Max 3 alerts visible at once. Newest on top. Same-type alerts replace, not stack. |
+| Inline placement | Place directly above or below the content section the alert relates to. |
+| Full-width | Alerts span the full width of their container. Never float or overlap. |
+| Dismiss behavior | Trailing ✕ icon removes alert. Escape key dismisses focused alert. |
+| Focus management | On dynamic insertion, move focus to error alerts. Info/success don't steal focus. |
 
 ---
 
@@ -156,6 +228,7 @@ Complete reference: every Type × Style × Size combination.
 | 6 | Trailing Icon | No | Dismiss/close action icon |
 | 7 | CTA Button (primary) | No | Primary action to resolve the alert |
 | 8 | CTA Button (secondary) | No | Secondary/alternative action |
+
 
 ---
 
@@ -225,6 +298,7 @@ Complete reference: every Type × Style × Size combination.
     - Keep primary text concise and actionable
     - Provide CTAs when users can resolve the issue
     - Use dismissible alerts for non-critical information
+    - Use Dual Text style when explanation is needed
   </Card>
   <Card title="✗ Don't" icon="xmark" color="#DC2626">
     - Don't use alerts for temporary notifications (use Toast)
@@ -232,6 +306,7 @@ Complete reference: every Type × Style × Size combination.
     - Don't stack multiple alerts of the same type
     - Don't use long paragraphs in alert messages
     - Don't rely solely on color — include icon + text
+    - Don't auto-dismiss error or warning alerts
   </Card>
 </CardGroup>
 
