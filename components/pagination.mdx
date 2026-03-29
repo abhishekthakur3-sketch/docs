@@ -1,0 +1,405 @@
+---
+title: Pagination
+description: Pagination splits large datasets across multiple pages, providing navigation controls for page numbers, Previous/Next actions, and contextual dataset information.
+icon: "ellipsis"
+---
+
+## Overview
+
+Pagination is a navigation pattern for browsing large datasets across multiple pages. It combines page number cells, navigation controls (Previous/Next), and contextual text (e.g., "Showing 200 results") into a structured bar. The system is built from four foundational elements that assemble into a complete pagination experience.
+
+<CardGroup cols={3}>
+  <Card title="4 Sub-Components" icon="puzzle-piece">
+    Number Cell, Text Cell, Text Group, Number Cell Group
+  </Card>
+  <Card title="3 Sizes" icon="expand">
+    Large, Medium, Small
+  </Card>
+  <Card title="3 Styles" icon="palette">
+    Black, Legacy Blue, DLV Red
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with pagination component preview from Figma (page: Pagination ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Pagination Component Preview — Replace with /assets/components/pagination/pagination-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Full Pagination">
+    <div style={{padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', background:'#FFF', borderRadius:'8px', padding:'12px 16px', width:'100%'}}>
+        <span style={{fontSize:'13px', opacity:0.6}}>Showing 200 results</span>
+        <div style={{display:'flex', alignItems:'center', gap:'4px'}}>
+          <div style={{padding:'6px 10px', fontSize:'13px', opacity:0.4, cursor:'pointer'}}>‹ Previous</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', background:'#000', color:'#FFF', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px', fontWeight:600}}>1</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px', cursor:'pointer'}}>2</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px', cursor:'pointer'}}>3</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px', opacity:0.4}}>...</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px', cursor:'pointer'}}>8</div>
+          <div style={{padding:'6px 10px', fontSize:'13px', cursor:'pointer'}}>Next ›</div>
+        </div>
+        <span style={{fontSize:'13px', opacity:0.6}}>Page 1 of 8</span>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Sizes">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Large</div>
+        <div style={{display:'flex', alignItems:'center', gap:'4px', background:'#FFF', borderRadius:'8px', padding:'12px 16px'}}>
+          <div style={{padding:'8px 12px', fontSize:'14px', opacity:0.4}}>‹</div>
+          <div style={{width:'40px', height:'40px', borderRadius:'8px', background:'#000', color:'#FFF', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px', fontWeight:600}}>1</div>
+          <div style={{width:'40px', height:'40px', borderRadius:'8px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px'}}>2</div>
+          <div style={{width:'40px', height:'40px', borderRadius:'8px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px'}}>3</div>
+          <div style={{padding:'8px 12px', fontSize:'14px'}}>›</div>
+        </div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Medium</div>
+        <div style={{display:'flex', alignItems:'center', gap:'4px', background:'#FFF', borderRadius:'8px', padding:'10px 14px'}}>
+          <div style={{padding:'6px 10px', fontSize:'13px', opacity:0.4}}>‹</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', background:'#000', color:'#FFF', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px', fontWeight:600}}>1</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px'}}>2</div>
+          <div style={{width:'34px', height:'34px', borderRadius:'6px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'13px'}}>3</div>
+          <div style={{padding:'6px 10px', fontSize:'13px'}}>›</div>
+        </div>
+      </div>
+      <div>
+        <div style={{fontSize:'11px', opacity:0.5, marginBottom:'8px'}}>Small</div>
+        <div style={{display:'flex', alignItems:'center', gap:'4px', background:'#FFF', borderRadius:'8px', padding:'8px 12px'}}>
+          <div style={{padding:'4px 8px', fontSize:'12px', opacity:0.4}}>‹</div>
+          <div style={{width:'28px', height:'28px', borderRadius:'4px', background:'#000', color:'#FFF', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', fontWeight:600}}>1</div>
+          <div style={{width:'28px', height:'28px', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px'}}>2</div>
+          <div style={{width:'28px', height:'28px', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px'}}>3</div>
+          <div style={{padding:'4px 8px', fontSize:'12px'}}>›</div>
+        </div>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Number Cell States">
+    <div style={{display:'flex', gap:'12px', flexWrap:'wrap', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}>
+        <div style={{width:'40px', height:'40px', borderRadius:'8px', background:'#000', color:'#FFF', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px', fontWeight:600}}>1</div>
+        <span style={{fontSize:'10px', opacity:0.5}}>Active</span>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}>
+        <div style={{width:'40px', height:'40px', borderRadius:'8px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px'}}>2</div>
+        <span style={{fontSize:'10px', opacity:0.5}}>Default</span>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}>
+        <div style={{width:'40px', height:'40px', borderRadius:'8px', background:'#F5F5F5', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px'}}>3</div>
+        <span style={{fontSize:'10px', opacity:0.5}}>Hover</span>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}>
+        <div style={{width:'40px', height:'40px', borderRadius:'8px', background:'#E5E5E5', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px', fontWeight:600}}>4</div>
+        <span style={{fontSize:'10px', opacity:0.5}}>Pressed</span>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}>
+        <div style={{width:'40px', height:'40px', borderRadius:'8px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'14px', opacity:0.3}}>5</div>
+        <span style={{fontSize:'10px', opacity:0.5}}>Disabled</span>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Pagination typically appears at the bottom of tables, search results, and listings. The active page is always visually highlighted.</Info>
+
+
+---
+
+## Component Structure
+
+Pagination is assembled from four foundational elements:
+
+| Component | Description |
+|-----------|-------------|
+| Pagination Number Cell | Individual page number button — shows page number, supports active/hover/pressed/disabled states |
+| Pagination Text Cell | Navigation control (Previous/Next) with optional leading/trailing icons |
+| Pagination Text Group | Contextual dataset info (e.g., "Showing 200 results", "Page 3 of 8") |
+| Pagination Number Cell Group | Assembled row of page numbers with prev/next arrows and ellipsis |
+
+These combine into the published Pagination component:
+
+| Section | Content |
+|---------|---------|
+| Left | Text Group — dataset context (e.g., "Showing 200 results") |
+| Center | Number Cell Group — page numbers + navigation arrows |
+| Right | Text Group — navigation controls (e.g., "Previous / Next") |
+
+---
+
+## Anatomy
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Pagination Anatomy — Replace with /assets/components/pagination/pagination-anatomy.png</div>
+</div>
+
+| # | Element | Description |
+|---|---------|-------------|
+| 1 | Container | Full-width bar housing all pagination elements |
+| 2 | Text Group (Left) | Dataset context — "Showing 200 results" |
+| 3 | Number Cell Group | Page numbers with prev/next arrows |
+| 4 | Text Group (Right) | Navigation controls — "Previous / Next" |
+
+---
+
+## Number Cell Styles
+
+| Style | Active Color | Hex | Use Case |
+|-------|-------------|-----|----------|
+| Black | Black fill | `#000000` | Default, neutral |
+| Legacy Blue | Blue fill | `#2396FB` | Interactive emphasis |
+| DLV Red | Red fill | `#ED1B36` | Brand emphasis |
+
+---
+
+## Sizes
+
+| Size | Cell Size | Font Size | Height | Use Case |
+|------|----------|-----------|--------|----------|
+| Large | 40×40px | 14px | 64px | Primary tables, spacious layouts |
+| Medium | 34×34px | 13px | 50px | Standard tables |
+| Small | 28×28px | 12px | 44px | Compact tables, mobile |
+
+---
+
+## Number Cell States
+
+| State | Visual Treatment | Interaction |
+|-------|-----------------|-------------|
+| Default | No background, normal text | Clickable |
+| Hover | Subtle background tint | Pointer cursor |
+| Pressed | Darker background | Active click |
+| Active | Solid fill (Black/Blue/Red), white text | Current page |
+| Disabled | 30% opacity | Not interactive |
+
+---
+
+## Text Group Variants
+
+| Variant | Example | Description |
+|---------|---------|-------------|
+| Single | Showing 200 | Item count only |
+| Dual | Showing 200 results | Item count + label |
+| Triple | Showing 200 \| Page 3 | Count + page info |
+| Quad | Showing 200 \| Page 3 of 8 | Full context |
+
+---
+
+## Behavior
+
+- Clicking a page number loads that page and highlights it as active
+- Previous/Next controls navigate sequentially
+- Previous is disabled on page 1; Next is disabled on the last page
+- Ellipsis (`...`) appears when there are too many pages to display
+- Pagination updates dynamically as users navigate
+- The component should always show the first page, last page, and pages around the current page
+
+---
+
+## Pagination vs Infinite Scroll vs Load More
+
+| Feature | Pagination | Infinite Scroll | Load More |
+|---------|-----------|----------------|-----------|
+| Navigation | Jump to any page | Continuous scroll | Append on click |
+| URL support | Yes (page param) | Difficult | Difficult |
+| Performance | Predictable | Can degrade | Moderate |
+| Best for | Tables, search results | Social feeds, galleries | Content listings |
+| SEO | Good | Poor | Moderate |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Place pagination at the bottom of the data container
+    - Always highlight the active page clearly
+    - Show contextual info (total results, current page)
+    - Disable Previous on first page, Next on last page
+    - Use ellipsis for large page counts
+    - Use consistent size within a single table
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use pagination for small datasets (<1 page)
+    - Don't use pagination with infinite scroll simultaneously
+    - Don't hide the current page indicator
+    - Don't show all page numbers for very large datasets
+    - Don't use pagination for continuous content streams
+    - Don't place pagination above the data
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Implementation |
+|-------------|---------------|
+| Landmark | Wrap in `<nav aria-label="Pagination">` |
+| Current page | `aria-current="page"` on the active page button |
+| Labels | Each page button: `aria-label="Page 3"` or `aria-label="Go to page 3"` |
+| Disabled | `aria-disabled="true"` on Previous (page 1) and Next (last page) |
+| Keyboard | `Tab` to navigate between controls, `Enter` to activate |
+| Announcement | Screen readers should announce "Page 3 of 8" on navigation |
+| List structure | Use `<ol>` for page numbers to convey sequence |
+
+<Info>Always use `aria-current="page"` on the active page number so screen readers announce which page the user is currently viewing.</Info>
+
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Colors">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--pagination-active-black` | `#000000` | Active page, Black style |
+    | `--pagination-active-blue` | `#2396FB` | Active page, Blue style |
+    | `--pagination-active-red` | `#ED1B36` | Active page, DLV Red style |
+    | `--pagination-active-text` | `#FFFFFF` | Active page text |
+    | `--pagination-hover-bg` | `#F5F5F5` | Hover background |
+    | `--pagination-pressed-bg` | `#E5E5E5` | Pressed background |
+    | `--pagination-text` | `inherit` | Default text color |
+    | `--pagination-disabled` | `rgba(0,0,0,0.3)` | Disabled opacity |
+    | `--pagination-context-text` | `rgba(0,0,0,0.6)` | Context text (Showing X) |
+  </Tab>
+  <Tab title="Dimensions">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--pagination-cell-lg` | `40px` | Cell size, large |
+    | `--pagination-cell-md` | `34px` | Cell size, medium |
+    | `--pagination-cell-sm` | `28px` | Cell size, small |
+    | `--pagination-cell-xs` | `24px` | Cell size, xsmall |
+    | `--pagination-height-lg` | `64px` | Bar height, large |
+    | `--pagination-height-md` | `50px` | Bar height, medium |
+    | `--pagination-height-sm` | `44px` | Bar height, small |
+    | `--pagination-radius-lg` | `8px` | Cell radius, large |
+    | `--pagination-radius-sm` | `4px` | Cell radius, small |
+  </Tab>
+  <Tab title="Typography">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--pagination-font-lg` | `14px` | Font size, large |
+    | `--pagination-font-md` | `13px` | Font size, medium |
+    | `--pagination-font-sm` | `12px` | Font size, small |
+    | `--pagination-font-weight` | `400` | Default weight |
+    | `--pagination-font-weight-active` | `600` | Active page weight |
+    | `--pagination-font-family` | `Noto Sans` | Typeface |
+  </Tab>
+  <Tab title="Spacing">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--pagination-cell-gap` | `0px` | Gap between number cells |
+    | `--pagination-section-gap` | `auto` | Gap between left/center/right (space-between) |
+    | `--pagination-padding-x` | `16px` | Horizontal padding |
+    | `--pagination-padding-y-lg` | `12px` | Vertical padding, large |
+    | `--pagination-padding-y-sm` | `8px` | Vertical padding, small |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+import { Pagination } from '@tarmac/design-system';
+
+interface PaginationProps {
+  currentPage: number;                      // Current active page (1-indexed)
+  totalPages: number;                       // Total number of pages
+  totalItems?: number;                      // Total items (for context text)
+  size?: 'large' | 'medium' | 'small';     // Default: 'medium'
+  style?: 'black' | 'blue' | 'red';        // Default: 'black'
+  showContext?: boolean;                    // Show "Showing X results"
+  showPageInfo?: boolean;                   // Show "Page X of Y"
+  onPageChange: (page: number) => void;    // Page change callback
+}
+```
+
+```tsx Usage
+// Basic pagination
+<Pagination
+  currentPage={3}
+  totalPages={8}
+  onPageChange={(page) => setCurrentPage(page)}
+/>
+
+// With context text
+<Pagination
+  currentPage={1}
+  totalPages={20}
+  totalItems={200}
+  showContext
+  showPageInfo
+  onPageChange={handlePageChange}
+/>
+
+// Small, blue style
+<Pagination
+  currentPage={5}
+  totalPages={12}
+  size="small"
+  style="blue"
+  onPageChange={handlePageChange}
+/>
+
+// In a table footer
+<Table data={data}>
+  {/* table rows */}
+  <TableFooter>
+    <Pagination
+      currentPage={page}
+      totalPages={Math.ceil(total / perPage)}
+      totalItems={total}
+      showContext
+      onPageChange={setPage}
+    />
+  </TableFooter>
+</Table>
+```
+
+```tsx ARIA
+// Rendered HTML structure
+<nav aria-label="Pagination">
+  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+    <span>Showing 200 results</span>
+    <ol style={{ display: 'flex', alignItems: 'center', gap: '0', listStyle: 'none' }}>
+      <li>
+        <button aria-label="Previous page" disabled>
+          ‹ Previous
+        </button>
+      </li>
+      <li>
+        <button aria-current="page" aria-label="Page 1">1</button>
+      </li>
+      <li>
+        <button aria-label="Go to page 2">2</button>
+      </li>
+      <li>
+        <button aria-label="Go to page 3">3</button>
+      </li>
+      <li>
+        <span aria-hidden="true">...</span>
+      </li>
+      <li>
+        <button aria-label="Go to page 8">8</button>
+      </li>
+      <li>
+        <button aria-label="Next page">Next ›</button>
+      </li>
+    </ol>
+    <span>Page 1 of 8</span>
+  </div>
+</nav>
+```
+</CodeGroup>
