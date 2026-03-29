@@ -73,6 +73,7 @@
                   "components/date-time-picker",
                   "components/filter",
                   "components/dialog-box",
+                  "components/list",
                   "components/badge",
                   "components/tags",
                   "components/pills",

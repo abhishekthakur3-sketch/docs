@@ -1,0 +1,227 @@
+---
+title: List & List Set
+description: Lists display structured content in rows with optional interactive elements, while List Sets group multiple lists into organized sections.
+icon: "list"
+---
+
+## Overview
+
+The List system provides structured content display in rows. It consists of List Cells (individual row items) and List Sets (grouped collections). List Cells support rich content including avatars, icons, text, subtexts, badges, and action elements. List Sets organize cells into single or dual section layouts with configurable list counts.
+
+<CardGroup cols={3}>
+  <Card title="4 Cell States" icon="circle-dot">
+    Default, Hover, Pressed, Disabled
+  </Card>
+  <Card title="3 Sizes" icon="expand">
+    Large (68px), Default (60px), Small (52px)
+  </Card>
+  <Card title="2 Set Variants" icon="layer-group">
+    Single Set, Dual Set
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with list component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ List Component Preview — Replace with /assets/components/list/list-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="List Cells">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ List Cells — Default, Hover, Pressed, Disabled states in Large, Default, Small sizes<br/>Replace with /assets/components/list/list-cells.png</div>
+    </div>
+  </Tab>
+  <Tab title="Single Set">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'300px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Single Set — 1, 2, 3 list items in Large, Default, Small sizes<br/>Replace with /assets/components/list/list-single-set.png</div>
+    </div>
+  </Tab>
+  <Tab title="Dual Set">
+    <div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', textAlign:'center', minHeight:'400px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+      <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Dual Set — 1, 2, 3 list items in Large, Default, Small sizes<br/>Replace with /assets/components/list/list-dual-set.png</div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## List Cell States
+
+| State | Description |
+|-------|-------------|
+| Default | Neutral, ready for interaction |
+| Hover | Pointer over the cell |
+| Pressed | Click/tap in progress |
+| Disabled | Non-interactive, reduced opacity |
+
+---
+
+## Sizes
+
+| Size | Cell Height | Cell Width | Usage |
+|------|-----------|-----------|-------|
+| Large | 68px | 396px | Prominent lists, detail-rich items |
+| Default | 60px | 396px | Standard list items |
+| Small | 52px | 348px | Compact layouts, dense lists |
+
+---
+
+## List Set Variants
+
+| Variant | Description | Use When |
+|---------|-------------|----------|
+| Single Set | One section of list items with a section header | Simple grouped content |
+| Dual Set | Two sections of list items, each with headers | Categorized or comparative content |
+
+---
+
+## List Counts
+
+| Count | Items | Description |
+|-------|-------|-------------|
+| 1 List | 1 item | Minimal list |
+| 2 List | 2 items | Short list |
+| 3 List | 3 items | Standard list |
+
+---
+
+## Behavior
+
+| Interaction | Result |
+|-------------|--------|
+| Tap/click cell | Triggers cell action or navigation |
+| Hover cell | Visual hover feedback |
+| Press cell | Pressed state feedback |
+| Disabled cell | No interaction, visual indication |
+| Scroll | List scrolls vertically if content overflows |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use lists for structured, repeating content
+    - Keep list items consistent in structure
+    - Use dividers between items for visual separation
+    - Use appropriate size for the content density
+    - Group related items using List Sets
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't mix different cell structures in the same list
+    - Don't overload cells with too many elements
+    - Don't use lists for non-repeating content
+    - Don't nest lists deeply
+    - Don't use lists when a table is more appropriate
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="list"` on container, `role="listitem"` on cells |
+| Keyboard | Arrow keys navigate between items, Enter activates |
+| Focus | Visible focus ring on active list item |
+| Screen reader | Announce item content and position (e.g., "item 2 of 5") |
+| Interactive | If clickable, use `role="button"` or anchor elements |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Cell">
+    | Token | Value |
+    |-------|-------|
+    | `list-cell-height-lg` | 68px |
+    | `list-cell-height-md` | 60px |
+    | `list-cell-height-sm` | 52px |
+    | `list-cell-width-lg` | 396px |
+    | `list-cell-width-sm` | 348px |
+    | `list-cell-padding` | 12px |
+    | `list-cell-hover-bg` | #F5F5F5 |
+    | `list-cell-pressed-bg` | #EBEBEB |
+    | `list-cell-disabled-opacity` | 0.4 |
+  </Tab>
+  <Tab title="Set">
+    | Token | Value |
+    |-------|-------|
+    | `list-set-width` | 324px |
+    | `list-set-border-radius` | 12px |
+    | `list-set-padding` | 12px |
+    | `list-divider-color` | #E5E7EB |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+interface ListCellProps {
+  state?: 'default' | 'hover' | 'pressed' | 'disabled';
+  size?: 'lg' | 'md' | 'sm';
+  title: string;
+  subtitle?: string;
+  leadingElement?: ReactNode;
+  trailingElement?: ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+}
+
+interface ListSetProps {
+  variant?: 'single' | 'dual';
+  size?: 'lg' | 'md' | 'sm';
+  sections: ListSection[];
+}
+
+interface ListSection {
+  title?: string;
+  items: ListCellProps[];
+}
+```
+
+```tsx Usage
+// Basic list
+<ListCell
+  size="md"
+  title="Order #12345"
+  subtitle="Delhi to Mumbai"
+  leadingElement={<Avatar size="sm" />}
+  trailingElement={<ChevronRight />}
+  onClick={handleClick}
+/>
+
+// Single set
+<ListSet
+  variant="single"
+  size="lg"
+  sections={[{
+    title: "Recent Orders",
+    items: [
+      { title: 'Order #001', subtitle: 'Delivered' },
+      { title: 'Order #002', subtitle: 'In Transit' },
+    ]
+  }]}
+/>
+
+// Dual set
+<ListSet
+  variant="dual"
+  sections={[
+    { title: "Active", items: activeItems },
+    { title: "Completed", items: completedItems },
+  ]}
+/>
+```
+</CodeGroup>
