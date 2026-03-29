@@ -61,6 +61,7 @@
                   "components/checkbox",
                   "components/radio",
                   "components/input",
+                  "components/input-area",
                   "components/badge",
                   "components/tags",
                   "components/pills",
