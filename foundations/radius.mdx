@@ -4,6 +4,8 @@ description: "Corner rounding system for the TARMAC Design System — defining s
 icon: "circle"
 ---
 
+## Overview
+
 Radius defines the corner rounding system across the TARMAC Design System. It establishes how shape, geometry, and softness are applied to components, creating a consistent visual character that feels functional, human, and approachable.
 
 Rounded corners help differentiate interaction layers, signal affordance, and improve scalability, while maintaining structural clarity across tools and workflows.
@@ -80,15 +82,6 @@ Rounded corners help differentiate interaction layers, signal affordance, and im
 
 ---
 
-## Token Representation
-
-{/* 🎨 DESIGNER: Replace with radius token visual from Figma (node: 111:23121) showing token → value → shape */}
-<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'160px', display:'flex', alignItems:'center', justifyContent:'center'}}>
-  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Radius Token Visual — Replace with exported image from Figma showing token names, values, and shape representations</div>
-</div>
-
----
-
 ## Component Mapping
 
 | Component | Token | Value | Notes |
@@ -100,6 +93,15 @@ Rounded corners help differentiate interaction layers, signal affordance, and im
 | Modal, Table, Dashboard | `radius.large` | 12px | Large structural containers |
 | Media container | `radius.xlarge` | 16px | Immersive content areas |
 | Avatar, Pill, Reaction | `radius.max` | 999px | Fully circular |
+
+---
+
+## Usage by Context
+
+- Small detail elements (badges, checkboxes, status dots) → `radius.small` (2px) — tight, precise
+- Interactive components (buttons, inputs, selects, dropdowns) → `radius.medium` (8px) — approachable, tappable
+- Layout containers (cards, panels, modals, dashboards) → `radius.large` (12px) — structural, grouped
+- Circular elements (avatars, pills, reaction icons) → `radius.max` (999px) — fully round
 
 ---
 
@@ -125,16 +127,14 @@ Rounded corners help differentiate interaction layers, signal affordance, and im
 
 ---
 
-## Accessibility and Readability
+## Accessibility
 
-Corner radius contributes to accessibility by:
+Consistent corner rounding supports accessibility by:
 
-- Improving perceptual grouping
-- Making interactive elements easier to identify
-- Reducing visual harshness in dense UI
-- Supporting familiarity across repeated patterns
-
-Consistent geometry helps users quickly understand what is clickable, what is content, and what is structural.
+- Helping users distinguish interactive elements from static content through shape
+- Improving perceptual grouping — rounded containers feel cohesive
+- Reducing visual harshness in dense, data-heavy interfaces
+- Reinforcing recognition patterns — repeated shapes build familiarity faster
 
 ---
 
@@ -157,7 +157,7 @@ Consistent geometry helps users quickly understand what is clickable, what is co
 
 ---
 
-## Implementation
+## Developer Handoff
 
 <CodeGroup>
 ```css CSS Variables
