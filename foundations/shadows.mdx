@@ -1,0 +1,187 @@
+---
+title: "Shadows"
+description: "Shadow and elevation system for the TARMAC Design System — establishing depth, hierarchy, and focus"
+icon: "clone"
+---
+
+## Overview
+
+Shadows in the TARMAC Design System establish depth, hierarchy, and focus — helping users understand which elements sit above others in the interface. Rather than being decorative, shadows communicate interaction, elevation, and layering across components, surfaces, and overlays.
+
+Shadows are designed to be soft, minimal, and unobtrusive, supporting readability without visual noise. They adapt across light and dark modes to preserve clarity and accessibility in all environments.
+
+<CardGroup cols={3}>
+  <Card title="3 Elevation Levels" icon="layer-group">
+    Default, Raised, and Inner — each with Primary and Secondary layers
+  </Card>
+  <Card title="Mode-Aware" icon="circle-half-stroke">
+    Light mode uses alpha.black, dark mode uses alpha.white
+  </Card>
+  <Card title="Dual Layer" icon="clone">
+    Each elevation has Primary + Secondary shadows for realistic depth
+  </Card>
+</CardGroup>
+
+---
+
+## Shadow Scale
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'32px', marginBottom:'24px'}}>
+  <div style={{display:'flex', justifyContent:'center', gap:'32px', flexWrap:'wrap'}}>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'120px', height:'80px', background:'#FFFFFF', borderRadius:'8px', boxShadow:'0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.15)', margin:'0 auto 12px'}}></div>
+      <div style={{fontSize:'12px', fontWeight:'600'}}>Default</div>
+      <div style={{fontSize:'10px', opacity:0.6}}>Resting surfaces</div>
+    </div>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'120px', height:'80px', background:'#FFFFFF', borderRadius:'8px', boxShadow:'0 4px 12px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.15)', margin:'0 auto 12px'}}></div>
+      <div style={{fontSize:'12px', fontWeight:'600'}}>Raised</div>
+      <div style={{fontSize:'10px', opacity:0.6}}>Floating elements</div>
+    </div>
+    <div style={{textAlign:'center'}}>
+      <div style={{width:'120px', height:'80px', background:'#FFFFFF', borderRadius:'8px', boxShadow:'inset 0 2px 4px rgba(0,0,0,0.10), inset 0 1px 2px rgba(0,0,0,0.15)', margin:'0 auto 12px'}}></div>
+      <div style={{fontSize:'12px', fontWeight:'600'}}>Inner</div>
+      <div style={{fontSize:'10px', opacity:0.6}}>Inset depth</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Shadow Tokens — Light Mode
+
+| Elevation | Layer | Token | Color |
+|-----------|-------|-------|-------|
+| Default | Primary | `shadow.light.default.primary` | `alpha.black.10` |
+| Default | Secondary | `shadow.light.default.secondary` | `alpha.black.15` |
+| Raised | Primary | `shadow.light.raised.primary` | `alpha.black.10` |
+| Raised | Secondary | `shadow.light.raised.secondary` | `alpha.black.15` |
+| Inner | Primary | `shadow.light.inner.primary` | `alpha.black.10` |
+| Inner | Secondary | `shadow.light.inner.secondary` | `alpha.black.15` |
+
+## Shadow Tokens — Dark Mode
+
+| Elevation | Layer | Token | Color |
+|-----------|-------|-------|-------|
+| Default | Primary | `shadow.dark.default.primary` | `alpha.white.10` |
+| Default | Secondary | `shadow.dark.default.secondary` | `alpha.white.15` |
+| Raised | Primary | `shadow.dark.raised.primary` | `alpha.white.10` |
+| Raised | Secondary | `shadow.dark.raised.secondary` | `alpha.white.15` |
+| Inner | Primary | `shadow.dark.inner.primary` | `alpha.white.10` |
+| Inner | Secondary | `shadow.dark.inner.secondary` | `alpha.white.15` |
+
+---
+
+## Usage by Context
+
+| Context | Examples | Elevation | Notes |
+|---------|----------|-----------|-------|
+| Resting surfaces | Cards, panels, containers | Default | Subtle depth, always-on |
+| Floating elements | Dropdowns, tooltips, popovers, FABs | Raised | Clearly above the surface |
+| Inset elements | Pressed buttons, input wells, recessed areas | Inner | Depth goes inward |
+| Modals and dialogs | Modal overlays, bottom sheets | Raised | Combined with scrim overlay |
+| Navigation | Sticky headers, floating nav bars | Raised | Separation from scrolling content |
+
+---
+
+## Component Mapping
+
+| Component | Elevation | Token Pattern |
+|-----------|-----------|---------------|
+| Card | Default | `shadow.*.default.*` |
+| Dropdown menu | Raised | `shadow.*.raised.*` |
+| Tooltip | Raised | `shadow.*.raised.*` |
+| Modal / Dialog | Raised | `shadow.*.raised.*` |
+| Popover | Raised | `shadow.*.raised.*` |
+| Pressed button | Inner | `shadow.*.inner.*` |
+| Input well | Inner | `shadow.*.inner.*` |
+| Sticky header | Raised | `shadow.*.raised.*` |
+| FAB | Raised | `shadow.*.raised.*` |
+
+---
+
+## Principles
+
+<AccordionGroup>
+  <Accordion title="Depth Communicates Hierarchy">
+    Higher elevation = stronger shadow. This helps users quickly understand interaction priority and layering.
+  </Accordion>
+  <Accordion title="Functional, Not Decorative">
+    Shadows always serve a purpose: bring interactive elements forward, separate floating layers, signal overlays and modal presence, indicate system focus.
+  </Accordion>
+  <Accordion title="Subtle and Consistent">
+    Shadows remain soft to maintain visual calm, especially at scale.
+  </Accordion>
+  <Accordion title="Mode-Aware">
+    Shadow color and opacity adjust for light and dark UI backgrounds, avoiding harsh edges or halos.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Accessibility
+
+Shadows support usability by reinforcing focus states, improving depth perception, and supporting pointer and keyboard interactions. However, shadows must not be the only indicator of state.
+
+Always pair shadows with:
+- Borders or focus rings
+- Color contrast changes
+- Motion or animation cues
+
+This ensures accessibility for low-vision users, high-contrast mode, and glare environments.
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use shadow tokens instead of hardcoded box-shadow values
+    - Apply both Primary and Secondary layers for realistic depth
+    - Use Raised for floating elements, Default for resting surfaces
+    - Ensure shadows adapt between light and dark modes
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use shadows as the only state indicator
+    - Don't apply Raised shadows to inline/resting elements
+    - Don't use harsh or high-opacity shadows
+    - Don't mix light-mode shadow tokens in dark mode
+  </Card>
+</CardGroup>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```css CSS Variables
+/* Light mode shadows */
+--shadow-default: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.15);
+--shadow-raised: 0 4px 12px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.15);
+--shadow-inner: inset 0 2px 4px rgba(0,0,0,0.10), inset 0 1px 2px rgba(0,0,0,0.15);
+
+/* Dark mode shadows */
+--shadow-default-dark: 0 1px 3px rgba(255,255,255,0.10), 0 1px 2px rgba(255,255,255,0.15);
+--shadow-raised-dark: 0 4px 12px rgba(255,255,255,0.10), 0 2px 6px rgba(255,255,255,0.15);
+--shadow-inner-dark: inset 0 2px 4px rgba(255,255,255,0.10), inset 0 1px 2px rgba(255,255,255,0.15);
+```
+
+```tsx TypeScript
+export const shadow = {
+  light: {
+    default: '0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.15)',
+    raised: '0 4px 12px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.15)',
+    inner: 'inset 0 2px 4px rgba(0,0,0,0.10), inset 0 1px 2px rgba(0,0,0,0.15)',
+  },
+  dark: {
+    default: '0 1px 3px rgba(255,255,255,0.10), 0 1px 2px rgba(255,255,255,0.15)',
+    raised: '0 4px 12px rgba(255,255,255,0.10), 0 2px 6px rgba(255,255,255,0.15)',
+    inner: 'inset 0 2px 4px rgba(255,255,255,0.10), inset 0 1px 2px rgba(255,255,255,0.15)',
+  },
+} as const;
+```
+</CodeGroup>
+
+<Card title="Next: Borders" icon="arrow-right" href="/foundations/borders">
+  Learn how border stroke tokens work in TARMAC
+</Card>
