@@ -4,580 +4,314 @@ description: Checkboxes are interactive selection controls that enable users to 
 icon: "square-check"
 ---
 
-# Checkbox
-
 ## Overview
 
-Checkboxes are interactive selection controls that enable users to choose one or more items independently from a group of options. Unlike radio buttons, checkboxes allow multiple selections simultaneously. They are commonly used in forms, filters, preference settings, and bulk-selection interfaces. Checkboxes provide clear visual feedback when options are selected, unselected, or partially selected.
+Checkboxes are interactive selection controls that enable users to choose one or more items independently from a group of options. Unlike radio buttons, checkboxes allow multiple selections simultaneously. They support checked, unchecked, and indeterminate (partial) states for hierarchical selection patterns.
 
-<CardGroup cols={2}>
-  <Card title="Multi-Select" icon="list-check">
-    Select multiple options independently from a group
+<CardGroup cols={3}>
+  <Card title="4 Variants" icon="palette">
+    Standard (Black), Blue, Green, DLV Red
   </Card>
-  <Card title="Accessible" icon="universal-access">
-    Built with WCAG 2.1 AA compliance
+  <Card title="2 Styles" icon="layer-group">
+    Box (square) and Rounded
   </Card>
-  <Card title="Flexible" icon="sliders">
-    Multiple variants, sizes, styles, and states
-  </Card>
-  <Card title="Indeterminate" icon="minus">
-    Supports partial selection for hierarchical groups
+  <Card title="3 Sizes" icon="expand">
+    Large (24px), Medium (20px), Small (16px)
   </Card>
 </CardGroup>
 
-## When to Use
+---
 
-<AccordionGroup>
-  <Accordion title="When to Use" icon="check">
-    - Selecting multiple filters or categories
-    - Managing feature preferences
-    - Bulk selecting items in tables
-    - Allowing users to toggle optional settings
-    - Accepting terms or conditions
-    - Enabling or disabling specific features
-  </Accordion>
+{/* 🎨 DESIGNER: Replace with checkbox component preview from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Checkbox Component Preview — Replace with /assets/components/checkbox/checkbox-preview.png</div>
+</div>
 
-  <Accordion title="When Not to Use" icon="xmark">
-    - When only one option can be selected (use radio buttons)
-    - For triggering immediate actions (use buttons or toggles)
-    - When the option requires immediate confirmation
-    - For binary on/off states where a toggle switch is more appropriate
-  </Accordion>
-</AccordionGroup>
+---
 
-### Checkbox vs Radio Button vs Toggle
-
-| Control | Selection | Behavior | Use Case |
-|---------|-----------|----------|----------|
-| **Checkbox** | Multiple | Independent toggle per item | Multi-select filters, preferences |
-| **Radio Button** | Single | Mutually exclusive within group | Single choice from options |
-| **Toggle** | Binary | Immediate on/off action | Feature switches, settings |
-
-## Anatomy
-
-The Checkbox component consists of the following elements:
-
-- **Checkbox Control**: The square or rounded interactive element that indicates the selection state
-- **Indicator**: Appears inside the checkbox when selected — displays a checkmark (checked) or a horizontal line (partial/indeterminate)
-- **Label**: The text describing the option associated with the checkbox
-- **Supporting Text** (optional): Additional information explaining the option when needed
-
-<Info>Checkboxes should maintain consistent spacing between the control and label to ensure readability and usability.</Info>
-
-## Styles
-
-Styles determine the shape of the checkbox control.
-
-### Box (Square)
-Uses a square container with slightly rounded corners. Suitable for most interfaces and form elements.
-
-```jsx
-<Checkbox style="box" label="Accept terms" />
-```
-
-### Rounded
-Uses a fully rounded container. Often used when the interface adopts a softer or more modern visual style.
-
-```jsx
-<Checkbox style="rounded" label="Accept terms" />
-```
-
-<Tip>Both styles communicate the same interaction behavior and are primarily a visual preference. Choose one and use it consistently across your product.</Tip>
-
-## Variants
-
-Variants define the color scheme used when the checkbox is selected.
+## Playground
 
 <Tabs>
-  <Tab title="Standard (Black)">
-    Default checkbox style used in most interfaces. Uses black fill when checked.
-
-    ```jsx
-    <Checkbox variant="standard" label="Option A" />
-    ```
+  <Tab title="States">
+    <div style={{display:'flex', gap:'32px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap', alignItems:'center'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'4px'}}></div><span style={{fontSize:'13px'}}>Unchecked</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'13px'}}>Checked</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px', lineHeight:1}}>—</span></div><span style={{fontSize:'13px'}}>Indeterminate</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #A3A3A3', borderRadius:'4px', background:'rgba(0,0,0,0.02)'}}></div><span style={{fontSize:'13px'}}>Hover</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #000', borderRadius:'4px', outline:'2px solid #000', outlineOffset:'2px'}}></div><span style={{fontSize:'13px'}}>Focused</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #E5E5E5', borderRadius:'4px', opacity:0.4}}></div><span style={{fontSize:'13px', opacity:0.4}}>Disabled</span></div>
+    </div>
   </Tab>
-
-  <Tab title="Blue">
-    Used when the interface follows a blue primary action theme.
-
-    ```jsx
-    <Checkbox variant="blue" label="Option A" />
-    ```
+  <Tab title="Variants">
+    <div style={{display:'flex', gap:'32px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap', alignItems:'center'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'13px'}}>Standard</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#2563EB', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'13px'}}>Blue</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#16A34A', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'13px'}}>Green</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#DC2626', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'13px'}}>DLV Red</span></div>
+    </div>
   </Tab>
-
-  <Tab title="Green">
-    Used to indicate positive selections or confirmations.
-
-    ```jsx
-    <Checkbox variant="green" label="Option A" />
-    ```
+  <Tab title="Styles">
+    <div style={{display:'flex', gap:'32px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap', alignItems:'center'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'13px'}}>Box (4px radius)</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'13px'}}>Rounded (50% radius)</span></div>
+    </div>
   </Tab>
-
-  <Tab title="DLV Red">
-    Used in brand-related interfaces or contexts requiring stronger visual emphasis.
-
-    ```jsx
-    <Checkbox variant="dlv-red" label="Option A" />
-    ```
+  <Tab title="Sizes">
+    <div style={{display:'flex', gap:'32px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%', flexWrap:'wrap', alignItems:'flex-end'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}><div style={{width:'24px', height:'24px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><span style={{fontSize:'10px', opacity:0.4}}>Large 24px</span></div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'10px', opacity:0.4}}>Medium 20px</span></div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}><div style={{width:'16px', height:'16px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div><span style={{fontSize:'10px', opacity:0.4}}>Small 16px</span></div>
+    </div>
+  </Tab>
+  <Tab title="With Labels">
+    <div style={{display:'flex', flexDirection:'column', gap:'12px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><span style={{fontSize:'14px'}}>Email notifications</span></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #D4D4D4', borderRadius:'4px'}}></div><span style={{fontSize:'14px'}}>SMS notifications</span></div>
+      <div style={{display:'flex', alignItems:'flex-start', gap:'8px'}}><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, marginTop:'2px'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div><span style={{fontSize:'14px'}}>Push notifications</span><div style={{fontSize:'12px', opacity:0.5, marginTop:'2px'}}>Receive alerts on your mobile device</div></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'8px'}}><div style={{width:'20px', height:'20px', border:'2px solid #E5E5E5', borderRadius:'4px', opacity:0.4}}></div><span style={{fontSize:'14px', opacity:0.4}}>Security alerts (required)</span></div>
+    </div>
   </Tab>
 </Tabs>
 
-<Warning>Variants should be used consistently across the product to maintain visual clarity. Avoid mixing variants within the same form or group.</Warning>
+<Info>Use Medium (20px) as the default size. Minimum touch target is 44×44px regardless of visual size.</Info>
+
+
+---
+
+## Checkbox Matrix
+
+<Tabs>
+  <Tab title="Box Style">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Standard</div><div style={{width:'24px', height:'24px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Blue</div><div style={{width:'24px', height:'24px', background:'#2563EB', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#2563EB', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#2563EB', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Green</div><div style={{width:'24px', height:'24px', background:'#16A34A', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#16A34A', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#16A34A', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>DLV Red</div><div style={{width:'24px', height:'24px', background:'#DC2626', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#DC2626', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#DC2626', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Disabled</div><div style={{width:'24px', height:'24px', background:'#000', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center', opacity:0.4}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', border:'2px solid #E5E5E5', borderRadius:'4px', opacity:0.4}}></div><div style={{width:'16px', height:'16px', border:'2px solid #E5E5E5', borderRadius:'4px', opacity:0.4}}></div></div>
+    </div>
+  </Tab>
+  <Tab title="Rounded Style">
+    <div style={{display:'flex', flexDirection:'column', gap:'16px', padding:'24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Standard</div><div style={{width:'24px', height:'24px', background:'#000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#000', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Blue</div><div style={{width:'24px', height:'24px', background:'#2563EB', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#2563EB', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#2563EB', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>Green</div><div style={{width:'24px', height:'24px', background:'#16A34A', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#16A34A', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#16A34A', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+      <div style={{display:'flex', alignItems:'center', gap:'16px'}}><div style={{width:'70px', fontSize:'11px', opacity:0.5}}>DLV Red</div><div style={{width:'24px', height:'24px', background:'#DC2626', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'14px'}}>✓</span></div><div style={{width:'20px', height:'20px', background:'#DC2626', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'12px'}}>✓</span></div><div style={{width:'16px', height:'16px', background:'#DC2626', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center'}}><span style={{color:'#FFF', fontSize:'10px'}}>✓</span></div></div>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Anatomy
+
+{/* 🎨 DESIGNER: Replace with checkbox anatomy diagram from Figma */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'16px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Checkbox Anatomy Diagram — Replace with /assets/components/checkbox/checkbox-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Checkbox Control | Yes | Square or rounded interactive element (16–24px) |
+| 2 | Indicator | Checked only | Checkmark (✓) or dash (—) for indeterminate |
+| 3 | Label | Yes | Text describing the option (right of control) |
+| 4 | Supporting Text | No | Additional context below the label |
+| 5 | Error Message | No | Validation feedback in error state |
+
+---
+
+## Variants
+
+| Variant | Checked Color | Usage |
+|---------|--------------|-------|
+| Standard (Black) | `#000000` | Default for most interfaces |
+| Blue | `#2563EB` | Interfaces with blue primary action theme |
+| Green | `#16A34A` | Positive selections, confirmations |
+| DLV Red | `#DC2626` | Brand-related interfaces, strong emphasis |
+
+---
+
+## Styles
+
+| Style | Shape | Border Radius | Use When |
+|-------|-------|--------------|----------|
+| Box | Square | 4px | Default — most interfaces and forms |
+| Rounded | Circle | 50% | Softer, modern visual style |
+
+---
 
 ## Sizes
 
-Checkbox sizes adapt the component to different interface densities.
+| Size | Dimension | Icon Size | Label Font | Touch Target | Usage |
+|------|-----------|-----------|-----------|-------------|-------|
+| Large | 24×24px | 14px | 18px | 44×44px | Spacious layouts, onboarding |
+| Medium | 20×20px | 12px | 16px | 44×44px | Default — forms, settings |
+| Small | 16×16px | 10px | 14px | 44×44px | Dense tables, compact lists |
 
-| Size | Dimension | Usage |
-|------|-----------|-------|
-| **Large** | 24 × 24px | Spacious layouts or forms where readability is important |
-| **Medium** | 20 × 20px | Default size used in most interfaces |
-| **Small** | 16 × 16px | Dense environments such as tables or compact lists |
-
-<Tip>Use Medium (20px) as the default size for most interfaces. Even when smaller checkboxes are used, the clickable area should remain large enough (minimum 44×44px) for comfortable interaction.</Tip>
+---
 
 ## States
 
-Checkboxes visually respond to interaction states to communicate selection feedback.
+| State | Visual | Behavior |
+|-------|--------|----------|
+| Default (Unchecked) | Empty container, `#D4D4D4` border | Ready for input |
+| Hover | Darker border `#A3A3A3` | Cursor pointer, 150ms transition |
+| Checked | Filled with variant color, white ✓ | Selected |
+| Indeterminate | Filled with variant color, white — | Some children selected |
+| Focused | 2px focus ring, 2px offset | Keyboard navigation (`:focus-visible`) |
+| Disabled | 40% opacity, `#E5E5E5` border | Non-interactive, removed from tab order |
+| Error | `#DC2626` border, error message below | Validation failed |
 
-### Default
-Checkbox is unselected and inactive. Displays an empty container with a visible border.
-
-### Hover
-Indicates pointer interaction and highlights the control. Background or border color subtly changes to signal interactivity.
-
-### Checked
-Displays the checkmark indicator inside the container, confirming the option is selected. The container fills with the variant color.
-
-### Partial (Indeterminate)
-Indicates that some but not all nested options are selected. Displays a horizontal line inside the container. Often used in hierarchical selections such as table headers or parent-child checkbox groups.
-
-### Disabled
-Indicates the checkbox cannot be interacted with. Reduced opacity, no hover effects, and cursor shows not-allowed. Can appear in both checked and unchecked states.
-
-<Info>State changes should provide clear visual feedback so users understand the current selection status.</Info>
+---
 
 ## Interaction Behavior
 
-### Click/Tap
-- Clicking the checkbox toggles the selection state
-- Clicking the label should also toggle the checkbox
-- Provides immediate visual feedback
+| Behavior | Description |
+|----------|-------------|
+| Toggle | Click/tap checkbox or label toggles state |
+| Indeterminate logic | Parent shows — when some children checked; clicking checks all |
+| Group behavior | Multiple checkboxes independent; wrap in `fieldset` + `legend` |
+| Validation | Required checkboxes show error on submit if unchecked |
+| Disabled | Cannot toggle; removed from tab order; 40% opacity |
 
-### Partial/Indeterminate Logic
-- Partial states appear when only some items in a group are selected
-- In hierarchical selections, selecting a parent checkbox selects all child options
-- Deselecting a parent checkbox deselects all child options
-- When some children are selected, the parent shows the partial indicator
+---
 
-### Disabled Behavior
-- Disabled checkboxes remain visible but cannot be interacted with
-- Disabled state can apply to both checked and unchecked checkboxes
-- Not included in keyboard tab order
+## Checkbox vs Radio vs Toggle
 
-### Hover (Desktop)
-- Border or background color changes subtly
-- Cursor changes to pointer
-- Smooth transition (150ms)
+| Control | Selection | Behavior | Use Case |
+|---------|-----------|----------|----------|
+| Checkbox | Multiple | Independent toggle per item | Multi-select filters, preferences |
+| Radio Button | Single | Mutually exclusive within group | Single choice from options |
+| Toggle Switch | Binary | Immediate on/off action | Feature switches, settings |
 
-### Touch (Mobile)
-- Minimum 44×44px touch target regardless of visual size
-- Active state on touch down
-- Action triggers on touch up
+---
 
 ## Usage Guidelines
 
-### Do's and Don'ts
-
 <CardGroup cols={2}>
-  <Card title="✓ Do" icon="check" color="#10b981">
-    **Use clear descriptive labels**
-    - "Receive email notifications"
-    - "Accept terms and conditions"
-
-    **Group related checkboxes**
-    - Organize logically
-    - Use clear group headings
-
-    **Provide visible feedback**
-    - Show check indicator on selection
-    - Use partial states for hierarchical groups
-
-    **Use partial states correctly**
-    - For parent-child relationships
-    - In table header selections
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use clear, descriptive labels
+    - Group related checkboxes with headings
+    - Use indeterminate state for parent-child hierarchies
+    - Maintain 8px spacing between checkboxes
+    - Ensure 44×44px minimum touch target
   </Card>
-
-  <Card title="✗ Don't" icon="xmark" color="#ef4444">
-    **Don't use for single selection**
-    - Use radio buttons instead
-    - Checkboxes imply multi-select
-
-    **Don't hide important options**
-    - Avoid long scrollable checkbox lists
-    - Keep groups manageable (5-7 items)
-
-    **Don't omit labels**
-    - Every checkbox needs a label
-    - Icon-only checkboxes need aria-label
-
-    **Don't overcrowd layouts**
-    - Maintain adequate spacing
-    - Use clear visual grouping
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use for single-choice selections (use radio)
+    - Don't use for immediate on/off actions (use toggle)
+    - Don't omit labels (use `aria-label` if no visible label)
+    - Don't mix color variants within the same form
+    - Don't use long scrollable checkbox lists (5–7 max)
   </Card>
 </CardGroup>
 
-### Best Practices
-
-<Steps>
-  <Step title="Use clear, descriptive labels">
-    Labels should clearly describe what the checkbox controls. Avoid ambiguous text.
-  </Step>
-  <Step title="Group related options">
-    Organize checkboxes into logical groups with clear headings when presenting multiple options.
-  </Step>
-  <Step title="Maintain consistent spacing">
-    Use 8px minimum between checkboxes in a group, 16px between checkbox groups.
-  </Step>
-  <Step title="Place labels to the right">
-    Labels should appear to the right of the checkbox control for left-to-right languages.
-  </Step>
-  <Step title="Use indeterminate state for hierarchies">
-    When a parent checkbox controls child checkboxes, show the partial state when only some children are selected.
-  </Step>
-</Steps>
+---
 
 ## Accessibility
 
-<Info>All checkbox components are built to meet WCAG 2.1 Level AA standards.</Info>
+| Requirement | Guideline |
+|-------------|-----------|
+| Semantic HTML | Use native `<input type="checkbox">` |
+| Keyboard | Tab to focus, Space to toggle |
+| Indeterminate | Set via ref: `aria-checked="mixed"` |
+| Focus ring | 2px solid, 2px offset, ≥ 3:1 contrast |
+| Screen reader | Announces: role, label, state (checked/unchecked/mixed) |
+| Groups | Use `<fieldset>` + `<legend>` for checkbox groups |
+| Disabled | `aria-disabled="true"`, removed from tab order |
+| Error | Link error message via `aria-describedby` |
 
-### Semantic HTML
-
-Always use native `<input type="checkbox">` for proper semantics and keyboard support.
-
-```jsx
-<label>
-  <input type="checkbox" name="option" />
-  Option label
-</label>
-```
-
-### ARIA Labels and States
-
-<CodeGroup>
-```jsx Standard Checkbox
-<Checkbox
-  label="Accept terms"
-  checked={isChecked}
-  onChange={handleChange}
-/>
-```
-
-```jsx Indeterminate State
-<Checkbox
-  label="Select all"
-  checked={allSelected}
-  indeterminate={someSelected && !allSelected}
-  onChange={handleSelectAll}
-/>
-```
-
-```jsx Disabled State
-<Checkbox
-  label="Premium feature"
-  disabled
-  aria-describedby="premium-hint"
-/>
-<span id="premium-hint">Upgrade to enable this feature</span>
-```
-
-```jsx Group with Fieldset
-<fieldset>
-  <legend>Notification preferences</legend>
-  <Checkbox label="Email" name="notifications" value="email" />
-  <Checkbox label="SMS" name="notifications" value="sms" />
-  <Checkbox label="Push" name="notifications" value="push" />
-</fieldset>
-```
-</CodeGroup>
-
-### Keyboard Navigation
-
-<ResponseField name="Tab" type="key">
-  Move focus to the next checkbox
-</ResponseField>
-
-<ResponseField name="Space" type="key">
-  Toggle the checkbox state (check/uncheck)
-</ResponseField>
-
-<ResponseField name="Shift + Tab" type="key">
-  Move focus to the previous checkbox
-</ResponseField>
-
-### Accessibility Checklist
-
-<AccordionGroup>
-  <Accordion title="✓ Visual Requirements" icon="eye">
-    - [ ] Checkbox indicator contrast ratio ≥ 3:1 against background
-    - [ ] Focus ring visible on all interactive states
-    - [ ] Focus ring contrast ratio ≥ 3:1
-    - [ ] Minimum 44×44px touch target size
-    - [ ] No color-only information — checkmark icon provides shape cue
-  </Accordion>
-
-  <Accordion title="✓ Keyboard Requirements" icon="keyboard">
-    - [ ] Focusable via Tab key
-    - [ ] Toggled with Space key
-    - [ ] Disabled checkboxes not in tab order
-    - [ ] Focus order follows visual order
-    - [ ] No keyboard traps
-  </Accordion>
-
-  <Accordion title="✓ Screen Reader Requirements" icon="audio-description">
-    - [ ] Each checkbox has a clearly associated label
-    - [ ] Screen readers announce state (checked, unchecked, partially checked)
-    - [ ] Disabled state communicated
-    - [ ] Checkbox role implicit via native element or explicit via `role="checkbox"`
-    - [ ] Indeterminate state announced via `aria-checked="mixed"`
-    - [ ] Checkbox groups provide meaningful context via `fieldset` and `legend`
-  </Accordion>
-</AccordionGroup>
-
-### Screen Reader Announcements
-
-| State | Announcement |
-|-------|-------------|
-| Unchecked | "Accept terms, checkbox, not checked" |
-| Checked | "Accept terms, checkbox, checked" |
-| Indeterminate | "Select all, checkbox, partially checked" |
-| Disabled | "Premium feature, checkbox, dimmed" |
+---
 
 ## Design Tokens
 
 <Tabs>
   <Tab title="Sizing">
-    <ParamField path="checkbox-size-sm" type="dimension" default="16px">
-      Small checkbox dimension
-    </ParamField>
-    <ParamField path="checkbox-size-md" type="dimension" default="20px">
-      Medium checkbox dimension (default)
-    </ParamField>
-    <ParamField path="checkbox-size-lg" type="dimension" default="24px">
-      Large checkbox dimension
-    </ParamField>
-    <ParamField path="checkbox-border-radius-box" type="dimension" default="4px">
-      Border radius for box style
-    </ParamField>
-    <ParamField path="checkbox-border-radius-rounded" type="dimension" default="50%">
-      Border radius for rounded style
-    </ParamField>
-    <ParamField path="checkbox-label-gap" type="dimension" default="8px">
-      Gap between checkbox and label
-    </ParamField>
+    | Token | Value |
+    |-------|-------|
+    | `checkbox-size-sm` | 16px |
+    | `checkbox-size-md` | 20px |
+    | `checkbox-size-lg` | 24px |
+    | `checkbox-border-radius-box` | 4px |
+    | `checkbox-border-radius-rounded` | 50% |
+    | `checkbox-label-gap` | 8px |
+    | `checkbox-item-spacing` | 8px |
+    | `checkbox-group-spacing` | 16px |
   </Tab>
-
-  <Tab title="Colors - Standard">
-    <ParamField path="checkbox-standard-bg" type="color" default="transparent">
-      Unchecked background
-    </ParamField>
-    <ParamField path="checkbox-standard-border" type="color" default="#d4d4d4">
-      Unchecked border color
-    </ParamField>
-    <ParamField path="checkbox-standard-checked-bg" type="color" default="#000000">
-      Checked background (Standard/Black)
-    </ParamField>
-    <ParamField path="checkbox-standard-checked-indicator" type="color" default="#ffffff">
-      Checkmark color
-    </ParamField>
-    <ParamField path="checkbox-standard-hover-border" type="color" default="#a3a3a3">
-      Hover border color
-    </ParamField>
-    <ParamField path="checkbox-standard-focus-ring" type="color" default="#000000">
-      Focus ring color
-    </ParamField>
+  <Tab title="Colors">
+    | Token | Value |
+    |-------|-------|
+    | `checkbox-border` | #D4D4D4 |
+    | `checkbox-border-hover` | #A3A3A3 |
+    | `checkbox-standard-bg` | #000000 |
+    | `checkbox-blue-bg` | #2563EB |
+    | `checkbox-green-bg` | #16A34A |
+    | `checkbox-dlvred-bg` | #DC2626 |
+    | `checkbox-indicator` | #FFFFFF |
+    | `checkbox-disabled-opacity` | 0.4 |
   </Tab>
-
-  <Tab title="Colors - Blue">
-    <ParamField path="checkbox-blue-checked-bg" type="color" default="#2563eb">
-      Checked background (Blue)
-    </ParamField>
-    <ParamField path="checkbox-blue-checked-indicator" type="color" default="#ffffff">
-      Checkmark color
-    </ParamField>
-  </Tab>
-
-  <Tab title="Colors - Green">
-    <ParamField path="checkbox-green-checked-bg" type="color" default="#16a34a">
-      Checked background (Green)
-    </ParamField>
-    <ParamField path="checkbox-green-checked-indicator" type="color" default="#ffffff">
-      Checkmark color
-    </ParamField>
-  </Tab>
-
-  <Tab title="Colors - DLV Red">
-    <ParamField path="checkbox-dlvred-checked-bg" type="color" default="#dc2626">
-      Checked background (DLV Red)
-    </ParamField>
-    <ParamField path="checkbox-dlvred-checked-indicator" type="color" default="#ffffff">
-      Checkmark color
-    </ParamField>
-  </Tab>
-
-  <Tab title="Disabled">
-    <ParamField path="checkbox-disabled-opacity" type="number" default="0.4">
-      Opacity for disabled state
-    </ParamField>
-    <ParamField path="checkbox-disabled-bg" type="color" default="#f5f5f5">
-      Disabled background color
-    </ParamField>
-    <ParamField path="checkbox-disabled-border" type="color" default="#e5e5e5">
-      Disabled border color
-    </ParamField>
-  </Tab>
-
   <Tab title="Animation">
-    <ParamField path="checkbox-transition-duration" type="duration" default="150ms">
-      Transition duration for state changes
-    </ParamField>
-    <ParamField path="checkbox-transition-timing" type="string" default="ease-in-out">
-      Transition timing function
-    </ParamField>
+    | Token | Value |
+    |-------|-------|
+    | `checkbox-transition` | 150ms ease-in-out |
+    | `checkbox-focus-ring-width` | 2px |
+    | `checkbox-focus-ring-offset` | 2px |
   </Tab>
 </Tabs>
 
-### Token Usage Example
+---
 
-```css
-.checkbox {
-  width: var(--checkbox-size-md);
-  height: var(--checkbox-size-md);
-  border: 2px solid var(--checkbox-standard-border);
-  border-radius: var(--checkbox-border-radius-box);
-  transition: all var(--checkbox-transition-duration) var(--checkbox-transition-timing);
-}
+## Developer Handoff
 
-.checkbox:hover {
-  border-color: var(--checkbox-standard-hover-border);
-}
-
-.checkbox:checked {
-  background: var(--checkbox-standard-checked-bg);
-  border-color: var(--checkbox-standard-checked-bg);
-}
-
-.checkbox:focus-visible {
-  outline: 2px solid var(--checkbox-standard-focus-ring);
-  outline-offset: 2px;
-}
-
-.checkbox:disabled {
-  opacity: var(--checkbox-disabled-opacity);
-  cursor: not-allowed;
-}
-```
-
-## Engineering Implementation
-
-### Component API
-
-```typescript
+<CodeGroup>
+```tsx API
 interface CheckboxProps {
-  // Appearance
   variant?: 'standard' | 'blue' | 'green' | 'dlv-red';
   size?: 'sm' | 'md' | 'lg';
   style?: 'box' | 'rounded';
-
-  // State
   checked?: boolean;
   indeterminate?: boolean;
   disabled?: boolean;
+  required?: boolean;
   defaultChecked?: boolean;
-
-  // Content
   label?: string;
-  supportingText?: string;
-
-  // Behavior
+  helperText?: string;
+  error?: string;
   name?: string;
   value?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-
-  // Styling
-  className?: string;
-  ariaLabel?: string;
-  ariaDescribedBy?: string;
 }
 ```
 
-### Implementation Notes
-
-**Technical Requirements:**
-- Use native `<input type="checkbox">` for proper semantics
-- Support controlled and uncontrolled modes
-- Handle indeterminate state via ref (`inputRef.current.indeterminate = true`)
-- Use CSS transitions for smooth state changes (150ms)
-- Ensure minimum 44×44px touch target regardless of visual size
-- Clicking the label must toggle the checkbox
-
-**Variant Hierarchy:**
-- Standard (Black) is the default for most interfaces
-- Blue for primary action themes
-- Green for positive/confirmation contexts
-- DLV Red for brand-specific emphasis
-
-### Code Examples
-
-<CodeGroup>
-```jsx Basic Usage
-// Single checkbox
+```tsx Usage
+// Basic checkbox
 <Checkbox label="Accept terms and conditions" />
 
-// Pre-checked
-<Checkbox label="Email notifications" defaultChecked />
-
 // Controlled
-<Checkbox
-  label="Dark mode"
-  checked={isDarkMode}
-  onChange={(e) => setIsDarkMode(e.target.checked)}
-/>
-```
+<Checkbox label="Dark mode" checked={isDark} onChange={(e) => setIsDark(e.target.checked)} />
 
-```jsx Variants
-// Standard (default)
-<Checkbox variant="standard" label="Option A" />
-
-// Blue
-<Checkbox variant="blue" label="Option B" />
-
-// Green
+// Variants
+<Checkbox variant="blue" label="Option A" />
 <Checkbox variant="green" label="Confirmed" />
 
-// DLV Red
-<Checkbox variant="dlv-red" label="Brand option" />
+// Sizes and styles
+<Checkbox size="lg" style="rounded" label="Large rounded" />
+<Checkbox size="sm" label="Compact option" />
+
+// With helper text
+<Checkbox label="Marketing emails" helperText="Receive updates about new features" />
+
+// Required with error
+<Checkbox label="I accept the terms" required error="You must accept to continue" />
 ```
 
-```jsx Sizes and Styles
-// Large, box style
-<Checkbox size="lg" style="box" label="Large checkbox" />
-
-// Medium, rounded style
-<Checkbox size="md" style="rounded" label="Medium rounded" />
-
-// Small, box style
-<Checkbox size="sm" style="box" label="Compact option" />
-```
-
-```jsx Indeterminate (Select All)
+```tsx Indeterminate
 function SelectAllExample() {
   const [items, setItems] = useState([false, true, false]);
   const allChecked = items.every(Boolean);
   const someChecked = items.some(Boolean);
 
   return (
-    <>
+    <fieldset>
+      <legend>Notifications</legend>
       <Checkbox
         label="Select all"
         checked={allChecked}
@@ -596,110 +330,8 @@ function SelectAllExample() {
           }}
         />
       ))}
-    </>
+    </fieldset>
   );
 }
 ```
-
-```jsx Form Integration
-<form onSubmit={handleSubmit}>
-  <fieldset>
-    <legend>Notification preferences</legend>
-    <Checkbox name="notifications" value="email" label="Email" />
-    <Checkbox name="notifications" value="sms" label="SMS" />
-    <Checkbox name="notifications" value="push" label="Push notifications" />
-  </fieldset>
-  <Button type="submit" variant="primary">Save Preferences</Button>
-</form>
-```
 </CodeGroup>
-
-### CSS Implementation
-
-```css
-.checkbox-wrapper {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--checkbox-label-gap);
-  cursor: pointer;
-}
-
-.checkbox-control {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--checkbox-size-md);
-  height: var(--checkbox-size-md);
-  border: 2px solid var(--checkbox-standard-border);
-  border-radius: var(--checkbox-border-radius-box);
-  background: transparent;
-  transition: all var(--checkbox-transition-duration) var(--checkbox-transition-timing);
-}
-
-/* Rounded style */
-.checkbox-control--rounded {
-  border-radius: var(--checkbox-border-radius-rounded);
-}
-
-/* Sizes */
-.checkbox-control--sm { width: 16px; height: 16px; }
-.checkbox-control--md { width: 20px; height: 20px; }
-.checkbox-control--lg { width: 24px; height: 24px; }
-
-/* Hover */
-.checkbox-control:hover {
-  border-color: var(--checkbox-standard-hover-border);
-}
-
-/* Checked - Standard */
-.checkbox-control--checked {
-  background: var(--checkbox-standard-checked-bg);
-  border-color: var(--checkbox-standard-checked-bg);
-}
-
-/* Checked - Blue */
-.checkbox-control--blue.checkbox-control--checked {
-  background: var(--checkbox-blue-checked-bg);
-  border-color: var(--checkbox-blue-checked-bg);
-}
-
-/* Checked - Green */
-.checkbox-control--green.checkbox-control--checked {
-  background: var(--checkbox-green-checked-bg);
-  border-color: var(--checkbox-green-checked-bg);
-}
-
-/* Checked - DLV Red */
-.checkbox-control--dlv-red.checkbox-control--checked {
-  background: var(--checkbox-dlvred-checked-bg);
-  border-color: var(--checkbox-dlvred-checked-bg);
-}
-
-/* Focus */
-.checkbox-control:focus-visible {
-  outline: 2px solid var(--checkbox-standard-focus-ring);
-  outline-offset: 2px;
-}
-
-/* Disabled */
-.checkbox-control:disabled {
-  opacity: var(--checkbox-disabled-opacity);
-  cursor: not-allowed;
-  pointer-events: none;
-}
-```
-
-## Design References
-
-### Spacing and Alignment
-- Checkbox control aligns to the top of the first line of label text
-- 8px gap between checkbox control and label
-- 8px minimum vertical spacing between checkboxes in a group
-- 16px spacing between checkbox groups
-- Labels placed to the right of the checkbox control
-
-### Interaction Consistency
-- All checkbox sizes use the same transition timing (150ms ease-in-out)
-- Hover state applies to both the control and its label area
-- Focus ring appears on keyboard navigation only (`:focus-visible`)
-- Touch targets maintain 44×44px minimum regardless of visual checkbox size
