@@ -73,6 +73,7 @@
                   "components/breadcrumbs",
                   "components/toggle",
                   "components/status-indicator",
+                  "components/links",
                   "components/tooltip"
                 ]
               },

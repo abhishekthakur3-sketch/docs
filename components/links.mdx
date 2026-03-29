@@ -1,0 +1,409 @@
+---
+title: Links
+description: Links are interactive text elements that enable navigation between pages, sections, or external resources within the product.
+icon: "link"
+---
+
+## Overview
+
+Links are lightweight navigational elements embedded within text, lists, or UI structures. Unlike buttons, links represent navigation rather than actions. They support optional leading and trailing icons for additional visual context such as external navigation or directional cues. Links should remain visually subtle while clearly indicating interactivity.
+
+<CardGroup cols={3}>
+  <Card title="3 Styles" icon="palette">
+    Blue (Default), Black, White
+  </Card>
+  <Card title="5 Sizes" icon="expand">
+    XLarge (32px), Large (26px), Medium (24px), Small (20px), XSmall (16px)
+  </Card>
+  <Card title="4 States" icon="circle-dot">
+    Default, Hover, Focused, Disabled
+  </Card>
+</CardGroup>
+
+---
+
+{/* 🎨 DESIGNER: Replace with links component preview from Figma (page: Links ✅) */}
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Links Component Preview — Replace with /assets/components/links/links-preview.png</div>
+</div>
+
+---
+
+## Playground
+
+<Tabs>
+  <Tab title="Blue (Default)">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'20px', color:'#2396FB', textDecoration:'underline', cursor:'pointer'}}>Something goes here</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'16px', color:'#2396FB', textDecoration:'underline', cursor:'pointer'}}>View documentation →</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'14px', color:'#2396FB', textDecoration:'underline', cursor:'pointer'}}>Learn more</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'12px', color:'#2396FB', textDecoration:'underline', cursor:'pointer'}}>Terms & conditions</span>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="Black">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'20px', color:'#000', textDecoration:'underline', cursor:'pointer'}}>Something goes here</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'16px', color:'#000', textDecoration:'underline', cursor:'pointer'}}>View documentation →</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'14px', color:'#000', textDecoration:'underline', cursor:'pointer'}}>Learn more</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'12px', color:'#000', textDecoration:'underline', cursor:'pointer'}}>Terms & conditions</span>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="White (Dark BG)">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#1A1A1A', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'20px', color:'#FFF', textDecoration:'underline', cursor:'pointer'}}>Something goes here</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'16px', color:'#FFF', textDecoration:'underline', cursor:'pointer'}}>View documentation →</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'14px', color:'#FFF', textDecoration:'underline', cursor:'pointer'}}>Learn more</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'6px'}}>
+        <span style={{fontSize:'12px', color:'#FFF', textDecoration:'underline', cursor:'pointer'}}>Terms & conditions</span>
+      </div>
+    </div>
+  </Tab>
+  <Tab title="States">
+    <div style={{display:'flex', flexDirection:'column', gap:'20px', padding:'32px 24px', background:'#F5F5F5', borderRadius:'12px', width:'100%'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}>
+        <span style={{fontSize:'14px', color:'#2396FB', cursor:'pointer'}}>Default link</span>
+        <span style={{fontSize:'11px', opacity:0.4}}>No underline until hover</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}>
+        <span style={{fontSize:'14px', color:'#2396FB', textDecoration:'underline', cursor:'pointer'}}>Hover link</span>
+        <span style={{fontSize:'11px', opacity:0.4}}>Underline appears on hover</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}>
+        <span style={{fontSize:'14px', color:'#2396FB', textDecoration:'underline', outline:'2px solid #2396FB', outlineOffset:'2px', borderRadius:'2px', padding:'0 2px'}}>Focused link</span>
+        <span style={{fontSize:'11px', opacity:0.4}}>Focus ring visible</span>
+      </div>
+      <div style={{display:'flex', alignItems:'center', gap:'12px'}}>
+        <span style={{fontSize:'14px', color:'#2396FB', opacity:0.4}}>Disabled link</span>
+        <span style={{fontSize:'11px', opacity:0.4}}>40% opacity, not interactive</span>
+      </div>
+    </div>
+  </Tab>
+</Tabs>
+
+<Info>Links represent navigation, not actions. Use buttons for primary actions like submit, delete, or save.</Info>
+
+
+---
+
+## Link Matrix
+
+Complete reference: every Style × Size × State combination.
+
+<Tabs>
+  <Tab title="Blue">
+    | Size | Default | Hover | Focused | Disabled |
+    |------|---------|-------|---------|----------|
+    | XLarge (32px) | <span style={{fontSize:'20px',color:'#2396FB'}}>Link text</span> | <span style={{fontSize:'20px',color:'#2396FB',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'20px',color:'#2396FB',textDecoration:'underline',outline:'2px solid #2396FB',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'20px',color:'#2396FB',opacity:0.4}}>Link text</span> |
+    | Large (26px) | <span style={{fontSize:'17px',color:'#2396FB'}}>Link text</span> | <span style={{fontSize:'17px',color:'#2396FB',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'17px',color:'#2396FB',textDecoration:'underline',outline:'2px solid #2396FB',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'17px',color:'#2396FB',opacity:0.4}}>Link text</span> |
+    | Medium (24px) | <span style={{fontSize:'15px',color:'#2396FB'}}>Link text</span> | <span style={{fontSize:'15px',color:'#2396FB',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'15px',color:'#2396FB',textDecoration:'underline',outline:'2px solid #2396FB',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'15px',color:'#2396FB',opacity:0.4}}>Link text</span> |
+    | Small (20px) | <span style={{fontSize:'13px',color:'#2396FB'}}>Link text</span> | <span style={{fontSize:'13px',color:'#2396FB',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'13px',color:'#2396FB',textDecoration:'underline',outline:'2px solid #2396FB',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'13px',color:'#2396FB',opacity:0.4}}>Link text</span> |
+    | XSmall (16px) | <span style={{fontSize:'11px',color:'#2396FB'}}>Link text</span> | <span style={{fontSize:'11px',color:'#2396FB',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'11px',color:'#2396FB',textDecoration:'underline',outline:'2px solid #2396FB',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'11px',color:'#2396FB',opacity:0.4}}>Link text</span> |
+  </Tab>
+  <Tab title="Black">
+    | Size | Default | Hover | Focused | Disabled |
+    |------|---------|-------|---------|----------|
+    | XLarge (32px) | <span style={{fontSize:'20px'}}>Link text</span> | <span style={{fontSize:'20px',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'20px',textDecoration:'underline',outline:'2px solid #000',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'20px',opacity:0.4}}>Link text</span> |
+    | Large (26px) | <span style={{fontSize:'17px'}}>Link text</span> | <span style={{fontSize:'17px',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'17px',textDecoration:'underline',outline:'2px solid #000',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'17px',opacity:0.4}}>Link text</span> |
+    | Medium (24px) | <span style={{fontSize:'15px'}}>Link text</span> | <span style={{fontSize:'15px',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'15px',textDecoration:'underline',outline:'2px solid #000',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'15px',opacity:0.4}}>Link text</span> |
+    | Small (20px) | <span style={{fontSize:'13px'}}>Link text</span> | <span style={{fontSize:'13px',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'13px',textDecoration:'underline',outline:'2px solid #000',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'13px',opacity:0.4}}>Link text</span> |
+    | XSmall (16px) | <span style={{fontSize:'11px'}}>Link text</span> | <span style={{fontSize:'11px',textDecoration:'underline'}}>Link text</span> | <span style={{fontSize:'11px',textDecoration:'underline',outline:'2px solid #000',outlineOffset:'2px',borderRadius:'2px',padding:'0 2px'}}>Link text</span> | <span style={{fontSize:'11px',opacity:0.4}}>Link text</span> |
+  </Tab>
+  <Tab title="White">
+    | Size | Default | Disabled |
+    |------|---------|----------|
+    | XLarge (32px) | <span style={{fontSize:'20px',color:'#999'}}>Link text</span> | <span style={{fontSize:'20px',color:'#999',opacity:0.4}}>Link text</span> |
+    | Large (26px) | <span style={{fontSize:'17px',color:'#999'}}>Link text</span> | <span style={{fontSize:'17px',color:'#999',opacity:0.4}}>Link text</span> |
+    | Medium (24px) | <span style={{fontSize:'15px',color:'#999'}}>Link text</span> | <span style={{fontSize:'15px',color:'#999',opacity:0.4}}>Link text</span> |
+    | Small (20px) | <span style={{fontSize:'13px',color:'#999'}}>Link text</span> | <span style={{fontSize:'13px',color:'#999',opacity:0.4}}>Link text</span> |
+    | XSmall (16px) | <span style={{fontSize:'11px',color:'#999'}}>Link text</span> | <span style={{fontSize:'11px',color:'#999',opacity:0.4}}>Link text</span> |
+
+    <Warning>White links are designed for dark backgrounds. The preview above uses gray to remain visible on light backgrounds.</Warning>
+  </Tab>
+</Tabs>
+
+
+---
+
+## Anatomy
+
+<div style={{background:'#F5F5F5', borderRadius:'12px', padding:'48px', marginBottom:'24px', textAlign:'center', minHeight:'200px', display:'flex', alignItems:'center', justifyContent:'center', width:'100%'}}>
+  <div style={{opacity:0.4, fontSize:'14px'}}>🖼️ Link Anatomy — Replace with /assets/components/links/link-anatomy.png</div>
+</div>
+
+| # | Element | Required | Description |
+|---|---------|----------|-------------|
+| 1 | Leading Icon | No | Icon before the label for visual context |
+| 2 | Label | Yes | Clickable text describing the navigation destination |
+| 3 | Trailing Icon | No | Icon after the label (external link indicator, arrow, etc.) |
+
+<Warning>Icons should support the link meaning but never replace the text label. The label is always required.</Warning>
+
+---
+
+## Styles
+
+| Style | Color | Hex | Use Case |
+|-------|-------|-----|----------|
+| Blue | Blue text | `#2396FB` | Default style, strong visibility, clear interaction cue |
+| Black | Black text | `#000000` | Neutral/minimal interfaces, darker UI contexts |
+| White | White text | `#FFFFFF` | Dark backgrounds, ensuring readability and contrast |
+
+<Tip>Use Blue for most links. Reserve Black for minimal interfaces and White exclusively for dark backgrounds.</Tip>
+
+---
+
+## Sizes
+
+| Size | Component Height | Font Size | Icon Size | Use Case |
+|------|-----------------|-----------|-----------|----------|
+| XLarge | 32px | 20px | 24px | Hero sections, prominent CTAs |
+| Large | 26px | 17px | 20px | Section headers, featured content |
+| Medium | 24px | 15px | 18px | Body text, standard navigation |
+| Small | 20px | 13px | 16px | Supporting text, metadata |
+| XSmall | 16px | 11px | 14px | Footnotes, dense layouts, captions |
+
+---
+
+## States
+
+| State | Visual Treatment | Interaction |
+|-------|-----------------|-------------|
+| Default | Colored text, no underline | Clickable, pointer cursor |
+| Hover | Underline appears | Visual feedback on pointer hover |
+| Focused | Underline + focus ring (2px outline) | Keyboard focus visible |
+| Disabled | 40% opacity, no underline | Not interactive, `cursor: default` |
+
+---
+
+## Behavior
+
+### Navigation
+
+- Clicking a link navigates to the target location
+- Links may open content in the same page, a new tab, or an external destination
+- Use `target="_blank"` with `rel="noopener noreferrer"` for external links
+- Disabled links remain visible but cannot be interacted with
+
+### Icon Usage
+
+| Pattern | Example | Use Case |
+|---------|---------|----------|
+| Leading icon | 📄 View document | Contextual icon before label |
+| Trailing icon | Open in new tab ↗ | External link indicator |
+| Both icons | 📄 View document ↗ | Combined context + direction |
+| No icons | Learn more | Simple inline navigation |
+
+### Inline vs Standalone
+
+- Inline links are embedded within body text and should match the surrounding font size
+- Standalone links appear independently and can use any size
+- Inline links should use underline on default state for discoverability within text
+
+---
+
+## Link vs Button
+
+| Feature | Link | Button |
+|---------|------|--------|
+| Purpose | Navigation | Action |
+| Visual weight | Lightweight, text-based | Prominent, filled/outlined |
+| Underline | On hover or always | Never |
+| Use case | Go to page, open resource | Submit, delete, save |
+| HTML element | `<a>` | `<button>` |
+| Keyboard | `Enter` to activate | `Enter` or `Space` |
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="#16A34A">
+    - Use descriptive link labels that explain the destination
+    - Maintain visual distinction between links and regular text
+    - Ensure adequate color contrast against the background
+    - Use trailing icons to indicate external navigation
+    - Keep link text concise and actionable
+    - Match link size to surrounding typography
+  </Card>
+  <Card title="Don't" icon="xmark" color="#DC2626">
+    - Don't use links for primary actions (use buttons)
+    - Don't use vague labels like "Click here" or "Read more"
+    - Don't hide link meaning behind icons only
+    - Don't use links without clear context
+    - Don't use Blue links on blue backgrounds
+    - Don't remove underline from inline links in body text
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Implementation |
+|-------------|---------------|
+| Element | Use `<a>` with a valid `href` attribute |
+| Label | Link text must clearly describe the destination |
+| Keyboard | `Tab` to focus, `Enter` to activate |
+| Focus | Visible focus ring (2px outline, matching link color) |
+| External links | Add `aria-label` or visible icon indicating new tab |
+| Disabled | Use `aria-disabled="true"`, remove `href`, set `tabindex="-1"` |
+| Color contrast | Link color must meet 3:1 contrast against surrounding text and 4.5:1 against background |
+| Screen readers | Avoid "click here" — use descriptive text like "View order details" |
+
+<Info>For external links, include a trailing icon (↗) and add screen reader text like "opens in a new tab" via `aria-label` or visually hidden text.</Info>
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Colors">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--link-blue` | `#2396FB` | Blue style text color |
+    | `--link-blue-hover` | `#1A7FD6` | Blue hover (darker) |
+    | `--link-black` | `#000000` | Black style text color |
+    | `--link-black-hover` | `#333333` | Black hover |
+    | `--link-white` | `#FFFFFF` | White style text color |
+    | `--link-white-hover` | `rgba(255,255,255,0.8)` | White hover |
+    | `--link-disabled-opacity` | `0.4` | Disabled state opacity |
+    | `--link-focus-ring` | `2px` | Focus outline width |
+  </Tab>
+  <Tab title="Typography">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--link-font-xlarge` | `20px` | XLarge font size |
+    | `--link-font-large` | `17px` | Large font size |
+    | `--link-font-medium` | `15px` | Medium font size |
+    | `--link-font-small` | `13px` | Small font size |
+    | `--link-font-xsmall` | `11px` | XSmall font size |
+    | `--link-font-weight` | `400` | Default weight |
+    | `--link-font-family` | `Noto Sans` | Typeface |
+    | `--link-underline-offset` | `2px` | Underline offset from text |
+  </Tab>
+  <Tab title="Dimensions">
+    | Token | Value | Usage |
+    |-------|-------|-------|
+    | `--link-height-xlarge` | `32px` | Component height, XLarge |
+    | `--link-height-large` | `26px` | Component height, Large |
+    | `--link-height-medium` | `24px` | Component height, Medium |
+    | `--link-height-small` | `20px` | Component height, Small |
+    | `--link-height-xsmall` | `16px` | Component height, XSmall |
+    | `--link-icon-gap` | `4px` | Gap between icon and label |
+    | `--link-focus-offset` | `2px` | Focus ring offset |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx API
+import { Link } from '@tarmac/design-system';
+
+interface LinkProps {
+  href: string;                              // Navigation URL (required)
+  style?: 'blue' | 'black' | 'white';       // Default: 'blue'
+  size?: 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall'; // Default: 'medium'
+  disabled?: boolean;                        // Disable interaction
+  external?: boolean;                        // Opens in new tab
+  leadingIcon?: React.ReactNode;             // Icon before label
+  trailingIcon?: React.ReactNode;            // Icon after label
+  children: React.ReactNode;                 // Label text
+}
+```
+
+```tsx Usage
+// Basic blue link
+<Link href="/orders">View all orders</Link>
+
+// External link with trailing icon
+<Link href="https://docs.example.com" external>
+  Documentation
+</Link>
+
+// Black link, small size
+<Link href="/settings" style="black" size="small">
+  Account settings
+</Link>
+
+// With leading icon
+<Link href="/downloads" leadingIcon={<DownloadIcon />}>
+  Download report
+</Link>
+
+// Disabled link
+<Link href="/premium" disabled>
+  Premium features
+</Link>
+
+// White link on dark background
+<div style={{ background: '#1A1A1A', padding: '16px' }}>
+  <Link href="/help" style="white" size="xsmall">
+    Need help?
+  </Link>
+</div>
+```
+
+```tsx ARIA
+// Standard link
+<a
+  href="/orders"
+  style={{ color: '#2396FB', textDecoration: 'none' }}
+>
+  View all orders
+</a>
+
+// External link
+<a
+  href="https://docs.example.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: '#2396FB' }}
+>
+  Documentation
+  <span aria-hidden="true"> ↗</span>
+  <span style={{
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    overflow: 'hidden',
+    clip: 'rect(0,0,0,0)',
+  }}>
+    (opens in a new tab)
+  </span>
+</a>
+
+// Disabled link
+<a
+  aria-disabled="true"
+  tabIndex={-1}
+  style={{ color: '#2396FB', opacity: 0.4, cursor: 'default' }}
+>
+  Premium features
+</a>
+```
+</CodeGroup>
