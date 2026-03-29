@@ -44,31 +44,16 @@
           {
             "group": "Foundations",
             "pages": [
-              {
-                "group": "Colors",
-                "pages": [
-                  "foundations/colors",
-                  "foundations/colors-palette",
-                  "foundations/colors-implementation"
-                ]
-              },
+              "foundations/colors",
+              "foundations/colors-palette",
+              "foundations/colors-implementation",
               "foundations/spacing",
-              {
-                "group": "Grid System",
-                "pages": [
-                  "foundations/grid-system",
-                  "foundations/grid-advanced",
-                  "foundations/grid-implementation"
-                ]
-              },
-              {
-                "group": "Typography",
-                "pages": [
-                  "foundations/typography",
-                  "foundations/typography-styles",
-                  "foundations/typography-implementation"
-                ]
-              },
+              "foundations/grid-system",
+              "foundations/grid-advanced",
+              "foundations/grid-implementation",
+              "foundations/typography",
+              "foundations/typography-styles",
+              "foundations/typography-implementation",
               "foundations/radius",
               "foundations/tokens",
               "foundations/elevation",
