@@ -1,0 +1,224 @@
+---
+title: Audio Player
+description: A compact component for recording and playing short audio clips within a lightweight UI.
+icon: "microphone"
+---
+
+## Overview
+
+Audio Player allows users to record, preview, and manage audio inputs. It transitions smoothly between states — from idle recording to active playback — while displaying progress, duration, and action controls.
+
+<CardGroup cols={3}>
+  <Card title="6 Variants" icon="sliders">
+    Default, Recording, Play, Pause, Saved, Disabled
+  </Card>
+  <Card title="2 Sizes" icon="expand">
+    Large and Small
+  </Card>
+  <Card title="2 Styles" icon="circle-half-stroke">
+    Light and Dark
+  </Card>
+</CardGroup>
+
+---
+
+## Anatomy
+
+| Element | Description |
+|---------|-------------|
+| Control Button | Mic, play, pause, or stop icon depending on state |
+| Progress Bar | Shows playback or recording progress |
+| Timer / Duration | Displays elapsed or total time |
+| Save Action | Allows saving the recorded audio |
+| Delete Action | Removes the current recording |
+| Helper Text | Optional top and bottom labels for context |
+
+---
+
+## Variants
+
+| Variant | Description |
+|---------|-------------|
+| Default | Idle state, ready to start recording |
+| Recording | Active recording in progress |
+| Play | Recorded audio ready to play |
+| Pause | Playback is paused |
+| Saved | Recording has been saved |
+| Disabled | Component is non-interactive |
+
+---
+
+## Sizes
+
+| Size | Usage |
+|------|-------|
+| Large | Default size for forms and detail views |
+| Small | Compact layouts, inline usage |
+
+---
+
+## Styles
+
+| Style | Usage |
+|-------|-------|
+| Light | Default, for light backgrounds |
+| Dark | For dark backgrounds or dark mode surfaces |
+
+---
+
+## States & Behaviour
+
+<AccordionGroup>
+  <Accordion title="Default → Recording">
+    User taps the mic button to begin recording. The component transitions to the Recording variant, showing a live timer and waveform or progress indicator.
+  </Accordion>
+  <Accordion title="Recording → Play / Saved">
+    When recording stops, the component transitions to the Play variant. The user can preview the audio or save it.
+  </Accordion>
+  <Accordion title="Play → Pause">
+    During playback, tapping the control button pauses audio and transitions to the Pause variant. The progress bar retains its position.
+  </Accordion>
+  <Accordion title="Saved">
+    Once saved, the component shows the Saved variant with options to re-play or delete.
+  </Accordion>
+  <Accordion title="Disabled">
+    All interactions are blocked. Opacity is reduced to indicate non-interactivity.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Usage Guidelines
+
+<CardGroup cols={2}>
+  <Card title="✓ Do" icon="check" color="#16A34A">
+    - Use within forms where audio input is required
+    - Always show a timer during recording and playback
+    - Provide helper text to guide users on what to record
+    - Allow users to delete and re-record before saving
+  </Card>
+  <Card title="✗ Don't" icon="xmark" color="#DC2626">
+    - Don't use for long-form audio (use a dedicated media player instead)
+    - Don't hide the delete action after saving
+    - Don't skip helper text in ambiguous contexts
+    - Don't disable without communicating why
+  </Card>
+</CardGroup>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Labels | All control buttons must have `aria-label` (e.g. "Start recording", "Play audio") |
+| Keyboard | Full keyboard support — Tab to focus, Enter/Space to activate |
+| Screen readers | Announce state changes (recording started, paused, saved) |
+| Progress | Use `aria-valuenow`, `aria-valuemin`, `aria-valuemax` on the progress bar |
+| Non-visual feedback | Timer and status labels must be readable by assistive tech |
+| Visible states | Ensure each variant has a visually distinct appearance |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Spacing">
+    | Token | Value |
+    |-------|-------|
+    | `spacing/8` | 8px — gap between elements |
+    | `spacing/12` | 12px — container padding |
+    | `spacing/4` | 4px — icon button inner gap |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Usage |
+    |-------|-------|
+    | `surface/bg_primary/default` | Container background (Light) |
+    | `border/neutral/primary` | Container border |
+    | `text/body/primary` | Primary label text |
+    | `text/caption/primary` | Secondary / helper text |
+    | `icon/accent/primary` | Progress dot and accent color |
+    | `surface/bg_primary/strong` | Progress bar track |
+    | `surface/bg_dlv_red/default` | Progress bar fill |
+  </Tab>
+  <Tab title="Radius">
+    | Token | Value |
+    |-------|-------|
+    | `radius/max` | 999px — pill-shaped container |
+    | `radius/medium` | 8px — progress bar |
+    | `radius/default` | 4px — icon button |
+  </Tab>
+  <Tab title="Typography">
+    | Token | Usage |
+    |-------|-------|
+    | `font_family/body` Semibold | Primary label (e.g. "Record Audio Instruction") |
+    | `font_family/body` Light | Secondary label text |
+    | `font_family/caption` Regular | Helper text top and bottom |
+    | IBM Plex Sans Medium 14px | Timer / duration display |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx Component API
+interface AudioPlayerProps {
+  variant?: 'default' | 'recording' | 'play' | 'pause' | 'saved' | 'disabled';
+  size?: 'large' | 'small';
+  style?: 'light' | 'dark';
+  helperTextTop?: string;
+  helperTextBottom?: string;
+  duration?: string;        // e.g. "00:48"
+  progress?: number;        // 0–100
+  onRecord?: () => void;
+  onPlay?: () => void;
+  onPause?: () => void;
+  onSave?: () => void;
+  onDelete?: () => void;
+}
+```
+
+```tsx Usage
+import { AudioPlayer } from '@tarmac/design-system';
+
+// Default — ready to record
+<AudioPlayer
+  variant="default"
+  size="large"
+  style="light"
+  helperTextTop="Record your instruction"
+  helperTextBottom="Max 60 seconds"
+  onRecord={() => startRecording()}
+/>
+
+// Playback state
+<AudioPlayer
+  variant="play"
+  size="large"
+  style="light"
+  duration="00:48"
+  progress={50}
+  onPlay={() => playAudio()}
+  onDelete={() => deleteRecording()}
+/>
+
+// Saved state
+<AudioPlayer
+  variant="saved"
+  size="small"
+  style="dark"
+  duration="00:48"
+  onPlay={() => playAudio()}
+  onDelete={() => deleteRecording()}
+/>
+
+// Disabled
+<AudioPlayer
+  variant="disabled"
+  size="large"
+  style="light"
+/>
+```
+</CodeGroup>
