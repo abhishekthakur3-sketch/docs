@@ -22,7 +22,17 @@ Audio Player allows users to record, preview, and manage audio inputs. It transi
 
 ---
 
+## Component Preview
+
+{/* 🎨 Replace with full Audio Player preview showing all variants */}
+<img src="/assets/components/audio-player/audio-player-preview.png" alt="Audio Player component variants" style={{width:'100%', borderRadius:'8px', border:'1px solid #e5e7eb', background:'#f9f9f9'}} />
+
+---
+
 ## Anatomy
+
+{/* 🎨 Replace with annotated anatomy diagram from Figma */}
+<img src="/assets/components/audio-player/audio-player-anatomy.png" alt="Audio Player anatomy" style={{width:'100%', borderRadius:'8px', border:'1px solid #e5e7eb', background:'#f9f9f9'}} />
 
 | Element | Description |
 |---------|-------------|
@@ -37,6 +47,9 @@ Audio Player allows users to record, preview, and manage audio inputs. It transi
 
 ## Variants
 
+{/* 🎨 Replace with variants overview image showing all 6 states side by side */}
+<img src="/assets/components/audio-player/audio-player-variants.png" alt="Audio Player variants" style={{width:'100%', borderRadius:'8px', border:'1px solid #e5e7eb', background:'#f9f9f9'}} />
+
 | Variant | Description |
 |---------|-------------|
 | Default | Idle state, ready to start recording |
@@ -50,19 +63,35 @@ Audio Player allows users to record, preview, and manage audio inputs. It transi
 
 ## Sizes
 
-| Size | Usage |
-|------|-------|
-| Large | Default size for forms and detail views |
-| Small | Compact layouts, inline usage |
+<CardGroup cols={2}>
+  <Card title="Large">
+    {/* 🎨 Replace with Large size screenshot */}
+    <img src="/assets/components/audio-player/audio-player-size-large.png" alt="Audio Player Large size" style={{width:'100%', borderRadius:'6px'}} />
+    Default size for forms and detail views
+  </Card>
+  <Card title="Small">
+    {/* 🎨 Replace with Small size screenshot */}
+    <img src="/assets/components/audio-player/audio-player-size-small.png" alt="Audio Player Small size" style={{width:'100%', borderRadius:'6px'}} />
+    Compact layouts, inline usage
+  </Card>
+</CardGroup>
 
 ---
 
 ## Styles
 
-| Style | Usage |
-|-------|-------|
-| Light | Default, for light backgrounds |
-| Dark | For dark backgrounds or dark mode surfaces |
+<CardGroup cols={2}>
+  <Card title="Light">
+    {/* 🎨 Replace with Light style screenshot */}
+    <img src="/assets/components/audio-player/audio-player-style-light.png" alt="Audio Player Light style" style={{width:'100%', borderRadius:'6px'}} />
+    Default, for light backgrounds
+  </Card>
+  <Card title="Dark">
+    {/* 🎨 Replace with Dark style screenshot */}
+    <img src="/assets/components/audio-player/audio-player-style-dark.png" alt="Audio Player Dark style" style={{width:'100%', borderRadius:'6px'}} />
+    For dark backgrounds or dark mode surfaces
+  </Card>
+</CardGroup>
 
 ---
 
@@ -70,18 +99,28 @@ Audio Player allows users to record, preview, and manage audio inputs. It transi
 
 <AccordionGroup>
   <Accordion title="Default → Recording">
+    {/* 🎨 Replace with Default state screenshot */}
+    <img src="/assets/components/audio-player/audio-player-state-default.png" alt="Audio Player Default state" style={{width:'100%', borderRadius:'6px', marginBottom:'12px'}} />
     User taps the mic button to begin recording. The component transitions to the Recording variant, showing a live timer and waveform or progress indicator.
   </Accordion>
   <Accordion title="Recording → Play / Saved">
+    {/* 🎨 Replace with Recording state screenshot */}
+    <img src="/assets/components/audio-player/audio-player-state-recording.png" alt="Audio Player Recording state" style={{width:'100%', borderRadius:'6px', marginBottom:'12px'}} />
     When recording stops, the component transitions to the Play variant. The user can preview the audio or save it.
   </Accordion>
   <Accordion title="Play → Pause">
+    {/* 🎨 Replace with Play state screenshot */}
+    <img src="/assets/components/audio-player/audio-player-state-play.png" alt="Audio Player Play state" style={{width:'100%', borderRadius:'6px', marginBottom:'12px'}} />
     During playback, tapping the control button pauses audio and transitions to the Pause variant. The progress bar retains its position.
   </Accordion>
   <Accordion title="Saved">
+    {/* 🎨 Replace with Saved state screenshot */}
+    <img src="/assets/components/audio-player/audio-player-state-saved.png" alt="Audio Player Saved state" style={{width:'100%', borderRadius:'6px', marginBottom:'12px'}} />
     Once saved, the component shows the Saved variant with options to re-play or delete.
   </Accordion>
   <Accordion title="Disabled">
+    {/* 🎨 Replace with Disabled state screenshot */}
+    <img src="/assets/components/audio-player/audio-player-state-disabled.png" alt="Audio Player Disabled state" style={{width:'100%', borderRadius:'6px', marginBottom:'12px'}} />
     All interactions are blocked. Opacity is reduced to indicate non-interactivity.
   </Accordion>
 </AccordionGroup>
@@ -89,6 +128,9 @@ Audio Player allows users to record, preview, and manage audio inputs. It transi
 ---
 
 ## Usage Guidelines
+
+{/* 🎨 Replace with do/don't side-by-side example image */}
+<img src="/assets/components/audio-player/audio-player-usage.png" alt="Audio Player usage do and don't" style={{width:'100%', borderRadius:'8px', border:'1px solid #e5e7eb', marginBottom:'16px'}} />
 
 <CardGroup cols={2}>
   <Card title="✓ Do" icon="check" color="#16A34A">
