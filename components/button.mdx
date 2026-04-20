@@ -25,16 +25,24 @@ Buttons are interactive elements used to initiate actions such as submitting dat
 ## Live Demo
 
 <div style={{borderRadius:'12px', overflow:'hidden', border:'1px solid #E5E7EB', marginBottom:'16px'}}>
-  <iframe
-    src="https://tarmac-storybook-dev.pntrzz.com/storybook/iframe.html?args=&id=components-button--default&viewMode=story"
-    style={{width:'100%', height:'360px', border:'none'}}
-    title="Button — TARMAC Storybook"
-  ></iframe>
-</div>
-
-<div style={{display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:'8px', marginBottom:'24px'}}>
-  <span style={{fontSize:'13px', color:'#555'}}>This live demo contains only a preview of the Button component. View the full demo on Storybook for additional controls, variants, and API documentation.</span>
-  <a href="https://tarmac-storybook-dev.pntrzz.com/storybook/?path=/story/components-button--default" target="_blank" style={{fontSize:'13px', color:'#2396FB', textDecoration:'none', whiteSpace:'nowrap'}}>Open in Storybook →</a>
+  <div style={{background:'#FAFAFA', padding:'40px 32px', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', minHeight:'200px', gap:'16px'}}>
+    <div style={{display:'flex', gap:'12px', flexWrap:'wrap', justifyContent:'center'}}>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', cursor:'default'}}>Primary</button>
+      <button style={{background:'transparent', color:'#000', border:'1.5px solid #000', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', cursor:'default'}}>Secondary</button>
+      <button style={{background:'transparent', color:'#000', border:'none', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', textDecoration:'underline', cursor:'default'}}>Tertiary</button>
+      <button style={{background:'#000', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', opacity:0.4, cursor:'default'}}>Disabled</button>
+    </div>
+    <div style={{display:'flex', gap:'12px', flexWrap:'wrap', justifyContent:'center'}}>
+      <button style={{background:'#2396FB', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', cursor:'default'}}>Blue</button>
+      <button style={{background:'#1BA86E', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', cursor:'default'}}>Success</button>
+      <button style={{background:'#DC143C', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', cursor:'default'}}>Error</button>
+      <button style={{background:'#CF9F02', color:'#fff', border:'none', borderRadius:'6px', padding:'0 20px', fontSize:'14px', fontWeight:500, height:'44px', display:'inline-flex', alignItems:'center', justifyContent:'center', cursor:'default'}}>Warning</button>
+    </div>
+  </div>
+  <div style={{borderTop:'1px solid #E5E7EB', padding:'12px 20px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:'8px'}}>
+    <span style={{fontSize:'13px', color:'#666'}}>This preview shows a static snapshot. For interactive controls, variants, and API docs:</span>
+    <a href="https://tarmac-storybook-dev.pntrzz.com/storybook/" target="_blank" rel="noopener noreferrer" style={{fontSize:'13px', color:'#2396FB', textDecoration:'none', fontWeight:600, whiteSpace:'nowrap', display:'inline-flex', alignItems:'center', gap:'4px'}}>Open in Storybook ↗</a>
+  </div>
 </div>
 
 ---
