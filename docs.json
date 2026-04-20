@@ -97,7 +97,8 @@
                   "components/spinner",
                   "components/pagination",
                   "components/tooltip",
-                  "components/audio-player"
+                  "components/audio-player",
+                  "components/otp-fields"
                 ]
               },
               {
