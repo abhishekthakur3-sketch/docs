@@ -6,7 +6,7 @@
     "light": "/assets/brand/tarmac-logo-light.svg",
     "dark": "/assets/brand/tarmac-logo-dark.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
     "primary": "#000000",
     "light": "#FFFFFF",
