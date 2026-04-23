@@ -65,6 +65,7 @@
                   "components/breadcrumbs",
                   "components/button",
                   "components/cards",
+                  "components/carousel",
                   "components/checkbox",
                   "components/coachmarks",
                   "components/date-time-picker",

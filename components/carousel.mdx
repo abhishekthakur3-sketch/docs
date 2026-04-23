@@ -1,0 +1,331 @@
+---
+title: Carousel
+description: A horizontally scrollable container for browsing through a sequence of content items across mobile and desktop breakpoints.
+icon: "gallery-horizontal"
+---
+
+## Overview
+
+Carousel allows users to navigate through a sequence of items using swipe, scroll, or arrow controls. It adapts its layout across screen sizes and displays position via dot indicators.
+
+<CardGroup cols={3}>
+  <Card title="3 Breakpoints" icon="monitor">
+    Mobile, Desktop Small, Desktop Large
+  </Card>
+  <Card title="Dot Indicators" icon="circle-dot">
+    2 to 10 dot variants with active state
+  </Card>
+  <Card title="Arrow Navigation" icon="chevrons-left-right">
+    Chevron controls for desktop breakpoints
+  </Card>
+</CardGroup>
+
+---
+
+## Component Preview
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexDirection:'column', gap:'24px', alignItems:'center', width:'100%'}}>
+
+  {/* Mobile */}
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', width:'100%', maxWidth:'360px'}}>
+    <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+      <div>
+        <div style={{fontSize:'14px', fontWeight:700, color:'#121212'}}>Header</div>
+        <div style={{fontSize:'12px', color:'#2b2b2b'}}>Add a description</div>
+      </div>
+      <div style={{width:'38px', height:'38px', border:'1px dashed #48a7fc', borderRadius:'6px', background:'#e7ecfe'}}></div>
+    </div>
+    <div style={{background:'#e6f3fe', border:'1px solid #48a7fc', borderRadius:'4px', padding:'8px', display:'flex', gap:'8px', overflow:'hidden'}}>
+      <div style={{minWidth:'328px', height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', borderRadius:'2px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>328×160</div>
+      <div style={{minWidth:'328px', height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', borderRadius:'2px'}}></div>
+      <div style={{minWidth:'328px', height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', borderRadius:'2px'}}></div>
+    </div>
+    <div style={{display:'flex', justifyContent:'center', gap:'2px', padding:'4px 0'}}>
+      <div style={{width:'16px', height:'8px', background:'#3b3b3b', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+    </div>
+    <div style={{textAlign:'center', fontSize:'11px', color:'#999'}}>Mobile — 360px</div>
+  </div>
+
+  {/* Desktop Small */}
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', width:'100%', maxWidth:'524px'}}>
+    <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+      <div>
+        <div style={{fontSize:'14px', fontWeight:700, color:'#121212'}}>Header</div>
+        <div style={{fontSize:'12px', color:'#2b2b2b'}}>Add a description</div>
+      </div>
+      <div style={{width:'38px', height:'38px', border:'1px dashed #48a7fc', borderRadius:'6px', background:'#e7ecfe'}}></div>
+    </div>
+    <div style={{background:'#e6f3fe', border:'1px solid #48a7fc', borderRadius:'4px', padding:'8px', display:'flex', gap:'8px', overflow:'hidden'}}>
+      <div style={{flex:1, height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', borderRadius:'2px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>488×160</div>
+      <div style={{flex:1, height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', borderRadius:'2px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>328×160</div>
+    </div>
+    <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'2px', padding:'4px 0'}}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#3b3b3b"/></svg>
+      <div style={{width:'16px', height:'8px', background:'#3b3b3b', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#3b3b3b"/></svg>
+    </div>
+    <div style={{textAlign:'center', fontSize:'11px', color:'#999'}}>Desktop Small — 524px</div>
+  </div>
+
+</div>
+
+---
+
+## Anatomy
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', justifyContent:'center', width:'100%'}}>
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', width:'100%', maxWidth:'360px', position:'relative'}}>
+    <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+      <div style={{outline:'2px dashed #f59e0b', outlineOffset:'2px', padding:'2px 4px'}}>
+        <div style={{fontSize:'14px', fontWeight:700, color:'#121212'}}>Header</div>
+        <div style={{fontSize:'12px', color:'#2b2b2b'}}>Add a description</div>
+      </div>
+      <div style={{width:'38px', height:'38px', border:'1px dashed #48a7fc', borderRadius:'6px', background:'#e7ecfe', outline:'2px dashed #8b5cf6', outlineOffset:'2px'}}></div>
+    </div>
+    <div style={{background:'#e6f3fe', border:'1px solid #48a7fc', borderRadius:'4px', padding:'8px', display:'flex', gap:'8px', overflow:'hidden', outline:'2px dashed #2563eb', outlineOffset:'2px'}}>
+      <div style={{minWidth:'200px', height:'120px', background:'#fff', border:'0.5px dashed #6cb9fc', borderRadius:'2px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121', outline:'2px dashed #ed1b36', outlineOffset:'2px'}}>Slot 1</div>
+      <div style={{minWidth:'200px', height:'120px', background:'#fff', border:'0.5px dashed #6cb9fc', borderRadius:'2px'}}></div>
+    </div>
+    <div style={{display:'flex', justifyContent:'center', gap:'2px', padding:'4px 0', outline:'2px dashed #16a34a', outlineOffset:'2px'}}>
+      <div style={{width:'16px', height:'8px', background:'#3b3b3b', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+      <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+    </div>
+    <div style={{display:'flex', flexWrap:'wrap', gap:'12px', justifyContent:'center', marginTop:'12px'}}>
+      <span style={{fontSize:'11px', color:'#f59e0b', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#f59e0b', display:'inline-block'}}></span>Header</span>
+      <span style={{fontSize:'11px', color:'#8b5cf6', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#8b5cf6', display:'inline-block'}}></span>Add-on Slot</span>
+      <span style={{fontSize:'11px', color:'#2563eb', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#2563eb', display:'inline-block'}}></span>Carousel Track</span>
+      <span style={{fontSize:'11px', color:'#ed1b36', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#ed1b36', display:'inline-block'}}></span>Content Slot</span>
+      <span style={{fontSize:'11px', color:'#16a34a', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#16a34a', display:'inline-block'}}></span>Indicators</span>
+    </div>
+  </div>
+</div>
+
+| Element | Description |
+|---------|-------------|
+| Header | Optional title and subtext above the carousel |
+| Add-on Slot | Optional action or icon in the top-right corner |
+| Carousel Track | Horizontally scrollable content container |
+| Content Slots | Individual item frames (1–3 visible at a time) |
+| Indicators | Dot navigation showing current position |
+| Arrow Controls | Chevron buttons for desktop navigation |
+
+---
+
+## Breakpoints
+
+<Tabs>
+  <Tab title="Mobile">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', justifyContent:'center'}}>
+      <div style={{display:'flex', flexDirection:'column', gap:'8px', width:'360px'}}>
+        <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+          <div><div style={{fontSize:'14px', fontWeight:700, color:'#121212'}}>Header</div><div style={{fontSize:'12px', color:'#2b2b2b'}}>Add a description</div></div>
+          <div style={{width:'38px', height:'38px', border:'1px dashed #48a7fc', borderRadius:'6px', background:'#e7ecfe'}}></div>
+        </div>
+        <div style={{background:'#e6f3fe', border:'1px solid #48a7fc', padding:'8px', display:'flex', gap:'8px', overflow:'hidden'}}>
+          <div style={{minWidth:'328px', height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>328×160</div>
+          <div style={{minWidth:'328px', height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc'}}></div>
+        </div>
+        <div style={{display:'flex', justifyContent:'center', gap:'2px'}}>
+          <div style={{width:'16px', height:'8px', background:'#3b3b3b', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+        </div>
+      </div>
+    </div>
+    Swipe-based navigation. Dot indicators only. Content slot: **328×160px**.
+  </Tab>
+  <Tab title="Desktop Small">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', justifyContent:'center'}}>
+      <div style={{display:'flex', flexDirection:'column', gap:'8px', width:'524px'}}>
+        <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+          <div><div style={{fontSize:'14px', fontWeight:700, color:'#121212'}}>Header</div><div style={{fontSize:'12px', color:'#2b2b2b'}}>Add a description</div></div>
+          <div style={{width:'38px', height:'38px', border:'1px dashed #48a7fc', borderRadius:'6px', background:'#e7ecfe'}}></div>
+        </div>
+        <div style={{background:'#e6f3fe', border:'1px solid #48a7fc', padding:'8px', display:'flex', gap:'8px', overflow:'hidden'}}>
+          <div style={{flex:1, height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>488×160</div>
+          <div style={{flex:1, height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>488×160</div>
+        </div>
+        <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'2px'}}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#3b3b3b"/></svg>
+          <div style={{width:'16px', height:'8px', background:'#3b3b3b', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#3b3b3b"/></svg>
+        </div>
+      </div>
+    </div>
+    Arrow + dot navigation. Content slot: **488×160px**.
+  </Tab>
+  <Tab title="Desktop Large">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', justifyContent:'center'}}>
+      <div style={{display:'flex', flexDirection:'column', gap:'8px', width:'100%', maxWidth:'724px'}}>
+        <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
+          <div><div style={{fontSize:'14px', fontWeight:700, color:'#121212'}}>Header</div><div style={{fontSize:'12px', color:'#2b2b2b'}}>Add a description</div></div>
+          <div style={{width:'38px', height:'38px', border:'1px dashed #48a7fc', borderRadius:'6px', background:'#e7ecfe'}}></div>
+        </div>
+        <div style={{background:'#e6f3fe', border:'1px solid #48a7fc', padding:'8px', display:'flex', gap:'8px', overflow:'hidden'}}>
+          <div style={{flex:1, height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>688×160</div>
+          <div style={{flex:1, height:'160px', background:'#fff', border:'0.5px dashed #6cb9fc', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'12px', color:'#212121'}}>688×160</div>
+        </div>
+        <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'2px'}}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#3b3b3b"/></svg>
+          <div style={{width:'16px', height:'8px', background:'#3b3b3b', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <div style={{width:'8px', height:'8px', background:'#dedede', borderRadius:'999px'}}></div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#3b3b3b"/></svg>
+        </div>
+      </div>
+    </div>
+    Arrow + dot navigation. Content slot: **688×160px**.
+  </Tab>
+</Tabs>
+
+---
+
+## Indicators
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexDirection:'column', gap:'16px', alignItems:'center', width:'100%'}}>
+  {[2,3,4,5].map(n => (
+    <div key={n} style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'6px'}}>
+      <span style={{fontSize:'11px', color:'#999'}}>{n} items</span>
+      <div style={{display:'flex', gap:'2px', alignItems:'center'}}>
+        {Array.from({length:n}).map((_,i) => (
+          <div key={i} style={{width: i===0 ? '16px' : '8px', height:'8px', background: i===0 ? '#3b3b3b' : '#dedede', borderRadius:'999px'}}></div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+The active dot expands to a pill shape (`16×8px`). Inactive dots remain circular (`8×8px`). Supports 2–10 items.
+
+---
+
+## Usage Guidelines
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'16px', flexWrap:'wrap', justifyContent:'center', width:'100%'}}>
+  <div style={{flex:1, minWidth:'240px', background:'#f0fff4', border:'1px solid #86efac', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#16a34a', marginBottom:'12px'}}>✓ Do</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Use for browsing related content items</div>
+      <div>Always show indicators so users know their position</div>
+      <div>Limit visible items to 1–2 on mobile</div>
+      <div>Support both swipe and arrow navigation on desktop</div>
+    </div>
+  </div>
+  <div style={{flex:1, minWidth:'240px', background:'#fff5f5', border:'1px solid #fca5a5', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#dc2626', marginBottom:'12px'}}>✗ Don't</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Don't use for critical content that must all be seen</div>
+      <div>Don't hide indicators — users lose context</div>
+      <div>Don't use more than 10 items without pagination</div>
+      <div>Don't auto-play without user control</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Keyboard | Arrow keys navigate between slides |
+| Focus | Each slide and control must be focusable |
+| ARIA | Use `role="region"` with `aria-label="Carousel"` |
+| Indicators | Announce current position (e.g. "Slide 1 of 5") |
+| Controls | Arrow buttons must have `aria-label="Previous"` / `"Next"` |
+| Auto-play | Must have a pause control if auto-play is enabled |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Spacing">
+    | Token | Value |
+    |-------|-------|
+    | `spacing/8` | 8px — gap between content slots |
+    | `spacing/16` | 16px — horizontal track padding |
+    | `spacing/8` | 8px — vertical track padding |
+  </Tab>
+  <Tab title="Indicators">
+    | Token | Value |
+    |-------|-------|
+    | `scale/400` | 8px — inactive dot size |
+    | `scale/600` | 16px — active dot width |
+    | `surface/bg_primary_inverse/weak` | #3b3b3b — active dot |
+    | `surface/bg_primary/base` | #dedede — inactive dot |
+    | `scale/1500` | 999px — dot border radius |
+  </Tab>
+  <Tab title="Content Slots">
+    | Breakpoint | Slot Width | Slot Height |
+    |------------|------------|-------------|
+    | Mobile | 328px | 160px |
+    | Desktop Small | 488px | 160px |
+    | Desktop Large | 688px | 160px |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx Component API
+interface CarouselProps {
+  breakpoint?: 'mobile' | 'desktop-small' | 'desktop-large';
+  header?: string;
+  subtext?: string;
+  addonSlot?: React.ReactNode;
+  indicators?: boolean;
+  items: React.ReactNode[];
+  defaultIndex?: number;
+  onChange?: (index: number) => void;
+}
+```
+
+```tsx Usage
+import { Carousel } from '@tarmac/design-system';
+
+// Mobile carousel
+<Carousel
+  breakpoint="mobile"
+  header="Featured Items"
+  subtext="Browse our latest collection"
+  indicators={true}
+  items={[
+    <ProductCard key="1" />,
+    <ProductCard key="2" />,
+    <ProductCard key="3" />,
+  ]}
+/>
+
+// Desktop with arrow navigation
+<Carousel
+  breakpoint="desktop-large"
+  header="Recommended"
+  indicators={true}
+  items={[
+    <BannerCard key="1" />,
+    <BannerCard key="2" />,
+  ]}
+  onChange={(index) => trackSlideView(index)}
+/>
+```
+</CodeGroup>
