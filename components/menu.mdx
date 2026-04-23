@@ -1,0 +1,383 @@
+---
+title: Menu
+description: A contextual overlay component that displays a list of actions or options, supporting single and dual menu styles with nested sublists.
+icon: "list"
+---
+
+## Overview
+
+Menu provides a contextual list of actions or navigation options. It supports single and dual column layouts, nested sublists, and multiple sizes for flexible use across the interface.
+
+<CardGroup cols={4}>
+  <Card title="2 Styles" icon="columns-2">
+    Single Menu and Dual Menu
+  </Card>
+  <Card title="3 Sizes" icon="expand">
+    Large, Default, Small
+  </Card>
+  <Card title="5 States" icon="circle-dot">
+    Default, Hover, Hover-Menu, Pressed, Disabled
+  </Card>
+  <Card title="Nested Lists" icon="list-tree">
+    1 to 5 items with sublists
+  </Card>
+</CardGroup>
+
+---
+
+## Component Preview
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexWrap:'wrap', gap:'32px', justifyContent:'center', width:'100%'}}>
+
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+    <span style={{fontSize:'11px', color:'#999'}}>Single Menu — 3 Items</span>
+    <div style={{width:'324px', background:'#fff', borderRadius:'8px', boxShadow:'0 4px 16px rgba(0,0,0,0.12)', overflow:'hidden'}}>
+      <div style={{padding:'12px 16px', borderBottom:'1px solid #f0f0f0'}}>
+        <div style={{fontSize:'12px', fontWeight:600, color:'#808080'}}>Menu Title</div>
+      </div>
+      {['Action Item 1', 'Action Item 2', 'Action Item 3'].map((item, i) => (
+        <div key={i} style={{padding:'12px 16px', display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom: i < 2 ? '1px solid #f5f5f5' : 'none', cursor:'pointer'}}>
+          <div style={{display:'flex', alignItems:'center', gap:'10px'}}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+            <span style={{fontSize:'14px', color:'#2b2b2b'}}>{item}</span>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#999"/></svg>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+    <span style={{fontSize:'11px', color:'#999'}}>Dual Menu — 3 Items</span>
+    <div style={{display:'flex', width:'648px', background:'#fff', borderRadius:'8px', boxShadow:'0 4px 16px rgba(0,0,0,0.12)', overflow:'hidden'}}>
+      <div style={{flex:1, borderRight:'1px solid #f0f0f0'}}>
+        <div style={{padding:'12px 16px', borderBottom:'1px solid #f0f0f0'}}>
+          <div style={{fontSize:'12px', fontWeight:600, color:'#808080'}}>Menu Title</div>
+        </div>
+        {['Category A', 'Category B', 'Category C'].map((item, i) => (
+          <div key={i} style={{padding:'12px 16px', display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom: i < 2 ? '1px solid #f5f5f5' : 'none', background: i === 0 ? '#f5f5f5' : '#fff', cursor:'pointer'}}>
+            <div style={{display:'flex', alignItems:'center', gap:'10px'}}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+              <span style={{fontSize:'14px', color:'#2b2b2b'}}>{item}</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#999"/></svg>
+          </div>
+        ))}
+      </div>
+      <div style={{flex:1}}>
+        <div style={{padding:'12px 16px', borderBottom:'1px solid #f0f0f0'}}>
+          <div style={{fontSize:'12px', fontWeight:600, color:'#808080'}}>Submenu</div>
+        </div>
+        {['Sub Item 1', 'Sub Item 2', 'Sub Item 3'].map((item, i) => (
+          <div key={i} style={{padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', borderBottom: i < 2 ? '1px solid #f5f5f5' : 'none', cursor:'pointer'}}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2" fill="#999"/></svg>
+            <span style={{fontSize:'14px', color:'#2b2b2b'}}>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+---
+
+## Anatomy
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', justifyContent:'center', width:'100%'}}>
+  <div style={{width:'324px', background:'#fff', borderRadius:'8px', boxShadow:'0 4px 16px rgba(0,0,0,0.12)', overflow:'hidden'}}>
+    <div style={{padding:'12px 16px', borderBottom:'1px solid #f0f0f0', outline:'2px dashed #f59e0b', outlineOffset:'-2px'}}>
+      <div style={{fontSize:'12px', fontWeight:600, color:'#808080'}}>Title Cell</div>
+    </div>
+    <div style={{padding:'12px 16px', display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid #f5f5f5', outline:'2px dashed #ed1b36', outlineOffset:'-2px'}}>
+      <div style={{display:'flex', alignItems:'center', gap:'10px'}}>
+        <div style={{outline:'2px dashed #8b5cf6', outlineOffset:'2px', borderRadius:'50%', display:'flex'}}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+        </div>
+        <span style={{fontSize:'14px', color:'#2b2b2b'}}>Menu Item</span>
+      </div>
+      <div style={{outline:'2px dashed #2563eb', outlineOffset:'2px'}}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#999"/></svg>
+      </div>
+    </div>
+    <div style={{padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', outline:'2px dashed #16a34a', outlineOffset:'-2px'}}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+      <span style={{fontSize:'14px', color:'#2b2b2b'}}>Menu Item 2</span>
+    </div>
+  </div>
+</div>
+
+<div style={{display:'flex', flexWrap:'wrap', gap:'16px', justifyContent:'center', marginBottom:'16px'}}>
+  <span style={{fontSize:'11px', color:'#f59e0b', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#f59e0b', display:'inline-block'}}></span>Title Cell</span>
+  <span style={{fontSize:'11px', color:'#ed1b36', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#ed1b36', display:'inline-block'}}></span>Menu List Cell</span>
+  <span style={{fontSize:'11px', color:'#8b5cf6', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#8b5cf6', display:'inline-block'}}></span>Addon (Icon/Dot/Avatar/Checkbox)</span>
+  <span style={{fontSize:'11px', color:'#2563eb', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#2563eb', display:'inline-block'}}></span>Arrow Indicator</span>
+  <span style={{fontSize:'11px', color:'#16a34a', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#16a34a', display:'inline-block'}}></span>Menu Cell</span>
+</div>
+
+| Element | Description |
+|---------|-------------|
+| Title Cell | Optional header with menu title text |
+| Menu List Cell | Row with addon, label, and optional arrow indicator |
+| Menu Cell | Simpler row variant without arrow |
+| Addon | Leading element — Icon, Dot, Avatar, or Checkbox |
+| Arrow | Trailing indicator — Down, Up, or Right |
+| Sublist | Nested group of menu items under a parent |
+
+---
+
+## Styles
+
+<Tabs>
+  <Tab title="Single Menu">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', gap:'24px', justifyContent:'center', flexWrap:'wrap'}}>
+      {['Large', 'Default', 'Small'].map(size => (
+        <div key={size} style={{display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+          <span style={{fontSize:'11px', color:'#999'}}>{size}</span>
+          <div style={{width:'280px', background:'#fff', borderRadius:'8px', boxShadow:'0 4px 16px rgba(0,0,0,0.12)', overflow:'hidden'}}>
+            {['Item 1', 'Item 2', 'Item 3'].map((item, i) => (
+              <div key={i} style={{padding: size === 'Large' ? '14px 16px' : size === 'Default' ? '12px 16px' : '8px 16px', display:'flex', alignItems:'center', gap:'10px', borderBottom: i < 2 ? '1px solid #f5f5f5' : 'none'}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+                <span style={{fontSize: size === 'Small' ? '12px' : '14px', color:'#2b2b2b'}}>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    Single column layout. Best for simple action lists and context menus.
+  </Tab>
+  <Tab title="Dual Menu">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', justifyContent:'center'}}>
+      <div style={{display:'flex', width:'560px', background:'#fff', borderRadius:'8px', boxShadow:'0 4px 16px rgba(0,0,0,0.12)', overflow:'hidden'}}>
+        <div style={{flex:1, borderRight:'1px solid #f0f0f0'}}>
+          {['Category A', 'Category B', 'Category C'].map((item, i) => (
+            <div key={i} style={{padding:'12px 16px', display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom: i < 2 ? '1px solid #f5f5f5' : 'none', background: i === 0 ? '#f5f5f5' : '#fff'}}>
+              <div style={{display:'flex', alignItems:'center', gap:'10px'}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+                <span style={{fontSize:'14px', color:'#2b2b2b'}}>{item}</span>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#999"/></svg>
+            </div>
+          ))}
+        </div>
+        <div style={{flex:1}}>
+          {['Sub Item 1', 'Sub Item 2'].map((item, i) => (
+            <div key={i} style={{padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', borderBottom: i < 1 ? '1px solid #f5f5f5' : 'none'}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2" fill="#999"/></svg>
+              <span style={{fontSize:'14px', color:'#2b2b2b'}}>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    Two-column layout with parent categories on the left and sub-items on the right.
+  </Tab>
+</Tabs>
+
+---
+
+## States
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexWrap:'wrap', gap:'16px', justifyContent:'center', width:'100%'}}>
+  {[
+    {label:'Default', bg:'#fff', color:'#2b2b2b', opacity:1},
+    {label:'Hover', bg:'#f5f5f5', color:'#2b2b2b', opacity:1},
+    {label:'Hover-Menu', bg:'#f0f0f0', color:'#2b2b2b', opacity:1},
+    {label:'Pressed', bg:'#ebebeb', color:'#2b2b2b', opacity:1},
+    {label:'Disabled', bg:'#fff', color:'#cdcbcb', opacity:0.5},
+  ].map(s => (
+    <div key={s.label} style={{display:'flex', flexDirection:'column', gap:'6px', width:'260px'}}>
+      <span style={{fontSize:'11px', color:'#999', textAlign:'center'}}>{s.label}</span>
+      <div style={{background:s.bg, border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px 16px', display:'flex', alignItems:'center', gap:'10px', opacity:s.opacity}}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill={s.color === '#cdcbcb' ? '#cdcbcb' : '#666'}/></svg>
+        <span style={{fontSize:'14px', color:s.color, flex:1}}>Menu Item</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill={s.color === '#cdcbcb' ? '#cdcbcb' : '#999'}/></svg>
+      </div>
+    </div>
+  ))}
+</div>
+
+---
+
+## Addon Types
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'24px', justifyContent:'center', flexWrap:'wrap', width:'100%'}}>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+    <span style={{fontSize:'11px', color:'#999'}}>Icon</span>
+  </div>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'16px', height:'16px', borderRadius:'50%', background:'#1a73e8'}}></div>
+    <span style={{fontSize:'11px', color:'#999'}}>Dot</span>
+  </div>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'28px', height:'28px', borderRadius:'50%', background:'#e0e0e0', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'11px', fontWeight:600, color:'#666'}}>AB</div>
+    <span style={{fontSize:'11px', color:'#999'}}>Avatar</span>
+  </div>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'20px', height:'20px', border:'2px solid #2b2b2b', borderRadius:'4px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#2b2b2b"/></svg>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Checkbox</span>
+  </div>
+</div>
+
+---
+
+## List Counts
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'24px', justifyContent:'center', flexWrap:'wrap', width:'100%'}}>
+  {[1,2,3,4,5].map(count => (
+    <div key={count} style={{display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+      <span style={{fontSize:'11px', color:'#999'}}>{count} Item{count > 1 ? 's' : ''}</span>
+      <div style={{width:'200px', background:'#fff', borderRadius:'8px', boxShadow:'0 2px 8px rgba(0,0,0,0.1)', overflow:'hidden'}}>
+        {Array.from({length: count}).map((_, i) => (
+          <div key={i} style={{padding:'10px 14px', display:'flex', alignItems:'center', gap:'8px', borderBottom: i < count - 1 ? '1px solid #f5f5f5' : 'none'}}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#666"/></svg>
+            <span style={{fontSize:'13px', color:'#2b2b2b'}}>Item {i + 1}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+---
+
+## Usage Guidelines
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'16px', flexWrap:'wrap', justifyContent:'center', width:'100%'}}>
+  <div style={{flex:1, minWidth:'240px', background:'#f0fff4', border:'1px solid #86efac', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#16a34a', marginBottom:'12px'}}>Do</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Use for contextual actions triggered by a button or right-click</div>
+      <div>Keep menu items concise and action-oriented</div>
+      <div>Group related items with sublists</div>
+      <div>Use Dual Menu for category + sub-item navigation</div>
+    </div>
+  </div>
+  <div style={{flex:1, minWidth:'240px', background:'#fff5f5', border:'1px solid #fca5a5', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#dc2626', marginBottom:'12px'}}>Do Not</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Do not use for primary navigation (use Navigation component)</div>
+      <div>Do not exceed 5 items without grouping or scrolling</div>
+      <div>Do not nest more than 2 levels deep</div>
+      <div>Do not mix addon types within the same menu</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Role | Use `role="menu"` on the container and `role="menuitem"` on each item |
+| Keyboard | Arrow keys to navigate, Enter to select, Escape to close |
+| Focus | First item receives focus on open; focus trap within menu |
+| Submenu | Arrow Right opens submenu, Arrow Left closes it |
+| Disabled | Disabled items must have `aria-disabled="true"` and skip focus |
+| Screen readers | Announce menu label, item count, and current position |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Spacing">
+    | Size | Padding |
+    |------|---------|
+    | Large | 14px 16px |
+    | Default | 12px 16px |
+    | Small | 8px 16px |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Usage |
+    |-------|-------|
+    | `surface/bg_primary/default` | Menu background (#fff) |
+    | `surface/bg_primary/strong` | Hover background (#f5f5f5) |
+    | `text/body/primary` | Item text (#2b2b2b) |
+    | `text/caption/base` | Title text (#808080) |
+    | `text/body/disabled` | Disabled text (#cdcbcb) |
+    | `border/neutral/primary` | Divider lines (#f5f5f5) |
+  </Tab>
+  <Tab title="Elevation">
+    | Token | Value |
+    |-------|-------|
+    | Box shadow | `0 4px 16px rgba(0,0,0,0.12)` |
+    | Border radius | 8px |
+    | Menu width | 324px (single), 648px (dual) |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx Component API
+interface MenuProps {
+  style?: 'single' | 'dual';
+  size?: 'large' | 'default' | 'small';
+  title?: string;
+  items: MenuItem[];
+  onSelect?: (item: MenuItem) => void;
+  onClose?: () => void;
+}
+
+interface MenuItem {
+  label: string;
+  icon?: React.ReactNode;
+  addon?: 'icon' | 'dot' | 'avatar' | 'checkbox';
+  arrow?: 'down' | 'up' | 'right';
+  disabled?: boolean;
+  checked?: boolean;
+  subItems?: MenuItem[];
+  onClick?: () => void;
+}
+```
+
+```tsx Usage
+import { Menu } from '@tarmac/design-system';
+
+// Single menu
+<Menu
+  style="single"
+  size="large"
+  title="Actions"
+  items={[
+    { label: 'Edit', icon: <EditIcon /> },
+    { label: 'Duplicate', icon: <CopyIcon /> },
+    { label: 'Delete', icon: <TrashIcon />, disabled: true },
+  ]}
+  onSelect={(item) => handleAction(item)}
+/>
+
+// Dual menu with sublists
+<Menu
+  style="dual"
+  size="default"
+  title="Categories"
+  items={[
+    {
+      label: 'Shipping',
+      arrow: 'right',
+      subItems: [
+        { label: 'Express' },
+        { label: 'Standard' },
+      ],
+    },
+    {
+      label: 'Returns',
+      arrow: 'right',
+      subItems: [
+        { label: 'Refund' },
+        { label: 'Exchange' },
+      ],
+    },
+  ]}
+/>
+```
+</CodeGroup>

@@ -81,6 +81,7 @@
                   "components/input-area",
                   "components/links",
                   "components/list",
+                  "components/menu",
                   "components/navigation",
                   "components/otp-fields",
                   "components/pagination",
