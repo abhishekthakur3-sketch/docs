@@ -1,0 +1,281 @@
+---
+title: Marquee Banner
+description: A horizontally scrolling banner used for continuous display of important messages, alerts, and announcements.
+icon: "megaphone"
+---
+
+## Overview
+
+Marquee Banner shows continuously moving text to highlight alerts or announcements without interrupting user flow. It supports light and dark themes across web and mobile devices.
+
+<CardGroup cols={3}>
+  <Card title="2 Themes" icon="circle-half-stroke">
+    Light and Dark
+  </Card>
+  <Card title="2 Types" icon="arrows-left-right">
+    Start and End loop directions
+  </Card>
+  <Card title="2 Devices" icon="monitor-smartphone">
+    Web (1440px) and Mobile (360px)
+  </Card>
+</CardGroup>
+
+---
+
+## Component Preview
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'24px', marginBottom:'24px', display:'flex', flexDirection:'column', gap:'24px', width:'100%'}}>
+
+  <div style={{display:'flex', flexDirection:'column', gap:'6px'}}>
+    <span style={{fontSize:'11px', color:'#999'}}>Light Theme — Web</span>
+    <div style={{background:'#fff', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', border:'1px solid #e6e6e6'}}>
+      <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap', animation:'none'}}>
+        <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+        <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b'}}>Be alert: A targeted phishing scam is circulating via SMS, falsely claiming "non-delivery due to failed attempts"</span>
+        <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+        <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b'}}>Please do not transfer money to payment links that are not shared from Delhivery's official accounts</span>
+        <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+      </div>
+    </div>
+  </div>
+
+  <div style={{display:'flex', flexDirection:'column', gap:'6px'}}>
+    <span style={{fontSize:'11px', color:'#999'}}>Dark Theme — Web</span>
+    <div style={{background:'#000', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px'}}>
+      <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+        <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+        <span style={{fontSize:'16px', fontWeight:500, color:'#fff'}}>Be alert: A targeted phishing scam is circulating via SMS, falsely claiming "non-delivery due to failed attempts"</span>
+        <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+        <span style={{fontSize:'16px', fontWeight:500, color:'#fff'}}>Please do not transfer money to payment links that are not shared from Delhivery's official accounts</span>
+        <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+      </div>
+    </div>
+  </div>
+
+  <div style={{display:'flex', gap:'16px', flexWrap:'wrap'}}>
+    <div style={{display:'flex', flexDirection:'column', gap:'6px', flex:1, minWidth:'300px'}}>
+      <span style={{fontSize:'11px', color:'#999'}}>Light Theme — Mobile (360px)</span>
+      <div style={{background:'#fff', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', border:'1px solid #e6e6e6', maxWidth:'360px'}}>
+        <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b'}}>Be alert: A targeted phishing scam is circulating via SMS...</span>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+        </div>
+      </div>
+    </div>
+    <div style={{display:'flex', flexDirection:'column', gap:'6px', flex:1, minWidth:'300px'}}>
+      <span style={{fontSize:'11px', color:'#999'}}>Dark Theme — Mobile (360px)</span>
+      <div style={{background:'#000', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', maxWidth:'360px'}}>
+        <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#fff'}}>Be alert: A targeted phishing scam is circulating via SMS...</span>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+---
+
+## Anatomy
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', justifyContent:'center', width:'100%'}}>
+  <div style={{background:'#fff', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', border:'1px solid #e6e6e6', width:'100%', maxWidth:'600px', outline:'2px dashed #2563eb', outlineOffset:'4px'}}>
+    <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+      <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0, outline:'2px dashed #ed1b36', outlineOffset:'2px'}}></div>
+      <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b', outline:'2px dashed #16a34a', outlineOffset:'2px', padding:'0 2px'}}>Alert message text scrolls continuously</span>
+      <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0, outline:'2px dashed #ed1b36', outlineOffset:'2px'}}></div>
+      <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b', outline:'2px dashed #16a34a', outlineOffset:'2px', padding:'0 2px'}}>Second message follows seamlessly</span>
+    </div>
+  </div>
+</div>
+
+<div style={{display:'flex', flexWrap:'wrap', gap:'16px', justifyContent:'center', marginBottom:'16px'}}>
+  <span style={{fontSize:'11px', color:'#2563eb', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#2563eb', display:'inline-block'}}></span>Container</span>
+  <span style={{fontSize:'11px', color:'#ed1b36', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#ed1b36', display:'inline-block'}}></span>Alert Indicator</span>
+  <span style={{fontSize:'11px', color:'#16a34a', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#16a34a', display:'inline-block'}}></span>Scrolling Message</span>
+</div>
+
+| Element | Description |
+|---------|-------------|
+| Container | Full-width banner with overflow hidden, 56px height |
+| Alert Indicator | 15x15px red square separator between messages |
+| Scrolling Message | Continuously moving text content |
+
+---
+
+## Themes
+
+<Tabs>
+  <Tab title="Light">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', justifyContent:'center'}}>
+      <div style={{background:'#fff', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', border:'1px solid #e6e6e6', width:'100%', maxWidth:'600px'}}>
+        <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b'}}>Important announcement scrolling across the banner</span>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b'}}>Second message continues the loop</span>
+        </div>
+      </div>
+    </div>
+    White background with dark text. Use on light pages and headers.
+  </Tab>
+  <Tab title="Dark">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', justifyContent:'center'}}>
+      <div style={{background:'#000', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', width:'100%', maxWidth:'600px'}}>
+        <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#fff'}}>Important announcement scrolling across the banner</span>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#fff'}}>Second message continues the loop</span>
+        </div>
+      </div>
+    </div>
+    Black background with white text. Use on dark pages or for high-urgency alerts.
+  </Tab>
+</Tabs>
+
+---
+
+## Loop Types
+
+<Tabs>
+  <Tab title="Start">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+      <div style={{background:'#fff', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', border:'1px solid #e6e6e6', width:'100%', maxWidth:'500px'}}>
+        <div style={{position:'absolute', top:0, left:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b'}}>Message starts from the left edge and scrolls right to left</span>
+        </div>
+      </div>
+      <span style={{fontSize:'11px', color:'#999'}}>Content aligned to the left, scrolls leftward</span>
+    </div>
+  </Tab>
+  <Tab title="End">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+      <div style={{background:'#fff', height:'56px', overflow:'hidden', position:'relative', borderRadius:'4px', border:'1px solid #e6e6e6', width:'100%', maxWidth:'500px'}}>
+        <div style={{position:'absolute', top:0, right:0, display:'flex', alignItems:'center', gap:'11px', padding:'16px', whiteSpace:'nowrap'}}>
+          <span style={{fontSize:'16px', fontWeight:500, color:'#2b2b2b'}}>Message starts from the right edge and scrolls left to right</span>
+          <div style={{width:'15px', height:'15px', background:'#ed1b36', flexShrink:0}}></div>
+        </div>
+      </div>
+      <span style={{fontSize:'11px', color:'#999'}}>Content aligned to the right, scrolls rightward</span>
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Usage Guidelines
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'16px', flexWrap:'wrap', justifyContent:'center', width:'100%'}}>
+  <div style={{flex:1, minWidth:'240px', background:'#f0fff4', border:'1px solid #86efac', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#16a34a', marginBottom:'12px'}}>Do</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Use for important alerts, warnings, or time-sensitive announcements</div>
+      <div>Keep messages concise and scannable</div>
+      <div>Pause scrolling on hover or focus (web)</div>
+      <div>Use red indicator squares as visual separators</div>
+    </div>
+  </div>
+  <div style={{flex:1, minWidth:'240px', background:'#fff5f5', border:'1px solid #fca5a5', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#dc2626', marginBottom:'12px'}}>Do Not</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Do not use for promotional or marketing content</div>
+      <div>Do not scroll too fast — maintain readable speed</div>
+      <div>Do not stack multiple marquee banners</div>
+      <div>Do not use without a static text fallback for screen readers</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Pause control | Must pause on hover (web) or provide a pause button |
+| Speed | Scrolling speed must allow comfortable reading |
+| Screen readers | Provide static `aria-label` with the full message text |
+| Contrast | Text must meet 4.5:1 contrast ratio against background |
+| Reduced motion | Respect `prefers-reduced-motion` — show static text instead |
+| Focus | Banner must not steal focus from interactive elements |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Layout">
+    | Token | Value |
+    |-------|-------|
+    | Height | 56px |
+    | Padding | 16px |
+    | Gap | 11px between elements |
+    | Indicator size | 15x15px |
+    | Web width | 1440px (full viewport) |
+    | Mobile width | 360px (full viewport) |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Light | Dark |
+    |-------|-------|------|
+    | Background | `surface/bg_primary/default` (#fff) | `surface/bg_primary_inverse/default` (#000) |
+    | Text | `text/body/primary` (#2b2b2b) | `text/body_inverse/only-white` (#fff) |
+    | Indicator | `surface/bg_dlv_red/default` (#ed1b36) | `surface/bg_dlv_red/default` (#ed1b36) |
+  </Tab>
+  <Tab title="Typography">
+    | Token | Value |
+    |-------|-------|
+    | Font family | `font_family/body` (Noto Sans Medium) |
+    | Font size | `scale/600` (16px) |
+    | Line height | `scale/800` (24px) |
+    | Font weight | 500 (Medium) |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx Component API
+interface MarqueeBannerProps {
+  theme?: 'light' | 'dark';
+  type?: 'start' | 'end';
+  device?: 'web' | 'mobile';
+  messages: string[];
+  speed?: number;          // pixels per second
+  pauseOnHover?: boolean;  // default: true
+  'aria-label'?: string;   // static text for screen readers
+}
+```
+
+```tsx Usage
+import { MarqueeBanner } from '@tarmac/design-system';
+
+// Light theme alert banner
+<MarqueeBanner
+  theme="light"
+  type="start"
+  messages={[
+    'Be alert: A targeted phishing scam is circulating via SMS',
+    'Please do not transfer money to unverified payment links',
+  ]}
+  pauseOnHover={true}
+  aria-label="Security alert: Beware of phishing scams via SMS"
+/>
+
+// Dark theme for urgent alerts
+<MarqueeBanner
+  theme="dark"
+  type="start"
+  messages={[
+    'Service disruption in North India due to weather conditions',
+    'Deliveries may be delayed by 24-48 hours',
+  ]}
+/>
+```
+</CodeGroup>

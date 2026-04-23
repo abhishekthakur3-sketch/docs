@@ -81,6 +81,7 @@
                   "components/input-area",
                   "components/links",
                   "components/list",
+                  "components/marquee-banner",
                   "components/menu",
                   "components/navigation",
                   "components/otp-fields",
