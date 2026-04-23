@@ -1,0 +1,359 @@
+---
+title: FAB
+description: A Floating Action Button used to initiate primary or grouped actions from a fixed screen position.
+icon: "circle-plus"
+---
+
+## Overview
+
+FAB (Floating Action Button) serves as the main entry point for primary actions. It floats above the UI in a fixed position and can expand to reveal a set of related actions.
+
+<CardGroup cols={4}>
+  <Card title="2 Types" icon="layout-template">
+    Default and Extended
+  </Card>
+  <Card title="3 Themes" icon="palette">
+    Light, Dark, Info Blue
+  </Card>
+  <Card title="3 Sizes" icon="expand">
+    Large, Medium, Small
+  </Card>
+  <Card title="6 States" icon="circle-dot">
+    Default, Hover, Focus, Pressed, Disabled, Ghost
+  </Card>
+</CardGroup>
+
+---
+
+## Component Preview
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexWrap:'wrap', gap:'32px', alignItems:'center', justifyContent:'center', width:'100%'}}>
+
+  {/* Light Default */}
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'44px', height:'44px', borderRadius:'999px', background:'#fff', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#2b2b2b"/></svg>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Light / Large</span>
+  </div>
+
+  {/* Light Extended */}
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{height:'44px', borderRadius:'999px', background:'#fff', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center', gap:'6px', padding:'0 16px'}}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#2b2b2b"/></svg>
+      <span style={{fontSize:'14px', fontWeight:500, color:'#2b2b2b', whiteSpace:'nowrap'}}>Add Item</span>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Light Extended</span>
+  </div>
+
+  {/* Dark Default */}
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'44px', height:'44px', borderRadius:'999px', background:'#2b2b2b', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.3)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#fff"/></svg>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Dark / Large</span>
+  </div>
+
+  {/* Dark Extended */}
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{height:'44px', borderRadius:'999px', background:'#2b2b2b', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.3)', display:'flex', alignItems:'center', justifyContent:'center', gap:'6px', padding:'0 16px'}}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#fff"/></svg>
+      <span style={{fontSize:'14px', fontWeight:500, color:'#fff', whiteSpace:'nowrap'}}>Add Item</span>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Dark Extended</span>
+  </div>
+
+  {/* Info Blue Default */}
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'44px', height:'44px', borderRadius:'999px', background:'#1a73e8', boxShadow:'-1px 1px 6px 2px rgba(26,115,232,0.4)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#fff"/></svg>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Info Blue / Large</span>
+  </div>
+
+  {/* Info Blue Extended */}
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{height:'44px', borderRadius:'999px', background:'#1a73e8', boxShadow:'-1px 1px 6px 2px rgba(26,115,232,0.4)', display:'flex', alignItems:'center', justifyContent:'center', gap:'6px', padding:'0 16px'}}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#fff"/></svg>
+      <span style={{fontSize:'14px', fontWeight:500, color:'#fff', whiteSpace:'nowrap'}}>Add Item</span>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Info Blue Extended</span>
+  </div>
+
+</div>
+
+---
+
+## Anatomy
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', justifyContent:'center', width:'100%'}}>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'24px'}}>
+    <div style={{position:'relative', display:'inline-flex'}}>
+      <div style={{height:'44px', borderRadius:'999px', background:'#fff', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', gap:'6px', padding:'0 16px', outline:'2px dashed #2563eb', outlineOffset:'4px'}}>
+        <div style={{outline:'2px dashed #ed1b36', outlineOffset:'2px', borderRadius:'50%', display:'flex'}}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#2b2b2b"/></svg>
+        </div>
+        <span style={{fontSize:'14px', fontWeight:500, color:'#2b2b2b', outline:'2px dashed #16a34a', outlineOffset:'2px', padding:'0 2px'}}>Add Item</span>
+      </div>
+    </div>
+    <div style={{display:'flex', flexWrap:'wrap', gap:'16px', justifyContent:'center'}}>
+      <span style={{fontSize:'11px', color:'#2563eb', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#2563eb', display:'inline-block'}}></span>Container</span>
+      <span style={{fontSize:'11px', color:'#ed1b36', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#ed1b36', display:'inline-block'}}></span>Icon</span>
+      <span style={{fontSize:'11px', color:'#16a34a', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#16a34a', display:'inline-block'}}></span>Label (Extended only)</span>
+    </div>
+  </div>
+</div>
+
+| Element | Description |
+|---------|-------------|
+| Container | Pill-shaped button with elevation shadow |
+| Icon | 24px action icon (always present) |
+| Label | Text label shown in Extended type only |
+| Shadow | Raised tertiary shadow for elevation |
+
+---
+
+## Types
+
+<Tabs>
+  <Tab title="Default">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', gap:'24px', justifyContent:'center', flexWrap:'wrap'}}>
+      {[{bg:'#fff', color:'#2b2b2b', shadow:'rgba(0,0,0,0.2)', label:'Light'},{bg:'#2b2b2b', color:'#fff', shadow:'rgba(0,0,0,0.3)', label:'Dark'},{bg:'#1a73e8', color:'#fff', shadow:'rgba(26,115,232,0.4)', label:'Info Blue'}].map(t => (
+        <div key={t.label} style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+          <div style={{width:'44px', height:'44px', borderRadius:'999px', background:t.bg, boxShadow:`-1px 1px 6px 2px ${t.shadow}`, display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill={t.color}/></svg>
+          </div>
+          <span style={{fontSize:'11px', color:'#999'}}>{t.label}</span>
+        </div>
+      ))}
+    </div>
+    Icon-only circular button. Use for compact layouts where space is limited.
+  </Tab>
+  <Tab title="Extended">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', gap:'24px', justifyContent:'center', flexWrap:'wrap'}}>
+      {[{bg:'#fff', color:'#2b2b2b', shadow:'rgba(0,0,0,0.2)', label:'Light'},{bg:'#2b2b2b', color:'#fff', shadow:'rgba(0,0,0,0.3)', label:'Dark'},{bg:'#1a73e8', color:'#fff', shadow:'rgba(26,115,232,0.4)', label:'Info Blue'}].map(t => (
+        <div key={t.label} style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+          <div style={{height:'44px', borderRadius:'999px', background:t.bg, boxShadow:`-1px 1px 6px 2px ${t.shadow}`, display:'flex', alignItems:'center', gap:'6px', padding:'0 16px'}}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill={t.color}/></svg>
+            <span style={{fontSize:'14px', fontWeight:500, color:t.color, whiteSpace:'nowrap'}}>Add Item</span>
+          </div>
+          <span style={{fontSize:'11px', color:'#999'}}>{t.label}</span>
+        </div>
+      ))}
+    </div>
+    Icon + label button. Use when the action needs a descriptive label for clarity.
+  </Tab>
+</Tabs>
+
+---
+
+## Sizes
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'32px', alignItems:'flex-end', justifyContent:'center', flexWrap:'wrap', width:'100%'}}>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'44px', height:'44px', borderRadius:'999px', background:'#fff', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#2b2b2b"/></svg>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Large — 44px</span>
+  </div>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'36px', height:'36px', borderRadius:'999px', background:'#fff', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#2b2b2b"/></svg>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Medium — 36px</span>
+  </div>
+  <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+    <div style={{width:'28px', height:'28px', borderRadius:'999px', background:'#fff', boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#2b2b2b"/></svg>
+    </div>
+    <span style={{fontSize:'11px', color:'#999'}}>Small — 28px</span>
+  </div>
+</div>
+
+---
+
+## States
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexWrap:'wrap', gap:'24px', justifyContent:'center', width:'100%'}}>
+  {[
+    {label:'Default', bg:'#fff', opacity:1, shadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', border:'none'},
+    {label:'Hover', bg:'#f5f5f5', opacity:1, shadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', border:'none'},
+    {label:'Focus', bg:'#fff', opacity:1, shadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', border:'2px solid #2b2b2b'},
+    {label:'Pressed', bg:'#e8e8e8', opacity:1, shadow:'-1px 1px 3px 1px rgba(0,0,0,0.15)', border:'none'},
+    {label:'Disabled', bg:'#fff', opacity:0.38, shadow:'-1px 1px 6px 2px rgba(0,0,0,0.1)', border:'none'},
+    {label:'Ghost', bg:'transparent', opacity:1, shadow:'none', border:'1px solid #e6e6e6'},
+  ].map(s => (
+    <div key={s.label} style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+      <div style={{width:'44px', height:'44px', borderRadius:'999px', background:s.bg, boxShadow:s.shadow, border:s.border, opacity:s.opacity, display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill="#2b2b2b"/></svg>
+      </div>
+      <span style={{fontSize:'11px', color:'#999'}}>{s.label}</span>
+    </div>
+  ))}
+</div>
+
+---
+
+## FAB Menu
+
+The FAB can expand to reveal a stack of action buttons. Supports 3, 4, or 5 items.
+
+<Tabs>
+  <Tab title="Default (Collapsed)">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', gap:'32px', justifyContent:'center', flexWrap:'wrap'}}>
+      {[{bg:'#fff', color:'#2b2b2b', label:'Light'},{bg:'#2b2b2b', color:'#fff', label:'Dark'},{bg:'#1a73e8', color:'#fff', label:'Info Blue'}].map(t => (
+        <div key={t.label} style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+          <div style={{width:'44px', height:'44px', borderRadius:'999px', background:t.bg, boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" fill={t.color}/></svg>
+          </div>
+          <span style={{fontSize:'11px', color:'#999'}}>{t.label}</span>
+        </div>
+      ))}
+    </div>
+  </Tab>
+  <Tab title="Expanded">
+    <div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', display:'flex', gap:'48px', justifyContent:'center', flexWrap:'wrap'}}>
+      {[{bg:'#fff', color:'#2b2b2b', btnBg:'#fff', btnColor:'#2b2b2b', label:'Light'},{bg:'#2b2b2b', color:'#fff', btnBg:'#2b2b2b', btnColor:'#fff', label:'Dark'},{bg:'#1a73e8', color:'#fff', btnBg:'#1a73e8', btnColor:'#fff', label:'Info Blue'}].map(t => (
+        <div key={t.label} style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+          <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'8px'}}>
+            {['Share', 'Edit', 'Delete'].map((action, i) => (
+              <div key={action} style={{height:'36px', borderRadius:'999px', background:t.btnBg, boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.15)', display:'flex', alignItems:'center', gap:'6px', padding:'0 14px', opacity: 1 - i * 0.05}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill={t.btnColor}/></svg>
+                <span style={{fontSize:'13px', fontWeight:500, color:t.btnColor}}>{action}</span>
+              </div>
+            ))}
+            <div style={{width:'44px', height:'44px', borderRadius:'999px', background:t.bg, boxShadow:'-1px 1px 6px 2px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center', marginTop:'4px'}}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z" fill={t.color}/></svg>
+            </div>
+          </div>
+          <span style={{fontSize:'11px', color:'#999'}}>{t.label}</span>
+        </div>
+      ))}
+    </div>
+  </Tab>
+</Tabs>
+
+---
+
+## Usage Guidelines
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'16px', flexWrap:'wrap', justifyContent:'center', width:'100%'}}>
+  <div style={{flex:1, minWidth:'240px', background:'#f0fff4', border:'1px solid #86efac', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#16a34a', marginBottom:'12px'}}>✓ Do</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Use for the single most important action on a screen</div>
+      <div>Keep it fixed to the bottom-right corner</div>
+      <div>Use Extended type when the action label adds clarity</div>
+      <div>Limit FAB menu to 3–5 items maximum</div>
+    </div>
+  </div>
+  <div style={{flex:1, minWidth:'240px', background:'#fff5f5', border:'1px solid #fca5a5', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#dc2626', marginBottom:'12px'}}>✗ Don't</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Don't use more than one FAB per screen</div>
+      <div>Don't use for destructive or irreversible actions</div>
+      <div>Don't hide the FAB behind other UI elements</div>
+      <div>Don't use FAB for navigation actions</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Labels | Icon-only FAB must have `aria-label` describing the action |
+| Keyboard | Tab to focus, Enter/Space to activate |
+| Focus ring | Visible 2px focus outline |
+| Touch target | Minimum 44×44px (Large size recommended) |
+| Menu | FAB menu must be keyboard navigable with Escape to close |
+| Screen readers | Announce expanded/collapsed state via `aria-expanded` |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Sizes">
+    | Size | Dimensions | Icon Size |
+    |------|------------|-----------|
+    | Large | 44×44px | 24px |
+    | Medium | 36×36px | 20px |
+    | Small | 28×28px | 16px |
+  </Tab>
+  <Tab title="Colors">
+    | Theme | Background | Icon/Label |
+    |-------|------------|------------|
+    | Light | `surface/bg_primary/default` (#fff) | `text/body/primary` (#2b2b2b) |
+    | Dark | `surface/bg_primary_inverse/default` (#2b2b2b) | `#fff` |
+    | Info Blue | `#1a73e8` | `#fff` |
+  </Tab>
+  <Tab title="Elevation">
+    | Token | Value |
+    |-------|-------|
+    | `shadow/raised/tertiary` | `-1px 1px 6px 2px rgba(0,0,0,0.2)` |
+    | `border-radius/max` | 999px |
+    | `spacing/8` | 10px — container padding |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx Component API
+interface FABProps {
+  type?: 'default' | 'extended';
+  theme?: 'light' | 'dark' | 'info-blue';
+  size?: 'large' | 'medium' | 'small';
+  state?: 'default' | 'hover' | 'focus' | 'pressed' | 'disabled' | 'ghost';
+  icon: React.ReactNode;
+  label?: string;           // Required for extended type
+  onClick?: () => void;
+  'aria-label'?: string;    // Required for default type
+}
+
+interface FABMenuProps {
+  theme?: 'light' | 'dark' | 'info-blue';
+  items: { icon: React.ReactNode; label: string; onClick: () => void }[];
+  defaultExpanded?: boolean;
+}
+```
+
+```tsx Usage
+import { FAB, FABMenu } from '@tarmac/design-system';
+
+// Default icon-only FAB
+<FAB
+  type="default"
+  theme="light"
+  size="large"
+  icon={<AddIcon />}
+  aria-label="Add new item"
+  onClick={() => handleAdd()}
+/>
+
+// Extended FAB with label
+<FAB
+  type="extended"
+  theme="dark"
+  size="large"
+  icon={<AddIcon />}
+  label="Add Item"
+  onClick={() => handleAdd()}
+/>
+
+// FAB with expandable menu
+<FABMenu
+  theme="light"
+  items={[
+    { icon: <ShareIcon />, label: 'Share', onClick: handleShare },
+    { icon: <EditIcon />, label: 'Edit', onClick: handleEdit },
+    { icon: <DeleteIcon />, label: 'Delete', onClick: handleDelete },
+  ]}
+/>
+```
+</CodeGroup>

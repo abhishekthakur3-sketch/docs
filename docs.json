@@ -71,6 +71,7 @@
                   "components/date-time-picker",
                   "components/dialog-box",
                   "components/dropdown",
+                  "components/fab",
                   "components/file-upload",
                   "components/filter",
                   "components/footer",
