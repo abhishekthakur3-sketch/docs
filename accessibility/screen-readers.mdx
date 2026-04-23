@@ -1,120 +1,131 @@
 ---
-title: "Screen Reader Support"
-description: "Guidelines for screen reader compatibility in TARMAC"
+title: Screen Reader Support
+description: Guidelines for ensuring TARMAC components work seamlessly with screen readers.
+icon: "audio-description"
 ---
 
-# Screen Reader Support
+## Overview
 
-TARMAC components are designed to work seamlessly with screen readers through proper semantic HTML and ARIA attributes.
+TARMAC components are built with semantic HTML and proper ARIA attributes to ensure screen readers can accurately convey content, structure, and interactive states to users.
 
-## Semantic HTML
+---
 
-Always use the correct HTML elements:
+## Semantic HTML First
 
-```html
-<!-- Good -->
-<button>Click me</button>
-<nav>...</nav>
-<main>...</main>
+Always use the correct HTML element. Screen readers rely on element semantics to communicate purpose:
 
-<!-- Bad -->
-<div onclick="...">Click me</div>
-<div class="nav">...</div>
-<div class="main">...</div>
-```
+| Instead of | Use |
+|------------|-----|
+| `div` with click handler | `button` |
+| `div` with href behavior | `a` with `href` |
+| `div` for navigation | `nav` with `aria-label` |
+| `div` for main content | `main` |
+| `span` for heading | `h1` through `h6` |
+| `div` for list | `ul`/`ol` with `li` |
+
+---
 
 ## ARIA Attributes
 
-### Common ARIA Attributes
+### When to Use ARIA
+
+<Info>
+  The first rule of ARIA: don't use ARIA if native HTML can do the job. ARIA supplements HTML — it doesn't replace it.
+</Info>
+
+### Common ARIA Attributes in TARMAC
 
 | Attribute | Purpose | Example |
 |-----------|---------|---------|
-| `aria-label` | Provides accessible name | `<button aria-label="Close">×</button>` |
-| `aria-labelledby` | References labeling element | `<div aria-labelledby="title">` |
-| `aria-describedby` | References description | `<input aria-describedby="helper">` |
-| `aria-hidden` | Hides from screen readers | `<span aria-hidden="true">→</span>` |
-| `aria-live` | Announces dynamic changes | `<div aria-live="polite">` |
-| `aria-expanded` | Indicates expanded state | `<button aria-expanded="true">` |
-| `aria-pressed` | Indicates pressed state | `<button aria-pressed="false">` |
+| `aria-label` | Accessible name when no visible text | Icon buttons, search inputs |
+| `aria-labelledby` | References a visible labeling element | Dialog titles, section headings |
+| `aria-describedby` | References additional description | Helper text, error messages |
+| `aria-hidden="true"` | Hides decorative elements | Decorative icons, dividers |
+| `aria-live` | Announces dynamic content changes | Toast messages, status updates |
+| `aria-expanded` | Indicates expandable state | Accordions, dropdowns |
+| `aria-selected` | Indicates selection state | Tabs, list items |
+| `aria-invalid` | Indicates validation error | Form inputs with errors |
+| `aria-required` | Indicates required field | Mandatory form inputs |
 
-### ARIA Roles
-
-```html
-<!-- Navigation -->
-<nav role="navigation">...</nav>
-
-<!-- Alert -->
-<div role="alert">Error message</div>
-
-<!-- Dialog -->
-<div role="dialog" aria-modal="true">...</div>
-
-<!-- Tooltip -->
-<div role="tooltip">Helpful text</div>
-```
+---
 
 ## Live Regions
 
-Announce dynamic content changes:
+Use live regions to announce dynamic content changes without moving focus:
+
+| Type | Attribute | Behavior | Use For |
+|------|-----------|----------|---------|
+| Polite | `aria-live="polite"` | Waits for user pause | Status updates, confirmations |
+| Assertive | `aria-live="assertive"` | Interrupts immediately | Error messages, urgent alerts |
+| Status | `role="status"` | Polite by default | Loading states, progress |
+| Alert | `role="alert"` | Assertive by default | Validation errors, warnings |
 
 ```tsx
-// Polite announcements (wait for pause)
+// Polite: status updates
 <div aria-live="polite" aria-atomic="true">
   {statusMessage}
 </div>
 
-// Assertive announcements (immediate)
-<div aria-live="assertive" role="alert">
+// Assertive: error alerts
+<div role="alert">
   {errorMessage}
 </div>
 ```
 
-## Testing with Screen Readers
+---
 
-### Popular Screen Readers
+## Page Landmarks
 
-- **NVDA** (Windows, free)
-- **JAWS** (Windows, commercial)
-- **VoiceOver** (macOS/iOS, built-in)
-- **TalkBack** (Android, built-in)
+Define clear page regions so screen reader users can jump between sections:
 
-### Testing Checklist
+| Landmark | HTML Element | Purpose |
+|----------|-------------|---------|
+| Banner | `header` | Site header |
+| Navigation | `nav` | Navigation menus |
+| Main | `main` | Primary content |
+| Complementary | `aside` | Sidebar content |
+| Content Info | `footer` | Site footer |
+| Search | `role="search"` | Search functionality |
 
-- [ ] All content is announced
-- [ ] Interactive elements have clear labels
-- [ ] Form fields have associated labels
-- [ ] Error messages are announced
-- [ ] Dynamic content changes are announced
-- [ ] Navigation landmarks are present
-- [ ] Heading hierarchy is logical
+<Tip>
+  When using multiple nav elements, give each a unique aria-label (e.g., "Main navigation", "Footer navigation") so screen reader users can distinguish them.
+</Tip>
 
-## Common Patterns
+---
 
-### Form Fields
+## Heading Hierarchy
 
-```html
-<label for="email">Email Address</label>
-<input 
-  id="email" 
-  type="email"
-  aria-describedby="email-helper"
-  aria-invalid="false"
-/>
-<span id="email-helper">We'll never share your email</span>
-```
+Maintain a logical heading structure:
 
-### Icon Buttons
+| Rule | Details |
+|------|---------|
+| One H1 per page | Describes the page purpose |
+| Sequential order | Never skip levels (H1 then H3) |
+| Descriptive text | Headings should summarize the section |
+| Don't use for styling | Use CSS for visual size, headings for structure |
 
-```html
-<button aria-label="Close dialog">
-  <CloseIcon aria-hidden="true" />
-</button>
-```
+---
 
-### Status Messages
+## Tested Screen Readers
 
-```html
-<div role="status" aria-live="polite">
-  Changes saved successfully
-</div>
-```
+| Screen Reader | Platform | Notes |
+|---------------|----------|-------|
+| NVDA | Windows | Free, widely used |
+| JAWS | Windows | Commercial, enterprise standard |
+| VoiceOver | macOS / iOS | Built-in, test with Safari |
+| TalkBack | Android | Built-in, test with Chrome |
+
+---
+
+## Testing Checklist
+
+| Check | Pass Criteria |
+|-------|---------------|
+| All content announced | Screen reader reads all visible text |
+| Interactive elements labeled | Buttons, links, inputs have accessible names |
+| Form fields associated | Labels linked to inputs via htmlFor/id |
+| Errors announced | Validation errors read aloud when they appear |
+| Dynamic updates announced | Toasts and status changes use live regions |
+| Landmarks present | Page has header, nav, main, footer landmarks |
+| Heading hierarchy logical | H1 through H6 in correct order |
+| Decorative elements hidden | Icons and dividers use aria-hidden |
