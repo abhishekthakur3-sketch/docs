@@ -1,0 +1,326 @@
+---
+title: Input Field Stepper
+description: A container that organizes multiple input fields into a connected step-by-step flow, used for routes and multi-stop workflows.
+icon: "list-ordered"
+---
+
+## Overview
+
+Input Field Stepper combines multiple input fields into a visually connected sequential flow. Common use cases include pickup/delivery address entry and multi-stop route planning.
+
+<CardGroup cols={3}>
+  <Card title="5 Variants" icon="layers">
+    Default, Entered, Multi Stop, Multi Stop 2, Multi Stop 3
+  </Card>
+  <Card title="5 States" icon="circle-dot">
+    Default, Hover, Active, Entered, Disabled
+  </Card>
+  <Card title="Dynamic Steps" icon="plus">
+    Add and remove stops with + / - controls
+  </Card>
+</CardGroup>
+
+---
+
+## Component Preview
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexWrap:'wrap', gap:'32px', justifyContent:'center', width:'100%'}}>
+
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+    <span style={{fontSize:'11px', color:'#999'}}>Default</span>
+    <div style={{background:'#fff', padding:'12px', width:'320px', display:'flex', gap:'8px'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'0', paddingTop:'16px', paddingBottom:'16px'}}>
+        <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#000'}}></div>
+        </div>
+        <div style={{width:'1px', height:'40px', background:'#e6e6e6'}}></div>
+        <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#1ba86e'}}></div>
+        </div>
+      </div>
+      <div style={{flex:1, display:'flex', flexDirection:'column', gap:'12px'}}>
+        <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px'}}>
+          <div style={{fontSize:'10px', color:'#808080'}}>Pickup from</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:'#737373'}}>|..</div>
+        </div>
+        <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px'}}>
+          <div style={{fontSize:'10px', color:'#808080'}}>Delivery to</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:'#737373'}}>|..</div>
+        </div>
+      </div>
+      <div style={{display:'flex', alignItems:'flex-end', paddingBottom:'12px'}}>
+        <div style={{width:'28px', height:'28px', borderRadius:'999px', background:'#454545', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#fff"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+    <span style={{fontSize:'11px', color:'#999'}}>Entered</span>
+    <div style={{background:'#fff', padding:'12px', width:'320px', display:'flex', gap:'8px'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'0', paddingTop:'16px', paddingBottom:'16px'}}>
+        <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#000'}}></div>
+        </div>
+        <div style={{width:'1px', height:'40px', background:'#e6e6e6'}}></div>
+        <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#1ba86e'}}></div>
+        </div>
+      </div>
+      <div style={{flex:1, display:'flex', flexDirection:'column', gap:'12px'}}>
+        <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px'}}>
+          <div style={{fontSize:'10px', color:'#454545'}}>Pickup from</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:'#2b2b2b'}}>Your location</div>
+        </div>
+        <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px'}}>
+          <div style={{fontSize:'10px', color:'#454545'}}>Delivery to</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:'#2b2b2b'}}>tarmac design system, design bay, bglr</div>
+        </div>
+      </div>
+      <div style={{display:'flex', alignItems:'flex-end', paddingBottom:'12px'}}>
+        <div style={{width:'28px', height:'28px', borderRadius:'999px', background:'#454545', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#fff"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style={{display:'flex', flexDirection:'column', gap:'8px', alignItems:'center'}}>
+    <span style={{fontSize:'11px', color:'#999'}}>Multi Stop</span>
+    <div style={{background:'#fff', padding:'12px', width:'320px', display:'flex', gap:'8px'}}>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'0', paddingTop:'16px', paddingBottom:'16px'}}>
+        <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#000'}}></div>
+        </div>
+        <div style={{width:'1px', height:'40px', background:'#e6e6e6'}}></div>
+        <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#1ba86e'}}></div>
+        </div>
+        <div style={{width:'1px', height:'40px', background:'#e6e6e6'}}></div>
+        <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#1ba86e'}}></div>
+        </div>
+      </div>
+      <div style={{flex:1, display:'flex', flexDirection:'column', gap:'12px'}}>
+        <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px'}}>
+          <div style={{fontSize:'10px', color:'#454545'}}>Pickup from</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:'#2b2b2b'}}>Your location</div>
+        </div>
+        <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px'}}>
+          <div style={{fontSize:'10px', color:'#808080'}}>Add stop 1</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:'#737373'}}>|..</div>
+        </div>
+        <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px'}}>
+          <div style={{fontSize:'10px', color:'#454545'}}>Delivery to</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:'#2b2b2b'}}>tarmac design system, design bay, bglr</div>
+        </div>
+      </div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'flex-end', gap:'40px', paddingBottom:'12px'}}>
+        <div style={{width:'28px', height:'28px', borderRadius:'999px', border:'0.5px solid #a6a5a5', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 13H5v-2h14v2z" fill="#666"/></svg>
+        </div>
+        <div style={{width:'28px', height:'28px', borderRadius:'999px', background:'#454545', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#fff"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+---
+
+## Anatomy
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', justifyContent:'center', width:'100%'}}>
+  <div style={{background:'#fff', padding:'12px', width:'320px', display:'flex', gap:'8px'}}>
+    <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'0', paddingTop:'16px', paddingBottom:'16px', outline:'2px dashed #8b5cf6', outlineOffset:'2px'}}>
+      <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#000'}}></div>
+      </div>
+      <div style={{width:'1px', height:'40px', background:'#e6e6e6'}}></div>
+      <div style={{width:'20px', height:'20px', borderRadius:'999px', background:'#f7f7f7', boxShadow:'0 0 6px rgba(0,0,0,0.2)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <div style={{width:'14px', height:'14px', borderRadius:'999px', background:'#1ba86e'}}></div>
+      </div>
+    </div>
+    <div style={{flex:1, display:'flex', flexDirection:'column', gap:'12px'}}>
+      <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px', outline:'2px dashed #ed1b36', outlineOffset:'2px'}}>
+        <div style={{fontSize:'10px', color:'#808080'}}>Pickup from</div>
+        <div style={{fontSize:'14px', fontWeight:500, color:'#737373'}}>|..</div>
+      </div>
+      <div style={{background:'#fff', border:'1px solid #e6e6e6', borderRadius:'6px', padding:'12px', outline:'2px dashed #2563eb', outlineOffset:'2px'}}>
+        <div style={{fontSize:'10px', color:'#808080'}}>Delivery to</div>
+        <div style={{fontSize:'14px', fontWeight:500, color:'#737373'}}>|..</div>
+      </div>
+    </div>
+    <div style={{display:'flex', alignItems:'flex-end', paddingBottom:'12px', outline:'2px dashed #16a34a', outlineOffset:'2px'}}>
+      <div style={{width:'28px', height:'28px', borderRadius:'999px', background:'#454545', display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#fff"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style={{display:'flex', flexWrap:'wrap', gap:'16px', justifyContent:'center', marginBottom:'16px'}}>
+  <span style={{fontSize:'11px', color:'#8b5cf6', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#8b5cf6', display:'inline-block'}}></span>Stepper Icons</span>
+  <span style={{fontSize:'11px', color:'#ed1b36', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#ed1b36', display:'inline-block'}}></span>Input Field (Origin)</span>
+  <span style={{fontSize:'11px', color:'#2563eb', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#2563eb', display:'inline-block'}}></span>Input Field (Destination)</span>
+  <span style={{fontSize:'11px', color:'#16a34a', display:'flex', alignItems:'center', gap:'4px'}}><span style={{width:'10px', height:'2px', background:'#16a34a', display:'inline-block'}}></span>Add Stop Button</span>
+</div>
+
+| Element | Description |
+|---------|-------------|
+| Stepper Icons | Visual indicators showing step order and state (black dot for origin, green for destination, numeric for stops) |
+| Input Fields | Individual address entry fields with subtext label, value, drag handle, and close icon |
+| Connector Line | Vertical line connecting stepper icons to show sequence |
+| Add Button | Circular button (+) to add new stops |
+| Remove Button | Circular button (-) to remove existing stops |
+
+---
+
+## Stepper Input Field States
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', flexWrap:'wrap', gap:'16px', justifyContent:'center', width:'100%'}}>
+  {[
+    {label:'Default', subtext:'Pickup from', value:'|..', subtextColor:'#808080', valueColor:'#737373', border:'1px solid #e6e6e6', opacity:1},
+    {label:'Hover', subtext:'Pickup from', value:'|..', subtextColor:'#454545', valueColor:'#2b2b2b', border:'1px solid #e6e6e6', opacity:1},
+    {label:'Active', subtext:'Pickup from', value:'tarmac design system, design bay, bglr', subtextColor:'#454545', valueColor:'#2b2b2b', border:'1px solid #e6e6e6', opacity:1},
+    {label:'Entered', subtext:'Jhon Smith | 9497******', value:'tarmac design system, design bay, bglr', subtextColor:'#454545', valueColor:'#2b2b2b', border:'1px solid #e6e6e6', opacity:1},
+    {label:'Disabled', subtext:'Pickup from', value:'tarmac design system, design bay, bglr', subtextColor:'#cdcbcb', valueColor:'#cdcbcb', border:'1px solid #e6e6e6', opacity:0.6},
+  ].map(s => (
+    <div key={s.label} style={{display:'flex', flexDirection:'column', gap:'6px', width:'280px'}}>
+      <span style={{fontSize:'11px', color:'#999', textAlign:'center'}}>{s.label}</span>
+      <div style={{background:'#fff', border:s.border, borderRadius:'6px', padding:'12px', display:'flex', justifyContent:'space-between', alignItems:'center', opacity:s.opacity}}>
+        <div style={{flex:1}}>
+          <div style={{fontSize:'10px', color:s.subtextColor}}>{s.subtext}</div>
+          <div style={{fontSize:'14px', fontWeight:500, color:s.valueColor, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{s.value}</div>
+        </div>
+        <div style={{display:'flex', gap:'8px', marginLeft:'8px'}}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 9H4v2h16V9zm0 4H4v2h16v-2z" fill="#666"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#666"/></svg>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+---
+
+## Usage Guidelines
+
+<div style={{background:'#f9f9f9', borderRadius:'12px', padding:'32px', marginBottom:'24px', display:'flex', gap:'16px', flexWrap:'wrap', justifyContent:'center', width:'100%'}}>
+  <div style={{flex:1, minWidth:'240px', background:'#f0fff4', border:'1px solid #86efac', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#16a34a', marginBottom:'12px'}}>Do</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Use for sequential address or location entry</div>
+      <div>Allow reordering stops via drag handle</div>
+      <div>Show clear labels for each step (Pickup, Delivery, Stop 1)</div>
+      <div>Update stepper numbering dynamically when stops change</div>
+    </div>
+  </div>
+  <div style={{flex:1, minWidth:'240px', background:'#fff5f5', border:'1px solid #fca5a5', borderRadius:'10px', padding:'20px'}}>
+    <div style={{fontSize:'13px', fontWeight:600, color:'#dc2626', marginBottom:'12px'}}>Do Not</div>
+    <div style={{display:'flex', flexDirection:'column', gap:'8px', fontSize:'12px', color:'#2b2b2b'}}>
+      <div>Do not use for unrelated form fields</div>
+      <div>Do not allow unlimited stops without a cap</div>
+      <div>Do not hide the add/remove controls</div>
+      <div>Do not break the visual connection between steps</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Accessibility
+
+| Requirement | Guideline |
+|-------------|-----------|
+| Labels | Each input field must have a visible label (e.g. Pickup from, Delivery to) |
+| Keyboard | Tab between fields, Enter to confirm, Escape to clear |
+| Drag reorder | Provide keyboard alternative for reordering (e.g. move up/down buttons) |
+| Add/Remove | Buttons must have `aria-label` (e.g. "Add stop", "Remove stop 2") |
+| Focus | Maintain logical focus order through the step sequence |
+| Screen readers | Announce step position (e.g. "Stop 1 of 3") |
+
+---
+
+## Design Tokens
+
+<Tabs>
+  <Tab title="Spacing">
+    | Token | Value |
+    |-------|-------|
+    | `spacing/8` | 8px - gap between stepper and fields |
+    | `spacing/12` | 12px - field padding and container padding |
+    | `spacing/16` | 16px - stepper vertical padding |
+    | `spacing/40` | 40px - gap between add/remove buttons |
+  </Tab>
+  <Tab title="Colors">
+    | Token | Usage |
+    |-------|-------|
+    | `surface/bg_primary/default` | Field and container background |
+    | `border/neutral/primary` | Field border (#e6e6e6) |
+    | `text/body/base` | Placeholder text (#737373) |
+    | `text/body/primary` | Entered value text (#2b2b2b) |
+    | `text/caption/base` | Default subtext (#808080) |
+    | `text/caption/primary` | Active subtext (#454545) |
+    | `text/caption/disabled` | Disabled text (#cdcbcb) |
+    | `surface/bg_primary_inverse/weakest` | Add button background (#454545) |
+  </Tab>
+  <Tab title="Stepper Icons">
+    | Style | Color | Usage |
+    |-------|-------|-------|
+    | Black | #000 | Origin/pickup point |
+    | Green | #1ba86e | Destination/delivery point |
+    | Numeric | #2b2b2b on #f7f7f7 | Intermediate stops (1, 2, 3) |
+  </Tab>
+</Tabs>
+
+---
+
+## Developer Handoff
+
+<CodeGroup>
+```tsx Component API
+interface InputFieldStepperProps {
+  variant?: 'default' | 'entered' | 'multi-stop' | 'multi-stop-2' | 'multi-stop-3';
+  showAddButton?: boolean;
+  onAddStop?: () => void;
+  onRemoveStop?: (index: number) => void;
+  onReorder?: (fromIndex: number, toIndex: number) => void;
+}
+
+interface StepperInputFieldProps {
+  state?: 'default' | 'hover' | 'active' | 'entered' | 'disabled';
+  label?: string;
+  value?: string;
+  subtext?: string;
+  showDragHandle?: boolean;
+  showCloseIcon?: boolean;
+  onClear?: () => void;
+  onChange?: (value: string) => void;
+}
+```
+
+```tsx Usage
+import { InputFieldStepper, StepperInputField } from '@tarmac/design-system';
+
+// Default 2-stop stepper
+<InputFieldStepper variant="default">
+  <StepperInputField label="Pickup from" state="default" />
+  <StepperInputField label="Delivery to" state="default" />
+</InputFieldStepper>
+
+// Multi-stop with entered values
+<InputFieldStepper
+  variant="multi-stop"
+  onAddStop={() => addNewStop()}
+  onRemoveStop={(i) => removeStop(i)}
+>
+  <StepperInputField label="Pickup from" value="Warehouse A" state="entered" />
+  <StepperInputField label="Stop 1" value="Customer B" state="entered" />
+  <StepperInputField label="Delivery to" value="Customer C" state="entered" />
+</InputFieldStepper>
+```
+</CodeGroup>
